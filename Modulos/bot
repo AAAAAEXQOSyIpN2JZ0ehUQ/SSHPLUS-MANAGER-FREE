@@ -1,0 +1,857 @@
+#!/bin/bash
+#Id adiministrador
+id_admin=20191500
+source ShellBot.sh
+if [[ -d /etc/bot ]]; then
+true
+else
+mkdir /etc/bot
+fi
+if [[ -d /etc/bot/info-users ]]; then
+true
+else
+mkdir /etc/bot/info-users
+fi
+ if [[ -d /etc/bot/key-users ]]; then
+true
+else
+mkdir /etc/bot/key-users
+fi 
+api_bot='563363655:AAFD285XTg4rcA7F8M'
+ShellBot.init --token "$api_bot" --flush
+ShellBot.username
+#Exibe informacoes e comandos
+ajuda ()
+{
+	local env_msg
+    env_msg="━━━━━━━━━━━━━━━━━━━━━━\n"
+    env_msg+="<b>BEM VINDO(a) AO BOT SSHPLUS !</b>\n"
+    env_msg+="━━━━━━━━━━━━━━━━━━━━━━\n"
+    env_msg+="<i>Comandos Disponiveis</i>\n\n"
+    env_msg+="●/criarusuario = Cria usuario com senha\n\n"
+    env_msg+="●/criarusuario_key = Cria usuario com key\n\n"
+    env_msg+="●/remover = Deleta usuario com senha\n\n"
+    env_msg+="●/remover_key = Deleta usuario com key\n\n"
+    env_msg+="●/infousers = Exibe informacoes dos usuarios\n\n"
+    env_msg+="●/monitor = Exibe usuários Onlines\n\n"
+    env_msg+="●/infovps = Exibe informacoes sobre o vps\n\n"
+    env_msg+="●/alterarsenha = Muda senha do usuario\n\n"
+    env_msg+="●/alterarlimite = Muda o limite do usuario\n\n"
+    env_msg+="●/alterardata = Muda data do usuario\n\n"
+    env_msg+="●/backup = Cria backup dos usuarios\n\n"
+    env_msg+="●/otimizar = Limpa a memoria ram\n\n"
+    env_msg+="●/speedtest = Executa o teste de velocidade\n\n"
+    env_msg+="●/payload_vivo = Exibe Payload vivo\n\n"
+    env_msg+="●/payload_oi = Exibe Payload oi\n\n"
+	ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+							--text "$(echo -e $env_msg)" \
+							--parse_mode html
+
+	return 0	
+
+}
+#Cria usuario com senha
+criar_user ()
+{
+usuario=$1
+senha=$2
+data=$3
+limite=$4
+ip=$(wget -qO- ssh-plus.tk/meuip.php)
+validade=$(date '+%C%y/%m/%d' -d " +$data days")
+exp=$(echo -n "$(date '+%d/%m/%C%y' -d " +$data days" )")
+local msg_ex
+msg_ex="━━━━━━━━━━━━━━━━━━━━━━\n"
+msg_ex+="<b>Para criar usuario siga o Exemplo</b>\n"
+msg_ex+="━━━━━━━━━━━━━━━━━━━━━━\n\n"
+msg_ex+="Exemplo\n"
+msg_ex+="<i>Comando nome senha dias limite</i>\n\n"
+msg_ex+="/criarusuario crazy 123 30 1"
+
+if awk -F : '$3 >= 1000 { print $1 }' /etc/passwd |grep $usuario 1>/dev/null 2>/dev/null; then
+	ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+	--text "$(echo -e Usuario $usuario Ja existe !)" \
+	--parse_mode html
+	break
+fi
+if [[ -z $usuario ]]
+	then
+	ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+	--text "$(echo -e $msg_ex)" \
+	--parse_mode html
+	break
+fi
+if [[ -z $senha ]]
+	then
+	ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+	--text "$(echo -e Erro! senha vazia ou invalida)" \
+	--parse_mode html
+	ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+	--text "$(echo -e $msg_ex)" \
+	--parse_mode html
+	break
+fi
+if [[ -z $data ]]
+	then
+	ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+	--text "$(echo -e Erro! Dias vazio ou invalido)" \
+	--parse_mode html
+	ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+	--text "$(echo -e $msg_ex)" \
+	--parse_mode html
+	break
+fi
+if [[ -z $limite ]]
+	then
+	ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+	--text "$(echo -e Erro! Limite vazio ou invalido)" \
+	--parse_mode html
+	ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+	--text "$(echo -e $msg_ex)" \
+	--parse_mode html
+	break
+fi
+if useradd -M -N -s /bin/false $usuario -e $validade > /dev/null 2>/dev/null
+    then
+        if (echo "$senha";echo "$senha") | passwd $usuario 1>/dev/null 2>/dev/null
+        	then
+        	info_data=$(date '+%d/%m/%C%y' -d " +$data days")
+        	echo "$usuario:$senha:$info_data:$limite" > /etc/bot/info-users/$usuario
+            limite $usuario $limite
+        	echo "$usuario $limite" >> /root/usuarios.db
+            echo "$senha" > /etc/SSHPlus/senha/$usuario
+
+        	local sucess
+        	sucess='<b>Conta SSH Criada</b>\n\n'
+        	sucess+="<b>IP:</b> $ip\n"
+        	sucess+="<b>Usuario:</b> $usuario\n"
+        	sucess+="<b>Senha:</b> $senha\n"
+        	sucess+="<b>Limite:</b> $limite\n"
+        	sucess+="<b>Expira:</b> $exp"
+        	ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+        	--text "$(echo -e $sucess)" \
+        	--parse_mode html
+        	break
+        else
+        	ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+        	--text "$(echo -e <b>Senha invalida !</b>)" \
+        	--parse_mode html
+        	ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+        	--text "$(echo -e $msg_ex)" \
+        	--parse_mode html
+        	break
+        fi
+else
+	ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+	--text "$(echo -e <b>Erro ao criar conta SSH !</b>)" \
+	--parse_mode html
+	break
+fi	
+}
+#Deleta usuario com senha
+del_user ()
+{
+usuario=$1
+local msg_ex
+msg_ex="━━━━━━━━━━━━━━━━━━━━━━\n"
+msg_ex+="<b>Para excluir usuario siga o Exemplo</b>\n"
+msg_ex+="━━━━━━━━━━━━━━━━━━━━━━\n\n"
+msg_ex+="Exemplo\n"
+msg_ex+="<i>Comando nome</i>\n\n"
+msg_ex+="/remover crazy"
+if [[ -z $usuario ]]
+	then
+	ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+	--text "$(echo -e $msg_ex)" \
+	--parse_mode html
+	break
+fi
+if awk -F : '$3 >= 1000 {print $1}' /etc/passwd|grep $usuario 1>/dev/null 2>/dev/null; then
+    pkill -f "$usuario" 1>/dev/null 2>/dev/null
+	userdel --force $usuario 2>/dev/null
+	grep -v ^$usuario[[:space:]] /root/usuarios.db > /tmp/ph ; cat /tmp/ph > /root/usuarios.db
+	rm /etc/bot/info-users/$usuario
+	rm /etc/SSHPlus/limite/$usuario 1>/dev/null 2>/dev/null
+	rm /etc/SSHPlus/senha/$usuario 1>/dev/null 2>/dev/null
+	rm /etc/usuarios/$usuario 1>/dev/null 2>/dev/null
+	local sucess
+	sucess+="<b>Usuario $usuario Deletado !</b>"
+	ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+	--text "$(echo -e $sucess)" \
+	--parse_mode html
+	break
+else
+	ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+	--text "$(echo -e Usuario $usuario nao existe !)" \
+	--parse_mode html
+	break
+fi
+}
+#cria usuario com key
+criar_user_key ()
+{
+usuario=$1
+dias=$2
+local msg_ex
+msg_ex="━━━━━━━━━━━━━━━━━━━━━━\n"
+msg_ex+="<b>Para criar usuario siga o Exemplo</b>\n"
+msg_ex+="━━━━━━━━━━━━━━━━━━━━━━\n\n"
+msg_ex+="Exemplo\n"
+msg_ex+="<i>Comando nome dias</i>\n\n"
+msg_ex+="/criarusuario_key crazy 30"
+
+if [[ -z $usuario ]]
+	then
+	ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+	--text "$(echo -e $msg_ex)" \
+	--parse_mode html
+	break
+fi
+if [[ -z $dias ]]
+	then
+	ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+	--text "$(echo -e Dias vazio ou invalido)" \
+	--parse_mode html
+	ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+	--text "$(echo -e $msg_ex)" \
+	--parse_mode html
+	break
+fi
+if awk -F : '$3 >= 1000 { print $1 }' /etc/passwd |grep $usuario 1>/dev/null 2>/dev/null; then
+	ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+	--text "$(echo -e Usuario $usuario Ja existe !)" \
+	--parse_mode html
+	break
+fi
+validade=$(date '+%C%y/%m/%d' -d " +$dias days")
+exp=$(echo -n "$(date '+%d/%m/%C%y' -d " +$dias days" )" )
+
+groupadd bot 1>/dev/null 2>/dev/null
+useradd -g bot -M -N -s /bin/false $usuario -e $validade
+ssh-keygen -b 1024 -f /etc/bot/key-users/$usuario -t rsa -P '' 1>/dev/null 2>/dev/null
+mkdir /home/$usuario
+mkdir /home/$usuario/.ssh
+chmod 700 /home/$usuario/.ssh
+cat /etc/bot/key-users/$usuario.pub >> /home/$usuario/.ssh/authorized_keys
+chmod 600 /home/$usuario/.ssh/authorized_keys
+chown $usuario /home/$usuario/.ssh
+chown $usuario /home/$usuario/.ssh/authorized_keys
+key=$(cat /etc/bot/key-users/$usuario)
+ip=$(wget -qO- ssh-plus.tk/meuip.php)
+
+    local sucess
+    sucess='<b>Conta SSH Criada</b>\n\n'
+    sucess+="<b>IP:</b> $ip\n"
+    sucess+="<b>Usuario:</b> $usuario\n"
+    sucess+="<b>Expira:</b> $exp"
+    ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+    --text "$(echo -e $sucess)" \
+    --parse_mode html
+    ShellBot.sendDocument --chat_id ${message_chat_id[$id]} \
+    --document "@/etc/bot/key-users/$usuario"
+    break
+}
+#Deleta user com key
+del_user_key ()
+{
+usuario=$1
+local msg_ex
+msg_ex="━━━━━━━━━━━━━━━━━━━━━━\n"
+msg_ex+="<b>Para excluir usuario siga o Exemplo</b>\n"
+msg_ex+="━━━━━━━━━━━━━━━━━━━━━━\n\n"
+msg_ex+="Exemplo\n"
+msg_ex+="<i>Comando nome</i>\n\n"
+msg_ex+="/rmover_key crazy"
+if [[ -z $usuario ]]
+	then
+	ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+	--text "$(echo -e $msg_ex)" \
+	--parse_mode html
+	break
+fi
+if awk -F : '$3 >= 1000 {print $1}' /etc/passwd|grep $usuario 1>/dev/null 2>/dev/null; then
+	userdel --force $usuario 2>/dev/null
+	rm /etc/bot/key-users/$usuario 1>/dev/null 2>/dev/null
+	rm /etc/bot/key-users/$usuario 1>/dev/null 2>/dev/null
+	rm -r /home/$usuario 1>/dev/null 2>/dev/null
+	ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+	--text "$(echo -e Usuario $usuario deletado !)" \
+	--parse_mode html
+	break
+else
+	ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+	--text "$(echo -e Usuario $usuario deletado !)" \
+	--parse_mode html
+	break
+fi
+}
+#Informacoes de usuarios
+ver_users ()
+{
+local info_users
+info_users+="<b>● INFORMACOES DOS USUARIOS ●</b>"
+ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+--text "$(echo -e $info_users)" \
+--parse_mode html
+for user in $(cat /etc/passwd|awk -F : '$3 >= 1000 {print $1}'|grep -v nobody)
+do
+if [[ -f /etc/bot/info-users/$user ]]; then
+	senha=$(cat /etc/bot/info-users/$user|awk  -F : {'print $2'})
+	data=$(cat /etc/bot/info-users/$user|awk -F : {'print $3'})
+	limite=$(cat /etc/bot/info-users/$user|awk -F : {'print $4'})
+	local info
+	info='━━━━━━━━━━━━━━━━\n'
+	info+="<b>Usuario:</b> $user\n"
+	info+="<b>Senha:</b> $senha\n"
+	info+="<b>Limite:</b> $limite\n"
+	info+="<b>Conexoes:</b> $(ps -u $user|grep sshd|wc -l)\n"
+	info+="<b>Data:</b> $data\n"
+	info+='━━━━━━━━━━━━━━━━\n'
+	ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+	--text "$(echo -e $info)" \
+	--parse_mode html
+else
+	local info2
+	info2='━━━━━━━━━━━━━━━━\n'
+	info2+="<b>Usuario:</b> $user\n"
+	info2+="<b>Senha:</b> null\n"
+	info2+="<b>Limite:</b> null\n"
+	info2+="<b>Conexoes:</b> $(ps -u $user|grep sshd|wc -l)\n"
+	info2+="<b>Data:</b> null\n"
+	info2+='━━━━━━━━━━━━━━━━\n'
+	ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+	--text "$(echo -e $info2)" \
+	--parse_mode html
+fi
+done
+}
+#Monitor de usuarios
+monitor_ssh ()
+{
+fun_drop () {
+port_dropbear=`ps aux | grep dropbear | awk NR==1 | awk '{print $17;}'`
+log=/var/log/auth.log
+loginsukses='Password auth succeeded'
+clear
+pids=`ps ax |grep dropbear |grep  " $port_dropbear" |awk -F" " '{print $1}'`
+for pid in $pids
+do
+    pidlogs=`grep $pid $log |grep "$loginsukses" |awk -F" " '{print $3}'`
+    i=0
+    for pidend in $pidlogs
+    do
+      let i=i+1
+    done
+    if [ $pidend ];then
+       login=`grep $pid $log |grep "$pidend" |grep "$loginsukses"`
+       PID=$pid
+       user=`echo $login |awk -F" " '{print $10}' | sed -r "s/'/ /g"`
+       waktu=`echo $login |awk -F" " '{print $2"-"$1,$3}'`
+       while [ ${#waktu} -lt 13 ]; do
+           waktu=$waktu" "
+       done
+       while [ ${#user} -lt 16 ]; do
+           user=$user" "
+       done
+       while [ ${#PID} -lt 8 ]; do
+           PID=$PID" "
+       done
+       echo "$user $PID $waktu"
+    fi
+done
+}
+local monitor
+	monitor+="<b>●   MONITOR ONLINE   ●</b>"
+	ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+	--text "$(echo -e $monitor)" \
+	--parse_mode html
+	database="/root/usuarios.db"
+	while read usline
+	do
+		user="$(echo $usline | cut -d' ' -f1)"
+		lim="$(echo $usline | cut -d' ' -f2)"
+		sqd="$(ps -u $user | grep sshd | wc -l)"
+		if netstat -nltp|grep 'dropbear'> /dev/null;then
+        drop="$(fun_drop | grep "$user" | wc -l)"
+        else
+        drop=0
+        fi
+        conex=$(($sqd + $drop))
+		if [[ $conex -eq 0 ]]; then
+			echo ""
+		else
+   		 local info2
+			info2="━━━━━━━━━━━━━━━━\n"
+			info2+="<b>Usuario: </b>$user\n"
+			info2+="<b>Status: </b>Online\n"
+			info2+="<b>Conexoes: </b>$conex\n"
+			info2+="<b>Limite: </b>$lim\n"
+			info2+="<b>Tempo: </b>$(ps -o etime $(ps -u $user |grep sshd |awk 'NR==1 {print $1}')|awk 'NR==2 {print $1}')\n"
+			info2+="━━━━━━━━━━━━━━━━\n"
+			ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+			--text "$(echo -e $info2)" \
+			--parse_mode html
+		fi
+	done < "$database"
+}
+#Exibe informacoes do vps
+infovps ()
+{
+inf='<i>AGUARDE</i>...'
+ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+--text "$(echo -e $inf)" \
+--parse_mode html
+rm -rf /tmp/online.txt > /dev/null
+database="/root/usuarios.db"
+while read usline
+do
+	user="$(echo $usline | cut -d' ' -f1)"
+	if [[ $(ps -u $user |grep sshd |wc -l) -eq 0 ]]; then
+	echo -n
+	else
+    echo -e "$(ps -u $user |grep sshd |wc -l)" >> /tmp/online.txt
+    fi
+done < "$database"
+    if [[ $(paste -s -d + /tmp/online.txt | bc) -eq 0 ]]; then
+    on='0'
+    else
+    on="$(paste -s -d + /tmp/online.txt | bc)"
+    fi
+system=$(cat /etc/issue.net)
+uso=$(top -bn1 | awk '/Cpu/ { cpu = "" 100 - $8 "%" }; END { print cpu }')
+cpucores=$(grep -c cpu[0-9] /proc/stat)
+ram1=$(free -h | grep -i mem | awk {'print $2'})
+usoram=$(free -m | awk 'NR==2{printf "%.2f%%\t\t", $3*100/$2 }')
+total=$(cat -n /root/usuarios.db | tail -n 1 | awk '{print $1}')
+if netstat -nltp|grep 'squid' > /dev/null; then
+sqdp=$(netstat -nplt |grep 'squid' | awk -F ":" {'print $4'} | xargs)
+else
+sqdp="INDISPONIVEL"
+fi
+if netstat -nltp|grep 'dropbear' > /dev/null; then
+dpbr=$(netstat -nplt |grep 'dropbear' | awk -F ":" {'print $4'} | xargs)
+else
+dpbr="INDISPONIVEL"
+fi
+    if netstat -nltp|grep 'squid' 1>/dev/null 2>/dev/null;then
+    	local info
+    	info="<b>SISTEMA OPERACIONAL</b>\n"
+    	info+="$system\n\n"
+    	info+="<b>PROCESSADOR</b>\n"
+    	info+="<b>Nucleos:</b> $cpucores\n"
+    	info+="<b>Ultilizacao:</b> $uso\n\n"
+    	info+="<b>MEMORIA RAM</b>\n"
+    	info+="<b>Total:</b> $ram1\n"
+    	info+="<b>Ultilizacao:</b> $usoram\n\n"
+    	info+="<b>MODO DE CONEXAO</b>\n"
+    	info+="<b>Openssh:</b> 22/443\n"
+    	info+="<b>Squid3:</b> $sqdp\n\n"
+    	info+="<b>$total</b><i> USUARIOS</i><b> $on</b> <i>ONLINE</i>"
+    	ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+    	--text "$(echo -e $info)" \
+    	--parse_mode html
+    	return 0
+    elif ps x | grep proxy.py|grep -v grep 1>/dev/null 2>/dev/null; then 
+    	local info2
+    	info2="<b>SISTEMA OPERACIONAL</b>\n"
+    	info2+="$system\n\n"
+    	info2+="<b>PROCESSADOR</b>\n"
+    	info2+="<b>Nucleos:</b> $cpucores\n"
+    	info2+="<b>Ultilizacao:</b> $uso\n\n"
+    	info2+="<b>MEMORIA RAM</b>\n"
+    	info2+="<b>Total:</b> $ram1\n"
+    	info2+="<b>Ultilizacao:</b> $usoram\n\n"
+    	info2+="<b>MODO DE CONEXAO</b>\n"
+    	info2+="<b>Openssh:</b> 22/443\n"
+    	info2+="<b>Proxy Socks:</b> 80\n\n"
+    	info2+="<b>TOTAL DE USUARIOS:</b> $total"
+    	ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+    	--text "$(echo -e $info2)" \
+    	--parse_mode html
+    	return 0
+    else
+    	local info3
+    	info3="<b>SISTEMA OPERACIONAL</b>\n"
+    	info3+="$system\n\n"
+    	info3+="<b>PROCESSADOR</b>\n"
+    	info3+="<b>Nucleos:</b> $cpucores\n"
+    	info3+="<b>Ultilizacao:</b> $uso\n\n"
+    	info3+="<b>MEMORIA RAM</b>\n"
+    	info3+="<b>Total:</b> $ram1\n"
+    	info3+="<b>Ultilizacao:</b> $usoram\n\n"
+    	info3+="<b>MODO DE CONEXAO</b>\n"
+    	info3+="<b>Dropbear:</b> $dpbr\n\n"
+    	info3+="<b>TOTAL DE USUARIOS:</b> $total"
+    	ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+    	--text "$(echo -e $info3)" \
+    	--parse_mode html
+    	return 0
+    fi
+}
+#Altera senha do usuario
+alterar_senha ()
+{
+	usuario=$1
+	senha=$2
+	local msg_ex
+	msg_ex="━━━━━━━━━━━━━━━━━━━━━━\n"
+	msg_ex+="<b>Para alterar senha siga o Exemplo</b>\n"
+	msg_ex+="━━━━━━━━━━━━━━━━━━━━━━\n\n"
+	msg_ex+="Exemplo\n"
+	msg_ex+="<i>Comando nome senha</i>\n\n"
+	msg_ex+="/alterarsenha crazy 12345"
+
+	local sucess
+	sucess="━━━━━━━━━━━━━━━━━━━━━━\n"
+	sucess+="<b>Senha alterada com sucesso</b> !\n"
+	sucess+="━━━━━━━━━━━━━━━━━━━━━━\n\n"
+	sucess+="<b>Usuario:</b> $usuario\n"
+	sucess+="<b>Nova senha:</b> $senha"
+
+	if [[ -z $usuario ]]
+		then
+		ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+		--text "$(echo -e $msg_ex)" \
+		--parse_mode html
+		break
+	fi
+	if [[ -z $senha ]]
+		then
+		ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+		--text "$(echo -e senha vazia ou invalida !)" \
+		--parse_mode html
+		ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+		--text "$(echo -e $msg_ex)" \
+		--parse_mode html
+		break
+	fi
+	if awk -F : '$3 >= 1000 {print $1}' /etc/passwd|grep $usuario 1>/dev/null 2>/dev/null
+		then
+		ps x | grep $usuario | grep -v grep | grep -v pt > /tmp/rem
+		if [[ `grep -c $usuario /tmp/rem` -eq 0 ]]; then
+			echo "$usuario:$senha" | chpasswd
+			senha2=$(cat /etc/bot/info-users/$usuario|awk  -F : {'print $2'})
+			sed -i "s/\b$senha2\b/$senha/g" /etc/bot/info-users/$usuario
+			echo "$senha" > /etc/SSHPlus/senha/$usuario
+			ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+			--text "$(echo -e $sucess)" \
+			--parse_mode html
+			break
+		else
+			pkill -f $usuario
+			echo "$usuario:$senha" | chpasswd
+			sed -i "s/\b$senha2\b/$senha/g" /etc/bot/info-users/$usuario
+			echo "$senha" > /etc/SSHPlus/senha/$usuario
+			ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+			--text "$(echo -e $sucess)" \
+			--parse_mode html
+			break
+		fi
+	else
+		ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+		--text "$(echo -e O usuario $usuario nao existe)" \
+		--parse_mode html
+		break
+	fi
+}
+#Altera limite do usuario
+alterar_limite ()
+{
+	usuario=$1
+	limite=$2
+	database="/root/usuarios.db"
+	local msg_ex
+	msg_ex="━━━━━━━━━━━━━━━━━━━━━━\n"
+	msg_ex+="<b>Para alterar o limite siga o Exemplo</b>\n"
+	msg_ex+="━━━━━━━━━━━━━━━━━━━━━━\n\n"
+	msg_ex+="Exemplo\n"
+	msg_ex+="<i>Comando nome limite</i>\n\n"
+	msg_ex+="/alterarsenha crazy 2"
+
+	if [[ -z $usuario ]]
+		then
+		ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+		--text "$(echo -e $msg_ex)" \
+		--parse_mode html
+		break
+	fi
+	if [[ -z $limite ]]
+		then
+		ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+		--text "$(echo -e limite vazio ou invalido !)" \
+		--parse_mode html
+		ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+		--text "$(echo -e $msg_ex)" \
+		--parse_mode html
+		break
+	fi
+	if [[ `grep -c "^$usuario " $database` -gt 0 ]]
+		then
+		grep -v ^$usuario[[:space:]] /root/usuarios.db > /tmp/a
+		sleep 1
+		mv /tmp/a /root/usuarios.db
+		echo $usuario $limite >> /root/usuarios.db
+		limite2=$(cat /etc/bot/info-users/$usuario|awk  -F : {'print $4'})
+		sed -i "s/\b$limite2\b/$limite/g" /etc/bot/info-users/$usuario
+		limite $usuario $limite
+		local sucess
+		sucess="━━━━━━━━━━━━━━━━━━━━━━\n"
+		sucess+="<b>Limite alterado com sucesso</b> !\n"
+		sucess+="━━━━━━━━━━━━━━━━━━━━━━\n\n"
+		sucess+="<b>Usuario:</b> $usuario\n"
+		sucess+="<b>Novo Limite:</b> $limite"
+		ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+		--text "$(echo -e $sucess)" \
+		--parse_mode html
+		break
+	else
+		ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+		--text "$(echo -e O usuario $usuario nao foi encontrado)" \
+		--parse_mode html
+		break
+	fi
+}
+#Altera data de usuario
+alterar_data ()
+{
+	usuario=$1
+	inputdate=$2
+	database="/root/usuarios.db"
+	local msg_ex
+	msg_ex="━━━━━━━━━━━━━━━━━━━━━━\n"
+	msg_ex+="<b>Para alterar data siga o Exemplo</b>\n"
+	msg_ex+="━━━━━━━━━━━━━━━━━━━━━━\n\n"
+	msg_ex+="Exemplo\n"
+	msg_ex+="<i>Comando nome data</i>\n\n"
+	msg_ex+="/alterardata crazy 01/03/2018"
+
+	if [[ -z $usuario ]]
+		then
+		ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+		--text "$(echo -e $msg_ex)" \
+		--parse_mode html
+		break
+	fi
+	if [[ -z $inputdate ]]
+		then
+		ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+		--text "$(echo -e Data vazia ou invalida !)" \
+		--parse_mode html
+		ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+		--text "$(echo -e $msg_ex)" \
+		--parse_mode html
+		break
+	fi
+	if awk -F : '$3 >= 1000 {print $1}' /etc/passwd|grep $usuario 1>/dev/null 2>/dev/null
+		then
+		sysdate="$(echo "$inputdate" | awk -v FS=/ -v OFS=- '{print $3,$2,$1}')"
+		if (date "+%Y-%m-%d" -d "$sysdate" > /dev/null  2>&1)
+			then
+			today="$(date -d today +"%Y%m%d")"
+			timemachine="$(date -d "$sysdate" +"%Y%m%d")"
+			if [ $today -ge $timemachine ]
+				then
+				ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+				--text "$(echo -e Erro! data passada ou atual)" \
+				--parse_mode html
+				ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+				--text "$(echo -e $msg_ex)" \
+				--parse_mode html
+				break
+			else
+				chage -E $sysdate $usuario
+				data2=$(cat /etc/bot/info-users/$usuario|awk  -F : {'print $3'})
+				sed -i "s;$data2;$inputdate;" /etc/bot/info-users/$usuario
+				local sucess
+				sucess="━━━━━━━━━━━━━━━━━━━━━━\n"
+				sucess+="<b>Data alterada com sucesso</b> !\n"
+				sucess+="━━━━━━━━━━━━━━━━━━━━━━\n\n"
+				sucess+="<b>Usuario:</b> $usuario\n"
+				sucess+="<b>Nova Data:</b> $inputdate"
+				ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+				--text "$(echo -e $sucess)" \
+				--parse_mode html
+				break
+			fi
+		else
+			ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+			--text "$(echo -e Erro! data invalida ou inexistente)" \
+			--parse_mode html
+			ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+			--text "$(echo -e $msg_ex)" \
+			--parse_mode html
+			break
+		fi
+	else
+		ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+		--text "$(echo -e O usuaruio $usuario nao existe !)" \
+		--parse_mode html
+		break
+	fi
+}
+#backup de usuarios
+backup_users ()
+{
+	rm /root/backup.vps 1>/dev/null 2>/dev/null
+	tar cvf /root/backup.vps /root/usuarios.db /etc/shadow /etc/passwd /etc/group /etc/gshadow 1>/dev/null 2>/dev/null
+	local msg
+	msg="━━━━━━━━━━━━━━━━━━━━━━\n"
+	msg+="<b>O Backup foi criado com sucesso</b> !\n"
+	msg+="━━━━━━━━━━━━━━━━━━━━━━\n\n"
+	ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+    --text "$(echo -e $msg)" \
+    --parse_mode html
+    ShellBot.sendDocument --chat_id ${message_chat_id[$id]} \
+    --document "@/root/backup.vps"
+    break
+}
+
+otimizer ()
+{
+	MEM1=`free|awk '/Mem:/ {print int(100*$3/$2)}'`
+	local msg
+	msg="<b>MEMORIA RAM</b>\n\n"
+	msg+="<i>Ultilizacao em</i> $MEM1%\n"
+	ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+	--text "$(echo -e $msg)" \
+	--parse_mode html
+	apt-get autoclean -y
+	apt-get clean -y
+	sleep 1
+	sync 
+	echo 3 > /proc/sys/vm/drop_caches
+	sync && sysctl -w vm.drop_caches=3 1>/dev/null 2>/dev/null
+	sysctl -w vm.drop_caches=0 1>/dev/null 2>/dev/null
+	swapoff -a
+	swapon -a
+	ram1=$(free -h | grep -i mem | awk {'print $2'})
+	ram2=$(free -h | grep -i mem | awk {'print $3'})
+	ram3=$(free -h | grep -i mem | awk {'print $4'})
+	MEM2=`free|awk '/Mem:/ {print int(100*$3/$2)}'`
+	res=`expr $MEM1 - $MEM2`
+	local sucess
+	sucess="━━━━━━━━━━━━━━━━━━━━━━\n"
+	sucess+="<b>SERVIDOR OTIMIZADO COM SUCESSO</b> !\n"
+	sucess+="━━━━━━━━━━━━━━━━━━━━━━\n\n"
+	sucess+="<b>Total</b> $ram1\n"
+	sucess+="<b>livre</b> $ram3\n"
+	sucess+="<b>Em uso</b> $ram2\n"
+	sucess+="<i>Ultilizacao em</i> $MEM2%\n\n"
+	sucess+="<b>Economia de:</b> $res%"
+	ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+	--text "$(echo -e $sucess)" \
+	--parse_mode html
+	break
+}
+
+speed_test ()
+{
+    info='<i>AGUARDE</i>...'
+    ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+	--text "$(echo -e $info)" \
+	--parse_mode html
+	rm -rf $HOME/speed > /dev/null 2>&1
+    speedtest --share > speed
+    png=$(cat speed | sed -n '5 p' |awk -F : {'print $NF'})
+    down=$(cat speed | sed -n '7 p' |awk -F :  {'print $NF'})
+    upl=$(cat speed | sed -n '9 p' |awk -F :  {'print $NF'})
+    lnk=$(cat speed | sed -n '10 p' |awk {'print $NF'})
+	local msg
+	msg="━━━━━━━━━━━━━━━━━━━━━━\n"
+	msg+=" <b> VELOCIDADE DO SERVIDOR  !</b> !\n"
+	msg+="━━━━━━━━━━━━━━━━━━━━━━\n\n"
+	msg+="<b>PING/LATENCIA:</b>$png\n"
+	msg+="<b>DOWNLOAD:</b>$down\n"
+	msg+="<b>UPLOAD:</b>$upl\n"
+	ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+	--text "$(echo -e $msg)" \
+	--parse_mode html
+	ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+	--text "$(echo -e $lnk)" \
+	--parse_mode html
+	rm -rf $HOME/speed > /dev/null 2>&1
+	break
+}
+
+#Exibe payload
+payload_vivo ()
+{
+	local pay
+    pay='Payload vivo\n\n'
+    pay+='`GET http://i.vivo.ddivulga.com/i/gp HTTP/1.1[crlf][crlf][split]CONNECT [host_port][delay_split][crlf]`\n'
+    ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+    --text "$(echo -e $pay)" \
+    --parse_mode markdown
+
+    return 0
+}
+#Exibe payload
+payload_oi ()
+{
+	local pay
+    pay='Payload Oi\n\n'
+    pay+='`CONNECT [host_port]@d1n212ccp6ldpw.cloudfront.net [protocol][crlf]Host: d1n212ccp6ldpw.cloudfront.net[crlf][crlf]`'
+    ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+    --text "$(echo -e $pay)" \
+    --parse_mode markdown
+    
+    return 0
+}
+
+#boas vindas
+msg_bem_vindo()
+{
+	local msg
+    msg="🗣 Ola <b>${message_from_first_name[$id]}</b> Seja bem-vindo(a)\n"
+    msg+="Para obter informacoes execute /ajuda\n\n"
+    msg+="by teamilluminati"
+	ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+	--text "$(echo -e $msg)" \
+	--parse_mode html
+
+	return 0	
+}
+
+while :
+do
+	#Obtem as atualizações
+	ShellBot.getUpdates --limit 100 --offset $(ShellBot.OffsetNext) --timeout 30
+	
+	#Lista o índice das atualizações
+	for id in $(ShellBot.ListUpdates)
+	do
+	#Inicio thread
+	(
+		#Verifica pelo id se o usuario tem acesso
+		[[ "${message_from_id[$id]}" != $id_admin ]] && ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+		--text "$(echo -e ACESSO NEGADO 🚫)" && break
+
+		#Verifica se a mensagem enviada pelo usuário é um comando válido.
+		case ${message_text[$id]} in
+			*)
+				:
+				#comandos
+				comando=(${message_text[$id]})
+				[[ "${comando[0]}" = "start" || "${comando[0]}" = "/start" ]] && msg_bem_vindo
+				[[ "${comando[0]}" = "ajuda" || "${comando[0]}" = "/ajuda" ]] && ajuda
+				[[ "${comando[0]}" = "criarusuario" || "${comando[0]}" = "/criarusuario" ]] && criar_user "${comando[1]}" "${comando[2]}" "${comando[3]}" "${comando[4]}"
+				[[ "${comando[0]}" = "remover" || "${comando[0]}" = "/remover" ]] && del_user "${comando[1]}"
+				[[ "${comando[0]}" = "criarusuario_key" || "${comando[0]}" = "/criarusuario_key" ]] && criar_user_key "${comando[1]}" "${comando[2]}"
+				[[ "${comando[0]}" = "remover_key" || "${comando[0]}" = "/remover_key" ]] && del_user_key "${comando[1]}"
+				[[ "${comando[0]}" = "infousers" || "${comando[0]}" = "/infousers" ]] && ver_users
+				[[ "${comando[0]}" = "monitor" || "${comando[0]}" = "/monitor" ]] && monitor_ssh
+				[[ "${comando[0]}" = "infovps" || "${comando[0]}" = "/infovps" ]] && infovps
+				[[ "${comando[0]}" = "payload_vivo" || "${comando[0]}" = "/payload_vivo" ]] && payload_vivo
+				[[ "${comando[0]}" = "payload_oi" || "${comando[0]}" = "/payload_oi" ]] && payload_oi
+				[[ "${comando[0]}" = "alterarsenha" || "${comando[0]}" = "/alterarsenha" ]] && alterar_senha "${comando[1]}" "${comando[2]}"
+				[[ "${comando[0]}" = "alterarlimite" || "${comando[0]}" = "/alterarlimite" ]] && alterar_limite "${comando[1]}" "${comando[2]}"
+				[[ "${comando[0]}" = "alterardata" || "${comando[0]}" = "/alterardata" ]] && alterar_data "${comando[1]}" "${comando[2]}"
+				[[ "${comando[0]}" = "backup" || "${comando[0]}" = "/backup" ]] && backup_users
+				[[ "${comando[0]}" = "otimizar" || "${comando[0]}" = "/otimizar" ]] && otimizer
+				[[ "${comando[0]}" = "speedtest" || "${comando[0]}" = "/speedtest" ]] && speed_test
+			;;
+		esac
+	) &
+	done
+done
+#FIM
