@@ -46,7 +46,7 @@ echo -e "\033[1;32mDICA! \033[1;33mUsuarios do JUICESSH selecione o tema Dark\03
 echo -e "\033[1;33mnas configuracoes do aplicativo, para uma melhor\033[0m"
 echo -e "\033[1;33mvisualizacao...\033[0m"
 echo ""
-echo -e "\033[1;31m≠×≠×≠×≠×≠×≠×≠×≠×[\033[1;33m • \033[1;32mTeamIlluminati\033[1;33m •\033[1;31m ]≠×≠×≠×≠×≠×≠×≠×≠×\033[0m"
+echo -e "\033[1;31m≠×≠×≠×≠×≠×≠×≠×≠×[\033[1;33m • \033[1;32mSSHPLUS MANAGER FREE\033[1;33m •\033[1;31m ]≠×≠×≠×≠×≠×≠×≠×≠×\033[0m"
 echo ""
 echo -ne "\033[1;36mGenerar As Key [N/S]:\033[1;37m "; read key
 echo -e "\033[1;31m════════════════════════════════════════════════════\033[0m"
