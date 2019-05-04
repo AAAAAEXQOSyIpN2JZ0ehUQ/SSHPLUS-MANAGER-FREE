@@ -1,6 +1,6 @@
 ﻿# SSHPLUS-MANAGER-FREE
 
-![logo](https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/VSSHPLUS-MANAGER-FREE/master/SSHPLUS_MANAGER.jpg)
+![logo](https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/SSHPLUS_MANAGER.jpg)
 
 Manager Script
 
