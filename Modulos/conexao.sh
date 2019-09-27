@@ -286,9 +286,9 @@ fun_drop () {
 		clear
 		[[ $(netstat -nltp|grep -c 'dropbear') != '0' ]] && dpbr=$(netstat -nplt |grep 'dropbear' | awk -F ":" {'print $4'} | xargs) || sqdp="\033[1;31mINDISPONIVEL"
         if ps x | grep "limiter"|grep -v grep 1>/dev/null 2>/dev/null; then
-        	stats='\033[1;32m◉ '
+        	stats='\033[1;32m●'
         else
-        	stats='\033[1;31m○ '
+        	stats='\033[1;31m●'
         fi
 		echo -e "\E[44;1;37m              GERENCIAR DROPBEAR               \E[0m"
 		echo -e "\n\033[1;33mPORTAS\033[1;37m: \033[1;32m$dpbr"
@@ -611,16 +611,17 @@ if [[ -e /etc/openvpn/server.conf ]]; then
 		clear
 	    opnp=$(cat /etc/openvpn/server.conf |grep "port" |awk {'print $2'})
 	    if [[ -d /var/www/html/openvpn ]] > /dev/nell; then
-	    	ovpnweb=$(echo -e "\033[1;32m◉ ")
+	    	ovpnweb=$(echo -e "\033[1;32m●")
 	    else
-	    	ovpnweb=$(echo -e "\033[1;31m○ ")
+	    	ovpnweb=$(echo -e "\033[1;31m●")
 	    fi
 	    if grep "duplicate-cn" /etc/openvpn/server.conf > /dev/null; then
-	    	mult=$(echo -e "\033[1;32m◉ ")
+	    	mult=$(echo -e "\033[1;32m●")
 	    else
-	    	mult=$(echo -e "\033[1;31m○ ")
+	    	mult=$(echo -e "\033[1;31m●")
 	    fi
-		echo -e "\E[44;1;37m          GERENCIAR OPENVPN           \E[0m"
+		echo -e "\E[44;1;37m          GERENCIAR OPENVPN
+           \E[0m"
 		echo ""
 		echo -e "\033[1;33mPORTA\033[1;37m: \033[1;32m$opnp"
 		echo ""
