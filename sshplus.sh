@@ -161,7 +161,6 @@ echo -e "\033[1;31m● \033[1;33mComandos disponíveis Execulte \033[1;32mmenu \
 echo -e "\033[0;34m═════════════════════════════════════════════════\033[0m"
 echo ""
 sed -i "126d" /etc/ssh/sshd_config > /dev/null 2>&1
-sed -i '$a Port 22' /etc/ssh/sshd_config  > /dev/null 2>&1
 service ssh restart > /dev/null 2>&1
 cd $HOME
 if [[ "$optiondb" = '2' ]]; then
