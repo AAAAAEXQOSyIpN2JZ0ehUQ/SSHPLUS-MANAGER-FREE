@@ -16,6 +16,7 @@ http_port 8080
 http_port 3128
 http_port 8799
 
+#Nome squid
 visible_hostname SSHPLUS
  
 via off

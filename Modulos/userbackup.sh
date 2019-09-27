@@ -1,27 +1,18 @@
 #!/bin/bash
 clear
-[[ ! -d /etc/SSHPlus ]] && rm -rf /bin/menu /rm -rf /bin/userbackup
 IP=$(wget -qO- ipv4.icanhazip.com)
 apchon () {
 	if netstat -nltp|grep 'dropbear' > /dev/null; then
-		if [ ! -d /var/www/html ]; then
-			mkdir /var/www/html
-		fi
-		if [ ! -d /var/www/html/backup ]; then
-			mkdir /var/www/html/backup
-		fi
+		[[ ! -d /var/www/html ]] && mkdir /var/www/html
+		[[ ! -d /var/www/html/backup ]] && mkdir /var/www/html/backup
 		touch /var/www/html/backup/index.html
 		/etc/init.d/apache2 restart
 	else
 		apt-get install apache2 zip -y
 		sed -i "s/Listen 80/Listen 81/g" /etc/apache2/ports.conf
 		service apache2 restart
-		if [ ! -d /var/www/html ]; then
-			mkdir /var/www/html
-		fi
-		if [ ! -d /var/www/html/backup ]; then
-			mkdir /var/www/html/backup
-		fi
+		[[ ! -d /var/www/html ]] && mkdir /var/www/html
+		[[ ! -d /var/www/html/backup ]] && mkdir /var/www/html/backup
 		touch /var/www/html/backup/index.html
 		chmod -R 755 /var/www
 		/etc/init.d/apache2 restart
@@ -72,9 +63,9 @@ echo -e "\e[1DOk"
 }
 echo -e "\E[44;1;37m             Gerenciador De Backups              \E[0m"
 echo ""
-echo -e "\033[1;33m[\033[1;31m1\033[1;33m] \033[1;37m- \033[1;33mCRIAR BACKUP"
-echo -e "\033[1;33m[\033[1;31m2\033[1;33m] \033[1;37m- \033[1;33mRESTAURAR BACKUP"
-echo -e "\033[1;33m[\033[1;31m3\033[1;33m] \033[1;37m- \033[1;33mVOLTAR\033[1;37m"
+echo -e "\033[1;37m[\033[1;31m1\033[1;37m] \033[1;37m• \033[1;33mCRIAR BACKUP"
+echo -e "\033[1;37m[\033[1;31m2\033[1;37m] \033[1;37m• \033[1;33mRESTAURAR BACKUP"
+echo -e "\033[1;37m[\033[1;31m3\033[1;37m] \033[1;37m• \033[1;33mVOLTAR\033[1;37m"
 echo ""
 echo -ne "\033[1;32mOQUE DESEJA FAZER\033[1;31m ?\033[1;37m : "; read opcao
 if [[ "$opcao" = '1' ]]; then
@@ -84,9 +75,9 @@ if [[ "$opcao" = '1' ]]; then
 	    sleep 1
 		tar cvf /root/backup.vps /root/usuarios.db /etc/shadow /etc/passwd /etc/group /etc/gshadow > /dev/null 2>&1
 		echo ""
-		echo -e "\033[1;32mBACUP CRIADO COM SUCESSO !\033[0m"
+		echo -e "\033[1;32mBACKUP CRIADO COM SUCESSO !\033[0m"
 		echo ""
-		echo -ne "\033[1;32mGerar link para download \033[1;31m? \033[1;33m[s/n]:\033[1;37m "; read resp
+		echo -ne "\033[1;32mGERAR LINK PARA DOWNLOAD \033[1;31m? \033[1;33m[s/n]:\033[1;37m "; read resp
 		if [[ "$resp" = "s" ]]; then
 			echo ""
 			fun_temp
@@ -95,9 +86,9 @@ if [[ "$opcao" = '1' ]]; then
 		    echo ""
 			if [ -e /var/www/html/backup/backup.vps ]; then
 				if [[ "$VERSION_ID" = 'VERSION_ID="14.04"' ]]; then
-					echo -e "\033[1;32mLINK\033[1;37m: \033[1;36m$IP:81/html/backup/backup.vps"
+					echo -e "\033[1;32mLINK\033[1;37m: \033[1;36m$IP:81/html/backup/backup.vps\033[0m"
 				else
-					echo -e "\033[1;32mLINK\033[1;37m: \033[1;36m$IP:81/backup/backup.vps"
+					echo -e "\033[1;32mLINK\033[1;37m: \033[1;36m$IP:81/backup/backup.vps\033[0m"
 				fi
 			else
 				echo -e "\033[1;32mDisponivel em\033[1;31m" ~/"backup.vps\033[0m"
@@ -145,3 +136,4 @@ fi
 if [[ "$opcao" = '3' ]]; then
 menu
 fi
+

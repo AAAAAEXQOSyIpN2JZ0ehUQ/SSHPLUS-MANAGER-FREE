@@ -1,41 +1,41 @@
 #!/bin/bash
-database="/root/usuarios.db"
 tput setaf 7 ; tput setab 4 ; tput bold ; printf '%20s%s\n' "   Alterar limite de conexões simultâneas   " ; tput sgr0
-if [ ! -f "$database" ]
-then
+database="/root/usuarios.db"
+if [ ! -f "$database" ]; then
 	tput setaf 7 ; tput setab 1 ; tput bold ; echo "" ; echo "Arquivo $database não encontrado" ; echo "" ; tput sgr0
 	exit 1
 else
-	tput setaf 3 ; tput bold ; echo ""; echo "Limite de conexões simultâneas dos usuários:" ; tput sgr0
+	tput setaf 3 ; tput bold ; echo ""; echo "LISTA DE USUARIOS E SEUS LIMITES:" ; tput sgr0
 	echo ""
+	_userT=$(awk -F: '$3>=1000 {print $1}' /etc/passwd | grep -v nobody)
 	i=0
-    while read users
-       do
-           user="$(echo $users | cut -d' ' -f1)"
-           limit="$(echo $users | cut -d' ' -f2)"
-           i=$(expr $i + 1)
-           oP+=$i
-           [[ $i == [1-9] ]] && oP+=" 0$i" && i=0$i
-           oP+=":$user\n"
-           _user=$(echo -e "\033[1;33m[\033[1;31m$i\033[1;33m] \033[1;37m- \033[1;32m$user\033[0m")
-           lim=$(echo -e "\033[1;33mLimite\033[1;37m: $limit")
-           printf '%-60s%s\n' "$_user" "$lim"
-       done < "$database"
-       echo ""
-    num_user=$(cat $database | wc -l)
-    echo -ne "\033[1;32mSelecione um usuario \033[1;33m[\033[1;37m1\033[1;31m-\033[1;37m$num_user\033[1;33m]\033[1;37m: " ; read option
+	unset _userPass
+	while read _user; do
+		i=$(expr $i + 1)
+		_oP=$i
+		[[ $i == [1-9] ]] && i=0$i && oP+=" 0$i"
+		if [[ "$(grep -wc "$_user" $database)" != "0" ]]; then
+			limit=$(grep -w "$_user" $database |cut -d' ' -f2)
+		else
+			limit='1'
+		fi
+		l_user=$(echo -e "\033[1;33m[\033[1;31m$i\033[1;33m] \033[1;37m- \033[1;32m$_user\033[0m")
+        lim=$(echo -e "\033[1;33mLimite\033[1;37m: $limit")
+        printf '%-65s%s\n' "$l_user" "$lim"
+		_userPass+="\n${_oP}:${_user}"
+	done <<< "${_userT}"
+	echo ""
+	num_user=$(awk -F: '$3>=1000 {print $1}' /etc/passwd | grep -v nobody | wc -l)
+	echo -ne "\033[1;32mDigite ou selecione um usuario \033[1;33m[\033[1;37m1\033[1;31m-\033[1;37m$num_user\033[1;33m]\033[1;37m: " ; read option
+	usuario=$(echo -e "${_userPass}" | grep -E "\b$option\b" | cut -d: -f2)
     if [[ -z $option ]]; then
         tput setaf 7 ; tput setab 1 ; tput bold ; echo "" ; echo "Usuário vazio ou não existente" ; echo "" ; tput sgr0
 		exit
-	fi
-    usuario=$(echo -e "$oP" | grep -E "\b$option\b" | cut -d: -f2)
-	if [[ -z $usuario ]]
-	then
+	elif [[ -z $usuario ]]; then
 		tput setaf 7 ; tput setab 1 ; tput bold ; echo "" ; echo "Usuário vazio ou não existente" ; echo "" ; tput sgr0
 		exit 1
 	else
-		if [[ `grep -c "^$usuario " $database` -gt 0 ]]
-		then
+		if cat /etc/passwd |grep -w $usuario > /dev/null; then
 			echo -ne "\n\033[1;32mNovo limite para o usuario \033[1;33m$usuario\033[1;37m: "; read sshnum
 			if [[ -z $sshnum ]]
 			then

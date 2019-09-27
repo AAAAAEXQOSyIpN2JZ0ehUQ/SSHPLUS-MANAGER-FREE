@@ -13,38 +13,53 @@ fun_drop () {
 		done
 	done
 }
-if [[ ! -f "$database" ]]; then
-	echo -e "Arquivo usuarios.db nao encontrado"
-	sleep 2
-	exit 1
-fi
-while : ; do
-    while read usline
-    do
-      user="$(echo $usline | cut -d' ' -f1)"
-      limit="$(echo $usline | cut -d' ' -f2)"
-      conssh="$(ps -u $user | grep sshd | wc -l)"
-      [[ -e /etc/openvpn/openvpn-status.log ]] && ovp="$(grep -E ,"$user", /etc/openvpn/openvpn-status.log | wc -l)" || ovp=0
-     if netstat -nltp|grep 'dropbear' > /dev/null; then
-         dropon="ON"
-         condrop="$(fun_drop | grep -E "$user" | wc -l)"
-         piddrop="$(fun_drop | grep -E "$user" | tail -1 | awk '{print $ NF}')"
-     else
-         dropon="OFF"
-         condrop=0
-         piddrop=0
-     fi
-      cxx=$(($condop + $ovp))
-      cnx=$(($cxx + $conssh))
-      if [[ $cnx -gt $limit ]]; then
-          (
-              pidkill=$(($cnx - $limit))
-              [[ "$dropon" = "ON" ]] && kill -9 $piddrop
-		      for pidssh in `(ps -u $user |grep sshd| head -n $pidkill |awk '{print $1}')`; do
-		          kill -9 $pidssh
-		      done
-          ) &>/dev/null &
-	   fi
-    done < "$database"
-    sleep 12
+
+fun_killopen () {
+(	
+_pidsovp=$1
+telnet localhost 7505 <<EOF
+kill $_pidsovp
+EOF
+) &>/dev/null &
+}
+
+fun_multilogin () {
+	(
+		while read _users; do
+			user="$(echo $_users | cut -d' ' -f1)"
+			limit="$(echo $_users | cut -d' ' -f2)"
+			conssh="$(ps -u $user | grep sshd | wc -l)"
+			[[ -e /etc/default/dropbear ]] && {
+				condrop="$(fun_drop | grep -E "$user" | wc -l)"
+				piddrop="$(fun_drop | grep -E "$user" | tail -1 | awk '{print $ NF}')"
+				[[ "$condrop" -gt "$limit" ]] && kill -9 $piddrop
+			}
+			[[ -e /etc/openvpn/openvpn-status.log ]] && {
+				ovp="$(grep -E ,"$user", /etc/openvpn/openvpn-status.log | wc -l)"
+				[[ "$ovp" -gt "$limit" ]] && {
+					pidokill=$(($ovp - $limit))
+					listpid=$(grep -E ,"$user", /etc/openvpn/openvpn-status.log | cut -d "," -f3 |head -n $pidokill)
+					while read ovpids; do
+						(
+							telnet localhost 7505 <<- EOF
+							kill $ovpids
+							EOF
+							) &>/dev/null &
+					done <<< "$listpid"
+				}
+			}
+			[[ "$conssh" -gt "$limit" ]] && {
+				pidkill=$(($conssh - $limit))
+				for pidssh in `(ps -u $user |grep sshd| tail -n $pidkill |awk '{print $1}')`; do
+					kill -9 $pidssh
+				done
+	        }
+	        sleep 3
+	    done < "$database"
+	    ) &
+}
+while true; do
+fun_multilogin
+sleep 7
 done
+

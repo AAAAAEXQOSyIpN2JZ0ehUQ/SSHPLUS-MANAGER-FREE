@@ -80,91 +80,42 @@ rm -rf $HOME/speed
 }
 #limiter
 function limit1 () {
-if ps x | grep "limiter"|grep -v grep 1>/dev/null 2>/dev/null; then
-   echo ""
-   echo -e "\033[1;32mO LIMITER JA ESTA ATIVO !\033[0m"
-   sleep 2
-   limit_ssh
- else
-   echo ""
-   echo -e "\033[1;32mINICIANDO O LIMITER... \033[0m"
+   clear
+   echo -e "\n\033[1;32mINICIANDO O LIMITER... \033[0m"
    echo ""
    fun_bar 'screen -dmS limiter limiter' 'sleep 3'
-   echo ""
-   echo -e "\033[1;32m  LIMITER ATIVO !\033[0m"
+   [[ $(grep -wc "limiter" /etc/autostart) = '0' ]] && {
+       echo -e "screen -dmS limiter limiter" >> /etc/autostart
+   } || {
+       sed -i '/limiter/d' /etc/autostart
+	   echo -e "screen -dmS limiter limiter" >> /etc/autostart
+   }
+   echo -e "\n\033[1;32m  LIMITER ATIVO !\033[0m"
    sleep 3
-   limit_ssh
-fi
+   menu
 }
 function limit2 () {
-clear
-echo ""
- if ps x | grep "limiter"|grep -v grep 1>/dev/null 2>/dev/null; then
+   clear
    echo -e "\033[1;32mPARANDO O LIMITER... \033[0m"
    echo ""
    fun_stplimiter () {
-   sleep 1
-   screen -r -S "limiter" -X quit
-   screen -wipe 1>/dev/null 2>/dev/null
-   sleep 1
+      sleep 1
+      screen -r -S "limiter" -X quit
+      screen -wipe 1>/dev/null 2>/dev/null
+      [[ $(grep -wc "limiter" /etc/autostart) != '0' ]] && {
+          sed -i '/limiter/d' /etc/autostart
+      }
+      sleep 1
    }
    fun_bar 'fun_stplimiter' 'sleep 3'
-   echo ""
-   echo -e "\033[1;31m LIMITER PARADO !\033[0m"
+   echo -e "\n\033[1;31m LIMITER PARADO !\033[0m"
    sleep 3
-   limit_ssh
- else
-   echo ""
-   echo -e "\033[1;32mO LIMITER JA ESTA DESATIVADO !\033[0m"
-   sleep 2
-   limit_ssh
- fi
+   menu
 }
 function limit_ssh () {
-if ps x | grep "limiter"|grep -v grep 1>/dev/null 2>/dev/null; then
-statuslimit="\033[1;32mATIVADO"
-else
-statuslimit="\033[1;31mDESATIVADO"
-fi
-clear
-echo -e "\E[44;1;37m           LIMITER MULTILOGIN           \E[0m"
-echo ""
-echo -e "\033[1;33mSTATUS\033[1;37m: $statuslimit \033[0m"
-echo ""
-echo -e "\033[1;33m[\033[1;31m1\033[1;33m] INICIAR O LIMITER \033[1;33m
-[\033[1;31m2\033[1;33m] PARAR O LIMITER\033[1;33m
-[\033[1;31m3\033[1;33m] VOLTAR \033[1;32m<\033[1;33m<\033[1;31m< \033[1;33m
-[\033[1;31m0\033[1;33m] SAIR \033[1;32m<\033[1;33m<\033[1;31m< \033[0m"
-echo ""
-echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo ""
-echo -ne "\033[1;32mOQUE DESEJA FAZER \033[1;33m?\033[1;31m? \033[0m"; read x
-
-clear
-case $x in
-
-1)
-limit1
-;;
-2)
-limit2
-;;
-3)
-menu
-;;
-0)
-echo -e "\033[1;31mSaindo...\033[0m"
-sleep 2
-clear
-exit;
-;;
-*)
-echo -e "\033[1;31mOpcao Invalida...\033[0m"
-sleep 1
-limit_ssh
-;;
-esac
+[[ $(ps x | grep "limiter"|grep -v grep |wc -l) = '0' ]] && limit1 || limit2
 }
+
 function autoexec () {
    if grep "menu;" /etc/profile > /dev/null; then
       clear
@@ -233,19 +184,25 @@ echo -e "\033[1;32mSISTEMA            MEMÓRIA RAM      PROCESSADOR "
 echo -e "\033[1;31mOS: \033[1;37m$_system \033[1;31mTotal:\033[1;37m$_ram \033[1;31mNucleos: \033[1;37m$_core\033[0m"
 echo -e "\033[1;31mHora: \033[1;37m$_hora     \033[1;31mEm uso: \033[1;37m$_usor \033[1;31mEm uso: \033[1;37m$_usop\033[0m"
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e "\033[1;32mOnlines:\033[1;37m $_onlin     \033[1;31mExpirados: \033[1;37m$_userexp \033[1;33mTotal: \033[1;37m$_tuser\033[0m"
+[[ ! -e /tmp/att ]]  && {
+    echo -e "\033[1;32mOnlines:\033[1;37m $_onlin     \033[1;31mExpirados: \033[1;37m$_userexp \033[1;33mTotal: \033[1;37m$_tuser\033[0m"
+    var01='•'
+} || {
+    echo -e "  \033[1;33m[\033[1;31m!\033[1;33m]  \033[1;32mEXISTE UMA ATUALIZACAO DISPONIVEL  \033[1;33m[\033[1;31m!\033[1;33m]\033[0m"
+    var01="\033[1;32m!"
+}
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo ""
-echo -e "\033[1;33m[\033[1;31m20\033[1;33m] ADICIONAR HOST \033[1;33m       [\033[1;31m26\033[1;33m] MUDAR SENHA ROOT \033[1;33m
-[\033[1;31m21\033[1;33m] REMOVER HOST \033[1;33m         [\033[1;31m27\033[1;33m] AUTO EXECUCAO $autm \033[1;33m
-[\033[1;31m22\033[1;33m] REINICIAR SISTEMA \033[1;33m    [\033[1;31m28\033[1;33m] ATUALIZAR SCRIPT \033[1;33m
-[\033[1;31m23\033[1;33m] REINICIAR SERVICOS \033[1;33m   [\033[1;31m29\033[1;33m] REMOVER SCRIPT \033[1;33m
-[\033[1;31m24\033[1;33m] BLOCK TORRENT $stsf\033[1;33m       [\033[1;31m30\033[1;33m] VOLTAR \033[1;32m<\033[1;33m<\033[1;31m< \033[1;33m
-[\033[1;31m25\033[1;33m] BOT TELEGRAM $stsbot\033[1;33m        [\033[1;31m00\033[1;33m] SAIR \033[1;32m<\033[1;33m<\033[1;31m<\033[1;33m"
+echo -e "\033[1;37m[\033[1;31m20\033[1;37m] • \033[1;33mADICIONAR HOST \033[1;37m     [\033[1;31m26\033[1;37m] • \033[1;33mMUDAR SENHA ROOT \033[1;37m
+[\033[1;31m21\033[1;37m] • \033[1;33mREMOVER HOST \033[1;37m       [\033[1;31m27\033[1;37m] • \033[1;33mAUTO EXECUCAO $autm \033[1;37m
+[\033[1;31m22\033[1;37m] • \033[1;33mREINICIAR SISTEMA \033[1;37m  [\033[1;31m28\033[1;37m] $var01 \033[1;33mATUALIZAR SCRIPT \033[1;37m
+[\033[1;31m23\033[1;37m] • \033[1;33mREINICIAR SERVICOS \033[1;37m [\033[1;31m29\033[1;37m] • \033[1;33mREMOVER SCRIPT \033[1;37m
+[\033[1;31m24\033[1;37m] • \033[1;33mBLOCK TORRENT $stsf\033[1;37m    [\033[1;31m30\033[1;37m] • \033[1;33mVOLTAR \033[1;32m<\033[1;33m<\033[1;31m< \033[1;37m
+[\033[1;31m25\033[1;37m] • \033[1;33mBOT TELEGRAM $stsbot\033[1;37m     [\033[1;31m00\033[1;37m] • \033[1;33mSAIR \033[1;32m<\033[1;33m<\033[1;31m<\033[1;37m"
 echo ""
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo ""
-echo -ne "\033[1;32mOQUE DESEJA FAZER \033[1;33m?\033[1;31m?\033[1;37m "; read x
+echo -ne "\033[1;32mOQUE DESEJA FAZER \033[1;33m?\033[1;31m?\033[1;37m : "; read x
 case "$x" in
    20)
    clear
@@ -343,20 +300,20 @@ echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━�
 echo -e "\033[1;32mOnlines:\033[1;37m $_onlin     \033[1;31mExpirados: \033[1;37m$_userexp \033[1;33mTotal: \033[1;37m$_tuser\033[0m"
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo ""
-echo -e "\033[1;33m[\033[1;31m01\033[1;33m] CRIAR USUARIO \033[1;33m              [\033[1;31m11\033[1;33m] SPEEDTEST \033[1;33m
-[\033[1;31m02\033[1;33m] CRIAR USUARIO TESTE \033[1;33m        [\033[1;31m12\033[1;33m] BANNER \033[1;33m
-[\033[1;31m03\033[1;33m] REMOVER USUARIO \033[1;33m            [\033[1;31m13\033[1;33m] TRAFEGO \033[1;33m
-[\033[1;31m04\033[1;33m] MONITOR ONLINE \033[1;33m             [\033[1;31m14\033[1;33m] OTIMIZAR \033[1;33m
-[\033[1;31m05\033[1;33m] MUDAR DATA \033[1;33m                 [\033[1;31m15\033[1;33m] BACKUP \033[1;33m
-[\033[1;31m06\033[1;33m] ALTERAR LIMITE \033[1;33m             [\033[1;31m16\033[1;33m] LIMITER $stsl\033[1;33m
-[\033[1;31m07\033[1;33m] MUDAR SENHA \033[1;33m                [\033[1;31m17\033[1;33m] BAD VPN $stsu\033[1;33m
-[\033[1;31m08\033[1;33m] REMOVER EXPIRADOS \033[1;33m          [\033[1;31m18\033[1;33m] INFO VPS \033[1;33m
-[\033[1;31m09\033[1;33m] RELATORIO DE USUARIOS \033[1;33m      [\033[1;31m19\033[1;33m] MAIS \033[1;32m>\033[1;33m>\033[1;31m>\033[0m\033[1;33m
-[\033[1;31m10\033[1;33m] MODO DE CONEXAO \033[1;33m            [\033[1;31m00\033[1;33m] SAIR \033[1;32m<\033[1;33m<\033[1;31m<\033[0m \033[0m"
+echo -e "\033[1;37m[\033[1;31m01\033[1;37m] • \033[1;33mCRIAR USUARIO \033[1;37m            [\033[1;31m11\033[1;37m] • \033[1;33mSPEEDTEST \033[1;37m
+[\033[1;31m02\033[1;37m] • \033[1;33mCRIAR USUARIO TESTE \033[1;37m      [\033[1;31m12\033[1;37m] • \033[1;33mBANNER \033[1;37m
+[\033[1;31m03\033[1;37m] • \033[1;33mREMOVER USUARIO \033[1;37m          [\033[1;31m13\033[1;37m] • \033[1;33mTRAFEGO \033[1;37m
+[\033[1;31m04\033[1;37m] • \033[1;33mMONITOR ONLINE \033[1;37m           [\033[1;31m14\033[1;37m] • \033[1;33mOTIMIZAR \033[1;37m
+[\033[1;31m05\033[1;37m] • \033[1;33mMUDAR DATA \033[1;37m               [\033[1;31m15\033[1;37m] • \033[1;33mBACKUP \033[1;37m
+[\033[1;31m06\033[1;37m] • \033[1;33mALTERAR LIMITE \033[1;37m           [\033[1;31m16\033[1;37m] • \033[1;33mLIMITER $stsl\033[1;37m
+[\033[1;31m07\033[1;37m] • \033[1;33mMUDAR SENHA \033[1;37m              [\033[1;31m17\033[1;37m] • \033[1;33mBAD VPN $stsu\033[1;37m
+[\033[1;31m08\033[1;37m] • \033[1;33mREMOVER EXPIRADOS \033[1;37m        [\033[1;31m18\033[1;37m] • \033[1;33mINFO VPS \033[1;37m
+[\033[1;31m09\033[1;37m] • \033[1;33mRELATORIO DE USUARIOS \033[1;37m    [\033[1;31m19\033[1;37m] • \033[1;33mMAIS \033[1;31m>\033[1;33m>\033[1;32m>\033[0m\033[1;37m
+[\033[1;31m10\033[1;37m] • \033[1;33mMODO DE CONEXAO \033[1;37m          [\033[1;31m00\033[1;37m] • \033[1;33mSAIR \033[1;32m<\033[1;33m<\033[1;31m<\033[0m \033[0m"
 echo ""
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo ""
-echo -ne "\033[1;32mOQUE DESEJA FAZER \033[1;33m?\033[1;31m?\033[1;37m "; read x
+echo -ne "\033[1;32mOQUE DESEJA FAZER \033[1;33m?\033[1;31m?\033[1;37m : "; read x
 
 case "$x" in 
    1 | 01)
