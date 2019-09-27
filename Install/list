@@ -130,4 +130,5 @@ screen -wipe 1>/dev/null 2>/dev/null
 /etc/autostart
 }
 [[ -d /var/www/html/openvpn ]] && service apache2 restart > /dev/null 2>&1
+rm -rf $HOME/sshplus.sh > /dev/null 2>&1
 rm -rf $HOME/list > /dev/null 2>&1
