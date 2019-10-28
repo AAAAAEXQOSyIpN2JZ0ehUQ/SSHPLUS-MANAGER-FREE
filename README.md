@@ -2,11 +2,15 @@
 
 ![logo](https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/SSHPLUS_MANAGER.jpg)
 
-Manager Script
+**Manager Script**
+
+## :heavy_exclamation_mark: Requerimientos
 
 1 • RECOMENDADO DEBIAN Y UBUNTU. ALGUNOS DE ELLOS TAMBIÉN PUEDEN FUNCIONAR CON CENTOS.
 
 2 • USAR DISTRIBUCION NUEVA O FORMATIADA
+
+## Installation
 
 apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/sshplus.sh; chmod +x sshplus.sh; ./sshplus.sh
 
@@ -21,12 +25,18 @@ wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FR
 
 wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/install_panelweb.sh; chmod +x install_panelweb.sh; ./install_panelweb.sh
 
-================================================================================
+```
+* SIN MINERIA! 
+* SIN KEYS! 
+* VERSION GRATUITA 
+* SIN VIRUS TROJANO (BOTNET) 
+* ARCHIVOS LIBERADOS (DECENCRIPTADOS)
+```
 
-*SIN MINERIA! *SIN KEYS! *VERSION GRATUITA *SIN VIRUS TROJANO (BOTNET) *ARCHIVOS LIBERADOS (DECENCRIPTADOS)
-
-================================================================================
-
+```
 ☆ https://t.me/admmanagerfree ☆
-=================================================
 
+☆ https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ ☆
+```
+
+**By: [ FULL SCRIPTS ⃘⃤꙰✰ ] VPS**
