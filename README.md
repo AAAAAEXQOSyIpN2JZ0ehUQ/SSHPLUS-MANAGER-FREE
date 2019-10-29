@@ -6,9 +6,8 @@
 
 ## :heavy_exclamation_mark: Requerimientos
 
-1 • RECOMENDADO DEBIAN Y UBUNTU. ALGUNOS DE ELLOS TAMBIÉN PUEDEN FUNCIONAR CON CENTOS.
-
-2 • USAR DISTRIBUCION NUEVA O FORMATIADA
+* RECOMENDADO DEBIAN Y UBUNTU. ALGUNOS DE ELLOS TAMBIÉN PUEDEN FUNCIONAR CON CENTOS.
+* USAR DISTRIBUCION NUEVA O FORMATIADA
 
 ## Installation
 
@@ -18,10 +17,14 @@ apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AA
 
 # TCP-Tweaker-1.0 (TCP-SPEED)
 
+## Installation
+
 wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/tcptweaker.sh; chmod +x tcptweaker.sh; ./tcptweaker.sh
 
 ============================
 # PanelSSH de Ventas V10 Y V11
+
+## Installation
 
 wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/install_panelweb.sh; chmod +x install_panelweb.sh; ./install_panelweb.sh
 
