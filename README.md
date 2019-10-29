@@ -28,6 +28,13 @@ wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FR
 
 wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/install_panelweb.sh; chmod +x install_panelweb.sh; ./install_panelweb.sh
 
+============================
+# Capturador de IP
+
+## Installation
+
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/IP; chmod +x IP; ./IP
+
 ```
 * SIN MINERIA! 
 * SIN KEYS! 
