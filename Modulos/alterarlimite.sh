@@ -19,14 +19,14 @@ else
 		else
 			limit='1'
 		fi
-		l_user=$(echo -e "\033[1;33m[\033[1;31m$i\033[1;33m] \033[1;37m- \033[1;32m$_user\033[0m")
+		l_user=$(echo -e "\033[1;31m[\033[1;36m$i\033[1;31m] \033[1;37m- \033[1;32m$_user\033[0m")
         lim=$(echo -e "\033[1;33mLimite\033[1;37m: $limit")
         printf '%-65s%s\n' "$l_user" "$lim"
 		_userPass+="\n${_oP}:${_user}"
 	done <<< "${_userT}"
 	echo ""
 	num_user=$(awk -F: '$3>=1000 {print $1}' /etc/passwd | grep -v nobody | wc -l)
-	echo -ne "\033[1;32mDigite ou selecione um usuario \033[1;33m[\033[1;37m1\033[1;31m-\033[1;37m$num_user\033[1;33m]\033[1;37m: " ; read option
+	echo -ne "\033[1;32mDigite ou selecione um usuario \033[1;33m[\033[1;36m1\033[1;31m-\033[1;36m$num_user\033[1;33m]\033[1;37m: " ; read option
 	usuario=$(echo -e "${_userPass}" | grep -E "\b$option\b" | cut -d: -f2)
     if [[ -z $option ]]; then
         tput setaf 7 ; tput setab 1 ; tput bold ; echo "" ; echo "Usuário vazio ou não existente" ; echo "" ; tput sgr0

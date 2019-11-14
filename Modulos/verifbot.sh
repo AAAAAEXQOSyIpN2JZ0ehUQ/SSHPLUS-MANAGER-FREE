@@ -16,4 +16,3 @@ for arq in $(ls /etc/bot/revenda); do
     	sed -i "s;$_diasR;$_days;" /etc/bot/revenda/$arq/$arq
     }
 done
-

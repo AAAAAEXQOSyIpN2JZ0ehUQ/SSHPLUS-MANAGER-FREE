@@ -41,10 +41,10 @@ fun_botOnOff () {
   	        cd /etc/SSHPlus
   	        screen -dmS bot_plus ./bot $tokenbot $iduser > /dev/null 2>&1
               [[ $(grep -wc "bot_plus" /etc/autostart) = '0' ]] && {
-		          echo -e "cd /etc/SSHPlus && screen -dmS bot_plus ./bot $tokenbot $iduser && cd $HOME" >> /etc/autostart
+		          echo -e "ps x | grep 'bot_plus' | grep -v 'grep' && echo 'ON' || cd /etc/SSHPlus && sudo screen -dmS bot_plus ./bot $tokenbot $iduser && cd $HOME" >> /etc/autostart
 		      } || {
 		          sed -i '/bot_plus/d' /etc/autostart
-		          echo -e "cd /etc/SSHPlus && screen -dmS bot_plus ./bot $tokenbot $iduser && cd $HOME" >> /etc/autostart
+		          echo -e "ps x | grep 'bot_plus' | grep -v 'grep' && echo 'ON' || cd /etc/SSHPlus && sudo screen -dmS bot_plus ./bot $tokenbot $iduser && cd $HOME" >> /etc/autostart
 		      }
 		      [[ $(crontab -l|grep -c "verifbot") = '0' ]] && (crontab -l 2>/dev/null; echo "@daily /bin/verifbot") | crontab -
   	        cd $HOME
@@ -91,4 +91,3 @@ fi
 }
 [[ -f "/etc/SSHPlus/ShellBot.sh" ]] && fun_botOnOff || fun_instbot
 #fim
-

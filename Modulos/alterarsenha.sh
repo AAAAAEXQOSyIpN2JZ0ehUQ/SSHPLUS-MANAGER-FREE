@@ -1,30 +1,36 @@
 #!/bin/bash
 tput setaf 7 ; tput setab 4 ; tput bold ; printf '%35s%s%-10s\n' "Alterar Senha de Usuário" ; tput sgr0
-tput setaf 3 ; tput bold ; echo ""; echo "Lista de usuarios:" ; tput sgr0
 echo ""
-database="/root/usuarios.db"
+echo -e "\033[1;33mLISTA DE USUARIOS E SUAS SENHAS: \033[0m"
+echo""
+_userT=$(awk -F: '$3>=1000 {print $1}' /etc/passwd | grep -v nobody)
 i=0
-while read users
-   do
-       userr="$(echo $users | cut -d' ' -f1)"
-       i=$(expr $i + 1)
-       oP+=$i
-       [[ $i == [1-9] ]] && oP+=" 0$i" && i=0$i
-       oP+=":$userr\n"
-       echo -e "\033[1;33m[\033[1;31m$i\033[1;33m] \033[1;37m- \033[1;32m$userr\033[0m"
-   done < "$database"
-   echo ""
-num_user=$(cat $database | wc -l)
-echo -ne "\033[1;32mSelecione um usuario \033[1;33m[\033[1;37m1\033[1;31m-\033[1;37m$num_user\033[1;33m]\033[1;37m: " ; read option
+unset _userPass
+while read _user; do
+	i=$(expr $i + 1)
+	_oP=$i
+	[[ $i == [1-9] ]] && i=0$i && oP+=" 0$i"
+	if [[ -e "/etc/SSHPlus/senha/$_user" ]]; then
+		_senha="$(cat /etc/SSHPlus/senha/$_user)"
+	else
+		_senha='Null'
+	fi
+	suser=$(echo -e "\033[1;31m[\033[1;36m$i\033[1;31m] \033[1;37m- \033[1;32m$_user\033[0m")
+    ssenha=$(echo -e "\033[1;33mSenha\033[1;37m: $_senha")
+    printf '%-60s%s\n' "$suser" "$ssenha"
+	_userPass+="\n${_oP}:${_user}"
+done <<< "${_userT}"
+num_user=$(awk -F: '$3>=1000 {print $1}' /etc/passwd | grep -v nobody | wc -l)
+echo ""
+echo -ne "\033[1;32mDigite ou selecione um usuario \033[1;33m[\033[1;36m1\033[1;31m-\033[1;36m$num_user\033[1;33m]\033[1;37m: " ; read option
+user=$(echo -e "${_userPass}" | grep -E "\b$option\b" | cut -d: -f2)
 if [[ -z $option ]]
 then
-	tput setaf 7 ; tput setab 1 ; tput bold ; echo "" ; echo "Você digitou um nome vazio ou inválido!" ; echo "" ; tput sgr0
+	tput setaf 7 ; tput setab 1 ; tput bold ; echo "" ; echo "Campo vazio ou inválido!" ; echo "" ; tput sgr0
 	exit 1
-fi
-user=$(echo -e "$oP" | grep -E "\b$option\b" | cut -d: -f2)
-if [[ -z $user ]]
+elif [[ -z $user ]]
 then
-	tput setaf 7 ; tput setab 1 ; tput bold ; echo "" ; echo "Nome vazio ou inválido!" ; echo "" ; tput sgr0
+	tput setaf 7 ; tput setab 1 ; tput bold ; echo "" ; echo "Você digitou um nome vazio ou inválido!" ; echo "" ; tput sgr0
 	exit 1
 else
 	if [[ `grep -c /$user: /etc/passwd` -ne 0 ]]

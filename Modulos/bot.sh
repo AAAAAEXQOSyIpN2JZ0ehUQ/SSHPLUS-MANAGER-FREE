@@ -33,8 +33,9 @@ ajuda ()
         env_msg+="[<b>13</b>] /speedtest = Teste de conexao\n"
         env_msg+="[<b>14</b>] /arquivos = Hospedar Arquivos\n"
         env_msg+="[<b>15</b>] /revenda = Gerenciar Revendas\n"
-        env_msg+="[<b>16</b>] /relatorio = Informacoes\n"
-        env_msg+="[<b>17</b>] /ajuda = Informacoes do bot\n"
+        env_msg+="[<b>16</b>] /autobackup = Backup automatico\n"
+        env_msg+="[<b>17</b>] /relatorio = Informacoes\n"
+        env_msg+="[<b>18</b>] /ajuda = Informacoes do bot\n"
         ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
             --text "$(echo -e $env_msg)" \
             --parse_mode html
@@ -124,7 +125,9 @@ fun_ajuda() {
         env_msg+="<b>20</b> /relatorio - <code>Exibe relatorio dos revendedores</code>\n\n"
         env_msg+="<b>21</b> /criarteste - <code>Cria usuario ssh aleatorio temporario</code>\n\n"
         env_msg+="<b>22</b> /expirados - <code>Remove os usuarios expirados</code>\n\n"
-        env_msg+="<b>22</b> /sobre - <code>creditos / informacoes</code>\n\n"
+        env_msg+="<b>23</b> /autobackup - <code>Ativa o backup automatico</code>\n\n"
+        env_msg+="<b>24</b> /sobre - <code>creditos / informacoes</code>\n\n"
+
         ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
             --text "$(echo -e $env_msg)" \
             --parse_mode html
@@ -504,15 +507,15 @@ otimizer ()
     MEM2=`free|awk '/Mem:/ {print int(100*$3/$2)}'`
     res=`expr $MEM1 - $MEM2`
     local sucess
-    sucess="=×=×=×=×=×=×=×=×=×=×=×=×=×=\n"
-    sucess+="<b>OTIMIZADO COM SUCESSO !</b>\n"
-    sucess+="=×=×=×=×=×=×=×=×=×=×=×=×=×=\n\n"
-    sucess+="<i>Ultilizacao anterior</i> $MEM1%\n\n"
-    sucess+="<b>Total</b> $ram1\n"
-    sucess+="<b>livre</b> $ram3\n"
-    sucess+="<b>Em uso</b> $ram2\n"
-    sucess+="<i>Ultilizacao atual</i> $MEM2%\n\n"
-    sucess+="<b>Economia de:</b> $res%"
+        sucess="=×=×=×=×=×=×=×=×=×=×=×=×=×=\n"
+        sucess+="<b>OTIMIZADO COM SUCESSO !</b>\n"
+        sucess+="=×=×=×=×=×=×=×=×=×=×=×=×=×=\n\n"
+        sucess+="<i>Ultilizacao anterior</i> $MEM1%\n\n"
+        sucess+="<b>Total</b> $ram1\n"
+        sucess+="<b>livre</b> $ram3\n"
+        sucess+="<b>Em uso</b> $ram2\n"
+        sucess+="<i>Ultilizacao atual</i> $MEM2%\n\n"
+        sucess+="<b>Economia de:</b> $res%"
     ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
     --text "$(echo -e $sucess)" \
     --parse_mode html
@@ -532,11 +535,20 @@ backup_users ()
       msg="=×=×=×=×=×=×=×=×=×=×=×=×=×=\n"
       msg+="<b>BACKUP DOS USUÁRIOS </b>♻️\n"
       msg+="=×=×=×=×=×=×=×=×=×=×=×=×=×=\n\n"
-    ShellBot.sendMessage --chat_id ${message_from_id[$id]} \
+    ShellBot.sendMessage --chat_id ${id_admin} \
     --text "$(echo -e $msg)" \
     --parse_mode html
-    ShellBot.sendDocument --chat_id ${message_from_id[$id]} \
+    ShellBot.sendDocument --chat_id ${id_admin} \
     --document "@/root/backup.vps"
+    return 0
+}
+
+backup_auto ()
+{
+    ShellBot.sendDocument --chat_id ${id_admin} \
+    --document "@/etc/SSHPlus/backups/backup.vps" \
+    --caption "$(echo -e "♻️ BACKUP AUTOMATICO ♻️")"
+    rm /etc/SSHPlus/backups/backup.vps
     return 0
 }
 
@@ -558,12 +570,12 @@ speed_test ()
     upl=$(cat speed | sed -n '9 p' |awk -F :  {'print $NF'})
     lnk=$(cat speed | sed -n '10 p' |awk {'print $NF'})
     local msg
-    msg="=×=×=×=×=×=×=×=×=×=×=×=×=×=\n"
-    msg+="<b>🚀 VELOCIDADE DO SERVIDOR 🚀</b>\n"
-    msg+="=×=×=×=×=×=×=×=×=×=×=×=×=×=\n\n"
-    msg+="<b>PING/LATENCIA:</b>$png\n"
-    msg+="<b>DOWNLOAD:</b>$down\n"
-    msg+="<b>UPLOAD:</b>$upl\n"
+        msg="=×=×=×=×=×=×=×=×=×=×=×=×=×=\n"
+        msg+="<b>🚀 VELOCIDADE DO SERVIDOR 🚀</b>\n"
+        msg+="=×=×=×=×=×=×=×=×=×=×=×=×=×=\n\n"
+        msg+="<b>PING/LATENCIA:</b>$png\n"
+        msg+="<b>DOWNLOAD:</b>$down\n"
+        msg+="<b>UPLOAD:</b>$upl\n"
     ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
     --text "$(echo -e $msg)" \
     --parse_mode html
@@ -592,7 +604,8 @@ sobremim() {
         msg="=×=×=×=×=×=×=×=×=×=×=×=×=×=\n"
         msg+="<b>🤖 BOT SSHPLUS MANAGER 🤖</b>\n"
         msg+="=×=×=×=×=×=×=×=×=×=×=×=×=×=\n\n"
-        msg+="<b>Desenvolvido por:</b> @twossh\n"
+        msg+="<b>Desenvolvido por:</b> @crazy_vpn\n"
+        msg+="<b>Canal Oficial:</b> @SSHPLUS\n\n"
         msg+="Fui criado com o propósito de fornecer informações e ferramentas para gestao de vps 🐧 GNU/Linux 🐧 com foco em uso VPN\n\n"
         msg+="<b>Menu:</b> /menu\n"
         ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
@@ -603,19 +616,19 @@ sobremim() {
 
 fun_verif_limit() {
     _ClientR=$1
-    _Dir_users="/etc/bot/revenda/$_ClientR/usuarios"
+    _Dir_users1="/etc/bot/revenda/$_ClientR/usuarios"
     _limTotal1=$(grep 'Limite' /etc/bot/revenda/$_ClientR/$_ClientR| awk '{print $NF}')
     _lim2='0'
-    for i in $(ls $_Dir_users); do
-        var3=$(cat $_Dir_users/$i| awk  -F : {'print $4'})
+    for i in $(ls $_Dir_users1); do
+        var3=$(cat $_Dir_users1/$i| awk  -F : {'print $4'})
         _lim2=$(echo "${_lim2} + ${var3}"| bc)
     done
     _result1=$(echo ${_lim2})
-    _restant=$(($_limTotal1 - $_result1))
+    _restant1=$(($_limTotal1 - $_result1))
     [[ "$_result1" -ge "$_limTotal1" ]] && {
         verify='1'
         ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
-        --text "$(echo -e "❌ Vc nao tem limite suficiente\n\nLimite restante: $_restant ")" \
+        --text "$(echo -e "❌ Vc nao tem limite suficiente\n\nLimite restante: $_restant1 ")" \
         --parse_mode html
         return 0
     }
@@ -744,7 +757,7 @@ criar_user ()
     validade=$(echo "$data" | awk -F'/' '{print $2FS$1FS$3}' | xargs -i date -d'{}' +%Y/%m/%d)
     if [[ "${message_from_id[$id]}" = "$id_admin" ]]; then
         useradd -M -N -s /bin/false $usuario -e $validade > /dev/null 2>&1
-        (echo "$senha";echo "$senha") | passwd $usuario > /dev/null 2>&1
+        (echo "${senha}";echo "${senha}") | passwd "${usuario}" > /dev/null 2>&1
         echo "$usuario:$senha:$info_data:$limite" > /etc/bot/info-users/$usuario
     elif [[ -d /etc/bot/revenda/${message_from_username} ]]; then
         #funcao pra contar o limite
@@ -753,7 +766,7 @@ criar_user ()
             return 0
         } || {
             useradd -M -N -s /bin/false $usuario -e $validade > /dev/null 2>&1
-            (echo "$senha";echo "$senha") | passwd $usuario > /dev/null 2>&1
+            (echo "${senha}";echo "${senha}") | passwd "${usuario}" > /dev/null 2>&1
             echo "$usuario:$senha:$info_data:$limite" > /etc/bot/revenda/${message_from_username}/usuarios/$usuario
         }
     else
@@ -1038,8 +1051,9 @@ criar_rev() {
     mkdir /etc/bot/revenda/"$u_rev"
     mkdir /etc/bot/revenda/"$u_rev"/usuarios
     touch /etc/bot/revenda/"$u_rev"/$u_rev
-    echo -e "Limite: $l_rev\nDias: $d_rev" > /etc/bot/revenda/"$u_rev"/$u_rev   
-    sed -i "s;$d_rev;$(date "+%d/%m/%Y" -d "+$d_rev days");" $file_rev
+    echo -e "Limite: $l_rev\nDias: $d_rev" > /etc/bot/revenda/"$u_rev"/$u_rev
+    sed -i '$d' $file_rev
+    echo -e "Vencimento: $(date "+%d/%m/%Y" -d "+$d_rev days")" >> $file_rev
 }
 
 fun_del_rev() {
@@ -1255,6 +1269,7 @@ relatorio_rev() {
         echo -e "RELATORIO DOS REVENDEDORS\n\nTotal: $t_rev  -  $(printf 'Data: %(%d/%m/%Y)T\n')\n=×=×=×=×=×=×=×=×=×=×=×=×=×=×=×=" > /tmp/Relatorio.txt
         for arq in $(ls /etc/bot/revenda); do
             _nomeR=$(ls /etc/bot/revenda/$arq| grep -v 'usuarios')
+            unset _limiteR
             _limiteR=$(grep 'Limite' /etc/bot/revenda/$_nomeR/$_nomeR| awk '{print $NF}')
             _diasR=$(grep 'Dias' /etc/bot/revenda/$_nomeR/$_nomeR| awk '{print $NF}')
             [[ "$(ls /etc/bot/revenda/$_nomeR/usuarios| wc -l)" != '0' ]] && {
@@ -1287,11 +1302,15 @@ relatorio_rev() {
             return 0
         }
     elif [[ -d /etc/bot/revenda/${message_from_username} ]]; then
-         on_user_rev=/tmp/online.$(echo $RANDOM)
-         touch $on_user_rev
+        unset _limTotal4
+        unset _lim1
+        unset _Lim3
+        on_user_rev=/tmp/online.$(echo $RANDOM)
+        touch $on_user_rev
         _Dir_users="/etc/bot/revenda/${message_from_username}/usuarios"
-        _limTotal3=$(grep 'Limite' /etc/bot/revenda/${message_from_username}/${message_from_username}| awk '{print $NF}')
+        _limTotal4=$(grep 'Limite' /etc/bot/revenda/${message_from_username}/${message_from_username}| awk '{print $NF}')
         _cont_users=$(ls $_Dir_users|wc -l)
+        unset _lim1
         _lim1='0'
         for i in $(ls $_Dir_users); do
             var2=$(cat $_Dir_users/$i| awk  -F : {'print $4'})
@@ -1302,13 +1321,13 @@ relatorio_rev() {
         done
         [[ $(paste -s -d + $on_user_rev | bc) -gt '0' ]] && _on="$(paste -s -d + $on_user_rev | bc)" || _on=0
         _Lim3=$(echo ${_lim1})
-        _restante3=$(($_limTotal3 - $_Lim3))
+        _restante4=$(($_limTotal4 - $_Lim3))
         local msg
         msg="=×=×=×=×=×=×=×=×=×=×=×=×=×=\n"
         msg+="<b>📊 RELATORIO | INFORMACOES</b>\n"
         msg+="=×=×=×=×=×=×=×=×=×=×=×=×=×=\n\n"
-        msg+="<b>Limite De Logins:</b> $_limTotal3\n"
-        msg+="<b>Limite Restante:</b> $_restante3\n"
+        msg+="<b>Limite De Logins:</b> $_limTotal4\n"
+        msg+="<b>Limite Restante:</b> $_restante4\n"
         msg+="<b>Limite ultilizado:</b> $_Lim3\n"
         msg+="<b>Usuarios criados:</b> $_cont_users\n"
         msg+="<b>Usuarios Online:</b> $_on\n\n"
@@ -1394,8 +1413,9 @@ fun_teste (){
         echo "$usuario:$senha:$ex_date:$limite" > /etc/bot/revenda/${message_from_username}/usuarios/$usuario
         dir_teste="/etc/bot/revenda/${message_from_username}/usuarios/$usuario"
     fi
-    useradd -M -N -s /bin/false $usuario
-    (echo "$senha";echo "$senha") | passwd $usuario
+    tuserdate=$(date '+%C%y/%m/%d' -d " +2 days")
+    useradd -M -N -s /bin/false $usuario -e $tuserdate > /dev/null 2>&1
+    (echo "$senha";echo "$senha") | passwd $usuario > /dev/null 2>&1
     echo "$senha" > /etc/SSHPlus/senha/$usuario
     echo "$usuario $limite" >> /root/usuarios.db
     echo "#!/bin/bash
@@ -1413,8 +1433,8 @@ if [[ "$(ls /etc/bot/arquivos| wc -l)" != '0' ]]; then
     for arqv in $(ls /etc/bot/arquivos); do
         ShellBot.sendDocument --chat_id ${message_from_id[$id]} \
         --document "@/etc/bot/arquivos/$arqv" \
-        --caption "$(echo -e "✅ Criado com sucesso ✅\n\nUSUARIO: $usuario\nSENHA: 1234\n\n⏳ Expira em: $t_time $hrs")"
-        sleep 0.3
+        --caption "$(echo -e "✅ Criado com sucesso ✅\n\nUSUARIO: $usuario\nSENHA: 1234\n\n⏳ Expira em: $t_time $hrs")" \
+        sleep 0.5
     done
     return 0
 else
@@ -1488,10 +1508,47 @@ fun_exp_user() {
     fi
 }
 
+fun_backauto () {
+    [[ "${message_from_id[$id]}" = "$id_admin" ]] && {
+        back_opc=$1
+        if [[ -z $back_opc ]]; then
+            ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+            --text "$(echo -e "⚠️ Siga o exemplo !\n\n[EX:] /autobackup ativar\n[EX:] /autobackup desativar")" \
+            --parse_mode html
+            return 0
+        fi
+        if [[ "$back_opc" = "ativar" ]]; then
+            [[ $(crontab -l|grep -c "userbackup") = '0' ]] && (crontab -l 2>/dev/null; echo "0 */6 * * * /bin/userbackup 1") | crontab -
+            [[ ! -d /etc/SSHPlus/backups ]] && mkdir /etc/SSHPlus/backups
+            ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+            --text "$(echo -e "♻️ BACKUP AUTOMATICO ♻️\n\nATIVADO COM SUCESSO ✅")" \
+            --parse_mode html
+            return 0
+        elif [[ "$back_opc" = "desativar" ]]; then
+            [[ $(crontab -l|grep -c "userbackup") != '0' ]] && crontab -l | grep -v 'userbackup' | crontab -
+            [[ -d /etc/SSHPlus/backups ]] && rm -rf /etc/SSHPlus/backups
+            ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+            --text "$(echo -e "♻️ BACKUP AUTOMATICO ♻️\n\nDESATIVADO COM SUCESSO ✅")" \
+            --parse_mode html
+            return 0
+        else
+            ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+            --text "$(echo -e "❌ Erro... ⚠️ Siga o exemplo !\n\n[EX:] /autobackup ativar\n[EX:] /autobackup desativar")" \
+            --parse_mode html
+            return 0
+        fi
+    }
+}
+
 while :
 do
+   [[ -d "/etc/SSHPlus/backups" ]] && {
+    [[ -e "/etc/SSHPlus/backups/backup.vps" ]] && {
+        backup_auto
+    }
+   }
     #Obtem as atualizações
-    ShellBot.getUpdates --limit 100 --offset $(ShellBot.OffsetNext) --timeout 30
+    ShellBot.getUpdates --limit 100 --offset $(ShellBot.OffsetNext) --timeout 35
     #Lista o índice das atualizações
     for id in $(ShellBot.ListUpdates)
     do
@@ -1535,6 +1592,7 @@ do
                 [[ "${comando[0]}" = "/relatorio" ]] && relatorio_rev
                 [[ "${comando[0]}" = "/criarteste" ]] && fun_add_teste #"${comando[1]}"
                 [[ "${comando[0]}" = "/expirados" ]] && fun_exp_user
+                [[ "${comando[0]}" = "/autobackup" ]] && fun_backauto "${comando[1]}"
             ;;
         esac
         fi
@@ -1642,7 +1700,7 @@ do
                         }
                         ;;
                     '📥 ARQUIVOS DISPONIVEIS 📥\n\nDeseja baixar? Sim ou Nao?:')
-                        [[ ${message_text[$id]} != ?(+|-)+([a-z]) ]] && {
+                        [[ ${message_text[$id]} != ?(+|-)+([A-Za-z]) ]] && {
                             ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
                                 --text "$(echo -e "❌ Opcao Invalida ❌\n\n⚠️ Ultilize apenas letras [EX: sim ou nao]")" \
                                 --parse_mode html
@@ -1651,7 +1709,7 @@ do
                                 --parse_mode markdown
                             break
                         }
-                        [[ "${message_text[$id]}" == @(Sim|sim|S|s|SIM) ]] && {
+                        [[ "${message_text[$id]}" = @(Sim|sim|SIM) ]] && {
                                 msg_cli="≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠\n"
                                 msg_cli+="<b>ARQUIVOS PRE-CONFIGURADOS </b>❗\n"
                                 msg_cli+="≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠\n\n"
@@ -1674,7 +1732,7 @@ do
                     'Informe o Numero do Arquivo:')
                         [[ ${message_text[$id]} != ?(+|-)+([0-9]) ]] && {
                             ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
-                                --text "$(echo -e "❌ Opcao Invalida ❌! \n\n⚠️ Ultilize apenas numeros [EX: 1]")" \
+                                --text "$(echo -e "❌ Opcao Invalida ❌ \n\n⚠️ Ultilize apenas numeros [EX: 1]")" \
                                 --parse_mode html
                             ShellBot.sendMessage --chat_id ${message_from_id[$id]} \
                                 --text "✅ *Criado com sucesso.* ✅\n\nIP: $(cat /etc/IP)\n$(< $CAD_ARQ)" \
@@ -2039,4 +2097,3 @@ do
     done
 done
 #FIM
-

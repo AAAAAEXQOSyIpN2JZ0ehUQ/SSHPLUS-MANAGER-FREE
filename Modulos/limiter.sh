@@ -51,15 +51,13 @@ fun_multilogin () {
 			[[ "$conssh" -gt "$limit" ]] && {
 				pidkill=$(($conssh - $limit))
 				for pidssh in `(ps -u $user |grep sshd| tail -n $pidkill |awk '{print $1}')`; do
-					kill -9 $pidssh
+					kill -9 "$pidssh"
 				done
 	        }
-	        sleep 3
 	    done < "$database"
 	    ) &
 }
 while true; do
-fun_multilogin
-sleep 7
+	fun_multilogin
+	sleep 10
 done
-

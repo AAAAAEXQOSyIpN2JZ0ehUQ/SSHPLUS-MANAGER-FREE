@@ -16,22 +16,22 @@ while read user; do
 	expire="$(chage -l $user | grep -E "Account expires" | cut -d ' ' -f3-)"
 	if [[ $expire == "never" ]]
 	then
-		echo -e "\033[1;33m[\033[1;31m$i\033[1;33m] \033[1;37m- \033[1;32m$user       \033[1;33m00/00/0000     S/DATA\033[0m"
+		echo -e "\033[1;31m[\033[1;36m$i\033[1;31m] \033[1;37m- \033[1;32m$user     \033[1;33m00/00/0000   S/DATA\033[0m"
 	else
 		databr="$(date -d "$expire" +"%Y%m%d")"
 		hoje="$(date -d today +"%Y%m%d")"
 		if [ $hoje -ge $databr ]
 		then
-			_user=$(echo -e "\033[1;33m[\033[1;31m$i\033[1;33m] \033[1;37m- \033[1;32m$user\033[1;37m")
-			datanormal="$(date -d"$expire" '+%d/%m/%Y')"
+			_user=$(echo -e "\033[1;31m[\033[1;36m$i\033[1;31m] \033[1;37m- \033[1;32m$user\033[1;37m")
+			datanormal="$(echo -e "\033[1;31m$(date -d"$expire" '+%d/%m/%Y')")"
 			expired=$(echo -e "\033[1;31mVENCEU\033[0m")
-			printf '%-60s%-15s%s\n' "$_user" "$datanormal" "$expired"
+			printf '%-62s%-20s%s\n' "$_user" "$datanormal" "$expired"
 			echo "exp" > /tmp/exp
 		else
-			_user=$(echo -e "\033[1;33m[\033[1;31m$i\033[1;33m] \033[1;37m- \033[1;32m$user\033[1;37m")
-			datanormal="$(date -d"$expire" '+%d/%m/%Y')"
+			_user=$(echo -e "\033[1;31m[\033[1;36m$i\033[1;31m] \033[1;37m- \033[1;32m$user\033[1;37m")
+			datanormal="$(echo -e "\033[1;33m$(date -d"$expire" '+%d/%m/%Y')")"
 			ative=$(echo -e "\033[1;32mVALIDO\033[0m")
-			printf '%-60s%-15s%s\n' "$_user" "$datanormal" "$ative"
+			printf '%-62s%-20s%s\n' "$_user" "$datanormal" "$ative"
 		fi
 	fi
 	_userPass+="\n${_oP}:${user}"
@@ -43,7 +43,7 @@ then
 	rm /tmp/exp
 fi
 num_user=$(awk -F: '$3>=1000 {print $1}' /etc/passwd | grep -v nobody | wc -l)
-echo -ne "\033[1;32mDigite ou selecione um usuario \033[1;33m[\033[1;37m1\033[1;31m-\033[1;37m$num_user\033[1;33m]\033[1;37m: " ; read option
+echo -ne "\033[1;32mDigite ou selecione um usuario \033[1;33m[\033[1;36m1\033[1;33m-\033[1;36m$num_user\033[1;33m]\033[1;37m: " ; read option
 if [[ -z $option ]]
 then
 	echo ""
@@ -92,7 +92,6 @@ else
 						exit 1
 					else
 						chage -E $sysdate $usuario
-						uexpired
 						echo ""
 						tput setaf 7 ; tput setab 4 ; tput bold ; echo "Sucesso Usuário $usuario nova data: $udata " ; tput sgr0
 						echo ""

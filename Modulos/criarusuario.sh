@@ -31,7 +31,9 @@ fi
 if [[ -e /etc/openvpn/server.conf ]]; then
   _Port=$(sed -n '1 p' /etc/openvpn/server.conf | cut -d' ' -f2)
   hst=$(sed -n '8 p' /etc/openvpn/client-common.txt | awk {'print $4'})
-  rmt=$(sed -n '7 p' /etc/openvpn/client-common.txt | awk {'print $2'})
+  rmt=$(sed -n '7 p' /etc/openvpn/client-common.txt)
+  hedr=$(sed -n '8 p' /etc/openvpn/client-common.txt)
+  prxy=$(sed -n '9 p' /etc/openvpn/client-common.txt)
   rmt2='/SSHPLUS?'
   rmt3='www.vivo.com.br 8088'
   prx='200.142.130.104'
@@ -41,6 +43,7 @@ if [[ -e /etc/openvpn/server.conf ]]; then
   vivo4="navegue.vivo.com.br/controle/"
   vivo5="www.vivo.com.br"
   oi="d1n212ccp6ldpw.cloudfront.net"
+  bypass="net_gateway"
   cert01="/etc/openvpn/client-common.txt"
   if [[ "$hst" == "$vivo1" ]]; then
     Host="Portal Recarga"
@@ -54,6 +57,8 @@ if [[ -e /etc/openvpn/server.conf ]]; then
     Host="Vivo MMS"
   elif [[ "$hst" == "$oi" ]]; then
     Host="Oi"
+  elif [[ "$hst" == "$bypass" ]]; then
+    Host="Modo Bypass"
   else
     Host="Desconhecido"
   fi
@@ -86,17 +91,18 @@ tput cnorm
 }
 fun_edithost () {
   clear
-  echo -e "\E[44;1;37m         ALTERAR HOST OVPN           \E[0m"
+  echo -e "\E[44;1;37m          ALTERAR HOST OVPN            \E[0m"
   echo ""
   echo -e "\033[1;33mHOST EM USO\033[1;37m: \033[1;32m$Host"
   echo ""
-  echo -e "\033[1;33m[\033[1;31m1\033[1;33m] \033[1;33mVIVO RECARGA"
-  echo -e "\033[1;33m[\033[1;31m2\033[1;33m] \033[1;33mVIVO NAVEGUE PRE"
-  echo -e "\033[1;33m[\033[1;31m3\033[1;33m] \033[1;33mVIVO MMS \033[1;31m[\033[1;37mAPN: \033[1;32mmms.vivo.com.br\033[1;31m]"
-  echo -e "\033[1;33m[\033[1;31m4\033[1;33m] \033[1;33mHOST OI 4G \033[1;31m[\033[1;32mAlgumas Regioes\033[1;31m]"
-  echo -e "\033[1;33m[\033[1;31m5\033[1;33m] \033[1;33mTODOS HOSTS \033[1;31m[\033[1;32m1 Ovpn de cada\033[1;31m]" 
-  echo -e "\033[1;33m[\033[1;31m6\033[1;33m] \033[1;33mEDITAR MANUALMENTE"
-  echo -e "\033[1;33m[\033[1;31m0\033[1;33m] \033[1;33mVOLTAR"
+  echo -e "\033[1;31m[\033[1;36m1\033[1;31m] \033[1;33mVIVO RECARGA"
+  echo -e "\033[1;31m[\033[1;36m2\033[1;31m] \033[1;33mVIVO NAVEGUE PRE"
+  echo -e "\033[1;31m[\033[1;36m3\033[1;31m] \033[1;33mVIVO MMS \033[1;31m[\033[1;37mAPN: \033[1;32mmms.vivo.com.br\033[1;31m]"
+  echo -e "\033[1;31m[\033[1;36m4\033[1;31m] \033[1;33mHOST OI 4G \033[1;31m[\033[1;32mAlgumas Regioes\033[1;31m]"
+  echo -e "\033[1;31m[\033[1;36m5\033[1;31m] \033[1;33mMODO BYPASS \033[1;31m[\033[1;32mopen + http injector\033[1;31m]"
+  echo -e "\033[1;31m[\033[1;36m6\033[1;31m] \033[1;33mTODOS HOSTS \033[1;31m[\033[1;32m1 Ovpn de cada\033[1;31m]" 
+  echo -e "\033[1;31m[\033[1;36m7\033[1;31m] \033[1;33mEDITAR MANUALMENTE"
+  echo -e "\033[1;31m[\033[1;36m0\033[1;31m] \033[1;33mVOLTAR"
   echo ""
   echo -ne "\033[1;32mQUAL HOST DESEJA ULTILIZAR \033[1;33m?\033[1;37m "; read respo
   if [[ -z "$respo" ]]; then
@@ -110,18 +116,9 @@ fun_edithost () {
     echo -e "\033[1;32mALTERANDO HOST!\033[0m"
     echo ""
     fun_althost () {
-      if [[ "$rmt" = "$oi" ]]; then
-        sed -i "7"d /etc/openvpn/client-common.txt
-        sed -i "7i\remote $rmt2 $_Port" /etc/openvpn/client-common.txt
-        sed -i "s;$hst;$vivo1;" /etc/openvpn/client-common.txt
-      elif [[ "$rmt 8088" = "$rmt3" ]]; then
-        sed -i "7"d /etc/openvpn/client-common.txt
-        sed -i "7i\remote $rmt2 $_Port" /etc/openvpn/client-common.txt
-        sed -i "s;$hst;$vivo1;" /etc/openvpn/client-common.txt
-        sed -i "s;http-proxy $prx 80;http-proxy $IP 80;" /etc/openvpn/client-common.txt
-      else
-        sed -i "s;$hst;$vivo1;" /etc/openvpn/client-common.txt
-      fi
+        sed -i "s;$rmt;remote $rmt2 $_Port;" $cert01
+        sed -i "s;$hedr;http-proxy-option CUSTOM-HEADER Host $vivo1;" $cert01
+        sed -i "s;$prxy;http-proxy $IP 80;" $cert01
     }
     fun_bar 'fun_althost'
     echo ""
@@ -133,18 +130,9 @@ fun_edithost () {
     echo -e "\033[1;32mALTERANDO HOST!\033[0m"
     echo ""
     fun_althost2 () {
-      if [[ "$rmt" = "$oi" ]]; then
-        sed -i "7"d /etc/openvpn/client-common.txt
-        sed -i "7i\remote $rmt2 $_Port" /etc/openvpn/client-common.txt
-        sed -i "s;$hst;$vivo3;" /etc/openvpn/client-common.txt
-      elif [[ "$rmt 8088" = "$rmt3" ]]; then
-        sed -i "7"d /etc/openvpn/client-common.txt
-        sed -i "7i\remote $rmt2 $_Port" /etc/openvpn/client-common.txt
-        sed -i "s;$hst;$vivo3;" /etc/openvpn/client-common.txt
-        sed -i "s;http-proxy $prx 80;http-proxy $IP 80;" /etc/openvpn/client-common.txt
-      else
-        sed -i "s;$hst;$vivo3;" /etc/openvpn/client-common.txt
-      fi
+      sed -i "s;$rmt;remote $rmt2 $_Port;" $cert01
+      sed -i "s;$hedr;http-proxy-option CUSTOM-HEADER Host $vivo3;" $cert01
+      sed -i "s;$prxy;http-proxy $IP 80;" $cert01
     }
     fun_bar 'fun_althost2'
     echo ""
@@ -156,17 +144,9 @@ fun_edithost () {
     echo -e "\033[1;32mALTERANDO HOST!\033[0m"
     echo ""
     fun_althost3 () {
-      if [[ "$rmt" = "$oi" ]]; then
-        sed -i "7"d /etc/openvpn/client-common.txt
-        sed -i "7i\remote $rmt3" /etc/openvpn/client-common.txt
-        sed -i "s;$hst;$IP:$_Port;" /etc/openvpn/client-common.txt
-        sed -i "s;http-proxy $IP 80;http-proxy $prx 80;" /etc/openvpn/client-common.txt
-      else
-        sed -i "7"d /etc/openvpn/client-common.txt
-        sed -i "7i\remote $rmt3" /etc/openvpn/client-common.txt
-        sed -i "s;$hst;$IP:$_Port;" /etc/openvpn/client-common.txt
-        sed -i "s;http-proxy $IP 80;http-proxy $prx 80;" /etc/openvpn/client-common.txt
-      fi
+      sed -i "s;$rmt;remote $rmt3;" $cert01
+      sed -i "s;$hedr;http-proxy-option CUSTOM-HEADER Host $IP:$_Port;" $cert01
+      sed -i "s;$prxy;http-proxy $prx 80;" $cert01
     }
     fun_bar 'fun_althost3'
     echo ""
@@ -178,18 +158,9 @@ fun_edithost () {
     echo -e "\033[1;32mALTERANDO HOST!\033[0m"
     echo ""
     fun_althost4 () {
-      if [[ "$rmt" = "$rmt2" ]]; then
-        sed -i "7"d /etc/openvpn/client-common.txt
-        sed -i "7i\remote $oi $_Port" /etc/openvpn/client-common.txt
-        sed -i "s;$hst;$oi;" /etc/openvpn/client-common.txt
-      elif [[ "$rmt 8088" = "$rmt3" ]]; then
-        sed -i "7"d /etc/openvpn/client-common.txt
-        sed -i "7i\remote $oi $_Port" /etc/openvpn/client-common.txt
-        sed -i "s;$hst;$oi;" /etc/openvpn/client-common.txt
-        sed -i "s;http-proxy $prx 80;http-proxy $IP 80;" /etc/openvpn/client-common.txt
-      else
-        sed -i "s;$hst;$oi;" /etc/openvpn/client-common.txt
-      fi
+      sed -i "s;$rmt;remote $oi $_Port;" $cert01
+      sed -i "s;$hedr;http-proxy-option CUSTOM-HEADER Host $oi;" $cert01
+      sed -i "s;$prxy;http-proxy $IP 80;" $cert01
     }
     fun_bar 'fun_althost4'
     echo ""
@@ -197,35 +168,46 @@ fun_edithost () {
     fun_geraovpn
     sleep 1.5
   elif [[ "$respo" = '5' ]]; then
+    echo ""
+    echo -e "\033[1;32mALTERANDO HOST!\033[0m"
+    echo ""
+    fun_althost5 () {
+      sed -i "s;$rmt;remote $IP $_Port;" $cert01
+      sed -i "s;$hedr;route $IP 255.255.255.255 net_gateway;" $cert01
+      sed -i "s;$prxy;http-proxy 127.0.0.1 8989;" $cert01
+    }
+    fun_bar 'fun_althost5'
+    echo ""
+    echo -e "\033[1;32mHOST ALTERADO COM SUCESSO!\033[0m"
+    fun_geraovpn
+    sleep 1.5
+  elif [[ "$respo" = '6' ]]; then
       [[ ! -e "$HOME/$username.ovpn" ]] && fun_geraovpn
       echo ""
       echo -e "\033[1;32mALTERANDO HOSTS!\033[0m"
       echo ""
       fun_packhost () {
-        _hosts=("$vivo1" "$vivo2" "$vivo3" "$vivo4" "$vivo5")
-        [[ ! -d "$HOME/OVPN" ]] && mkdir $HOME/OVPN
-        for host in ${_hosts[@]}; do
-          i=$(( $i + 1 ))
-          if [[ "$(sed -n '7 p' $HOME/$username.ovpn | awk {'print $2'})" = "$oi" ]]; then
-            sed -i "7"d $HOME/$username.ovpn
-            sed -i "7i\remote $rmt2 $_Port" $HOME/$username.ovpn
-          fi
-          sed -i "8"d $HOME/$username.ovpn
-          sed -i "8i\http-proxy-option CUSTOM-HEADER Host $host" $HOME/$username.ovpn
-          sleep 0.3
-          cp $HOME/$username.ovpn /root/OVPN/$username$i.ovpn
-        done
-        hst3=$(sed -n '8 p' $HOME/$username.ovpn | awk {'print $4'})
-        sed -i "7"d $HOME/$username.ovpn
-        sed -i "7i\remote $oi $_Port" $HOME/$username.ovpn
-        sed -i "s;$hst3;$oi;" $HOME/$username.ovpn
-        cp $HOME/$username.ovpn $HOME/OVPN/$username-oi.ovpn
-        sleep 1
-        sed -i "7"d $HOME/$username.ovpn
-        sed -i "7i\remote $rmt3" $HOME/$username.ovpn
-        sed -i "s;$oi;$IP:$_Port;" $HOME/$username.ovpn
-        sed -i "s;http-proxy $IP 80;http-proxy $prx 80;" $HOME/$username.ovpn
-        cp $HOME/$username.ovpn $HOME/OVPN/$username-MMS.ovpn
+        [[ ! -d "$HOME/OVPN" ]] && mkdir $HOME/OVPN 
+        sed -i "7,9"d $HOME/$username.ovpn
+        sleep 0.5
+        sed -i "7i\remote $rmt2 $_Port\nhttp-proxy-option CUSTOM-HEADER Host $vivo1\nhttp-proxy $IP 80" $HOME/$username.ovpn
+        cp $HOME/$username.ovpn /root/OVPN/$username-vivo1.ovpn
+        sed -i "8"d $HOME/$username.ovpn
+        sleep 0.5
+        sed -i "8i\http-proxy-option CUSTOM-HEADER Host $vivo3" $HOME/$username.ovpn
+        cp $HOME/$username.ovpn /root/OVPN/$username-vivo2.ovpn        
+        sed -i "7,9"d $HOME/$username.ovpn
+        sleep 0.5
+        sed -i "7i\remote $rmt3\nhttp-proxy-option CUSTOM-HEADER Host $IP:$_Port\nhttp-proxy $prx 80" $HOME/$username.ovpn
+        cp $HOME/$username.ovpn /root/OVPN/$username-vivo3.ovpn        
+        sed -i "7,9"d $HOME/$username.ovpn
+        sleep 0.5
+        sed -i "7i\remote $oi $_Port\nhttp-proxy-option CUSTOM-HEADER Host $oi\nhttp-proxy $IP 80" $HOME/$username.ovpn
+        cp $HOME/$username.ovpn /root/OVPN/$username-oi.ovpn
+        sed -i "7,9"d $HOME/$username.ovpn
+        sleep 0.5
+        sed -i "7i\remote $IP $_Port\nroute $IP 255.255.255.255 net_gateway\nhttp-proxy 127.0.0.1 8989" $HOME/$username.ovpn
+        cp $HOME/$username.ovpn /root/OVPN/$username-bypass.ovpn
         cd $HOME/OVPN && zip $username.zip *.ovpn > /dev/null 2>&1 && cp $username.zip $HOME/$username.zip
         cd $HOME && rm -rf /root/OVPN > /dev/null 2>&1
       }
@@ -233,7 +215,7 @@ fun_edithost () {
       echo ""
       echo -e "\033[1;32mALTERADO COM SUCESSO!\033[0m"
       sleep 1.5
-  elif [[ "$respo" = '6' ]]; then
+  elif [[ "$respo" = '7' ]]; then
     echo ""
     echo -e "\033[1;32mALTERANDO ARQUIVO OVPN!\033[0m"
     echo ""
