@@ -39,7 +39,7 @@ echo "America/Mexico_City" > /etc/timezone
 ln -fs /usr/share/zoneinfo/America/Mexico_City /etc/localtime > /dev/null 2>&1
 dpkg-reconfigure --frontend noninteractive tzdata > /dev/null 2>&1
 clear
-echo -e "\E[44;1;37m           PAINEL SSHPLUS v10           \E[0m"
+echo -e "\E[44;1;37m           PANEL SSHPLUS WEB v10           \E[0m"
 echo ""
 echo -e "                \033[1;31mATENCION"
 echo ""
@@ -173,7 +173,7 @@ echo "America/Mexico_City" > /etc/timezone
 ln -fs /usr/share/zoneinfo/America/Mexico_City /etc/localtime > /dev/null 2>&1
 dpkg-reconfigure --frontend noninteractive tzdata > /dev/null 2>&1
 clear
-echo -e "\E[44;1;37m           PANEL SSHPLUS v11          \E[0m"
+echo -e "\E[44;1;37m           PANEL SSHPLUS WEB v11          \E[0m"
 echo ""
 echo ""
 echo -e "                \033[1;31mATENCION"
