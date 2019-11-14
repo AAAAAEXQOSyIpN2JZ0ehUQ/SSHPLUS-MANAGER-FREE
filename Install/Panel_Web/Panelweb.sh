@@ -1,7 +1,7 @@
 #!/bin/bash
 rm -rf $HOME/install_panelweb.sh
 declare -A cor=( [0]="\033[1;37m" [1]="\033[1;34m" [2]="\033[1;32m" [3]="\033[1;36m" [4]="\033[1;31m" [5]="\033[1;33m" )
-barra="\033[0m\e[34m��━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+barra="\033[0m\e[34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 
 fun_bar () {
 comando="$1"
@@ -26,7 +26,7 @@ sleep 1s
 
 clear
 echo -e "$barra"
-echo -e " ${cor[5]}INSTALADOR DE RECURSOS ${cor[2]}[FULL SCRIPTS VPS]"
+echo -e "\E[41;1;37m ACTUALIZANDO PACOTES \E[0m"
 echo -e "$barra"
 fun_bar "sudo apt-get update -y"
 fun_bar "sudo apt-get upgrade -y"

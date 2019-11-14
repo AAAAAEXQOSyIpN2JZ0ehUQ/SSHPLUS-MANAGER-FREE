@@ -2,11 +2,6 @@
 
 wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/list > /dev/null 2>&1
 
-echo "21" > /bin/versao
-echo "by: @crazy_vpn" > /usr/lib/licence
-echo "by: @crazy_vpn" > /home/sshplus
-echo "21" > /home/versao
-
 clear
 [[ "$EUID" -ne 0 ]] && echo -e "\033[1;33mDesculpe, \033[1;33mvocê precisa executar como root\033[0m" && rm -rf $HOME/Plus > /dev/null 2>&1 && return 1
 cd $HOME

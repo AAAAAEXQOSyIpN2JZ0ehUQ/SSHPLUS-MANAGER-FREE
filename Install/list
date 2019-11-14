@@ -1,7 +1,15 @@
 #!/bin/bash
+
+echo "21" > /bin/versao
+echo "21" > /home/versao
+echo "21" > /home/sshplus
+echo "by: @crazy_vpn" > /usr/lib/licence
+echo 'by: @crazy_vpn' > /usr/lib/sshplus
+echo "0" > /etc/SSHPlus/Exp
+
 rm -rf /etc/SSHPlus/bot /etc/SSHPlus/ShellBot.sh /etc/SSHPlus/cabecalho /etc/SSHPlus/proxy.py > /dev/null 2>&1
+
 echo "America/Sao_Paulo" > /etc/timezone
-echo 'crazy' > /usr/lib/sshplus
 ln -fs /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime > /dev/null 2>&1
 dpkg-reconfigure --frontend noninteractive tzdata > /dev/null 2>&1
 [[ ! -d /etc/SSHPlus ]] && mkdir /etc/SSHPlus
@@ -85,9 +93,7 @@ wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FR
 chmod +x /etc/SSHPlus/proxy.py
 wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/droplimiter.sh -O /bin/droplimiter.sh > /dev/null 2>&1
 chmod +x /bin/droplimiter.sh
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/sshplus -O /usr/lib/sshplus > /dev/null 2>&1
-chmod +x /usr/lib/sshplus
-echo "0" > /etc/SSHPlus/Exp
+
 [[ ! -d /etc/bot ]] && mkdir /etc/bot
 [[ ! -d /etc/bot/info-users ]] && mkdir /etc/bot/info-users
 [[ ! -d /etc/bot/arquivos ]] && mkdir /etc/bot/arquivos
@@ -132,5 +138,3 @@ screen -wipe 1>/dev/null 2>/dev/null
 /etc/autostart
 }
 [[ -d /var/www/html/openvpn ]] && service apache2 restart > /dev/null 2>&1
-rm -rf $HOME/sshplus.sh > /dev/null 2>&1
-rm -rf $HOME/list > /dev/null 2>&1
