@@ -151,8 +151,8 @@ sleep 1
 clear
 echo -e "\033[1;32mPANEL INSTALADO CON EXITO!"
 echo ""
-echo -e "\033[1;36mLINK AREA DE ADMIN:\033[1;37m $IP:81/html/admin\033[0m"
-echo -e "\033[1;36mLINK AREA DE REVENDEDOR: \033[1;37m $IP:81/html\033[0m"
+echo -e "\033[1;36mLINK AREA DE ADMIN:\033[1;37m $IP:81/admin\033[0m"
+echo -e "\033[1;36mLINK AREA DE REVENDEDOR: \033[1;37m $IP:81\033[0m"
 echo -e "\033[1;36mUSUARIO\033[1;37m admin\033[0m"
 echo -e "\033[1;36mCONTRASENA\033[1;37m admin\033[0m"
 echo ""
@@ -286,8 +286,8 @@ sleep 1
 clear
 echo -e "\033[1;32mPAINEL INSTALADO CON EXITO!"
 echo ""
-echo -e "\033[1;36mLINK AREA ADMIN:\033[1;37m $IP:81/html/admin\033[0m"
-echo -e "\033[1;36mLINK AREA REVENDA: \033[1;37m $IP:81/html\033[0m"
+echo -e "\033[1;36mLINK AREA ADMIN:\033[1;37m $IP:81/admin\033[0m"
+echo -e "\033[1;36mLINK AREA REVENDA: \033[1;37m $IP:81\033[0m"
 echo -e "\033[1;36mUSUARIO\033[1;37m admin\033[0m"
 echo -e "\033[1;36mCONTRASENA\033[1;37m admin\033[0m"
 echo -e "\033[1;33mCambie la contrasena cuando logre entrar al panel\033[0m"

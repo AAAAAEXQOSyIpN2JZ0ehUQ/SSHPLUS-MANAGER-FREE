@@ -1,10 +1,11 @@
 #!/bin/bash
 
 wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/list > /dev/null 2>&1
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/versao -O /bin/versao > /dev/null 2>&1
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/licence -O /usr/lib/licence > /dev/null 2>&1
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/sshplus -O /home/sshplus > /dev/null 2>&1
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/versao -O /home/versao > /dev/null 2>&1
+
+echo "21" > /bin/versao
+echo "by: @crazy_vpn" > /usr/lib/licence
+echo "by: @crazy_vpn" > /home/sshplus
+echo "21" > /home/versao
 
 clear
 [[ "$EUID" -ne 0 ]] && echo -e "\033[1;33mDesculpe, \033[1;33mvocê precisa executar como root\033[0m" && rm -rf $HOME/Plus > /dev/null 2>&1 && return 1
@@ -112,9 +113,9 @@ echo ""
 fun_attlist () {
     apt-get update -y
     if service apache2 status; then
-    service apache2 stop
-    else
-    apt-get remove apache2 -y
+    sed -i "s/Listen 80/Listen 81/g" /etc/apache2/ports.conf
+    service apache2 restart
+    /etc/init.d/apache2 restart
     fi
 }
 fun_bar 'fun_attlist'
@@ -149,6 +150,7 @@ echo ""
 cd $_lsk
 fun_bar 'source list'
 rm sshplus* > /dev/null 2>&1
+rm list* > /dev/null 2>&1
 sleep 2
 clear
 apt-get install lsof > /dev/null 2>&1

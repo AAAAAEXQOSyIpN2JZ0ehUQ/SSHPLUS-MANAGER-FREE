@@ -11,11 +11,13 @@ try:
 except:
    PORT = 80
 PASS = ''
-BUFLEN = 4096 * 4
+BUFLEN = 8196 * 8
 TIMEOUT = 60
 MSG = 'SSHPLUS'
+COR = '<font color="null">'
+FTAG = '</font>'
 DEFAULT_HOST = '0.0.0.0:22'
-RESPONSE = "HTTP/1.1 200 " + str(MSG) + "\r\nContent-length: 0\r\n\r\n \r\n\r\n"
+RESPONSE = "HTTP/1.1 200 " + str(COR) + str(MSG) + str(FTAG) + "\r\nContent-length: 0\r\n\r\n \r\n\r\n"
  
 class Server(threading.Thread):
     def __init__(self, host, port):
