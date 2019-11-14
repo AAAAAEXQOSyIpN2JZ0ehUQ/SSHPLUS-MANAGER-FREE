@@ -26,7 +26,7 @@ sleep 1s
 
 clear
 echo -e "$barra"
-echo -e "\E[41;1;37m ACTUALIZANDO PACOTES \E[0m"
+echo -e "\E[41;1;37m           ACTUALIZANDO PAQUETES           \E[0m"
 echo -e "$barra"
 fun_bar "sudo apt-get update -y"
 fun_bar "sudo apt-get upgrade -y"
@@ -318,7 +318,7 @@ echo -e "$barra"
 
 gestor_fun () {
 echo -e "$barra"
-echo -e "\E[41;1;37m     ⇱ INSTALAR O PAINEL SSH/DROP/SSL ⇲      \E[0m"
+echo -e "\E[41;1;37m          ⇱ INSTALAR O PAINEL SSH/DROP/SSL ⇲           \E[0m"
 echo -e "$barra"
 while true; do
 echo -e "\033[1;31m[\033[1;36m1\033[1;31m] \033[1;37m• \033[1;33mSSHPLUS V10 VENTAS \033[1;31m"
