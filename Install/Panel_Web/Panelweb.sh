@@ -26,7 +26,7 @@ sleep 1s
 
 clear
 echo -e "$barra"
-echo -e "\E[41;1;37m        ⇱ ACTUALIZANDO PAQUETES ⇲                 \E[0m"
+echo -e "\E[41;1;37m        ⇱ ACTUALIZANDO PAQUETES ⇲            \E[0m"
 
 echo -e "$barra"
 fun_bar "sudo apt-get update -y"
