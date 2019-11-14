@@ -22,7 +22,7 @@ apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AA
 wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/tcptweaker.sh; chmod +x tcptweaker.sh; ./tcptweaker.sh
 
 ============================
-# PanelSSH de Ventas V10 Y V11
+# Panel SSHPLUS Web
 
 ## Installation
 

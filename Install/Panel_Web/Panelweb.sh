@@ -468,9 +468,9 @@ echo -e "$barra"
 echo -e "\E[41;1;37m        ⇱ INSTALAR O PAINEL SSH/DROP/SSL ⇲        \E[0m"
 echo -e "$barra"
 while true; do
-echo -e "\033[1;31m[\033[1;36m1\033[1;31m] \033[1;37m• \033[1;33mSSHPLUS V10 VENTAS \033[1;31m"
-echo -e "\033[1;31m[\033[1;36m2\033[1;31m] \033[1;37m• \033[1;33mSSHPLUS V11 VENTAS \033[1;31m"
-echo -e "\033[1;31m[\033[1;36m3\033[1;31m] \033[1;37m• \033[1;33mSSHPLUS V15 VENTAS \033[1;31m"
+echo -e "\033[1;31m[\033[1;36m1\033[1;31m] \033[1;37m• \033[1;33mPANEL SSHPLUS WEB V10 \033[1;31m"
+echo -e "\033[1;31m[\033[1;36m2\033[1;31m] \033[1;37m• \033[1;33mPANEL SSHPLUS WEB V11 \033[1;31m"
+echo -e "\033[1;31m[\033[1;36m3\033[1;31m] \033[1;37m• \033[1;33mPANEL SSHPLUS WEB V15 \033[1;31m"
 echo -e "\033[1;31m[\033[1;36m4\033[1;31m] \033[1;37m• \033[1;33mELIMINAR PANEL SSHPLUS \033[1;31m"
 echo -e "\033[1;31m[\033[1;36m0\033[1;31m] \033[1;37m• \033[1;32mVOLTAR \n${barra}"
 while [[ ${opx} != @(0|[1-3]) ]]; do
