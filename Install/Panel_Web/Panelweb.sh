@@ -318,7 +318,7 @@ echo -e "$barra"
 
 gestor_fun () {
 echo -e "$barra"
-echo -e "\E[41;1;37m               ⇱ INSTALAR O PAINEL SSH/DROP/SSL ⇲                \E[0m"
+echo -e "\E[41;1;37m     ⇱ INSTALAR O PAINEL SSH/DROP/SSL ⇲      \E[0m"
 echo -e "$barra"
 while true; do
 echo -e "\033[1;31m[\033[1;36m1\033[1;31m] \033[1;37m• \033[1;33mSSHPLUS V10 VENTAS \033[1;31m"
