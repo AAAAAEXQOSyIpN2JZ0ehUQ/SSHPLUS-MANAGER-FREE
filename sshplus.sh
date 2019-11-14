@@ -107,11 +107,6 @@ echo -e "    \033[1;33mATUALIZAÇÕES COSTUMA DEMORAR UM POUCO!\033[0m"
 echo ""
 fun_attlist () {
     apt-get update -y
-    if service apache2 status; then
-    sed -i "s/Listen 80/Listen 81/g" /etc/apache2/ports.conf
-    service apache2 restart
-    /etc/init.d/apache2 restart
-    fi
 }
 fun_bar 'fun_attlist'
 sleep 1
