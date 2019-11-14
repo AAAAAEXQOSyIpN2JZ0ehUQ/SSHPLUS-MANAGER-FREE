@@ -1,0 +1,141 @@
+#!/bin/bash
+rm -rf /bin/criarusuario /bin/remover /bin/alterarlimite /bin/alterarsenha /bin/mudardata /bin/expcleaner /bin/droplimiter /bin/addhost /bin/listar /bin/sshmonitor /bin/ajuda /bin/menu /bin/blockt /bin/userbackup /bin/tcpspeed /bin/badvpn /bin/otimizar /bin/speedtest /bin/banner /bin/limite /bin/limiter /bin/infousers /bin/senharoot /bin/reiniciarservicos /bin/reiniciarsistema /bin/attscript /bin/criarteste /bin/socks /bin/conexao /bin/infousers /bin/botssh /bin/delscript /bin/versao > /dev/null 2>&1
+rm -rf /etc/SSHPlus/bot /etc/SSHPlus/ShellBot.sh /etc/SSHPlus/cabecalho /etc/SSHPlus/proxy.py > /dev/null 2>&1
+sed -i '/127.0.0.1 portalrecarga.vivo.com.br/d' /etc/hosts
+sed -i '/127.0.0.1 d1n212ccp6ldpw.cloudfront.net/d' /etc/hosts
+sed -i '/127.0.0.1 www.portalsva2.vivo.com.br/captive-static/tarif-def/pd/index.html/d' /etc/hosts
+sed -i '/127.0.0.1 www.portalsva2.vivo.com.br/captive-static/tarif-def/cd/index.html/d' /etc/hosts
+if [ -d /etc/SSHPlus ]
+then
+echo ""
+else
+mkdir /etc/SSHPlus
+fi
+if [ -d /etc/SSHPlus/senha ]
+then
+echo ""
+else
+mkdir /etc/SSHPlus/senha
+fi
+if ps x | grep "bot_plus"|grep -v grep 1>/dev/null 2>/dev/null; then
+	pidbot_plus=$(ps x|grep "bot_plus"|awk -F "pts" {'print $1'})
+    kill -9 $pidbot_plus > /dev/null 2>&1
+    screen -wipe > /dev/null 2>&1
+fi
+if [[ -e /etc/squid3/squid.conf ]]; then
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/squid1.txt -O /tmp/sqd1 1>/dev/null 2>/dev/null
+echo "acl url3 dstdomain -i $ipdovps" > /tmp/sqd2
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/squid2.txt -O /tmp/sqd3 1>/dev/null 2>/dev/null
+cat /tmp/sqd1 /tmp/sqd2 /tmp/sqd3 > /etc/squid3/squid.conf
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/payload.txt -O /etc/squid3/payload.txt 1>/dev/null 2>/dev/null
+echo " " >> /etc/squid3/payload.txt
+elif [[ -e /etc/squid/squid.conf ]]; then
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/squid1.txt -O /tmp/sqd1 1>/dev/null 2>/dev/null
+echo "acl url3 dstdomain -i $ipdovps" > /tmp/sqd2
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/squid.txt -O /tmp/sqd3 1>/dev/null 2>/dev/null
+cat /tmp/sqd1 /tmp/sqd2 /tmp/sqd3 > /etc/squid/squid.conf
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/payload.txt -O /etc/squid/payload.txt 1>/dev/null 2>/dev/null
+echo " " >> /etc/squid/payload.txt
+fi
+ptvp=$(sed -n '1 p' /etc/openvpn/server.conf | awk '{print $NF}')
+if [[ "$ptvp" == "443" ]]; then
+echo ""
+else
+grep -v "^Port 443" /etc/ssh/sshd_config > /tmp/ssh && mv /tmp/ssh /etc/ssh/sshd_config
+echo "Port 443" >> /etc/ssh/sshd_config
+fi
+grep -v "^PasswordAuthentication yes" /etc/ssh/sshd_config > /tmp/passlogin && mv /tmp/passlogin /etc/ssh/sshd_config
+echo "PasswordAuthentication yes" >> /etc/ssh/sshd_config
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/addhost.sh -O /bin/addhost > /dev/null 2>&1
+chmod +x /bin/addhost
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/alterarsenha.sh -O /bin/alterarsenha > /dev/null 2>&1
+chmod +x /bin/alterarsenha
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/criarusuario2.sh -O /bin/criarusuario > /dev/null 2>&1
+chmod +x /bin/criarusuario
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/delhost.sh -O /bin/delhost > /dev/null 2>&1
+chmod +x /bin/delhost
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/expcleaner2.sh -O /bin/expcleaner > /dev/null 2>&1
+chmod +x /bin/expcleaner
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/mudardata.sh -O /bin/mudardata > /dev/null 2>&1
+chmod +x /bin/mudardata
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/criarteste.sh -O /bin/criarteste > /dev/null 2>&1
+chmod +x /bin/criarteste
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/remover.sh -O /bin/remover > /dev/null 2>&1
+chmod +x /bin/remover
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/droplimiter.sh -O /bin/droplimiter > /dev/null 2>&1
+chmod +x /bin/droplimiter
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/alterarlimite.sh -O /bin/alterarlimite > /dev/null 2>&1
+chmod +x /bin/alterarlimite
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/ajuda.sh -O /bin/ajuda > /dev/null 2>&1
+chmod +x /bin/ajuda
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/sshmonitor2.sh -O /bin/sshmonitor > /dev/null 2>&1
+chmod +x /bin/sshmonitor
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/badvpn.sh -O /bin/badvpn > /dev/null 2>&1
+chmod +x /bin/badvpn
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/tcpspeed.sh -O /bin/tcpspeed > /dev/null 2>&1
+chmod +x /bin/tcpspeed
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/userbackup.sh -O /bin/userbackup > /dev/null 2>&1
+chmod +x /bin/userbackup
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/blockt.sh -O /bin/blockt > /dev/null 2>&1
+chmod +x /bin/blockt
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/otimizar.sh -O /bin/otimizar > /dev/null 2>&1
+chmod +x /bin/otimizar
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/menu.sh -O /bin/menu > /dev/null 2>&1
+chmod +x /bin/menu
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/speedtest.sh -O /bin/speedtest > /dev/null 2>&1
+chmod +x /bin/speedtest
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/banner.sh -O /bin/banner > /dev/null 2>&1
+chmod +x /bin/banner
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/senha.sh -O /bin/senharoot > /dev/null 2>&1
+chmod +x /bin/senharoot
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/Rservicos.sh -O /bin/reiniciarservicos > /dev/null 2>&1
+chmod +x /bin/reiniciarservicos
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/Rsistema.sh -O /bin/reiniciarsistema 1>/dev/null 2>/dev/null
+chmod +x /bin/reiniciarsistema
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/attscript.sh -O /bin/attscript > /dev/null 2>&1
+chmod +x /bin/attscript
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/conexao.sh -O /bin/conexao > /dev/null 2>&1
+chmod +x /bin/conexao
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/detalhes.sh -O /bin/detalhes > /dev/null 2>&1
+chmod +x /bin/detalhes
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/delscript.sh -O /bin/delscript > /dev/null 2>&1
+chmod +x /bin/delscript
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/botssh.sh -O /bin/botssh > /dev/null 2>&1
+chmod +x /bin/botssh
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/infousers.sh -O /bin/infousers > /dev/null 2>&1
+chmod +x /bin/infousers
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/limiter.sh -O /bin/limiter > /dev/null 2>&1
+chmod +x /bin/limiter
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/cabecalho.sh -O /etc/SSHPlus/cabecalho > /dev/null 2>&1
+chmod +x /etc/SSHPlus/cabecalho
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/bot -O /etc/SSHPlus/bot > /dev/null 2>&1
+chmod +x /etc/SSHPlus/bot
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/proxy.py -O /etc/SSHPlus/proxy.py > /dev/null 2>&1
+chmod +x /etc/SSHPlus/proxy.py
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/sshplus -O /usr/lib/sshplus > /dev/null 2>&1
+chmod +x /usr/lib/sshplus
+sed -i '3i\127.0.0.1 portalrecarga.vivo.com.br/recarga\' /etc/hosts
+sleep 1
+sed -i '4i\127.0.0.1 d1n212ccp6ldpw.cloudfront.net\' /etc/hosts
+sleep 1
+sed -i '5i\127.0.0.1 www.portalsva2.vivo.com.br/captive-static/tarif-def/pd/index.html\' /etc/hosts
+sleep 1
+sed -i '6i\127.0.0.1 navegue.vivo.com.br/pre/\' /etc/hosts
+sleep 1
+sed -i '7i\127.0.0.1 navegue.vivo.com.br/controle/\' /etc/hosts
+service ssh restart
+wget -qO- https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/confirme.py > /home/confirme.py
+python /home/confirme.py "$name" "$ipdovps"
+rm -rf /home/confirme.py 1>/dev/null 2>&1
+wget -qO- https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/versao | sed -n '1 p' > /bin/versao
+echo "0" > /etc/SSHPlus/Exp
+service apache2 restart
+service ssh restart > /dev/null 2>&1
+if [[ -e /etc/squid/squid.conf ]]; then
+squid -k reconfigure > /dev/null 2>&1
+service squid restart > /dev/null 2>&1
+elif [[ -e /etc/squid3/squid.conf ]]; then
+squid3 -k reconfigure > /dev/null 2>&1
+service squid3 restart > /dev/null 2>&1
+fi
+rm -rf $HOME/list > /dev/null 2>&1
