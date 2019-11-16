@@ -65,9 +65,9 @@ vrs2=$(sed -n '1 p' /tmp/att | sed -e 's/[^0-9]//ig')
   if [[ "$res" = s || "$res" = S ]];then
     echo -e "\n\033[1;32m  INICIANDO ATUALIZACAO..."
     sleep 3
-    wget ssh-plus.tk/script/Plus > /dev/null 2>&1
-    chmod +x Plus
-    ./Plus
+    wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/sshplus.sh > /dev/null 2>&1
+    chmod +x sshplus.sh
+    ./sshplus.sh
     clear
     echo -e "\033[1;32mSCRIPT ATUALIZADO COM SUCESSO\033[0m\n"
     rm /tmp/att > /dev/null 2>&1
