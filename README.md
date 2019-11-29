@@ -13,6 +13,10 @@
 
 apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/sshplus.sh; chmod +x sshplus.sh; ./sshplus.sh
 
+## Installation Alternativa
+
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/sshplus.sh && sshplus.sh
+
 ================================================================================
 
 # TCP-Tweaker-1.0 (TCP-SPEED)
