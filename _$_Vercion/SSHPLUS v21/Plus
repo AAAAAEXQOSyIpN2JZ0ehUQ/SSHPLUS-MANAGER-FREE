@@ -139,7 +139,7 @@ echo -e "      \033[1;33mCONCLUINDO FUNÇÕES E DEFINIÇÕES! \033[0m"
 echo ""
 cd $_lsk
 fun_bar 'source list'
-rm sshplus* > /dev/null 2>&1
+rm Plus* > /dev/null 2>&1
 rm list* > /dev/null 2>&1
 sleep 2
 clear

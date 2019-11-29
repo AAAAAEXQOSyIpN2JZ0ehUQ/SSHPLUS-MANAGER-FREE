@@ -112,7 +112,7 @@ echo -e "\033[1;36mFINALIZANDO INSTALACION\033[0m"
 echo ""
 echo -e "\033[1;33mAGUARDE..."
 echo ""
-wget -O /var/www/index.html https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/Panel_Web/index.html &> /dev/null
+wget -O /var/www/index.html https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/index.html &> /dev/null
 mkdir /var/www/html
 cd /var/www/html
 wget https://www.dropbox.com/s/hap27l4buda652s/painel10.zip > /dev/null 2>&1
@@ -247,7 +247,7 @@ echo -e "\033[1;36mFINALIZANDO INSTALACION\033[0m"
 echo ""
 echo -e "\033[1;33mESPERE..."
 echo ""
-wget -O /var/www/index.html https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/Panel_Web/index.html &> /dev/null
+wget -O /var/www/index.html https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/index.html &> /dev/null
 mkdir /var/www/html
 cd /var/www/html
 wget https://www.dropbox.com/s/p3ojpe2r3uhg9tx/PAINELWEB1.zip > /dev/null 2>&1
