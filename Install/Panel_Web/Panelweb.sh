@@ -473,7 +473,7 @@ echo -e "\033[1;31m[\033[1;36m2\033[1;31m] \033[1;37m• \033[1;33mPANEL SSHPLUS
 echo -e "\033[1;31m[\033[1;36m3\033[1;31m] \033[1;37m• \033[1;33mPANEL SSHPLUS WEB V15 \033[1;31m"
 echo -e "\033[1;31m[\033[1;36m4\033[1;31m] \033[1;37m• \033[1;33mELIMINAR PANEL SSHPLUS \033[1;31m"
 echo -e "\033[1;31m[\033[1;36m0\033[1;31m] \033[1;37m• \033[1;32mVOLTAR \n${barra}"
-while [[ ${opx} != @(0|[1-3]) ]]; do
+while [[ ${opx} != @(0|[1-4]) ]]; do
 echo -ne "${cor[0]}Digite a Opcao: \033[1;37m" && read opx
 tput cuu1 && tput dl1
 done
