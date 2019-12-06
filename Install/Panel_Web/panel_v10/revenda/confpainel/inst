@@ -4,13 +4,13 @@ echo "America/Sao_Paulo" > /etc/timezone
 ln -fs /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
 dpkg-reconfigure --frontend noninteractive tzdata
 rm *.sh > /dev/null 2>&1
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/Panel_Web/panel_v10/revenda/confpainel/criarusuario.sh > /dev/null 2>&1
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/Panel_Web/panel_v10/revenda/confpainel/remover.sh > /dev/null 2>&1
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/Panel_Web/panel_v10/revenda/confpainel/AlterarSenha.sh > /dev/null 2>&1
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/Panel_Web/panel_v10/revenda/confpainel/AlterarData.sh > /dev/null 2>&1
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/Panel_Web/panel_v10/revenda/confpainel/KillUser.sh > /dev/null 2>&1
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/Panel_Web/panel_v10/revenda/confpainel/sshmonitor.sh > /dev/null 2>&1
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/Panel_Web/panel_v10/revenda/confpainel/alterarlimite.sh > /dev/null 2>&1
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v10/revenda/confpainel/criarusuario.sh > /dev/null 2>&1
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v10/revenda/confpainel/remover.sh > /dev/null 2>&1
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v10/revenda/confpainel/AlterarSenha.sh > /dev/null 2>&1
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v10/revenda/confpainel/AlterarData.sh > /dev/null 2>&1
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v10/revenda/confpainel/KillUser.sh > /dev/null 2>&1
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v10/revenda/confpainel/sshmonitor.sh > /dev/null 2>&1
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v10/revenda/confpainel/alterarlimite.sh > /dev/null 2>&1
 chmod 777 *sh
 echo -e "\n\033[1;32mAGUARDE...\033[0m"
 apt-get install cron -y > /dev/null 2>&1
