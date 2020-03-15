@@ -17,10 +17,12 @@ echo -e '21' > /bin/versao && cat /bin/versao > /home/sshplus && cat /bin/versao
 [[ ! -d /etc/SSHPlus/senha ]] && mkdir /etc/SSHPlus/senha
 [[ ! -e /etc/SSHPlus/Exp ]] && touch /etc/SSHPlus/Exp
 [[ ! -d /etc/SSHPlus/userteste ]] && mkdir /etc/SSHPlus/userteste
+
 netstat -nplt| grep -w 'apache2' |grep -w '80' && sed -i "s/Listen 80/Listen 81/g" /etc/apache2/ports.conf && service apache2 restart
 [[ "$(grep -o '#Port 22' /etc/ssh/sshd_config)" == "#Port 22" ]] && sed -i "s;#Port 22;Port 22;" /etc/ssh/sshd_config && service ssh restart
 grep -v "^PasswordAuthentication" /etc/ssh/sshd_config > /tmp/passlogin && mv /tmp/passlogin /etc/ssh/sshd_config
 echo "PasswordAuthentication yes" >> /etc/ssh/sshd_config
+
 if ps x | grep "bot_plus"|grep -v grep 1>/dev/null 2>/dev/null; then
 	pidbot_plus=$(ps x|grep "bot_plus"|awk -F "pts" {'print $1'})
     kill -9 $pidbot_plus > /dev/null 2>&1
@@ -133,14 +135,14 @@ chmod +x /etc/autostart
 [[ $(crontab -l|grep -c "uexpired") = '0' ]] && (crontab -l 2>/dev/null; echo "0 */6 * * * /bin/uexpired") | crontab -
 [[ $(crontab -l|grep -c "verifatt") = '0' ]] && (crontab -l 2>/dev/null; echo "@daily /bin/verifatt") | crontab -
 [[ $(crontab -l|grep -c "autostart") = '0' ]] && (crontab -l 2>/dev/null; echo "@reboot /etc/autostart") | crontab -
+wget -qO- https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/versao |sed -n '1 p' |cut -d' ' -f2 > /bin/versao && cat /bin/versao > /home/sshplus
 service ssh restart > /dev/null 2>&1
 [[ $(ps x | grep "bot_plus"|grep -v grep | wc -l) != '0' ]] && {
-[[ ! -e "/etc/SSHPlus/ShellBot.sh" ]] && && wget -qO- https://raw.githubusercontent.com/shellscriptx/shellbot/master/ShellBot.sh > /etc/SSHPlus/ShellBot.sh
+[[ ! -e "/etc/SSHPlus/ShellBot.sh" ]] && wget -qO- https://raw.githubusercontent.com/shellscriptx/shellbot/master/ShellBot.sh > /etc/SSHPlus/ShellBot.sh
 screen -r -S "bot_plus" -X quit
 screen -r -S "udpvpn" -X quit
 screen -wipe 1>/dev/null 2>/dev/null
 /etc/autostart
 }
-service ssh restart > /dev/null 2>&1
 [[ -d /var/www/html/openvpn ]] && service apache2 restart > /dev/null 2>&1
 rm -rf $HOME/list > /dev/null 2>&1

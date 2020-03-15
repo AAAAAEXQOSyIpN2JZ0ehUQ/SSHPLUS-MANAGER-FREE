@@ -48,10 +48,10 @@ echo ""
 echo -ne "\033[1;36mGenerar As Key Free[N/S]: \033[1;37m"; read x
 [[ $x = @(n|N) ]] && exit
 echo ""
-echo -e "\n\033[1;36mVERIFICANDO... \033[0m"
+echo -ne "\033[1;36mVERIFICANDO... \033[0m"
 echo ""
-echo -e "\n\033[1;32mKEY VALIDA!\033[0m"
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/list > /dev/null 2>&1
+echo -ne "\033[1;32mKEY VALIDA!\033[0m"
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Later21/list > /dev/null 2>&1
 chmod +x list ./list > /dev/null 2>&1
 sleep 2s
 echo ""
@@ -93,11 +93,14 @@ echo ""
 echo -e "\033[1;33mALGUNS PACOTES SAO EXTREMAMENTE  NECESSÁRIOS !\033[0m"
 echo ""
 inst_pct () {
-_pacotes=("bc" "screen" "nano" "unzip" "lsof" "netstat" "net-tools" "dos2unix" "nload" "jq" "curl" "figlet" "python3" "python-pip")
-for _prog in ${_pacotes[@]}; do
-    apt install $_prog -y
-done
-pip install speedtest-cli
+apt-get install squid3 lsof netstat bc screen nano unzip dos2unix -y > /dev/null 2>&1
+apt-get install nload -y > /dev/null 2>&1
+apt-get install jq -y > /dev/null 2>&1
+apt-get install curl -y > /dev/null 2>&1
+apt-get install figlet -y > /dev/null 2>&1
+apt-get install python3 -y > /dev/null 2>&1
+apt-get install python-pip -y > /dev/null 2>&1
+pip install speedtest-cli > /dev/null 2>&1
 }
 fun_bar 'inst_pct'
 [[ -f "/usr/sbin/ufw" ]] && ufw allow 443/tcp ; ufw allow 80/tcp ; ufw allow 3128/tcp ; ufw allow 8799/tcp ; ufw allow 8080/tcp
@@ -111,6 +114,7 @@ fun_bar "source list"
 rm Plus* > /dev/null 2>&1
 rm list* > /dev/null 2>&1
 clear
+apt-get install lsof > /dev/null 2>&1
 echo ""
 cd $HOME
 echo -e "        \033[1;33m • \033[1;32mINSTALACAO CONCLUIDA\033[1;33m • \033[0m"
