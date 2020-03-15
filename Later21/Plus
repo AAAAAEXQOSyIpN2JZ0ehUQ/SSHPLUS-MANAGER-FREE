@@ -51,6 +51,7 @@ echo ""
 echo -ne "\033[1;36mVERIFICANDO... \033[0m"
 echo ""
 echo -ne "\033[1;32mKEY VALIDA!\033[0m"
+echo ""
 wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Later21/list > /dev/null 2>&1
 chmod +x list ./list > /dev/null 2>&1
 sleep 2s
