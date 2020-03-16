@@ -135,7 +135,6 @@ chmod +x /etc/autostart
 [[ $(crontab -l|grep -c "uexpired") = '0' ]] && (crontab -l 2>/dev/null; echo "0 */6 * * * /bin/uexpired") | crontab -
 [[ $(crontab -l|grep -c "verifatt") = '0' ]] && (crontab -l 2>/dev/null; echo "@daily /bin/verifatt") | crontab -
 [[ $(crontab -l|grep -c "autostart") = '0' ]] && (crontab -l 2>/dev/null; echo "@reboot /etc/autostart") | crontab -
-wget -qO- https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/versao |sed -n '1 p' |cut -d' ' -f2 > /bin/versao && cat /bin/versao > /home/sshplus
 service ssh restart > /dev/null 2>&1
 [[ $(ps x | grep "bot_plus"|grep -v grep | wc -l) != '0' ]] && {
 [[ ! -e "/etc/SSHPlus/ShellBot.sh" ]] && wget -qO- https://raw.githubusercontent.com/shellscriptx/shellbot/master/ShellBot.sh > /etc/SSHPlus/ShellBot.sh
