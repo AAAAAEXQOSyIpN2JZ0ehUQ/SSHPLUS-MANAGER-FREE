@@ -6,16 +6,18 @@
 
 ## :heavy_exclamation_mark: Requerimientos
 
-* RECOMENDADO DEBIAN Y UBUNTU. ALGUNOS DE ELLOS TAMBIÉN PUEDEN FUNCIONAR CON CENTOS.
-* USAR DISTRIBUCION NUEVA O FORMATIADA
+* RECOMENDADO DEBIAN Y UBUNTU.
+* USAR DISTRIBUCION NUEVA O FORMATIADA.
+* ALGUNOS DE ELLOS TAMBIÉN PUEDEN FUNCIONAR CON CENTOS.
 
 ## Installation
 
-apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/sshplus.sh; chmod +x sshplus.sh; ./sshplus.sh
+apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/sshplus.sh; chmod 777 sshplus.sh; ./sshplus.sh
 
 ## Installation Alternativa
 
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Plus && bash Plus
+apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Plus; chmod 777 Plus; ./Plus
+
 
 ================================================================================
 
