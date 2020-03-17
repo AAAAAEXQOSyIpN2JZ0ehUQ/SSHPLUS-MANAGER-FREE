@@ -5,7 +5,6 @@ echo "21" > /home/versao
 echo "21" > /home/sshplus
 echo "by: @crazy_vpn" > /usr/lib/licence
 echo 'by: @crazy_vpn' > /usr/lib/sshplus
-echo "0" > /etc/SSHPlus/Exp
 
 rm -rf /etc/SSHPlus/bot /etc/SSHPlus/ShellBot.sh /etc/SSHPlus/cabecalho /etc/SSHPlus/proxy.py > /dev/null 2>&1
 

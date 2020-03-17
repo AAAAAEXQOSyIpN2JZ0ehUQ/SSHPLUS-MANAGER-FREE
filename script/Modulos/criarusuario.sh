@@ -35,7 +35,7 @@ if [[ -e /etc/openvpn/server.conf ]]; then
   hedr=$(sed -n '8 p' /etc/openvpn/client-common.txt)
   prxy=$(sed -n '9 p' /etc/openvpn/client-common.txt)
   rmt2='/SSHPLUS?'
-  rmt3='www.vivo.com.br 8088'
+  rmt3=$(cat /etc/IP)
   prx='200.142.130.104'
   vivo1="portalrecarga.vivo.com.br/recarga"
   vivo2="portalrecarga.vivo.com.br/controle/"
@@ -198,7 +198,7 @@ fun_edithost () {
         cp $HOME/$username.ovpn /root/OVPN/$username-vivo2.ovpn        
         sed -i "7,9"d $HOME/$username.ovpn
         sleep 0.5
-        sed -i "7i\remote $rmt3\nhttp-proxy-option CUSTOM-HEADER Host $IP:$_Port\nhttp-proxy $prx 80" $HOME/$username.ovpn
+        sed -i "7i\remote $rmt3 $_Port\nhttp-proxy-option CUSTOM-HEADER Host $IP:$_Port\nhttp-proxy $prx 80" $HOME/$username.ovpn
         cp $HOME/$username.ovpn /root/OVPN/$username-vivo3.ovpn        
         sed -i "7,9"d $HOME/$username.ovpn
         sleep 0.5

@@ -1029,7 +1029,7 @@ fun_add_revenda() {
     [[ "${message_from_id[$id]}" != "$id_admin" ]] && {
         ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
         --text "$(echo -e 🚫 ACESSO NEGADO 🚫)"
-        break
+        return 0
     }
     ShellBot.sendMessage --chat_id ${message_from_id[$id]} \
         --text "👥 ADICIONAR REVENDEDOR 👥\n\nInforme o nome:" \
@@ -1596,7 +1596,18 @@ do
             ;;
         esac
         fi
-        if [[ ${message_reply_to_message_message_id[$id]} ]]; then            
+        if [[ ${message_reply_to_message_message_id[$id]} ]]; then
+
+if [[ "${message_from_id[$id]}" = "$id_admin" ]]; then
+   echo "valido"
+else
+[[ ! -d /etc/bot/revenda/${message_from_username} ]] && {
+   ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+        --text "$(echo -e 🚫 ACESSO NEGADO ! 🚫)"
+        break
+        }
+fi
+            
             # Analisa a interface de resposta.
             case ${message_reply_to_message_text[$id]} in
                     '👤 CRIAR USUARIO 👤\n\nNome do usuario:')
