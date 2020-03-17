@@ -112,7 +112,7 @@ echo -e "\033[1;36mFINALIZANDO INSTALACION\033[0m"
 echo ""
 echo -e "\033[1;33mAGUARDE..."
 echo ""
-wget -O /var/www/index.html https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/Panel_Web/index.html &> /dev/null
+wget -O /var/www/index.html https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/index.html &> /dev/null
 mkdir /var/www/html
 cd /var/www/html
 wget https://www.dropbox.com/s/hap27l4buda652s/painel10.zip > /dev/null 2>&1
@@ -159,7 +159,7 @@ echo -e "\033[1;36mCONTRASENA\033[1;37m admin\033[0m"
 echo ""
 
 echo -e "\033[1;36mINGRESE ESTE ENLACE EN LA VPS QUE SERA SERVIDOR\033[0m"
-echo -e "\033[1;37mwget http://ssh-plus.tk/revenda/confpainel/inst > /dev/null 2>&1; bash inst\033[0m"
+echo -e "\033[1;37mwget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v10/revenda/confpainel/inst > /dev/null 2>&1; bash inst\033[0m"
 
 
 echo -e "\033[1;33mCambie la contrasena una vez entrando al panel\033[0m"
@@ -247,7 +247,7 @@ echo -e "\033[1;36mFINALIZANDO INSTALACION\033[0m"
 echo ""
 echo -e "\033[1;33mESPERE..."
 echo ""
-wget -O /var/www/index.html https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/Panel_Web/index.html &> /dev/null
+wget -O /var/www/index.html https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/index.html &> /dev/null
 mkdir /var/www/html
 cd /var/www/html
 wget https://www.dropbox.com/s/p3ojpe2r3uhg9tx/PAINELWEB1.zip > /dev/null 2>&1
@@ -473,7 +473,7 @@ echo -e "\033[1;31m[\033[1;36m2\033[1;31m] \033[1;37m• \033[1;33mPANEL SSHPLUS
 echo -e "\033[1;31m[\033[1;36m3\033[1;31m] \033[1;37m• \033[1;33mPANEL SSHPLUS WEB V15 \033[1;31m"
 echo -e "\033[1;31m[\033[1;36m4\033[1;31m] \033[1;37m• \033[1;33mELIMINAR PANEL SSHPLUS \033[1;31m"
 echo -e "\033[1;31m[\033[1;36m0\033[1;31m] \033[1;37m• \033[1;32mVOLTAR \n${barra}"
-while [[ ${opx} != @(0|[1-3]) ]]; do
+while [[ ${opx} != @(0|[1-4]) ]]; do
 echo -ne "${cor[0]}Digite a Opcao: \033[1;37m" && read opx
 tput cuu1 && tput dl1
 done

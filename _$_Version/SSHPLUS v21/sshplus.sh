@@ -1,7 +1,5 @@
 #!/bin/bash
 
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/list > /dev/null 2>&1
-
 clear
 [[ "$EUID" -ne 0 ]] && echo -e "\033[1;33mDesculpe, \033[1;33mvocê precisa executar como root\033[0m" && rm -rf $HOME/Plus > /dev/null 2>&1 && return 1
 cd $HOME
@@ -48,11 +46,12 @@ echo ""
 echo -ne "\033[1;36mGenerar As Key Free[N/S]: \033[1;37m"; read x
 [[ $x = @(n|N) ]] && exit
 echo -e "\033[1;31m════════════════════════════════════════════════════\033[0m"
-echo -ne "\033[1;36mAGUARDE... \033[1;32m OK !\033[1;37m "
+echo -ne "\033[1;36mVERIFICANDO... \033[1;32m OK !\033[1;37m "
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/list > /dev/null 2>&1
 chmod +x list ./list > /dev/null 2>&1
 echo ""
 echo -e "\033[1;31m════════════════════════════════════════════════════\033[0m"
-echo -e "\033[1;36mVerificando a key\033[1;35m ...\033[0m"
+echo -e "\033[1;36mKEY VALIDA!\033[0m"
 sleep 2
 echo ""
 echo -ne "\033[1;36mInforme seu Nome:\033[1;37m "; read name
