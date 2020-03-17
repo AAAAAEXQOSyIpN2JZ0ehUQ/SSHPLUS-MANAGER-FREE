@@ -1,9 +1,8 @@
 #!/bin/bash
+
 clear
-[[ $EUID -ne 0 ]] && {
-echo -e "\033[1;33mDesculpe, \033[1;33mvocê precisa executar como root\033[0m"
-rm -rf $HOME/Plus > /dev/null 2>&1; exit 0
-}
+[[ "$EUID" -ne 0 ]] && echo -e "\033[1;33mDesculpe, \033[1;33mvocê precisa executar como root\033[0m" && rm -rf $HOME/Plus > /dev/null 2>&1 && return 1
+cd $HOME
 fun_bar () {
 comando[0]="$1"
 comando[1]="$2"
@@ -52,7 +51,7 @@ wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FR
 chmod +x list ./list > /dev/null 2>&1
 echo ""
 echo -e "\033[1;31m════════════════════════════════════════════════════\033[0m"
-echo -e "\033[1;32mKEY VALIDA!\033[0m"
+echo -e "\033[1;36mKEY VALIDA!\033[0m"
 sleep 2
 echo ""
 echo -ne "\033[1;36mInforme seu Nome:\033[1;37m "; read name
@@ -139,7 +138,7 @@ echo -e "      \033[1;33mCONCLUINDO FUNÇÕES E DEFINIÇÕES! \033[0m"
 echo ""
 cd $_lsk
 fun_bar 'source list'
-rm Plus* > /dev/null 2>&1
+rm sshplus* > /dev/null 2>&1
 rm list* > /dev/null 2>&1
 sleep 2
 clear
