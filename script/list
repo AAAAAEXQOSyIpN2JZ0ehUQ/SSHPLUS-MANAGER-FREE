@@ -1,16 +1,13 @@
 #!/bin/bash
 _lvk=$(wget -qO- sshplus.xyz/script/versao)
-IP=$(wget -qO- sshplus.xyz/meuip.php)
+IP=$(wget -qO- ipv4.icanhazip.com/)
 IP2=$(wget -qO- http://whatismyip.akamai.com/)
 [[ "$IP" != "$IP2" ]] && ipdovps="$IP2" || ipdovps="$IP"
-echo -e "$ipdovps" > /etc/IP; lst=$1; lst1=$2; lst2=$3; key1=$4; key2=crz
+echo -e "$ipdovps" > /etc/IP
 rm -rf /etc/SSHPlus/bot /etc/SSHPlus/ShellBot.sh /etc/SSHPlus/cabecalho /etc/SSHPlus/proxy.py > /dev/null 2>&1
 echo -e "America/Sao_Paulo" > /etc/timezone
 ln -fs /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime > /dev/null 2>&1
 dpkg-reconfigure --frontend noninteractive tzdata > /dev/null 2>&1
-[[ -z $lst1 ]] && {
-rm -rf $home/list > /dev/null 2>&1;  cat /dev/null > ~/.bash_history && history -c; exit
-}
 echo -e 'by: @crazy_vpn' > /usr/lib/sshplus && cat /usr/lib/sshplus > /usr/lib/licence
 [[ ! -d /etc/SSHPlus ]] && mkdir /etc/SSHPlus
 [[ ! -d /etc/SSHPlus/senha ]] && mkdir /etc/SSHPlus/senha
