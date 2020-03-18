@@ -4,6 +4,12 @@
 
 **Manager Script**
 
+SCRIPT SSHPLUS MANAGER
+
+SSHPLUS MANAGER é um script com um conjunto de recusos e ferramentas adequadas para oferecer extrema
+                facilidade no seu manuseio em servidores Linux com foco em uso VPN, conta com uma interface agradavel
+                trazendo informações detalhadas sobre a maquina e usuários...
+
 ## :heavy_exclamation_mark: Requerimientos
 
 * RECOMENDADO DEBIAN Y UBUNTU.
