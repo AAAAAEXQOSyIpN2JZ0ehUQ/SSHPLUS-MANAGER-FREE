@@ -6,7 +6,9 @@
 
 ## :heavy_exclamation_mark: Requerimientos
 
-* RECOMENDADO DEBIAN Y UBUNTU USAR DISTRIBUCION NUEVA O FORMATIADA.
+* RECOMENDADO DEBIAN Y UBUNTU.
+* USAR DISTRIBUCION NUEVA O FORMATIADA.
+* ALGUNOS DE ELLOS TAMBIÉN PUEDEN FUNCIONAR CON CENTOS..
 
 ## Installation
 
@@ -14,7 +16,7 @@ apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AA
 
 ## Installation Alternativa
 
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/script/Plus && bash Plus
+apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/script/Plus && bash Plus
 
 ================================================================================
 
@@ -43,6 +45,7 @@ wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FR
 ## Installation
 
 wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/Panelweb.sh; chmod +x Panelweb.sh; ./Panelweb.sh
+
 
 ```
 * SIN MINERIA! 
