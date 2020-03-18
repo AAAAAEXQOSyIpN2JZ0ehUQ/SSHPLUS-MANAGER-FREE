@@ -2,13 +2,15 @@
 
 ![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/SSHPLUS_MANAGER.jpg)
 
-**Manager Script**
 
 ```
-SCRIPT SSHPLUS MANAGER es un script con un conjunto de características y herramientas adecuadas para ofrecer extrema
-                 facilidad de manejo en servidores Linux con un enfoque en el uso de VPN, tiene una interfaz agradable
-                 aportando información detallada sobre la máquina y los usuarios ...
+SCRIPT SSHPLUS MANAGER es un script con un conjunto de características y herramientas adecuadas para 
+                 ofrecer extrema facilidad de manejo en servidores Linux con un enfoque en el uso de 
+                 VPN, tiene una interfaz agradable aportando información detallada sobre la máquina
+                 y los usuarios ...
 ```
+
+**Manager Script**
 
 ## :heavy_exclamation_mark: Requerimientos
 
