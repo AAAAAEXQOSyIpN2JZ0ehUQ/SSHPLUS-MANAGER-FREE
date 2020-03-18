@@ -4,9 +4,11 @@
 
 **Manager Script**
 
+```
 SCRIPT SSHPLUS MANAGER es un script con un conjunto de características y herramientas adecuadas para ofrecer extrema
                  facilidad de manejo en servidores Linux con un enfoque en el uso de VPN, tiene una interfaz agradable
                  aportando información detallada sobre la máquina y los usuarios ...
+```
 
 ## :heavy_exclamation_mark: Requerimientos
 
@@ -43,15 +45,17 @@ wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FR
 wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/IP; chmod +x IP; ./IP
 
 ============================
-# Panel SSHPLUS Web
+# Panel SSHPLUS (Web)
 
 ![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/Panel_SSHPLUS_Web.jpg)
 
+```
 PANEL SSHPLUS v10 v11 v15 es para una gestión y
                  Monitoreo completo de usuarios, permitiendo reventas y sub
                  revendedores para aquellos que desean tener un negocio más amplio,
                  También tiene una interfaz intuitiva, a la que se puede acceder en cualquier momento.
                  navegador ...
+```
 
 ## Installation
 
