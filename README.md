@@ -22,11 +22,6 @@ SCRIPT SSHPLUS MANAGER es un script con un conjunto de características y herram
 
 apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/sshplus.sh; chmod 777 sshplus.sh; ./sshplus.sh
 
-## Installation Alternativa
-
-apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Plus; chmod 777 Plus; ./Plus
-
-
 ================================================================================
 
 # TCP-Tweaker-1.0 (TCP-SPEED)
