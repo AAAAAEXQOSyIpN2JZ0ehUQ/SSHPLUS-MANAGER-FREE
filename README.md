@@ -22,7 +22,7 @@ SCRIPT SSHPLUS MANAGER es un script con un conjunto de características y herram
 
 apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Plus; chmod 777 Plus; ./Plus
 
-================================================================================
+-------------------------------------------------------------------------------
 
 # TCP-Tweaker-1.0 (TCP-SPEED)
 
@@ -32,7 +32,7 @@ apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AA
 
 wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/tcptweaker.sh; chmod +x tcptweaker.sh; ./tcptweaker.sh
 
-================================================================================
+-------------------------------------------------------------------------------
 # Capturador de IP
 
 ![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/Capturador_IP.jpg)
@@ -41,7 +41,7 @@ wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FR
 
 wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/IP; chmod +x IP; ./IP
 
-================================================================================
+-------------------------------------------------------------------------------
 # Panel SSHPLUS (Web)
 
 ![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/Panel_SSHPLUS_Web.jpg)
@@ -58,7 +58,7 @@ PANEL SSHPLUS v10 v11 v15 es para una gestión y
 
 wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/Panelweb.sh; chmod +x Panelweb.sh; ./Panelweb.sh
 
-================================================================================
+-------------------------------------------------------------------------------
 
 ```
 * SIN MINERIA! 
