@@ -14,8 +14,9 @@ SCRIPT SSHPLUS MANAGER es un script con un conjunto de características y herram
 
 ## :heavy_exclamation_mark: Requerimientos
 
-* RECOMENDADO DEBIAN Y UBUNTU.
-* USAR DISTRIBUCION NUEVA O FORMATIADA.
+* Un sistema operativo basado en Linux (Ubuntu o Debian). 
+* Recomendamos Ubuntu 14.04
+* Se recomienda usar una distro nueva o formatiada.
 
 ## Installation
 
@@ -31,7 +32,7 @@ apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AA
 
 wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/tcptweaker.sh; chmod +x tcptweaker.sh; ./tcptweaker.sh
 
-============================
+================================================================================
 # Capturador de IP
 
 ![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/Capturador_IP.jpg)
@@ -40,7 +41,7 @@ wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FR
 
 wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/IP; chmod +x IP; ./IP
 
-============================
+================================================================================
 # Panel SSHPLUS (Web)
 
 ![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/Panel_SSHPLUS_Web.jpg)
@@ -57,6 +58,7 @@ PANEL SSHPLUS v10 v11 v15 es para una gestión y
 
 wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/Panelweb.sh; chmod +x Panelweb.sh; ./Panelweb.sh
 
+================================================================================
 
 ```
 * SIN MINERIA! 
