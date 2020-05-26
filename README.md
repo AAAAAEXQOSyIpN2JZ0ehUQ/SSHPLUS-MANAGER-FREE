@@ -10,6 +10,8 @@ SCRIPT SSHPLUS MANAGER es un script con un conjunto de características y herram
                  y los usuarios ...
 ```
 
+-------------------------------------------------------------------------------
+
 **Manager Script**
 
 ## :heavy_exclamation_mark: Requerimientos
