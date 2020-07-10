@@ -78,7 +78,7 @@ echo ""
 echo -e "\033[1;33mESPERE..."
 echo ""
 cd /var/www/html
-wget https://www.dropbox.com/s/v7b6yiwg5jn4prh/PAINELWEB1.zip > /dev/null 2>&1
+wget https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Install/Panel_Web/panel_v11/PAINELWEB1.zip > /dev/null 2>&1
 sleep 1
 unzip PAINELWEB1.zip > /dev/null 2>&1
 rm -rf PAINELWEB1.zip index.html > /dev/null 2>&1
@@ -89,7 +89,7 @@ sed -i "s;suasenha;$senha;g" /var/www/html/pages/system/pass.php > /dev/null 2>&
 fi
 sleep 1
 cd
-wget https://www.dropbox.com/s/lfxwu5wy7i46b80/sshplus.sql > /dev/null 2>&1
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v11/sshplus.sql > /dev/null 2>&1
 sleep 1
 if [[ -e "$HOME/sshplus.sql" ]]; then
     mysql -h localhost -u root -p$senha --default_character_set utf8 sshplus < sshplus.sql
