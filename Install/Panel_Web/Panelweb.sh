@@ -463,48 +463,31 @@ fun_bar "sudo apt-get update -y"
 fun_bar "sudo apt-get upgrade -y"
 echo -e "$barra"
 while true; do
-echo -e "\033[1;31m[\033[1;36m01\033[1;31m] \033[1;37m• \033[1;33mPANEL SSHPLUS WEB V10 \033[1;31m"
-echo -e "\033[1;31m[\033[1;36m02\033[1;31m] \033[1;37m• \033[1;33mPANEL SSHPLUS WEB V11 \033[1;31m"
-echo -e "\033[1;31m[\033[1;36m03\033[1;31m] \033[1;37m• \033[1;33mPANEL SSHPLUS WEB V12 \033[1;31m"
-echo -e "\033[1;31m[\033[1;36m04\033[1;31m] \033[1;37m• \033[1;33mPANEL SSHPLUS WEB V15 \033[1;31m"
-echo -e "\033[1;31m[\033[1;36m05\033[1;31m] \033[1;37m• \033[1;33mPANEL SSHPLUS WEB V20 \033[1;31m"
-echo -e "\033[1;31m[\033[1;36m05\033[1;31m] \033[1;37m• \033[1;33mPANEL SSHPLUS WEB V23 \033[1;31m"
-echo -e "\033[1;31m[\033[1;36m06\033[1;31m] \033[1;37m• \033[1;33mPANEL SSHPLUS WEB V25 \033[1;31m"
-echo -e "\033[1;31m[\033[1;36m07\033[1;31m] \033[1;37m• \033[1;33mELIMINAR PANEL SSHPLUS \033[1;31m"
-echo -e "\033[1;31m[\033[1;36m00\033[1;31m] \033[1;37m• \033[1;32mVOLTAR \n${barra}"
-while [[ ${opx} != @(0|[1-7]) ]]; do
+echo -e "\033[1;31m[\033[1;36m1\033[1;31m] \033[1;37m• \033[1;33mPANEL SSHPLUS WEB V10 \033[1;31m"
+echo -e "\033[1;31m[\033[1;36m2\033[1;31m] \033[1;37m• \033[1;33mPANEL SSHPLUS WEB V11 \033[1;31m"
+echo -e "\033[1;31m[\033[1;36m3\033[1;31m] \033[1;37m• \033[1;33mPANEL SSHPLUS WEB V15 \033[1;31m"
+echo -e "\033[1;31m[\033[1;36m4\033[1;31m] \033[1;37m• \033[1;33mELIMINAR PANEL SSHPLUS \033[1;31m"
+echo -e "\033[1;31m[\033[1;36m0\033[1;31m] \033[1;37m• \033[1;32mVOLTAR \n${barra}"
+while [[ ${opx} != @(0|[1-4]) ]]; do
 echo -ne "${cor[2]}QUE QUIERES HACER\033[1;33m?\033[1;31m?\033[1;37m : " && read opx
 tput cuu1 && tput dl1
 done
 case $opx in
-	0 | 00)
+	0)
 	return;;
-	1 | 01)
+	1)
 	panel_v10
 	break;;
-	2 | 02)
+	2)
 	panel_v11
 	break;;
-	3 | 03)
-	panel_v12
-	break;;
-	4 | 04)
+	3)
 	panel_v15
 	break;;
-	5 | 05)
-	panel_v20
-	break;;
-	6 | 06)
-	panel_v23
-	break;;
-	7 | 07)
-	panel_v25
-	break;;
-	8 | 08)
+	4)
 	remove_panel
 	break;;
 esac
 done
 }
-Panelweb_fun
 #fim
