@@ -24,14 +24,6 @@ echo -e " \033[1;33m[\033[1;31m####################\033[1;33m] - \033[1;32m100%\
 sleep 1s
 }
 
-clear
-echo -e "$barra"
-echo -e "\E[41;1;37m        ⇱ ACTUALIZANDO PAQUETES ⇲                 \E[0m"
-
-echo -e "$barra"
-fun_bar "sudo apt-get update -y"
-fun_bar "sudo apt-get upgrade -y"
-
 panel_v10 () {
 clear
 IP=$(wget -qO- ipv4.icanhazip.com)
@@ -112,10 +104,9 @@ echo -e "\033[1;36mFINALIZANDO INSTALACION\033[0m"
 echo ""
 echo -e "\033[1;33mAGUARDE..."
 echo ""
-wget -O /var/www/index.html https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/index.html &> /dev/null
 mkdir /var/www/html
 cd /var/www/html
-wget https://www.dropbox.com/s/hap27l4buda652s/painel10.zip > /dev/null 2>&1
+wget https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Install/Panel_Web/panel_v10/painel10.zip > /dev/null 2>&1
 sleep 1
 unzip painel10.zip > /dev/null 2>&1
 rm -rf painel10.zip index.html > /dev/null 2>&1
@@ -126,7 +117,7 @@ sed -i "s;suasenha;$senha;g" /var/www/html/pages/system/pass.php > /dev/null 2>&
 fi
 sleep 1
 cd
-wget https://www.dropbox.com/s/4kqvchszquqpwqe/plus.sql > /dev/null 2>&1
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v10/plus.sql > /dev/null 2>&1
 sleep 1
 if [[ -e "$HOME/plus.sql" ]]; then
     mysql -h localhost -u root -p$senha --default_character_set utf8 plus < plus.sql
@@ -247,10 +238,9 @@ echo -e "\033[1;36mFINALIZANDO INSTALACION\033[0m"
 echo ""
 echo -e "\033[1;33mESPERE..."
 echo ""
-wget -O /var/www/index.html https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/index.html &> /dev/null
 mkdir /var/www/html
 cd /var/www/html
-wget https://www.dropbox.com/s/p3ojpe2r3uhg9tx/PAINELWEB1.zip > /dev/null 2>&1
+wget https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Install/Panel_Web/panel_v11/PAINELWEB1.zip > /dev/null 2>&1
 sleep 1
 unzip PAINELWEB1.zip > /dev/null 2>&1
 rm -rf PAINELWEB1.zip index.html > /dev/null 2>&1
@@ -261,7 +251,7 @@ sed -i "s;suasenha;$senha;g" /var/www/html/pages/system/pass.php > /dev/null 2>&
 fi
 sleep 1
 cd
-wget https://www.dropbox.com/s/mbt5v1uxv38j8i2/sshplus.sql > /dev/null 2>&1
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v11/sshplus.sql > /dev/null 2>&1
 sleep 1
 if [[ -e "$HOME/sshplus.sql" ]]; then
     mysql -h localhost -u root -p$senha --default_character_set utf8 sshplus < sshplus.sql
@@ -463,36 +453,58 @@ echo -e "\033[1;36mPANEL SSHPLUS ELIMINADO CON EXITO \033[1;32m[!OK]"
 echo -e "$barra"
 }
 
-Panelweb_fun () {
+clear
 echo -e "$barra"
 echo -e "\E[41;1;37m        ⇱ INSTALAR O PAINEL SSH/DROP/SSL ⇲        \E[0m"
 echo -e "$barra"
+echo -e "\033[1;32mACTUALIZANDO PAQUETES"
+echo -e ""
+fun_bar "sudo apt-get update -y"
+fun_bar "sudo apt-get upgrade -y"
+echo -e "$barra"
 while true; do
-echo -e "\033[1;31m[\033[1;36m1\033[1;31m] \033[1;37m• \033[1;33mPANEL SSHPLUS WEB V10 \033[1;31m"
-echo -e "\033[1;31m[\033[1;36m2\033[1;31m] \033[1;37m• \033[1;33mPANEL SSHPLUS WEB V11 \033[1;31m"
-echo -e "\033[1;31m[\033[1;36m3\033[1;31m] \033[1;37m• \033[1;33mPANEL SSHPLUS WEB V15 \033[1;31m"
-echo -e "\033[1;31m[\033[1;36m4\033[1;31m] \033[1;37m• \033[1;33mELIMINAR PANEL SSHPLUS \033[1;31m"
-echo -e "\033[1;31m[\033[1;36m0\033[1;31m] \033[1;37m• \033[1;32mVOLTAR \n${barra}"
-while [[ ${opx} != @(0|[1-4]) ]]; do
-echo -ne "${cor[0]}Digite a Opcao: \033[1;37m" && read opx
+echo -e "\033[1;31m[\033[1;36m01\033[1;31m] \033[1;37m• \033[1;33mPANEL SSHPLUS WEB V10 \033[1;31m"
+echo -e "\033[1;31m[\033[1;36m02\033[1;31m] \033[1;37m• \033[1;33mPANEL SSHPLUS WEB V11 \033[1;31m"
+echo -e "\033[1;31m[\033[1;36m03\033[1;31m] \033[1;37m• \033[1;33mPANEL SSHPLUS WEB V12 \033[1;31m"
+echo -e "\033[1;31m[\033[1;36m04\033[1;31m] \033[1;37m• \033[1;33mPANEL SSHPLUS WEB V15 \033[1;31m"
+echo -e "\033[1;31m[\033[1;36m05\033[1;31m] \033[1;37m• \033[1;33mPANEL SSHPLUS WEB V20 \033[1;31m"
+echo -e "\033[1;31m[\033[1;36m05\033[1;31m] \033[1;37m• \033[1;33mPANEL SSHPLUS WEB V23 \033[1;31m"
+echo -e "\033[1;31m[\033[1;36m06\033[1;31m] \033[1;37m• \033[1;33mPANEL SSHPLUS WEB V25 \033[1;31m"
+echo -e "\033[1;31m[\033[1;36m07\033[1;31m] \033[1;37m• \033[1;33mELIMINAR PANEL SSHPLUS \033[1;31m"
+echo -e "\033[1;31m[\033[1;36m00\033[1;31m] \033[1;37m• \033[1;32mVOLTAR \n${barra}"
+while [[ ${opx} != @(0|[1-7]) ]]; do
+echo -ne "${cor[2]}QUE QUIERES HACER\033[1;33m?\033[1;31m?\033[1;37m : " && read opx
 tput cuu1 && tput dl1
 done
 case $opx in
-	0)
+	0 | 00)
 	return;;
-	1)
+	1 | 01)
 	panel_v10
 	break;;
-	2)
+	2 | 02)
 	panel_v11
 	break;;
-	3)
+	3 | 03)
+	panel_v12
+	break;;
+	4 | 04)
 	panel_v15
 	break;;
-	4)
+	5 | 05)
+	panel_v20
+	break;;
+	6 | 06)
+	panel_v23
+	break;;
+	7 | 07)
+	panel_v25
+	break;;
+	8 | 08)
 	remove_panel
 	break;;
 esac
 done
 }
 Panelweb_fun
+#fim
