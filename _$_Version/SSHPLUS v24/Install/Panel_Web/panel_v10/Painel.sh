@@ -78,7 +78,7 @@ echo ""
 echo -e "\033[1;33mESPERE..."
 echo ""
 cd /var/www/html
-wget https://www.dropbox.com/s/2x6w32kacpkmzvc/painel10.zip > /dev/null 2>&1
+wget https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Install/Panel_Web/panel_v10/painel10.zip > /dev/null 2>&1
 sleep 1
 unzip painel10.zip > /dev/null 2>&1
 rm -rf painel10.zip index.html > /dev/null 2>&1
@@ -89,7 +89,7 @@ sed -i "s;suasenha;$senha;g" /var/www/html/pages/system/pass.php > /dev/null 2>&
 fi
 sleep 1
 cd
-wget https://www.dropbox.com/s/3zfjofux5ooxrwj/plus.sql > /dev/null 2>&1
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v10/plus.sql > /dev/null 2>&1
 sleep 1
 if [[ -e "$HOME/plus.sql" ]]; then
     mysql -h localhost -u root -p$senha --default_character_set utf8 plus < plus.sql
@@ -123,7 +123,7 @@ echo ""
 echo -e "\033[1;31mATENCION \033[1;33m!!!"
 echo ""
 echo -e "\033[1;33mCuando crea un servidor es necesario instalar este comando:\033[0m"
-echo -e "\033[1;33mwget http://ssh-plus.tk/revenda/confpainel/inst > /dev/null 2>&1; bash inst\033[0m"
+echo -e "\033[1;33mwget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v10/revenda/confpainel/inst > /dev/null 2>&1; bash inst\033[0m"
 echo -e "\033[1;33men la vps que se convertira en servidor\033[0m"
 echo -e "\033[1;31mNOTA: \033[1;33m!!!"
 echo ""
