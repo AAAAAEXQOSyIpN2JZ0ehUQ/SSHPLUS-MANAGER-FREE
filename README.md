@@ -2,6 +2,8 @@
 
 ![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/SSHPLUS_MANAGER.jpg)
 
+![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/SSHPLUS_MANAGER_2.jpg)
+
 
 ```
 SCRIPT SSHPLUS MANAGER es un script con un conjunto de características y herramientas adecuadas para 
