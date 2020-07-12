@@ -120,8 +120,6 @@ echo -e "\033[1;36mUSUARIO\033[1;37m admin\033[0m"
 echo -e "\033[1;36mCONTRASENA\033[1;37m admin\033[0m"
 echo ""
 echo -e "\033[1;36mINGRESE ESTE ENLACE EN LA VPS QUE SERA SERVIDOR\033[0m"
-echo -e "\033[1;37mwget http://ssh-plus.tk/revenda/confpainel/inst > /dev/null 2>&1; bash inst\033[0m"
+echo -e "\033[1;37mwget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v10/revenda/confpainel/inst > /dev/null 2>&1; bash inst\033[0m"
 echo -e "\033[1;33mCambie la contrasena una vez entrando al panel\033[0m"
 cat /dev/null > ~/.bash_history && history -c
-
-
