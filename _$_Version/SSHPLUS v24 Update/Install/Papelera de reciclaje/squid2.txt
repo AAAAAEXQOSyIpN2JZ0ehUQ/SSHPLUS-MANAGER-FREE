@@ -1,0 +1,24 @@
+
+acl url4 dstdomain -i /SSHPLUS?
+acl payload url_regex -i /etc/squid3/payload.txt
+acl all src 0.0.0.0/0
+
+http_access allow url1
+http_access allow url2
+http_access allow url3
+http_access allow url4
+http_access allow payload
+http_access deny all
+ 
+#Portas
+http_port 80
+http_port 8080
+http_port 3128
+http_port 8799
+
+#Nome squid
+visible_hostname SSHPLUS
+ 
+via off
+forwarded_for off
+pipeline_prefetch off
