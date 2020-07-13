@@ -167,7 +167,7 @@ case "$x" in
    panel_v23
    exit;
    ;;
-   119)
+   11)
    clear
    panel_v25
    exit;
