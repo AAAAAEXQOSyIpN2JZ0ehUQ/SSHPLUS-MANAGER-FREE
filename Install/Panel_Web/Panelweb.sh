@@ -111,7 +111,7 @@ echo -e "$barra"
 clean_htmlfolder () {
 clear
 echo -e "$barra"
-echo -e "\E[41;1;37m        ⇱ PREPARAR HTML FOLDER ⇲        \E[0m"
+echo -e "\E[41;1;37m        ⇱ PREPARAR HTML FOLDER ⇲                   \E[0m"
 echo -e "$barra"
 echo -e " "
 echo -ne "\033[1;33m[\033[1;31m ! \033[1;33m] \033[1;31mapt-get update "; fun_prog 'fun_update'
@@ -123,8 +123,10 @@ echo -e " "
 echo -ne "\033[1;33m[\033[1;31m ! \033[1;33m] \033[1;31mRedirigiendo "; fun_prog 'sleep 3'
 sleep 2
 echo -e " "
-chmod +x Panelweb.sh
-./Panelweb.sh
+sudo rm -rf /root/Panelweb.sh > /dev/null 2>&1
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/Panelweb.sh > /dev/null 2>&1
+chmod +x Panelweb.sh > /dev/null 2>&1
+./Panelweb.sh > /dev/null 2>&1
 }
 
 while true $x != "ok"
