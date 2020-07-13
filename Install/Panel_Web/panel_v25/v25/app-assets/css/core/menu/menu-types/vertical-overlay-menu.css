@@ -1,0 +1,118 @@
+/*=========================================================================================
+    File Name: vertical-overlay-menu.scss
+    Description: A overlay style vertical menu with show and hide support. It support
+    light & dark version, filpped layout, right side icons, native scroll and borders menu
+    item seperation.
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuesax HTML Admin Template
+    Version: 1.0
+    Author: PIXINVENT
+    Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+/*========================================================
+        DARK LAYOUT
+=========================================================*/
+.vertical-overlay-menu .content {
+  margin-left : 0;
+}
+
+.vertical-overlay-menu .navbar .navbar-header {
+  float : left;
+  width : 260px;
+}
+
+.vertical-overlay-menu .main-menu, .vertical-overlay-menu.menu-hide .main-menu {
+  opacity : 0;
+  -webkit-transform : translate3d(0, 0, 0);
+     -moz-transform : translate3d(0, 0, 0);
+          transform : translate3d(0, 0, 0);
+  -webkit-transition : width 0.25s,opacity 0.25s,-webkit-transform 0.25s;
+          transition : width 0.25s,opacity 0.25s,-webkit-transform 0.25s;
+       -o-transition : width 0.25s,opacity 0.25s,-o-transform 0.25s;
+     -moz-transition : width 0.25s,opacity 0.25s,transform 0.25s,-moz-transform 0.25s;
+          transition : width 0.25s,opacity 0.25s,transform 0.25s;
+          transition : width 0.25s,opacity 0.25s,transform 0.25s,-webkit-transform 0.25s,-moz-transform 0.25s,-o-transform 0.25s;
+  width : 260px;
+  left : -260px;
+}
+.vertical-overlay-menu .main-menu .navigation .navigation-header .icon-minus {
+  display : none;
+}
+.vertical-overlay-menu .main-menu .navigation > li > a > i {
+  margin-right : 14px;
+  float : left;
+}
+.vertical-overlay-menu .main-menu .navigation > li > a > i:before {
+  -webkit-transition : 200ms ease all;
+       -o-transition : 200ms ease all;
+     -moz-transition : 200ms ease all;
+          transition : 200ms ease all;
+  font-size : 1.429rem;
+}
+.vertical-overlay-menu .main-menu .navigation li.has-sub > a:not(.mm-next):after {
+  content : '\f105';
+  font-family : 'FontAwesome';
+  font-size : 1rem;
+  display : inline-block;
+  position : absolute;
+  right : 25px;
+  top : 10px;
+  -webkit-transform : rotate(0deg);
+     -moz-transform : rotate(0deg);
+      -ms-transform : rotate(0deg);
+       -o-transform : rotate(0deg);
+          transform : rotate(0deg);
+  transition : -webkit-transform 0.2s ease-in-out;
+}
+.vertical-overlay-menu .main-menu .navigation li.open > a:not(.mm-next):after {
+  -webkit-transform : rotate(90deg);
+     -moz-transform : rotate(90deg);
+      -ms-transform : rotate(90deg);
+       -o-transform : rotate(90deg);
+          transform : rotate(90deg);
+}
+.vertical-overlay-menu .main-menu .main-menu-footer {
+  bottom : 55px;
+}
+.vertical-overlay-menu .main-menu .main-menu-footer {
+  width : 260px;
+}
+
+.vertical-overlay-menu.menu-open .main-menu {
+  opacity : 1;
+  -webkit-transform : translate3d(260px, 0, 0);
+     -moz-transform : translate3d(260px, 0, 0);
+          transform : translate3d(260px, 0, 0);
+  -webkit-transition : width 0.25s,opacity 0.25s,-webkit-transform 0.25s;
+          transition : width 0.25s,opacity 0.25s,-webkit-transform 0.25s;
+       -o-transition : width 0.25s,opacity 0.25s,-o-transform 0.25s;
+     -moz-transition : width 0.25s,opacity 0.25s,transform 0.25s,-moz-transform 0.25s;
+          transition : width 0.25s,opacity 0.25s,transform 0.25s;
+          transition : width 0.25s,opacity 0.25s,transform 0.25s,-webkit-transform 0.25s,-moz-transform 0.25s,-o-transform 0.25s;
+}
+
+.vertical-overlay-menu.menu-flipped .main-menu {
+  right : -260px;
+  left : inherit;
+}
+
+.vertical-overlay-menu.menu-flipped .navbar .navbar-container {
+  margin : 0;
+  margin-right : 260px;
+}
+
+.vertical-overlay-menu.menu-flipped .navbar .navbar-header {
+  float : right;
+}
+
+.vertical-overlay-menu.menu-flipped.menu-open .main-menu {
+  -webkit-transform : translate3d(-260px, 0, 0);
+     -moz-transform : translate3d(-260px, 0, 0);
+          transform : translate3d(-260px, 0, 0);
+}
+
+@media (max-width: 991.98px) {
+  .vertical-overlay-menu .main-menu .main-menu-footer {
+    bottom : 0;
+  }
+}

@@ -1,0 +1,10 @@
+{
+ "listItems": [
+   {"name":"1-Column", "url":"sk-layout-1-column.html","icon":"ft-file-text"},
+   {"name":"2-Columns", "url":"sk-layout-2-columns.html","icon":"ft-sidebar"},
+   {"name":"Fixed Navbar", "url":"sk-layout-fixed-navbar.html","icon":"ft-credit-card"},
+   {"name":"Floating Navbar", "url":"sk-layout-floating-navbar.html","icon":"ft-server"},
+   {"name":"Fixed Layout", "url":"sk-layout-fixed.html","icon":"ft-layout"},
+   {"name":"Static Layout", "url":"sk-layout-static.html","icon":"ft-sliders"}
+ ]
+}

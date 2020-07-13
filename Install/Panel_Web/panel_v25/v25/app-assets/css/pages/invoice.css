@@ -1,0 +1,18 @@
+/*========================================================
+        DARK LAYOUT
+=========================================================*/
+.invoice-page {
+  padding : 2.2rem;
+}
+.invoice-page .recipient-contact i, .invoice-page .company-contact i {
+  padding-right : 0.2rem;
+  position : relative;
+  top : 2px;
+}
+.invoice-page .recipient-info p, .invoice-page .company-info p, .invoice-page .company-contact p, .invoice-page .recipient-contact p {
+  line-height : 2;
+  margin-bottom : 0;
+}
+.invoice-page .invoice-items-table table, .invoice-page .invoice-total-table table {
+  border : 2px solid #F8F8F8;
+}
