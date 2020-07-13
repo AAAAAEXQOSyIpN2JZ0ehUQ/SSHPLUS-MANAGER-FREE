@@ -27,6 +27,26 @@ fun_upgrade () {
     sudo apt-get upgrade -y
 }
 
+fun_limpiarepositorios () {
+##LIMPIA ROOT
+sudo rm -rf /root/install > /dev/null 2>&1
+sudo rm -rf /root/ocspanel > /dev/null 2>&1
+sudo rm -rf /root/Painelv11.sh > /dev/null 2>&1
+sudo rm -rf /root/install.sh > /dev/null 2>&1
+sudo rm -rf /root/Painel.sh > /dev/null 2>&1
+sudo rm -rf /root/banco.sql > /dev/null 2>&1
+sudo rm -rf /root/BD-Painel-v23.sql > /dev/null 2>&1
+sudo rm -rf /root/sshplus.sql > /dev/null 2>&1
+sudo rm -rf /root/bd-v15.sql > /dev/null 2>&1
+sudo rm -rf /root/ssh.sql > /dev/null 2>&1
+sudo rm -rf /root/plus.sql > /dev/null 2>&1
+##LIMPIA HTML
+sudo rm -rf /var/www/html
+[[ ! -d /var ]] && mkdir /var
+[[ ! -d /var/www ]] && mkdir /var/www
+[[ ! -d /var/www/html ]] && mkdir /var/www/html
+}
+
 ##PANIL A INSTALAR
 panel_v10 () {
     wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v10/Painel.sh > /dev/null 2>&1; chmod +x Painel.sh; ./Painel.sh
@@ -98,11 +118,7 @@ echo -ne "\033[1;33m[\033[1;31m ! \033[1;33m] \033[1;31mapt-get update "; fun_pr
 echo -e " "
 echo -ne "\033[1;33m[\033[1;31m ! \033[1;33m] \033[1;31mapt-get upgrade "; fun_prog 'fun_upgrade'
 echo -e " "
-echo -ne "\033[1;33m[\033[1;31m ! \033[1;33m] \033[1;31mClean HTML Folder "; fun_prog 'sudo rm -rf /var/www/html'
-sudo rm -rf /var/www/html > /dev/null 2>&1
-[[ ! -d /var ]] && mkdir /var
-[[ ! -d /var/www ]] && mkdir /var/www
-[[ ! -d /var/www/html ]] && mkdir /var/www/html
+echo -ne "\033[1;33m[\033[1;31m ! \033[1;33m] \033[1;31mClean HTML Folder "; fun_prog 'fun_limpiarepositorios'
 echo -e " "
 echo -ne "\033[1;33m[\033[1;31m ! \033[1;33m] \033[1;31mRedirigiendo "; fun_prog 'sleep 3'
 sleep 2
