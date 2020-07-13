@@ -44,17 +44,15 @@ wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FR
 wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/IP; chmod +x IP; ./IP
 
 -------------------------------------------------------------------------------
-# Panel SSHPLUS (Web)
+# PANEL SSHPLUS (Web)
 
 ![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/Panel_SSHPLUS_Web.jpg)
 
 ```
-PANEL SSHPLUS es para una gestión y
-                 Monitoreo completo de usuarios, permitiendo reventas y sub
-                 revendedores para aquellos que desean tener un negocio más amplio,
-                 También tiene una interfaz intuitiva, a la que se puede acceder en cualquier momento.
+PANEL SSHPLUS es una herramienta completa de gestión y supervisión de usuarios que permite
+                 reventas y sub revendedores para aquellos que desean tener un negocio más amplio, 
+                 también tiene una interfaz intuitiva, a la que se puede acceder desde cualquier 
                  navegador ...
-```
 
 ## Installation
 
