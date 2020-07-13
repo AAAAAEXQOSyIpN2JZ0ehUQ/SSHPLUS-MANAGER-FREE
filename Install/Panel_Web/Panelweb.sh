@@ -121,12 +121,11 @@ echo -e " "
 echo -ne "\033[1;33m[\033[1;31m ! \033[1;33m] \033[1;31mClean HTML Folder "; fun_prog 'fun_limpiarepositorios'
 echo -e " "
 echo -ne "\033[1;33m[\033[1;31m ! \033[1;33m] \033[1;31mRedirigiendo "; fun_prog 'sleep 3'
-sleep 2
+sleep 1
 echo -e " "
 sudo rm -rf /root/Panelweb.sh > /dev/null 2>&1
 wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/Panelweb.sh > /dev/null 2>&1
-chmod +x Panelweb.sh > /dev/null 2>&1
-./Panelweb.sh > /dev/null 2>&1
+chmod +x Panelweb.sh; ./Panelweb.sh
 }
 
 while true $x != "ok"
