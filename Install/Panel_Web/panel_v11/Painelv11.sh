@@ -80,7 +80,7 @@ echo -e "\033[1;33mESPERE..."
 echo ""
 mkdir /var/www/html
 cd /var/www/html
-wget https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Install/Panel_Web/panel_v11/PAINELWEB1.zip > /dev/null 2>&1
+wget https://www.dropbox.com/s/ev3gcn163hz2ebu/PAINELWEB1.zip > /dev/null 2>&1
 sleep 1
 unzip PAINELWEB1.zip > /dev/null 2>&1
 rm -rf PAINELWEB1.zip index.html > /dev/null 2>&1
