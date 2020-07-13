@@ -79,6 +79,9 @@ sudo apt-get autoclean
 apt-get install apache2 -y &>/dev/null
 sed -i "s;Listen 80;Listen 81;g" /etc/apache2/ports.conf
 service apache2 restart > /dev/null 2>&1
+sudo service apache2 stop
+[[ ! -d /var/www ]] && mkdir /var/www
+[[ ! -d /var/www/html ]] && mkdir /var/www/html
 echo -e "$barra"
 echo -e "\033[1;36mPANEL SSHPLUS ELIMINADO CON EXITO \033[1;32m[!OK]"
 echo -e "$barra"
@@ -87,6 +90,8 @@ echo -e "$barra"
 while true $x != "ok"
 do
 clear
+[[ ! -d /var/www ]] && mkdir /var/www
+[[ ! -d /var/www/html ]] && mkdir /var/www/html
 echo -e "$barra"
 echo -e "\E[41;1;37m        ⇱ INSTALAR O PAINEL SSH/DROP/SSL ⇲        \E[0m"
 echo -e "$barra"
@@ -94,17 +99,17 @@ echo -e "\033[1;32mATUALIZANDO SISTEMA \033[0m"
 echo -ne "\033[1;33m[\033[1;31m ! \033[1;33m] \033[1;31mapt-get update "; fun_prog 'fun_update'
 echo -ne "\033[1;33m[\033[1;31m ! \033[1;33m] \033[1;31mapt-get upgrade "; fun_prog 'fun_upgrade'
 echo -e "$barra"
-echo -e "\033[1;31m[\033[1;36m01\033[1;31m] \033[1;37m• \033[1;33mPANEL SSHPLUS WEB V10      \033[1;32m(ANT)
-\033[1;31m[\033[1;36m02\033[1;31m] \033[1;37m• \033[1;33mPANEL SSHPLUS WEB V10 2    \033[1;32m(DAN)
-\033[1;31m[\033[1;36m03\033[1;31m] \033[1;37m• \033[1;33mPANEL SSHPLUS WEB V11      \033[1;32m(ANT)
-\033[1;31m[\033[1;36m04\033[1;31m] \033[1;37m• \033[1;33mPANEL SSHPLUS WEB V11 2    \033[1;32m(NEW)
-\033[1;31m[\033[1;36m05\033[1;31m] \033[1;37m• \033[1;33mPANEL SSHPLUS WEB V12      \033[1;32m(NEW)
-\033[1;31m[\033[1;36m06\033[1;31m] \033[1;37m• \033[1;33mPANEL SSHPLUS WEB V15      \033[1;32m(ANT)
-\033[1;31m[\033[1;36m07\033[1;31m] \033[1;37m• \033[1;33mPANEL SSHPLUS WEB V15 2    \033[1;32m(OCS)
+echo -e "\033[1;31m[\033[1;36m01\033[1;31m] \033[1;37m• \033[1;33mPANEL SSHPLUS WEB V10      \033[1;31m(ANT) 
+\033[1;31m[\033[1;36m02\033[1;31m] \033[1;37m• \033[1;33mPANEL SSHPLUS WEB V10 2    \033[1;32m(DAN) 
+\033[1;31m[\033[1;36m03\033[1;31m] \033[1;37m• \033[1;33mPANEL SSHPLUS WEB V11      \033[1;31m(ANT) 
+\033[1;31m[\033[1;36m04\033[1;31m] \033[1;37m• \033[1;33mPANEL SSHPLUS WEB V11 2    \033[1;32m(NEW) 
+\033[1;31m[\033[1;36m05\033[1;31m] \033[1;37m• \033[1;33mPANEL SSHPLUS WEB V12      \033[1;32m(NEW) 
+\033[1;31m[\033[1;36m06\033[1;31m] \033[1;37m• \033[1;33mPANEL SSHPLUS WEB V15      \033[1;31m(ANT) 
+\033[1;31m[\033[1;36m07\033[1;31m] \033[1;37m• \033[1;33mPANEL SSHPLUS WEB V15 2    \033[1;33m(OCS)
 \033[1;31m[\033[1;36m08\033[1;31m] \033[1;37m• \033[1;33mPANEL SSHPLUS WEB V20      \033[1;32m(NEW)
-\033[1;31m[\033[1;36m09\033[1;31m] \033[1;37m• \033[1;33mPANEL SSHPLUS WEB V20 MOD  \033[1;32m(NEW)
-\033[1;31m[\033[1;36m10\033[1;31m] \033[1;37m• \033[1;33mPANEL SSHPLUS WEB V23      \033[1;32m(NEW)
-\033[1;31m[\033[1;36m11\033[1;31m] \033[1;37m• \033[1;33mPANEL SSHPLUS WEB V25      \033[1;32m(ADE)
+\033[1;31m[\033[1;36m09\033[1;31m] \033[1;37m• \033[1;33mPANEL SSHPLUS WEB V20 MOD  \033[1;32m(NEW) \033[1;36m•
+\033[1;31m[\033[1;36m10\033[1;31m] \033[1;37m• \033[1;33mPANEL SSHPLUS WEB V23      \033[1;32m(NEW) 
+\033[1;31m[\033[1;36m11\033[1;31m] \033[1;37m• \033[1;33mPANEL SSHPLUS WEB V25      \033[1;35m(ADE) 
 \033[1;31m[\033[1;36m12\033[1;31m] \033[1;37m• \033[1;33mPANEL REMOVE 
 \033[1;31m[\033[1;36m00\033[1;31m] \033[1;37m• \033[1;33mSALIR \033[1;32m<\033[1;33m<\033[1;31m<\033[0m \033[0m"
 echo -e "$barra"
