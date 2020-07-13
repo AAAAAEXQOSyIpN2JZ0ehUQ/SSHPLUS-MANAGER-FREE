@@ -1,6 +1,4 @@
 #!/bin/bash
-rm -rf $HOME/Panelweb.sh
-declare -A cor=( [0]="\033[1;37m" [1]="\033[1;34m" [2]="\033[1;32m" [3]="\033[1;36m" [4]="\033[1;31m" [5]="\033[1;33m" )
 barra="\033[0m\e[34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 
 fun_bar () {
@@ -469,7 +467,7 @@ echo -e "\033[1;31m[\033[1;36m3\033[1;31m] \033[1;37m• \033[1;33mPANEL SSHPLUS
 echo -e "\033[1;31m[\033[1;36m4\033[1;31m] \033[1;37m• \033[1;33mELIMINAR PANEL SSHPLUS \033[1;31m"
 echo -e "\033[1;31m[\033[1;36m0\033[1;31m] \033[1;37m• \033[1;32mVOLTAR \n${barra}"
 while [[ ${opx} != @(0|[1-4]) ]]; do
-echo -ne "${cor[2]}QUE QUIERES HACER\033[1;33m?\033[1;31m?\033[1;37m : " && read opx
+echo -ne "\033[1;32mQUE QUIERES HACER\033[1;33m?\033[1;31m?\033[1;37m : " && read opx
 tput cuu1 && tput dl1
 done
 case $opx in

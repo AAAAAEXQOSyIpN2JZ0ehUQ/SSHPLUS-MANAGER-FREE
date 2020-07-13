@@ -1,11 +1,10 @@
-#!/bin/bash
 clear
 IP=$(wget -qO- ipv4.icanhazip.com)
 echo "America/Mexico_City" > /etc/timezone
 ln -fs /usr/share/zoneinfo/America/Mexico_City /etc/localtime > /dev/null 2>&1
 dpkg-reconfigure --frontend noninteractive tzdata > /dev/null 2>&1
 clear
-echo -e "\E[44;1;37m           PANEL SSHPLUS v11          \E[0m"
+echo -e "\E[44;1;37m           PANEL SSHPLUS WEB v11          \E[0m"
 echo ""
 echo ""
 echo -e "                \033[1;31mATENCION"
@@ -22,6 +21,8 @@ echo -e "\033[1;36mINSTALANDO O APACHE2\033[0m"
 echo ""
 echo -e "\033[1;33mESPERE..."
 apt-get install apache2 -y > /dev/null 2>&1
+sed -i "s;Listen 80;Listen 81;g" /etc/apache2/ports.conf
+service apache2 restart > /dev/null 2>&1
 apt-get install cron curl unzip -y > /dev/null 2>&1
 echo ""
 echo -e "\033[1;36mINSTALANDO DEPENDENCIAS\033[0m"
@@ -77,6 +78,7 @@ echo -e "\033[1;36mFINALIZANDO INSTALACION\033[0m"
 echo ""
 echo -e "\033[1;33mESPERE..."
 echo ""
+mkdir /var/www/html
 cd /var/www/html
 wget https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Install/Panel_Web/panel_v11/PAINELWEB1.zip > /dev/null 2>&1
 sleep 1
@@ -115,8 +117,8 @@ sleep 1
 clear
 echo -e "\033[1;32mPAINEL INSTALADO CON EXITO!"
 echo ""
-echo -e "\033[1;36mLINK AREA ADMIN:\033[1;37m $IP:81/html/admin\033[0m"
-echo -e "\033[1;36mLINK AREA REVENDA: \033[1;37m $IP:81/html\033[0m"
+echo -e "\033[1;36mLINK AREA ADMIN:\033[1;37m $IP:81/admin\033[0m"
+echo -e "\033[1;36mLINK AREA REVENDA: \033[1;37m $IP:81\033[0m"
 echo -e "\033[1;36mUSUARIO\033[1;37m admin\033[0m"
 echo -e "\033[1;36mCONTRASENA\033[1;37m admin\033[0m"
 echo -e "\033[1;33mCambie la contrasena cuando logre entrar al panel\033[0m"
