@@ -59,6 +59,12 @@ PANEL SSHPLUS es una herramienta completa de gestión y supervisión de usuarios
 
 wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/Panelweb.sh; chmod +x Panelweb.sh; ./Panelweb.sh
 
+
+## PANEL SSHPLUS v20 (Recomendado)
+
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v20/install; chmod +x install; ./install
+
+
 -------------------------------------------------------------------------------
 
 ```
