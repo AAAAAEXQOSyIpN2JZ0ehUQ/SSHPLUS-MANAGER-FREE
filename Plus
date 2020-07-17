@@ -131,6 +131,7 @@ echo ""
 fun_bar "source list"
 rm Plus* > /dev/null 2>&1
 rm list* > /dev/null 2>&1
+rm versao* > /dev/null 2>&1
 echo "/bin/menu" > /bin/h && chmod +x /bin/h > /dev/null 2>&1
 wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/versao > /dev/null 2>&1
 clear
