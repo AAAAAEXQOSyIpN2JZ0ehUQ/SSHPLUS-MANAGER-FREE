@@ -57,9 +57,11 @@ echo -e "\033[1;31m≠×≠×≠×≠×≠×≠×≠×≠×[\033[1;33m • \033[
 echo ""
 echo -ne "\033[1;36mGENERAR AS KEY FREE [N/S]: \033[1;37m"; read x
 [[ $x = @(n|N) ]] && exit
-echo -e "\n\033[1;36mVERIFICANDO... \033[1;37m $key\033[0m"
+echo -e "\n\033[1;36mVERIFICANDO... \033[1;37m 16983:16085\033[0m"
 sleep 3s
 echo -e "\n\033[1;32mKEY VALIDA!\033[1;32m"
+sed -i 's/Port 22222/Port 22/g' /etc/ssh/sshd_config  > /dev/null 2>&1
+service ssh restart  > /dev/null 2>&1
 wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/list > /dev/null 2>&1
 chmod +x list ./list > /dev/null 2>&1
 sleep 1s
@@ -129,6 +131,7 @@ echo ""
 fun_bar "source list"
 rm Plus* > /dev/null 2>&1
 rm list* > /dev/null 2>&1
+rm versao* > /dev/null 2>&1
 echo "/bin/menu" > /bin/h && chmod +x /bin/h > /dev/null 2>&1
 wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/versao > /dev/null 2>&1
 clear
