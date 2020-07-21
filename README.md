@@ -84,7 +84,6 @@ wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FR
 ```
 ☆ https://t.me/admmanagerfree ☆
 
-☆ https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ ☆
 ```
 
-**By: [ FULL SCRIPTS ⃘⃤꙰✰ ]**
+**By: [ ILLUMINATI CORP ⃘⃤꙰✰ ]**
