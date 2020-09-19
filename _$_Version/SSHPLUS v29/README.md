@@ -17,33 +17,16 @@ SCRIPT SSHPLUS MANAGER es un script con un conjunto de características y herram
 ## :heavy_exclamation_mark: Requerimientos
 
 * Un sistema operativo basado en Linux (Ubuntu o Debian) 
-* Recomendamos Ubuntu 14.04
+* Recomendamos Ubuntu 14.04 Server x86_64
 * Se recomienda usar una distro nueva o formatiada
 
 ## Installation
 
 apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Plus; chmod 777 Plus; ./Plus
 
--------------------------------------------------------------------------------
-
-# TCP-Tweaker-1.0 (TCP-SPEED)
-
-![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/TCP_Tweaker_TCP_SPEED.jpg)
-
-## Installation
-
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/tcptweaker.sh; chmod +x tcptweaker.sh; ./tcptweaker.sh
 
 -------------------------------------------------------------------------------
-# Capturador de IP
 
-![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/Capturador_IP.jpg)
-
-## Installation
-
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/IP; chmod +x IP; ./IP
-
--------------------------------------------------------------------------------
 # PANEL SSHPLUS (VERSIONES)
 
 ![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/Panel_SSHPLUS_Web.jpg)
@@ -62,14 +45,31 @@ wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FR
 
 -------------------------------------------------------------------------------
 
-## PANEL SSHPLUS v20 (RECOMENDADO)
-
-![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/Panel_SSHPLUS_v20.jpg)
-
-## Installation Directa
+```
+## PANEL SSHPLUS v20 (Installation Directa)
 
 wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v20/install; chmod +x install; ./install
+```
 
+-------------------------------------------------------------------------------
+
+# TCP-Tweaker-1.0 (TCP-SPEED)
+
+![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/TCP_Tweaker_TCP_SPEED.jpg)
+
+## Installation
+
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/tcptweaker.sh; chmod +x tcptweaker.sh; ./tcptweaker.sh
+
+-------------------------------------------------------------------------------
+
+# Capturador de IP
+
+![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/Capturador_IP.jpg)
+
+## Installation
+
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/IP; chmod +x IP; ./IP
 
 -------------------------------------------------------------------------------
 
@@ -84,7 +84,6 @@ wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FR
 ```
 ☆ https://t.me/admmanagerfree ☆
 
-☆ https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ ☆
 ```
 
-**By: [ FULL SCRIPTS ⃘⃤꙰✰ ]**
+**By: [  ⃘⃤꙰✰ ]**

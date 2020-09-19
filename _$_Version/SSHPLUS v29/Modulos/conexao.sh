@@ -111,7 +111,7 @@
 			done
 			echo -e "\n\033[1;32mINSTALANDO SQUID PROXY\033[0m"
 			echo ""
-			fun_bar 'apt-get update -y' 'apt-get install squid3 -y >/dev/null 2>&1'
+			fun_bar 'apt-get update -y' 'apt-get install squid3 -y'
 			sleep 1
 			[[ -d "/etc/squid/" ]] && {
 				var_sqd="/etc/squid/squid.conf"
