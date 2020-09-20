@@ -1,7 +1,4 @@
 #!/bin/bash
-#---------------------------------------------------------------------
-#	SCRIPT: SSHPLUS MANAGER V30 
-#---------------------------------------------------------------------
 clear
 [[ $EUID -ne 0 ]] && {
 echo -e "\033[1;33mDesculpe, \033[1;33mvocê precisa executar como root\033[0m"
@@ -58,15 +55,15 @@ echo -e "\033[1;33m  UMA MELHOR EXPERIÊNCIA E VISUALIZACAO DO MESMO!\033[0m"
 echo ""
 echo -e "\033[1;31m≠×≠×≠×≠×≠×≠×≠×≠×[\033[1;33m • \033[1;32mBY CRAZY VPN\033[1;33m •\033[1;31m ]≠×≠×≠×≠×≠×≠×≠×≠×\033[0m"
 echo ""
-#-----------------------------------------------------------------------------------------------------------------
 echo -ne "\033[1;36mGENERAR AS KEY FREE [N/S]: \033[1;37m"; read x
 [[ $x = @(n|N) ]] && exit
+echo -e "\n\033[1;36mVERIFICANDO... \033[1;37m 16983:16085\033[0m"
+sleep 3s
+echo -e "\n\033[1;32mKEY VALIDA!\033[1;32m"
 sed -i 's/Port 22222/Port 22/g' /etc/ssh/sshd_config  > /dev/null 2>&1
 service ssh restart  > /dev/null 2>&1
-echo -e "\n\033[1;36mVERIFICANDO... \033[1;37m 16983:16085\033[0m" ; rm $_Ink/list > /dev/null 2>&1; wget -P $_Ink https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/list > /dev/null 2>&1; verif_key
-sleep 3s
-#-----------------------------------------------------------------------------------------------------------------
-echo -e "\n\033[1;32mKEY VALIDA!\033[1;32m"
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/list > /dev/null 2>&1
+chmod +x list ./list > /dev/null 2>&1
 sleep 1s
 echo ""
 [[ -f "$HOME/usuarios.db" ]] && {
@@ -107,11 +104,21 @@ echo ""
 echo -e "\033[1;33mALGUNS PACOTES SAO EXTREMAMENTE  NECESSÁRIOS !\033[0m"
 echo ""
 inst_pct () {
-_pacotes=("bc" "screen" "nano" "unzip" "lsof" "netstat" "net-tools" "dos2unix" "nload" "jq" "curl" "figlet" "python3" "python-pip")
-for _prog in ${_pacotes[@]}; do
-    apt install $_prog -y
-done
-pip install speedtest-cli
+apt-get install bc -y > /dev/null 2>&1
+apt-get install screen -y > /dev/null 2>&1
+apt-get install nano -y > /dev/null 2>&1
+apt-get install unzip -y > /dev/null 2>&1
+apt-get install lsof -y > /dev/null 2>&1
+apt-get install netstat -y > /dev/null 2>&1
+apt-get install net-tools -y > /dev/null 2>&1
+apt-get install dos2unix -y > /dev/null 2>&1
+apt-get install nload -y > /dev/null 2>&1
+apt-get install jq -y > /dev/null 2>&1
+apt-get install curl -y > /dev/null 2>&1
+apt-get install figlet -y > /dev/null 2>&1
+apt-get install python3 -y > /dev/null 2>&1
+apt-get install python-pip -y > /dev/null 2>&1
+pip install speedtest-cli > /dev/null 2>&1
 }
 fun_bar 'inst_pct'
 [[ -f "/usr/sbin/ufw" ]] && ufw allow 443/tcp ; ufw allow 80/tcp ; ufw allow 3128/tcp ; ufw allow 8799/tcp ; ufw allow 8080/tcp
@@ -121,12 +128,12 @@ echo -e "              \033[1;33m[\033[1;31m!\033[1;33m] \033[1;32mFINALIZANDO \
 echo ""
 echo -e "      \033[1;33mCONCLUINDO FUNÇÕES E DEFINIÇÕES! \033[0m"
 echo ""
-fun_bar "$_Ink/list $_lnk $_Ink $_1nk $key"
-#-----------------------------------------------------------------------------------------------------------------
-echo "/bin/menu" > /bin/h && chmod +x /bin/h > /dev/null 2>&1
+fun_bar "source list"
+rm Plus* > /dev/null 2>&1
+rm list* > /dev/null 2>&1
 rm versao* > /dev/null 2>&1
+echo "/bin/menu" > /bin/h && chmod +x /bin/h > /dev/null 2>&1
 wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/versao > /dev/null 2>&1
-#-----------------------------------------------------------------------------------------------------------------
 clear
 echo ""
 cd $HOME
