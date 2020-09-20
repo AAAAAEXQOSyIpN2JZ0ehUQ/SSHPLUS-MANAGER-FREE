@@ -14,7 +14,7 @@ PASS = ''
 BUFLEN = 8196 * 8
 TIMEOUT = 60
 MSG = 'SSHPLUS'
-COR = '<font color="null">'
+COR = '<font color="green">'
 FTAG = '</font>'
 DEFAULT_HOST = '0.0.0.0:22'
 RESPONSE = "HTTP/1.1 200 " + str(COR) + str(MSG) + str(FTAG) + "\r\n\r\n"
