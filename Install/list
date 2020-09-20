@@ -11,9 +11,13 @@ IP=$(wget -qO- ipv4.icanhazip.com)
 IP2=$(wget -qO- http://whatismyip.akamai.com/)
 [[ "$IP" != "$IP2" ]] && ipdovps="$IP2" || ipdovps="$IP"
 echo -e "$ipdovps" >/etc/IP
+lst=$1 && lst1=$2 && lst2=$3 && key1=$4 && key2=crz
 echo -e "America/Sao_Paulo" >/etc/timezone
 ln -fs /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime >/dev/null 2>&1
 dpkg-reconfigure --frontend noninteractive tzdata >/dev/null 2>&1
+[[ -z $lst1 ]] && {
+	rm -rf $_Ink/list >/dev/null 2>&1 && cat /dev/null >~/.bash_history && history -c && exit 0
+}
 [[ ! -d /etc/SSHPlus ]] && mkdir /etc/SSHPlus
 [[ ! -d /etc/SSHPlus/senha ]] && mkdir /etc/SSHPlus/senha
 [[ ! -e /etc/SSHPlus/Exp ]] && touch /etc/SSHPlus/Exp
@@ -25,89 +29,21 @@ dpkg-reconfigure --frontend noninteractive tzdata >/dev/null 2>&1
 [[ ! -d /etc/bot/suspensos ]] && mkdir /etc/bot/suspensos
 [[ ! -e /etc/bot/lista_ativos ]] && touch /etc/bot/lista_ativos
 [[ ! -e /etc/bot/lista_suspensos ]] && touch /etc/bot/lista_suspensos
-echo -e 'by: @crazy_vpn' > /usr/lib/sshplus && cat /usr/lib/sshplus > /usr/lib/licence
+echo -e 'by: @crazy_vpn' >/usr/lib/sshplus && cat /usr/lib/sshplus >$lst2/licence
 netstat -nplt | grep -w 'apache2' | grep -w '80' && sed -i "s/Listen 80/Listen 81/g" /etc/apache2/ports.conf && service apache2 restart
 [[ "$(grep -o '#Port 22' /etc/ssh/sshd_config)" == "#Port 22" ]] && sed -i "s;#Port 22;Port 22;" /etc/ssh/sshd_config && service ssh restart
 grep -v "^PasswordAuthentication" /etc/ssh/sshd_config >/tmp/passlogin && mv /tmp/passlogin /etc/ssh/sshd_config
 echo "PasswordAuthentication yes" >>/etc/ssh/sshd_config
-service ssh restart
-
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/addhost.sh -O /bin/addhost > /dev/null 2>&1
-chmod +x /bin/addhost
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/ajuda.sh -O /bin/ajuda > /dev/null 2>&1
-chmod +x /bin/ajuda
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/alterarlimite.sh -O /bin/alterarlimite > /dev/null 2>&1
-chmod +x /bin/alterarlimite
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/alterarsenha.sh -O /bin/alterarsenha > /dev/null 2>&1
-chmod +x /bin/alterarsenha
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/attscript.sh -O /bin/attscript > /dev/null 2>&1
-chmod +x /bin/attscript
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/badvpn.sh -O /bin/badvpn > /dev/null 2>&1
-chmod +x /bin/badvpn
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/banner.sh -O /bin/banner > /dev/null 2>&1
-chmod +x /bin/banner
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/blockt.sh -O /bin/blockt > /dev/null 2>&1
-chmod +x /bin/blockt
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/botssh.sh -O /bin/botssh > /dev/null 2>&1
-chmod +x /bin/botssh
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/conexao.sh -O /bin/conexao > /dev/null 2>&1
-chmod +x /bin/conexao
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/criarteste.sh -O /bin/criarteste > /dev/null 2>&1
-chmod +x /bin/criarteste
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/criarusuario.sh -O /bin/criarusuario > /dev/null 2>&1
-chmod +x /bin/criarusuario
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/delhost.sh -O /bin/delhost > /dev/null 2>&1
-chmod +x /bin/delhost
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/delscript.sh -O /bin/delscript > /dev/null 2>&1
-chmod +x /bin/delscript
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/detalhes.sh -O /bin/detalhes > /dev/null 2>&1
-chmod +x /bin/detalhes
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/droplimiter.sh -O /bin/droplimiter > /dev/null 2>&1
-chmod +x /bin/droplimiter
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/expcleaner.sh -O /bin/expcleaner > /dev/null 2>&1
-chmod +x /bin/expcleaner
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/infousers.sh -O /bin/infousers > /dev/null 2>&1
-chmod +x /bin/infousers
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/limiter.sh -O /bin/limiter > /dev/null 2>&1
-chmod +x /bin/limiter
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/menu.sh -O /bin/menu > /dev/null 2>&1
-chmod +x /bin/menu
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/mudardata.sh -O /bin/mudardata > /dev/null 2>&1
-chmod +x /bin/mudardata
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/otimizar.sh -O /bin/otimizar > /dev/null 2>&1
-chmod +x /bin/otimizar
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/reiniciarservicos.sh -O /bin/reiniciarservicos > /dev/null 2>&1
-chmod +x /bin/reiniciarservicos
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/reiniciarsistema.sh -O /bin/reiniciarsistema > /dev/null 2>&1
-chmod +x /bin/reiniciarsistema
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/remover.sh -O /bin/remover > /dev/null 2>&1
-chmod +x /bin/remover
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/senharoot.sh -O /bin/senharoot > /dev/null 2>&1
-chmod +x /bin/senharoot
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/speedtest.sh -O /bin/speedtest > /dev/null 2>&1
-chmod +x /bin/speedtest
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/sshmonitor.sh -O /bin/sshmonitor > /dev/null 2>&1
-chmod +x /bin/sshmonitor
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/uexpired.sh -O /bin/uexpired > /dev/null 2>&1
-chmod +x /bin/uexpired
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/userbackup.sh -O /bin/userbackup > /dev/null 2>&1
-chmod +x /bin/userbackup
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/verifbot.sh -O /bin/verifbot > /dev/null 2>&1
-chmod +x /bin/verifbot
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/verifatt.sh -O /bin/verifatt > /dev/null 2>&1
-chmod +x /bin/verifatt
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/cabecalho.sh -O /etc/SSHPlus/cabecalho > /dev/null 2>&1
-chmod +x /etc/SSHPlus/cabecalho
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/bot.sh -O /etc/SSHPlus/bot > /dev/null 2>&1
-chmod +x /etc/SSHPlus/bot
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/proxy.py -O /etc/SSHPlus/proxy.py > /dev/null 2>&1
-chmod +x /etc/SSHPlus/proxy.py
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/proxy.py -O /etc/SSHPlus/open.py > /dev/null 2>&1
-chmod +x /etc/SSHPlus/open.py
-
 _dir1='/bin'
 _dir2='/etc/SSHPlus'
+rm $_dir2/ShellBot.sh $_dir2/cabecalho $_dir2/open.py $_dir2/proxy.py >/dev/null 2>&1
 _mdls=("addhost" "delhost" "alterarsenha" "criarusuario" "expcleaner" "mudardata" "remover" "criarteste" "verifbot" "droplimiter" "alterarlimite" "ajuda" "sshmonitor" "badvpn" "userbackup" "blockt" "otimizar" "menu" "speedtest" "banner" "senharoot" "reiniciarservicos" "reiniciarsistema" "attscript" "conexao" "delscript" "detalhes" "botssh" "infousers" "verifatt" "limiter" "uexpired" "cabecalho" "bot" "open.py" "proxy.py")
+for _arq in ${_mdls[@]}; do
+	[[ -e $_dir1/$_arq ]] && rm $_dir1/$_arq >/dev/null 2>&1
+	wget -c -P $_dir1 https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/$_arq
+	chmod +x $_dir1/$_arq
+done
+mv $_dir1/cabecalho $_dir1/bot $_dir1/open.py $_dir1/proxy.py $_dir2
 _arq_host="/etc/hosts"
 _host[0]="d1n212ccp6ldpw.cloudfront.net"
 _host[1]="dns.whatsapp.net"
@@ -151,4 +87,4 @@ chmod +x jq-linux64 && mv jq-linux64 $(which jq)
 service cron restart >/dev/null 2>&1
 service ssh restart >/dev/null 2>&1
 [[ -d /var/www/html/openvpn ]] && service apache2 restart >/dev/null 2>&1
-rm -rf $home/list >/dev/null 2>&1
+rm -rf $lst1/list >/dev/null 2>&1
