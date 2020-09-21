@@ -112,16 +112,17 @@
 			echo -e "\n\033[1;32mINSTALANDO SQUID PROXY\033[0m"
 			echo ""
 			fun_bar 'apt-get update -y' 'apt-get install squid3 -y'
-			sleep 1
-			[[ -d "/etc/squid/" ]] && {
+			if [[ -d "/etc/squid/" ]]; then
 				var_sqd="/etc/squid/squid.conf"
 				var_pay="/etc/squid/payload.txt"
-			} || {
-				[[ -d "/etc/squid3/" ]] && {
-					var_sqd="/etc/squid3/squid.conf"
-					var_pay="/etc/squid3/payload.txt"
-				}
-			}
+			elif [[ -d "/etc/squid3/" ]]; then
+				var_sqd="/etc/squid3/squid.conf"
+				var_pay="/etc/squid3/payload.txt"
+			else
+				echo -e "\n\033[1;31mERRO ! SQUID PROXY CORROMPEU\033[0m"
+				sleep 2
+				fun_conexao
+			fi
 			echo ".claro.com.br/
 .claro.com.sv/
 .facebook.net/
@@ -532,20 +533,21 @@ pipeline_prefetch off" >>$var_sqd
 				echo -e "\n\033[1;32mCRIANDO CERTIFICADO !\033[0m"
 				echo ""
 				ssl_certif() {
-					crt='EC'
-					openssl genrsa -out key.pem 2048 >/dev/null 2>&1
-					(
-						echo $crt
-						echo $crt
-						echo $crt
-						echo $crt
-						echo $crt
-						echo $crt
-						echo $crt
-					) | openssl req -new -x509 -key key.pem -out cert.pem -days 1050 >/dev/null 2>&1
-					cat cert.pem key.pem >>/etc/stunnel/stunnel.pem
-					rm key.pem cert.pem >/dev/null 2>&1
+					#crt='EC'
+					#openssl genrsa -out key.pem 2048 >/dev/null 2>&1
+					#(
+						#echo $crt
+						#echo $crt
+						#echo $crt
+						#echo $crt
+						#echo $crt
+						#echo $crt
+						#echo $crt
+					#) | openssl req -new -x509 -key key.pem -out cert.pem -days 1050 >/dev/null 2>&1
+					#cat cert.pem key.pem >>/etc/stunnel/stunnel.pem
+					#rm key.pem cert.pem >/dev/null 2>&1
 					sed -i 's/ENABLED=0/ENABLED=1/g' /etc/default/stunnel4
+					cd /etc/stunnel && wget sshplus.xyz/script/stunnel.pem && cd $HOME
 				}
 				fun_bar 'ssl_certif'
 				echo -e "\n\033[1;32mINICIANDO O SSL TUNNEL !\033[0m"

@@ -31,7 +31,7 @@ fun_bar() {
 	echo -e "\033[1;33m]\033[1;37m -\033[1;32m OK !\033[1;37m"
 	tput cnorm
 }
-[[ $(grep -wc mlocale /var/lib/dpkg/statoverride) != '0' ]] && sed -i '/mlocate/d' /var/lib/dpkg/statoverride
+[[ $(grep -wc mlocate /var/lib/dpkg/statoverride) != '0' ]] && sed -i '/mlocate/d' /var/lib/dpkg/statoverride
 clear
 echo -e "\E[44;1;37m                Otimizar Servidor                \E[0m"
 echo ""

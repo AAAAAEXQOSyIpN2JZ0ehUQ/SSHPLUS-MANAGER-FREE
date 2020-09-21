@@ -10,13 +10,12 @@ database="/root/usuarios.db"
 fun_multilogin() {
 	(
 		while read user; do
-		    echo $user
 			[[ $(grep -wc "$user" $database) != '0' ]] && limit="$(grep -w $user $database | cut -d' ' -f2)" || limit='1'
 			conssh="$(ps -u $user | grep sshd | wc -l)"
 			[[ "$conssh" -gt "$limit" ]] && {
-				pidkill=$(($limite - $conssh))
-				for pidssh in $( (ps x | grep [[:space:]]$user[[:space:]] | grep -v grep | grep -v pts | awk '{print $1}' | tail -n $pidkill)); do
-					kill -9 "$pidssh"
+				pidkill=$(($conssh - $limit))
+				for pidssh in `(ps x|grep [[:space:]]$user[[:space:]]|grep -v grep|grep -v pts|awk '{print $1}'|tail -n${pidkill})`; do
+					kill  $pidssh
 				done
 			}
 			[[ -e /etc/openvpn/openvpn-status.log ]] && {
@@ -33,10 +32,11 @@ fun_multilogin() {
 					done <<<"$listpid"
 				}
 			}
-		done <<<"$(awk -F : '$3 > 900 { print $1 }' /etc/passwd | grep -v "nobody" | grep -vi polkitd | grep -vi system-)"
+		done <<<"$(awk -F: '$3 >= 1000 {print $1}' /etc/passwd)"
 	) &
 }
 while true; do
+    echo 'verificando...'
 	fun_multilogin > /dev/null 2>&1
 	sleep 15s
 done
