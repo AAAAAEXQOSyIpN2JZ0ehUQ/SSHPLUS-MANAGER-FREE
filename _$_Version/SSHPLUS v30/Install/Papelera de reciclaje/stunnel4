@@ -1,0 +1,4 @@
+ENABLED=1 
+FILES=/etc/stunnel/*.conf 
+OPTIONS= 
+PPP_RESTART=0
