@@ -17,7 +17,7 @@ SCRIPT SSHPLUS MANAGER es un script con un conjunto de características y herram
 ## :heavy_exclamation_mark: Requerimientos
 
 * Un sistema operativo basado en Linux (Ubuntu o Debian) 
-* Recomendamos Ubuntu 14.04 Server x86_64
+* Recomendamos Ubuntu 16.04 Server x86_64
 * Se recomienda usar una distro nueva o formatiada
 
 ## Installation
