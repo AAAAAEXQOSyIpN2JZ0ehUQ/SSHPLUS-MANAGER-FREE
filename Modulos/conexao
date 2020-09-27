@@ -5,7 +5,7 @@
 #	CONTATO TELEGRAM:	http://t.me/crazy_vpn
 #	CANAL TELEGRAM:	http://t.me/sshplus
 #====================================================
-[[ $(awk -F" " '{print $2}' /usr/lib/licence) == "@crazy_vpn" ]] && {
+[[ $(awk -F" " '{print $2}' /usr/lib/licence) == "@CRAZY_VPN" ]] && {
 	ram1=$(free -h | grep -i mem | awk {'print $2'})
 	ram2=$(free -h | grep -i mem | awk {'print $4'})
 	ram3=$(free -h | grep -i mem | awk {'print $3'})
@@ -111,7 +111,7 @@
 			done
 			echo -e "\n\033[1;32mINSTALANDO SQUID PROXY\033[0m"
 			echo ""
-			fun_bar 'apt-get update -y' 'apt-get install squid3 -y'
+			fun_bar 'apt-get update -y' 'instsqd'
 			if [[ -d "/etc/squid/" ]]; then
 				var_sqd="/etc/squid/squid.conf"
 				var_pay="/etc/squid/payload.txt"
@@ -123,57 +123,61 @@
 				sleep 2
 				fun_conexao
 			fi
-			echo ".claro.com.br/
-.claro.com.sv/
-.facebook.net/
-.netclaro.com.br/
-.speedtest.net/
-.tim.com.br/
-.vivo.com.br/
-.oi.com.br/" >$var_pay
-			echo "acl url1 dstdomain -i 127.0.0.1
-acl url2 dstdomain -i localhost
-acl url3 dstdomain -i $ipdovps
-acl url4 dstdomain -i /SSHPLUS?
-acl payload url_regex -i "$var_pay"
-acl all src 0.0.0.0/0
+			cat <<-EOF >$var_pay
+				.claro.com.br/
+				.claro.com.sv/
+				.facebook.net/
+				.netclaro.com.br/
+				.speedtest.net/
+				.tim.com.br/
+				.vivo.com.br/
+				.oi.com.br/
+			EOF
+			cat <<-EOF >$var_sqd
+				acl url1 dstdomain -i 127.0.0.1
+				acl url2 dstdomain -i localhost
+				acl url3 dstdomain -i $ipdovps
+				acl url4 dstdomain -i /SSHPLUS?
+				acl payload url_regex -i "$var_pay"
+				acl all src 0.0.0.0/0
 
-http_access allow url1
-http_access allow url2
-http_access allow url3
-http_access allow url4
-http_access allow payload
-http_access deny all
- 
-#Portas" >$var_sqd
+				http_access allow url1
+				http_access allow url2
+				http_access allow url3
+				http_access allow url4
+				http_access allow payload
+				http_access deny all
+				 
+				#Portas
+			EOF
 			for Pts in $(echo -e $portass); do
 				echo -e "http_port $Pts" >>$var_sqd
 				[[ -f "/usr/sbin/ufw" ]] && ufw allow $Pts/tcp
 			done
-			echo -e "
-#Nome squid
-visible_hostname SSHPLUS 
-via off
-forwarded_for off
-pipeline_prefetch off" >>$var_sqd
+			cat <<-EOF >>$var_sqd
+				#Nome squid
+				visible_hostname SSHPLUS 
+				via off
+				forwarded_for off
+				pipeline_prefetch off
+			EOF
 			sqd_conf() {
 				[[ -d "/etc/squid/" ]] && {
-					squid -k reconfigure
 					service ssh restart
+					/etc/init.d/squid start
 					service squid restart
-				} || {
-					[[ -d "/etc/squid3/" ]] && {
-						squid3 -k reconfigure
-						service ssh restart
-						service squid3 restart
-					}
+				}
+				[[ -d "/etc/squid3/" ]] && {
+					service ssh restart
+					/etc/init.d/squid3 start
+					service squid3 restart
 				}
 			}
 			echo -e "\n\033[1;32mCONFIGURANDO SQUID PROXY\033[0m"
 			echo ""
 			fun_bar 'sqd_conf'
 			echo -e "\n\033[1;32mSQUID INSTALADO COM SUCESSO!\033[0m"
-			sleep 3.5s
+			sleep 2.5s
 			fun_conexao
 		fi
 	}
@@ -536,13 +540,13 @@ pipeline_prefetch off" >>$var_sqd
 					#crt='EC'
 					#openssl genrsa -out key.pem 2048 >/dev/null 2>&1
 					#(
-						#echo $crt
-						#echo $crt
-						#echo $crt
-						#echo $crt
-						#echo $crt
-						#echo $crt
-						#echo $crt
+					#echo $crt
+					#echo $crt
+					#echo $crt
+					#echo $crt
+					#echo $crt
+					#echo $crt
+					#echo $crt
 					#) | openssl req -new -x509 -key key.pem -out cert.pem -days 1050 >/dev/null 2>&1
 					#cat cert.pem key.pem >>/etc/stunnel/stunnel.pem
 					#rm key.pem cert.pem >/dev/null 2>&1
