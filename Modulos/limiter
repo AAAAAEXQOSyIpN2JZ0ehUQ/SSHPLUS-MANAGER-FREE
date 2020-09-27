@@ -13,10 +13,7 @@ fun_multilogin() {
 			[[ $(grep -wc "$user" $database) != '0' ]] && limit="$(grep -w $user $database | cut -d' ' -f2)" || limit='1'
 			conssh="$(ps -u $user | grep sshd | wc -l)"
 			[[ "$conssh" -gt "$limit" ]] && {
-				pidkill=$(($conssh - $limit))
-				for pidssh in `(ps x|grep [[:space:]]$user[[:space:]]|grep -v grep|grep -v pts|awk '{print $1}'|tail -n${pidkill})`; do
-					kill  $pidssh
-				done
+				pkill -u $user
 			}
 			[[ -e /etc/openvpn/openvpn-status.log ]] && {
 				ovp="$(grep -E ,"$user", /etc/openvpn/openvpn-status.log | wc -l)"
