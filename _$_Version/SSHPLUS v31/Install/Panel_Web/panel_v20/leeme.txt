@@ -1,0 +1,20 @@
+#DICA - [ MÉTODO ATUALIZADO ]
+
+?? TUTORIAL DE COMO IMPORTAR O BANCO DE DADOS (sshplus.sql)  EM UM NOVO PAINEL
+
+
+1• Baixe o banco de dados (sshplus.sql) nas configurações do painel atual
+
+2 • Apos instalar o script do painel em uma nova vps, coloque o arquivo (sshplus.sql) no diretório /root da nova vps, via SFTP
+
+(pode usar o es filé Explorer pra entrar via sftp no servidor)
+
+3 • Execulte o comando abaixo e seja feliz !
+
+
+bash <(wget -qO- https://raw.githubusercontent.com/CRAZY-VPN/BACKUP-PAINEL-V20/master/restaurar.sh)
+
+
+OBS: A SENHA ADMIN SERA A MESMA SENHA DO PAINEL AMTERIOR !
+
+@CRAZY_VPN - © SSHPLUS 2020
