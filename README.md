@@ -17,16 +17,13 @@ SCRIPT SSHPLUS MANAGER es un script con un conjunto de características y herram
 ## :heavy_exclamation_mark: Requerimientos
 
 * Un sistema operativo basado en Linux (Ubuntu o Debian) 
-* Recomendamos Ubuntu 14.04 Server x86_64 / Ubuntu 16.04 Server x86_64
+* Recomendamos Ubuntu 16.04 Server x86_64
 * Tambien puede funcionar en algunas versiones de  Debian Server x86_64
 * Se recomienda usar una distro nueva o formatiada
 
 ## Installation
 
 apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Plus; chmod 777 Plus; ./Plus
-
-
-* wget -O /bin/conexao https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/conexao_30/conexao; chmod 777 /bin/conexao*
 
 
 -------------------------------------------------------------------------------
