@@ -1,5 +1,0 @@
-https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/versao
-
-https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/$_arq
-
-https://raw.githubusercontent.com/shellscriptx/shellbot/master/ShellBot.sh
