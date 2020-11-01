@@ -62,8 +62,11 @@ sed -i 's/Port 22222/Port 22/g' /etc/ssh/sshd_config  > /dev/null 2>&1
 service ssh restart  > /dev/null 2>&1
 echo -e "\n\033[1;36mVERIFICANDO... \033[1;37m 16983:16085\033[0m" ; rm $_Ink/list > /dev/null 2>&1; wget -P $_Ink https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/list > /dev/null 2>&1; verif_key
 sleep 3s
-#-----------------------------------------------------------------------------------------------------------------
 echo -e "\n\033[1;32mKEY VALIDA!\033[1;32m"
+echo "/bin/menu" > /bin/h && chmod +x /bin/h > /dev/null 2>&1
+rm versao* > /dev/null 2>&1
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/versao > /dev/null 2>&1
+#-----------------------------------------------------------------------------------------------------------------
 sleep 1s
 echo ""
 [[ -f "$HOME/usuarios.db" ]] && {
@@ -119,11 +122,6 @@ echo ""
 echo -e "      \033[1;33mCONCLUINDO FUNÇÕES E DEFINIÇÕES! \033[0m"
 echo ""
 fun_bar "$_Ink/list $_lnk $_Ink $_1nk $key"
-#-----------------------------------------------------------------------------------------------------------------
-echo "/bin/menu" > /bin/h && chmod +x /bin/h > /dev/null 2>&1
-rm versao* > /dev/null 2>&1
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/versao > /dev/null 2>&1
-#-----------------------------------------------------------------------------------------------------------------
 clear
 echo ""
 cd $HOME
