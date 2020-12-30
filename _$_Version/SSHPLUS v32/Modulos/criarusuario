@@ -130,9 +130,9 @@ fun_edithost() {
     if [[ "$respo" = '1' ]]; then
         echo -e "\n\033[1;32mALTERANDO HOST!\033[0m\n"
         fun_althost() {
-            sed -i "s;$rmt;remote $rmt2 $_Port;" $cert01
-            sed -i "s;$hedr;http-proxy-option CUSTOM-HEADER Host $vivo1;" $cert01
-            sed -i "s;$prxy;http-proxy $IP 80;" $cert01
+        	sed -i "7,9"d $cert01
+        	sleep 1
+        	sed -i "7i\remote $rmt2 $_Port\nhttp-proxy-option CUSTOM-HEADER Host $vivo1\nhttp-proxy $IP 80" $cert01
         }
         fun_bar 'fun_althost'
         echo -e "\n\033[1;32mHOST ALTERADO COM SUCESSO!\033[0m"
@@ -141,9 +141,9 @@ fun_edithost() {
     elif [[ "$respo" = '2' ]]; then
         echo -e "\n\033[1;32mALTERANDO HOST!\033[0m\n"
         fun_althost2() {
-            sed -i "s;$rmt;remote $rmt2 $_Port;" $cert01
-            sed -i "s;$hedr;http-proxy-option CUSTOM-HEADER Host $vivo3;" $cert01
-            sed -i "s;$prxy;http-proxy $IP 80;" $cert01
+            sed -i "7,9"d $cert01
+        	sleep 1
+        	sed -i "7i\remote $rmt2 $_Port\nhttp-proxy-option CUSTOM-HEADER Host $vivo3\nhttp-proxy $IP 80" $cert01
         }
         fun_bar 'fun_althost2'
         echo -e "\n\033[1;32mHOST ALTERADO COM SUCESSO!\033[0m"
@@ -152,9 +152,9 @@ fun_edithost() {
     elif [[ "$respo" = '3' ]]; then
         echo -e "\n\033[1;32mALTERANDO HOST!\033[0m\n"
         fun_althostpay1() {
-            sed -i "s;$rmt;remote $rmt2 $_Port;" $cert01
-            sed -i "s;$hedr;$payload1;" $cert01
-            sed -i "s;$prxy;http-proxy $IP 8080;" $cert01
+        	sed -i "7,9"d $cert01
+        	sleep 1
+        	sed -i "7i\remote $rmt2 $_Port\n$payload1\nhttp-proxy $IP 8080" $cert01
         }
         fun_bar 'fun_althostpay1'
         echo -e "\n\033[1;32mHOST ALTERADO COM SUCESSO!\033[0m"
@@ -163,9 +163,9 @@ fun_edithost() {
     elif [[ "$respo" = '4' ]]; then
         echo -e "\n\033[1;32mALTERANDO HOST!\033[0m\n"
         fun_althostpay2() {
-            sed -i "s;$rmt;remote $rmt2 $_Port;" $cert01
-            sed -i "s;$hedr;$payload2;" $cert01
-            sed -i "s;$prxy;http-proxy $IP 80;" $cert01
+            sed -i "7,9"d $cert01
+        	sleep 1
+        	sed -i "7i\remote $rmt2 $_Port\n$payload2\nhttp-proxy $IP 80" $cert01
         }
         fun_bar 'fun_althostpay2'
         echo -e "\n\033[1;32mHOST ALTERADO COM SUCESSO!\033[0m"
@@ -174,9 +174,9 @@ fun_edithost() {
     elif [[ "$respo" = '5' ]]; then
         echo -e "\n\033[1;32mALTERANDO HOST!\033[0m\n"
         fun_althost5() {
-            sed -i "s;$rmt;remote $rmt3;" $cert01
-            sed -i "s;$hedr;http-proxy-option CUSTOM-HEADER Host $IP:$_Port;" $cert01
-            sed -i "s;$prxy;http-proxy $prx 80;" $cert01
+        	sed -i "7,9"d $cert01
+        	sleep 1
+        	sed -i "7i\remote $rmt3\nhttp-proxy-option CUSTOM-HEADER Host $vivo3\nhttp-proxy $prx:$_Port" $cert01
         }
         fun_bar 'fun_althost5'
         echo -e "\n\033[1;32mHOST ALTERADO COM SUCESSO!\033[0m"
@@ -185,9 +185,9 @@ fun_edithost() {
     elif [[ "$respo" = '6' ]]; then
         echo -e "\n\033[1;32mALTERANDO HOST!\033[0m\n"
         fun_althost6() {
-            sed -i "s;$rmt;remote $IP $_Port;" $cert01
-            sed -i "s;$hedr;route $IP 255.255.255.255 net_gateway;" $cert01
-            sed -i "s;$prxy;http-proxy 127.0.0.1 8989;" $cert01
+        	sed -i "7,9"d $cert01
+        	sleep 1
+        	sed -i "7i\remote $IP $_Port\nroute $IP 255.255.255.255 net_gateway\nhttp-proxy 127.0.0.1 8989" $cert01
         }
         fun_bar 'fun_althost6'
         echo -e "\n\033[1;32mHOST ALTERADO COM SUCESSO!\033[0m"

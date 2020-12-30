@@ -1,7 +1,7 @@
 #!/bin/bash
 #===================================================
 #	SCRIPT: BOT SSHPLUS MANAGER
-#   DATA ATT:   05 de Set 2020
+#   DATA ATT:   28 de Dez 2020
 #	DESENVOLVIDO POR:	CRAZY_VPN
 #   API SHELLBOT:   SHAMAN
 #	CONTATO TELEGRAM:	http://t.me/crazy_vpn
@@ -14,7 +14,7 @@ api_bot=$1
 id_admin=$2
 [[ -z $api_bot ]] && exit 0
 [[ -z $id_admin ]] && exit 0
-[[ $(awk -F" " '{print $2}' /usr/lib/licence) != "@CRAZY_VPN" ]] && exit 0
+[[ ! -e /usr/lib/licence ]] && exit 0
 ativos='/etc/bot/lista_ativos'
 suspensos='/etc/bot/lista_suspensos'
 ShellBot.init --token "$api_bot" --monitor --return map --flush
@@ -875,7 +875,7 @@ backup_users() {
     rm /root/backup.vps 1>/dev/null 2>/dev/null
     ShellBot.answerCallbackQuery --callback_query_id ${callback_query_id[$id]} \
         --text "♻️ CRIANDO BACKUP DE USUARIOS"
-    tar cvf /root/backup.vps /root/usuarios.db /etc/shadow /etc/passwd /etc/group /etc/gshadow /etc/bot 1>/dev/null 2>/dev/null
+    tar cvf /root/backup.vps /root/usuarios.db /etc/shadow /etc/passwd /etc/group /etc/gshadow /etc/bot /etc/SSHPlus/senha 1>/dev/null 2>/dev/null
     ShellBot.sendDocument --chat_id ${id_admin} \
         --document "@/root/backup.vps" \
         --caption "$(echo -e "♻️ BACKUP DE USUARIOS ♻️")"
@@ -1230,6 +1230,32 @@ backup_auto() {
     return 0
 }
 
+restaure_backup() {
+    [[ ${message_from_id[$id]} == ${id_admin} ]] && {
+        [[ "${message_document_file_name}" != 'backup.vps' ]] && return 0
+        local file_id
+        file_id=${message_document_file_id[$id]}
+        if [[ $file_id ]]; then
+            [[ -e /tmp/backup.vps ]] && rm /tmp/backup.vps
+            [[ "$(ls /tmp | grep -c '.vps')" != '0' ]] && {
+                for i in $(ls /tmp | grep '.vps'); do
+                    rm /tmp/$i
+                done
+            }
+            ShellBot.getFile --file_id $file_id
+            if ShellBot.downloadFile --file_path "${return[file_path]}" --dir "/tmp"; then
+                msg='<b>♻️ ARQUIVO DE BACKUP ♻️</b>\n\n<i>O arquivo enviado é um arquivo\nde backup de usuários!</i>'
+                ShellBot.sendMessage --chat_id ${id_admin} \
+                    --text "$(echo -e "$msg")" \
+                    --parse_mode html
+                ShellBot.sendMessage --chat_id ${id_admin} \
+                    --text 'Deseja restaurar ? [sim | nao]' \
+                    --reply_markup "$(ShellBot.ForceReply)"
+            fi
+        fi
+        return 0
+    }
+}
 msg_bem_vindo() {
     local msg
     msg="✌️😃 Ola <b>${message_from_first_name[$id]}</b>\n\nSEJA BEM VINDO(a)\n\n"
@@ -1842,6 +1868,7 @@ while :; do
             ShellBot.watchHandle --callback_data ${callback_query_data[$id]}
             # Requisições somente no privado.
             [[ ${message_chat_type[$id]} != 'private' ]] && continue
+            [[ ${message_text[$id]} ]] || restaure_backup
             CAD_ARQ=/tmp/cad.${message_from_id[$id]}
             if [[ ${message_entities_type[$id]} == bot_command ]]; then
                 #Verifica se a mensagem enviada pelo usuário é um comando válido.
@@ -2218,6 +2245,30 @@ while :; do
                             break
                         }
                     fi
+                    ;;
+                'Deseja restaurar ? [sim | nao]')
+                    Resp=${message_text[$id]}
+                    [[ ${message_from_id[$id]} != ${id_admin} ]] && break
+                    [[ $Resp != ?(+|-)+([a-z]) ]] && {
+                        ShellBot.sendMessage --chat_id ${id_admin} \
+                            --text "$(echo -e "❌ Erro ! \n\n⚠️ Ultilize apenas sim ou nao")" \
+                            --parse_mode html
+                        break
+                    }
+                    [[ "$Resp" = @(Sim|sim|SIM) ]] && {
+                        filebkp=$(ls /tmp | grep '.vps')
+                        [[ -e /tmp/$filebkp ]] && {
+                            mv /tmp/$filebkp /backup.vps
+                            cd /
+                            tar -xvf backup.vps
+                            rm /backup.vps
+                            ShellBot.sendMessage --chat_id ${id_admin} \
+                                --text "$(echo -e "✅ Backup restaurado\ncom sucesso!")" \
+                                --parse_mode html
+                            break
+                        }
+                    }
+                    break
                     ;;
                     # FUNCOES DE GESTAO REVENDA
                     #

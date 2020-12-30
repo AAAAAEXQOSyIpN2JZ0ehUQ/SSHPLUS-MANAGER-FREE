@@ -1,7 +1,7 @@
 #!/bin/bash
 #====================================================
 #	SCRIPT: CONEXAO SSHPLUS MANAGER
-#   DATA ATT:   15 de Jul 2020
+#   DATA ATT:   28 de Set 2020
 #	DESENVOLVIDO POR:	CRAZY_VPN
 #	CONTATO TELEGRAM:	http://t.me/crazy_vpn
 #	CANAL TELEGRAM:	http://t.me/sshplus
@@ -22,6 +22,7 @@ dpkg-reconfigure --frontend noninteractive tzdata >/dev/null 2>&1
 [[ ! -d /etc/SSHPlus/senha ]] && mkdir /etc/SSHPlus/senha
 [[ ! -e /etc/SSHPlus/Exp ]] && touch /etc/SSHPlus/Exp
 [[ ! -d /etc/SSHPlus/userteste ]] && mkdir /etc/SSHPlus/userteste
+[[ ! -d /etc/SSHPlus/.tmp ]] && mkdir /etc/SSHPlus/.tmp
 [[ ! -d /etc/bot ]] && mkdir /etc/bot
 [[ ! -d /etc/bot/info-users ]] && mkdir /etc/bot/info-users
 [[ ! -d /etc/bot/arquivos ]] && mkdir /etc/bot/arquivos
@@ -29,7 +30,7 @@ dpkg-reconfigure --frontend noninteractive tzdata >/dev/null 2>&1
 [[ ! -d /etc/bot/suspensos ]] && mkdir /etc/bot/suspensos
 [[ ! -e /etc/bot/lista_ativos ]] && touch /etc/bot/lista_ativos
 [[ ! -e /etc/bot/lista_suspensos ]] && touch /etc/bot/lista_suspensos
-echo -e 'by: @CRAZY_VPN' >/usr/lib/sshplus && cat /usr/lib/sshplus >$lst2/licence
+echo -e 'by: @CRAZY_VPN' >/usr/lib/sshplus && cat /usr/lib/sshplus >$lst2/licence && cat /usr/lib/sshplus > /etc/SSHPlus/.tmp/crazy
 netstat -nplt | grep -w 'apache2' | grep -w '80' && sed -i "s/Listen 80/Listen 81/g" /etc/apache2/ports.conf && service apache2 restart
 [[ "$(grep -o '#Port 22' /etc/ssh/sshd_config)" == "#Port 22" ]] && sed -i "s;#Port 22;Port 22;" /etc/ssh/sshd_config && service ssh restart
 grep -v "^PasswordAuthentication" /etc/ssh/sshd_config >/tmp/passlogin && mv /tmp/passlogin /etc/ssh/sshd_config
@@ -37,7 +38,7 @@ echo "PasswordAuthentication yes" >>/etc/ssh/sshd_config
 _dir1='/bin'
 _dir2='/etc/SSHPlus'
 rm $_dir2/ShellBot.sh $_dir2/cabecalho $_dir2/open.py $_dir2/proxy.py >/dev/null 2>&1
-_mdls=("addhost" "delhost" "alterarsenha" "criarusuario" "expcleaner" "mudardata" "remover" "criarteste" "verifbot" "droplimiter" "alterarlimite" "ajuda" "sshmonitor" "badvpn" "userbackup" "blockt" "otimizar" "menu" "speedtest" "banner" "senharoot" "reiniciarservicos" "reiniciarsistema" "attscript" "conexao" "delscript" "detalhes" "botssh" "infousers" "verifatt" "limiter" "uexpired" "instsqd" "cabecalho" "bot" "open.py" "proxy.py")
+_mdls=("addhost" "delhost" "alterarsenha" "criarusuario" "expcleaner" "mudardata" "remover" "criarteste" "verifbot" "droplimiter" "alterarlimite" "ajuda" "sshmonitor" "badvpn" "userbackup" "instsqd" "blockt" "otimizar" "menu" "speedtest" "banner" "senharoot" "reiniciarservicos" "reiniciarsistema" "attscript" "conexao" "delscript" "detalhes" "botssh" "infousers" "verifatt" "limiter" "uexpired" "cabecalho" "bot" "open.py" "proxy.py")
 for _arq in ${_mdls[@]}; do
 	[[ -e $_dir1/$_arq ]] && rm $_dir1/$_arq >/dev/null 2>&1
 	wget -c -P $_dir1 https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/$_arq
@@ -82,7 +83,8 @@ crontab -r >/dev/null 2>&1
 	echo "0 */6 * * * /bin/uexpired"
 ) | crontab -
 echo "$_lvk" | sed -n '1 p' | cut -d' ' -f2 >/bin/versao && cat /bin/versao >/home/sshplus
-wget https://github.com/stedolan/jq/releases/download/jq-1.5/jq-linux64 >/dev/null 2>&1 && chmod +x jq-linux64 && mv jq-linux64 $(which jq)
+wget https://github.com/stedolan/jq/releases/download/jq-1.5/jq-linux64 >/dev/null 2>&1
+chmod +x jq-linux64 && mv jq-linux64 $(which jq)
 service cron restart >/dev/null 2>&1
 service ssh restart >/dev/null 2>&1
 [[ -d /var/www/html/openvpn ]] && service apache2 restart >/dev/null 2>&1
