@@ -48,7 +48,7 @@ wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FR
 
 -------------------------------------------------------------------------------
 
-## PANEL SSHPLUS v20 (Installation Directa)
+## PAINEL SSHPLUS v20 (Installation Directa)
 
 wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v20/install; chmod +x install; ./install
 
