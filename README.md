@@ -26,7 +26,7 @@ SCRIPT SSHPLUS MANAGER es un script con un conjunto de características y herram
 
 apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Plus; chmod 777 Plus; ./Plus
 
-* SI NECESITAN REINSTALAR EL SCRIPTS PUEDEN EJECUTAR EL COMANDO ( sshplus )
+* SI NECESITAN REINSTALAR EL SCRIPTS PUEDEN EJECUTAR EL COMANDO: ( sshplus )
 
 -------------------------------------------------------------------------------
 
@@ -45,6 +45,7 @@ PANEL SSHPLUS es una herramienta completa de gestión y supervisión de usuarios
 
 wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/Panelweb.sh; chmod +x Panelweb.sh; ./Panelweb.sh
 
+* ACCESO DIRECTO AL SCRIPTS EXECUTE EL COMANDO ( panel )
 
 -------------------------------------------------------------------------------
 
