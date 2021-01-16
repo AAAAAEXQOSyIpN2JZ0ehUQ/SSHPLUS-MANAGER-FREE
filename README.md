@@ -1,5 +1,5 @@
 ﻿# SSHPLUS MANAGER v32 (FREE) 
-# UPDATE 28/12/2020
+# UPDATE 16/01/2020
 
 ![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/SSHPLUS_MANAGER.jpg)
 
@@ -48,11 +48,9 @@ wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FR
 
 -------------------------------------------------------------------------------
 
-```
 ## PANEL SSHPLUS v20 (Installation Directa)
 
 wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v20/install; chmod +x install; ./install
-```
 
 -------------------------------------------------------------------------------
 
