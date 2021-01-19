@@ -65,7 +65,6 @@ sleep 3s
 echo "/bin/menu" > /bin/h && chmod +x /bin/h > /dev/null 2>&1
 echo "apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Sistema/Intall-Original/Plus; chmod 777 Plus; ./Plus" > /bin/sshplus && chmod +x /bin/sshplus > /dev/null 2>&1
 rm versao* > /dev/null 2>&1
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Sistema/script/versao > /dev/null 2>&1
 #-----------------------------------------------------------------------------------------------------------------
 echo -e "\n\033[1;32mKEY VALIDA!\033[1;32m"
 sleep 1s
