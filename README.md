@@ -32,7 +32,7 @@ apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AA
 -------------------------------------------------------------------------------
 **Manager Script**
 * SSHPLUS MANAGER v32 ORIGINAL OFICIAL
-* INSTAL ARQUIVOS ORIGINALES ENCRIPTADOS POR @crazy_vpn
+* INSTALL ARQUIVOS ORIGINALES ENCRIPTADOS POR @crazy_vpn
 * UPDATE 16/01/2020
 
 apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Sistema/Intall-Original/Plus; chmod 777 Plus; ./Plus
