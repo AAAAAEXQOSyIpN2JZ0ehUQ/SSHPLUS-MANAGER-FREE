@@ -46,7 +46,7 @@ apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AA
 ![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/Panel_SSHPLUS_v20.jpg)
 
 ```
-PANEL SSHPLUS es una herramienta completa de gestión y supervisión de usuarios que permite
+PAINEL SSHPLUS es una herramienta completa de gestión y supervisión de usuarios que permite
                  reventas y sub revendedores para aquellos que desean tener un negocio más amplio, 
                  también tiene una interfaz intuitiva, a la que se puede acceder desde cualquier 
                  navegador ...
