@@ -43,9 +43,9 @@ apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AA
 
 -------------------------------------------------------------------------------
 
-# PAINEL SSHPLUS (VERSIONES)
+## SCRIPT OFICIAL PAINEL SSHPLUS WEB VERSAO: 20 (Installation Directa)
 
-![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/Panel_SSHPLUS_Web.jpg)
+![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/Panel_SSHPLUS_v20.jpg)
 
 ```
 PANEL SSHPLUS es una herramienta completa de gestión y supervisión de usuarios que permite
@@ -56,17 +56,19 @@ PANEL SSHPLUS es una herramienta completa de gestión y supervisión de usuarios
 
 ## Installation
 
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/Panelweb.sh; chmod +x Panelweb.sh; ./Panelweb.sh
-
-* ACCESO DIRECTO AL SCRIPTS EXECUTE EL COMANDO ( panel )
-
--------------------------------------------------------------------------------
-
-## SCRIPT OFICIAL PAINEL SSHPLUS WEB VERSAO: 20 (Installation Directa)
-
 wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v20/install; chmod +x install; ./install
 
 * REPOSITORIO: https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/Panel_Web/panel_v20
+
+-------------------------------------------------------------------------------
+
+# PAINEL SSHPLUS (VERSIONES)
+
+![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/Panel_SSHPLUS_Web.jpg)
+
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/Panelweb.sh; chmod +x Panelweb.sh; ./Panelweb.sh
+
+* ACCESO DIRECTO AL SCRIPTS EXECUTE EL COMANDO ( panel )
 
 -------------------------------------------------------------------------------
 
