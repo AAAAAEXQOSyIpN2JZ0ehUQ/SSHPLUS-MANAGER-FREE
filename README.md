@@ -33,9 +33,9 @@ apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AA
 
 **Manager Script**
 
-* SSHPLUS MANAGER v32 ORIGINAL OFICIAL
+* SCRIPT OFICIAL SSHPLUS MANAGER VERSAO: 32
 * INSTALL ARQUIVOS ORIGINALES ENCRIPTADOS POR @crazy_vpn
-* UPDATE 16/01/2020
+* UPDATE 28/01/2020
 
 apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Sistema/Intall-Original/Plus; chmod 777 Plus; ./Plus
 
@@ -62,7 +62,7 @@ wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FR
 
 -------------------------------------------------------------------------------
 
-## Painel SSHPlus v20 (Installation Directa)
+## SCRIPT OFICIAL PAINEL SSHPLUS WEB VERSAO: 20 (Installation Directa)
 
 wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v20/install; chmod +x install; ./install
 
