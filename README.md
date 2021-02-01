@@ -1,5 +1,5 @@
 ﻿# SSHPLUS MANAGER v32 (FREE) 
-# UPDATE 28/01/2020
+# UPDATE 01/02/2021
 
 ![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/SSHPLUS_MANAGER.jpg)
 
@@ -38,6 +38,20 @@ apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AA
 apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Sistema/Intall-Original/Plus; chmod 777 Plus; ./Plus
 
 * SI NECESITAN REINSTALAR EL SCRIPTS PUEDEN EJECUTAR EL COMANDO: ( sshplus )
+
+-------------------------------------------------------------------------------
+
+## GENERADOR DE KEY SSHPLUS MANAGER
+
+* Un sistema operativo basado en Linux (Ubuntu o Debian)
+* Se recomienda usar una distro nueva o formatiada
+* Debe mantener el Apache2 en Puerto 80
+
+## Installation Server
+
+apt-get update -y; apt-get upgrade -y; wget https://www.dropbox.com/s/ypd924q8iix88o9/instala_server; chmod 777 instala_server* && ./instala_server*
+
+ ACCESO DIRECTO AL SCRIPTS EXECUTE EL COMANDO: keyssh
 
 -------------------------------------------------------------------------------
 
