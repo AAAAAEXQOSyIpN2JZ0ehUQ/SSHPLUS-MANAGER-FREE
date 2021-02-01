@@ -74,6 +74,16 @@ wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FR
 
 -------------------------------------------------------------------------------
 
+# MULTI-INTALADOR SSHPLUS
+
+![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/Multi_Instalador_sshplus.png)
+
+https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Multi-Instalador/sshplus.sh; chmod +x sshplus.sh; ./sshplus.sh
+
+* ACCESO DIRECTO AL SCRIPTS EXECUTE EL COMANDO ( mis )
+
+-------------------------------------------------------------------------------
+
 # PAINEL SSHPLUS (VERSIONES)
 
 ![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/Panel_SSHPLUS_Web.jpg)

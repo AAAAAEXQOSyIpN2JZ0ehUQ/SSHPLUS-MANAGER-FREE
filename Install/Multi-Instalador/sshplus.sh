@@ -84,7 +84,7 @@ panel_v25 () {
 ##OPCIONES DE SISTEMA
 
 atualizar () {
-    rm -rf $HOME/sshplus.sh; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Multi-Instalador/sshplus.sh; chmod +x sshplus.sh; ./sshplus.sh
+    rm -rf $HOME/sshplus.sh; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Multi-Instalador/sshplus.sh; chmod +x sshplus.sh; ./sshplus.sh
 }
 remove_multiscripts () {
     rm -rf $HOME/sshplus.sh && rm -rf /bin/mis
