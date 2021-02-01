@@ -84,10 +84,10 @@ panel_v25 () {
 ##OPCIONES DE SISTEMA
 
 atualizar () {
-    rm -rf $HOME/multiscript2.sh; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/MULTI-SCRIPTS-MANAGER/main/multiscript2.sh; chmod +x multiscript2.sh; ./multiscript2.sh
+    rm -rf $HOME/sshplus.sh; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Multi-Instalador/sshplus.sh; chmod +x sshplus.sh; ./sshplus.sh
 }
 remove_multiscripts () {
-    rm -rf $HOME/multiscript2.sh
+    rm -rf $HOME/sshplus.sh && rm -rf /bin/mis
 }
 
 ##MENU
