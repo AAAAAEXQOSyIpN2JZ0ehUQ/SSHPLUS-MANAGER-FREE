@@ -1,0 +1,267 @@
+#!/bin/bash
+cat /dev/null > ~/.bash_history && history -c
+x="ok"
+IP=$(wget -qO- ipv4.icanhazip.com)
+while true $x != "ok"
+do
+clear
+if [ ! -e /home/keyssh ]; then
+    mkdir /home/keyssh
+fi
+key_tmp="$RANDOM:$RANDOM"
+
+mine_port () {
+PT=$(lsof -V -i tcp -P -n | grep -v "ESTABLISHED" |grep -v "COMMAND" | grep "LISTEN")
+for porta in `echo -e "$PT" | cut -d: -f2 | cut -d' ' -f1 | uniq`; do
+    svcs=$(echo -e "$PT" | grep -w "$porta" | awk '{print $1}' | uniq)
+    echo -e "\033[1;32m Servico \033[1;31m$svcs \033[1;32mPorta \033[1;37m$porta"
+done
+}
+
+menu2 () {
+# MEMÓRIA RAM
+_ram=$(printf ' %-9s' "$(free -h | grep -i mem | awk {'print $2'})")
+_usor=$(printf '%-8s' "$(free -m | awk 'NR==2{printf "%.2f%%", $3*100/$2 }')")
+# PROCESSADOR
+_usop=$(printf '%-1s' "$(top -bn1 | awk '/Cpu/ { cpu = "" 100 - $8 "%" }; END { print cpu }')")
+_core=$(printf '%-1s' "$(grep -c cpu[0-9] /proc/stat)")
+echo -e " \033[1;32mMEMÓRIA RAM      PROCESSADOR "
+echo -e " \033[1;31mTotal:\033[1;37m$_ram \033[1;31mNucleos: \033[1;37m$_core\033[0m"
+echo -e " \033[1;31mEm uso: \033[1;37m$_usor \033[1;31mEm uso: \033[1;37m$_usop\033[0m"
+}
+
+fun_gerkey () {
+apt-get install apache2 -y  > /dev/null 2>&1
+sed -i "s/Listen 81/Listen 80/g" /etc/apache2/ports.conf
+service apache2 restart
+echo -ne "\033[1;36m Infome o nome do Cliente:\033[1;37m "; read client
+if [[ -z $client ]]; then
+   echo -e "\033[1;31m Nome invalido ou vazio\033[0m"
+   sleep 2
+   exit 0
+fi
+echo -ne "\033[1;36m Quantos minutos essa key deve durar\033[1;33m
+(\033[1;31mEX: 20m m=Minutos, h=Horas, d=Dias\033[1;33m)\033[1;37m: "; read _temp
+if [[ -z $_temp ]]; then
+   echo -e "\033[1;31m Tempo invalido ou vazio\033[0m"
+   sleep 2
+   exit 0
+fi
+VERSION_ID=$(cat /etc/os-release | grep "VERSION_ID")
+if [[ "$VERSION_ID" = 'VERSION_ID="14.04"' ]]; then
+[[ ! -e /var/www/index.html ]] && touch /var/www/index.html > /dev/null 2>&1
+mkdir /var/www/$key_tmp/
+touch /home/keyssh/$client
+cp /home/list /var/www/$key_tmp/
+cp /home/versao /var/www/$key_tmp/
+# cp /home/painel15.tar /var/www/$key_tmp/
+touch /var/www/$key_tmp/index.html > /dev/null 2>&1
+else
+[[ ! -e /var/www/html/Index.php ]] && touch /var/www/html/index.php > /dev/null 2>&1
+mkdir /var/www/html/$key_tmp/
+touch /home/keyssh/$client
+cp /home/list /var/www/html/$key_tmp/
+cp /home/versao /var/www/html/$key_tmp/
+# cp /home/painel15.tar /var/www/html/$key_tmp/
+touch /var/www/html/$key_tmp/index.html > /dev/null 2>&1
+fi
+clear
+echo -e "\033[0;34m ========================="
+echo -e "\033[1;33m SCRIPT SSHPLUS MANAGER !    \033[0m"
+echo -e "\033[0;34m ========================="
+echo -e ""
+echo -e "\033[1;37m apt-get update -y; apt-get upgrade -y; wget $IP/Plus; chmod 777 Plus; ./Plus"
+echo -e ""
+echo -e "\033[1;32m KEY:\033[1;37m $key_tmp\033[0m"
+echo -e ""
+echo -e "\033[0;34m ========================="
+echo -e "\033[1;33m Obrigado Pela Sua Contribuicao! 👍By @crazy_vpn ✌️😎 \033[0m"
+echo ""
+echo -e "\033[1;32m Usuario: \033[1;37m $client\033[0m"
+echo -e "\033[1;32m Validade da key:\033[1;37m $_temp\033[0m"
+echo ""
+echo -e "\033[1;37m$(cat /home/versao) \033[0m"
+echo -e ""
+VERSION_ID=$(cat /etc/os-release | grep "VERSION_ID")
+if [[ "$VERSION_ID" = 'VERSION_ID="14.04"' ]]; then
+echo "#!/bin/bash
+sleep $_temp
+rm -rf /var/www/$key_tmp
+rm -rf /home/keyssh/$client
+exit" > /home/keyssh/$client
+else
+echo "#!/bin/bash
+sleep $_temp
+rm -rf /var/www/html/$key_tmp
+rm -rf /home/keyssh/$client
+exit" > /home/keyssh/$client
+fi
+bash /home/keyssh/$client &
+}
+
+fun_gerkey_fixa () {
+apt-get install apache2 -y  > /dev/null 2>&1
+sed -i "s/Listen 81/Listen 80/g" /etc/apache2/ports.conf
+service apache2 restart
+echo -ne "\033[1;36m Infome o nome do Cliente:\033[1;37m "; read client
+if [[ -z $client ]]; then
+   echo -e "\033[1;31m Nome invalido ou vazio\033[0m"
+   sleep 2
+   exit 0
+fi
+VERSION_ID=$(cat /etc/os-release | grep "VERSION_ID")
+if [[ "$VERSION_ID" = 'VERSION_ID="14.04"' ]]; then
+mkdir /var/www/$key_tmp/
+touch /home/keyssh/$client
+cp /home/list /var/www/$key_tmp/
+cp /home/versao /var/www/$key_tmp/
+# cp /home/painel15.tar /var/www/$key_tmp/
+touch /var/www/$key_tmp/index.html > /dev/null 2>&1
+else
+mkdir /var/www/html/$key_tmp/
+touch /home/keyssh/$client
+cp /home/list /var/www/html/$key_tmp/
+cp /home/versao /var/www/html/$key_tmp/
+# cp /home/painel15.tar /var/www/html/$key_tmp/
+touch /var/www/html/$key_tmp/index.html > /dev/null 2>&1
+fi
+clear
+echo -e "\033[0;34m ========================="
+echo -e "\033[1;33m SCRIPT SSHPLUS MANAGER !    \033[0m"
+echo -e "\033[0;34m ========================="
+echo -e ""
+echo -e "\033[1;36m apt-get update -y; apt-get upgrade -y; wget $IP/Plus; chmod 777 Plus; ./Plus"
+echo -e ""
+echo -e "\033[1;32m KEY:\033[1;37m $key_tmp\033[0m"
+echo -e ""
+echo -e "\033[0;34m ========================="
+echo -e "\033[1;33m Obrigado Pela Sua Contribuicao! 👍By @crazy_vpn ✌️😎 \033[0m"
+echo ""
+echo -e "\033[1;32m Usuario: \033[1;37m $client\033[0m"
+echo -e "\033[1;32m Validade da key:\033[1;37m Permanente\033[0m"
+echo ""
+echo -e "\033[1;37m$(cat /home/versao) \033[0m"
+echo ""
+VERSION_ID=$(cat /etc/os-release | grep "VERSION_ID")
+if [[ "$VERSION_ID" = 'VERSION_ID="14.04"' ]]; then
+echo "#!/bin/bash
+rm -rf /var/www/$key_tmp
+rm -rf /home/keyssh/$client
+exit" > /home/keyssh/$client
+else
+echo "#!/bin/bash
+rm -rf /var/www/html/$key_tmp
+rm -rf /home/keyssh/$client
+exit" > /home/keyssh/$client
+fi
+# bash /home/keyssh/$client &
+}
+
+fun_keyson () {
+tput setaf 7 ; tput setab 4 ; tput bold ; printf '%22s%s%-12s\n' "KEYS ONLINE" ; tput sgr0
+echo ""
+[ "$(ls -A /home/keyssh)" ] && echo -e "\033[1;32m Key Online!\033[1;37m" || echo -e "\033[1;31m Nenhuma Key Online!\033[0m"
+echo ""
+ls /home/keyssh
+echo ""
+}
+
+fun_delkey () {
+tput setaf 7 ; tput setab 1 ; tput bold ; printf '%22s%s%-5s\n' "REMOVER KEY ONLINE" ; tput sgr0
+echo  -e "\033[1;33m"
+for keyson in $(ls /home/keyssh |sort |sed 's/.sh//g')
+do
+echo " $keyson"
+done
+echo ""
+echo -ne "\033[1;36m Imforme o nome: \033[1;37m "; read client
+if [ -e /home/keyssh/$client ]; then
+    tmp=$(cat /home/keyssh/$client | sed -n '2 p')
+    sed -i "s/\b$tmp\b/echo -n/g" /home/keyssh/$client > /dev/null 2>&1
+    bash /home/keyssh/$client;
+    sleep 2
+    echo -e "\n\033[1;32m Key Removida Com Sucesso !\033[0m"
+    else
+    echo -e "\n\033[1;31m Key nao existente !\033[0m"
+    sleep 2.5s
+fi
+}
+
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "\E[41;1;37m           ❖ KEY SSHPLUS MANAGER ❖          \E[0m"
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+mine_port
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+menu2
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+sts=$([ "$(ls -A /home/keyssh)" ] && echo -e "\033[1;32m Key Online!\033[1;37m" || echo -e "\033[1;31m Nenhuma Key Online!\033[0m")
+echo -e "\033[1;37m STATUS: $sts"
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "\033[1;37m 1 \033[1;31m• \033[1;36mGERAR NOVA KEY ALEATORIA\033[0m"
+echo -e "\033[1;37m 2 \033[1;31m• \033[1;36mCRIAR KEY FIXA SEM VALIDADE\033[1;33m !\033[0m"
+echo -e "\033[1;37m 3 \033[1;31m• \033[1;36mVER KEYS ONLINES\033[0m"
+echo -e "\033[1;37m 4 \033[1;31m• \033[1;36mREMOVER KEY\033[0m"
+echo -e "\033[1;37m 5 \033[1;31m• \033[1;36mVER LOG DE REGISTROS\033[0m"
+echo -e "\033[1;37m 6 \033[1;31m• \033[1;36mACTUALIZAR VERSAO\033[0m"
+echo -e "\033[1;37m 7 \033[1;31m• \033[1;36mOTIMIZAR SERVIDOR\033[0m"
+echo -e "\033[1;37m 0 \033[1;31m• \033[1;36mSAIR\033[0m"
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -ne "\033[1;32m Escolha uma opcao:\033[1;37m "; read x
+clear
+case $x in
+1)
+clear
+fun_gerkey
+echo -ne "\n\033[1;33m Enter para retornar\033[0m"; read
+;;
+2)
+clear
+fun_gerkey_fixa
+echo -ne "\n\033[1;33m Enter para retornar\033[0m"; read
+sleep 1
+;;
+3)
+clear
+fun_keyson
+echo -ne "\n\033[1;33m Enter para retornar\033[0m"; read
+sleep 1
+;;
+4)
+clear
+fun_delkey
+echo -e "\n\033[1;33m Enter para retornar\033[0m"
+sleep 1
+;;
+5)
+clear
+cat /home/sshplus-log 2>/dev/null || echo "NENHUM LOG NO MOMENTO"
+echo -e "\n\033[1;33m Enter para retornar\033[0m"; read
+sleep 1
+;;
+6)
+clear
+wget $IP/script/versao -O /home/versao
+echo -e "\n\033[1;33m Enter para retornar\033[0m"; read
+sleep 1
+;;
+7)
+clear
+otimizar
+echo -e "\n\033[1;33m Enter para retornar\033[0m"; read
+sleep 1
+;;
+0)
+echo -ne "\033[1;32m Saindo... Enter para SAIR\033[0m"; read
+clear
+exit
+clear
+;;
+*)
+echo -ne "\033[1;31m Opcao invalida...\033[0m"; read
+sleep 1
+ok
+;;
+esac
+done
+#fim
+cat /dev/null > ~/.bash_history && history -c
