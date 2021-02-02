@@ -43,17 +43,19 @@ fun_atualizar () {
 
 ##LIMPIA ROOT
 fun_limpiarepositorios () {
-rm -rf /root/install > /dev/null 2>&1
-rm -rf /root/ocspanel > /dev/null 2>&1
-rm -rf /root/Painelv11.sh > /dev/null 2>&1
-rm -rf /root/install.sh > /dev/null 2>&1
-rm -rf /root/Painel.sh > /dev/null 2>&1
-rm -rf /root/banco.sql > /dev/null 2>&1
-rm -rf /root/BD-Painel-v23.sql > /dev/null 2>&1
-rm -rf /root/sshplus.sql > /dev/null 2>&1
-rm -rf /root/bd-v15.sql > /dev/null 2>&1
-rm -rf /root/ssh.sql > /dev/null 2>&1
-rm -rf /root/plus.sql > /dev/null 2>&1
+rm -rf $HOME/install
+rm -rf $HOME/install.1
+rm -rf $HOME/install.2
+rm -rf $HOME/ocspanel
+rm -rf $HOME/Painelv11.sh
+rm -rf $HOME/install.sh
+rm -rf $HOME/Painel.sh
+rm -rf $HOME/banco.sql
+rm -rf $HOME/BD-Painel-v23.sql
+rm -rf $HOME/sshplus.sql
+rm -rf $HOME/bd-v15.sql
+rm -rf $HOME/ssh.sql
+rm -rf $HOME/plus.sql
 }
 
 ##PANIL REMOVE
