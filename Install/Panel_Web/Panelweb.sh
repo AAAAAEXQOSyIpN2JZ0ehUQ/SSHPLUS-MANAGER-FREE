@@ -41,19 +41,19 @@ fun_atualizar () {
     rm -rf $HOME/Panelweb.sh; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/Panelweb.sh; chmod +x Panelweb.sh
 }
 
-fun_limpiarepositorios () {
 ##LIMPIA ROOT
-sudo rm -rf /root/install > /dev/null 2>&1
-sudo rm -rf /root/ocspanel > /dev/null 2>&1
-sudo rm -rf /root/Painelv11.sh > /dev/null 2>&1
-sudo rm -rf /root/install.sh > /dev/null 2>&1
-sudo rm -rf /root/Painel.sh > /dev/null 2>&1
-sudo rm -rf /root/banco.sql > /dev/null 2>&1
-sudo rm -rf /root/BD-Painel-v23.sql > /dev/null 2>&1
-sudo rm -rf /root/sshplus.sql > /dev/null 2>&1
-sudo rm -rf /root/bd-v15.sql > /dev/null 2>&1
-sudo rm -rf /root/ssh.sql > /dev/null 2>&1
-sudo rm -rf /root/plus.sql > /dev/null 2>&1
+fun_limpiarepositorios () {
+rm -rf /root/install > /dev/null 2>&1
+rm -rf /root/ocspanel > /dev/null 2>&1
+rm -rf /root/Painelv11.sh > /dev/null 2>&1
+rm -rf /root/install.sh > /dev/null 2>&1
+rm -rf /root/Painel.sh > /dev/null 2>&1
+rm -rf /root/banco.sql > /dev/null 2>&1
+rm -rf /root/BD-Painel-v23.sql > /dev/null 2>&1
+rm -rf /root/sshplus.sql > /dev/null 2>&1
+rm -rf /root/bd-v15.sql > /dev/null 2>&1
+rm -rf /root/ssh.sql > /dev/null 2>&1
+rm -rf /root/plus.sql > /dev/null 2>&1
 }
 
 ##PANIL REMOVE
