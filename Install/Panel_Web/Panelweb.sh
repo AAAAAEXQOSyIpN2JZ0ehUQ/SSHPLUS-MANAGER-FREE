@@ -8,7 +8,6 @@
 #	CANAL TELEGRAM:	https://t.me/admmanagerfree
 #====================================================
 barra="\033[0m\e[34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-#echo "/root/Panelweb.sh" > /bin/panel && chmod +x /bin/panel > /dev/null 2>&1
 echo "/root/Panelweb.sh" > /bin/ipw && chmod +x /bin/ipw > /dev/null 2>&1
 
 fun_prog ()
@@ -257,9 +256,8 @@ case "$x" in
    ;;
    *)
    echo -e "\n\033[1;31mOpcao invalida !\033[0m"
-   sleep 2
+   ./Panelweb.sh
 esac
 done
 }
-menu
 #fim
