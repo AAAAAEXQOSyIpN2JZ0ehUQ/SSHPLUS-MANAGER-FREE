@@ -62,9 +62,9 @@ rm -rf $HOME/plus.sql
 remove_panel () {
 clear
 echo -e "$barra"
-echo -e "\033[1;36mDESINTALAR PANEL WEB  \033[1;32m[!OK]"
+echo -e "\033[1;36mDESINTALAR PANEL WEB"
 echo -e "$barra"
-echo -ne "\033[1;36mDesinstalar MySQL [N/S]: \033[1;37m"; read x
+echo -ne "\033[1;37mDesinstalar MySQL [N/S]: \033[1;37m"; read x
 [[ $x = @(n|N) ]] && exit
 service ssh restart  > /dev/null 2>&1
 lsb_release -a
