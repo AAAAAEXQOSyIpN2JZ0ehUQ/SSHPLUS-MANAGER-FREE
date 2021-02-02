@@ -30,11 +30,11 @@ fun_prog ()
 }
 
 fun_update () {
-    sudo apt-get update -y
+    apt-get update -y
 }
 
 fun_upgrade () {
-    sudo apt-get upgrade -y
+    apt-get upgrade -y
 }
 
 fun_atualizar () {
