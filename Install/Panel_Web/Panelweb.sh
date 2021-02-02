@@ -66,16 +66,12 @@ echo -e "\033[1;36mDESINTALAR PANEL WEB"
 echo -e "$barra"
 echo -ne "\033[1;37mDesinstalar MySQL [N/S]: \033[1;37m"; read x
 [[ $x = @(n|N) ]] && exit
-service ssh restart  > /dev/null 2>&1
-lsb_release -a
-sudo systemctl status mysql
 sudo apt-get purge mysql-server mysql-client mysql-common mysql-server-core-* mysql-client-core-*
-sudo apt-get remove --purge mysql-server mysql-client mysql-common
 sudo rm -rf /etc/mysql /var/lib/mysql
 sudo apt-get autoremove
 sudo apt-get autoclean
 sudo rm -rf /var/lib/mysql
-service apache2 restart > /dev/null 2>&1
+service apache2 restart
 echo -e "$barra"
 echo -e "\033[1;36mPANEL ELIMINADO CON EXITO \033[1;32m[!OK]"
 echo -e "$barra"
