@@ -36,9 +36,32 @@ fun_upgrade () {
     sudo apt-get upgrade -y
 }
 
-##SCRIPTS A INSTALAR
+fun_atualizar () {
+    rm -rf $HOME/sshplus.sh; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Multi-Instalador/sshplus.sh; chmod +x sshplus.sh
+}
+
+##ACTUALIZA SISTEMA
+
+update_fun () {
+clear
+echo -e "$barra"
+echo -e "\E[41;1;37m        ⇱ ACTUALIZANDO SISTEMA ⇲                  \E[0m"
+echo -e "$barra"
+echo -e " "
+echo -ne "\033[1;33m[\033[1;31m ! \033[1;33m] \033[1;31mapt-get update "; fun_prog 'fun_update'
+echo -e " "
+echo -ne "\033[1;33m[\033[1;31m ! \033[1;33m] \033[1;31mapt-get upgrade "; fun_prog 'fun_upgrade'
+echo -e " "
+echo -ne "\033[1;33m[\033[1;31m ! \033[1;33m] \033[1;31mActualizando MIS "; fun_prog 'fun_atualizar'
+echo -e " "
+echo -ne "\033[1;33m[\033[1;31m ! \033[1;33m] \033[1;31mRedirigiendo "; fun_prog 'sleep 3'
+sleep 1
+echo -e " "
+chmod +x sshplus.sh; ./sshplus.sh
+}
 
 ##MANAGER SCRIPTS
+
 sshplus () {
     apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Plus; chmod 777 Plus; ./Plus
 }
@@ -81,6 +104,12 @@ panel_v25 () {
     wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v25/install > /dev/null 2>&1; chmod +x install; ./install
 }
 
+##GEYGEN SSHPLUS MANAGER
+
+keyssh () {
+    apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/instala_server; chmod 777 instala_server* && ./instala_server*
+}
+
 ##OPCIONES DE SISTEMA
 
 atualizar () {
@@ -110,8 +139,10 @@ echo -e "\033[1;31m[\033[1;36m01\033[1;31m] \033[1;33mSSHPLUS MANAGER v32       
 \033[1;31m[\033[1;36m08\033[1;31m] \033[1;33mPAINEL VIP-VPS V.23            \033[1;32m(FREE) 
 \033[1;31m[\033[1;36m09\033[1;31m] \033[1;33mPAINEL VIP-VPS V.25            \033[1;32m(FREE) 
 \033[0m\e[34m--------------------------------------------------
-\033[1;31m[\033[1;36m10\033[1;31m] \033[1;35m[!] \033[1;32mACTUALIZAR                \033[1;31mRam:\033[1;37m $_usor
-\033[1;31m[\033[1;36m11\033[1;31m] \033[1;35m[!] \033[1;31mDESINSTALAR \033[1;35m[\033[1;37m MIS \033[1;35m]       \033[1;31mNucleo:\033[1;37m $_usop
+\033[1;31m[\033[1;36m10\033[1;31m] \033[1;33mGENERADOR KEY SSHPLUS MANAGER  \033[1;32m(FREE)
+\033[0m\e[34m--------------------------------------------------
+\033[1;31m[\033[1;36m11\033[1;31m] \033[1;35m[!] \033[1;32mACTUALIZAR                \033[1;31mRam:\033[1;37m $_usor
+\033[1;31m[\033[1;36m12\033[1;31m] \033[1;35m[!] \033[1;31mDESINSTALAR \033[1;35m[\033[1;37m MIS \033[1;35m]       \033[1;31mNucleo:\033[1;37m $_usop
 \033[1;31m[\033[1;36m00\033[1;31m] \033[1;37mSALIR \033[1;32m<\033[1;33m<\033[1;31m<                     \033[1;37m@admmanagerfree\033[0m \033[0m"
 echo -e "$barra"
 echo -ne "\033[1;32mOQUE DESEJA FAZER \033[1;33m?\033[1;31m?\033[1;37m : "; read x
@@ -164,12 +195,22 @@ case "$x" in
    ;;
    10)
    clear
-   atualizar
+   keyssh
    exit;
    ;;
    11)
    clear
+   atualizar
+   exit;
+   ;;
+   12)
+   clear
    remove_multiscripts
+   exit;
+   ;;
+   update)
+   clear
+   update_fun
    exit;
    ;;
    0 | 00)
