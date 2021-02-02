@@ -8,7 +8,7 @@
 #	CANAL TELEGRAM:	https://t.me/admmanagerfree
 #====================================================
 barra="\033[0m\e[34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-#echo "/root/Panelweb.sh" > /bin/panel && chmod +x /bin/panel > /dev/null 2>&1
+echo "/root/Panelweb.sh" > /bin/panel && chmod +x /bin/panel > /dev/null 2>&1
 echo "/root/Panelweb.sh" > /bin/ipw && chmod +x /bin/ipw > /dev/null 2>&1
 
 fun_prog ()
@@ -50,33 +50,41 @@ sudo rm -rf /root/sshplus.sql > /dev/null 2>&1
 sudo rm -rf /root/bd-v15.sql > /dev/null 2>&1
 sudo rm -rf /root/ssh.sql > /dev/null 2>&1
 sudo rm -rf /root/plus.sql > /dev/null 2>&1
+##LIMPIA HTML
+##sudo rm -rf /var/www/html
+##[[ ! -d /var ]] && mkdir /var
+##[[ ! -d /var/www ]] && mkdir /var/www
+##[[ ! -d /var/www/html ]] && mkdir /var/www/html
 }
 
 ##PANIL REMOVE
 remove_panel () {
 clear
 echo -e "$barra"
-echo -e "\033[1;36mDESINTALAR PANEL WEB  \033[1;32m[!OK]"
+echo -e "\033[1;32m SIEMPRE CONFIRME LAS PREGUNTAS CON LA LETRA \033[1;37mY"
+echo -e "\033[1;32m CUANDO SE REQUIERA SOLO PROSIGA CON \033[1;37mENTER"
 echo -e "$barra"
-echo -ne "\033[1;36mDesinstalar MySQL [N/S]: \033[1;37m"; read x
-[[ $x = @(n|N) ]] && exit
-service ssh restart  > /dev/null 2>&1
-lsb_release -a
-sudo systemctl status mysql
+sleep 7
+sudo service apache2 stop
 sudo apt-get purge mysql-server mysql-client mysql-common mysql-server-core-* mysql-client-core-*
-sudo apt-get remove --purge mysql-server mysql-client mysql-common
 sudo rm -rf /etc/mysql /var/lib/mysql
+sudo rm -rf /var/www/html
 sudo apt-get autoremove
 sudo apt-get autoclean
-sudo rm -rf /var/lib/mysql
+apt-get install apache2 -y &>/dev/null
+sed -i "s;Listen 80;Listen 81;g" /etc/apache2/ports.conf
 service apache2 restart > /dev/null 2>&1
+sudo service apache2 stop
+[[ ! -d /var ]] && mkdir /var
+[[ ! -d /var/www ]] && mkdir /var/www
+[[ ! -d /var/www/html ]] && mkdir /var/www/html
 echo -e "$barra"
-echo -e "\033[1;36mPANEL ELIMINADO CON EXITO \033[1;32m[!OK]"
+echo -e "\033[1;36mPANEL SSHPLUS ELIMINADO CON EXITO \033[1;32m[!OK]"
 echo -e "$barra"
 }
 
-##CLEAN FOLDER
-clean_folder () {
+##CLEAN HTML FOLDER
+clean_htmlfolder () {
 clear
 echo -e "$barra"
 echo -e "\E[41;1;37m        ⇱ PREPARAR HTML FOLDER ⇲                  \E[0m"
@@ -86,13 +94,13 @@ echo -ne "\033[1;33m[\033[1;31m ! \033[1;33m] \033[1;31mapt-get update "; fun_pr
 echo -e " "
 echo -ne "\033[1;33m[\033[1;31m ! \033[1;33m] \033[1;31mapt-get upgrade "; fun_prog 'fun_upgrade'
 echo -e " "
-echo -ne "\033[1;33m[\033[1;31m ! \033[1;33m] \033[1;31mClean Folder "; fun_prog 'fun_limpiarepositorios'
+echo -ne "\033[1;33m[\033[1;31m ! \033[1;33m] \033[1;31mClean HTML Folder "; fun_prog 'fun_limpiarepositorios'
 echo -e " "
 echo -ne "\033[1;33m[\033[1;31m ! \033[1;33m] \033[1;31mRedirigiendo "; fun_prog 'sleep 3'
 sleep 1
 echo -e " "
-rm -rf $HOME/Panelweb.sh
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/Panelweb.sh
+sudo rm -rf /root/Panelweb.sh > /dev/null 2>&1
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/Panelweb.sh > /dev/null 2>&1
 chmod +x Panelweb.sh; ./Panelweb.sh
 }
 
@@ -162,7 +170,7 @@ echo -e "\033[1;31m[\033[1;36m01\033[1;31m] \033[1;37m• \033[1;33mPAINEL SSHPL
 \033[1;31m[\033[1;36m09\033[1;31m] \033[1;37m• \033[1;33mPAINEL SSHPLUS WEB V20 MOD \033[1;32m(NEW) 
 \033[1;31m[\033[1;36m10\033[1;31m] \033[1;37m• \033[1;33mPAINEL SSHPLUS WEB V23     \033[1;32m(NEW) 
 \033[1;31m[\033[1;36m11\033[1;31m] \033[1;37m• \033[1;33mPAINEL SSHPLUS WEB V25     \033[1;35m(ADE) 
-\033[1;31m[\033[1;36m12\033[1;31m] \033[1;37m• \033[1;33mPREPARAR FOLDER            \033[1;33m(\033[1;37mINESTABLE\033[1;33m) \033[1;36m•
+\033[1;31m[\033[1;36m12\033[1;31m] \033[1;37m• \033[1;33mPREPARAR HTML FOLDER       \033[1;33m(\033[1;37mINESTABLE\033[1;33m) \033[1;36m•
 \033[1;31m[\033[1;36m13\033[1;31m] \033[1;37m• \033[1;33mPANEL REMOVE               \033[1;33m(\033[1;37mINESTABLE\033[1;33m) \033[1;36m•
 \033[0m\e[34m--------------------------------------------------
 \033[1;31m[\033[1;36m10\033[1;31m] \033[1;35m[!] \033[1;32mACTUALIZAR                \033[1;31mRam:\033[1;37m $_usor
@@ -229,7 +237,7 @@ case "$x" in
    ;;
    12)
    clear
-   clean_folder
+   clean_htmlfolder
    exit;
    ;;
    13)
