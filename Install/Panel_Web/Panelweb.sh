@@ -1,6 +1,15 @@
 #!/bin/bash
+#====================================================
+#	SCRIPT: MULTI SCRIPTS MANAGER
+#   DATA ATT:   01 de Feb 2021
+#	DESENVOLVIDO POR:	TEAM ILLUMINATI
+#	COLABORADOR:	        JONY RIVERA
+#	CONTATO TELEGRAM:	NO DISPONIBLE
+#	CANAL TELEGRAM:	https://t.me/admmanagerfree
+#====================================================
 barra="\033[0m\e[34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo "/root/Panelweb.sh" > /bin/panel && chmod +x /bin/panel > /dev/null 2>&1
+echo "/root/Panelweb.sh" > /bin/ipw && chmod +x /bin/ipw > /dev/null 2>&1
 
 fun_prog ()
 {
@@ -157,12 +166,12 @@ echo -e "\033[1;31m[\033[1;36m01\033[1;31m] \033[1;37m• \033[1;33mPAINEL SSHPL
 \033[1;31m[\033[1;36m05\033[1;31m] \033[1;37m• \033[1;33mPAINEL SSHPLUS WEB V12     \033[1;32m(NEW) 
 \033[1;31m[\033[1;36m06\033[1;31m] \033[1;37m• \033[1;33mPAINEL SSHPLUS WEB V15     \033[1;31m(ANT) 
 \033[1;31m[\033[1;36m07\033[1;31m] \033[1;37m• \033[1;33mPAINEL SSHPLUS WEB V15 2   \033[1;33m(OCS)
-\033[1;31m[\033[1;36m08\033[1;31m] \033[1;37m• \033[1;33mPAINEL SSHPLUS WEB V20     \033[1;32m(NEW) \033[1;36m•
+\033[1;31m[\033[1;36m08\033[1;31m] \033[1;37m• \033[1;33mPAINEL SSHPLUS WEB V20     \033[1;32m(NEW) \033[1;37m∆
 \033[1;31m[\033[1;36m09\033[1;31m] \033[1;37m• \033[1;33mPAINEL SSHPLUS WEB V20 MOD \033[1;32m(NEW) 
 \033[1;31m[\033[1;36m10\033[1;31m] \033[1;37m• \033[1;33mPAINEL SSHPLUS WEB V23     \033[1;32m(NEW) 
 \033[1;31m[\033[1;36m11\033[1;31m] \033[1;37m• \033[1;33mPAINEL SSHPLUS WEB V25     \033[1;35m(ADE) 
-\033[1;31m[\033[1;36m12\033[1;31m] \033[1;37m• \033[1;33mPREPARAR HTML FOLDER       \033[1;33m(\033[1;37mINESTABLE\033[1;33m) \033[1;37m∆
-\033[1;31m[\033[1;36m13\033[1;31m] \033[1;37m• \033[1;33mPANEL REMOVE               \033[1;33m(\033[1;37mINESTABLE\033[1;33m) \033[1;37m∆
+\033[1;31m[\033[1;36m12\033[1;31m] \033[1;37m• \033[1;33mPREPARAR HTML FOLDER       \033[1;33m(\033[1;37mINESTABLE\033[1;33m) \033[1;36m•
+\033[1;31m[\033[1;36m13\033[1;31m] \033[1;37m• \033[1;33mPANEL REMOVE               \033[1;33m(\033[1;37mINESTABLE\033[1;33m) \033[1;36m•
 \033[0m\e[34m--------------------------------------------------
 \033[1;31m[\033[1;36m10\033[1;31m] \033[1;35m[!] \033[1;32mACTUALIZAR                \033[1;31mRam:\033[1;37m $_usor
 \033[1;31m[\033[1;36m11\033[1;31m] \033[1;35m[!] \033[1;31mDESINSTALAR \033[1;35m[\033[1;37m IPW \033[1;35m]       \033[1;31mNucleo:\033[1;37m $_usop
