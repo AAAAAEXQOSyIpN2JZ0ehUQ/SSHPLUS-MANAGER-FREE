@@ -79,7 +79,7 @@ echo -e "$barra"
 clean_folder () {
 clear
 echo -e "$barra"
-echo -e "\E[41;1;37m        ⇱ PREPARAR HTML FOLDER ⇲                  \E[0m"
+echo -e "\E[41;1;37m            ⇱ CLEAN FOLDER ⇲                      \E[0m"
 echo -e "$barra"
 echo -e " "
 echo -ne "\033[1;33m[\033[1;31m ! \033[1;33m] \033[1;31mapt-get update "; fun_prog 'fun_update'
@@ -92,7 +92,7 @@ echo -ne "\033[1;33m[\033[1;31m ! \033[1;33m] \033[1;31mRedirigiendo "; fun_prog
 sleep 1
 echo -e " "
 rm -rf $HOME/Panelweb.sh
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/Panelweb.sh
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/Panelweb.sh > /dev/null 2>&1
 chmod +x Panelweb.sh; ./Panelweb.sh
 }
 
@@ -138,7 +138,7 @@ atualizar () {
     rm -rf $HOME/Panelweb.sh; wget wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/Panelweb.sh; chmod +x Panelweb.sh; ./Panelweb.sh
 }
 remove_multiscripts () {
-    rm -rf $HOME/Panelweb.sh && rm -rf /bin/panel
+    rm -rf $HOME/Panelweb.sh && rm -rf /bin/ipw
 }
 
 ##MENU
@@ -162,7 +162,7 @@ echo -e "\033[1;31m[\033[1;36m01\033[1;31m] \033[1;37m• \033[1;33mPAINEL SSHPL
 \033[1;31m[\033[1;36m09\033[1;31m] \033[1;37m• \033[1;33mPAINEL SSHPLUS WEB V20 MOD \033[1;32m(NEW) 
 \033[1;31m[\033[1;36m10\033[1;31m] \033[1;37m• \033[1;33mPAINEL SSHPLUS WEB V23     \033[1;32m(NEW) 
 \033[1;31m[\033[1;36m11\033[1;31m] \033[1;37m• \033[1;33mPAINEL SSHPLUS WEB V25     \033[1;35m(ADE) 
-\033[1;31m[\033[1;36m12\033[1;31m] \033[1;37m• \033[1;33mPREPARAR FOLDER            \033[1;33m(\033[1;37mINESTABLE\033[1;33m) \033[1;36m•
+\033[1;31m[\033[1;36m12\033[1;31m] \033[1;37m• \033[1;33mCLEAN FOLDER               \033[1;33m(\033[1;37mINESTABLE\033[1;33m) \033[1;36m•
 \033[1;31m[\033[1;36m13\033[1;31m] \033[1;37m• \033[1;33mPANEL REMOVE               \033[1;33m(\033[1;37mINESTABLE\033[1;33m) \033[1;36m•
 \033[0m\e[34m--------------------------------------------------
 \033[1;31m[\033[1;36m10\033[1;31m] \033[1;35m[!] \033[1;32mACTUALIZAR                \033[1;31mRam:\033[1;37m $_usor
