@@ -37,6 +37,10 @@ fun_upgrade () {
     sudo apt-get upgrade -y
 }
 
+fun_atualizar () {
+    rm -rf $HOME/Panelweb.sh; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/Panelweb.sh; chmod +x Panelweb.sh
+}
+
 fun_limpiarepositorios () {
 ##LIMPIA ROOT
 sudo rm -rf /root/install > /dev/null 2>&1
@@ -88,11 +92,11 @@ echo -ne "\033[1;33m[\033[1;31m ! \033[1;33m] \033[1;31mapt-get upgrade "; fun_p
 echo -e " "
 echo -ne "\033[1;33m[\033[1;31m ! \033[1;33m] \033[1;31mClean Folder "; fun_prog 'fun_limpiarepositorios'
 echo -e " "
+echo -ne "\033[1;33m[\033[1;31m ! \033[1;33m] \033[1;31mActualizando IPW "; fun_prog 'fun_atualizar'
+echo -e " "
 echo -ne "\033[1;33m[\033[1;31m ! \033[1;33m] \033[1;31mRedirigiendo "; fun_prog 'sleep 3'
 sleep 1
 echo -e " "
-rm -rf $HOME/Panelweb.sh
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/Panelweb.sh > /dev/null 2>&1
 chmod +x Panelweb.sh; ./Panelweb.sh
 }
 
@@ -161,7 +165,7 @@ echo -e "\033[1;31m[\033[1;36m01\033[1;31m] \033[1;37m• \033[1;33mPAINEL SSHPL
 \033[1;31m[\033[1;36m08\033[1;31m] \033[1;37m• \033[1;33mPAINEL SSHPLUS WEB V20     \033[1;32m(NEW) \033[1;37m∆
 \033[1;31m[\033[1;36m09\033[1;31m] \033[1;37m• \033[1;33mPAINEL SSHPLUS WEB V20 MOD \033[1;32m(NEW) 
 \033[1;31m[\033[1;36m10\033[1;31m] \033[1;37m• \033[1;33mPAINEL SSHPLUS WEB V23     \033[1;32m(NEW) 
-\033[1;31m[\033[1;36m11\033[1;31m] \033[1;37m• \033[1;33mPAINEL SSHPLUS WEB V25     \033[1;35m(ADE) 
+\033[1;31m[\033[1;36m11\033[1;31m] \033[1;37m• \033[1;33mPAINEL VIP-VPS WEB V.25    \033[1;35m(ADE) 
 \033[1;31m[\033[1;36m12\033[1;31m] \033[1;37m• \033[1;33mCLEAN FOLDER               \033[1;33m(\033[1;37mINESTABLE\033[1;33m) \033[1;36m•
 \033[1;31m[\033[1;36m13\033[1;31m] \033[1;37m• \033[1;33mPANEL REMOVE               \033[1;33m(\033[1;37mINESTABLE\033[1;33m) \033[1;36m•
 \033[0m\e[34m--------------------------------------------------
