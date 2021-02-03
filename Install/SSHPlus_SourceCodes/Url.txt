@@ -1,0 +1,15 @@
+http://sshplus.xyz/script/Plus
+
+http://sshplus.xyz/script/versao
+
+http://sshplus.xyz/script/stunnel.pem
+
+https://raw.githubusercontent.com/CRAZY-VPN/SQUID3/master/squid3
+
+https://raw.githubusercontent.com/shellscriptx/shellbot/master/ShellBot.sh >/etc/SSHPlus/ShellBot.sh
+
+https://github.com/stedolan/jq/releases/download/jq-1.5/jq-linux64
+
+https://github.com/OpenVPN/easy-rsa/releases/download/3.0.1/EasyRSA-3.0.1.tgz
+
+https://www.dropbox.com/s/tgkxdwb03r7w59r/badvpn-udpgw
