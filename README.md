@@ -86,7 +86,7 @@ apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AA
 
 -------------------------------------------------------------------------------
 
-# PAINEL SSHPLUS (VERSIONES)
+# PAINEL SSHPLUS WEB (VERSIONES)
 
 ![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/Panel_SSHPLUS_Web.jpg)
 
