@@ -1,0 +1,15 @@
+________________________
+Localizador de recursos:
+
+https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Sistema/Plus
+
+https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Sistema/Intall/list
+
+https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Sistema/script/versao
+
+__________________
+Localizador de IP:
+
+ipv4.icanhazip.com)
+
+http://whatismyip.akamai.com/
