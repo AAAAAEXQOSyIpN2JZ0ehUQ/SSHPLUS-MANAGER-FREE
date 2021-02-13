@@ -35,7 +35,7 @@ apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AA
 * SCRIPT OFICIAL SSHPLUS MANAGER VERSAO: 32
 * INSTALL ARQUIVOS ORIGINALES ENCRIPTADOS POR @crazy_vpn
 
-apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Sistema/Intall-Original/Plus; chmod 777 Plus; ./Plus
+apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Sistema/Plus; chmod 777 Plus; ./Plus
 
 * SI NECESITAN REINSTALAR EL SCRIPTS PUEDEN EJECUTAR EL COMANDO: ( sshplus )
 
