@@ -1,7 +1,7 @@
 #!/bin/bash
 #====================================================
 #	SCRIPT: MULTI SCRIPTS MANAGER
-#   DATA ATT:   01 de Feb 2021
+#   DATA ATT:   13 de Feb 2021
 #	DESENVOLVIDO POR:	TEAM ILLUMINATI
 #	COLABORADOR:	        JONY RIVERA
 #	CONTATO TELEGRAM:	NO DISPONIBLE
@@ -55,6 +55,12 @@ panel_v25 () {
     wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v25/install > /dev/null 2>&1; chmod +x install; ./install
 }
 
+##UPDATE VIP-VPS v23 a v25
+
+panel_update2325 () {
+    wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v23_2/atu-v23-p-v25 > /dev/null 2>&1; chmod +x atu-v23-p-v25; ./atu-v23-p-v25
+}
+
 ##GEYGEN SSHPLUS MANAGER
 
 keyssh () {
@@ -78,7 +84,7 @@ while true $x != "ok"
 do
 clear
 echo -e "$barra"
-echo -e "\E[41;1;37mMULTI-INTALADOR SSHPLUS           \033[1;32m[\033[1;37m VERSAO: r002 \033[1;32m]\E[0m"
+echo -e "\E[41;1;37mMULTI-INTALADOR SSHPLUS           \033[1;32m[\033[1;37m VERSAO: r013 \033[1;32m]\E[0m"
 echo -e "$barra"
 echo -e "\033[1;31m[\033[1;36m01\033[1;31m] \033[1;33mSSHPLUS MANAGER v32            \033[1;32m(FREE) \033[37m∆
 \033[1;31m[\033[1;36m02\033[1;31m] \033[1;33mSSHPLUS MANAGER OFICIAL-DEV    \033[1;32m(FREE) \033[37m∆
@@ -90,10 +96,12 @@ echo -e "\033[1;31m[\033[1;36m01\033[1;31m] \033[1;33mSSHPLUS MANAGER v32       
 \033[1;31m[\033[1;36m08\033[1;31m] \033[1;33mPAINEL VIP-VPS V.23            \033[1;32m(FREE) 
 \033[1;31m[\033[1;36m09\033[1;31m] \033[1;33mPAINEL VIP-VPS V.25            \033[1;32m(FREE) 
 \033[0m\e[34m--------------------------------------------------
-\033[1;31m[\033[1;36m10\033[1;31m] \033[1;33mGENERADOR KEY SSHPLUS MANAGER  \033[1;32m(FREE)
+\033[1;31m[\033[1;36m10\033[1;31m] \033[1;33mUPDATE VIP-VPS V.23 PARA V25   \033[1;32m(FREE) 
 \033[0m\e[34m--------------------------------------------------
-\033[1;31m[\033[1;36m11\033[1;31m] \033[1;35m[!] \033[1;32mACTUALIZAR                \033[1;31mRam:\033[1;37m $_usor
-\033[1;31m[\033[1;36m12\033[1;31m] \033[1;35m[!] \033[1;31mDESINSTALAR \033[1;35m[\033[1;37m MIS \033[1;35m]       \033[1;31mNucleo:\033[1;37m $_usop
+\033[1;31m[\033[1;36m11\033[1;31m] \033[1;33mGENERADOR KEY SSHPLUS MANAGER  \033[1;32m(FREE)
+\033[0m\e[34m--------------------------------------------------
+\033[1;31m[\033[1;36m12\033[1;31m] \033[1;35m[!] \033[1;32mACTUALIZAR                \033[1;31mRam:\033[1;37m $_usor
+\033[1;31m[\033[1;36m13\033[1;31m] \033[1;35m[!] \033[1;31mDESINSTALAR \033[1;35m[\033[1;37m MIS \033[1;35m]       \033[1;31mNucleo:\033[1;37m $_usop
 \033[1;31m[\033[1;36m00\033[1;31m] \033[1;37mSALIR \033[1;32m<\033[1;33m<\033[1;31m<                     \033[1;37m@admmanagerfree\033[0m \033[0m"
 echo -e "$barra"
 echo -ne "\033[1;32mOQUE DESEJA FAZER \033[1;33m?\033[1;31m?\033[1;37m : "; read x
@@ -143,18 +151,23 @@ case "$x" in
    clear
    panel_v25
    exit;
-   ;;
+   ;;     
    10)
    clear
-   keyssh
+   panel_update2325
    exit;
    ;;
    11)
    clear
-   atualizar
+   keyssh
    exit;
    ;;
    12)
+   clear
+   atualizar
+   exit;
+   ;;
+   13)
    clear
    remove_multiscripts
    exit;
