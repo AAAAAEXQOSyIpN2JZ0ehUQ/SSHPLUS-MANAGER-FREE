@@ -1,6 +1,4 @@
 ﻿# SSHPLUS MANAGER v32
-# UPDATE 05/02/2021
-# PROYECTO FINALIZADO
 
 ![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/SSHPLUS_MANAGER.jpg)
 
@@ -23,6 +21,7 @@ SCRIPT SSHPLUS MANAGER es un script con un conjunto de características y herram
 * Debian 8 Server x86_64  / Debian 9 Server x86_64
 * Recomendamos Ubuntu 14.04 Server x86_64 / 16.04 Server x86_64 
 * Se recomienda usar una distro nueva o formatiada
+* UPDATE 17/02/2021 - PROYECTO FINALIZADO
 
 ## Installation
 
