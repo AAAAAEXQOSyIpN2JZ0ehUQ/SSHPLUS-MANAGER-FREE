@@ -1,12 +1,4 @@
 #!/bin/bash
-#====================================================
-#	SCRIPT: MULTI SCRIPTS MANAGER
-#   DATA ATT:   01 de Feb 2021
-#	DESENVOLVIDO POR:	TEAM ILLUMINATI
-#	COLABORADOR:	        JONY RIVERA
-#	CONTATO TELEGRAM:	NO DISPONIBLE
-#	CANAL TELEGRAM:	https://t.me/admmanagerfree
-#====================================================
 barra="\033[0m\e[34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo "/root/Panelweb.sh" > /bin/ipw && chmod +x /bin/ipw > /dev/null 2>&1
 

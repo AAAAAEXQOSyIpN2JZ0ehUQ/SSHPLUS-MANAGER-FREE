@@ -1,12 +1,4 @@
 #!/bin/bash
-#====================================================
-#	SCRIPT: MULTI SCRIPTS MANAGER
-#   DATA ATT:   13 de Feb 2021
-#	DESENVOLVIDO POR:	TEAM ILLUMINATI
-#	COLABORADOR:	        JONY RIVERA
-#	CONTATO TELEGRAM:	NO DISPONIBLE
-#	CANAL TELEGRAM:	https://t.me/admmanagerfree
-#====================================================
 barra="\033[0m\e[34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo "/root/sshplus.sh" > /bin/mis && chmod +x /bin/mis > /dev/null 2>&1
 
