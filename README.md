@@ -21,7 +21,7 @@ SCRIPT SSHPLUS MANAGER es un script con un conjunto de características y herram
 * Un sistema operativo basado en Linux (Ubuntu o Debian) 
 * Ubuntu 14.04 Server x86_64 / Ubuntu 16.04 Server x86_64  / Ubuntu 18.04 Server x86_64
 * Debian 8 Server x86_64  / Debian 9 Server x86_64
-* Recomendamos Debian 9 Server x86_64 / 16.04 Server x86_64 
+* Recomendamos Debian 9 Server x86_64 / Ubuntu 16.04 Server x86_64 
 * Se recomienda usar una distro nueva o formatiada
 
 ## Installation
