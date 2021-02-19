@@ -30,9 +30,10 @@ apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AA
 * SI NECESITAN REINSTALAR EL SCRIPTS PUEDEN EJECUTAR EL COMANDO: ( sshplus )
 
 -------------------------------------------------------------------------------
+```
 * SCRIPT OFICIAL SSHPLUS MANAGER VERSAO: 32
 * INSTALL ARQUIVOS ORIGINALES ENCRIPTADOS POR @crazy_vpn
-
+```
 apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Sistema/Plus; chmod 777 Plus; ./Plus
 
 * SI NECESITAN REINSTALAR EL SCRIPTS PUEDEN EJECUTAR EL COMANDO: ( sshplus )
@@ -68,6 +69,8 @@ PAINEL SSHPLUS es una herramienta completa de gestión y supervisión de usuario
 ## Installation
 
 apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v20/install; chmod +x install; ./install
+
+* REPOSITORIO: https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/Panel_Web/panel_v20
 
 -------------------------------------------------------------------------------
 
