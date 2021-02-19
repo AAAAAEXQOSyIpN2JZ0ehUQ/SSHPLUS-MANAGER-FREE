@@ -73,8 +73,6 @@ PAINEL SSHPLUS es una herramienta completa de gestión y supervisión de usuario
 
 apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v20/install; chmod +x install; ./install
 
-* REPOSITORIO: https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/Panel_Web/panel_v20
-
 -------------------------------------------------------------------------------
 
 # PAINEL SSHPLUS WEB (VERSIONES)
