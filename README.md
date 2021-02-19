@@ -35,6 +35,8 @@ apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AA
 * SCRIPT OFICIAL SSHPLUS MANAGER VERSAO: 32
 * INSTALL ARQUIVOS ORIGINALES ENCRIPTADOS POR @crazy_vpn
 ```
+## Installation
+
 apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Sistema/Plus; chmod 777 Plus; ./Plus
 
 * SI NECESITAN REINSTALAR EL SCRIPTS PUEDEN EJECUTAR EL COMANDO: ( sshplus )
@@ -79,6 +81,8 @@ apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AA
 
 ![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/Panel_SSHPLUS_Web.jpg)
 
+## Installation
+
 apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/Panelweb.sh; chmod +x Panelweb.sh; ./Panelweb.sh
 
 * ACCESO DIRECTO AL SCRIPTS EXECUTE EL COMANDO ( ipw )
@@ -89,6 +93,8 @@ apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AA
 
 ![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/Multi_Instalador_sshplus.png)
 
+## Installation
+
 apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Multi-Instalador/sshplus.sh; chmod +x sshplus.sh; ./sshplus.sh
 
 * ACCESO DIRECTO AL SCRIPTS EXECUTE EL COMANDO ( mis )
@@ -96,6 +102,8 @@ apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AA
 -------------------------------------------------------------------------------
 
 # TCP-Tweaker-1.0 (TCP-SPEED)
+
+## Installation
 
 ![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/TCP_Tweaker_TCP_SPEED.jpg)
 
