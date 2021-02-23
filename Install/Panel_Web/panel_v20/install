@@ -153,11 +153,11 @@ sed -i "s;1010;$senha;g" /var/www/html/pages/system/pass.php > /dev/null 2>&1
 fi
 sleep 1
 cd
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v20/banco.sql > /dev/null 2>&1
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v20/bancov20.sql > /dev/null 2>&1
 sleep 1
-if [[ -e "$HOME/banco.sql" ]]; then
-    mysql -h localhost -u root -p$senha --default_character_set utf8 sshplus < banco.sql
-    rm /root/banco.sql
+if [[ -e "$HOME/bancov20.sql" ]]; then
+    mysql -h localhost -u root -p$senha --default_character_set utf8 sshplus < bancov20.sql
+    rm /root/bancov20.sql
 else
     clear
     echo -e "\033[1;31m ERRO AO IMPORTAR BANCO DE DADOS\033[0m"
