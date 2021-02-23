@@ -198,7 +198,7 @@ echo ""
 clear
 IP=$(wget -qO- ipv4.icanhazip.com)
 clear
-echo -e "   Painel-SSH" | figlet
+echo -e "   SSHPlus Painel-SSH" | figlet
 echo -e "      V.20" | figlet
 cho ""
 echo -e "\033[1;36m SEU PAINEL:\033[1;37m http://$IP/\033[0m"
