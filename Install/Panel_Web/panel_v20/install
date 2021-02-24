@@ -1,5 +1,6 @@
 #!/bin/bash
 #INSTALADOR SCRIPT BY @adeilsonfi
+#MODIIFICACION TEAM ILLUMINATI
 clear
 fun_bar () {
 comando[0]="$1"
@@ -183,13 +184,14 @@ echo '*/2 * * * * root /bin/autobackup.sh' >> /etc/crontab
 /etc/init.d/cron reload > /dev/null 2>&1
 /etc/init.d/cron restart > /dev/null 2>&1
 cd /bin
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v20/html.sh > /dev/null 2>&1 && chmod 777 html.sh && sed -i -e 's/\r$//' html.sh && ./html.sh
 rm autobackup.sh > /dev/null 2>&1
 wget https://www.dropbox.com/s/ich6c7ox0ez0crt/autobackup.sh > /dev/null 2>&1 && chmod 777 autobackup.sh && sed -i -e 's/\r$//' autobackup.sh && ./autobackup.sh
 # echo '0 */12 * * * root cd /var/www/html/pages/system/ && bash cron.backup.sh && cd /root' >> /etc/crontab
 # echo '5 */12 * * * root cd /var/www/html/pages/system/ && /usr/bin/php cron.backup.php && cd /root' >> /etc/crontab
 /etc/init.d/cron reload > /dev/null 2>&1
 /etc/init.d/cron restart > /dev/null 2>&1
-chmod 777 /var/www/html/admin/pages/apis/banco19157
+chmod 777 /var/www/html/admin/pages/apis/banco28653
 chmod 777 /var/www/html/admin/pages/servidor/ovpn
 chmod 777 /var/www/html/admin/pages/download
 chmod 777 /var/www/html/admin/pages/faturas/comprovantes
