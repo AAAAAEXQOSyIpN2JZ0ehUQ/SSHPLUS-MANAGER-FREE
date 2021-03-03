@@ -11,6 +11,8 @@ https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/ma
 
 https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/sshd_config
 
+https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/IP
+
 https://www.dropbox.com/s/tgkxdwb03r7w59r/badvpn-udpgw
 
 https://raw.githubusercontent.com/shellscriptx/shellbot/master/ShellBot.sh
