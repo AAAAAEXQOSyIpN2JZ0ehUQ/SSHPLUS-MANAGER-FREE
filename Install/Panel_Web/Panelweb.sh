@@ -2,8 +2,6 @@
 barra="\033[0m\e[34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo "/root/Panelweb.sh" > /bin/ipw && chmod +x /bin/ipw > /dev/null 2>&1
 
-##ACTUALIZA SISTEMA
-
 fun_bar () {
 comando[0]="$1"
 comando[1]="$2"
