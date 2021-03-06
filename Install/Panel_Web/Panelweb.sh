@@ -130,6 +130,8 @@ atualizar () {
 }
 remove_multiscripts () {
     rm -rf $HOME/Panelweb.sh && rm -rf /bin/ipw
+    exit
+    clear
 }
 
 ##MENU
