@@ -2,51 +2,33 @@
 barra="\033[0m\e[34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo "/root/Panelweb.sh" > /bin/ipw && chmod +x /bin/ipw > /dev/null 2>&1
 
-fun_prog ()
-{
-	comando[0]="$1" 
-    ${comando[0]}  > /dev/null 2>&1 & 
-	tput civis
-	echo -ne "\033[1;32m.\033[1;33m.\033[1;31m. \033[1;32m"
-    while [ -d /proc/$! ]
-	do
-		for i in / - \\ \|
-		do
-			sleep .1
-			echo -ne "\e[1D$i"
-		done
-	done
-	tput cnorm
-	echo -e "\e[1DOK"
-}
+##ACTUALIZA SISTEMA
 
-fun_update () {
-    apt-get update -y
-}
-
-fun_upgrade () {
-    apt-get upgrade -y
-}
-
-fun_atualizar () {
-    rm -rf $HOME/Panelweb.sh; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/Panelweb.sh; chmod +x Panelweb.sh
-}
-
-##LIMPIA ROOT
-fun_limpiarepositorios () {
-rm -rf $HOME/install
-rm -rf $HOME/install.1
-rm -rf $HOME/install.2
-rm -rf $HOME/ocspanel
-rm -rf $HOME/Painelv11.sh
-rm -rf $HOME/install.sh
-rm -rf $HOME/Painel.sh
-rm -rf $HOME/banco.sql
-rm -rf $HOME/BD-Painel-v23.sql
-rm -rf $HOME/sshplus.sql
-rm -rf $HOME/bd-v15.sql
-rm -rf $HOME/ssh.sql
-rm -rf $HOME/plus.sql
+fun_bar () {
+comando[0]="$1"
+comando[1]="$2"
+(
+[[ -e $HOME/fim ]] && rm $HOME/fim
+${comando[0]} -y > /dev/null 2>&1
+${comando[1]} -y > /dev/null 2>&1
+touch $HOME/fim
+) > /dev/null 2>&1 &
+tput civis
+echo -ne "  \033[1;33mAGUARDE \033[1;37m- \033[1;33m["
+while true; do
+for((i=0; i<18; i++)); do
+echo -ne "\033[1;31m#"
+sleep 0.1s
+done
+[[ -e $HOME/fim ]] && rm $HOME/fim && break
+echo -e "\033[1;33m]"
+sleep 1s
+tput cuu1
+tput dl1
+echo -ne "  \033[1;33mAGUARDE \033[1;37m- \033[1;33m["
+done
+echo -e "\033[1;33m]\033[1;37m -\033[1;32m OK !\033[1;37m"
+tput cnorm
 }
 
 ##PANIL REMOVE
@@ -68,24 +50,33 @@ echo -e "\033[1;36mPANEL ELIMINADO CON EXITO \033[1;32m[!OK]"
 echo -e "$barra"
 }
 
+##LIMPIA ROOT
+fun_limpiarepositorios () {
+rm -rf $HOME/install
+rm -rf $HOME/install.1
+rm -rf $HOME/install.2
+rm -rf $HOME/ocspanel
+rm -rf $HOME/Painelv11.sh
+rm -rf $HOME/install.sh
+rm -rf $HOME/Painel.sh
+rm -rf $HOME/banco.sql
+rm -rf $HOME/BD-Painel-v23.sql
+rm -rf $HOME/sshplus.sql
+rm -rf $HOME/bd-v15.sql
+rm -rf $HOME/ssh.sql
+rm -rf $HOME/plus.sql
+}
+
 ##CLEAN FOLDER
 clean_folder () {
-clear
-echo -e "$barra"
-echo -e "\E[41;1;37m            ⇱ CLEAN FOLDER ⇲                      \E[0m"
-echo -e "$barra"
-echo -e " "
-echo -ne "\033[1;33m[\033[1;31m ! \033[1;33m] \033[1;31mapt-get update "; fun_prog 'fun_update'
-echo -e " "
-echo -ne "\033[1;33m[\033[1;31m ! \033[1;33m] \033[1;31mapt-get upgrade "; fun_prog 'fun_upgrade'
-echo -e " "
-echo -ne "\033[1;33m[\033[1;31m ! \033[1;33m] \033[1;31mClean Folder "; fun_prog 'fun_limpiarepositorios'
-echo -e " "
-echo -ne "\033[1;33m[\033[1;31m ! \033[1;33m] \033[1;31mActualizando IPW "; fun_prog 'fun_atualizar'
-echo -e " "
-echo -ne "\033[1;33m[\033[1;31m ! \033[1;33m] \033[1;31mRedirigiendo "; fun_prog 'sleep 3'
-sleep 1
-echo -e " "
+echo ""
+fun_bar "apt-get update -y"
+fun_bar "apt-get upgrade -y"
+fun_bar "fun_limpiarepositorios"
+rm -rf $HOME/Panelweb.sh; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/Panelweb.sh > /dev/null 2>&1
+echo ""
+echo -e "\033[1;33m CLEAN FOLDER COM SUCESSO -\033[1;32m OK !\033[1;37m"
+sleep 4s
 chmod +x Panelweb.sh; ./Panelweb.sh
 }
 
