@@ -42,11 +42,6 @@ chmod 777 Plus; ./Plus
 * SI NECESITAN REINSTALAR EL SCRIPTS PUEDEN EJECUTAR EL COMANDO: ( sshplus )
 ```
 
-## :octocat: Contribute
-
-1. @crazy_vpn - Developer of SSHPlus Manager
-2. Team Illuminati - Contributor
-
 -------------------------------------------------------------------------------
 
 ## SCRIPT OFICIAL PAINEL SSHPLUS WEB VERSAO: 20 (Installation Directa)
@@ -115,6 +110,12 @@ apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AA
 apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/tcptweaker.sh; chmod +x tcptweaker.sh; ./tcptweaker.sh
 
 -------------------------------------------------------------------------------
+
+## :octocat: Contribute
+
+1. @crazy_vpn - Developer of SSHPlus Manager
+2. @crazy_vpn - Developer of Painel SSHPlus WEB
+3. Team Illuminati - Contributor
 
 ```
 * SIN MINERIA! 
