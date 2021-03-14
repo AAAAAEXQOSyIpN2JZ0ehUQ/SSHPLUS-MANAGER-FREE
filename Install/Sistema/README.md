@@ -1,7 +1,5 @@
 ﻿# SSHPLUS MANAGER v32
-```
-* UPDATE 17/02/2021 - PROYECTO FINALIZADO
-```
+
 ![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/SSHPLUS_MANAGER.jpg)
 
 
