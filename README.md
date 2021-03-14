@@ -33,7 +33,7 @@ apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AA
 * SCRIPT OFICIAL SSHPLUS MANAGER VERSAO: 32
 * INSTALL ARQUIVOS ORIGINALES ENCRIPTADOS POR @crazy_vpn
 
-## :book: Installation
+## Installation
 
 apt-get update -y; apt-get upgrade -y; 
 wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Sistema/Plus; 
