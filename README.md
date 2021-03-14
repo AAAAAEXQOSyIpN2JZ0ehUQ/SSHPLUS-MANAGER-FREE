@@ -22,7 +22,7 @@ SCRIPT SSHPLUS MANAGER es un script con un conjunto de características y herram
 * Recomendamos Debian 9 Server x86_64 / Ubuntu 16.04 Server x86_64 
 * Se recomienda usar una distro nueva o formatiada
 
-## Installation
+## :book: Installation
 
 apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Plus; chmod 777 Plus; ./Plus
 
@@ -33,7 +33,7 @@ apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AA
 * SCRIPT OFICIAL SSHPLUS MANAGER VERSAO: 32
 * INSTALL ARQUIVOS ORIGINALES ENCRIPTADOS POR @crazy_vpn
 
-## Installation
+## :book: Installation
 
 apt-get update -y; apt-get upgrade -y; 
 wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Sistema/Plus; 
@@ -41,21 +41,11 @@ chmod 777 Plus; ./Plus
 
 * SI NECESITAN REINSTALAR EL SCRIPTS PUEDEN EJECUTAR EL COMANDO: ( sshplus )
 ```
--------------------------------------------------------------------------------
 
-## GENERADOR DE KEY SSHPLUS MANAGER
+## :octocat: Contribute
 
-![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/GENERADOR-SSHPLUS-MANAGER.png)
-
-* Un sistema operativo basado en Linux (Ubuntu o Debian)
-* Se recomienda usar una distro nueva o formatiada
-* Debe mantener el Apache2 en Puerto 80
-
-## Installation Server
-
-apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/instala_server; chmod 777 instala_server* && ./instala_server*
-
- ACCESO DIRECTO AL SCRIPTS EXECUTE EL COMANDO: keyssh
+1. @crazy_vpn - Developer of SSHPlus Manager
+2. Team Illuminati - Contributor
 
 -------------------------------------------------------------------------------
 
@@ -70,7 +60,7 @@ PAINEL SSHPLUS es una herramienta completa de gestión y supervisión de usuario
                  navegador ...
 ```
 
-## Installation
+## :book: Installation
 
 apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v20/install; chmod +x install; ./install
 
@@ -80,7 +70,7 @@ apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AA
 
 ![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/Panel_SSHPLUS_Web.jpg)
 
-## Installation
+## :book: Installation
 
 apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/Panelweb.sh; chmod +x Panelweb.sh; ./Panelweb.sh
 
@@ -88,11 +78,27 @@ apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AA
 
 -------------------------------------------------------------------------------
 
+## GENERADOR DE KEY SSHPLUS MANAGER
+
+![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/GENERADOR-SSHPLUS-MANAGER.png)
+
+* Un sistema operativo basado en Linux (Ubuntu o Debian)
+* Se recomienda usar una distro nueva o formatiada
+* Debe mantener el Apache2 en Puerto 80
+
+## :book: Installation Server
+
+apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/instala_server; chmod 777 instala_server* && ./instala_server*
+
+ ACCESO DIRECTO AL SCRIPTS EXECUTE EL COMANDO: keyssh
+
+-------------------------------------------------------------------------------
+
 # MULTI-INTALADOR SSHPLUS
 
 ![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/Multi_Instalador_sshplus.png)
 
-## Installation
+## :book: Installation
 
 apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Multi-Instalador/sshplus.sh; chmod +x sshplus.sh; ./sshplus.sh
 
@@ -104,7 +110,7 @@ apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AA
 
 ![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/TCP_Tweaker_TCP_SPEED.jpg)
 
-## Installation
+## :book: Installation
 
 apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/tcptweaker.sh; chmod +x tcptweaker.sh; ./tcptweaker.sh
 
