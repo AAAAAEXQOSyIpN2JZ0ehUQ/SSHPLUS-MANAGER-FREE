@@ -118,7 +118,6 @@ apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AA
 
 ```
 ☆ https://t.me/admmanagerfree ☆
-
 ```
 
 **By: [  ⃘⃤꙰✰ ]**
