@@ -1,3 +1,4 @@
+#!/bin/bash
 clear
 op=$1
 [[ ! -d /usr/share/.plus ]] && exit 0

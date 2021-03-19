@@ -46,19 +46,16 @@ fun_botOnOff() {
         clear
         echo -e "\033[1;32mINICIANDO BOT SSHPLUS \033[0m\n"
         fun_bot1() {
-        	[[ "$(grep -wc '16' /etc/issue.net)" != '0' ]] && {
-        		wget -qO- sshplus.xyz/script/ShellBot.sh > /etc/SSHPlus/ShellBot.sh
-        	}
             [[ ! -e "/etc/SSHPlus/ShellBot.sh" ]] && {
 				wget -qO- https://raw.githubusercontent.com/shellscriptx/shellbot/master/ShellBot.sh >/etc/SSHPlus/ShellBot.sh
 			}
             cd /etc/SSHPlus
             screen -dmS bot_plus ./bot $tokenbot $iduser >/dev/null 2>&1
             [[ $(grep -wc "bot_plus" /etc/autostart) = '0' ]] && {
-                echo -e "ps x | grep 'bot_plus' | grep -v 'grep' || cd /etc/SSHPlus && sudo screen -dmS bot_plus ./bot $tokenbot $iduser && cd $HOME" >>/etc/autostart
+                echo -e "ps x | grep 'bot_plus' | grep -v 'grep' || cd /etc/SSHPlus && screen -dmS bot_plus ./bot $tokenbot $iduser && cd $HOME" >>/etc/autostart
             } || {
                 sed -i '/bot_plus/d' /etc/autostart
-                echo -e "ps x | grep 'bot_plus' | grep -v 'grep' || cd /etc/SSHPlus && sudo screen -dmS bot_plus ./bot $tokenbot $iduser && cd $HOME" >>/etc/autostart
+                echo -e "ps x | grep 'bot_plus' | grep -v 'grep' || cd /etc/SSHPlus && screen -dmS bot_plus ./bot $tokenbot $iduser && cd $HOME" >>/etc/autostart
             }
             [[ $(crontab -l | grep -c "verifbot") = '0' ]] && (
                 crontab -l 2>/dev/null

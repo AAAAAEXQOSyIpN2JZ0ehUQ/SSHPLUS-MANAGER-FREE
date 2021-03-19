@@ -1,11 +1,11 @@
 #!/bin/bash
 #===================================================
-#	SCRIPT: BOT SSHPLUS MANAGER
-#   DATA ATT:   28 de Dez 2020
-#	DESENVOLVIDO POR:	CRAZY_VPN
-#   API SHELLBOT:   SHAMAN
-#	CONTATO TELEGRAM:	http://t.me/crazy_vpn
-#	CANAL TELEGRAM:	http://t.me/sshplus
+#   SCRIPT: BOT SSHPLUS MANAGER
+#   DATA ATT: 24 de Jan 2021
+#   DESENVOLVIDO POR: CRAZY_VPN
+#   API SHELLBOT: SHAMAN
+#   CONTATO TELEGRAM: http://t.me/crazy_vpn
+#   CANAL TELEGRAM: http://t.me/sshplus
 #===================================================
 [[ ! -d /etc/SSHPlus ]] && exit 0
 [[ ! -d /etc/bot ]] && exit 0
@@ -212,13 +212,15 @@ criar_user() {
     senha=$(sed -n '2 p' $file_user | cut -d' ' -f2)
     limite=$(sed -n '3 p' $file_user | cut -d' ' -f2)
     data=$(sed -n '4 p' $file_user | cut -d' ' -f2)
-    validade=$(echo "$data" | awk -F'/' '{print $2FS$1FS$3}' | xargs -i date -d'{}' +%Y/%m/%d)
-
-    useradd -M -N -s /bin/false $usuario -e $validade >/dev/null 2>&1
-    (
-        echo "${senha}"
-        echo "${senha}"
-    ) | passwd "${usuario}" >/dev/null 2>&1
+    validade=$(echo "$data" | awk -F'/' '{print $2FS$1FS$3}' | xargs -i date -d'{}' +%Y-%m-%d)
+    if /usr/sbin/useradd -M -N -s /bin/false $usuario -e $validade; then
+        (echo "${senha}";echo "${senha}") | passwd "${usuario}"
+    else
+        ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+                --text "$(echo -e "❌ ERRO AO CRIAR USUARIO ❌")" \
+                --parse_mode html
+        return 0
+    fi
     [[ "${message_from_id[$id]}" != "$id_admin" ]] && {
         echo "$usuario:$senha:$info_data:$limite" >/etc/bot/revenda/${message_from_username}/usuarios/$usuario
         echo "$usuario:$senha:$info_data:$limite" >/etc/bot/info-users/$usuario
@@ -230,6 +232,7 @@ criar_user() {
         ./easyrsa build-client-full $usuario nopass
         newclient "$usuario"
     }
+    echo "usuario $usuario $validade $senha criado"
 }
 
 fun_deluser() {
@@ -940,7 +943,7 @@ fun_teste() {
         return 0
         _erro='1'
     }
-    useradd -M -N -s /bin/false $usuario -e $tuserdate >/dev/null 2>&1
+    /usr/sbin/useradd -M -N -s /bin/false $usuario -e $tuserdate >/dev/null 2>&1
     (
         echo "$senha"
         echo "$senha"
@@ -2220,7 +2223,7 @@ while :; do
                     }
                     ;;
                 '📤 HOSPEDAR ARQUIVOS 📤\n\nEnvie-me o arquivo:')
-                    if [ "${update_id[$id]}" ]; then
+                    if [[ "${update_id[$id]}" ]]; then
                         # Monitora o envio de arquivos
                         [[ ${message_document_file_id[$id]} ]] && file_id=${message_document_file_id[$id]} && download_file=1
                         # Verifica se o download está ativado.
@@ -2527,3 +2530,4 @@ while :; do
     done
 done
 #FIM
+

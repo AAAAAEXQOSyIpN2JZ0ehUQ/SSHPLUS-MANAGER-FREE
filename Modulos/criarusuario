@@ -46,7 +46,7 @@ fun_geraovpn() {
     rmt2='/SSHPLUS?'
     rmt3='www.vivo.com.br 8088'
     prx='200.142.130.104'
-    payload1='#payload "HTTP/1.0 [crlf]Host: m.youtube.com[crlf]CONNECT HTTP/1.0[crlf][crlf]|[crlf]"'
+    payload1='#payload "HTTP/1.1 [lf]CONNECT HTTP/1.1[lf][lf]|[lf]."'
     payload2='#payload "CONNECT 127.0.0.1:1194[split][crlf] HTTP/1.0 [crlf][crlf]#"'
     vivo1="portalrecarga.vivo.com.br/recarga"
     vivo2="portalrecarga.vivo.com.br/controle/"

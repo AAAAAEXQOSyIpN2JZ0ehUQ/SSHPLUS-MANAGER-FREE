@@ -62,4 +62,3 @@ else
 	else
 		tput setaf 7 ; tput setab 4 ; tput bold ; echo "" ; echo "O usuário $user não existe!" ; echo "" ; tput sgr0
 	fi
-fi
