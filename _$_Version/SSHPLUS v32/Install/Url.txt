@@ -1,0 +1,32 @@
+________________________
+Localizador de recursos:
+
+https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Plus
+
+https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/versao
+
+https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/$_arq
+
+https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/stunnel.pem
+
+https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/sshd_config
+
+https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/IP
+
+https://www.dropbox.com/s/tgkxdwb03r7w59r/badvpn-udpgw
+
+https://raw.githubusercontent.com/shellscriptx/shellbot/master/ShellBot.sh
+
+https://github.com/stedolan/jq/releases/download/jq-1.5/jq-linux64
+
+https://raw.githubusercontent.com/CRAZY-VPN/SQUID3/master/squid3
+
+https://github.com/OpenVPN/easy-rsa/releases/download/3.0.1/EasyRSA-3.0.1.tgz
+
+__________________
+Localizador de IP:
+
+ipv4.icanhazip.com)
+
+http://whatismyip.akamai.com/
+

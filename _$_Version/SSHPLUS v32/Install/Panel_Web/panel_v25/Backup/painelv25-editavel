@@ -1,0 +1,223 @@
+#!/bin/bash
+clear
+fun_bar () {
+comando[0]="$1"
+comando[1]="$2"
+ (
+[[ -e $HOME/fim ]] && rm $HOME/fim
+${comando[0]} -y > /dev/null 2>&1
+${comando[1]} -y > /dev/null 2>&1
+touch $HOME/fim
+ ) > /dev/null 2>&1 &
+ tput civis
+echo -ne "  \033[1;33mAGUARDE \033[1;37m- \033[1;33m["
+while true; do
+   for((i=0; i<18; i++)); do
+   echo -ne "\033[1;31m#"
+   sleep 0.1s
+   done
+   [[ -e $HOME/fim ]] && rm $HOME/fim && break
+   echo -e "\033[1;33m]"
+   sleep 1s
+   tput cuu1
+   tput dl1
+   echo -ne "  \033[1;33mAGUARDE \033[1;37m- \033[1;33m["
+done
+echo -e "\033[1;33m]\033[1;37m -\033[1;32m OK !\033[1;37m"
+tput cnorm
+}
+echo ""
+echo -e "           \033[1;33m● \033[1;32mATUALIZANDO LINUX, Pode Demorar \033[1;33m●\033[0m"
+fun_update () {
+    apt-get update -y > /dev/null 2>&1 
+	apt-get install figlet -y > /dev/null 2>&1
+}
+fun_bar 'fun_update'
+echo ""
+clear
+#
+rm /root/painelv25.sh > /dev/null 2>&1
+rm $HOME/painelv25.sh > /dev/null 2>&1
+rm /root/PAINEL-V.25.zip > /dev/null 2>&1
+rm $HOME/PAINEL-V.25.zip > /dev/null 2>&1
+IP=$(wget -qO- ipv4.icanhazip.com)
+echo "America/Sao_Paulo" > /etc/timezone
+ln -fs /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime > /dev/null 2>&1
+dpkg-reconfigure --frontend noninteractive tzdata > /dev/null 2>&1
+rm $HOME/painelv25.sh > /dev/null 2>&1
+rm /root/PAINEL-V.25.zip > /dev/null 2>&1
+####################################################################################################
+echo -e "\E[44;1;37m    INSTALAR O PAINEL SSH/DROP/SSL V.25 VIP-VPS     \E[0m"
+echo ""
+echo -e "                              \033[1;31mBy @adeilsonfi\033[1;36m"
+echo -e "   VIP-vps" | figlet 
+echo -e "                             \033[1;31mPainel-SSH V.25\033[1;36m"
+echo ""
+echo -ne "\n\033[1;32m  DEFINA UMA SENHA PARA O\033[1;33m MySQL\033[1;37m: "; read senha
+echo -e "\n\033[1;36m  INICIANDO INSTALACAO \033[1;33m"
+echo ""
+
+#
+echo -e "           \033[1;33m● \033[1;32mINSTALANDO O APACHE2 \033[1;33m●\033[0m"
+fun_apache2 () {
+    apt-get install apache2 -y > /dev/null 2>&1
+	service apache2 restart > /dev/null 2>&1
+}
+fun_bar 'fun_apache2'
+echo ""
+#
+echo -e "           \033[1;33m● \033[1;32mINSTALANDO O MCRYPT \033[1;33m●\033[0m"
+fun_mcrypt () {
+    apt-get install cron curl unzip -y > /dev/null 2>&1
+    apt-get install php5 libapache2-mod-php5 php5-mcrypt -y > /dev/null 2>&1
+    service apache2 restart > /dev/null 2>&1
+}
+fun_bar 'fun_mcrypt'
+echo ""
+#
+
+echo -e "           \033[1;33m● \033[1;32mINSTALANDO O MySQL \033[1;33m●\033[0m"
+mariadbver='10.0'
+echo "mariadb-server-$mariadbver mysql-server/root_password password $senha" | debconf-set-selections
+echo "mariadb-server-$mariadbver mysql-server/root_password_again password $senha" | debconf-set-selections
+echo "mariadb-client-$mariadbver mysql-server/root_password password $senha" | debconf-set-selections
+echo "mariadb-client-$mariadbver mysql-server/root_password_again password $senha" | debconf-set-selections
+fun_sql () {
+    apt-get install mariadb-server mariadb-client -y > /dev/null 2>&1
+	}
+	(echo $senha; echo n; echo y; echo y; echo y; echo y)|mysql_secure_installation > /dev/null 2>&1
+fun_bar 'fun_sql'
+echo ""
+#
+echo -e "           \033[1;33m● \033[1;32mINSTALANDO O PHPMYADMIN \033[1;33m●\033[0m"
+echo "phpmyadmin phpmyadmin/dbconfig-install boolean true" | debconf-set-selections
+echo "phpmyadmin phpmyadmin/app-password-confirm password $senha" | debconf-set-selections
+echo "phpmyadmin phpmyadmin/mysql/admin-pass password $senha" | debconf-set-selections
+echo "phpmyadmin phpmyadmin/mysql/app-pass password $senha" | debconf-set-selections
+echo "phpmyadmin phpmyadmin/reconfigure-webserver multiselect apache2" | debconf-set-selections
+fun_phpmya () {
+apt-get install phpmyadmin -y > /dev/null 2>&1
+}
+fun_bar 'fun_phpmya'
+php5enmod mcrypt > /dev/null 2>&1
+service apache2 restart > /dev/null 2>&1
+ln -s /usr/share/phpmyadmin /var/www/html/phpmyadmin
+echo ""
+#
+echo -e "           \033[1;33m● \033[1;32mINSTALANDO O LIBSSH2 \033[1;33m●\033[0m"
+fun_libsh2 () {
+apt-get install libssh2-1-dev libssh2-php -y > /dev/null 2>&1
+}
+fun_bar 'fun_libsh2'
+
+if [ "$(php -m |grep ssh2)" = "ssh2" ]; then
+  true
+else
+  clear
+  echo -e "\033[1;31m ERRO CRITICO\033[0m"
+  rm $HOME/painelv23.sh > /dev/null 2>&1
+  exit
+fi
+echo ""
+#
+echo -e "           \033[1;33m● \033[1;32mINSTALANDO O PHP5-CURL \033[1;33m●\033[0m"
+fun_curl () {
+apt-get install php5-curl > /dev/null 2>&1
+service apache2 restart
+}
+fun_bar 'fun_curl'
+echo ""
+#
+clear
+echo -e "\E[44;1;37m    INSTALAR O PAINEL SSH/DROP/SSL V.23 VIP-VPS     \E[0m"
+echo ""
+echo -e "                              \033[1;31mBy @adeilsonfi\033[1;36m"
+echo -e "   VIP-vps" | figlet
+echo ""
+echo -e "\033[1;31m ATENCAO \033[1;33m!!!"
+echo ""
+echo -ne "\033[1;32m INFORME A MESMA SENHA\033[1;37m: "; read senha
+echo -e "\033[1;32mOK\033[1;37m"
+sleep 1
+mysql -h localhost -u root -p$senha -e "CREATE DATABASE sshplus"
+fun_bar 'sleep 4'
+echo ""
+clear
+#
+echo -e "           \033[1;33m● \033[1;32mFINALIZANDO INSTALACAO, PODE DEMORAR \033[1;33m● \033[1;33mAGUARDE...\033[0m"
+cd /var/www/html
+wget http://www.painelweb.tk/PAINEL-V.25.zip > /dev/null 2>&1
+sleep 1
+unzip PAINEL-V.25.zip > /dev/null 2>&1
+rm -rf PAINEL-V.25.zip index.html > /dev/null 2>&1
+service apache2 restart
+sleep 1
+if [[ -e "/var/www/html/pages/system/pass.php" ]]; then
+sed -i "s;1010;$senha;g" /var/www/html/pages/system/pass.php > /dev/null 2>&1
+fi
+sleep 1
+cd
+wget http://www.painelweb.tk/BD-Painel-v23.sql > /dev/null 2>&1
+sleep 1
+if [[ -e "$HOME/BD-Painel-v23.sql" ]]; then
+    mysql -h localhost -u root -p$senha --default_character_set utf8 sshplus < BD-Painel-v23.sql
+    rm /root/BD-Painel-v23.sql
+else
+    clear
+    echo -e "\033[1;31m ERRO AO IMPORTAR BANCO DE DADOS\033[0m"
+    sleep 2
+    rm /root/painelwv25.sh > /dev/null 2>&1
+    exit
+fi
+service apache2 restart
+clear
+echo '* * * * * root /usr/bin/php /var/www/html/pages/system/cron.php' >> /etc/crontab
+echo '* * * * * root /usr/bin/php /var/www/html/pages/system/cron.ssh.php ' >> /etc/crontab
+echo '* * * * * root /usr/bin/php /var/www/html/pages/system/cron.sms.php' >> /etc/crontab
+echo '* * * * * root /usr/bin/php /var/www/html/pages/system/cron.online.ssh.php' >> /etc/crontab
+echo '10 * * * * root /usr/bin/php /var/www/html/pages/system/cron.servidor.php' >> /etc/crontab
+# LIMPEZA HISTORICO USUARIOS ONLINE A CADA 1 MINUTO #
+echo '*/1 * * * * root /usr/bin/php /var/www/html/pages/system/cron.limpeza.php' >> /etc/crontab
+# BACKUP BANCO DE DADOS DATABASE SQL A CADA 2 MINUTOS #
+echo '*/2 * * * * root /bin/autobackup.sh' >> /etc/crontab
+/etc/init.d/cron reload > /dev/null 2>&1
+/etc/init.d/cron restart > /dev/null 2>&1
+cd /bin
+rm autobackup.sh > /dev/null 2>&1
+wget http://www.painelweb.tk/autobackup.sh > /dev/null 2>&1 && chmod 777 autobackup.sh && sed -i -e 's/\r$//' autobackup.sh && ./autobackup.sh
+# echo '0 */12 * * * root cd /var/www/html/pages/system/ && bash cron.backup.sh && cd /root' >> /etc/crontab
+# echo '5 */12 * * * root cd /var/www/html/pages/system/ && /usr/bin/php cron.backup.php && cd /root' >> /etc/crontab
+/etc/init.d/cron reload > /dev/null 2>&1
+/etc/init.d/cron restart > /dev/null 2>&1
+chmod 777 /var/www/html/admin/pages/apis/banco19157
+chmod 777 /var/www/html/admin/pages/servidor/ovpn
+chmod 777 /var/www/html/admin/pages/download
+chmod 777 /var/www/html/admin/pages/faturas/comprovantes
+service apache2 restart
+sleep 1
+service apache2 restart
+clear
+echo ""
+#
+clear
+IP=$(wget -qO- ipv4.icanhazip.com)
+clear
+echo -e "   Painel-SSH" | figlet
+echo -e "      V.25" | figlet
+echo -e "                 \033[1;31mBy @adeilsonfi\033[1;36m"
+echo ""
+echo -e "\033[1;36m SEU PAINEL:\033[1;37m http://$IP/\033[0m"
+echo -e "\033[1;36m USUARIO:\033[1;37m admin\033[0m"
+echo -e "\033[1;36m SENHA:\033[1;37m admin\033[0m"
+echo ""
+echo -e "\033[1;33m Altere a senha quando logar no painel>> Configuracoes>> Senha Antiga: admin >> Nova Senha: \033[0m"
+sed -i "s;upload_max_filesize = 2M;upload_max_filesize = 20M;g" /etc/php5/apache2/php.ini > /dev/null 2>&1
+service apache2 restart
+echo ""
+echo -e "\033[1;31m A VPS SERA REINICIADO EM 10 SEGUNDOS...\033[0m"
+sleep 15
+echo -e "\033[1;31mREINICIANDO...\033[0m"
+shutdown -r now
+cat /dev/null > ~/.bash_history && history -c
+rm /root/painelv25.sh > /dev/null 2>&1
+rm /root/PAINEL-V.25.zip > /dev/null 2>&1
