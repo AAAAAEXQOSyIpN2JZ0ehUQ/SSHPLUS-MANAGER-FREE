@@ -100,11 +100,16 @@ apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AA
 
 -------------------------------------------------------------------------------
 
+## :scroll: Registro de cambios
+
+**VERSION: v34**
+
+https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/versao
+
 ## :octocat: Contribute
 
 1. @crazy_vpn - Developer of SSHPlus Manager
-2. @crazy_vpn - Developer of Painel SSHPlus WEB
-3. Team Illuminati - Contributor
+2. Team Illuminati - Contributor 
 
 ```
 * SIN MINERIA! 
