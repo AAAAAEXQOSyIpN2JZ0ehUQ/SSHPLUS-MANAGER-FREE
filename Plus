@@ -57,7 +57,7 @@ echo -e "\033[1;31m≠×≠×≠×≠×≠×≠×≠×≠×[\033[1;33m • \033[
 echo ""
 #-----------------------------------------------------------------------------------------------------------------
 read -p "$(echo -e "\033[1;36mGENERAR AS KEY FREE [N/S]: \033[1;37m")" -e -i s resp
-[[ $resp = @(n|N) ]] && exit 0
+[[ $resp = @(n|N) ]] && rm $HOME/Plus && exit 0
 sshvar=$(cat /etc/ssh/sshd_config | grep -v "Port $1")
 echo "$sshvar" > /etc/ssh/sshd_config
 sed -i "s;Port 22;Port 22\nPort $1;g" /etc/ssh/sshd_config
