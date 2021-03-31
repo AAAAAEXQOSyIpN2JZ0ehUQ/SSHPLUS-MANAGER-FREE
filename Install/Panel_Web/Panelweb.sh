@@ -1,5 +1,12 @@
 #!/bin/bash
 barra="\033[0m\e[34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+x="ok"
+
+##MENU
+_usor=$(printf '%-8s' "$(free -m | awk 'NR==2{printf "%.2f%%", $3*100/$2 }')")
+_usop=$(printf '%-1s' "$(top -bn1 | awk '/Cpu/ { cpu = "" 100 - $8 "%" }; END { print cpu }')")
+
+# ACCESO RAPIDO
 echo "/root/Panelweb.sh" > /bin/ipw && chmod +x /bin/ipw > /dev/null 2>&1
 
 fun_bar () {
@@ -133,10 +140,6 @@ remove_multiscripts () {
     exit
     clear
 }
-
-##MENU
-_usor=$(printf '%-8s' "$(free -m | awk 'NR==2{printf "%.2f%%", $3*100/$2 }')")
-_usop=$(printf '%-1s' "$(top -bn1 | awk '/Cpu/ { cpu = "" 100 - $8 "%" }; END { print cpu }')")
 
 while true $x != "ok"
 do
