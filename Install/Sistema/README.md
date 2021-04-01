@@ -35,7 +35,7 @@ apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AA
 
 ## :scroll: Registro de cambios
 
-**VERSION: v34**
+**VERSION: v35**
 
 https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Sistema/Install/versao
 
