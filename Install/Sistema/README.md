@@ -1,4 +1,4 @@
-﻿# SSHPLUS MANAGER v34
+﻿# SSHPLUS MANAGER v35
 ```
 * UPDATE 14/03/2021 - PROYECTO FINALIZADO
 ```
@@ -24,7 +24,7 @@ SCRIPT SSHPLUS MANAGER es un script con un conjunto de características y herram
 
 ## :book: Installation
 
-* SCRIPT OFICIAL SSHPLUS MANAGER VERSAO: 34
+* SCRIPT OFICIAL SSHPLUS MANAGER VERSAO: 35
 * INSTALL ARQUIVOS ORIGINALES ENCRIPTADOS POR @crazy_vpn
 
 apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Sistema/Plus; chmod 777 Plus; ./Plus
@@ -37,8 +37,11 @@ apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AA
 
 **VERSION: v34**
 
+https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Sistema/Install/versao
+
+## :octocat: Contribute
+
 1. @crazy_vpn - Developer of SSHPlus Manager
-2. Team Illuminati - Contributor
 
 ```
 ☆ https://t.me/admmanagerfree ☆
