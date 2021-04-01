@@ -2,7 +2,7 @@
 #====================================================
 #	SCRIPT: CONEXAO SSHPLUS MANAGER
 #	DESENVOLVIDO POR:	CRAZY_VPN
-#	DATA ATUALIZACAO:	16-03-2021 
+#	DATA ATUALIZACAO:	27-03-2021 
 #	CONTATO TELEGRAM:	http://t.me/crazy_vpn
 #	CANAL TELEGRAM:	http://t.me/sshplus
 #====================================================
@@ -1228,9 +1228,9 @@ exit 0' >$RCLOCAL
 				proto $PROTOCOL
 				sndbuf 0
 				rcvbuf 0
-				remote /SSHPLUS? $porta
-				#payload "HTTP/1.1 [lf]CONNECT HTTP/1.1[lf][lf]|[lf]."
-				http-proxy $IP $pt_proxy
+				remote 127.0.0.1 2222
+				route $IP 255.255.255.255 net_gateway
+				#MODO SLOWDNS, UTILIZE O APP OPENVPN PARA ANDROID, SELECIONE O TERMUX EM APLICAÇÕES PERMITIDAS
 				resolv-retry 5
 				nobind
 				persist-key
