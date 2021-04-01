@@ -1,0 +1,5 @@
+chmod +x /bin/menu
+chmod +x /bin/usercodes
+chmod +x /bin/ferramentascodes
+
+menu
