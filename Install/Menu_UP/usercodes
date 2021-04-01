@@ -45,7 +45,7 @@ function limit1 () {
    }
    echo -e "\n\033[1;32m  LIMITER ATIVO !\033[0m"
    sleep 3
-   menu
+   usercodes
 }
 function limit2 () {
    clear
@@ -63,7 +63,7 @@ function limit2 () {
    fun_bar 'fun_stplimiter' 'sleep 3'
    echo -e "\n\033[1;31m LIMITER PARADO !\033[0m"
    sleep 3
-   menu
+   usercodes
 }
 function limit_ssh () {
 [[ $(ps x | grep "limiter"|grep -v grep |wc -l) = '0' ]] && limit1 || limit2
