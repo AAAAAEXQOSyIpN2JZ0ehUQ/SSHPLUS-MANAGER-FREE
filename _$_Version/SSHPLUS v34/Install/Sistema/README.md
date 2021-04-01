@@ -24,7 +24,7 @@ SCRIPT SSHPLUS MANAGER es un script con un conjunto de características y herram
 
 ## :book: Installation
 
-* SCRIPT OFICIAL SSHPLUS MANAGER VERSAO: 32
+* SCRIPT OFICIAL SSHPLUS MANAGER VERSAO: 34
 * INSTALL ARQUIVOS ORIGINALES ENCRIPTADOS POR @crazy_vpn
 
 apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Sistema/Plus; chmod 777 Plus; ./Plus

@@ -21,7 +21,7 @@ SCRIPT SSHPLUS MANAGER es un script con un conjunto de características y herram
 * Debian 8 Server x86_64  / Debian 9 Server x86_64
 * Recomendamos Debian 9 Server x86_64 / Ubuntu 16.04 Server x86_64
 * Se recomienda usar una distro nueva o formatiada
-* INSTALL ARQUIVOS ORIGINALES ENCRIPTADOS POR @crazy_vpn
+* Install arquivos originales encriptados por @crazy_vpn
   https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/Sistema
 
 
@@ -30,7 +30,7 @@ SCRIPT SSHPLUS MANAGER es un script con un conjunto de características y herram
 apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Plus; chmod 777 Plus; ./Plus
 
 * SI NECESITAN REINSTALAR EL SCRIPTS PUEDEN EJECUTAR EL COMANDO: ( sshplus )
-* SI DECEA INSTALAR EL SEGUNDO MENU ADAPTADO PUEDEN EJECUTAR EL COMANDO: ( menuV2 )
+* SI DESEA INSTALAR EL SEGUNDO MENU ADAPTADO PUEDEN EJECUTAR EL COMANDO: ( menuV2 )
 
 -------------------------------------------------------------------------------
 

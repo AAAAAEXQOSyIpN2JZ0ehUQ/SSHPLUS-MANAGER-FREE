@@ -1,8 +1,15 @@
 #!/bin/bash
 barra="\033[0m\e[34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+x="ok"
+
+# MENU
+_usor=$(printf '%-8s' "$(free -m | awk 'NR==2{printf "%.2f%%", $3*100/$2 }')")
+_usop=$(printf '%-1s' "$(top -bn1 | awk '/Cpu/ { cpu = "" 100 - $8 "%" }; END { print cpu }')")
+
+# ACCESO RAPIDO
 echo "/root/sshplus.sh" > /bin/mis && chmod +x /bin/mis > /dev/null 2>&1
 
-##MANAGER SCRIPTS
+# MANAGER SCRIPTS
 
 sshplusfree () {
     apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Plus; chmod 777 Plus; ./Plus
@@ -14,7 +21,7 @@ sshpluskey () {
     apt-get update -y; apt-get upgrade -y; wget sshplus.xyz/script/Plus; chmod 777 Plus; ./Plus
 }
 
-##PAINEL WEB SCRIPTS
+# PAINEL WEB SCRIPTS
 
 panel_v11 () {
     wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v11/Painelv11.sh > /dev/null 2>&1; chmod +x Painelv11.sh; ./Painelv11.sh
@@ -44,19 +51,19 @@ panel_v25 () {
     wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v25/install > /dev/null 2>&1; chmod +x install; ./install
 }
 
-##UPDATE VIP-VPS v23 a v25
+# UPDATE VIP-VPS v23 a v25
 
 panel_update2325 () {
     wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v23_2/atu-v23-p-v25 > /dev/null 2>&1; chmod +x atu-v23-p-v25; ./atu-v23-p-v25
 }
 
-##GEYGEN SSHPLUS MANAGER
+# GEYGEN SSHPLUS MANAGER
 
 keyssh () {
     apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/instala_server; chmod 777 instala_server* && ./instala_server*
 }
 
-##OPCIONES DE SISTEMA
+# #OPCIONES DE SISTEMA
 
 atualizar () {
     rm -rf $HOME/sshplus.sh; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Multi-Instalador/sshplus.sh; chmod +x sshplus.sh; ./sshplus.sh
@@ -64,10 +71,6 @@ atualizar () {
 remove_multiscripts () {
     rm -rf $HOME/sshplus.sh && rm -rf /bin/mis
 }
-
-##MENU
-_usor=$(printf '%-8s' "$(free -m | awk 'NR==2{printf "%.2f%%", $3*100/$2 }')")
-_usop=$(printf '%-1s' "$(top -bn1 | awk '/Cpu/ { cpu = "" 100 - $8 "%" }; END { print cpu }')")
 
 while true $x != "ok"
 do
