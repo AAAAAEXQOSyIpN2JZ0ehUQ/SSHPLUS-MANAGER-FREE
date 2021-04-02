@@ -23,6 +23,7 @@ echo -e "${CORTITLE}=====================================${SCOLOR}"
 echo -e "${RED}$banner${SCOLOR}"
 [[ ! -e dns ]] && {
     yes| termux-setup-storage > /dev/null 2>&1
+    unset LD_PRELOAD > /dev/null 2>&1
     cd $HOME
     mv slowdns $PREFIX/bin/slowdns
     chmod +x $PREFIX/bin/slowdns
@@ -32,7 +33,7 @@ echo -e "${RED}$banner${SCOLOR}"
     echo -e "\n${RED}[${YELLOW}!${RED}] ${YELLOW}SCRIPT BAIXADO ! DA PROXIMA VEZ\nEXECULTE APENAS O COMANDO ${RED}(${GREEN}slowdns${RED})\n${YELLOW}MESMO QUE VOCÊ ESTEJA OFFLINE !${SCOLOR}"
     chmod +x dns
 }
-[[ ! -e credenciais ]] && {
+[[ ! -e $HOME/credenciais ]] && {
     ns=$1
     [[ -z "$ns" ]] && {
         echo -e "\n${RED}COMANDO IMCOMPLETO${SCOLOR}"
@@ -55,9 +56,11 @@ echo -e "${RED}$banner${SCOLOR}"
         echo -e "\n${RED}SCRIPT REMOVIDO !${SCOLOR}"
         rm slowdns > /dev/null 2>&1
         exit 0
+    } || {
+        unset LD_PRELOAD > /dev/null 2>&1
+        ns=$(sed -n 1p $HOME/credenciais)
+        chave=$(sed -n 2p $HOME/credenciais)
     }
-    ns=$(sed -n 1p $HOME/credenciais)
-    chave=$(sed -n 2p $HOME/credenciais)
 }
 echo -ne "\n${RED}[${YELLOW}!${RED}] ${YELLOW}PARA CONTINUAR CERTIFIQUE-SE DE\nESTÁ APENAS COM OS ${RED}(${YELLOW}DADOS MOVEIS${RED})\n${YELLOW}ATIVADO ${GREEN}ENTER ${YELLOW}PARA CONTINUAR.. ${SCOLOR}"; read
 $HOME/dns -udp 8.8.8.8:53 -pubkey ${chave} ${ns} 127.0.0.1:2222 > /dev/null 2>&1 &
