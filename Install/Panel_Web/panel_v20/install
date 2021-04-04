@@ -1,5 +1,6 @@
 #!/bin/bash
-#INSTALADOR SCRIPT BY @adeilsonfi
+#DEV BY @CRAZY_VPN
+#INSTALADOR MOD BY @adeilsonfi
 #MODIIFICACION TEAM ILLUMINATI
 clear
 fun_bar () {
@@ -35,19 +36,20 @@ fun_update () {
 	apt-get install figlet -y > /dev/null 2>&1
 }
 fun_bar 'fun_update'
+apt-get install php-ssh2 -y > /dev/null 2>&1
 echo ""
 clear
-#
+
 rm /root/install > /dev/null 2>&1
 rm $HOME/install > /dev/null 2>&1
 rm /root/v20.zip > /dev/null 2>&1
 rm $HOME/v20.zip > /dev/null 2>&1
+rm $HOME/install > /dev/null 2>&1
+rm /root/v20.zip > /dev/null 2>&1
 IP=$(wget -qO- ipv4.icanhazip.com)
 echo "America/Sao_Paulo" > /etc/timezone
 ln -fs /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime > /dev/null 2>&1
 dpkg-reconfigure --frontend noninteractive tzdata > /dev/null 2>&1
-rm $HOME/install > /dev/null 2>&1
-rm /root/v20.zip > /dev/null 2>&1
 ####################################################################################################
 echo -e "\E[44;1;37m    INSTALAR O PAINEL SSH/DROP/SSL V.2O SSHPlus     \E[0m"
 echo ""
