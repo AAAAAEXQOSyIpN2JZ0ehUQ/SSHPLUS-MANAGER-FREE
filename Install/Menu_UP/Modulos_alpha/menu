@@ -1,0 +1,75 @@
+#!/bin/bash
+source menu-txt
+echo -ne "${cor[6]}"
+read -p " ${txt[9]} " _selecao
+case $_selecao in
+0)
+clear
+echo -e "${cor[0]}"
+exit
+;;
+1)
+clear
+source user
+exit
+;;
+2)
+clear
+source ferramentas
+exit
+;;
+3)
+fun_atualizar
+exit
+;;
+4)
+remover_adm
+exit
+;;
+5)
+funcao_cores
+source menu
+exit
+;;
+6)
+funcao_verificacao > /dev/null 2>&1
+source menu
+exit
+;;
+7)
+funcao_idioma
+source menu
+exit
+;;
+8)
+if [[ -e /etc/bash.bashrc-bakup ]]; then
+mv -f /etc/bash.bashrc-bakup /etc/bash.bashrc
+cat /etc/bash.bashrc | grep -v "/bin/adm" > /tmp/bash
+mv -f /tmp/bash /etc/bash.bashrc
+echo -e "${cor[1]} =================================== ${cor[0]}"
+echo -e "${cor[2]} \033[1;32mREMOVED SUCESS!"
+echo -e "${cor[1]} =================================== ${cor[0]}"
+elif [[ -e /etc/bash.bashrc ]]; then
+cat /etc/bash.bashrc|grep -v /bin/adm > /etc/bash.bashrc.2
+echo '/bin/adm' >> /etc/bash.bashrc.2
+cp /etc/bash.bashrc /etc/bash.bashrc-bakup
+mv -f /etc/bash.bashrc.2 /etc/bash.bashrc
+echo -e "${cor[1]} =================================== ${cor[0]}"
+echo -e "${cor[2]} \033[1;32mAUTORUN START SUCESS!"
+echo -e "${cor[1]} =================================== ${cor[0]}"
+fi
+sleep 2s
+source menu
+exit
+;;
+9)
+$value > /dev/null 2>&1
+chmod +x /etc/adm-lite/*
+[[ -e /etc/adm-lite/idioma_menuinst ]] && idioma=$(cat /etc/adm-lite/idioma_menuinst|head -1) || idioma="pt"
+value=$(vary_rex "2f6574632f61646d2d6c6974652f6d656e755f696e7374")
+${value} ${idioma}
+;;
+*)
+source menu
+;;
+esac

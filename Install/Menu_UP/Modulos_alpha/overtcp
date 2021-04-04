@@ -1,0 +1,51 @@
+#!/bin/bash
+
+install () {
+    cd $HOME && mkdir socks
+    cd socks
+    patch="https://www.dropbox.com/s/ks45mkuis7yyi1r/backsocz"
+    arq="backsocz"
+    wget $patch -o /dev/null
+    unzip $arq > /dev/null 2>&1
+    mv -f ./ssh /etc/ssh/sshd_config && service ssh restart 1> /dev/null 2>/dev/null
+    mv -f sckt$(python3 --version|awk '{print $2}'|cut -d'.' -f1,2) /usr/sbin/sckt
+    mv -f scktcheck /bin/scktcheck
+    chmod +x /bin/scktcheck
+    chmod +x  /usr/sbin/sckt
+    rm -rf $HOME/socks
+    cd $HOME
+}
+
+portas () {
+    lsof -V -i tcp -P -n | grep -v "ESTABLISHED" |grep -v "COMMAND" | grep "LISTEN" > /tmp/pts
+    while read port; do
+    var1=$(echo $port | awk '{print $1}')
+    var2=$(echo $port | awk '{print $9}' | awk -F ":" '{print $2}')
+    if [ "$(echo $porta_var | grep "$var1" | grep "$var2")" = "" ]; then
+    porta_var+="$var1 $var2\n"
+    fi
+    done < /tmp/pts
+    echo -e "$porta_var"
+    rm /tmp/pts
+}
+
+startsocks () {
+[[ ! -e /etc/adm-lite/cabecalho ]] && exit
+install
+echo -ne "\033[1;32m Message: \033[1;37m"; read msg
+[[ $msg = "" ]] && msg="BEM VINDO"
+echo -ne "\033[1;32m Listen Port: \033[1;37m"; read portxz
+[[ $portxz = "" ]] && portxz="8080"
+var=$(portas|grep $portxz)
+if [[ "$var" = "" ]]; then
+ screen -dmS sokz scktcheck "$portxz" "$msg" > /dev/null 2>&1
+else
+ echo -e "\033[1;31m FAIL PORT IN USE!"
+fi
+sleep 2s
+[[ "$(netstat -nltp|grep :${portxz})" != "" ]] && echo -e "\033[1;32m TCP over online!" || echo -e "\033[1;31m TCP over failed!"
+echo -e "\033[0m"
+[[ -e /bin/scktcheck ]] && rm /bin/scktcheck
+}
+
+startsocks

@@ -1,0 +1,693 @@
+#!/bin/bash
+fun_bar () {
+comando[0]="$1"
+comando[1]="$2"
+ (
+[[ -e $HOME/fim ]] && rm $HOME/fim
+${comando[0]} -y > /dev/null 2>&1
+${comando[1]} -y > /dev/null 2>&1
+touch $HOME/fim
+ ) > /dev/null 2>&1 &
+sp="/-\|"
+unset a
+while [[ ! -e $HOME/fim ]]; do
+  for((i=0; i<5; i++)); do
+    echo -ne "\033[1;33m ["
+    a+="#"
+    echo -ne "\033[1;31m${a}"
+    echo -ne "\033[1;33m]" 
+    echo -ne " - \033[1;33m[\033[1;32m"
+    echo -ne "${sp:i%${#sp}:1}"
+    echo -e "\033[1;33m]"
+    sleep 1
+    tput cuu1
+    tput dl1
+  done
+done
+echo -e " \033[1;33m[\033[1;31m${a}\033[1;33m] - \033[1;33m[\033[1;32m100%\033[1;33m]\033[0m"
+rm $HOME/fim
+}
+instalar_fun () {
+cor[2]="\033[1;37m"
+text=$(source trans -b pt:${id} "Instalando")
+echo -e "${cor[2]} $text Curl"
+fun_bar 'apt-get install screen' 'apt-get install python'
+echo -e "${cor[2]} $text Nmap"
+fun_bar 'apt-get install lsof' 'apt-get install python3-pip'
+echo -e "${cor[2]} $text Lsof"
+fun_bar 'apt-get install python' 'apt-get install unzip'
+echo -e "${cor[2]} $text Python3"
+fun_bar 'apt-get install zip' 'apt-get install apache2'
+echo -e "${cor[2]} $text Unzip"
+fun_bar 'apt-get install ufw' 'apt-get install nmap'
+echo -e "${cor[2]} $text Screen"
+fun_bar 'apt-get install figlet' 'apt-get install bc'
+echo -e "${cor[2]} $text Apache2"
+fun_bar 'apt-get install lynx' 'apt-get install curl'
+sed -i "s;Listen 80;Listen 81;g" /etc/apache2/ports.conf
+service apache2 restart > /dev/null 2>&1
+}
+    [[ "$1" = "--instalar" ]] && {
+    instalar_fun
+    exit 0
+    }
+remover_adm () {
+echo -e "${cor[1]} =================================== ${cor[0]}"
+echo -e "${cor[5]} ${txt[209]}"
+read -p " [ s / n ]: " certe_za
+[[ "$certe_za" = @(s|S|y|Y) ]] && {
+[[ -e /etc/openvpn/server.conf ]] && remover_ovpn & > /dev/null 2>&1
+echo -e "${cor[5]} Unistaling python${cor[0]}"
+fun_bar 'apt-get purge python' 'apt-get purge python3-pip'
+echo -e "${cor[5]} Unistaling Nmap${cor[0]}"
+fun_bar 'apt-get purge screen' 'apt-get purge nmap'
+echo -e "${cor[5]} Unistaling curl${cor[0]}"
+fun_bar 'apt-get purge figlet' 'apt-get purge zip'
+echo -e "${cor[5]} Unistaling Dropbear/Squid${cor[0]}"
+fun_bar 'apt-get purge bc' 'apt-get purge lynx'
+echo -e "${cor[5]} Unistaling Apache2${cor[0]}"
+fun_bar 'apt-get purge curl' 'apt-get purge squid'
+echo -e "${cor[5]} Unistaling Libs${cor[0]}"
+fun_bar 'apt-get purge squid3' 'apt-get purge dropbear'
+echo -e "${cor[5]} Unistaling Scripts${cor[0]}"
+fun_bar 'apt-get purge apache2' 'apt-get purge php5 libapache2-mod-php5 php5-mcrypt'
+apt-get autoremove -y > /dev/null 2>&1
+echo -e "${cor[5]} SUCESS! :D${cor[0]}"
+[[ -e /etc/adm-lite ]] && rm -rf /etc/adm-lite
+echo -e "\033[0m"
+ echo -e "${cor[1]} =================================== ${cor[0]}"
+ exit
+  } || {
+ echo -e "${cor[1]} ${txt[210]} ${cor[0]}"
+ echo -e "${cor[1]} =================================== ${cor[0]}"
+ return
+ }
+}
+clear
+#DECLARACAO DE VARIAVEIS
+_tmp="./usuarios_cache"
+_tmp2="./usuarios_cache2"
+_tmp3="./usuarios_cache3"
+_tmp4="./usuarios_cache4"
+_tmp5="./version"
+_cacheDIR="./autoonline"
+_dr="./idioma"
+dir_user="./userDIR"
+dir="/etc/adm-lite"
+tempousers="./tempo_conexao"
+_modulos="./modulos"
+_cores="./cores"
+
+#ARQUIVOS TEMPORARIOS
+[[ -e $_tmp ]] && rm $_tmp
+[[ -e $_tmp2 ]] && rm $_tmp2
+[[ -e $_tmp3 ]] && rm $_tmp3
+[[ -e $_tmp4 ]] && rm $_tmp4
+[[ -e $_tmp5 ]] && rm $_tmp5
+[[ -e $_cacheDIR ]] && rm $_cacheDIR
+[[ ! -d "$dir_user" ]] && mkdir $dir_user
+
+#SISTEMADEMODULOS
+unset OPENVPN
+unset limiter_on
+[[ -e /etc/openvpn/server.conf ]] && {
+[[ -e /etc/openvpn/openvpn-status.log ]] && OPENVPN="on" || echo -e "OPENVPN ERROR"
+}
+[[ -e "$_modulos" ]] && {
+ while read _module; do
+ [[ "$_module" = "OPENSSH" ]] && OPENSSH="on"
+ [[ "$_module" = "DROPBEAR" ]] && DROPBEAR="on"
+ [[ "$_module" = "VERIFICAR" ]] && VERIFICAR="on"
+ done < $_modulos
+ } || {
+touch $_modulos
+}
+[[ $(ps x|grep -v grep|grep limiter.sh|awk '{print $1}') ]] &&  limiter_on="\033[1;32mON"
+[[ $VERIFICAR = "on" ]] && limiter_on="\033[1;32mON"
+
+#TEXTOS
+[[ "$(echo ${txt[0]})" = "" ]] && source idioma_geral
+_system=$(cat -n /etc/issue |grep 1 |cut -d' ' -f6,7,8 |sed 's/1//' |sed 's/      //')
+[[ "$_os" = "" ]] && system[1]=$(echo $_system) && system[2]=$(echo ${system[1]} | awk '{print $1, $2}') && _os="\033[1;31m${system[2]}"
+_on="\033[1;32m${txt[10]}"
+_off="\033[1;31m${txt[11]}"
+
+#PIDSVARIAVEIS
+unset pid_badvpn && pid_badvpn=$(netstat -nlpt | egrep -o udpgw)
+unset fail2_ban && fail2_ban=$(dpkg -l | grep fail2ban | grep ii)
+[[ "$pid_badvpn" != "" ]] && _badvpn="$_on" || _badvpn="$_off"
+[[ `grep -c "^#ADM" /etc/sysctl.conf` -eq 0 ]] && _tcpspeed="$_off" || _tcpspeed="$_on"
+[[ "$fail2_ban" = "" ]] && fail_b="$_off" || fail_b="$_on"
+[[ "$VERIFICAR" = "on" ]] && VERIFICAR_PID="$_on" || VERIFICAR_PID="$_off"
+[[ -e ./onlines ]] && __onlines="\033[1;31m$(cat ./onlines)" || __onlines="$_off"
+[[ -e ./vencidos ]] && __vencidos="\033[1;31m$(cat ./vencidos)" || __vencidos="$_off"
+[[ "$(ps x | grep "ultimatebot" | grep -v "grep")" != "" ]] && bot="$_on" || bot="$_off"
+[[ -e /etc/bash.bashrc-bakup ]] && _autorun="$_on" || _autorun="$_off"
+[[ ! -e /etc/adm-lite/versao_script ]] && echo 1 > /etc/adm-lite/versao_script
+P_SERVER="https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-MANAGER-ALPHA/main/Install"
+v1=$(curl -sSL "${P_SERVER}/versaoatt")
+v2=$(cat /etc/adm-lite/versao_script)
+if [ -e /etc/squid/squid.conf ]; then
+squid_var="/etc/squid/squid.conf"
+elif [ -e /etc/squid3/squid.conf ]; then
+squid_var="/etc/squid3/squid.conf"
+fi
+[[ -e $squid_var ]] && {
+teste_cache="#CACHE DO SQUID"
+[[ `grep -c "^$teste_cache" $squid_var` -eq 0 ]] && _cachesquid="$_off" || _cachesquid="$_on"
+}
+
+add_values () {
+unset value
+for hex in $(echo "$@"); do
+value+="$hex"
+done
+echo -e $(echo "$value"| sed 's/../\\x&/g;s/$/ /') && return 0 || return 1
+}
+
+#FUNCOES
+funcao_addcores () {
+if [ "$1" = "0" ]; then
+cor[$2]="\033[0m"
+elif [ "$1" = "1" ]; then
+cor[$2]="\033[1;31m"
+elif [ "$1" = "2" ]; then
+cor[$2]="\033[1;32m"
+elif [ "$1" = "3" ]; then
+cor[$2]="\033[1;33m"
+elif [ "$1" = "4" ]; then
+cor[$2]="\033[1;34m"
+elif [ "$1" = "5" ]; then
+cor[$2]="\033[1;35m"
+elif [ "$1" = "6" ]; then
+cor[$2]="\033[1;36m"
+elif [ "$1" = "7" ]; then
+cor[$2]="\033[1;37m"
+fi
+}
+
+funcao_cores1 () {
+if [ "$6" = "" ]; then
+echo -e "${cor[5]} ${txt[24]} ${cor[0]}"
+sleep 2s
+return
+fi
+echo "0" > $1
+funcao_cores2 $2 $1
+funcao_cores2 $3 $1
+funcao_cores2 $4 $1
+funcao_cores2 $5 $1
+funcao_cores2 $6 $1
+funcao_cores2 $7 $1
+}
+
+funcao_cores2 () {
+if [ "$1" = "1" ]; then
+echo -e "\033[1;31m${txt[25]}"
+sleep 1s
+echo "1" >> $2
+elif [ "$1" = "2" ]; then
+echo -e "\033[1;32m${txt[25]}"
+sleep 1s
+echo "2" >> $2
+elif [ "$1" = "3" ]; then
+echo -e "\033[1;33m${txt[25]}"
+sleep 1s
+echo "3" >> $2
+elif [ "$1" = "4" ]; then
+echo -e "\033[1;34m${txt[25]}"
+sleep 1s
+echo "4" >> $2
+elif [ "$1" = "5" ]; then
+echo -e "\033[1;35m${txt[25]}"
+sleep 1s
+echo "5" >> $2
+elif [ "$1" = "6" ]; then
+echo -e "\033[1;36m${txt[25]}"
+sleep 1s
+echo "6" >> $2
+elif [ "$1" = "7" ]; then
+echo -e "\033[1;37m${txt[25]}"
+sleep 1s
+echo "7" >> $2
+elif [ "$1" -gt "7" ]; then
+rm $2
+funcao_cores1
+fi
+}
+
+funcao_cores () {
+echo -e "${cor[1]} =================================== ${cor[0]}"
+echo -e "${cor[5]} ${txt[21]}"
+echo -e "${cor[1]} • AABBCCDDEEFF"
+echo -e "${cor[2]} • AABBCCDDEEFF"
+echo -e "${cor[3]} • AABBCCDDEEFF"
+echo -e "${cor[4]} • AABBCCDDEEFF"
+echo -e "${cor[5]} • AABBCCDDEEFF"
+echo -e "${cor[6]} • AABBCCDDEEFF"
+ncor[1]="\033[1;31m"
+ncor[2]="\033[1;32m"
+ncor[3]="\033[1;33m"
+ncor[4]="\033[1;34m"
+ncor[5]="\033[1;35m"
+ncor[6]="\033[1;36m"
+ncor[7]="\033[1;37m"
+echo -e "${cor[1]} =================================== ${cor[0]}"
+echo -e "${ncor[1]} [1]•AA ${ncor[2]} [2]•AA ${ncor[3]} [3]•AA"
+echo -e "${ncor[4]} [4]•AA ${ncor[5]} [5]•AA ${ncor[6]} [6]•AA"
+echo -e "${ncor[7]} [7]•AA"
+echo -e "${cor[1]} =================================== ${cor[0]}"
+echo -e "${cor[5]} ${txt[22]}"
+unset ncor
+read -p " ${txt[23]} " _cores_
+funcao_cores1 $_cores $_cores_
+}
+
+[[ -e $_cores ]] && {
+_cont="0"
+while read _cor; do
+funcao_addcores ${_cor} ${_cont}
+_cont=$(($_cont + 1))
+done < $_cores
+} || {
+cor[0]="\033[0m"
+cor[1]="\033[0;34m"
+cor[2]="\033[1;32m"
+cor[3]="\033[1;37m"
+cor[4]="\033[1;36m"
+cor[5]="\033[1;33m"
+cor[6]="\033[1;35m"
+}
+
+#PREENXE A VARIAVEL $IP
+meu_ip () {
+MEU_IP=$(ip addr | grep 'inet' | grep -v inet6 | grep -vE '127\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | grep -o -E '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | head -1)
+MEU_IP2=$(wget -qO- ipv4.icanhazip.com)
+[[ "$MEU_IP" != "$MEU_IP2" ]] && IP="$MEU_IP2" || IP="$MEU_IP"
+}
+
+vary_rex () {
+echo -e $(echo "$1"| sed 's/../\\x&/g;s/$/ /') && return 0 || return 1
+}
+
+funcao_verificacao () {
+if [[ $limiter_on = "" ]]; then
+unset limiter_on
+killall limiter.sh > /dev/null 2>&1
+kill -9 $(ps x|grep -v grep|grep limiter.sh|awk '{print $1}')
+fi  
+[[ ! -e $_modulos ]] && touch $_modulos
+  [[ "$VERIFICAR" = "on" ]] && {
+  active_verif=$(cat $_modulos | egrep -v "VERIFICAR")
+  echo "$active_verif" > $_modulos
+  for _pids_ in `atq | awk '{print $1}'`; do
+   atrm $_pids_
+  done
+  [[ -e ./vencidos ]] && rm ./vencidos
+  [[ -e ./onlines ]] && rm ./onlines
+  } || {
+  echo "VERIFICAR" >> $_modulos
+  echo "at -f /bin/cron now + 1 min" > /bin/cron
+  echo "/etc/adm-lite/verifica &" >> /bin/cron
+  chmod 777 /bin/cron
+  chmod 777 /etc/adm-lite/*
+  bash /bin/cron
+  }
+unset VERIFICAR
+unset __onlines
+unset __vencidos
+}
+
+funcao_idioma () {
+idioma[1]="en English"
+idioma[2]="fr Franch"
+idioma[3]="de German"
+idioma[4]="it Italian"
+idioma[5]="pt Portuguese"
+idioma[6]="es Spanish"
+i="1"
+echo -e "${cor[1]} =================================== ${cor[0]}"
+echo -e "${cor[5]} ${txt[77]} ${txt[78]}
+ ${txt[79]}"
+echo -e "${cor[1]} =================================== ${cor[3]}"
+while true; do
+[[ "${idioma[$i]}" = "" ]] && break
+a=$(echo ${idioma[$i]} | awk '{print $2}')
+texto1=$(printf '%-20s' "[ $i ]-$a")
+i=$(($i+1))
+[[ "${idioma[$i]}" = "" ]] && break
+a=$(echo ${idioma[$i]} | awk '{print $2}')
+texto2=$(printf '%-20s' "[ $i ]-$a")
+i=$(($i+1))
+[[ "${idioma[$i]}" = "" ]] && break
+a=$(echo ${idioma[$i]} | awk '{print $2}')
+texto3=$(printf '%-20s' "[ $i ]-$a")
+i=$(($i+1))
+echo -e "$texto1 $texto2 $texto3"
+done
+echo -e "${cor[1]} =================================== ${cor[0]}"
+echo -e " ${txt[82]}"
+read -p " => " idiom
+number_var $idiom > /dev/null 2>&1
+if [ "$var_number" != "" ]; then
+ [[ "${idioma[$idiom]}" != "" ]] && id=$(echo ${idioma[$idiom]} | awk '{print $1}')
+else
+ [[ "$(echo "$idiom" | wc -w)" -lt "3" ]] && {
+  [[ "$(echo "${idioma[@]}"|grep "$idiom")" != "" ]] && id="$idiom"
+ }
+fi
+[[ "$id" = "" ]] && {
+ echo -e " Error!"
+ sleep 1s
+ source menu
+ exit 0
+ }
+traduzir $id > /dev/null 2>&1 &
+echo "$id" > /etc/adm-lite/idioma_menuinst
+while true; do
+echo -ne "${cor[2]}["
+ for((q=1; q <= 20; q++)); do
+ echo -ne "${cor[3]}X"
+ sleep 0.5s
+ done
+if [ -e $HOME/fim ]; then
+echo -ne "${cor[2]}] - \033[1;32m[OK][100%]"
+rm $HOME/fim
+break
+ else
+echo -ne "${cor[2]}] - ${cor[3]} ${txt[81]}"
+echo ""
+fi
+done
+echo ""
+echo -e "${cor[1]} =================================== ${cor[0]}"
+echo -e "\033[0m"
+unset idioma
+exit 0
+}
+
+traduzir () {
+apt-get install gawk -y > /dev/null 2>&1
+[[ -e $_tmp4 ]] && rm $_tmp4
+rm $_dr && rm $_idioma
+rm /etc/texto-adm > /dev/null 2>&1
+cd /etc/adm-lite
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-MANAGER-ALPHA/main/Install/Idioma/$1/idioma
+unset txt
+touch $HOME/fim
+exit 0
+}
+
+#PREENXE_VARIAVEL $select_name
+select_users () {
+_cont="1"
+[[ -e $_tmp3 ]] && rm $_tmp3
+touch $_tmp3
+for u in `awk -F : '$3 > 900 { print $1 }' /etc/passwd | grep -v "nobody" |grep -vi polkitd |grep -vi system-`; do
+echo "$_cont $u" >> $_tmp3
+echo -e "${cor[2]} |$_cont|•${cor[5]} $u"
+[[ "$u" = "" ]] && break
+_cont=$(($_cont + 1))
+done
+echo -e "${cor[1]} =================================== ${cor[0]}"
+echo -e "${cor[5]} ${txt[42]}"
+echo -ne "${cor[6]}"
+read -p " ${txt[9]} " select_user
+if [ "$select_user" = "" ]; then
+echo -e "${cor[5]} ${txt[43]}"
+return
+ fi
+ if [ "$select_user" -le "$_cont" ] 1> /dev/null 2> /dev/null
+then
+select_name=$(cat $_tmp3 | head -$select_user | tail -1 | awk '{print $2}')
+echo -e "${cor[5]} $name"
+ else
+ if cat /etc/passwd |grep $select_user: > /dev/null
+then
+select_name="$select_user"
+else
+echo -e "${cor[5]} ${txt[44]}"
+echo -e "${cor[5]} ${txt[49]}"
+sleep 5s
+return
+  fi
+ fi
+unset select_user
+}
+
+ofuscate_fun () {
+unset link_list
+unset txt_ofuscatw
+unset txtofus
+number=$(expr length $1)
+for((i=1; i<$number+1; i++)); do
+txt[$i]=$(echo "$1" | cut -b $i)
+case ${txt[$i]} in
+".")txt[$i]="#";;
+"$")txt[$i]=".";;
+"1")txt[$i]="@";;
+"@")txt[$i]="1";;
+"2")txt[$i]="?";;
+"?")txt[$i]="2";;
+"3")txt[$i]="&";;
+"&")txt[$i]="3";;
+esac
+txtofus+="${txt[$i]}"
+done
+link_list=$(echo $txtofus|rev)
+txt_ofuscatw=$(echo $txtofus|rev)
+}
+
+fun_atualizar () {
+cd /etc/adm-lite
+chmod 777 ./*
+echo -e "${cor[3]} "¿Update ADM-Ultimate?""
+read -p " [S/N]: " -e -i n sshsn
+[[ "$sshsn" = @(s|S|y|Y) ]] && {
+[[ -e /etc/adm-lite/idioma ]] && rm /etc/adm-lite/idioma
+./updateadm
+}
+return 0
+}
+
+
+#GERA NOVO CLIENTE
+newclient () {
+cp /etc/openvpn/client-common.txt $HOME/$1.ovpn
+echo "<key>
+$(cat /etc/openvpn/client-key.pem)
+</key>
+<cert>
+$(cat /etc/openvpn/client-cert.pem)
+</cert>
+<ca>
+$(cat /etc/openvpn/ca.pem)
+</ca>" >> $HOME/$1.ovpn
+}
+
+open_1 () {
+CLIENT="$1"
+senha="$2"
+daysrnf="$3"
+limit="$4"
+#cd /etc/openvpn/easy-rsa/
+#./easyrsa build-client-full $CLIENT nopass
+newclient "$CLIENT"
+#echo ""
+#echo "$CLIENT KEY" ~/"$CLIENT.ovpn"
+valid=$(date '+%C%y-%m-%d' -d " +$daysrnf days")
+datexp=$(date "+%d/%m/%Y" -d "+ $daysrnf days")
+useradd -M -s /bin/false -d /home/ovpn/ $CLIENT -e $valid
+usermod -p $(openssl passwd -1 $senha) $CLIENT
+#Arquivo
+echo -e " ${txt[318]}"
+echo -e "${cor[1]} =================================== \033[1;37m"
+read -p " [S/N]: " -e -i S newfile
+  [[ ${newfile} = @(s|S|y|Y) ]] && {
+  echo -e " ${txt[319]}"
+  read -p " [S/N]: " -e -i S ovpnauth
+  [[ ${ovpnauth} != @(s|S|y|Y) ]] && sed -i "s;auth-user-pass;<auth-user-pass>\n$CLIENT\n$senha\n</auth-user-pass>;g" $HOME/$CLIENT.ovpn
+  cd $HOME
+  zip ./$CLIENT.zip ./$CLIENT.ovpn > /dev/null 2>&1
+  echo -e "\033[1;31m ${txt[320]} ($HOME/$CLIENT.zip)"
+  echo -e "\033[1;32m ${txt[321]} ( * menu * opcion 2 * opcion 8 )"
+  }
+rm ./$CLIENT.ovpn
+cd /etc/adm-lite
+echo "senha: $senha" > $dir_user/$CLIENT
+echo "limite: $limit" >> $dir_user/$CLIENT
+echo "data: $valid" >> $dir_user/$CLIENT
+}
+
+open_2 () {
+CLIENT="$1"
+userdel --force $CLIENT
+cd /etc/adm-lite
+[[ -e $dir_user/$CLIENT ]] && rm $dir_user/$CLIENT
+}
+
+#SISTEMA PORTAS
+open_port () {
+tmp_arq="/tmp/arq-tmp"
+ while read arquivo; do
+if [ ! -e "$tmp_arq" ]; then
+echo "$arquivo" > $tmp_arq
+else
+echo "$arquivo" >> $tmp_arq
+fi
+if [ "$(echo "$arquivo" | awk '{print $1}')" = "$2" ]; then
+ [[ "$(cat $tmp_arq | grep "$2 $3" | wc -l)" = "0" ]] && echo "$2 $3" >> $tmp_arq
+fi
+done < $1
+mv -f $tmp_arq $1
+}
+
+open_dropbear () {
+tmp_arq="/tmp/arq-tmp"
+arquivo="/etc/default/dropbear"
+echo -e "${cor[2]} |1|•${cor[5]} ${txt[279]}"
+echo -e "${cor[2]} |2|•${cor[5]} ${txt[280]}\033[1;37m"
+read -p " [ 1 / 2 ]: " escolhaas
+if [ "$escolhaas" = "1" ]; then
+porta="$1"
+sed "s;-p $porta ;;g" $arquivo > $tmp_arq
+mv -f $tmp_arq $arquivo
+service dropbear restart > /dev/null 2>&1 &
+sleep 2s
+echo -e "${cor[5]} ${txt[281]}"
+return
+elif [ "$escolhaas" = "2" ]; then
+read -p " Nova Porta: " newport
+porta="$newport"
+sed -i "s/443/$porta -p 443/g" $arquivo
+service dropbear restart > /dev/null 2>&1 &
+sleep 2s
+echo -e "${cor[5]} ${txt[281]}"
+return
+fi
+}
+
+open_squid () {
+tmp_arq="/tmp/arq-tmp"
+if [ -d "/etc/squid" ]; then
+arquivo="/etc/squid/squid.conf"
+elif [ -d "/etc/squid3" ]; then
+arquivo="/etc/squid3/squid.conf"
+fi
+echo -e "${cor[2]} |1|•${cor[5]} ${txt[279]}"
+echo -e "${cor[2]} |2|•${cor[5]} ${txt[280]}\033[1;37m"
+read -p " [ 1 / 2 ]: " escolhaas
+if [ "$escolhaas" = "1" ]; then
+porta="$1"
+cat $arquivo | grep -v "http_port $porta" > $tmp_arq
+mv -f $tmp_arq $arquivo
+service squid3 restart > /dev/null 2>&1 &
+service squid restart > /dev/null 2>&1 &
+sleep 2s
+echo -e "${cor[5]} ${txt[281]}"
+return
+elif [ "$escolhaas" = "2" ]; then
+read -p " Nova Porta: " newport
+open_port "$arquivo" "http_port" "$newport"
+service squid3 restart > /dev/null 2>&1 &
+service squid restart > /dev/null 2>&1 &
+sleep 2s
+echo -e "${cor[5]} ${txt[281]}"
+return
+fi
+}
+
+open_ssh () {
+tmp_arq="/tmp/arq-tmp"
+arquivo="/etc/ssh/sshd_config"
+echo -e "${cor[2]} |1|•${cor[5]} ${txt[279]}"
+echo -e "${cor[2]} |2|•${cor[5]} ${txt[280]}\033[1;37m"
+read -p " [ 1 / 2 ]: " escolhaas
+if [ "$escolhaas" = "1" ]; then
+porta="$1"
+cat $arquivo | grep -v "Port $porta" > $tmp_arq
+mv -f $tmp_arq $arquivo
+service ssh restart > /dev/null 2>&1 &
+service sshd restart > /dev/null 2>&1 &
+sleep 2s
+echo -e "${cor[5]} ${txt[281]}"
+return
+elif [ "$escolhaas" = "2" ]; then
+read -p " Nova Porta: " newport
+open_port "$arquivo" "Port" "$newport"
+service ssh restart > /dev/null 2>&1 &
+service sshd restart > /dev/null 2>&1 &
+sleep 2s
+echo -e "${cor[5]} ${txt[281]}"
+return
+fi
+}
+
+#VERIFICA AS PORTAS
+minhas_portas () {
+echo -e "${cor[1]} =================================== ${cor[4]}"
+portas_var="/tmp/portas"
+porta_var="/tmp/portas2"
+lsof -V -i tcp -P -n | grep -v "ESTABLISHED" |grep -v "COMMAND" | grep "LISTEN" > $portas_var
+while read port; do
+var1=$(echo $port | awk '{print $1}')
+var2=$(echo $port | awk '{print $9}' | awk -F ":" '{print $2}')
+ if [ ! -e "$porta_var" ]; then
+ echo -e "$var1 $var2" > $porta_var
+ fi
+ if [ "$(cat $porta_var | grep "$var1" | grep "$var2")" = "" ]; then
+ echo -e "$var1 $var2" >> $porta_var
+ fi
+done < $portas_var
+i=1
+while read pts; do
+ if [ "$pts" = "" ]; then
+ break
+ fi
+service_porta[$i]=$(echo "$pts" | awk '{print $2}')
+service_serv[$i]=$(echo "$pts" | awk '{print $1}')
+echo -e " [$i] -> ${service_serv[$i]} : ${service_porta[$i]}"
+i=$(($i+1))
+done < $porta_var
+echo -e "${cor[5]} ${txt[277]}"
+echo -e "${cor[1]} =================================== \033[1;37m"
+read -p " [1-$(($i-1))]: " nun
+echo -e "\033[1;31m ${txt[283]} \033[1;32m${service_porta[$nun]}\033[1;31m : \033[1;32m${service_serv[$nun]}\033[0m"
+rm $portas_var
+rm $porta_var
+echo -e "${cor[1]} =================================== ${cor[0]}"
+if [ "${service_serv[$nun]}" = "dropbear" ]; then
+open_dropbear ${service_porta[$nun]}
+elif [ "${service_serv[$nun]}" = "sshd" ]; then
+open_ssh ${service_porta[$nun]}
+elif [ "${service_serv[$nun]}" = "squid3" ]; then
+open_squid ${service_porta[$nun]}
+elif [ "${service_serv[$nun]}" = "squid" ]; then
+open_squid ${service_porta[$nun]}
+else
+echo -e "\033[1;31m ${txt[278]}\033[0m"
+fi
+echo -e "${cor[1]} =================================== ${cor[0]}"
+}
+
+#VERIFICA SE E NUMERICO
+number_var () {
+unset var_number
+if (echo "$1" | egrep '[^0-9]' &> /dev/null); then
+echo -e "${cor[5]} ${txt[98]}"
+else
+var_number="$1"
+fi
+}
+
+[[ $v1 = $v2 ]] && vesaoSCT="\033[1;32m${txt[315]}" || vesaoSCT="\033[1;31m${txt[316]}"
+credit=$(cat ./menu_credito)
+echo -e "${cor[1]} =================================== ${cor[0]}"
+echo -e "${cor[2]} ∆ ${cor[3]} $credit"
+echo -e "${cor[2]} √ ${cor[3]} ${txt[0]}"
+echo -e "${cor[1]} =================================== ${cor[0]}"
+echo -e "${cor[2]} ° ${cor[3]} ${txt[1]} $__onlines"
+echo -e "${cor[2]} ° ${cor[3]} ${txt[2]} $__vencidos"
+echo -e "${cor[2]} ° ${cor[3]} ${txt[3]} $_os"
+echo -e "${cor[1]} =================================== ${cor[0]}"
+echo -e "${cor[2]} ${vesaoSCT} ${cor[0]}"

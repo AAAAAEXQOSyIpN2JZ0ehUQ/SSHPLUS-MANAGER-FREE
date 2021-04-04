@@ -1,0 +1,87 @@
+#!/bin/bash
+source user-txt
+echo -ne "${cor[6]}"
+read -p " ${txt[9]} " _selecao
+case $_selecao in
+0)
+source menu
+exit
+;;
+1)
+source usercodes 1
+echo -ne "${cor[5]}"
+read -p " ${txt[47]}"
+cd /etc/adm-lite
+source user
+exit
+;;
+2)
+source usercodes 2
+echo -ne "${cor[5]}"
+read -p " ${txt[47]}"
+cd /etc/adm-lite
+source user
+exit
+;;
+3)
+source usercodes 3
+echo -ne "${cor[5]}"
+read -p " ${txt[47]}"
+cd /etc/adm-lite
+source user
+exit
+;;
+4)
+source usercodes 4
+echo -ne "${cor[5]}"
+read -p " ${txt[47]}"
+cd /etc/adm-lite
+source user
+exit
+;;
+5)
+source usercodes 5
+echo -ne "${cor[5]}"
+read -p " ${txt[47]}"
+cd /etc/adm-lite
+source user
+exit
+;;
+6)
+source usercodes 6
+echo -ne "${cor[5]}"
+read -p " ${txt[47]}"
+cd /etc/adm-lite
+source user
+exit
+;;
+7)
+source usercodes 7
+echo -ne "${cor[5]}"
+read -p " ${txt[47]}"
+cd /etc/adm-lite
+source user
+exit
+;;
+8)
+source usercodes 8
+echo -ne "${cor[5]}"
+read -p " ${txt[47]}"
+cd /etc/adm-lite
+source user
+exit
+;;
+9)
+source usercodes 9
+echo -ne "${cor[5]}"
+read -p " ${txt[47]}"
+cd /etc/adm-lite
+source user
+exit
+;;
+*)
+cd /etc/adm-lite
+source user
+exit
+;;
+esac

@@ -1,0 +1,458 @@
+#!/bin/bash
+
+apt-get install jq -y > /dev/null 2>&1
+#VARIAVEL ENTRADA TOKEN
+[[ "$1" = "" ]] && exit 1
+if [[ "$2" != "" ]]; then
+idioma="$2"
+else
+idioma="pt"
+fi
+
+#IMPORTANDO API
+source ShellBot.sh
+
+ShellBot.init --token "$1"
+ShellBot.username
+
+#ARQUIVOS USADOS NA MESMA PASTA
+#infousers / infousers-txt > informação usuarios
+#onlines / onlines-txt > usuarios online
+#criarusr / criarusr-txt > criar usuario
+#userdelete  > deletar usuario infovps-txt
+
+#IMPORTANDO TEXTOS
+txt[1]="$(source trans -b pt:${idioma} "USUARIOS LIBERADOS NO BOT")"
+txt[2]="$(source trans -b pt:${idioma} "Usuario")"
+txt[3]="$(source trans -b pt:${idioma} "VOCE NAO PODE USAR O BOT")"
+txt[4]="$(source trans -b pt:${idioma} "Comandos Bloqueados")"
+txt[5]="$(source trans -b pt:${idioma} "ACESSO JA ESTA LIBERADO")"
+txt[6]="$(source trans -b pt:${idioma} "Voce ja esta Liberado")"
+txt[7]="$(source trans -b pt:${idioma} "Bom Uso!")"
+txt[8]="$(source trans -b pt:${idioma} "VOCE NAO PODE USAR ESTE BOT")"
+txt[9]="$(source trans -b pt:${idioma} "Nao tem permissao de uso")"
+txt[10]="$(source trans -b pt:${idioma} "Tentativa de acesso negada!")"
+txt[11]="$(source trans -b pt:${idioma} "LIBERACAO EFETUADA COM SUCESSO!")"
+txt[12]="$(source trans -b pt:${idioma} "Agora voce pode gerenciar o bot!")"
+txt[13]="$(source trans -b pt:${idioma} "Bom Uso!")"
+txt[14]="$(source trans -b pt:${idioma} "INFORMACOES DO SERVER")"
+txt[15]="$(source trans -b pt:${idioma} "Ola Amigo!")"
+txt[16]="$(source trans -b pt:${idioma} "Seja Bem Vindo ao BOT")"
+txt[17]="$(source trans -b pt:${idioma} "Aqui Esta a lista de Comandos Disponiveis!")"
+txt[18]="$(source trans -b pt:${idioma} "COMANDOS")"
+txt[19]="$(source trans -b pt:${idioma} "usuarios online")"
+txt[20]="$(source trans -b pt:${idioma} "adicionar usuario")"
+txt[21]="$(source trans -b pt:${idioma} "remover usuario")"
+txt[22]="$(source trans -b pt:${idioma} "informacoes dos usuarios")"
+txt[23]="$(source trans -b pt:${idioma} "informacao do servidor")"
+txt[24]="$(source trans -b pt:${idioma} "usuarios liberados no bot")"
+txt[25]="$(source trans -b pt:${idioma} "gerador de payload")"
+txt[26]="$(source trans -b pt:${idioma} "libera o bot")"
+txt[27]="$(source trans -b pt:${idioma} "Usuario Senha")"
+txt[28]="$(source trans -b pt:${idioma} "comando nao foi executado")"
+txt[29]="$(source trans -b pt:${idioma} "Usuario")"
+txt[30]="$(source trans -b pt:${idioma} "Senha")"
+txt[31]="$(source trans -b pt:${idioma} "Dias Restantes")"
+txt[32]="$(source trans -b pt:${idioma} "Limite")"
+txt[33]="$(source trans -b pt:${idioma} "Comando Nao Executado")"
+txt[34]="$(source trans -b pt:${idioma} "Usuario")"
+txt[35]="$(source trans -b pt:${idioma} "Conexoes")"
+txt[36]="$(source trans -b pt:${idioma} "MODO DE USO")"
+txt[37]="$(source trans -b pt:${idioma} "Usuario Senha Dias Limite")"
+txt[38]="$(source trans -b pt:${idioma} "Exemplo")"
+txt[39]="$(source trans -b pt:${idioma} "Usuario Nao Foi Criado")"
+txt[40]="$(source trans -b pt:${idioma} "USUARIO CRIADO")"
+txt[41]="$(source trans -b pt:${idioma} "Usuario")"
+txt[42]="$(source trans -b pt:${idioma} "Senha")"
+txt[43]="$(source trans -b pt:${idioma} "Duracao")"
+txt[44]="$(source trans -b pt:${idioma} "Limite")"
+txt[45]="$(source trans -b pt:${idioma} "MODO DE USO")"
+txt[46]="$(source trans -b pt:${idioma} "Usuario")"
+txt[47]="$(source trans -b pt:${idioma} "Exemplo:")"
+txt[48]="$(source trans -b pt:${idioma} "Usuario Nao Removido!")"
+txt[49]="$(source trans -b pt:${idioma} "Removido Com Sucesso!")"
+txt[50]="$(source trans -b pt:${idioma} "MODO DE USO")"
+txt[51]="$(source trans -b pt:${idioma} "Host Requisicao Conexao")"
+txt[52]="$(source trans -b pt:${idioma} "Exemplo")"
+txt[53]="$(source trans -b pt:${idioma} "Metodos Requisicao")"
+txt[54]="$(source trans -b pt:${idioma} "Metodos Conexao")"
+txt[55]="$(source trans -b pt:${idioma} "PAYLOADS GERADAS COM SUCESSO")"
+txt[56]="$(source trans -b pt:${idioma} "PAYLOADS NAO GERADAS")"
+txt[57]="$(source trans -b pt:${idioma} "Algo deu Errado")"
+
+#IDENTIFICA USUARIO USANDO
+loguin_fun () {
+local msg
+          msg='========================\n'
+          msg+="${txt[1]}\n"
+          msg+='========================\n'      
+	      ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+							--text "$(echo -e $msg)" \
+							--parse_mode markdown
+echo "$(cut -d'|' -f4 liberados)" > /tmp/liberados_var
+while read lines; do
+[[ "$lines" = "" ]] && break
+local msg2
+          msg2='========================\n'
+          msg2+="${txt[2]}: $lines\n"
+          msg2+='========================\n'      
+	      ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+							--text "$(echo -e $msg2)" \
+							--parse_mode markdown
+done <  /tmp/liberados_var
+rm /tmp/liberados_var
+return 0
+}
+
+blockfun () {
+local msg
+          msg='========================\n'
+          msg+="${txt[3]}\n"
+          msg+='========================\n'
+          msg+="${txt[4]}\n"
+          msg+='========================\n'
+	      ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+							--text "$(echo -e $msg)" \
+							--parse_mode markdown
+	return 0
+}
+
+
+verificaruser () {
+base_de_dados="./bottokens"
+if [[ $(cat $base_de_dados|head -1|awk '{print $1}') = "$1" ]]; then
+return 0
+ else
+return 1
+fi
+}
+
+ativarid () {
+usuario="$1"
+senha="$2"
+usrid="$chatuser"
+if [[ "$(cat ./liberados|grep "$usrid")" != "" ]]; then
+local msg
+          msg='========================\n'
+          msg+="${txt[5]}\n"
+          msg+='========================\n'
+          msg+="${txt[6]}\n"
+          msg+="${txt[7]}\n"
+          msg+='========================\n'
+	      ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+							--text "$(echo -e $msg)" \
+							--parse_mode markdown
+return 0
+fi
+verificaruser "${usuario}:${senha}"
+if [[ "$?" = "1" ]]; then
+local msg
+          msg='========================\n'
+          msg+="${txt[8]}\n"
+          msg+='========================\n'
+          msg+="${txt[9]}\n"
+          msg+="${txt[10]}\n"
+          msg+='========================\n'
+	      ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+							--text "$(echo -e $msg)" \
+							--parse_mode markdown
+return 0
+else
+if [[ ! -e ./bot_vars ]]; then
+echo "$usrid" > ./liberados
+else
+echo "$usrid" >> ./liberados
+fi
+local msg
+          msg='========================\n'
+          msg+="${txt[11]}\n"
+          msg+='========================\n'
+          msg+="${txt[12]}\n"
+          msg+="${txt[13]}\n"
+          msg+='========================\n'
+	      ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+							--text "$(echo -e $msg)" \
+							--parse_mode markdown
+return 0
+fi
+}
+
+infovps () {
+bash ./bot_codes infovps
+local msg
+          msg='========================\n'
+          msg+="${txt[15]}\n"
+          msg+='========================\n'
+          while read line; do
+          [[ "$line" = "" ]] && break
+          msg+="$line\n"
+          done < ./infovps-txt
+          msg+='========================\n'
+	      ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+							--text "$(echo -e $msg)" \
+							--parse_mode markdown
+	return 0
+}
+
+ajuda_fun () {
+local msg
+         msg="${txt[15]}\n"
+         msg+="${txt[16]}\n\n"
+         msg+='========================\n'
+         msg+="${txt[17]}\n"
+         msg+='========================\n'
+         msg+="${txt[18]}\n"
+         msg+="/online (${txt[19]})\n"
+         msg+="/useradd (${txt[20]})\n"
+         msg+="/userdell (${txt[21]})\n"
+         msg+="/info (${txt[22]})\n"
+         msg+="/infovps (${txt[23]})\n"
+         msg+="/usuarios (${txt[24]})\n"
+         msg+="/gerar (${txt[25]})\n"
+         msg+="/logar ${txt[27]} (${txt[26]})\n"
+         msg+='========================\n'
+	     ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+							--text "$(echo -e $msg)" \
+							--parse_mode markdown
+	return 0	
+}
+
+info_fun () {
+bash ./bot_codes infousers
+if [ "$?" = "1" ]; then
+local msg
+          msg='========================\n'
+          msg+="${txt[28]}\n"
+          msg+='========================\n'   
+          ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+							--text "$(echo -e $msg)" \
+							--parse_mode markdown
+	return 0
+else
+    while read lines; do
+    [[ "$lines" = "" ]] && break
+       local msg
+          user=$(echo "$lines" | awk '{print $1}')
+          sen=$(echo "$lines" | awk '{print $2}')
+          limit=$(echo "$lines" | awk '{print $3}')
+          data=$(echo "$lines" | awk '{print $4}')
+          msg='========================\n'                   
+          msg+="${txt[29]}: $user\n"
+          msg+="${txt[30]}: $sen\n"
+          msg+="${txt[31]}: $data\n"
+          msg+="${txt[32]}: $limit\n"
+          msg+='========================\n'   
+          ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+							--text "$(echo -e $msg)" \
+							--parse_mode markdown
+		  unset msg
+    done < ./infousers-txt
+    return 0
+fi
+}
+
+online_fun () {
+bash ./bot_codes onlines
+if [ "$?" = "1" ]; then
+local msg
+         msg='========================\n'
+         msg+="${txt[33]}\n"
+         msg+='========================\n'   
+         ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+							--text "$(echo -e $msg)" \
+							--parse_mode markdown
+	return 0
+else
+while read lines; do
+[[ "$lines" = "" ]] && break
+local msg
+          user=$(echo "$lines" | awk '{print $1}')
+          conex=$(echo "$lines" | awk '{print $2}')
+          msg='========================\n'
+          msg+="${txt[34]}: $user\n"
+          msg+="${txt[35]}: $conex\n"
+          msg+='========================\n'   
+          ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+							--text "$(echo -e $msg)" \
+							--parse_mode markdown
+		  unset msg
+done < ./onlines-txt
+    return 0
+fi
+}
+
+useradd_fun () {
+[[ "$1" = "" ]] && exec="error"
+[[ "$2" = "" ]] && exec="error"
+[[ "$3" = "" ]] && exec="error"
+[[ "$4" = "" ]] && exec="error"
+if [ "$exec" = "error" ]; then
+local msg
+         msg='========================\n'
+         msg+="${txt[36]}\n"
+         msg+='========================\n'
+         msg+="useradd ${txt[37]}\n"
+         msg+="${txt[38]}:\n"
+         msg+='useradd admin admin 30 1\n'
+         msg+='========================\n'
+         ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+							--text "$(echo -e $msg)" \
+							--parse_mode markdown
+   return 0
+fi
+bash ./bot_codes criarusr "$1" "$2" "$3" "$4"
+if [ "$?" = "1" ]; then
+local msg
+         msg='========================\n'
+         msg+="${txt[39]}\n"
+         msg+='========================\n'   
+         ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+							--text "$(echo -e $msg)" \
+							--parse_mode markdown
+return 0
+else
+while read lines; do
+[[ "$lines" = "" ]] && break
+local msg
+          usr=$(echo "$lines" | awk '{print $1}')
+          sen=$(echo "$lines"  | awk '{print $2}')
+          dia=$(echo "$lines" | awk '{print $3}')
+          limit=$(echo "$lines" | awk '{print $4}')
+          msg='========================\n'
+          msg+="${txt[40]}\n"
+          msg+="${txt[41]}: $usr\n"
+          msg+="${txt[42]}: $sen\n"
+          msg+="${txt[43]}: $dia\n"
+          msg+="${txt[44]}: $limit\n"
+          msg+='========================\n'   
+          ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+							--text "$(echo -e $msg)" \
+							--parse_mode markdown
+		  unset msg
+done < ./criarusr-txt
+return 0
+fi
+}
+
+userdell_fun () {
+[[ "$1" = "" ]] && exec="error"
+if [ "$exec" = "error" ]; then
+local msg
+         msg='========================\n'
+         msg+="${txt[45]}\n"
+         msg+='========================\n'
+         msg+="userdell ${txt[46]}\n"
+         msg+="${txt[47]}:\n"
+         msg+='userdell admin\n'
+         msg+='========================\n'
+	     ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+							--text "$(echo -e $msg)" \
+							--parse_mode markdown
+   return 0
+fi
+bash ./bot_codes userdelete "$1"
+if [ "$?" = "1" ]; then
+local msg
+          msg='========================\n'
+          msg+="${txt[48]}\n"
+          msg+='========================\n'   
+          ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+							--text "$(echo -e $msg)" \
+							--parse_mode markdown
+return 0
+else
+local msg
+          msg='========================\n'
+          msg+="${txt[49]}\n"
+          msg+='========================\n'   
+          ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+							--text "$(echo -e $msg)" \
+							--parse_mode markdown
+return 0
+fi
+}
+
+paygen_fun () {
+[[ "$1" = "" ]] && fail="0"
+[[ "$2" = "" ]] && fail="0"
+[[ "$3" = "" ]] && fail="0"
+if [[ "$fail" = "0" ]]; then
+local msg
+          msg+='========================\n'
+          msg+="${txt[50]}:\n"
+          msg+="/gerar ${txt[51]}\n"
+          msg+="${txt[52]}:\n"
+          msg+="/gerar claro.com 1/9 1/3\n"
+          msg+="${txt[53]}\n1-GET, 2-CONNECT, 3-PUT, 4-OPTIONS, 5-DELETE, 6-HEAD, 7-TRACE, 8-PROPATCH, 9-PATCH\n"
+          msg+="${txt[54]}\n1-REALDATA, 2-NETDATA, 3-RAW\n"
+          msg+='========================\n'  
+          ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+							--text "$(echo -e $msg)" \
+							--parse_mode markdown
+		  unset msg
+return 0
+fi
+host="$1"
+req="$2"
+conex="$3"
+bash ./bot_codes paygen "$host" "$req" "$conex"
+if [ "$?" = "0" ]; then
+local msg
+          msg+='========================\n'
+          msg+="${txt[55]}\n"
+          msg+='========================\n'  
+          ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+							--text "$(echo -e $msg)" \
+							--parse_mode markdown
+local msg2
+          ShellBot.sendDocument --chat_id ${message_chat_id[$id]} \
+                             --document @$HOME/payloads.txt
+return 0                           
+else
+local msg
+          msg+='========================\n'
+          msg+="${txt[56]}\n"
+          msg+="${txt[57]}\n"
+          msg+='========================\n'  
+          ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
+							--text "$(echo -e $msg)" \
+							--parse_mode markdown
+return 0
+fi
+}
+
+fun_chat () {
+	   (	
+	    chatuser="${message_chat_id[$id]}"
+	    comando=(${message_text[$id]})
+		[[ "${comando[0]}" = @(/teste|teste) ]] && teste
+		[[ "${comando[0]}" = @(/ajuda|ajuda|help|/help) ]] && ajuda_fun
+		[[ "${comando[0]}" = @(/start|start|comecar|/comecar) ]] && ajuda_fun
+		[[ "${comando[0]}" = @(/logar|logar|loguin|/loguin) ]] && ativarid "${comando[1]}" "${comando[2]}" "$chatuser"
+        if [[ "$(cat ./liberados|grep "$chatuser")" != "" ]]; then
+        [[ "${comando[0]}" = @(online|/online|onlines|/onlines) ]] && online_fun
+        [[ "${comando[0]}" = @(useradd|/useradd|add|/add) ]] && useradd_fun "${comando[1]}" "${comando[2]}" "${comando[3]}" "${comando[4]}"
+        [[ "${comando[0]}" = @(userdell|/userdell|dell|/dell) ]] && userdell_fun "${comando[1]}"
+        [[ "${comando[0]}" = @(info|/info) ]] && info_fun
+        [[ "${comando[0]}" = @(infovps|/infovps) ]] && infovps
+        [[ "${comando[0]}" = @(gerar|/gerar|pay|/pay) ]] && paygen_fun "${comando[1]}" "${comando[2]}" "${comando[3]}"
+        [[ "${comando[0]}" = @(usuarios|/usuarios|user|/user) ]] && loguin_fun
+        else
+        [[ "${comando[0]}" != "" ]] && blockfun
+        fi
+        ) &
+}
+
+[[ ! -e ./liberados ]] && touch ./liberados
+while :
+do
+	ShellBot.getUpdates --limit 100 --offset $(ShellBot.OffsetNext) --timeout 30
+	for id in $(ShellBot.ListUpdates); do
+	  case ${message_text[$id]} in
+			*)
+				:
+			fun_chat
+			;;
+	        esac
+	done
+done

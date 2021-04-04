@@ -1,0 +1,86 @@
+#!/bin/bash
+
+#COMPARA
+fun_filez () {
+arq="/etc/adm-lite/$1"
+arq2="$HOME/update/$1"
+     [[ ! -e "/etc/adm-lite/$1" ]] && {
+     mv -f $arq2 $arq
+     return
+     }
+equal=$(diff -q $arq $arq2)
+echo -e "\033[1;31m ${txt[203]}: $1"
+     [[ "$equal" = "" ]] && rm $arq2 || {
+     mv -f $arq2 $arq
+     chmod +x $arq
+     lista_atualizados=$(($lista_atualizados + 1))
+     echo -e "\033[1;32m ${txt[204]}: $1 - ${txt[205]}!"
+     sleep 0.5s
+     echo ""
+     }
+}
+
+#ATUALIZACAO
+atualiza_fun () {
+echo -e "\033[1;32m ADM-SCRIPTS ${txt[205]}"
+echo -e "${cor[1]} =================================== ${cor[0]}"
+cd $HOME
+[[ ! -d ./update ]] && mkdir ./update
+cd ./update
+while read arq_adm; do
+wget $arq_adm -o /dev/null
+done < $HOME/lista
+for arqs in `ls $HOME/update`; do
+fun_filez $arqs
+done
+  _modulos="/etc/adm-lite/modulos"
+  active_verif=$(cat $_modulos | egrep -v "VERIFICAR")
+  echo "$active_verif" > $_modulos
+  for _pids_ in `atq | awk '{print $1}'`; do
+   atrm $_pids_
+  done
+  P_SERVER="https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-MANAGER-ALPHA/main/Install"
+  v1=$(curl -sSL "${P_SERVER}/versaoatt")
+  echo "$v1" > /etc/adm-lite/versao_script
+  [[ -e /etc/adm-lite/vencidos ]] && rm /etc/adm-lite/vencidos
+  [[ -e /etc/adm-lite/onlines ]] && rm /etc/adm-lite/onlines
+  [[ -e $HOME/lista ]] && rm $HOME/lista
+  [[ -d $HOME/update ]] && rm -rf $HOME/update
+  [[ "$lista_atualizados" != "" ]] && echo -e "\033[1;32m $lista_atualizados ${txt[206]}"
+  [[ -e /etc/adm-lite/idioma ]] && rm /etc/adm-lite/idioma
+echo -e "${cor[1]} =================================== ${cor[0]}"
+}
+
+#VERIFICACAO
+verificarkey_fun () {
+      wget -O lista https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-MANAGER-ALPHA/main/Install/lista -o /dev/null
+               [[ "$(cat $HOME/lista | grep $link_list/${key[1]})" != "" ]] && atualiza_fun || {
+               [[ -e $HOME/lista ]] && rm $HOME/lista
+               echo -e "${cor[1]} ================================== ${cor[0]}"
+               sleep 2s
+               exit 1
+               }
+      }
+
+#CORES
+cor[0]="\033[0m"
+cor[1]="\033[0;34m"
+cor[2]="\033[1;31m"
+cor[3]="\033[1;37m"
+cor[4]="\033[1;36m"
+cor[5]="\033[1;33m"
+cor[6]="\033[1;35m"
+
+#TEXTOS
+txt[206]="Files Actualized!"
+txt[208]="Invalid Key, Contact the Script Admin!"
+txt[207]="Valid!!!"
+txt[203]="Analizing"
+txt[204]="File"
+txt[205]="Actualized"
+
+cd $HOME
+[[ -d $HOME/update ]] && rm -rf $HOME/update
+[[ -e $HOME/lista ]] && rm $HOME/lista
+echo -e "${cor[1]} =================================== ${cor[2]}"
+verificarkey_fun

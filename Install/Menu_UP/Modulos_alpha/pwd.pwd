@@ -1,0 +1,8 @@
+master=ADMMANAGER
+127.0.0.1:22=ssh
+127.0.0.1:80=dropbear
+127.0.0.1:443=dropbear
+127.0.0.1:4242=dropbear
+127.0.0.1:8090=openvpn
+127.0.0.1:8080=dropbear
+127.0.0.1:8799=dropbear

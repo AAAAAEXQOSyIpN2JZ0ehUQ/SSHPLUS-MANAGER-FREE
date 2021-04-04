@@ -1,0 +1,16 @@
+#!/bin/bash
+source cabecalho
+echo -e "${cor[1]} =================================== ${cor[0]}"
+echo -e "${cor[2]} ∆ ${cor[5]} ${txt[14]}"
+echo -e "${cor[1]} =================================== ${cor[0]}"
+echo -e "${cor[2]} |0| >${cor[4]} ${txt[13]}"
+echo -e "${cor[2]} |1| >${cor[3]} ${txt[15]}"
+echo -e "${cor[2]} |2| >${cor[3]} ${txt[16]}"
+echo -e "${cor[2]} |3| >${cor[3]} ${txt[17]}"
+echo -e "${cor[2]} |4| >${cor[3]} ${txt[18]}"
+echo -e "${cor[2]} |5| >${cor[3]} ${txt[19]}"
+echo -e "${cor[2]} |6| >${cor[3]} ${txt[87]}"
+echo -e "${cor[2]} |7| >${cor[3]} ${txt[234]}"
+echo -e "${cor[2]} |8| >${cor[3]} ${txt[288]}"
+echo -e "${cor[2]} |9| >${cor[3]} ${txt[254]} $limiter_on"
+echo -e "${cor[1]} ===================================  ${cor[0]}"

@@ -1,0 +1,161 @@
+#!/bin/bash
+source ferramentas-txt
+echo -ne "${cor[6]}"
+read -p " ${txt[9]} " _selecao
+case $_selecao in
+0)
+source menu
+exit
+;;
+1)
+source ferramentascodes 1
+echo -ne "${cor[5]}"
+read -p " ${txt[47]}"
+cd /etc/adm-lite
+source ferramentas
+exit
+;;
+2)
+source ferramentascodes 2
+echo -ne "${cor[5]}"
+read -p " ${txt[47]}"
+cd /etc/adm-lite
+source ferramentas
+exit
+;;
+3)
+source ferramentascodes 3
+echo -ne "${cor[5]}"
+read -p " ${txt[47]}"
+cd /etc/adm-lite
+source ferramentas
+exit
+;;
+4)
+source ferramentascodes 4
+echo -ne "${cor[5]}"
+read -p " ${txt[47]}"
+cd /etc/adm-lite
+source ferramentas
+exit
+;;
+5)
+source ferramentascodes 5
+echo -ne "${cor[5]}"
+read -p " ${txt[47]}"
+cd /etc/adm-lite
+source ferramentas
+exit
+;;
+6)
+source ferramentascodes 6
+echo -ne "${cor[5]}"
+read -p " ${txt[47]}"
+cd /etc/adm-lite
+source ferramentas
+exit
+;;
+7)
+source ferramentascodes 7
+echo -ne "${cor[5]}"
+read -p " ${txt[47]}"
+cd /etc/adm-lite
+source ferramentas
+exit
+;;
+8)
+source ferramentascodes 8
+echo -ne "${cor[5]}"
+read -p " ${txt[47]}"
+cd /etc/adm-lite
+source ferramentas
+exit
+;;
+9)
+source ferramentascodes 9
+echo -ne "${cor[5]}"
+read -p " ${txt[47]}"
+cd /etc/adm-lite
+source ferramentas
+exit
+;;
+10)
+source ferramentascodes 10
+echo -ne "${cor[5]}"
+read -p " ${txt[47]}"
+cd /etc/adm-lite
+source ferramentas
+exit
+;;
+11)
+source ferramentascodes 11
+echo -ne "${cor[5]}"
+read -p " ${txt[47]}"
+cd /etc/adm-lite
+source ferramentas
+exit
+;;
+12)
+source ferramentascodes 12
+echo -ne "${cor[5]}"
+read -p " ${txt[47]}"
+cd /etc/adm-lite
+source ferramentas
+exit
+;;
+13)
+minhas_portas
+echo -ne "${cor[5]}"
+read -p " ${txt[47]}"
+cd /etc/adm-lite
+source ferramentas
+exit
+;;
+14)
+echo -e "${cor[1]} =================================== ${cor[0]}"
+echo -ne "\033[1;33m ${txt[306]}: \033[1;37m"; read hostcaptura
+echo -ne "\033[1;33m ${txt[307]}: \033[1;37m"; read limitecaptura
+chmod 777 ./ultrahost
+./ultrahost "${hostcaptura}" "${limitecaptura}"
+read -p " ${txt[47]}"
+source ferramentas
+exit
+;;
+15)
+source ferramentascodes 13
+echo -ne "${cor[5]}"
+read -p " ${txt[47]}"
+cd /etc/adm-lite
+source ferramentas
+exit
+;;
+16)
+source ferramentascodes 14
+echo -ne "${cor[5]}"
+read -p " ${txt[47]}"
+cd /etc/adm-lite
+source ferramentas
+exit
+;;
+17)
+source ferramentascodes 15
+echo -ne "${cor[5]}"
+read -p " ${txt[47]}"
+cd /etc/adm-lite
+source ferramentas
+exit
+;;
+18)
+source ferramentascodes 16
+echo -ne "${cor[5]}"
+read -p " ${txt[47]}"
+cd /etc/adm-lite
+source ferramentas
+exit
+;;
+*)
+cd /etc/adm-lite
+source ferramentas
+exit
+;;
+esac

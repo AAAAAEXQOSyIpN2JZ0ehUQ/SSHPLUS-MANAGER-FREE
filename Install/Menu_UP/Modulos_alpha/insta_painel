@@ -1,0 +1,86 @@
+#!/bin/bash
+ve="\033[1;32m";am="\033[1;33m";ver="\033[1;31m";az="\033[1;36m";f="\033[0m"
+
+meu_ip () {
+MEU_IP=$(ip addr | grep 'inet' | grep -v inet6 | grep -vE '127\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | grep -o -E '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | head -1)
+MEU_IP2=$(wget -qO- ipv4.icanhazip.com)
+[[ "$MEU_IP" != "$MEU_IP2" ]] && ip="$MEU_IP2" || ip="$MEU_IP"
+}
+
+apt-get install figlet -y > /dev/null 2>&1
+meu_ip
+echo -e "${az}"
+figlet ADM.PRO ULTIMATE
+echo -e "${f}"
+sleep 2
+echo
+echo -e "${ver}            +++++ ATENÇÃO +++++${am}     
+TODAS AS SENHA A SEGUIR COLOQUE SEMPRE A MESMA${f}"
+read -p "Enter, Para Prosseguir!"
+apt-get install php5 libapache2-mod-php5 php5-mcrypt -y
+apt-get install mysql-server php5-mysql -y
+mysql_install_db
+echo ""
+echo -e "${am}Sempre que solicitado${ver}[Y/N]${am}escolha a opção${ver}Y${am} e de ${ve}OK.${am} para tudo que pedir.
+...
+${am}O proximo procedimento de instalaçao vai te pedir uma senha
+ai vcs digita a senha que digitou antes e reconfirma ela ai depois do ir apertando ${ver}Y${f}"
+read -p "Enter, Para Prosseguir!"
+mysql_secure_installation
+echo -e "${az}AGUARDE A INSTALAÇÃO${f}"
+sleep 2
+apt-get install phpmyadmin -y
+php5enmod mcrypt
+service apache2 restart
+echo ""
+stty -echo
+tput setaf 7 ; tput bold ; read -p "Digita a mesma senha (MySQL Password): " var7 ; tput sgr0
+echo ""
+stty echo ; echo
+mysql -h localhost -u root -p$var7 -e "CREATE DATABASE adm"
+echo -e "${ver}ATENÇÃO - LOGIN ASEGUIR É PESSOAL NAO DIVULGUEM ${f}"
+echo ""
+echo -e "${am}Agora vamos colocar um LOGIN e SENHA de acesso a pagina de upload${ve}"
+	read -p "Login: " var2
+	read -p "Senha: " var3
+	echo -ne "${f}"
+
+cd /var/www/
+   rm -rf index.html > /dev/null 2>&1
+   cp /etc/adm-lite/painel.zip /var/www/
+   unzip painel.zip > /dev/null 2>&1
+   rm -rf painel.zip > /dev/null 2>&1
+   chmod -R 777 /var/www/adm > /dev/null 2>&1
+sed -i "s;123;$var7;g" /var/www/adm/system/seguranca.php > /dev/null 2>&1
+
+cd /var/www/html/
+   rm -rf index.html > /dev/null 2>&1
+   cp /etc/adm-lite/painel.zip /var/www/html/
+   unzip painel.zip > /dev/null 2>&1
+   rm -rf painel.zip > /dev/null 2>&1 
+   chmod -R 777 /var/www/html/adm > /dev/null 2>&1
+sed -i "s;123;$var7;g" /var/www/html/adm/system/seguranca.php > /dev/null 2>&1
+
+[[ ! -d /var/www/temp ]] && mkdir /var/www/temp
+cd /var/www/temp && cp /etc/adm-lite/dados.zip /var/www/temp/
+unzip dados.zip > /dev/null 2>&1
+
+sed -i "s;adm123;$var2;g" ./banco_de_dados.sql > /dev/null 2>&1
+sed -i "s;adm4321;$var3;g" ./banco_de_dados.sql > /dev/null 2>&1
+
+mysql -h localhost -u root -p$var7 adm < banco_de_dados.sql > /dev/null 2>&1
+rm -rf /var/www/temp
+
+echo -e "${am}PAINEL DE UPLOAD DE EHI INSTALADO PARA ENTRAR NO SEU PAINEL ACESSE
+${az}-------------------------------------------------------------------
+${ver}Url: ${ve}$ip:81/login.php
+${am}Login: ${ve}$var2
+${am}Senha: ${ve}$var3
+${am}LINK PAGINA INICIAL ${ve}( $ip:81 )
+${az}-------------------------------------------------------------------${f}"
+echo -e "${am}"
+read -p "Aperte ENTER, Para continuar" naoa
+sleep 2
+echo -e "${f}"
+exit
+

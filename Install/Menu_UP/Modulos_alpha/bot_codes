@@ -1,0 +1,341 @@
+#!/bin/bash
+
+dir_user="./userDIR"
+if [[ -e /etc/openvpn/server.conf ]]; then
+ if [[ -e /etc/openvpn/openvpn-status.log ]]; then
+OPENVPN="on"
+ fi
+fi
+
+meu_ip () {
+MEU_IP=$(ip addr | grep 'inet' | grep -v inet6 | grep -vE '127\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | grep -o -E '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | head -1)
+MEU_IP2=$(wget -qO- ipv4.icanhazip.com)
+if [[ "$MEU_IP" != "$MEU_IP2" ]]; then
+IP="$MEU_IP2"
+ else
+IP="$MEU_IP"
+fi
+#PREENXE A VARIAVEL $IP
+}
+
+paygen () {
+meu_ip
+valor1="$1" #Entrada Host 
+valor2="$IP" #Entrada IP
+valor3="$2" #Metodo Requisicao
+valor4="$3" #Metodo Conexao
+[[ "$valor2" = "" ]] && valor2="127.0.0.1"
+#VERIFICA VALOR3
+if [ "$valor3" = "1" ]; then
+req="GET"
+elif [ "$valor3" = "2" ]; then
+req="CONNECT"
+elif [ "$valor3" = "3" ]; then
+req="PUT"
+elif [ "$valor3" = "4" ]; then
+req="OPTIONS"
+elif [ "$valor3" = "5" ]; then
+req="DELETE"
+elif [ "$valor3" = "6" ]; then
+req="HEAD"
+elif [ "$valor3" = "7" ]; then
+req="TRACE"
+elif [ "$valor3" = "8" ]; then
+req="PROPATCH"
+elif [ "$valor3" = "9" ]; then
+req="PATCH"
+else
+req="GET"
+fi
+#VERIFICA VALOR4
+if [ "$valor4" = "1" ]; then
+in="realData"
+elif [ "$valor4" = "2" ]; then
+in="netData"
+elif [ "$valor4" = "3" ]; then
+in="raw"
+else
+in="netData"
+fi
+
+name=$(echo $valor1 | awk -F "/" '{print $2'})
+[[ "$name" = "" ]] && name=$(echo $valor1 | awk -F "/" '{print $1'})
+esquelet="/etc/adm-lite/payloads"
+sed -s "s;realData;abc;g" $esquelet > $HOME/$name.txt
+sed -i "s;netData;abc;g" $HOME/$name.txt
+sed -i "s;raw;abc;g" $HOME/$name.txt
+sed -i "s;abc;$in;g" $HOME/$name.txt
+sed -i "s;get;$req;g" $HOME/$name.txt
+sed -i "s;mhost;$valor1;g" $HOME/$name.txt
+sed -i "s;mip;$valor2;g" $HOME/$name.txt
+if [[ "$(cat $HOME/$name.txt | egrep -o "$valor1")" = "" ]]; then
+rm $HOME/$name.txt
+return 1
+else
+mv -f $HOME/$name.txt $HOME/payloads.txt
+return 0
+fi
+}
+
+minhas_portas () {
+unset portavar
+portas_var="/tmp/portas"
+porta_var="/tmp/portas2"
+lsof -V -i tcp -P -n | grep -v "ESTABLISHED" |grep -v "COMMAND" | grep "LISTEN" > $portas_var
+while read port; do
+var1=$(echo $port | awk '{print $1}')
+var2=$(echo $port | awk '{print $9}' | awk -F ":" '{print $2}')
+ if [ ! -e "$porta_var" ]; then
+ echo -e "$var1 $var2" > $porta_var
+ fi
+ if [ "$(cat $porta_var | grep "$var1" | grep "$var2")" = "" ]; then
+ echo -e "$var1 $var2" >> $porta_var
+ fi
+done < $portas_var
+i=1
+while read pts; do
+[[ "$pts" = "" ]] && break
+service_porta[$i]=$(echo "$pts" | awk '{print $2}')
+service_serv[$i]=$(echo "$pts" | awk '{print $1}')
+portavar+="${service_serv[$i]} ${service_porta[$i]}\n"
+i=$(($i+1))
+done < $porta_var
+rm $portas_var
+rm $porta_var
+}
+
+infovps () {
+meu_ip
+minhas_portas
+ipvps="$IP\nLISTEN:"
+echo -e "IP: $ipvps\n$portavar" > ./infovps-txt
+}
+
+fun_sem () {
+sed -e "s;auth-user-pass;<auth-user-pass>\n$1\n$2\n</auth-user-pass>;g" $HOME/$1.ovpn > $HOME/teste.ovpn && mv -f $HOME/teste.ovpn $HOME/$1.ovpn
+zip $HOME/$1.zip $HOME/$1.ovpn
+rm $HOME/$1.ovpn
+}
+
+newclient () {
+# Generates the custom client.ovpn
+cp /etc/openvpn/client-common.txt ~/$1.ovpn
+echo "<ca>" >> ~/$1.ovpn
+cat /etc/openvpn/easy-rsa/pki/ca.crt >> ~/$1.ovpn
+echo "</ca>" >> ~/$1.ovpn
+echo "<cert>" >> ~/$1.ovpn
+cat /etc/openvpn/easy-rsa/pki/issued/$1.crt >> ~/$1.ovpn
+echo "</cert>" >> ~/$1.ovpn
+echo "<key>" >> ~/$1.ovpn
+cat /etc/openvpn/easy-rsa/pki/private/$1.key >> ~/$1.ovpn
+echo "</key>" >> ~/$1.ovpn
+echo "<tls-auth>" >> ~/$1.ovpn
+cat /etc/openvpn/ta.key >> ~/$1.ovpn
+echo "</tls-auth>" >> ~/$1.ovpn
+}
+
+open_1 () {
+CLIENT="$1"
+senha="$2"
+daysrnf="$3"
+limit="$4"
+sen="$5"
+cd /etc/openvpn/easy-rsa/
+./easyrsa build-client-full $CLIENT nopass
+newclient "$CLIENT"
+echo ""
+echo "$CLIENT KEY" ~/"$CLIENT.ovpn"
+valid=$(date '+%C%y-%m-%d' -d " +$daysrnf days")
+datexp=$(date "+%d/%m/%Y" -d "+ $daysrnf days")
+useradd -M -s /bin/false -d /home/ovpn/ $CLIENT -e $valid
+usermod -p $(openssl passwd -1 $senha) $CLIENT
+if [[ "$sen" = "s" || "$sen" = "S" ]]; then
+fun_sem $CLIENT $senha 
+fi
+cd /etc/adm-lite
+echo "senha: $senha" > $dir_user/$CLIENT
+echo "limite: $limit" >> $dir_user/$CLIENT
+echo "data: $valid" >> $dir_user/$CLIENT
+}
+
+open_2 () {
+CLIENT="$1"
+cd /etc/openvpn/easy-rsa/
+./easyrsa --batch revoke $CLIENT
+./easyrsa gen-crl
+rm -rf pki/reqs/$CLIENT.req
+rm -rf pki/private/$CLIENT.key
+rm -rf pki/issued/$CLIENT.crt
+rm -rf /etc/openvpn/crl.pem
+cp /etc/openvpn/easy-rsa/pki/crl.pem /etc/openvpn/crl.pem
+chown nobody:$GROUPNAME /etc/openvpn/crl.pem
+echo ""
+userdel --force $CLIENT
+cd /etc/adm-lite
+if [ -e $dir_user/$CLIENT ]; then
+rm $dir_user/$CLIENT
+fi
+}
+
+function_dropb () {
+  if which tput >/dev/null 2>&1; then
+      ncolors=$(tput colors)
+  fi
+  if [ -t 1 ] && [ -n "$ncolors" ] && [ "$ncolors" -ge 8 ]; then
+    RED="$(tput setaf 1)"
+    GREEN="$(tput setaf 2)"
+    YELLOW="$(tput setaf 3)"
+    BLUE="$(tput setaf 4)"
+    BOLD="$(tput bold)"
+    NORMAL="$(tput sgr0)"
+  else
+    RED=""
+    GREEN=""
+    YELLOW=""
+    BLUE=""
+    BOLD=""
+    NORMAL=""
+  fi
+port_dropbear=`ps aux | grep dropbear | awk NR==1 | awk '{print $17;}'`
+log=/var/log/auth.log
+loginsukses='Password auth succeeded'
+clear
+printf "${BLUE}${BOLD}"
+echo ' '
+printf "${NORMAL}"
+printf "${BLUE}${BOLD}"
+pids=`ps ax |grep dropbear |grep  " $port_dropbear" |awk -F" " '{print $1}'`
+for pid in $pids
+do
+    pidlogs=`grep $pid $log |grep "$loginsukses" |awk -F" " '{print $3}'`
+    i=0
+    for pidend in $pidlogs
+    do
+      let i=i+1
+    done
+    if [ $pidend ];then
+       login=`grep $pid $log |grep "$pidend" |grep "$loginsukses"`
+       PID=$pid
+       user=`echo $login |awk -F" " '{print $10}' | sed -r "s/'/ /g"`
+       waktu=`echo $login |awk -F" " '{print $2"-"$1,$3}'`
+       while [ ${#waktu} -lt 13 ]; do
+           waktu=$waktu" "
+       done
+       while [ ${#user} -lt 16 ]; do
+           user=$user" "
+       done
+       while [ ${#PID} -lt 8 ]; do
+           PID=$PID" "
+       done
+		printf "${YELLOW}${BOLD}"
+       echo "$user $PID $waktu"
+		printf "${BLUE}${BOLD}"
+    fi
+done
+echo ""
+printf "${NORMAL}"
+return
+}
+
+fun_ovpn_onl () {
+for userovpn in `cat /etc/passwd | grep ovpn | awk -F: '{print $1}'`; do
+us=$(cat /etc/openvpn/openvpn-status.log | grep $userovpn | wc -l)
+if [ "$us" != "0" ]; then
+echo "$userovpn"
+fi
+done
+}
+
+criarusr () {
+name="$1"
+if [ -z $name ]; then
+return 1
+fi
+if cat /etc/passwd |grep $name: |grep -vi [a-z]$name |grep -v [0-9]$name > /dev/null; then
+return 1
+fi
+pass="$2"
+daysrnf="$3"
+limit="$4"
+if [ "$OPENVPN" = "on" ]; then
+open_1 $name $pass $daysrnf $limit s
+return 0
+fi
+valid=$(date '+%C%y-%m-%d' -d " +$daysrnf days")
+datexp=$(date "+%d/%m/%Y" -d " +$daysrnf days")
+useradd -M -s /bin/false $name -e $valid
+(echo $pass; echo $pass)|passwd $name 2>/dev/null
+echo "senha: $pass" > $dir_user/$name
+echo "limite: $limit" >> $dir_user/$name
+echo "data: $valid" >> $dir_user/$name
+echo "$name $pass $datexp $limit" > ./criarusr-txt
+return 0
+}
+
+userdelete () {
+name="$1"
+[[ "$name" = "" ]] && return 1
+if [ "$OPENVPN" = "on" ]; then
+open_2 $name
+return
+fi
+userdel --force $name > /dev/null 2>/dev/null
+kill -9 `ps aux |grep -vi '[a-z]$name' |grep -vi '$name[a-z]' |grep -v '[1-9]$name' |grep -v '$name[1-9]' |grep $name |awk {'print $2'}` 2> /dev/null
+if [ -e $dir_user/$name ]; then
+rm $dir_user/$name
+fi
+return 0
+}
+
+infousers () {
+for namer in `awk -F : '$3 > 900 { print $1 }' /etc/passwd |grep -v "nobody" |grep -vi polkitd |grep -vi system-`; do
+[[ "$namer" = "" ]] && break
+if [ -e $dir_user/$namer ]; then
+_sen=$(cat $dir_user/$namer | grep "senha" | awk '{print $2}')
+_limit=$(cat $dir_user/$namer | grep "limite" | awk '{print $2}')
+else
+_limit="Null"
+_sen="Null"
+fi
+[[ -z "$_limit" ]] && _limit="Null"
+[[ -z "$_sen" ]] && _sen="Null"
+data_sec=$(date +%s)
+data_user=$(chage -l "$namer" |grep -i co |awk -F ":" '{print $2}')
+if [ "$data_user" != " never" ]; then
+data_user_sec=$(date +%s --date="$data_user")
+ if [ "$data_sec" -gt "$data_user_sec" ]; then
+dias_user="Null"
+else
+variavel_soma=$(($data_user_sec - $data_sec))
+dias_use=$(($variavel_soma / 86400))
+dias_user="$dias_use"
+ fi
+fi
+[[ "$data_user" = " never" ]] && dias_user="Null"
+userinfo+="$namer $_sen $_limit $dias_user\n"
+done
+echo -e "$userinfo" > ./infousers-txt
+return 0
+}
+
+onlines () {
+_data_now=$(date +%s)
+for user in `awk -F : '$3 > 900 { print $1 }' /etc/passwd |grep -v "nobody" |grep -vi polkitd |grep -vi system-`; do
+ssh_open=$(ps -u $user | grep sshd | wc -l)
+ssh_drop=$(function_dropb | grep "$user" | wc -l)
+if [ "$OPENVPN" = "on" ]; then
+ssh_ovpn=$(fun_ovpn_onl | grep "$user" | wc -l)
+ else
+ssh_ovpn="0"
+fi
+u_pid=$(($ssh_open + $ssh_drop))
+user_pid=$(($u_pid + $ssh_ovpn))
+if [ "$user_pid" -gt "0" ]; then
+varbot+="$user $user_pid\n"
+fi
+done
+echo -e "$varbot" > ./onlines-txt
+return 0
+}
+
+$1 "$2" "$3" "$4" "$5" "$6" "$7" "$8" "$9"
