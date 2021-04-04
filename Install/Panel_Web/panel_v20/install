@@ -50,7 +50,7 @@ IP=$(wget -qO- ipv4.icanhazip.com)
 echo "America/Sao_Paulo" > /etc/timezone
 ln -fs /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime > /dev/null 2>&1
 dpkg-reconfigure --frontend noninteractive tzdata > /dev/null 2>&1
-####################################################################################################
+#------------------------------------------------------------------------------------------
 echo -e "\E[44;1;37m    INSTALAR O PAINEL SSH/DROP/SSL V.2O SSHPlus     \E[0m"
 echo ""
 echo -e "   SSHPlus" | figlet 
