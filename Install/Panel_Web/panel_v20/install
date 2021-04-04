@@ -39,7 +39,7 @@ fun_bar 'fun_update'
 apt-get install php-ssh2 -y > /dev/null 2>&1
 echo ""
 clear
-
+#
 rm /root/install > /dev/null 2>&1
 rm $HOME/install > /dev/null 2>&1
 rm /root/v20.zip > /dev/null 2>&1
