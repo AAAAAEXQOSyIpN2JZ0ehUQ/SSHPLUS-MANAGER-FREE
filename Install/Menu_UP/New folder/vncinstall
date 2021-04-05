@@ -1,0 +1,91 @@
+#!/bin/bash
+
+fun_bar () {
+comando[0]="$1"
+comando[1]="$2"
+ (
+[[ -e $HOME/fim ]] && rm $HOME/fim
+${comando[0]} -y > /dev/null 2>&1
+${comando[1]} -y > /dev/null 2>&1
+touch $HOME/fim
+ ) > /dev/null 2>&1 &
+ tput civis
+echo -ne "\033[1;33m["
+while true; do
+   for((i=0; i<18; i++)); do
+   echo -ne "\033[1;31m#"
+   sleep 0.1s
+   done
+   [[ -e $HOME/fim ]] && rm $HOME/fim && break
+   echo -e "\033[1;33m]"
+   sleep 1s
+   tput cuu1
+   tput dl1
+   echo -ne "\033[1;33m["
+done
+echo -e "\033[1;33m]\033[1;37m -\033[1;32m OK !\033[1;37m"
+tput cnorm
+}
+
+IP=$(cat /etc/IP)
+x="ok"
+
+vncinstall () {
+if [ -d  /root/.vnc/ ];then
+vnc=$(ls /root/.vnc/ | grep :1.pid)
+else
+vnc=""
+fi
+# meu_ip
+clear
+echo -e "\033[1;32mINICIANDO O VNC SERVER... \033[0m\n"
+if [[ $vnc = "" ]]; then
+echo -ne "\033[1;32mVNC nao Esta ativo Deseja Ativar \033[1;31m? \033[1;33m[s/n]:\033[1;37m "
+read resposta
+[[ "$resposta" = @(n|N) ]] && echo "" && return
+echo ""
+echo -e "\033[1;32mINSTALLING VNC:"
+echo ""
+fun_bar 'apt-get install xfce4 xfce4-goodies gnome-icon-theme tightvncserver -y'
+echo ""
+echo -e "\033[1;32mINSTALLING DEPENDENCE:"
+echo ""
+fun_bar 'apt-get install iceweasel -y'
+echo ""
+echo -e "\033[1;32mINSTALLING FIREFOX:"
+echo ""
+fun_bar 'apt-get install firefox -y'
+echo ""
+echo -e "\033[1;33mESCOLHA UMA SENHA e DEPOIS CONFIRMA\033[1;32m"
+echo ""
+vncserver
+echo ""
+echo "#VNC ON" > /etc/vnc-on
+echo -e "\033[1;33m - VNC se conecta usando o ip da vps na porta 5901"
+echo -e "\033[1;33m - Ex: $IP:5901\033[1;32m"
+echo -e "\033[1;33m - Para acessar a interface gráfica "
+echo -e "\033[1;33m - Baixe na PlayStore: VNC VIWER"
+elif [[ $vnc != "" ]]; then
+echo -ne "\033[1;32mVNC Esta ativo Deseja Desativar \033[1;31m? \033[1;33m[s/n]:\033[1;37m "
+read resposta
+[[ "$resposta" = @(n|N) ]] && echo "" && return
+echo ""
+echo -e "\033[1;32mREMOVING VNC:"
+echo ""
+fun_bar 'apt-get purge xfce4 xfce4-goodies gnome-icon-theme tightvncserver -y'
+echo ""
+echo -e "\033[1;32mREMOVING DEPENDENCES:"
+echo ""
+fun_bar 'apt-get purge iceweasel -y'
+echo ""
+echo -e "\033[1;32mREMOVING FIREFOX:"
+echo ""
+fun_bar 'apt-get purge firefox -y'
+rm -rf /etc/vnc-on
+vncserver -kill :1 > /dev/null 2>&1
+vncserver -kill :2 > /dev/null 2>&1
+vncserver -kill :3 > /dev/null 2>&1
+fi
+echo ""
+}
+vncinstall

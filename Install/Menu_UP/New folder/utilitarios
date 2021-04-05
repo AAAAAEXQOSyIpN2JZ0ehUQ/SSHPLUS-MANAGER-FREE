@@ -45,6 +45,7 @@ fi
 teste_cache="#CACHE DO SQUID"
 [[ `grep -c "^$teste_cache" $squid_var` -eq 0 ]] && _cachesquid="\033[1;31m○ " || _cachesquid="\033[1;32m◉ "
 }
+[[ -e /etc/vnc-on ]] && _vnc=$(echo -e "\033[1;32m◉ ") || _vnc=$(echo -e "\033[1;31m○ ")
 [[ -e /etc/Plus-torrent ]] && stsf=$(echo -e "\033[1;32m◉ ") || stsf=$(echo -e "\033[1;31m○ ")
 stsbot=$(ps x | grep "bot_plus"|grep -v grep > /dev/null && echo -e "\033[1;32m◉ " || echo -e "\033[1;31m○ ")
 autm=$(grep "menu;" /etc/profile > /dev/null && echo -e "\033[1;32m◉ " || echo -e "\033[1;31m○ ")
@@ -88,7 +89,7 @@ echo ""
 echo -e "[\033[1;36m01\033[1;31m] \033[1;37m• \033[1;33mBRUTE FORCE PAYLOAD \033[1;31m
 [\033[1;36m02\033[1;31m] \033[1;37m• \033[1;33mGERADOR DE PAYLOAD \033[1;31m
 [\033[1;36m03\033[1;31m] \033[1;37m• \033[1;33mULTRA HOST \033[1;31m
-[\033[1;36m04\033[1;31m] \033[1;37m• \033[1;33mVNC SERVER \033[1;31m
+[\033[1;36m04\033[1;31m] \033[1;37m• \033[1;33mVNC SERVER $_vnc \033[1;31m
 [\033[1;36m05\033[1;31m] \033[1;37m• \033[1;33mTCP SPEED $_tcpspeed \033[1;31m
 [\033[1;36m06\033[1;31m] \033[1;37m• \033[1;33mFAILBAN $fail_b \033[1;31m
 [\033[1;36m07\033[1;31m] \033[1;37m• \033[1;33mSQUID CACHE $_cachesquid\033[1;31m
@@ -116,7 +117,7 @@ case "$x" in
    ;;
    4 | 04)
    clear
-   vncserver
+   vncinstall
    echo -ne "\n\033[1;31mENTER \033[1;33mpara retornar ao \033[1;32mMENU!\033[0m"; read
    ;;
    5 | 05)
