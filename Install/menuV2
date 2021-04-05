@@ -130,7 +130,7 @@ function autoexec () {
       echo ""
       echo -e "\033[1;31mAUTO EXECUÇÃO DESATIVADO!\033[0m"
       sleep 1.5s
-      menu2
+      menu
    else
       clear
       echo -e "\033[1;32mATIVANDO AUTO EXECUÇÃO\033[0m"
@@ -143,7 +143,7 @@ function autoexec () {
       echo ""
       echo -e "\033[1;32mAUTO EXECUÇÃO ATIVADO!\033[0m"
       sleep 1.5s
-      menu2
+      menu
    fi
 
 }
