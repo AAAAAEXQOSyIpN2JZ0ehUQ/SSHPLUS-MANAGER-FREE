@@ -36,7 +36,6 @@ fun_update () {
 	apt-get install figlet -y > /dev/null 2>&1
 }
 fun_bar 'fun_update'
-apt-get install php-ssh2 -y > /dev/null 2>&1
 echo ""
 clear
 #
