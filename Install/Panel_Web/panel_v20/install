@@ -32,10 +32,9 @@ tput cnorm
 echo ""
 echo -e "           \033[1;33m● \033[1;32mATUALIZANDO LINUX, Pode Demorar \033[1;33m●\033[0m"
 fun_update () {
-    apt-get update -y > /dev/null 2>&1
-        apt-get install figlet -y > /dev/null 2>&1
+    apt-get update -y > /dev/null 2>&1 
+	apt-get install figlet -y > /dev/null 2>&1
 }
-apt-get install php-ssh2 -y > /dev/null 2>&1
 fun_bar 'fun_update'
 echo ""
 clear
