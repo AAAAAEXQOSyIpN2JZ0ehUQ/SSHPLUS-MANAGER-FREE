@@ -130,7 +130,7 @@ function autoexec () {
       echo ""
       echo -e "\033[1;31mAUTO EXECUÇÃO DESATIVADO!\033[0m"
       sleep 1.5s
-      # menu
+      menu
    else
       clear
       echo -e "\033[1;32mATIVANDO AUTO EXECUÇÃO\033[0m"
@@ -143,7 +143,7 @@ function autoexec () {
       echo ""
       echo -e "\033[1;32mAUTO EXECUÇÃO ATIVADO!\033[0m"
       sleep 1.5s
-      # menu
+      menu
    fi
 
 }
@@ -200,15 +200,15 @@ echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━�
 echo ""
 echo -e "\033[1;31m[\033[1;36m01\033[1;31m] \033[1;37m• \033[1;33mCRIAR USUARIO\033[1;31m      [\033[1;36m16\033[1;31m] \033[1;37m• \033[1;33mLIMITER $stsl\033[1;31m           
 [\033[1;36m02\033[1;31m] \033[1;37m• \033[1;33mCRIAR TESTE\033[1;31m        [\033[1;36m17\033[1;31m] \033[1;37m• \033[1;33mBAD VPN $stsu\033[1;31m
-[\033[1;36m03\033[1;31m] \033[1;37m\033[1;37m• \033[1;33mREMOVER USUARIO\033[1;31m    [\033[1;36m18\033[1;31m] \033[1;37m• \033[1;33mINFO VPS \033[1;31m
-[\033[1;36m04\033[1;31m] \033[1;37m• \033[1;33mMONITOR ONLINE\033[1;31m     [\033[1;36m19\033[1;31m] \033[1;37m• \033[1;33mADICIONAR HOST \033[1;31m
-[\033[1;36m05\033[1;31m] \033[1;37m• \033[1;33mMUDAR DATA\033[1;31m         [\033[1;36m20\033[1;31m] \033[1;37m• \033[1;33mREMOVER HOST \033[1;31m
+[\033[1;36m03\033[1;31m] \033[1;37m\033[1;37m• \033[1;33mREMOVER USUARIO\033[1;31m    [\033[1;36m18\033[1;31m] \033[1;37m• \033[1;33mBLOCK TORRENT $stsf\033[1;31m
+[\033[1;36m04\033[1;31m] \033[1;37m• \033[1;33mMONITOR ONLINE\033[1;31m     [\033[1;36m19\033[1;31m] \033[1;37m• \033[1;33mBOT TELEGRAM $stsbot\033[1;31m
+[\033[1;36m05\033[1;31m] \033[1;37m• \033[1;33mMUDAR DATA\033[1;31m         [\033[1;36m20\033[1;31m] \033[1;37m• \033[1;33mAUTO EXECUCAO $autm \033[1;31m
 [\033[1;36m06\033[1;31m] \033[1;37m• \033[1;33mALTERAR LIMITE\033[1;31m     [\033[1;36m21\033[1;31m] \033[1;37m• \033[1;33mRESTART SISTEMA \033[1;31m
 [\033[1;36m07\033[1;31m] \033[1;37m• \033[1;33mMUDAR SENHA\033[1;31m        [\033[1;36m22\033[1;31m] \033[1;37m• \033[1;33mRESTART SERVICOS \033[1;31m
-[\033[1;36m08\033[1;31m] \033[1;37m• \033[1;33mREMOVER EXPIRADOS\033[1;31m  [\033[1;36m23\033[1;31m] \033[1;37m• \033[1;33mBLOCK TORRENT $stsf\033[1;31m
-[\033[1;36m09\033[1;31m] \033[1;37m• \033[1;33mRELATORIO USUARIOS\033[1;31m [\033[1;36m24\033[1;31m] \033[1;37m• \033[1;33mBOT TELEGRAM $stsbot\033[1;31m
-[\033[1;36m10\033[1;31m] \033[1;37m• \033[1;33mMODO DE CONEXAO\033[1;31m    [\033[1;36m25\033[1;31m] \033[1;37m• \033[1;33mMUDAR SENHA ROOT \033[1;31m
-[\033[1;36m11\033[1;31m] \033[1;37m• \033[1;33mSPEEDTEST\033[1;31m          [\033[1;36m26\033[1;31m] \033[1;37m• \033[1;33mAUTO EXECUCAO $autm \033[1;31m
+[\033[1;36m08\033[1;31m] \033[1;37m• \033[1;33mREMOVER EXPIRADOS\033[1;31m  [\033[1;36m23\033[1;31m] \033[1;37m• \033[1;33mADICIONAR HOST \033[1;31m 
+[\033[1;36m09\033[1;31m] \033[1;37m• \033[1;33mRELATORIO USUARIOS\033[1;31m [\033[1;36m24\033[1;31m] \033[1;37m• \033[1;33mREMOVER HOST \033[1;31m
+[\033[1;36m10\033[1;31m] \033[1;37m• \033[1;33mMODO DE CONEXAO\033[1;31m    [\033[1;36m25\033[1;31m] \033[1;37m• \033[1;33mINFO VPS \033[1;31m
+[\033[1;36m11\033[1;31m] \033[1;37m• \033[1;33mSPEEDTEST\033[1;31m          [\033[1;36m26\033[1;31m] \033[1;37m• \033[1;33mMUDAR SENHA ROOT \033[1;31m
 [\033[1;36m12\033[1;31m] \033[1;37m• \033[1;33mBANNER\033[1;31m             [\033[1;36m00\033[1;31m] \033[1;37m• \033[1;33mSAIR \033[1;32m<\033[1;33m<\033[1;31m<\033[1;31m
 [\033[1;36m13\033[1;31m] \033[1;37m• \033[1;33mTRAFEGO\033[1;31m                  
 [\033[1;36m14\033[1;31m] \033[1;37m• \033[1;33mOTIMIZAR\033[1;31m           [\033[1;36mAT\033[1;31m] $var01 \033[1;32mATUALIZAR SCRIPT \033[1;31m
@@ -303,21 +303,13 @@ case "$x" in
    exit;
    ;;
    18)
-   clear
-   detalhes
-   echo -ne "\n\033[1;31mENTER \033[1;33mpara retornar ao \033[1;32mMENU!\033[0m"; read
+   blockt
    ;;
    19)
-   clear
-   addhost
-   echo -ne "\n\033[1;31mENTER \033[1;33mpara retornar ao \033[1;32mMENU!\033[0m"; read
-   menu2
+   botssh
    ;;
    20)
-   clear
-   delhost
-   echo -ne "\n\033[1;31mENTER \033[1;33mpara retornar ao \033[1;32mMENU!\033[0m"; read
-   menu2
+   autoexec
    ;;
    21)
    clear
@@ -329,10 +321,16 @@ case "$x" in
    sleep 3
    ;;
    23)
-   blockt
+   clear
+   addhost
+   echo -ne "\n\033[1;31mENTER \033[1;33mpara retornar ao \033[1;32mMENU!\033[0m"; read
+   menu
    ;;
    24)
-   botssh
+   clear
+   delhost
+   echo -ne "\n\033[1;31mENTER \033[1;33mpara retornar ao \033[1;32mMENU!\033[0m"; read
+   menu
    ;;
    25)
    clear
@@ -340,7 +338,9 @@ case "$x" in
    sleep 3
    ;;
    26)
-   autoexec
+   clear
+   detalhes
+   echo -ne "\n\033[1;31mENTER \033[1;33mpara retornar ao \033[1;32mMENU!\033[0m"; read
    ;;
    at | AT)
    attscript
