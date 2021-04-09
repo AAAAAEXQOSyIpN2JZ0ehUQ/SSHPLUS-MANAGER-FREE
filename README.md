@@ -1,4 +1,4 @@
-﻿# SSHPLUS MANAGER v35
+﻿# SSHPLUS MANAGER
 ```
 * UPDATE 14/03/2021 - PROYECTO FINALIZADO
 ```
@@ -21,6 +21,7 @@ SCRIPT SSHPLUS MANAGER es un script con un conjunto de características y herram
 * Debian 8 Server x86_64  / Debian 9 Server x86_64
 * Recomendamos Debian 9 Server x86_64 / Ubuntu 16.04 Server x86_64
 * Se recomienda usar una distro nueva o formatiada
+* Para instalar el segundo menu adaptado ejecute el comando ( menuV2 )
 * Install arquivos originales encriptados por @crazy_vpn
   https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/Sistema
 
@@ -30,7 +31,6 @@ SCRIPT SSHPLUS MANAGER es un script con un conjunto de características y herram
 apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Plus; chmod 777 Plus; ./Plus
 
 * SI NECESITAN REINSTALAR EL SCRIPTS PUEDEN EJECUTAR EL COMANDO: ( sshplus )
-* SI DESEA INSTALAR EL SEGUNDO MENU ADAPTADO PUEDEN EJECUTAR EL COMANDO: ( menuV2 )
 
 -------------------------------------------------------------------------------
 
@@ -44,6 +44,12 @@ PAINEL SSHPLUS es una herramienta completa de gestión y supervisión de usuario
                  también tiene una interfaz intuitiva, a la que se puede acceder desde cualquier 
                  navegador ...
 ```
+
+## :heavy_exclamation_mark: Requerimientos
+
+* Recomendamos Ubuntu 14.04 Server x86_64
+* Se recomienda usar una distro nueva o formatiada
+✓ apt-get install php-ssh2 -y
 
 ## :book: Installation
 
