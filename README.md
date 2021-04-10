@@ -106,12 +106,6 @@ apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AA
 
 -------------------------------------------------------------------------------
 
-## :scroll: Registro de cambios
-
-**VERSION: v35**
-
-https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/versao
-
 ## :octocat: Contribute
 
 1. @crazy_vpn - Developer of SSHPlus Manager
