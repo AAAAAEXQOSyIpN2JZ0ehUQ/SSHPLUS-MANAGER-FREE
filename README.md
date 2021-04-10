@@ -49,7 +49,7 @@ PAINEL SSHPLUS es una herramienta completa de gestión y supervisión de usuario
 
 * Recomendamos Ubuntu 14.04 Server x86_64
 * Se recomienda usar una distro nueva o formatiada
-✓ apt-get install php-ssh2 -y
+* apt-get install php-ssh2 -y
 
 ## :book: Installation
 
