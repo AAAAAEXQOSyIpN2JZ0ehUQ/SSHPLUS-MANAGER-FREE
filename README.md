@@ -21,6 +21,7 @@ SCRIPT SSHPLUS MANAGER es un script con un conjunto de características y herram
 * Recomendamos Debian 9 Server x86_64 / Ubuntu 16.04 Server x86_64
 * Se recomienda usar una distro nueva o formatiada
 * Para instalar el segundo menu adaptado ejecute el comando ( menuV2 )
+* Para instalar el tercer menu adaptado formato ADM ejecute el comando ( menuV3 )
 
 ## :book: Installation
 
@@ -33,16 +34,16 @@ apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AA
 ## :book: Installation Utilitarios
 
 1. SCRIPT OFICIAL PAINEL SSHPLUS WEB VERSAO: 20 (Installation Directa)
-   PAINEL SSHPLUS WEB (VERSIONES)  
+2. PAINEL SSHPLUS WEB (VERSIONES)  
 https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/Panel_Web
 
-2. GENERADOR DE KEY SSHPLUS MANAGER 
+3. GENERADOR DE KEY SSHPLUS MANAGER 
 https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/Generador
-3. MULTI-INTALADOR SSHPLUS 
+4. MULTI-INTALADOR SSHPLUS 
 https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/Multi-Instalador
-4. TCP-Tweaker-1.0 (TCP-SPEED) 
+5. TCP-Tweaker-1.0 (TCP-SPEED) 
 https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/TCP-Speed
-5. INSTALL ARQUIVOS ORIGINALES ENCRIPTADOS POR @crazy_vpn 
+6. INSTALL ARQUIVOS ORIGINALES ENCRIPTADOS POR @crazy_vpn 
 https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/Sistema
 
 -------------------------------------------------------------------------------
