@@ -171,13 +171,13 @@ case "$x" in
    clear
    addhost
    echo -ne "\n\033[1;31mENTER \033[1;33mpara retornar ao \033[1;32mMENU!\033[0m"; read
-   menu2
+   ferramentascodes
    ;;
    7 | 07)
    clear
    delhost
    echo -ne "\n\033[1;31mENTER \033[1;33mpara retornar ao \033[1;32mMENU!\033[0m"; read
-   menu2
+   ferramentascodes
    ;;
    8 | 08)
    clear

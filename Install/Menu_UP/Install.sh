@@ -5,5 +5,5 @@ wget -O /bin/ferramentascodes https://raw.githubusercontent.com/AAAAAEXQOSyIpN2J
 wget -O /bin/menu https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Menu_UP/menu; chmod +x /bin/menu
 rm $HOME/Install.sh > /dev/null 2>&1
 rm $HOME/Install.sh.1 > /dev/null 2>&1
-
 /bin/menu
+#fim
