@@ -34,16 +34,25 @@ apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AA
 ## :book: Installation Utilitarios
 
 **SCRIPT OFICIAL PAINEL SSHPLUS WEB VERSAO: 20 (Installation Directa)**
+
 **PAINEL SSHPLUS WEB (VERSIONES)**
+
 https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/Panel_Web
 
 **GENERADOR DE KEY SSHPLUS MANAGER**
+
 https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/Generador
+
 **MULTI-INTALADOR SSHPLUS**
+
 https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/Multi-Instalador
+
 **TCP-Tweaker-1.0 (TCP-SPEED)**
+
 https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/TCP-Speed
+
 **INSTALL ARQUIVOS ORIGINALES ENCRIPTADOS POR @crazy_vpn**
+
 https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/Sistema
 
 -------------------------------------------------------------------------------
