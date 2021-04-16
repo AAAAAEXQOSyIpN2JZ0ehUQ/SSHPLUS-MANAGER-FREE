@@ -34,7 +34,7 @@ apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AA
 ## :book: Installation Utilitarios
 
 1. SCRIPT OFICIAL PAINEL SSHPLUS WEB VERSAO: 20 (Installation Directa)
-1.1. PAINEL SSHPLUS WEB (VERSIONES)  
+11. PAINEL SSHPLUS WEB (VERSIONES)  
 https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/Panel_Web
 
 2. GENERADOR DE KEY SSHPLUS MANAGER 
