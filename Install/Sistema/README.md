@@ -1,9 +1,7 @@
-﻿# SSHPLUS MANAGER v35
-```
-* UPDATE 14/03/2021 - PROYECTO FINALIZADO
-```
-![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/SSHPLUS_MANAGER.jpg)
+﻿# INSTALL ARQUIVOS ORIGINALES ENCRIPTADOS POR @crazy_vpn
+# SCRIPT OFICIAL SSHPLUS MANAGER VERSAO: 35
 
+![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/SSHPLUS_MANAGER.jpg)
 
 ```
 SCRIPT SSHPLUS MANAGER es un script con un conjunto de características y herramientas adecuadas para 
@@ -23,9 +21,6 @@ SCRIPT SSHPLUS MANAGER es un script con un conjunto de características y herram
 * Se recomienda usar una distro nueva o formatiada
 
 ## :book: Installation
-
-* SCRIPT OFICIAL SSHPLUS MANAGER VERSAO: 35
-* INSTALL ARQUIVOS ORIGINALES ENCRIPTADOS POR @crazy_vpn
 
 apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Sistema/Plus; chmod 777 Plus; ./Plus
 
