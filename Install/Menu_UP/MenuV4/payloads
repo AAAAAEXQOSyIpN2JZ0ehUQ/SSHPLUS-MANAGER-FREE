@@ -1,0 +1,755 @@
+----------------------------------------------------------------------------
+
+
+[auth][auth]get http://ssh.proxy.ip/<ponte_conection_>mhost/
+User-Agent: YES
+[lf][raw][method] mhost:443 HTTP/1.1
+Proxy-Authorization: Keep-Alive
+Connection: Close
+[realData][crlf]get mhost/ HTTP/1.1[crlf]CONNECT mhost[crlf][crlf][delay_split][auth][auth][auth][auth]GET mhost/ HTTP/1.1[crlf][method] mhost[crlf][crlf][delay_split]GET mhost/ HTTP/1.1[crlf][method] mhost[crlf][crlf][delay_split]GET mhost/ HTTP/1.1[crlf][method] mhost[crlf][crlf][delay_split]GET mhost/ HTTP/1.1[crlf][method] ecob.claro.com.br[crlf][crlf][delay_split]get mhost/ HTTP/1.1[crlf][method] mhost[crlf][crlf][delay_split]GET http://ecob.claro.com.br/ HTTP/1.1
+User-Agent: YES
+[lf][raw][method] mhost:443 HTTP/1.1
+Proxy-Authorization: Keep-Alive
+Connection: Close
+[realData][crlf]get mhost/ HTTP/1.1[crlf]CONNECT ecob.claro.com.br[crlf][crlf][delay_split]
+
+----------------------------------------------------------------------------
+
+
+[auth][auth][auth][auth]get http://mhost/ HTTP/1.1[crlf][method] mhost[crlf][crlf][delay_split]GET http://mhost/ HTTP/1.1[crlf][method] mhost[crlf][crlf][delay_split]GET http://mhost/<ponte_conection_>mhost/ HTTP/1.1[crlf][method] mhost[crlf][crlf][delay_split]get http://mhost/<ponte_conection_>mhost/ HTTP/1.1[crlf][method] mhost[crlf][crlf][delay_split]GET http://mhost/<ponte_conection_>mhost/ HTTP/1.1[crlf][method] mhost[crlf][crlf][delay_split]GET http://mhost/ HTTP/1.1
+User-Agent: YES
+[lf][raw][method] mhost:443 HTTP/1.1
+Proxy-Authorization: Keep-Alive
+Connection: Close
+[realData][crlf][auth][auth][auth][auth][auth][auth][auth][auth][auth][auth][auth][lf]
+
+----------------------------------------------------------------------------
+
+
+get http://mhost/ HTTP/1.1
+User-Agent: [ua][crlf][host][crlf][crlf][split]CONNECT ip da. Vps :443 HTTP/1.0[crlf][crlf]CONNECT mhost:443 HTTP/1.1[crlf]CONNECT [host_port] HTTP/1.0[crlf][crlf]GET http://mhost/ HTTP/1.0
+Host: mhost
+Proxy-Authorization: basic: mhost
+User-Agent: [ua]
+Connection: close
+Proxy-Connection: Keep-Alive [crlf][host][crlf][crlf][split]CONNECT [host_port] HTTP/1.0[crlf][crlf][crlf]GET http://mhost/ HTTP/1.0[crlf]Host: mhost/[crlf][host][crlf][crlf]CONNECT [host_port] HTTP/1.0[crlf][crlf][realData][crlf][crlf][crlf]
+
+
+----------------------------------------------------------------------------
+
+
+
+[method] mhost:443 HTTP/1.1[lf]CONNECT [host_port] [protocol][lf][lf]GET http://mhost/ HTTP/1.1\nHost: mhost\nConnection: close\nConnection: close\nUser-Agent:[ua][lf]Proxy-Connection: Keep-Alive[lf][host][crlf][lf][delay_split]CONNECT [host_port] [protocol][lf][lf]CONNECT [host_port] [protocol][crlf][realData][crlf][crlf]
+
+
+-----------------------------------------------------------------------------
+
+get http://mhost/ HTTP/1.1[lf]User-Agent: KDDI[lf][host][lf][lf][lf][raw]CONNECT [host_port] [protocol][lf]CONNECT [ssh] HTTP/1.1[lf]CONNECT [host_port] [protocol][lf][lf]DELETE http://mhost/HTTP/1.1[lf]Host: m.opera.com[lf]Proxy-Authorization: basic: *[lf]User-Agent: KDDI[lf]Connection: close[lf]Proxy-Connection: Direct[lf][host][lf][lf][raw]CONNECT [host_port] [protocol][lf][lf][lf][raw][method] http://mhost[port] HTTP/1.1[lf]Host: [auth][lf][host][lf][lf]CONNECT [host] [protocol][lf][lf][raw]CONNECT [host] [protocol][lf][lf]
+
+
+-----------------------------------------------------------------------------
+
+get http://mhost HTTP/1.1[crlf]Host: mhost[crlf][crlf][netData][crlf][instant_split]MOVE http://mhost[delay_split][lf]__[crlf][crlf][netData][crlf][instant_split]MOVE http://mhost[delay_split][lf]__[crlf][crlf][netData][crlf][instant_split]MOVE http://mhost[delay_split][lf]__[crlf]X-Online-Host: mhost[crlf]Packet Length: Authorization[crlf]Packet Content: Authorization[crlf]Transfer-Encoding: chunked[crlf]Referer: mhost[lf]__[crlf]
+
+
+----------------------------------------------------------------------------
+
+
+[lf][lf]CONNECT [host_port]@mhost [protocol][crlf][delay_split]GET http://mhost/ HTTP/1.1[crlf]Host: mhost[crlf]User-Agent: [ua][lf][host]@mhost [protocol][crlf][crlf]
+
+
+
+----------------------------------------------------------------------------
+
+
+[immutable][method] [host_port] [delay_split]GET http://mhost HTTP/1.1[netData][crlf]HTTP:mip:80[crlf]X-GreenArrow-MtaID: smtp1-1[crlf]CONNECT http://mhost/ HTTP/1.1[crlf]CONNECT http://mhost/ HTTP/1.0[crlf][split]CONNECT http://mhost/ HTTP/1.1[crlf]CONNECT http://mhost/ HTTP/1.1[crlf][crlf]
+
+
+-----------------------------------------------------------------------------
+
+[method] [host_port]?[split]GET http://mhost:8080/[crlf][crlf]get [host_port]?[split]OPTIONS http://mhost/[crlf]Connection: Keep-Alive[crlf]User-Agent: Mozilla/5.0 (Android; Mobile; rv:35.0) Gecko/35.0 Firefox/35.0[crlf]CONNECT [host_port] [crlf]GET [host_port]?[split]get http://mhost/[crlf][crlf][method] mip:80[split]GET mhost/[crlf][crlf]: Cache-Control:no-store,no-cache,must-revalidate,post-check=0,pre-check=0[crlf]Connection:close[crlf]CONNECT [host_port]?[split]GET http://mhost:/[crlf][crlf]POST [host_port]?[split]GET
+mhost:/[crlf]Content-Length: 999999999\r\n\r\n
+
+-----------------------------------------------------------------------------
+CONNECT [host_port] [protocol][crlf][delay_split]get http://mhost/ HTTP/1.1[crlf]Host: mhost[crlf]Referer: mhost[crlf]X-Online-Host: mhost[crlf]X-Forward-Host: mhost[crlf]X-Forwarded-For: mhost[crlf]Connection: Keep-Alive[crlf]User-Agent: [ua][crlf]CONNECT [host_port] [protocol][crlf][crlf]
+
+-----------------------------------------------------------------------------
+
+CONNECT [host_port]GET http://mhost/ [protocol][lf][split]get mhost/ HTTP/1.1[lf][lf]
+
+-----------------------------------------------------------------------------
+
+CONNECT [host_port]get http://mhost/ [protocol][lf][split]GET http://mhost/ HTTP/1.1[lf]Host: navegue.vivo.ddivulga.com/pacote[lf][host_port]get http://mhost/ [protocol][lf][split]GET http://mhost/ HTTP/1.1[lf]Host: mhost[lf][host_port]GET http://mhost/ [protocol][lf][split]get http://mhost/ HTTP/1.1[lf]Host: mhost[lf][host_port]GET http://mhost/ [protocol][lf][split]get http://mhost/ HTTP/1.1[lf]Host: mhost[lf][host_port]GET http://mhost/ [protocol][lf][split]CONNECT [host_port]@mhost/ [protocol][crlf]Host: mhost/[crlf]GET mhost/ HTTP/1.1[crlf]HEAD mhost HTTP/1.1[crlf]TRACE mhost HTTP/1.1[crlf]OPTIONS mhost HTTP/1.1[crlf]PATCH mhost/ HTTP/1.1[crlf]PROPATCH mhost/ HTTP/1.1[crlf]DELETE mhost HTTP/1.1[crlf]PUT mhost/ HTTP/1.1[crlf]Host: mhost/[crlf]Host: mhost/[crlf]X-Forward-Host: mhost[crlf]X-Forwarded-For: mhost[crlf]X-Forwarded-For: mhost[protocol][crlf][crlf]
+
+-----------------------------------------------------------------------------
+
+CONNECT [host_port][split]get http://mhost HTTP/1.1[crlf]Host: mhost/[crlf]X-Forward-Host: mhost/[crlf]Connection: Keep-Alive[crlf]Connection: Close[crlf]User-Agent: [ua][crlf][crlf]
+
+-----------------------------------------------------------------------------
+
+CONNECT [host_port][split]get mhost/ HTTP/1.1[crlf] [crlf][immutable]
+
+
+-----------------------------------------------------------------------------
+
+CONNECT [host_port] [split]get http://mhost/ EHTTP/1.1 200 OK[crlf]HTTP Host: speedtest.net;m.whatsapp.com;sonymobile.com.br;caixa.sp.gov;mhost.co.id;vivo.com.br;[crlf]Forwarded-For: m.whatsapp.com/speedtest.bet[crlf]Connection: Keep-Alive[crlf][crlf][raw][crlf][instant_split]get http://mhost/ HTTP/1.1[crlf]Host: mhost[crlf]Online-Host: mhost[crlf]ping-server: www.google.com[crlf]Connection: Close[crlf]Bandwith-Speed: 10GBps,lock,Keep-Alive[crlf]User-Agent: Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1; WOW64; Trident/4.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; .NET4.0C)[crlf][crlf]ping m.facebook.com[crlf]Content-Type: text/html; charset=utf-8X-[crlf]Content-Type: OptionsnosniffAccess-Control-Allow-Credentialstrueaccess-control-allow[split][method] OPTIONSExpiresSat, 01 Jan 2000 00:00:00 GMT0„2(6317d ago)X-FB-Debug1d4XXullTOxJZaZVk8PkrdpTcsyCcqDpHzZ6bFycC+ELii5hc8/lFzWhQ98EO/Cq2VJDnK2l5VTKEJISC++PbQ[crlf]Connection: close[crlf]Connection: Keep-Alive[crlf]Content-Length: 999999999999[crlf][crlf]
+
+
+-----------------------------------------------------------------------------
+
+CONNECT [host_port]@mhost [instant_split]GET http://mhost/ HTTP/1.1[crlf]Host: mhost[crlf]X-Online-Host: mhost[crlf][crlf]
+
+-----------------------------------------------------------------------------
+
+get http://mhost/ HTTP/1.1[crlf]get mhost/[crlf]Connection: close Keep-Alive[crlf]User-Agent: [ua][crlf][crlf]CONNECT [host_port] [protocol][crlf][crlf][immutable]
+
+-----------------------------------------------------------------------------
+
+CONNECT [host_port][split]GET mhost/ HTTP/1.1[crlf][crlf][immutable]
+
+-----------------------------------------------------------------------------
+
+CONNECT [host_port]@mhost/ [instant_split]get http://mhost/ HTTP/1.1[crlf]
+
+-----------------------------------------------------------------------------
+
+[immutable]get [host_port] [protocol][crlf][delay_split]CONNECT http://mhost/ HTTP/1.1[crlf]
+
+-----------------------------------------------------------------------------
+
+CONNECT [host_port] [instant_split]get http://mhost/ HTTP/1.1[crlf]Connection: Keep-Alive[crlf]User-Agent: [ua][crlf][crlf][instant_split]get http://mhost/
+HTTP/1.1[ua][crlf][crlf]
+
+-----------------------------------------------------------------------------
+
+get http://mhost/ HTTPS/2.0[auth][crlf]Host: mhost[crlf]X-Online-Host: mhost[crlf]X-Forward-Host: mhost[crlf]X-Forwarded-For: mhost[crlf]Connection: Keep-Alive[crlf]User-Agent: [ua][crlf]CONNECT [host_port] [auth][crlf][crlf][delay_split]CONNECT [host_port] [protocol][crlf]JAZZ http://mhost/ HTTP/1.1[crlf]Host: mhost[crlf]X-Online-Host: mhost[crlf]X-Forward-Host: mhost[crlf]X-Forwarded-For: mhost[crlf]Connection: Keep-Alive[crlf]User-Agent: [ua][crlf]CONNECT [host_port] [protocol][crlf][crlf][delay_split]CONNECT [host_port] [method][cr]?[lf][crlf][crlf]
+
+-----------------------------------------------------------------------------
+
+CONNECT [host_port] [protocol]\r
+\r
+get http://mhost HTTP/1.1\r
+Host: mhost\r
+X-Online-Host: mhost\r
+X-Forward-Host: mhost\r
+User-Agent: Mozilla/5.0 (X11; U; Linux x86_64; en-gb) AppleWebKit/534.35 (KHTML, like Gecko) Chrome/11.0.696.65 Safari/534.35 Puffin/2.9174AP\r
+\r
+
+-----------------------------------------------------------------------------
+
+get http://mhost/ HTTP/1.1[lf]Host: mhost 
+User-Agent: Yes
+Connection: close
+Proxy-Connection: Keep-Alive
+[crlf][crlf]CONNECT [host_port][protocol][crlf][crlf][immutable]
+
+-----------------------------------------------------------------------------
+
+
+get [host_port][protocol][crlf][split]get http://mhost/ HTTP/1.1[crlf]Host: mhost[crlf][raw][crlf]Connection: Keep-Alive[crlf]User-Agent: [ua][crlf]Connection: close[crlf]Proxy-connection: Keep-Alive[crlf]Proxy-Authorization: Basic[crlf]UseDNS: Yes[crlf]Cache-Control: no-cache[crlf][raw][crlf] [crlf]
+
+
+
+
+-----------------------------------------------------------------------------
+
+
+
+
+get http://mhost/ HTTP/1.1[crlf]Host: mhost[crlf] Access-Control-Allow-Credentials: true, true[lf] Access-Control-Allow-Headers: X-Requested-With,Content-Type, X-Requested-With,Content-Type[lf]  Access-Control-Allow-Methods: GET,PUT,OPTIONS,POST,DELETE, GET,PUT,OPTIONS,POST,DELETE[lf]  Age: 8, 8[lf] Cache-Control: max-age=86400[lf] public[lf] Connection: keep-alive[lf] Content-Type: text/html; charset=UTF-8[crlf]Content-Length: 9999999999999[crlf]UseDNS: Yes[crlf]Vary: Accept-Encoding[crlf][raw][crlf] [crlf][crlf]
+
+
+-----------------------------------------------------------------------------
+
+
+get http://mhost/ HTTP/1.1[crlf]Host: mhost[crlf] Access-Control-Allow-Credentials: true, true[lf] Access-Control-Allow-Headers: X-Requested-With,Content-Type, X-Requested-With,Content-Type[lf]  Access-Control-Allow-Methods: GET,PUT,OPTIONS,POST,DELETE, GET,PUT,OPTIONS,POST,DELETE[lf]  Age: 8, 8[lf] Cache-Control: max-age=86400[lf] public[lf] Connection: keep-alive[lf] Content-Type: text/html; charset=UTF-8[crlf]Content-Length: 9999999999999[crlf]Vary: Accept-Encoding[crlf][raw][crlf] [crlf][crlf]
+
+
+-----------------------------------------------------------------------------
+
+
+[netData][split][raw][crlf]Host: mhost[crlf]Connection: Keep-Alive[crlf][crlf]
+
+
+-----------------------------------------------------------------------------
+
+
+GET http://mhost/ HTTP/1.1
+Host: mhost/
+User-Agent: Yes
+Connection: close
+Proxy-Connection: update
+[crlf][crlf][netData][crlf] [crlf][crlf]
+
+
+-----------------------------------------------------------------------------
+
+
+get http://mhost/ HTTP/1.1[crlf]host: http://mhost/[crlf]Connection: close update[crlf]User-Agent: [ua][crlf][crlf]CONNECT [host_port] [protocol][crlf][crlf][crlf][crlf]
+
+
+
+-----------------------------------------------------------------------------
+
+
+get [host_port][protocol][crlf][split]get http://mhost/ HTTP/1.1[crlf]Host: mhost[crlf][raw][crlf][crlf]User-Agent: [ua][crlf]Connection: Close[crlf]Proxy-connection: Close[crlf]Proxy-Authorization: Basic[crlf]Cache-Control: no-cache[crlf]Connection: Keep-Alive[crlf][raw][crlf] [crlf]
+
+-----------------------------------------------------------------------------
+
+get http://mhost/ HTTP/1.1[crlf]Host: mhost[crlf]Content-Type: text/html; charset=iso-8859-1[crlf]Connection: close[crlf][crlf][crlf]User-Agent: [ua][crlf][crlf]Referer: mhost[crlf]Cookie: mhost[crlf]Proxy-Connection: Keep-Alive [crlf][crlf]CONNECT [host_port] [protocol][crlf] [crlf][crlf]
+
+
+-----------------------------------------------------------------------------
+
+get http://mhost/ HTTP/1.1
+Host: mhost
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Linux; Android 5.1; LG-X220 Build/LMY47I) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.83 Mobile Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Referer: http://mhost
+Accept-Encoding: gzip, deflate, sdch
+Accept-Language: pt-BR,pt;q=0.8,en-US;q=0.6,en;q=0.4
+Cookie: _ga=GA1.2.2045323091.1494102805; _gid=GA1.2.1482137697.1494102805; tfp=80bcf53934df3482b37b54c954bd53ab; tpctmp=1494102806975; pnahc=0; _parsely_visitor={%22id%22:%22719d5f49-e168-4c56-b7c7-afdce6daef18%22%2C%22session_count%22:1%2C%22last_session_ts%22:1494102810109}; sc_is_visitor_unique=rx10046506.1494105143.4F070B22E5E94FC564C94CB6DE2D8F78.1.1.1.1.1.1.1.1.1
+Connection: close
+Proxy-Connection: Keep-Alive
+[crlf][netData][crlf] [crlf][crlf]
+
+-----------------------------------------------------------------------------
+
+
+
+get [host_port][protocol][crlf][split]get http://mhost/ HTTP/1.1[crlf]Host: mhost[crlf][raw][crlf]Connection: Keep-Alive[crlf]User-Agent: [ua][crlf]Connection: close[crlf]Proxy-connection: Keep-Alive[crlf]Proxy-Authorization: Basic[crlf]Cache-Control: no-cache[crlf][raw][crlf] [crlf]
+
+-----------------------------------------------------------------------------
+
+get http://mhost[crlf] HTTP/1.1[crlf]Host: mhost[crlf]User-Agent: [ua][crlf]Connection: close [crlf]
+Referer:http://mhost[crlf]
+Content-Type: text/html; charset=iso-8859-1[crlf]Content-Length:0[crlf]Accept: text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5[crlf][raw][crlf] [crlf]
+
+-----------------------------------------------------------------------------
+
+get http://mhost/ HTTP/1.1[lf]Host: mhost
+User-Agent: null
+Connection: close
+Proxy-Connection: x-online-host
+[lf][lf] CONNECT [host_port] [protocol] [netData][lf]Content-Length: 130 [lf][lf]
+
+
+-----------------------------------------------------------------------------
+
+get [host_port] [protocol][crlf][delay_split]GET http://mhost/ HTTP/1.1[crlf]Host: mhost[crlf]Connection: Keep-Alive[crlf]User-Agent: [ua][crlf]Connection: close[crlf][crlf]User-Agent: Yes[lf]Accept-Encoding: gzip,deflate[lf]Accept-Charset: ISO-8859-1,utf-8;q=0.7,;q=0.7[lf]Connection: Basic[lf]Referer: mhost[lf]Cookie: mhost [lf]Proxy-Connection: Keep-Alive[crlf][crlf][netData][crlf] [crlf][crlf]
+
+-----------------------------------------------------------------------------
+
+get [host_port] [protocol][crlf][delay_split]GET http://mhost/ HTTP/1.1[crlf]Host: mhost[crlf]Connection: Keep-Alive[crlf]User-Agent: [ua][crlf]Connection: close[crlf]Accept-Language: en-us,en;q=0.5[crlf]Accept-Encoding: gzip,deflate[crlf]Accept-Charset: ISO-8859-1,utf-8;q=0.7,;q=0.7[crlf]Keep-Alive: 115[crlf]Connection: keep-alive[crlf]Referer: mhost[crlf]Cookie: mhost Proxy-Connection: Keep-Alive[crlf][crlf][netData][crlf] [crlf][crlf]
+
+-----------------------------------------------------------------------------
+
+get [host_port] [protocol][crlf][delay_split]GET http://mhost/ HTTP/1.1[crlf]Host: mhost[crlf]Connection: Keep-Alive[crlf]User-Agent: [ua][crlf]Connection: close[crlf]Proxy-connection: Keep-Alive[crlf]Proxy-Authorization: Basic[crlf]Cache-Control: no-cache[crlf][raw][crlf] [crlf]
+
+-----------------------------------------------------------------------------
+
+get [host_port] [protocol][crlf][delay_split]GET http://mhost/ HTTP/1.1[crlf]Host: mhost[crlf]Connection: Keep-Alive[crlf]User-Agent: [ua][crlf]Connection: close[crlf][crlf][raw][crlf] [crlf]
+
+-----------------------------------------------------------------------------
+
+get http://mhost/ HTTP/1.1[lf]Host: mhost[crlf][crlf][netData][crlf] [crlf][crlf]CONNECT [host_port][method]HTTP/1.1[lf]HEAD http://mhost/ [protocol][lf]Host: mhost[lf]CONNECT  [lf]DELETE http://mhost/ HTTP/1.1[crlf]CONNECT mhost [crlf][crlf][netData][crlf] [crlf][crlf]
+
+
+-----------------------------------------------------------------------------
+
+get http://mhost/ HTTP/1.1[crlf]Host: mhost[crlf][crlf][netData][crlf]@mip [crlf][crlf]http://mhost/ HTTP/1.1[crlf]mip[crlf][crlf] [crlf][crlf]http://mhost/ HTTP/1.1[crlf]Host@mip[crlf][crlf] [crlf][crlf] http://mhost/ HTTP/1.1[crlf]Host mhost/[crlf][crlf][netData][crlf] [crlf][crlf] http://mhost/ HTTP/1.1[crlf] [crlf][crlf][netData][crlf] [crlf][crlf] http://mhost/ HTTP/1.1[cr][lf] [crlf][crlf][netData][cr][lf] [crlf][crlf]CONNECT mip:22@http://mhost/ HTTP/1.1[crlf] [crlf][crlf][netData][crlf] [crlf][crlf]
+
+
+-----------------------------------------------------------------------------
+get [host_port]@mhost HTTP/1.1[crlf][crlf]CONNECT http://mhost/ [protocol][crlf]Host: mhost[crlf]X-Forwarded-For: mhost[crlf]Connection: close[crlf]User-Agent: [ua][crlf]Proxy-connection: Keep-Alive[crlf]Proxy-Authorization: Basic[crlf]Cache-Control : no-cache[crlf][crlf]
+
+-----------------------------------------------------------------------------
+CONNECT [host_port]@mhost HTTP/1.1[crlf][crlf]get http://mhost/ [protocol][crlf]Host: mhost[crlf]X-Forwarded-For: mhost[crlf]Connection: close[crlf]User-Agent: [ua][crlf]Proxy-connection: Keep-Alive[crlf]Proxy-Authorization: Basic[crlf]Cache-Control : no-cache[crlf][crlf]
+
+-----------------------------------------------------------------------------
+
+get https://mhost/ HTTP/1.1 
+Host: mhost[crlf]User-Agent: Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US; rv:1.9.2.13) Gecko/20101203 Firefox/3.6.13
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip,deflate
+Accept-Charset: ISO-8859-1,utf-8;q=0.7,;q=0.7
+Keep-Alive: 115
+Connection: keep-alive
+Referer: mhost
+Cookie: mhost Proxy-Connection: Keep-Alive [crlf][crlf][netData][crlf] [crlf][crlf]
+
+-----------------------------------------------------------------------------
+
+get http://mhost/ HTTP/1.1[lf]Host: mhost[crlf]User-Agent: Yes[lf]Accept-Encoding: gzip,deflate[lf]Accept-Charset: ISO-8859-1,utf-8;q=0.7,;q=0.7[lf]Connection: Basic[lf]Referer: mhost[lf]Cookie: mhost [lf]Proxy-Connection: Keep-Alive[crlf][crlf][netData][crlf] [crlf][crlf]
+
+
+-----------------------------------------------------------------------------
+
+get http://mhost/ HTTP/1.1[crlf]Host: mhost[crlf]X-Online-Host: mhost[crlf]X-Forward-Host: mhost[crlf]X-Forwarded-For: mhost[crlf]Connection: Keep-Alive[crlf]User-Agent: [ua][crlf][crlf][delay_split]CONNECT [host_port]@mhost [protocol][crlf][crlf]
+
+
+----------------------------------------------------------------------------
+
+get http://mhost/ HTTP/1.1[lf]DATA: 2048B[lf]Host: mhost[lf]User-Agent: Yes[lf]Connection: close[lf]Accept-Encoding: gzip[lf]Non-Buffer: true[lf]Proxy: false[lf][lf][netData][lf] [lf][lf]
+
+
+-----------------------------------------------------------------------------
+
+get [host_port] [protocol][crlf][delay_split]CONNECT http://mhost/ HTTP/1.1[crlf]Host: http://mhost/[crlf]X-Online-Host: mhost[crlf]X-Forward-Host: http://mhost[crlf]X-Forwarded-For: mhost[crlf]Connection: Keep-Alive[crlf]User-Agent: [ua][crlf]CONNECT [host_port] [protocol][crlf][crlf]
+
+
+-----------------------------------------------------------------------------
+
+get http://mhost/ HTTP/1.1
+Host: mhost
+Cache-Control=max-age=0
+[crlf][crlf]CONNECT [host_port] [protocol][crlf] [crlf][crlf]
+
+
+-----------------------------------------------------------------------------
+
+get [host_port]@mhost [protocol][crlf]X-Online-Host: mhost[crlf][crlf]
+
+
+-----------------------------------------------------------------------------
+
+get http://mhost/ HTTP/1.1[crlf]Referer: mhost[crlf]GET /HTTP/1.1[crlf]Host: mhost[crlf]Connection: Keep-Alive[crlf]User-Agent: [ua][crlf][raw][crlf][crlf][raw][crlf]Referer: mhost[crlf][crlf][crlf]
+
+
+-----------------------------------------------------------------------------
+
+get http://mhost/ HTTP/1.1\nHost: mhost/\nUser-Agent: Yes\nConnection: close\nProxy-Connection: Keep-Alive\n\r\n\r\n[netData]\r\n \r\n\r\n
+
+
+-----------------------------------------------------------------------------
+
+get http://mhost/ HTTP/1.1[crlf]Host: mhost[crlf]Connection: close Keep-Alive[crlf]User-Agent: [ua][crlf][crlf]CONNECT [host_port] [protocol][crlf][crlf]
+
+
+
+-----------------------------------------------------------------------------
+
+get http://mhost/ HTTP/1.1[crlf]Host: mhost[crlf]X-Online-Host: mhost[crlf]X-Forward-Host: mhost[crlf]Connection: Keep-Alive[crlf][crlf][split]CONNECT mhost@[host_port] [protocol][crlf][crlf]
+
+
+-----------------------------------------------------------------------------
+
+get http://mhost/ HTTP/1.1[crlf]Host: mhost[crlf]Connection: Keep-Alive[crlf][crlf][lf][realData][lf][lf]
+
+
+-----------------------------------------------------------------------------
+
+get http://mhost/ HTTP/1.1[crlf]Host: mhost[crlf][crlf][split]CONNECT [host_port][protocol][crlf][crlf]
+
+
+
+-----------------------------------------------------------------------------
+
+get http://mhost/ HTTP/1.1[crlf]Host: mhost[crlf]X-Forward-Host: mhost[crlf]Connection: Keep-Alive[crlf]User-Agent: [ua][crlf][crlf]CONNECT [host_port][protocol][crlf][crlf]
+
+
+-----------------------------------------------------------------------------
+
+[netData][crlf]
+get http://mhost/[crlf]
+Host: mhost[crlf][crlf]
+CONNECT mhost[protocol][crlf]
+
+
+-----------------------------------------------------------------------------
+
+get http://mhost/ HTTP/1.1\r\n
+Host: mhost\r\nConnection: Keep-Alive\r\n
+\r\n
+
+
+-----------------------------------------------------------------------------
+
+get http://mhost/ HTTP/1.1[crlf]
+Host: mhost[crlf]
+X-Online-Host: mhost[crlf][crlf]
+CONNECT mhost [protocol][crlf]
+[crlf]
+
+
+
+-----------------------------------------------------------------------------
+
+[netData][crlf]
+get http://mhost/ HTTP/1.1[crlf]
+Host: mhost[crlf]
+CONNECT mhost[protocol][crlf]
+
+
+
+-----------------------------------------------------------------------------
+
+[netData] HTTP/1.0\r\n\r\n
+get http://mhost/ HTTP/1.1\r\n
+Host: mhost\r\n
+Connection: Keep-Alive\r\n
+CONNECT mhost\r\n
+\r\n
+
+
+-----------------------------------------------------------------------------
+
+get http://mhost/ HTTP/1.1[crlf]Host: mhost[crlf][crlf]CONNECT [host_port] [protocol][crlf][crlf]
+
+
+-----------------------------------------------------------------------------
+
+get [host_port]@mhost HTTP/1.1[crlf]X-Real-IP:mip[crlf]X-Forwarded-For:http://mhost/ http://mhost/[crlf]X-Forwarded-Port:mhost[crlf]X-Forwarded-Proto:http[crlf]Connection:Keep-Alive[crlf][crlf][instant_split]CONNECT [ssh]HTTP/1.0[crlf][crlf]
+
+
+
+-----------------------------------------------------------------------------
+
+get http://mhost/ HTTP/1.1[crlf]Host:mhost[crlf][crlf][split][realData][crlf][crlf]
+
+
+
+-----------------------------------------------------------------------------
+
+get http://mhost/ HTTP/1.1[crlf]Host:
+mhost[crlf]Connection: Keep-Alive[crlf][crlf]
+[lf][realData][crlf]CONNECT mhost HTTP/1.1[lf][lf]
+
+
+-----------------------------------------------------------------------------
+
+
+get [host_port] HTTP/1.1[crlf][crlf]GET http://mhost/ [protocol][crlf]Host: mhost[crlf]X-Online-Host: mhost[crlf]X-Forward-Host: mhost[crlf]User-Agent: [ua][crlf][raw][crlf]
+[crlf]
+
+
+
+
+
+-----------------------------------------------------------------------------
+
+get [host_port]http://mhost/[protocol][crlf][split]mhost:/ HTTP/1.1[crlf]Host: mhost:[crlf]X-Forward-Host: mhost:[crlf]CONNECT [host_port] [protocol][crlf][crlf]
+
+
+
+-----------------------------------------------------------------------------
+
+get http://mhost/ HTTP/1.1[crlf]CONNECT mhost[crlf]Connection: close[crlf][crlf][netData][crlf] [crlf][crlf]
+
+
+
+-----------------------------------------------------------------------------
+
+get http://mhost/ HTTP/1.1[crlf]Host:
+http://mhost[crlf][crlf][netData][crlf] [crlf][crlf]
+
+
+
+-----------------------------------------------------------------------------
+
+get http://mhost/ HTTP/1.1\r\nHost: 
+mhost\r\n\r\n[netData]
+\r\n\r\n\r\n
+
+
+
+-----------------------------------------------------------------------------
+
+get http://mhost/ HTTP/1.1[crlf]Host: mhost[crlf][crlf][realData][crlf][crlf]
+
+
+
+-----------------------------------------------------------------------------
+
+get http://mhost/ HTTP/1.1\r\nX-Online-Host:mhost\r\n\r\nCONNECT mip:443
+HTTP/1.0\r\n \r\n\\r\n\r\n\\r\n\r\n\\r\n\r\n\\r\n\r\n\\\r\n
+
+
+
+-----------------------------------------------------------------------------
+
+get http://mhost/ HTTP/1.1\r\nGET: mhost\n\r\nCONNECT mip:443 
+HTTP/1.0\r\n \r\n\\r\n\r\n\\r\n\r\n\\r\n\r\n\\r\n\r\n\\\r\n
+
+
+
+-----------------------------------------------------------------------------
+
+
+get http://mhost/ HTTP/1.1[crlf]Host: mhost[crlf]Connection: close[crlf]CONNECT [host_port][protocol][crlf] [crlf][crlf]
+
+
+
+-----------------------------------------------------------------------------
+
+
+get http://mhost/[crlf]X-Forward-Host: mhost[crlf][crlf][netData][crlf] [crlf][crlf]
+
+
+
+-----------------------------------------------------------------------------
+
+get http://mhost/ HTTP/1.1[crlf][crlf]Host: mhost[crlf]X-Forward-Host: mhost[crlf][crlf][netData][crlf] [crlf][crlf]
+
+
+
+-----------------------------------------------------------------------------
+
+get  http://mhost/ HTTP/1.1[crlf][crlf]Host: mhost[crlf][crlf]CONNECT mhost [host_port] [protocol][crlf] [crlf][crlf]
+
+
+
+-----------------------------------------------------------------------------
+
+get http://mhost/[host_port][method]HTTP/1.1[crlf]mhost[lf]HEAD http://mhost[protocol][lf]Host: mhost [lf]
+
+
+
+-----------------------------------------------------------------------------
+
+get http://mhost/[host_port][method]HTTP/1.1[crlf]Forward-Host: mhost[lf]HEAD http://mhost[protocol][lf]Host: mhost [lf]
+
+
+
+-----------------------------------------------------------------------------
+
+get http://mhost/[host_port][method]HTTP/1.1[crlf]Connection: http://mhost[lf]HEAD http://mhost[protocol][lf]Host: mhost [lf]
+
+
+-----------------------------------------------------------------------------
+
+get http://mhost/[host_port][method]HTTP/1.1[crlf]CONNECT mhost@[port][protocol][lf]HEAD http://mhost[protocol][lf]Host: mhost [lf]
+
+
+
+-----------------------------------------------------------------------------
+
+get http://mhost/[host_port][method]HTTP/1.1[crlf]Connection: Keep-Alive[crlf]mhost@[host_port][lf]HEAD http://mhost[protocol][lf]Host: mhost [lf]
+
+
+-----------------------------------------------------------------------------
+
+
+get http://mhost/[host_port] HTTP/1.1[crlf][crlf][crlf]get http://mhost/[protocol][crlf]Host: mhost[crlf]X-Online-Host: mhost[crlf]X-Forwarded-For: mhost[crlf][netdata][crlf] [crlf]-Agent: mhost[ua][crlf]CONNECT mhost [host_port] [protocol][crlf][crlf]
+
+
+
+-----------------------------------------------------------------------------
+
+get http://mhost/[host_port] HTTP/1.1[crlf][crlf][crlf]get http://mhost/[protocol][crlf]Host: mhost[crlf]X-Online-Host: mhost[crlf]X-Forwarded-For: mhost[crlf]User-Agent: mhost[ua][crlf]CONNECT mhost [host_port] [protocol][crlf][crlf]
+
+
+
+-----------------------------------------------------------------------------
+get http://mhost/[host_port] HTTP/1.1[crlf][crlf][crlf][split]get http://mhost/[protocol][crlf]Host: mhost[crlf]X-Online-Host: mhost[crlf]X-Forwarded-For: mhost[crlf]User-Agent: mhost[ua][crlf]Connection: close[crlf]CONNECT mhost [host_port] [protocol][crlf][crlf]
+
+
+
+-----------------------------------------------------------------------------
+
+get http://mhost/ HTTP/1.1[crlf][crlf]Host: mhost[crlf][crlf]CONNECT mhost [host_port] [protocol][crlf][netData][crlf] [crlf][crlf]
+
+
+
+-----------------------------------------------------------------------------
+
+get http://mhost/ HTTP/1.1[crlf][crlf]Host: mhost[crlf][crlf]CONNECT mhost@[host_port] [protocol][crlf][raw][crlf] [crlf][crlf]
+
+
+-----------------------------------------------------------------------------
+
+get http://mhost/[host_port] HTTP/1.1[crlf][crlf][crlf]get http://mhost/[protocol][crlf]Host: mhost[crlf]X-Online-Host: mhost[crlf]Connection: Keep-Alive[crlf][crlf]
+
+
+-----------------------------------------------------------------------------
+
+get http://mhost/[host_port] HTTP/1.1[crlf][crlf][crlf]CONNECT http://mhost[protocol][crlf]Host: mhost[crlf]X-Online-Host: mhost[crlf]Connection: Keep-Alive[crlf][crlf]
+
+
+-----------------------------------------------------------------------------
+
+get http://mhost/[host_port] HTTP/1.1[crlf][crlf][crlf]get http://mhost/[protocol][crlf]Host: mhost[crlf]X-Online-Host: mhost[crlf]Connection: Keep-Alive[crlf]Connection: close[crlf][netData][crlf] [crlf]
+
+
+-----------------------------------------------------------------------------
+
+get http://mhost/[host_port] HTTP/1.1[crlf][crlf][crlf]get http://mhost/[protocol][crlf]Host: mhost[crlf]X-Online-Host: mhost[crlf]Connection: Keep-Alive[crlf][crlf]CONNECT mhost@[host_port][protocol][crlf] [crlf]
+
+
+
+-----------------------------------------------------------------------------
+
+get http://mhost/[host_port] HTTP/1.1[crlf][crlf][crlf]GET http://mhost/[protocol][crlf]Host: mhost[crlf]X-Online-Host: mhost[crlf]CONNECT mhost@[host_port][protocol][crlf] [crlf]
+
+
+-----------------------------------------------------------------------------
+get http://mhost/[host_port] HTTP/1.1[crlf][crlf][crlf]CONNECT http://mhost/[protocol]@[host_port][crlf]Host: mhost[crlf]X-Online-Host: mhost[crlf]Connection: Keep-Alive[crlf]Connection: close[crlf][netdata][crlf] [crlf][split]Connection: close[crlf]Content-Lenght: 20624[crlf]
+[crlf][netData][crlf] [crlf]
+
+
+-----------------------------------------------------------------------------
+
+get http://mhost/[host_port] HTTP/1.1[crlf][crlf][crlf]GET http://mhost/[protocol][crlf]Host: mhost[crlf]X-Online-Host: mhost[crlf]Connection: Keep-Alive[crlf]Content-Type: text[crlf]Cache-Control: no-cache[crlf]Connection: close[crlf]Content-Lenght: 20624[crlf]
+[crlf][netData][crlf] [crlf]
+
+
+-----------------------------------------------------------------------------
+
+get http://mhost/ HTTP/1.1[crlf]mhost\r\nHost:mhost\r\n\r\n[netData]\r\n \r\n\r\n
+
+
+
+-----------------------------------------------------------------------------
+
+get http://mhost/ HTTP/1.1[crlf][crlf]Host: mhost[crlf][crlf][realData][crlf][crlf]
+
+
+
+-----------------------------------------------------------------------------
+
+get http://mhost/[host_port][method]HTTP/1.1[crlf]Content-Type: text[crlf]Cache-Control: no-cache[crlf]Connection: close[crlf]Content-Lenght: 20624[crlf][lf]HEAD http://mhost[protocol][lf]Host: mhost lf]CONNECT mhost  [lf]
+
+
+-----------------------------------------------------------------------------
+
+get http://mhost/ HTTP/1.1[crlf][crlf][crlf]Content-Type: text[crlf]Cache-Control: no-cache[crlf]Connection: close[crlf]Content-Lenght: 20624[crlf][netData][crlf] [crlf][crlf]
+
+
+
+-----------------------------------------------------------------------------
+
+get http://mhost/ HTTP/1.1[crlf][crlf]host: mhost[crlf][crlf][realData][crlf] [crlf][crlf]
+
+
+
+-----------------------------------------------------------------------------
+
+get http://mhost/ HTTP/1.1[crlf][crlf]Host: mhost [crlf]Content-Type: text[crlf]Cache-Control: no-cache[crlf]Connection: close[crlf]Content-Lenght: 20624[crlf][crlf][raw][crlf] [crlf][crlf]
+
+
+
+-----------------------------------------------------------------------------
+get http://mhost/ HTTP/1.1[crlf][crlf]Host: mhost[crlf]Connection: Keep-Alive[crlf]Content-Type: text[crlf]Cache-Control: no-cache[crlf]Connection: close[crlf]Content-Lenght: 20624[crlf][crlf][realData][crlf][crlf]
+
+
+-----------------------------------------------------------------------------
+
+get http://mhost/ HTTP/1.1[crlf][crlf]Host: mhost[crlf][crlf]CONNECT mhost [host_port][protocol][crlf] [crlf]
+
+
+
+-----------------------------------------------------------------------------
+
+get http://mhost/ HTTP/1.1[crlf]mhost[lf]Host: mhost[lf][lf]CONNECT mhost [host_port][lf]CONNECT mhost [lf]
+
+
+
+-----------------------------------------------------------------------------
+
+get http://mhost/ HTTP/1.1[crlf]mhost[lf]Host: mhost[lf]Content-Type: text[crlf]Cache-Control: no-cache[crlf]Connection: close[crlf]Content-Lenght: 20624[crlf][lf]CONNECT mhost [host_port][lf]CONNECT mhost [lf]
+
+
+
+-----------------------------------------------------------------------------
+
+[realData][crlf][split]get http://mhost/  HTTP/1.1[crlf][crlf]Host: mhost[crlf]X-Online-Host: mhost[crlf]Connection: Keep-Alive[crlf][crlf]
+
+
+-----------------------------------------------------------------------------
+
+get http://mhost/ HTTP/1.1[crlf]mhost[lf]Host: mhost[lf][lf]CONNECT mhost [host_port][lf]get mhost [lf]
+
+
+
+-----------------------------------------------------------------------------
+get [host_port]@mhost" HTTP/1.1[crlf][crlf]GET http://mhost"/ [protocol][crlf]Host: mhost"[crlf]X-Forward-Host: mhost"[crlf]CONNECT [host_port] [protocol][crlf][crlf]
+
+-----------------------------------------------------------------------------
+
+
+get [host_port] [protocol][crlf][cr][crlf]X-Online-Host: mhost[crlf]Connection: [crlf]User-Agent: [ua][crlf]Content-Lenght: 99999999999[crlf][crlf]
+
+-----------------------------------------------------------------------------
+
+get [host_port] [protocol][crlf]X-Online-Host: mhost HTTP/1.1[crlf]Host: mhost[crlf][crlf]CONNECT [host_port] [protocol][crlf]X-Online-Host: mhost[crlf][crlf]
+
+-----------------------------------------------------------------------------
+
+get http://mhost/ HTTP/1.1[crlf]Authorization: Basic: Connection: X-Forward-Keep-AliveX-Online-Host: mhost[lf][lf][netData][lf] [lf][lf]
+
+-----------------------------------------------------------------------------
+
+
+get http://mhost HTTP/1.1[crlf]host:frontend.claro.com.br[crlf]Content-Type: text[crlf]Cache-Control: no-cache[crlf]Connection: close[crlf]Content-Lenght: 20624[crlf][crlf][netData][crlf] [crlf][crlf]
+
+
+-----------------------------------------------------------------------------
+
+get http://mhost HTTP/1.1[crlf]Host: mhost[crlf][crlf]CONNECT [host_port] [protocol][crlf] [crlf][crlf]
+
+-----------------------------------------------------------------------------
+
+get http://mhost HTTP/1.1[crlf]Host: mhost[crlf][crlf][netData][crlf] [crlf][crlf]
+
+-----------------------------------------------------------------------------
+
+get http://mhost/ HTTP/1.1[crlf]Host: Multibanco.com.br[crlf][crlf]CONNECT [host_port] [protocol][crlf] [crlf][crlf]
+
+
+-----------------------------------------------------------------------------
+
+get http://mhost/ HTTP/1.1[lf]Host: mhost [lf][lf]CONNECT [host_port][lf]CONNECT [lf]
+
+-----------------------------------------------------------------------------
+
+get http://mhost/ HTTP/1.1[crlf] Proxy-Authorization: Basic:Connection: X-Forward-Keep-AliveX-Online-Host:[lf][lf][netData][lf] [lf][lf]
+
+-----------------------------------------------------------------------------
+
+get [host_port]@mhost [protocol][crlf][instant_split]GET http://mhost/ HTTP/1.1[crlf]Host: mhost[crlf][crlf]
+
+-----------------------------------------------------------------------------
+
+get [host_port]@mhost [protocol][crlf]Host: mhost[crlf][crlf]
+
+-----------------------------------------------------------------------------
+
+get [host_port] [protocol][crlf]X-Online-Host: mhost[crlf][crlf]CONNECT [host_port] [protocol][crlf]X-Online-Host: mhost [crlf][crlf]
+
+-----------------------------------------------------------------------------
+
+get [host_port] [protocol][crlf]X-Online-Host: http://mhost[crlf][crlf]CONNECT[host_port] [protocol][crlf]X-Online-Host: mhost [crlf][crlf]
+
+-----------------------------------------------------------------------------
+
+get [host_port]@mhost HTTP/1.1[crlf]Connect mip:443 [crlf][crlf]
+
+-----------------------------------------------------------------------------
+
+get [host_port]@mhost[protocol][crlf]Host: mhost[crlf]X-Forwarded-For: mhost[crlf][crlf][split]get mhost HTTP/1.1[cr][lf][raw][crlf] [crlf][crlf]
+
+-----------------------------------------------------------------------------
+
+get [host_port]@mhost [protocol][crlf][delay_split]GET http://mhost/ HTTP/1.1[crlf]Host:mhost[crlf][crlf]
+
+-----------------------------------------------------------------------------
+
+get [host_port]@mhost [protocol][crlf][instant_split]GET http://mhost/ HTTP/1.1[crlf]Host: mhost[crlf][crlf]
+-----------------------------------------------------------------------------
+
+get http://mhost/ HTTP/1.1[crlf]Content-Type: text[crlf]Cache-Control: no-cache[crlf]Connection: close[crlf]Content-Lenght: 20624[crlf]get mip:443@mhost HTTP/1.1[crlf][crlf]
+
+-----------------------------------------------------------------------------
+
+get [host_port]@mhost [protocol][crlf]Host: mhost[crlf]X-Forwarded-For: mhost User-Agent: Yes
+Connection: close
+Proxy-Connection: Keep-Alive Connection: Transfer-Encoding
+[protocol][ua][port][auth][lf][lf][netData][lf] [lf][lf]
+
+-----------------------------------------------------------------------------
+
+get [host_port] [protocol][crlf]Host: mhost[crlf]X-Online-Host: mhost[crlf][crlf]
+
+-----------------------------------------------------------------------------
+
