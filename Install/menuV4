@@ -1,9 +1,5 @@
 #!/bin/bash
-
-# Menu Principal
-wget -O /bin/menu https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Menu_UP/menu; chmod +x /bin/menu
-wget -O /bin/usercodes https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Menu_UP/usercodes; chmod +x /bin/usercodes
-wget -O /bin/ferramentascodes https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Menu_UP/ferramentascodes; chmod +x /bin/ferramentascodes
+#Menu Adaptado Base ADM Con Utilitarios
 
 # Utilitarios
 wget -O /bin/criarpay https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Menu_UP/Newfolder/criarpay; chmod +x /bin/criarpay
@@ -15,6 +11,8 @@ wget -O /bin/ultrahost https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/
 wget -O /bin/vncinstall https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Menu_UP/Newfolder/vncinstall; chmod +x /bin/vncinstall
 
 # Menu Utilitarios
+wget -O /bin/usercodes https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Menu_UP/usercodes; chmod +x /bin/usercodes
+wget -O /bin/ferramentascodes https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Menu_UP/ferramentascodes; chmod +x /bin/ferramentascodes
 wget -O /bin/utilitarios https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Menu_UP/Newfolder/utilitarios; chmod +x /bin/utilitarios
 wget -O /bin/menu https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Menu_UP/Newfolder/menu; chmod +x /bin/menu; /bin/menu
 #fim
