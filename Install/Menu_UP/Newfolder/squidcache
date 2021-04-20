@@ -29,7 +29,6 @@ tput cnorm
 squidcache () {
 clear
 echo -e "\033[1;32mINICIANDO O SQUID CACHE... \033[0m\n"
-
 echo -e "\033[1;33mCache No Squid Nada Mais e Que Um Histórico de Navegação no Squid"
 echo -e "\033[1;33mQue Economizará Dados ao Abrir Sites Já Alocados em Seu Cache"
 echo -e "\033[1;33mO script fara uma breve verificação!"
@@ -43,7 +42,7 @@ squid_var="/etc/squid/squid.conf"
 elif [ -e /etc/squid3/squid.conf ]; then
 squid_var="/etc/squid3/squid.conf"
 else
-echo -e "\n\033[1;33m[\033[1;31mERRO\033[1;33m]\033[1;37m: \033[1;33mNao Foi Identificado O Squid!\033[0m"
+echo -e "\033[1;33m[\033[1;31mERRO\033[1;33m]\033[1;37m: \033[1;33mNao Foi Identificado O Squid!\033[0m"
 return 1
 fi
 teste_cache="#CACHE DO SQUID"
