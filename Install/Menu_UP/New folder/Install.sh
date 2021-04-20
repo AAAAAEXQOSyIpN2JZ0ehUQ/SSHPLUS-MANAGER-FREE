@@ -1,5 +1,4 @@
 #!/bin/bash
-# wget -O /bin/menuV2 https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/menuV2; chmod +x /bin/menuV2 > /dev/null 2>&1
 
 # Menu Principal
 wget -O /bin/menu https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Menu_UP/menu; chmod +x /bin/menu
