@@ -21,7 +21,8 @@ SCRIPT SSHPLUS MANAGER es un script con un conjunto de características y herram
 * Recomendamos Debian 9 Server x86_64 / Ubuntu 16.04 Server x86_64
 * Se recomienda usar una distro nueva o formatiada
 * Para instalar el segundo menu adaptado ejecute el comando ( menuV2 )
-* Para instalar el tercer menu adaptado formato ADM ejecute el comando ( menuV3 )
+* Para instalar el tercer menu adaptado formato ADM ejecute el comando ( menuV3 
+* Para instalar el cuarto menu adaptado formato ADM con utilitarios ejecute el comando ( menuV4 )
 
 ## :book: Installation
 
