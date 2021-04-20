@@ -50,14 +50,14 @@ net.ipv4.tcp_low_latency = 1
 net.ipv4.tcp_slow_start_after_idle = 0" >> /etc/sysctl.conf
 sysctl -p /etc/sysctl.conf > /dev/null 2>&1
 echo ""
-echo -e "\033[1;37mAs configurações de rede TCP foram adicionadas com sucesso"
+echo -e "\033[1;32mAS CONFIGURACOES DE REDE TCP FORAM ADICIONADAS COM SUCESSO"
 return
  else
 return
 fi
  else
 #REMOVE
-echo -e "\033[1;37mAs configurações de rede TCP já foram adicionadas no sistema!"
+echo -e "\033[1;33mAS CONFIGURACOES DE REDE TCP JA FORAM ADICIONADAS NO SISTEMA!"
 echo ""
 read -p "$(echo -e "\033[1;32mDESEJA REMOVER AS CONFIGURACIONES TCP \033[1;31m? \033[1;33m[s/n]:\033[1;37m ")" -e -i n res_posta
 echo -e "\033[1;37m"
@@ -74,7 +74,7 @@ net.ipv4.tcp_low_latency = 1
 net.ipv4.tcp_slow_start_after_idle = 0" /etc/sysctl.conf > /tmp/syscl && mv -f /tmp/syscl /etc/sysctl.conf
 sysctl -p /etc/sysctl.conf > /dev/null 2>&1
 echo ""
-echo -e "\033[1;37mAs configurações de rede foram removidas com sucesso"
+echo -e "\033[1;32mAS CONFIGURACOES DE REDE FORAM REMOVIDAS COM SUCESSO"
 return
  else
 return

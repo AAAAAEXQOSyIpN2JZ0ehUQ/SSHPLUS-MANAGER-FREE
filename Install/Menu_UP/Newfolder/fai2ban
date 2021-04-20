@@ -1,5 +1,32 @@
 #!/bin/bash
 
+fun_bar () {
+comando[0]="$1"
+comando[1]="$2"
+ (
+[[ -e $HOME/fim ]] && rm $HOME/fim
+${comando[0]} -y > /dev/null 2>&1
+${comando[1]} -y > /dev/null 2>&1
+touch $HOME/fim
+ ) > /dev/null 2>&1 &
+ tput civis
+echo -ne "\033[1;33m["
+while true; do
+   for((i=0; i<18; i++)); do
+   echo -ne "\033[1;31m#"
+   sleep 0.1s
+   done
+   [[ -e $HOME/fim ]] && rm $HOME/fim && break
+   echo -e "\033[1;33m]"
+   sleep 1s
+   tput cuu1
+   tput dl1
+   echo -ne "\033[1;33m["
+done
+echo -e "\033[1;33m]\033[1;37m -\033[1;32m OK !\033[1;37m"
+tput cnorm
+}
+
 failtwoban=$(dpkg -l | grep fail2ban | grep ii)
 apache=$(dpkg -l | grep apache2 | grep ii)
 squid=$(dpkg -l | grep squid | grep ii)
@@ -30,12 +57,18 @@ if [ "$lo_og" = "2" ]; then
 clear
 clear
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "\E[41;1;37m               Fail2ban Log                       \E[0m"
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 cat /var/log/fail2ban.log
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 fi
 if [ "$lo_og" = "1" ]; then
-apt-get remove fail2ban -y
+echo ""
+echo -e "\033[1;32mREMOVENDO FAILBAN"
+echo ""
+fun_bar "apt-get remove fail2ban -y"
 fi
-echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+# echo ""
 return
 fi
 
@@ -47,12 +80,15 @@ echo -e "\033[1;33mqualquer ação suspeita aumentando 70% sua segurança."
 echo ""
 read -p "$(echo -e "\033[1;32mDESEJA INSTALAR FAI2LBAN \033[1;31m? \033[1;33m[s/n]:\033[1;37m ")" fail2ban
 if [[ "$fail2ban" = "s" || "$fail2ban" = "S" ]]; then
-apt-get install fail2ban -y
+echo ""
+echo -e "\033[1;32mINSTALANDO FAILBAN"
+echo ""
+fun_bar "apt-get install fail2ban -y"
 cd $HOME
 wget -O fail2ban https://www.dropbox.com/s/qtz4aihjnwpth7y/fail2ban-0.9.4.tar.gz?dl=0 -o /dev/null
 tar -xf $HOME/fail2ban
 cd $HOME/fail2ban-0.9.4
-./setup.py install
+./setup.py install > /dev/null 2>&1
 echo '[INCLUDES]
 before = paths-debian.conf
 [DEFAULT]
@@ -440,7 +476,7 @@ echo ""
 echo -e "\033[1;32mInstalação Concluída"
  fi
 fi
-echo ""
+# echo ""
 return
 }
 

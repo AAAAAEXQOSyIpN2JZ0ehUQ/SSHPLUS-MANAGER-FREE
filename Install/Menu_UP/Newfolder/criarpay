@@ -1,9 +1,5 @@
 #!/bin/bash
 
-#PAYYLOADS
-link_bin="https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/payloads"
-[[ ! -e /bin/payloads ]] && wget -O /bin/payloads ${link_bin} > /dev/null 2>&1 && chmod +x /bin/payloads
-
 fun_bar () {
 comando[0]="$1"
 comando[1]="$2"
@@ -34,14 +30,19 @@ tput cnorm
 IP=$(cat /etc/IP)
 x="ok"
 
+#PAYYLOADS
+link_bin="https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/payloads"
+[[ ! -e /bin/payloads ]] && wget -O /bin/payloads ${link_bin} > /dev/null 2>&1 && chmod +x /bin/payloads
+
 criarpay () {
 clear
-echo -e "\033[1;32mINICIANDO O GERADOR DE PAYLOAD... \033[0m\n"
+echo -e "\E[44;1;37m             GERADOR DE PAYLOAD            \E[0m\n"
 echo -e "\033[1;33mDIGITE UM HOST PARA CRIAR PAYLOADS GENERICAS!"
 echo -e "\033[1;33mCRIADOR DE PAYLOADS DIGITE O HOST \033[1;37m"
 echo ""
 read -p " HOST: " valor1
 if [ "$valor1" = "" ]; then
+echo ""
 echo -e "\033[1;32mNao Digitou Nada!"
 return
 fi
