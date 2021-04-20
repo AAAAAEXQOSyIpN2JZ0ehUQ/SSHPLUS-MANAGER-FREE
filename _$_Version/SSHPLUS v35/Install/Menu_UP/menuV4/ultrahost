@@ -1,0 +1,81 @@
+#!/bin/bash
+
+subdom () {
+SUBDOM="$1"
+[[ "$SUBDOM" = "" ]] && return
+randomize="$RANDOM"
+    for sites in `cat $log`; do
+    [[ $(echo ${DNS[@]}|grep $sites) = "" ]] && DNS+=($sites)
+    [[ $(echo ${DNS[@]}|grep $sites) != "" ]] && cat $log|grep -v "$sites" > $log
+    done
+    while true; do
+    [[ "$(pidof lynx | wc -w)" -lt "20" ]] && break
+    done
+    (
+    HOST[$randomize]="$SUBDOM"
+    curl -sSL "${HOST[$randomize]}"|grep -Eoi '<a [^>]+>'|grep -Eo 'href="[^\"]+"'|grep -Eo '(http|https)://[a-zA-Z0-9./*]+'|sort -u|awk -F "://" '{print $2}' >> $log
+    ) > /dev/null 2>&1 &
+}
+
+iniciar () {
+SUB_DOM=$1
+limite=$2
+echo -e "\033[1;37m"
+[[ ${SUB_DOM} = "" ]] && read -p "Site Alvo: " SUB_DOM
+[[ ${limite} = "" ]] && limite="300"
+#CRIA LOG
+log="./loog" && touch $log
+#INICIA PRIMEIRA BUSCA
+echo -e ""
+_DOM=$(curl -sSL "$SUB_DOM"|grep -Eoi '<a [^>]+>'|grep -Eo 'href="[^\"]+"'|grep -Eo '(http|https)://[a-zA-Z0-9./*]+'|sort -u|awk -F "://" '{print $2}')
+  for _DOMS in `echo $_DOM`; do
+ [[ $(echo ${DNS[@]}|grep ${_DOMS}) = "" ]] && DNS+=(${_DOMS})
+  done
+#INICIA THREADS
+i=0
+while true; do
+DOMAIN=$(echo "${DNS[$i]}")
+[[ $DOMAIN = "" ]] && break
+ if [[ $(echo -e "${PESQ[@]}"|grep "$DOMAIN") = "" ]]; then
+  subdom "$DOMAIN"
+  echo -e "\033[1;31m(Scan\033[1;32m $((${#PESQ[@]}+1))\033[1;31m de \033[1;32m${#DNS[@]}\033[1;31m) - Escaneando ---> \033[1;36mhttp://$DOMAIN\033[1;37m"
+  PESQ+=($DOMAIN)
+ fi
+[[ "$(echo ${#DNS[@]})" -gt "$limite" ]] && break
+i=$(($i+1))
+sleep 1s
+done
+rm $log
+echo -e "\n\033[1;33mScan Finalizado!, Iniciando Coleta de IPs \033[0m"
+[[ -e $HOME/subresult ]] && rm $HOME/subresult
+[[ ! -e $HOME/subresult ]] && touch $HOME/subresult
+
+for result in $(echo "${DNS[@]}"); do
+(
+rand="$RANDOM"
+dns[rand]="$result"
+scan[rand]=$(echo ${result}|cut -d'/' -f1)
+IP[rand]=$(nslookup "${scan[rand]}"|grep -Eo 'Address: [0-9.]+'|grep -Eo '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}'|tail -1) > /dev/null 2>&1
+echo -e "\nDNS: ${dns[rand]}\nIP: ${IP[rand]}" >> $HOME/subresult
+unset IP
+) &
+done
+while true; do
+[[ $(pidof nslookup|wc -w) -lt "1" ]] && break
+done
+RSLT=$(($(cat $HOME/subresult|wc -l)/4)) && echo -e "\n\033[1;32m$RSLT Hosts Capturados \033[0m"
+echo -e "\033[1;37m"
+echo -ne "Deseja Imprimir os Resultados? [S/N]: "; read yn
+   [[ $yn = @(s|S|y|Y) ]] && {
+   echo -ne "\033[1;32m"
+   cat $HOME/subresult|grep -v =
+   }
+return 0
+}
+
+#INICIA SCRIPT
+clear
+echo -e "\033[1;32mINICIALIZANDO PROCEDIMENTOS (SCAN) \033[0m"
+iniciar $1 $2
+[[ $? = "0" ]] &&
+echo -e "\033[1;33m\nLog Gerado no Arquivo $HOME/subresult\033[0m"

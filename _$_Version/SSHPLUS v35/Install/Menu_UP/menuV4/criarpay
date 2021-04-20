@@ -1,0 +1,145 @@
+#!/bin/bash
+
+fun_bar () {
+comando[0]="$1"
+comando[1]="$2"
+ (
+[[ -e $HOME/fim ]] && rm $HOME/fim
+${comando[0]} -y > /dev/null 2>&1
+${comando[1]} -y > /dev/null 2>&1
+touch $HOME/fim
+ ) > /dev/null 2>&1 &
+ tput civis
+echo -ne "\033[1;33m["
+while true; do
+   for((i=0; i<18; i++)); do
+   echo -ne "\033[1;31m#"
+   sleep 0.1s
+   done
+   [[ -e $HOME/fim ]] && rm $HOME/fim && break
+   echo -e "\033[1;33m]"
+   sleep 1s
+   tput cuu1
+   tput dl1
+   echo -ne "\033[1;33m["
+done
+echo -e "\033[1;33m]\033[1;37m -\033[1;32m OK !\033[1;37m"
+tput cnorm
+}
+
+IP=$(cat /etc/IP)
+x="ok"
+
+#PAYYLOADS
+link_bin="https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/payloads"
+[[ ! -e /bin/payloads ]] && wget -O /bin/payloads ${link_bin} > /dev/null 2>&1 && chmod +x /bin/payloads
+
+criarpay () {
+clear
+echo -e "\E[44;1;37m             GERADOR DE PAYLOAD            \E[0m\n"
+echo -e "\033[1;33mDIGITE UM HOST PARA CRIAR PAYLOADS GENERICAS!"
+echo -e "\033[1;33mCRIADOR DE PAYLOADS DIGITE O HOST \033[1;37m"
+echo ""
+read -p " HOST: " valor1
+if [ "$valor1" = "" ]; then
+echo ""
+echo -e "\033[1;32mNao Digitou Nada!"
+return
+fi
+# meu_ip
+valor2="$IP"
+if [ "$valor2" = "" ]; then
+valor2="127.0.0.1"
+fi
+echo ""
+echo -e "\033[1;33mESCOLHA O METODO DE REQUISICAO \033[1;37m"
+echo ""
+echo -e " 1-GET"
+echo -e " 2-CONNECT"
+echo -e " 3-PUT"
+echo -e " 4-OPTIONS"
+echo -e " 5-DELETE"
+echo -e " 6-HEAD"
+echo -e " 7-TRACE"
+echo -e " 8-PROPATCH"
+echo -e " 9-PATCH"
+echo ""
+read -p " METODO: " valor3
+case $valor3 in
+1)
+req="GET"
+;;
+2)
+req="CONNECT"
+;;
+3)
+req="PUT"
+;;
+4)
+req="OPTIONS"
+;;
+5)
+req="DELETE"
+;;
+6)
+req="HEAD"
+;;
+7)
+req="TRACE"
+;;
+8)
+req="PROPATCH"
+;;
+9)
+req="PATCH"
+;;
+*)
+req="GET"
+;;
+esac
+echo ""
+echo -e "\033[1;33mE POR ULTIMO, ESCOLHA METODO DE INJECAO! \033[1;37m"
+echo ""
+echo -e " 1-realData"
+echo -e " 2-netData"
+echo -e " 3-raw"
+echo ""
+read -p " INJEÇÃO: " valor4
+case $valor4 in
+1)
+in="realData"
+;;
+2)
+in="netData"
+;;
+3)
+in="raw"
+;;
+*)
+in="netData"
+;;
+esac
+echo ""
+name=$(echo $valor1 | awk -F "/" '{print $2'})
+if [ "$name" = "" ]; then
+name=$(echo $valor1 | awk -F "/" '{print $1'})
+fi
+esquelet="/bin/payloads"
+sed -s "s;realData;abc;g" $esquelet > $HOME/$name.txt
+sed -i "s;netData;abc;g" $HOME/$name.txt
+sed -i "s;raw;abc;g" $HOME/$name.txt
+sed -i "s;abc;$in;g" $HOME/$name.txt
+sed -i "s;get;$req;g" $HOME/$name.txt
+sed -i "s;mhost;$valor1;g" $HOME/$name.txt
+sed -i "s;mip;$valor2;g" $HOME/$name.txt
+if [ "$(cat $HOME/$name.txt | egrep -o "$valor1")" = "" ]; then
+echo -e ""
+echo -e "\033[1;37m ALGO DEU \033[1;36mERRADO!"
+rm $HOME/$name.txt
+return
+fi
+echo -e "\033[1;32mSUCESSO, PAYLOADS GERADAS"
+echo -e "\033[1;32mNA PASTA: \033[1;31m$HOME/$name.txt"
+return
+}
+criarpay

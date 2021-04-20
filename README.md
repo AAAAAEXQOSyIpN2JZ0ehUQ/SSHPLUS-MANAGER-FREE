@@ -50,7 +50,7 @@ https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Insta
 
 ## :scroll: Registro de cambios
 
-**VERSION: 35**
+**VERSION: 36**
 
 https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/versao
 

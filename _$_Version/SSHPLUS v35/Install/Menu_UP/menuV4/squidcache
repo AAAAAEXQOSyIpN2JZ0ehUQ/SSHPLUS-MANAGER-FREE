@@ -1,0 +1,80 @@
+#!/bin/bash
+
+fun_bar () {
+comando[0]="$1"
+comando[1]="$2"
+ (
+[[ -e $HOME/fim ]] && rm $HOME/fim
+${comando[0]} -y > /dev/null 2>&1
+${comando[1]} -y > /dev/null 2>&1
+touch $HOME/fim
+ ) > /dev/null 2>&1 &
+ tput civis
+echo -ne "\033[1;33m["
+while true; do
+   for((i=0; i<18; i++)); do
+   echo -ne "\033[1;31m#"
+   sleep 0.1s
+   done
+   [[ -e $HOME/fim ]] && rm $HOME/fim && break
+   echo -e "\033[1;33m]"
+   sleep 1s
+   tput cuu1
+   tput dl1
+   echo -ne "\033[1;33m["
+done
+echo -e "\033[1;33m]\033[1;37m -\033[1;32m OK !\033[1;37m"
+tput cnorm
+}
+squidcache () {
+clear
+echo -e "\033[1;32mINICIANDO O SQUID CACHE... \033[0m\n"
+echo -e "\033[1;33mCache No Squid Nada Mais e Que Um Histórico de Navegação no Squid"
+echo -e "\033[1;33mQue Economizará Dados ao Abrir Sites Já Alocados em Seu Cache"
+echo -e "\033[1;33mO script fara uma breve verificação!"
+echo ""
+echo -e "\033[1;32mVERIFICANDO SQUID CACHE!"
+echo ""
+fun_bar "sleep 4"
+echo ""
+if [ -e /etc/squid/squid.conf ]; then
+squid_var="/etc/squid/squid.conf"
+elif [ -e /etc/squid3/squid.conf ]; then
+squid_var="/etc/squid3/squid.conf"
+else
+echo -e "\033[1;33m[\033[1;31mERRO\033[1;33m]\033[1;37m: \033[1;33mNao Foi Identificado O Squid!\033[0m"
+return 1
+fi
+teste_cache="#CACHE DO SQUID"
+if [[ `grep -c "^$teste_cache" $squid_var` -gt 0 ]]; then
+  [[ -e ${squid_var}.bakk ]] && {
+  echo -e "\033[1;32mDESATIVANDO SQUID CACHE!"
+  mv -f ${squid_var}.bakk $squid_var
+  echo ""
+  fun_bar "sleep 4"
+  echo ""
+  echo -e "\033[1;32mREINICIANDO SERVICIOS!"
+  echo ""
+  fun_bar 'service squid restart' 'service squid3 restart'
+  return 0
+  }
+fi
+echo -e "\033[1;33m - Squid esta Ativo em seu sistema!"
+echo -e "\033[1;33m - Nao Ha Serviço de Cache No Squid!"
+echo ""
+echo -e "\033[1;32mATIVANDO SERVICO SQUID CACHE!"
+echo ""
+fun_bar "sleep 4"
+echo ""
+_tmp="#CACHE DO SQUID\ncache_mem 200 MB\nmaximum_object_size_in_memory 32 KB\nmaximum_object_size 1024 MB\nminimum_object_size 0 KB\ncache_swap_low 90\ncache_swap_high 95"
+[[ "$squid_var" = "/etc/squid/squid.conf" ]] && _tmp+="\ncache_dir ufs /var/spool/squid 100 16 256\naccess_log /var/log/squid/access.log squid" || _tmp+="\ncache_dir ufs /var/spool/squid3 100 16 256\naccess_log /var/log/squid3/access.log squid"
+while read s_squid; do
+[[ "$s_squid" != "cache deny all" ]] && _tmp+="\n${s_squid}"
+done < $squid_var
+cp ${squid_var} ${squid_var}.bakk
+echo -e "${_tmp}" > $squid_var
+echo -e "\033[1;32mREINICIANDO SERVICIOS!"
+echo ""
+fun_bar 'service squid restart' 'service squid3 restart'
+}
+squidcache

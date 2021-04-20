@@ -1,0 +1,18 @@
+#!/bin/bash
+#Menu Adaptado Base ADM Con Utilitarios
+
+# Utilitarios
+wget -O /bin/criarpay https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Menu_UP/menuV4/criarpay; chmod +x /bin/criarpay
+wget -O /bin/fai2ban https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Menu_UP/menuV4/fai2ban; chmod +x /bin/fai2ban
+wget -O /bin/paysnd https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Menu_UP/menuV4/paysnd; chmod +x /bin/paysnd
+wget -O /bin/squidcache https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Menu_UP/menuV4/squidcache; chmod +x /bin/squidcache
+wget -O /bin/tcpspeed https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Menu_UP/menuV4/tcpspeed; chmod +x /bin/tcpspeed
+wget -O /bin/ultrahost https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Menu_UP/menuV4/ultrahost; chmod +x /bin/ultrahost
+wget -O /bin/vncinstall https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Menu_UP/menuV4/vncinstall; chmod +x /bin/vncinstall
+
+# Menu Utilitarios
+wget -O /bin/usercodes https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Menu_UP/menuV4/usercodes; chmod +x /bin/usercodes
+wget -O /bin/ferramentascodes https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Menu_UP/menuV4/ferramentascodes; chmod +x /bin/ferramentascodes
+wget -O /bin/utilitarios https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Menu_UP/menuV4/utilitarios; chmod +x /bin/utilitarios
+wget -O /bin/menu https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Menu_UP/menuV4/menu; chmod +x /bin/menu; /bin/menu
+#fim

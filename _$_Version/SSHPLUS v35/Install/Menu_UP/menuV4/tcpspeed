@@ -1,0 +1,84 @@
+#!/bin/bash
+
+fun_bar () {
+comando[0]="$1"
+comando[1]="$2"
+ (
+[[ -e $HOME/fim ]] && rm $HOME/fim
+${comando[0]} -y > /dev/null 2>&1
+${comando[1]} -y > /dev/null 2>&1
+touch $HOME/fim
+ ) > /dev/null 2>&1 &
+ tput civis
+echo -ne "\033[1;33m["
+while true; do
+   for((i=0; i<18; i++)); do
+   echo -ne "\033[1;31m#"
+   sleep 0.1s
+   done
+   [[ -e $HOME/fim ]] && rm $HOME/fim && break
+   echo -e "\033[1;33m]"
+   sleep 1s
+   tput cuu1
+   tput dl1
+   echo -ne "\033[1;33m["
+done
+echo -e "\033[1;33m]\033[1;37m -\033[1;32m OK !\033[1;37m"
+tput cnorm
+}
+tcpspeed () {
+clear
+echo -e "\033[1;32mINICIANDO O TCP SPEED... \033[0m\n"
+if [[ `grep -c "^#ADM" /etc/sysctl.conf` -eq 0 ]]; then
+#INSTALA
+echo -e "\033[1;33mEste é um script experimental. Use por sua conta e risco!"
+echo -e "\033[1;33mEste script irá alterar algumas configurações de rede"
+echo -e "\033[1;33mdo sistema para reduzir a latência e melhorar a velocidade."
+echo ""
+read -p "$(echo -e "\033[1;32mPROSSEGUIR COM A INSTALACAO \033[1;31m? \033[1;33m[s/n]:\033[1;37m ")" -e -i s resp_osta
+echo ""
+if [[ "$resp_osta" = 's' ]]; then
+unset resp_osta
+fun_bar "sleep 4"
+echo "#ADM" >> /etc/sysctl.conf
+echo "net.ipv4.tcp_window_scaling = 1
+net.core.rmem_max = 16777216
+net.core.wmem_max = 16777216
+net.ipv4.tcp_rmem = 4096 87380 16777216
+net.ipv4.tcp_wmem = 4096 16384 16777216
+net.ipv4.tcp_low_latency = 1
+net.ipv4.tcp_slow_start_after_idle = 0" >> /etc/sysctl.conf
+sysctl -p /etc/sysctl.conf > /dev/null 2>&1
+echo ""
+echo -e "\033[1;32mAS CONFIGURACOES DE REDE TCP FORAM ADICIONADAS COM SUCESSO"
+return
+ else
+return
+fi
+ else
+#REMOVE
+echo -e "\033[1;33mAS CONFIGURACOES DE REDE TCP JA FORAM ADICIONADAS NO SISTEMA!"
+echo ""
+read -p "$(echo -e "\033[1;32mDESEJA REMOVER AS CONFIGURACIONES TCP \033[1;31m? \033[1;33m[s/n]:\033[1;37m ")" -e -i n res_posta
+echo -e "\033[1;37m"
+if [[ "$res_posta" = 's' ]]; then
+unset res_posta
+fun_bar "sleep 4"
+grep -v "^#ADM
+net.ipv4.tcp_window_scaling = 1
+net.core.rmem_max = 16777216
+net.core.wmem_max = 16777216
+net.ipv4.tcp_rmem = 4096 87380 16777216
+net.ipv4.tcp_wmem = 4096 16384 16777216
+net.ipv4.tcp_low_latency = 1
+net.ipv4.tcp_slow_start_after_idle = 0" /etc/sysctl.conf > /tmp/syscl && mv -f /tmp/syscl /etc/sysctl.conf
+sysctl -p /etc/sysctl.conf > /dev/null 2>&1
+echo ""
+echo -e "\033[1;32mAS CONFIGURACOES DE REDE FORAM REMOVIDAS COM SUCESSO"
+return
+ else
+return
+ fi
+fi
+}
+tcpspeed

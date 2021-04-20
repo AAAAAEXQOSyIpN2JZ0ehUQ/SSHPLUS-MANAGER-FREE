@@ -1,5 +1,5 @@
 ﻿# INSTALL ARQUIVOS ORIGINALES ENCRIPTADOS POR @crazy_vpn
-# SCRIPT OFICIAL SSHPLUS MANAGER VERSAO: 35
+# SCRIPT OFICIAL SSHPLUS MANAGER VERSAO: 36
 
 ![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/SSHPLUS_MANAGER.jpg)
 
@@ -30,7 +30,7 @@ apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AA
 
 ## :scroll: Registro de cambios
 
-**VERSION: v35**
+**VERSION: v36**
 
 https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Sistema/Install/versao
 
