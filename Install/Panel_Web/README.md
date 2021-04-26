@@ -30,8 +30,9 @@ apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AA
 
 apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/Panelweb.sh; chmod +x Panelweb.sh; ./Panelweb.sh
 
-* ACCESO DIRECTO AL SCRIPTS EXECUTE EL COMANDO ( ipw )
-
+```
+ACCESO DIRECTO AL SCRIPTS EXECUTE EL COMANDO ( ipw )
+```
 -------------------------------------------------------------------------------
 
 ## :octocat: Contribute
