@@ -31,11 +31,11 @@ echo -e " "
 # INSTALL ARQUIVOS
 echo -e "\033[1;33m INSTALL ARQUIVOS... \033[1;32mAGUARDE"
 wget https://www.dropbox.com/s/5l90157s9tz1p5j/Plus -O /var/www/html/Plus > /dev/null 2>&1
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/list -O /home/list > /dev/null 2>&1
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/versao > /dev/null 2>&1 && cat /home/versao >/var/www/html/script/versao
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/keyssh -O /bin/keyssh > /dev/null 2>&1
-# INSTALL OTIMIZAR
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/otimizar -O /bin/otimizar > /dev/null 2>&1
+wget https://www.dropbox.com/s/tuc30lkucsp27d7/list -O /home/list > /dev/null 2>&1
+wget https://www.dropbox.com/s/b0n64jlwkqn9xgd/versao -O /home/versao > /dev/null 2>&1 && cat /home/versao >/var/www/html/script/versao
+wget https://www.dropbox.com/s/9xpooyas2xnjtsf/keyssh -O /bin/keyssh > /dev/null 2>&1
+wget https://www.dropbox.com/s/dxctewzkok6pfi5/stunnel.pem -O /var/www/html/script/stunnel.pem > /dev/null 2>&1
+wget https://www.dropbox.com/s/tsj68yesa2un2p5/otimizar -O /bin/otimizar > /dev/null 2>&1
 echo -e " "
 # PERMISOS ARQUIVOS
 echo -e "\033[1;33m PERMISOS ARQUIVOS... \033[1;32mAGUARDE"
@@ -68,9 +68,9 @@ apt-get install unzip -y > /dev/null 2>&1
 apt-get install curl -y > /dev/null 2>&1
 [[ ! -d /var/www/html/_S_script ]] && mkdir /var/www/html/_S_script
 cd /var/www/html/_S_script
-wget https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/raw/master/Install/Generador/sshplus-v36.zip > /dev/null 2>&1
-unzip sshplus-v36.zip > /dev/null 2>&1
-rm -rf sshplus-v36.zip
+wget https://www.dropbox.com/s/047ffy7i6icn2ip/sshplus-v32.zip > /dev/null 2>&1
+unzip sshplus-v32.zip > /dev/null 2>&1
+rm -rf sshplus-v32.zip
 cd
 # HISTORY
 cat /dev/null > ~/.bash_history && history -c
