@@ -1,0 +1,85 @@
+#!/bin/bash
+clear
+#===============================#
+# \033[1;36m
+# \033[1;33m
+# \033[1;31m
+# \033[0m
+#===============================#
+
+instala_fun () {
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "\033[1;31mINSTALADOR KEY SSHPLUS MANAGER\033[0m"
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -ne "\033[0m"
+echo -e "\033[1;33mINSTALANDO... \033[1;32mAGUARDE"
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e " "
+# ACTUALIZA REPOSITORIO
+echo -e "\033[1;33m ACTUALIZA REPOSITORIO... \033[1;32mAGUARDE"
+apt-get update -y > /dev/null 2>&1
+apt-get upgrade -y > /dev/null 2>&1
+apt-get install curl -y > /dev/null 2>&1
+apt-get install apache2 -y > /dev/null 2>&1
+sed -i "s;Listen 81;Listen 80;g" /etc/apache2/ports.conf
+service apache2 restart > /dev/null 2>&1
+mkdir /var/www/html/script > /dev/null 2>&1
+mkdir /var/www/html/_S_script > /dev/null 2>&1
+touch /var/www/html/script/index.html
+touch /var/www/html/_S_script/index.html
+echo -e " "
+# INSTALL ARQUIVOS
+echo -e "\033[1;33m INSTALL ARQUIVOS... \033[1;32mAGUARDE"
+wget https://www.dropbox.com/s/5l90157s9tz1p5j/Plus -O /var/www/html/Plus > /dev/null 2>&1
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/list -O /home/list > /dev/null 2>&1
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/versao > /dev/null 2>&1 && cat /home/versao >/var/www/html/script/versao
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/keyssh -O /bin/keyssh > /dev/null 2>&1
+# INSTALL OTIMIZAR
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/otimizar -O /bin/otimizar > /dev/null 2>&1
+echo -e " "
+# PERMISOS ARQUIVOS
+echo -e "\033[1;33m PERMISOS ARQUIVOS... \033[1;32mAGUARDE"
+chmod +x  /var/www/html/Plus > /dev/null 2>&1
+chmod +x  /home/list > /dev/null 2>&1
+chmod +x  /home/versao > /dev/null 2>&1
+chmod +x  /bin/keyssh > /dev/null 2>&1
+chmod +x  /bin/otimizar > /dev/null 2>&1
+# HISTORY
+cat /dev/null > ~/.bash_history && history -c
+echo -e " "
+# MONTANDO O SEU LINK-IP
+echo -e "\033[1;33m MONTANDO O SEU LINK-IP... \033[1;32mAGUARDE"
+apt-get install curl -y > /dev/null 2>&1
+IP=$(wget -qO- ipv4.icanhazip.com)
+if [[ -e "/var/www/html/Plus" ]]; then
+sed -i "s;SEU-IP-AKI;$IP;g" /var/www/html/Plus > /dev/null 2>&1
+fi
+apt-get install curl -y > /dev/null 2>&1
+IP=$(wget -qO- ipv4.icanhazip.com)
+if [[ -e "/home/list" ]]; then
+sed -i "s;SEU-IP-AKI;$IP;g" /home/list > /dev/null 2>&1
+fi
+sleep 6s
+echo -e " "
+# DONWLOAD SERVER
+echo -e "\033[1;33m DONWLOAD SERVER... \033[1;32mAGUARDE"
+#apt-get install zip -y > /dev/null 2>&1
+apt-get install unzip -y > /dev/null 2>&1
+apt-get install curl -y > /dev/null 2>&1
+[[ ! -d /var/www/html/_S_script ]] && mkdir /var/www/html/_S_script
+cd /var/www/html/_S_script
+wget https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/raw/master/Install/Generador/sshplus-v36.zip > /dev/null 2>&1
+unzip sshplus-v36.zip > /dev/null 2>&1
+rm -rf sshplus-v36.zip
+cd
+# HISTORY
+cat /dev/null > ~/.bash_history && history -c
+echo -e " "
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "\033[1;37m Perfeito, Use o Comando \033[1;31mkeyssh \033[1;37m
+ para Gerenciar as Suas Keys e
+ Atualizar a Base do servidor"
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+rm -rf $HOME/instala_server > /dev/null 2>&1
+}
+instala_fun

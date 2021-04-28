@@ -1,0 +1,5 @@
+#!/bin/bash
+#Menu Original
+
+wget -O /bin/menu https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/menu > /dev/null 2>&1; chmod +x /bin/menu; /bin/menu
+#fim

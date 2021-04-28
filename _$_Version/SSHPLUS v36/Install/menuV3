@@ -1,0 +1,7 @@
+#!/bin/bash
+#Menu Adaptado Base ADM
+
+wget -O /bin/usercodes https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Menu_UP/menuV3/usercodes; chmod +x /bin/usercodes
+wget -O /bin/ferramentascodes https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Menu_UP/menuV3/ferramentascodes; chmod +x /bin/ferramentascodes
+wget -O /bin/menu https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Menu_UP/menuV3/menu; chmod +x /bin/menu; /bin/menu
+#fim

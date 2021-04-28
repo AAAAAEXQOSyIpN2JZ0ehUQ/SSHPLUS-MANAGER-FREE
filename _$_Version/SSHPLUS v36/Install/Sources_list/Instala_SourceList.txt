@@ -1,0 +1,7 @@
+Ubuntu 16 
+
+wget -O /etc/apt/sources.list https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Sources_list/16.04/sources.list
+
+Ubuntu 18
+
+wget -O /etc/apt/sources.list https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Sources_list/18.04/sources.list
