@@ -1,5 +1,5 @@
 ﻿# INSTALL ARQUIVOS ORIGINALES ENCRIPTADOS POR @crazy_vpn
-# SCRIPT OFICIAL SSHPLUS MANAGER VERSAO: 36
+# SCRIPT OFICIAL SSHPLUS MANAGER VERSAO: 37
 
 ![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/SSHPLUS_MANAGER.jpg)
 
@@ -31,7 +31,7 @@ SI NECESITAN REINSTALAR EL SCRIPTS PUEDEN EJECUTAR EL COMANDO: ( sshplus )
 
 ## :scroll: Registro de cambios
 
-**VERSION: v36**
+**VERSION: v37**
 
 https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Sistema/Install/versao
 

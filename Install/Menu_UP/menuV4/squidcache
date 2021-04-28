@@ -31,7 +31,7 @@ clear
 echo -e "\033[1;32mINICIANDO O SQUID CACHE... \033[0m\n"
 echo -e "\033[1;33mCache No Squid Nada Mais e Que Um Histórico de Navegação no Squid"
 echo -e "\033[1;33mQue Economizará Dados ao Abrir Sites Já Alocados em Seu Cache"
-echo -e "\033[1;33mO script fara uma breve verificação!"
+# echo -e "\033[1;33mO script fara uma breve verificação!"
 echo ""
 echo -e "\033[1;32mVERIFICANDO SQUID CACHE!"
 echo ""
