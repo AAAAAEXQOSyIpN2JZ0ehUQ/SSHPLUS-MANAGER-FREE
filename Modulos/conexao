@@ -2,7 +2,7 @@
 #====================================================
 #	SCRIPT: CONEXAO SSHPLUS MANAGER
 #	DESENVOLVIDO POR:	CRAZY_VPN
-#	DATA ATUALIZACAO:	27-03-2021 
+#	DATA ATUALIZACAO:	28-04-2021 
 #	CONTATO TELEGRAM:	http://t.me/crazy_vpn
 #	CANAL TELEGRAM:	http://t.me/sshplus
 #====================================================
@@ -381,11 +381,11 @@
 				echo ""
 				fun_dropunistall() {
 					service dropbear stop && /etc/init.d/dropbear stop
-					apt-get autoremove dropbear -y
-					apt-get remove dropbear-run -y
-					apt-get remove dropbear -y
-					apt-get purge dropbear -y
+					apt remove dropbear-run -y
+					apt remove dropbear -y
+					apt purge dropbear -y
 					rm -rf /etc/default/dropbear
+                    apt autoremove -y
 				}
 				fun_bar 'fun_dropunistall'
 				echo -e "\n\033[1;32mDROPBEAR REMOVIDO COM SUCESSO !\033[0m"
@@ -442,6 +442,7 @@
 				echo -e "\033[1;32mFINALIZANDO INSTALACAO !\033[0m"
 				echo ""
 				fun_ondrop() {
+				    service ssh restart
 					service dropbear start
 					/etc/init.d/dropbear restart
 				}
@@ -547,7 +548,7 @@
 				echo -e "\n\033[1;32mCONFIGURANDO O SSL TUNNEL !\033[0m"
 				echo ""
 				ssl_conf() {
-					echo -e "cert = /etc/stunnel/stunnel.pem\nclient = no\nsocket = a:SO_REUSEADDR=1\nsocket = l:TCP_NODELAY=1\nsocket = r:TCP_NODELAY=1\n\n[stunnel]\nconnect = 0.0.0.0:22\naccept = ${porta}" >/etc/stunnel/stunnel.conf
+					echo -e "cert = /etc/stunnel/stunnel.pem\nclient = no\nsocket = a:SO_REUSEADDR=1\nsocket = l:TCP_NODELAY=1\nsocket = r:TCP_NODELAY=1\n\n[stunnel]\nconnect = 0.0.0.0:22\naccept = ${porta}\nsslVersion = all" >/etc/stunnel/stunnel.conf
 				}
 				fun_bar 'ssl_conf'
 				echo -e "\n\033[1;32mCRIANDO CERTIFICADO !\033[0m"
@@ -1672,11 +1673,6 @@ exit 0' >$RCLOCAL
 			clear
 			echo -e "\E[44;1;37m                MODO DE CONEXAO                 \E[0m\n"
 			echo -e "\033[1;32mSERVICO: \033[1;33mOPENSSH \033[1;32mPORTA: \033[1;37m$(grep 'Port' /etc/ssh/sshd_config | cut -d' ' -f2 | grep -v 'no' | xargs)" && sts6="\033[1;32m◉ "
-			[[ "$(ps x | grep 'slow_dns' | grep -v 'grep'|wc -l)" != '0' ]] && {
-				sts8="\033[1;32m◉ "
-			} || {
-				sts8="\033[1;31m○ "
-			}
 			[[ "$(netstat -tlpn | grep 'sslh' | wc -l)" != '0' ]] && {
 				echo -e "\033[1;32mSERVICO: \033[1;33mSSLH: \033[1;32mPORTA: \033[1;37m$(netstat -nplt | grep 'sslh' | awk {'print $4'} | cut -d: -f2 | xargs)"
 				sts7="\033[1;32m◉ "
@@ -1714,6 +1710,12 @@ exit 0' >$RCLOCAL
 				sts1="\033[1;32m◉ "
 			} || {
 				sts1="\033[1;31m○ "
+			}
+			[[ "$(ps x | grep 'slow_dns' | grep -v 'grep'|wc -l)" != '0' ]] && {
+			    echo -e "\033[1;32mSERVICO: \033[1;33mSLOWDNS \033[1;32mPORTA: \033[1;37m$(sed -n 1p /etc/SSHPlus/dns/autodns | awk '{print $6}' | cut -d':' -f2)"
+				sts8="\033[1;32m◉ "
+			} || {
+				sts8="\033[1;31m○ "
 			}
 			echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 			echo ""

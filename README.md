@@ -1,6 +1,6 @@
 ﻿# SSHPLUS MANAGER
 ```
-* UPDATE 20/04/2021 - PROYECTO FINALIZADO
+* UPDATE 28/04/2021 - PROYECTO FINALIZADO
 ```
 ![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/SSHPLUS_MANAGER.jpg)
 
@@ -47,7 +47,7 @@ SI NECESITAN REINSTALAR EL SCRIPTS PUEDEN EJECUTAR EL COMANDO: ( sshplus )
 
 ## :scroll: Registro de cambios
 
-**VERSION: 36**
+**VERSION: 37**
 
 https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/versao
 
