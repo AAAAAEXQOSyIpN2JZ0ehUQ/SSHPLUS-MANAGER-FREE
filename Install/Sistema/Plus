@@ -68,7 +68,7 @@ echo "apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.
 wget -O /bin/menuV1 https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/menuV1 > /dev/null 2>&1; chmod +x /bin/menuV1
 wget -O /bin/menuV2 https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/menuV2 > /dev/null 2>&1; chmod +x /bin/menuV2
 wget -O /bin/menuV3 https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/menuV3 > /dev/null 2>&1; chmod +x /bin/menuV3
-wget -O /bin/menuV4 https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/menuV4 > /dev/null 2>&1; chmod +x /bin/menuV4
+echo "wget -O /bin/menu https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Sistema/Arquivos/menu; chmod +x /bin/menu; /bin/menu" > /bin/menuV4 && chmod +x /bin/menuV4 > /dev/null 2>&1
 rm versao* > /dev/null 2>&1
 #-----------------------------------------------------------------------------------------------------------------
 echo -e "\n\033[1;32mKEY VALIDA!\033[1;32m"
