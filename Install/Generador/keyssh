@@ -240,9 +240,8 @@ sleep 1
 ;;
 6)
 clear
-wget $IP/script/versao -O /home/versao
-echo -e "\n\033[1;33m Enter para retornar\033[0m"; read
-sleep 1
+rm $HOME/instala_server > /dev/null 2>&1; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/instala_server > /dev/null 2>&1; chmod 777 instala_server* && ./instala_server*
+exit
 ;;
 7)
 clear
