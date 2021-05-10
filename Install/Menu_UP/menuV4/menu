@@ -61,6 +61,44 @@ function autoexec () {
 
 }
 
+#limiter
+function limit1 () {
+   clear
+   echo -e "\n\033[1;32mINICIANDO O LIMITER... \033[0m"
+   echo ""
+   fun_bar 'screen -dmS limiter limiter' 'sleep 3'
+   [[ $(grep -wc "limiter" /etc/autostart) = '0' ]] && {
+       echo -e "ps x | grep 'limiter' | grep -v 'grep' && echo 'ON' || screen -dmS limiter limiter" >> /etc/autostart
+   } || {
+       sed -i '/limiter/d' /etc/autostart
+	   echo -e "ps x | grep 'limiter' | grep -v 'grep' && echo 'ON' || screen -dmS limiter limiter" >> /etc/autostart
+   }
+   echo -e "\n\033[1;32m  LIMITER ATIVO !\033[0m"
+   sleep 3
+   menu
+}
+function limit2 () {
+   clear
+   echo -e "\033[1;32mPARANDO O LIMITER... \033[0m"
+   echo ""
+   fun_stplimiter () {
+      sleep 1
+      screen -r -S "limiter" -X quit
+      screen -wipe 1>/dev/null 2>/dev/null
+      [[ $(grep -wc "limiter" /etc/autostart) != '0' ]] && {
+          sed -i '/limiter/d' /etc/autostart
+      }
+      sleep 1
+   }
+   fun_bar 'fun_stplimiter' 'sleep 3'
+   echo -e "\n\033[1;31m LIMITER PARADO !\033[0m"
+   sleep 3
+   menu
+}
+function limit_ssh () {
+[[ $(ps x | grep "limiter"|grep -v grep |wc -l) = '0' ]] && limit1 || limit2
+}
+
 while true $x != "ok"
 do
 [[ -e /etc/Plus-torrent ]] && stsf=$(echo -e "\033[1;32m◉ ") || stsf=$(echo -e "\033[1;31m○ ")
@@ -116,8 +154,9 @@ echo -e "[\033[1;36m01\033[1;31m] \033[1;37m• \033[1;33mGERENCIAR USUARIOS \03
 [\033[1;36m03\033[1;31m] \033[1;37m\033[1;37m• \033[1;33mGERENCIAR UTILITARIOS \033[1;31m
 [\033[1;36m04\033[1;31m] $var01 \033[1;33m[!] \033[1;32mATUALIZAR SCRIPT \033[1;31m
 [\033[1;36m05\033[1;31m] \033[1;37m• \033[1;33m[!] \033[1;31mREMOVER SCRIPT \033[1;31m
-[\033[1;36m06\033[1;31m] \033[1;37m• \033[1;33mAUTO EXECUCAO $autm \033[1;31m
-[\033[1;36m07\033[1;31m] \033[1;37m• \033[1;33mMODO DE CONEXAO \033[1;31m
+[\033[1;36m06\033[1;31m] \033[1;37m• \033[1;33mLIMITER $stsl\033[1;31m
+[\033[1;36m07\033[1;31m] \033[1;37m• \033[1;33mAUTO EXECUCAO $autm \033[1;31m
+[\033[1;36m08\033[1;31m] \033[1;37m• \033[1;33mMODO DE CONEXAO \033[1;31m
 \033[1;31m[\033[1;36m00\033[1;31m] \033[1;37m• \033[1;33mSAIR \033[1;32m<\033[1;33m<\033[1;31m<\033[1;31m"
 echo ""
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
@@ -143,11 +182,14 @@ case "$x" in
    5 | 05)
    clear
    delscript
-   ;;      
+   ;;
    6 | 06)
+   limit_ssh
+   ;;      
+   7 | 07)
    autoexec
    ;;
-   7 | 07)
+   8 | 08)
    conexao
    exit
    ;;
