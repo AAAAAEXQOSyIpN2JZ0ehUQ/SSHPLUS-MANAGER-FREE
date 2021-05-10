@@ -5,10 +5,9 @@ instala_fun () {
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "\033[1;31mINSTALADOR KEY SSHPLUS MANAGER\033[0m"
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -ne "\033[0m"
-echo -e "\033[1;33mINSTALANDO... \033[1;32mAGUARDE"
-echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e " "
+echo ""
+read -n1 -r -p " Enter to Continue..."
+echo ""
 # ACTUALIZA REPOSITORIO
 echo -e "\033[1;33m ACTUALIZA REPOSITORIO... \033[1;32mAGUARDE"
 apt-get update -y > /dev/null 2>&1
