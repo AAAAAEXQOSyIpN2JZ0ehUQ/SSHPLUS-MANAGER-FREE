@@ -56,7 +56,7 @@ echo ""
 echo -e "\033[1;31m≠×≠×≠×≠×≠×≠×≠×≠×[\033[1;33m • \033[1;32mBY CRAZY VPN\033[1;33m •\033[1;31m ]≠×≠×≠×≠×≠×≠×≠×≠×\033[0m"
 echo ""
 #-----------------------------------------------------------------------------------------------------------------
-read -p "$(echo -e "\033[1;36mDESEJA INSTALAR [N/S]:\033[1;37m ")" -e -i s resp
+read -p "$(echo -e "\033[1;36mDESEJA CONTINUAR \033[1;31m? \033[1;33m[S/N]:\033[1;37m ")" -e -i s resp
 [[ $resp = @(n|N) ]] && rm $HOME/Plus && exit 0
 cp /etc/ssh/sshd_config /etc/ssh/sshd_back
 # wget -O /etc/ssh/sshd_config https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/sshd_config > /dev/null 2>&1
