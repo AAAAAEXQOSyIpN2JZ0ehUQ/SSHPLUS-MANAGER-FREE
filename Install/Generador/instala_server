@@ -30,7 +30,7 @@ touch /var/www/html/_S_script/index.html
 echo -e " "
 # INSTALL ARQUIVOS
 echo -e "\033[1;33m INSTALL ARQUIVOS... \033[1;32mAGUARDE"
-wget https://www.dropbox.com/s/5l90157s9tz1p5j/Plus -O /var/www/html/Plus > /dev/null 2>&1
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/Plus -O /var/www/html/Plus > /dev/null 2>&1
 wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/list -O /home/list > /dev/null 2>&1
 wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/versao > /dev/null 2>&1 && cat /home/versao >/var/www/html/script/versao
 wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/keyssh -O /bin/keyssh > /dev/null 2>&1
@@ -63,14 +63,14 @@ sleep 6s
 echo -e " "
 # DONWLOAD SERVER
 echo -e "\033[1;33m DONWLOAD SERVER... \033[1;32mAGUARDE"
-#apt-get install zip -y > /dev/null 2>&1
+apt-get install zip -y > /dev/null 2>&1
 apt-get install unzip -y > /dev/null 2>&1
 apt-get install curl -y > /dev/null 2>&1
 [[ ! -d /var/www/html/_S_script ]] && mkdir /var/www/html/_S_script
 cd /var/www/html/_S_script
-wget https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/raw/master/Install/Generador/sshplus-v36.zip > /dev/null 2>&1
-unzip sshplus-v36.zip > /dev/null 2>&1
-rm -rf sshplus-v36.zip
+wget https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/raw/master/Install/Generador/sshplus-v37.zip > /dev/null 2>&1
+unzip sshplus-v37.zip > /dev/null 2>&1
+rm -rf sshplus-v37.zip
 cd
 # HISTORY
 cat /dev/null > ~/.bash_history && history -c
