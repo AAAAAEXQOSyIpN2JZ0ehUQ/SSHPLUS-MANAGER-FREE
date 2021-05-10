@@ -36,7 +36,7 @@ link_bin="https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-
 
 criarpay () {
 clear
-echo -e "\E[44;1;37m             GERADOR DE PAYLOAD            \E[0m\n"
+echo -e "\E[44;1;37m             GERADOR DE PAYLOAD              \E[0m\n"
 echo -e "\033[1;33mDIGITE UM HOST PARA CRIAR PAYLOADS GENERICAS!"
 echo -e "\033[1;33mCRIADOR DE PAYLOADS DIGITE O HOST \033[1;37m"
 echo ""

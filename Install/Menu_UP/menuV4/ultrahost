@@ -20,6 +20,8 @@ randomize="$RANDOM"
 scan_funtion () {
 #INICIA SCRIPT
 clear
+echo -e "\E[44;1;37m           SCANNER DE SUBDOMINIO               \E[0m"
+echo ""
 echo -e "\033[1;32mINICIALIZANDO PROCEDIMENTOS (SCAN) \033[0m"
 echo ""
 #INICIA SCRIPT
@@ -88,8 +90,7 @@ echo -ne " \033[1;33mDeseja Imprimir os Resultados? \033[1;37m[S/N]: "; read yn
    cat $HOME/result_tmp|grep -v =
    [[ -e $HOME/result_tmp ]] && rm -rf $HOME/result_tmp
    echo -e "\033[0m"
-   echo -e "\033[1;32mLog Gerado no Arquivo \033[1;33m$HOME/subresult"
-   echo -e "\033[0m"
+   echo -e "\033[1;32mLog Gerado no Arquivo \033[1;33m$HOME/subresult \033[0m"
    return 0
    }
 tput cuu1 && tput dl1
