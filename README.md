@@ -22,7 +22,6 @@ SCRIPT SSHPLUS MANAGER es un script con un conjunto de características y herram
 * Se recomienda usar una distro nueva o formatiada
 * Para instalar el segundo menu adaptado ejecute el comando ( menuV2 )
 * Para instalar el tercer menu adaptado formato ADM ejecute el comando ( menuV3 
-* Para instalar el cuarto menu adaptado formato ADM con utilitarios ejecute el comando ( menuV4 )
 * Para restablecer el menu original ejecute el comando ( menuV1 )
 
 ## :book: Installation
