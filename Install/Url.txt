@@ -17,6 +17,8 @@ https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/ma
 
 https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/menuV2
 
+https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/menuV3
+
 https://www.dropbox.com/s/tgkxdwb03r7w59r/badvpn-udpgw
 
 https://raw.githubusercontent.com/CRAZY-VPN/SQUID3/master/squid3
