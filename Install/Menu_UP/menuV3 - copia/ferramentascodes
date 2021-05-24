@@ -31,72 +31,53 @@ tput cnorm
 IP=$(cat /etc/IP)
 x="ok"
 
-function autoexec () {
-   if grep "menu;" /etc/profile > /dev/null; then
-      clear
-      echo -e "\033[1;32mDESATIVANDO AUTO EXECUÇÃO\033[0m"
-      offautmenu () {
-         sed -i '/menu;/d' /etc/profile
-      }
-      echo ""
-      fun_bar 'offautmenu'
-      echo ""
-      echo -e "\033[1;31mAUTO EXECUÇÃO DESATIVADO!\033[0m"
-      sleep 1.5s
-      menu
-   else
-      clear
-      echo -e "\033[1;32mATIVANDO AUTO EXECUÇÃO\033[0m"
-      autmenu () {
-         grep -v "^menu;" /etc/profile > /tmp/tmpass && mv /tmp/tmpass /etc/profile
-         echo "menu;" >> /etc/profile
-      }
-      echo ""
-      fun_bar 'autmenu'
-      echo ""
-      echo -e "\033[1;32mAUTO EXECUÇÃO ATIVADO!\033[0m"
-      sleep 1.5s
-      menu
-   fi
-
+velocity () {
+aguarde () {
+comando[0]="$1"
+comando[1]="$2"
+ (
+[[ -e $HOME/fim ]] && rm $HOME/fim
+[[ ! -d /etc/SSHPlus ]] && rm -rf /bin/menu
+${comando[0]} > /dev/null 2>&1
+${comando[1]} > /dev/null 2>&1
+touch $HOME/fim
+ ) > /dev/null 2>&1 &
+ tput civis
+echo -ne "  \033[1;33mAGUARDE \033[1;37m- \033[1;33m["
+while true; do
+   for((i=0; i<18; i++)); do
+   echo -ne "\033[1;31m#"
+   sleep 0.1s
+   done
+   [[ -e $HOME/fim ]] && rm $HOME/fim && break
+   echo -e "\033[1;33m]"
+   sleep 1s
+   tput cuu1
+   tput dl1
+   echo -ne "  \033[1;33mAGUARDE \033[1;37m- \033[1;33m["
+done
+echo -e "\033[1;33m]\033[1;37m -\033[1;32m OK !\033[1;37m"
+tput cnorm
 }
-
-#limiter
-function limit1 () {
-   clear
-   echo -e "\n\033[1;32mINICIANDO O LIMITER... \033[0m"
-   echo ""
-   fun_bar 'screen -dmS limiter limiter' 'sleep 3'
-   [[ $(grep -wc "limiter" /etc/autostart) = '0' ]] && {
-       echo -e "ps x | grep 'limiter' | grep -v 'grep' && echo 'ON' || screen -dmS limiter limiter" >> /etc/autostart
-   } || {
-       sed -i '/limiter/d' /etc/autostart
-	   echo -e "ps x | grep 'limiter' | grep -v 'grep' && echo 'ON' || screen -dmS limiter limiter" >> /etc/autostart
-   }
-   echo -e "\n\033[1;32m  LIMITER ATIVO !\033[0m"
-   sleep 3
-   menu
+fun_tst () {
+speedtest --share > speed
 }
-function limit2 () {
-   clear
-   echo -e "\033[1;32mPARANDO O LIMITER... \033[0m"
-   echo ""
-   fun_stplimiter () {
-      sleep 1
-      screen -r -S "limiter" -X quit
-      screen -wipe 1>/dev/null 2>/dev/null
-      [[ $(grep -wc "limiter" /etc/autostart) != '0' ]] && {
-          sed -i '/limiter/d' /etc/autostart
-      }
-      sleep 1
-   }
-   fun_bar 'fun_stplimiter' 'sleep 3'
-   echo -e "\n\033[1;31m LIMITER PARADO !\033[0m"
-   sleep 3
-   menu
-}
-function limit_ssh () {
-[[ $(ps x | grep "limiter"|grep -v grep |wc -l) = '0' ]] && limit1 || limit2
+echo ""
+echo -e "   \033[1;32mTESTANDO A VELOCIDADE DO SERVIDOR !\033[0m"
+echo ""
+aguarde 'fun_tst'
+echo ""
+png=$(cat speed | sed -n '5 p' |awk -F : {'print $NF'})
+down=$(cat speed | sed -n '7 p' |awk -F :  {'print $NF'})
+upl=$(cat speed | sed -n '9 p' |awk -F :  {'print $NF'})
+lnk=$(cat speed | sed -n '10 p' |awk {'print $NF'})
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "\033[1;32mPING (LATENCIA):\033[1;37m$png"
+echo -e "\033[1;32mDOWNLOAD:\033[1;37m$down"
+echo -e "\033[1;32mUPLOAD:\033[1;37m$upl"
+echo -e "\033[1;32mLINK: \033[1;36m$lnk\033[0m"
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+rm -rf $HOME/speed
 }
 
 while true $x != "ok"
@@ -140,23 +121,22 @@ echo -e "\033[1;32mSISTEMA            MEMÓRIA RAM      PROCESSADOR "
 echo -e "\033[1;31mOS: \033[1;37m$_system \033[1;31mTotal:\033[1;37m$_ram \033[1;31mNucleos: \033[1;37m$_core\033[0m"
 echo -e "\033[1;31mHora: \033[1;37m$_hora     \033[1;31mEm uso: \033[1;37m$_usor \033[1;31mEm uso: \033[1;37m$_usop\033[0m"
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-[[ ! -e /tmp/att ]]  && {
-    echo -e "\033[1;32mOnlines:\033[1;37m $_onlin     \033[1;31mExpirados: \033[1;37m$_userexp \033[1;33mTotal: \033[1;37m$_tuser\033[0m"
-    var01='\033[1;37m•'
-} || {
-    echo -e "  \033[1;33m[\033[1;31m!\033[1;33m]  \033[1;32mEXISTE UMA ATUALIZACAO DISPONIVEL  \033[1;33m[\033[1;31m!\033[1;33m]\033[0m"
-    var01="\033[1;32m!"
-}
+echo -e "\033[1;32mOnlines:\033[1;37m $_onlin     \033[1;31mExpirados: \033[1;37m$_userexp \033[1;33mTotal: \033[1;37m$_tuser\033[0m"
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo ""
-echo -e "[\033[1;36m01\033[1;31m] \033[1;37m• \033[1;33mGERENCIAR USUARIOS \033[1;31m
-[\033[1;36m02\033[1;31m] \033[1;37m\033[1;37m• \033[1;33mGERENCIAR FERRAMENTAS \033[1;31m
-[\033[1;36m03\033[1;31m] $var01 \033[1;33m[!] \033[1;32mATUALIZAR SCRIPT \033[1;31m
-[\033[1;36m04\033[1;31m] \033[1;37m• \033[1;33m[!] \033[1;31mREMOVER SCRIPT \033[1;31m
-[\033[1;36m05\033[1;31m] \033[1;37m• \033[1;33mVERIFICACOES $stsl\033[1;31m
-[\033[1;36m06\033[1;31m] \033[1;37m• \033[1;33mAUTO EXECUCAO $autm \033[1;31m
-[\033[1;36m07\033[1;31m] \033[1;37m• \033[1;33mMODO DE CONEXAO \033[1;31m
-\033[1;31m[\033[1;36m00\033[1;31m] \033[1;37m• \033[1;33mSAIR \033[1;32m<\033[1;33m<\033[1;31m<\033[1;31m"
+echo -e "[\033[1;36m01\033[1;31m] \033[1;37m• \033[1;33mSPEEDTEST \033[1;31m
+[\033[1;36m02\033[1;31m] \033[1;37m• \033[1;33mTRAFEGO \033[1;31m                  
+[\033[1;36m03\033[1;31m] \033[1;37m• \033[1;33mOTIMIZAR \033[1;31m
+[\033[1;36m04\033[1;31m] \033[1;37m• \033[1;33mINFO VPS \033[1;31m
+[\033[1;36m05\033[1;31m] \033[1;37m• \033[1;33mMUDAR SENHA ROOT \033[1;31m
+[\033[1;36m06\033[1;31m] \033[1;37m• \033[1;33mADICIONAR HOST \033[1;31m
+[\033[1;36m07\033[1;31m] \033[1;37m• \033[1;33mREMOVER HOST \033[1;31m
+[\033[1;36m08\033[1;31m] \033[1;37m• \033[1;33mREINICIAR SISTEMA \033[1;31m
+[\033[1;36m09\033[1;31m] \033[1;37m• \033[1;33mREINICIAR SERVICOS \033[1;31m
+[\033[1;36m10\033[1;31m] \033[1;37m• \033[1;33mBLOCK TORRENT $stsf\033[1;31m
+[\033[1;36m11\033[1;31m] \033[1;37m• \033[1;33mBOT TELEGRAM $stsbot\033[1;31m
+[\033[1;36m12\033[1;31m] \033[1;37m• \033[1;33mBAD VPN $stsu\033[1;31m
+[\033[1;36m00\033[1;31m] \033[1;37m• \033[1;33mVOLTAR \033[1;32m<\033[1;33m<\033[1;31m< \033[1;31m"
 echo ""
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo ""
@@ -165,34 +145,67 @@ echo -ne "\033[1;32mOQUE DESEJA FAZER \033[1;33m?\033[1;31m?\033[1;37m : "; read
 case "$x" in 
    1 | 01)
    clear
-   usercodes
+   velocity
+   echo -ne "\n\033[1;31mENTER \033[1;33mpara retornar ao \033[1;32mMENU!\033[0m"; read
    ;;
    2 | 02)
    clear
-   ferramentascodes
+   echo -e "\033[1;32mPARA SAIR CLICK CTRL + C\033[1;36m"
+   sleep 4
+   nload
    ;;
    3 | 03)
-   attscript
+   clear
+   otimizar
+   echo -ne "\n\033[1;31mENTER \033[1;33mpara retornar ao \033[1;32mMENU!\033[0m"; read
    ;;
    4 | 04)
    clear
-   delscript
+   detalhes
+   echo -ne "\n\033[1;31mENTER \033[1;33mpara retornar ao \033[1;32mMENU!\033[0m"; read
    ;;
    5 | 05)
-   limit_ssh
-   ;;      
+   clear
+   senharoot
+   sleep 3
+   ;;
    6 | 06)
-   autoexec
+   clear
+   addhost
+   echo -ne "\n\033[1;31mENTER \033[1;33mpara retornar ao \033[1;32mMENU!\033[0m"; read
+   ferramentascodes
    ;;
    7 | 07)
-   conexao
-   exit
+   clear
+   delhost
+   echo -ne "\n\033[1;31mENTER \033[1;33mpara retornar ao \033[1;32mMENU!\033[0m"; read
+   ferramentascodes
+   ;;
+   8 | 08)
+   clear
+   reiniciarsistema
+   ;;
+   9 | 09)
+   clear
+   reiniciarservicos
+   sleep 3
+   ;;
+   10)
+   blockt
+   ;;
+   11)
+   botssh
+   ;;
+   12)
+   clear
+   badvpn
+   exit;
    ;;
    0 | 00)
    echo -e "\033[1;31mSaindo...\033[0m"
    sleep 2
    clear
-   exit
+   exit;
    ;;
    *)
    echo -e "\n\033[1;31mOpcao invalida !\033[0m"
