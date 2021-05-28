@@ -21,6 +21,12 @@ https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/ma
 
 https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/menuV3
 
+https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/slowdns
+
+https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/dns-server
+
+https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/dns
+
 https://www.dropbox.com/s/tgkxdwb03r7w59r/badvpn-udpgw
 
 https://raw.githubusercontent.com/CRAZY-VPN/SQUID3/master/squid3
@@ -41,4 +47,3 @@ Localizador de IP:
 ipv4.icanhazip.com)
 
 http://whatismyip.akamai.com/
-
