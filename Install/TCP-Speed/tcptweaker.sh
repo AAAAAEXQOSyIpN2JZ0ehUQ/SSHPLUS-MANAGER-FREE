@@ -1,4 +1,5 @@
 #!/bin/bash
+clear
 tput setaf 7 ; tput setab 4 ; tput bold ; printf '%35s%s%-20s\n' "TCP Tweaker 1.0" ; tput sgr0
 if [[ `grep -c "^#PH56" /etc/sysctl.conf` -eq 1 ]]
 then
