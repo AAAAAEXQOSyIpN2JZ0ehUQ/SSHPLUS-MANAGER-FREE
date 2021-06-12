@@ -1764,6 +1764,12 @@ exit 0' >$RCLOCAL
 			0 | 00)
 				menu
 				;;
+			9 | 09)
+				echo -e "\033[1;31mSaindo...\033[0m"
+				sleep 2
+				clear
+				exit
+				;;
 			*)
 				echo -e "\033[1;31mOpcao invalida !\033[0m"
 				sleep 2
