@@ -188,11 +188,6 @@ case "$x" in
    conexao
    exit
    ;;
-   update)
-   wget -O /bin/menu https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Menu_UP/menuV3/update/menu > /dev/null 2>&1; chmod +x /bin/menu
-   wget -O /bin/conexao https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Menu_UP/menuV3/update/conexao > /dev/null 2>&1; chmod +x /bin/conexao
-   menu
-   ;;
    0 | 00)
    echo -e "\033[1;31mSaindo...\033[0m"
    sleep 2
