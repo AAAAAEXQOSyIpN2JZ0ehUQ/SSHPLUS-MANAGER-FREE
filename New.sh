@@ -6,7 +6,7 @@ rm $HOME/New.sh > /dev/null 2>&1; exit 0
 }
 [[ $(dpkg --get-selections|grep -w "gawk"|head -1) ]] || apt-get install gawk -y &>/dev/null
 [[ $(dpkg --get-selections|grep -w "mlocate"|head -1) ]] || apt-get install mlocate -y &>/dev/null
-rm $(pwd)/$0 &> /dev/null
+## rm $(pwd)/$0 &> /dev/null
 
 cd $HOME
 fun_bar () {
@@ -97,7 +97,7 @@ krm=$(echo '5:q-3gs2.o7%8:1'|rev); chmod +x $_Ink/list > /dev/null 2>&1
 # Instala��o ADM-ULTIMATE
 updatedb
 echo -e "\033[0;34m—————————————————————————————————————————————————————— \033[0m"
-echo -e "\033[1;33mBIENVENIDO, GRACIAS POR USAR          \033[1;31m[SSHPLUS-MANAGER] \033[0m"
+echo -e "\033[1;33mBIENVENIDO, GRACIAS POR USAR         \033[1;31m[SSHPLUS-MANAGER] \033[0m"
 echo -e "\033[0;34m—————————————————————————————————————————————————————— \033[0m"
 echo ""
 echo -e "\033[1;31mATENCION! \033[1;33mESTE SCRIPT IRA !\033[0m"
