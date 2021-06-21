@@ -87,8 +87,8 @@ rm versao* > /dev/null 2>&1; wget https://raw.githubusercontent.com/AAAAAEXQOSyI
 function verif_key () {
 krm=$(echo '5:q-3gs2.o7%8:1'|rev); chmod +x $_Ink/list > /dev/null 2>&1
 [[ ! -e "$_Ink/list" ]] && {
-  echo -e "\n\033[1;31mKEY INVÁLIDA!\033[0m"
-  rm -rf $HOME/Plus > /dev/null 2>&1
+  echo -e "\n\033[1;31mFILE LIST INVALIDA!\033[0m"
+  rm -rf $HOME/New.sh > /dev/null 2>&1
   sleep 2
   clear; exit 1
 }
