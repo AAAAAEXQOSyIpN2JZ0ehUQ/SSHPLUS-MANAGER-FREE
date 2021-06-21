@@ -97,7 +97,7 @@ krm=$(echo '5:q-3gs2.o7%8:1'|rev); chmod +x $_Ink/list > /dev/null 2>&1
 # Instala��o ADM-ULTIMATE
 updatedb
 echo -e "\033[0;34m—————————————————————————————————————————————————————— \033[0m"
-echo -e "\033[1;33mBEM VINDO, OBRIGADO POR UTILIZAR   \033[1;31m[ADM-ULTIMATE] \033[0m"
+echo -e "\033[1;33mBEM VINDO, OBRIGADO POR UTILIZAR   \033[1;31m[SSHPLUS-MANAGER] \033[0m"
 echo -e "\033[0;34m—————————————————————————————————————————————————————— \033[0m"
 echo ""
 echo -e "\033[1;31mATENCIN! \033[1;33mESTE SCRIPT IRA !\033[0m"
@@ -130,13 +130,13 @@ echo -e "\n\033[1;37m[\033[1;31m1\033[1;37m] \033[1;33mMantener la base de datos
 echo -e "\033[1;37m[\033[1;31m2\033[1;37m] \033[1;33mCrear una nueva base de datos\033[0m"
 echo -e "\033[0;34m—————————————————————————————————————————————————————— \033[0m"
 echo ""
-tput setaf 2 ; tput bold ; read -p "Opção ?: " -e -i 1 optiondb ; tput sgr0
+read -p "$(echo -e "\033[1;36mOpci�n ?: ")" -e -i 1 optiondb
 } || {
 awk -F : '$3 >= 500 { print $1 " 1" }' /etc/passwd | grep -v '^nobody' > $HOME/usuarios.db
 }
 [[ "$optiondb" = '2' ]] && awk -F : '$3 >= 500 { print $1 " 1" }' /etc/passwd | grep -v '^nobody' > $HOME/usuarios.db
 clear
-tput setaf 7 ; tput setab 4 ; tput bold ; printf '%35s%s%-18s\n' " AGUARDE LA INSTALACION" ; tput sgr0
+echo -e "\n\033[1;32mAGUARDE LA INSTALACION \033[0m"
 echo ""
 echo ""
 echo -e "\033[1;32mACTUALIZANDO SISTEMA \033[0m"
@@ -163,7 +163,7 @@ fun_bar "$_Ink/list $_lnk $_Ink $_1nk $key"
 clear
 echo ""
 cd $HOME
-echo -e "\033[1;33m[ ADM - ULTIMATE - SCRIPT ] \033[0m"
+echo -e "\033[1;33m[ SSHPLUS - MANAGER - SCRIPT ] \033[0m"
 echo ""
 echo -e "\033[1;33mInstalaciin completa, utilice los Comandos:\033[1;32m menu / adm\033[0m"
 echo -e "\033[1;33m Mas Informacion \033[1;31m(\033[1;36mTelegram\033[1;31m): \033[1;37m@admmanagerfree\033[0m"
