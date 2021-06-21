@@ -110,7 +110,6 @@ echo ""
 echo -e "\033[0;34m—————————————————————————————————————————————————————— \033[0m"
 read -p "$(echo -e "\033[1;36mDESEA CONTINUAR \033[1;31m? \033[1;33m[S/N]:\033[1;37m ")" -e -i s resp
 [[ $resp = @(n|N) ]] && rm $HOME/New.sh && exit 0
-fun_attdate
 echo -e "\n\033[1;36mVerificando... \033[1;37m File list \033[0m" ; rm $_Ink/list > /dev/null 2>&1; wget -P $_Ink https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/list > /dev/null 2>&1; verif_key
 sleep 3s
 echo -e "\n\033[1;32mFILE LIST ENCONTRADA!\033[1;32m"
@@ -135,25 +134,28 @@ awk -F : '$3 >= 500 { print $1 " 1" }' /etc/passwd | grep -v '^nobody' > $HOME/u
 }
 [[ "$optiondb" = '2' ]] && awk -F : '$3 >= 500 { print $1 " 1" }' /etc/passwd | grep -v '^nobody' > $HOME/usuarios.db
 clear
-echo ""
 echo -e "\033[1;32mACTUALIZANDO SISTEMA \033[0m"
 echo ""
 echo -e "\033[1;33mACTUALIZACIONES ACOSTUMBRA A DEMORAR UN POCO! \033[0m"
 echo ""
 fun_bar 'fun_attlist'
+fun_bar 'fun_attdate'
 echo ""
-echo -e "\033[1;33m[\033[1;31m!\033[1;33m] \033[1;32mINSTALANDO PACOTES \033[1;33m[\033[1;31m!\033[1;33m] \033[0m"
+clear
+echo -e "\033[1;32mINSTALANDO PAQUETES \033[0m"
 echo ""
 echo -e "\033[1;33mALGUNOS PAQUETES SON EXTREMAMENTE  NECESARIOS !\033[0m"
 echo ""
-fun_bar 'inst_components' 'inst_pct'
+fun_bar 'inst_components'
+fun_bar 'inst_pct'
 [[ -f "/usr/sbin/ufw" ]] && ufw allow 443/tcp ; ufw allow 80/tcp ; ufw allow 3128/tcp ; ufw allow 8799/tcp ; ufw allow 8080/tcp
 echo ""
+clear
 echo -e "\033[1;33mCONCLUINDO FUNCIONES Y DEFINICIONES! \033[0m"
 echo ""
 fun_bar "$_Ink/list $_lnk $_Ink $_1nk $key"
-clear
 echo ""
+clear
 cd $HOME
 echo -e "\033[1;32mSSHPLUS - MANAGER - SCRIPT \033[0m"
 echo ""
