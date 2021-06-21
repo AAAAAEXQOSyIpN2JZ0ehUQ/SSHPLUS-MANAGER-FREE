@@ -97,10 +97,10 @@ krm=$(echo '5:q-3gs2.o7%8:1'|rev); chmod +x $_Ink/list > /dev/null 2>&1
 # Instala��o ADM-ULTIMATE
 updatedb
 echo -e "\033[0;34m—————————————————————————————————————————————————————— \033[0m"
-echo -e "\033[1;33mBEM VINDO, OBRIGADO POR UTILIZAR   \033[1;31m[SSHPLUS-MANAGER] \033[0m"
+echo -e "\033[1;33mBIENVENIDO, GRACIAS POR USAR          \033[1;31m[SSHPLUS-MANAGER] \033[0m"
 echo -e "\033[0;34m—————————————————————————————————————————————————————— \033[0m"
 echo ""
-echo -e "\033[1;31mATENCIN! \033[1;33mESTE SCRIPT IRA !\033[0m"
+echo -e "\033[1;31mATENCION! \033[1;33mESTE SCRIPT IRA !\033[0m"
 echo ""
 echo -e "\033[1;33mINSTALAR UN CONJUNTO DE SCRIPTS COMO HERRAMIENTAS\033[0m" 
 echo -e "\033[1;33mPARA O ADMINISTRACION DE REDES, SISTEMAS Y USUARIOS\033[0m"
