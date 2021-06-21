@@ -141,7 +141,6 @@ echo ""
 echo -e "\033[1;33mACTUALIZACIONES ACOSTUMBRA A DEMORAR UN POCO! \033[0m"
 echo ""
 fun_bar 'fun_attlist'
-clear
 echo ""
 echo -e "\033[1;33m[\033[1;31m!\033[1;33m] \033[1;32mINSTALANDO PACOTES \033[1;33m[\033[1;31m!\033[1;33m] \033[0m"
 echo ""
@@ -149,9 +148,6 @@ echo -e "\033[1;33mALGUNOS PAQUETES SON EXTREMAMENTE  NECESARIOS !\033[0m"
 echo ""
 fun_bar 'inst_components' 'inst_pct'
 [[ -f "/usr/sbin/ufw" ]] && ufw allow 443/tcp ; ufw allow 80/tcp ; ufw allow 3128/tcp ; ufw allow 8799/tcp ; ufw allow 8080/tcp
-clear
-echo ""
-echo -e "\033[1;32mFINALIZANDO \033[0m"
 echo ""
 echo -e "\033[1;33mCONCLUINDO FUNCIONES Y DEFINICIONES! \033[0m"
 echo ""
