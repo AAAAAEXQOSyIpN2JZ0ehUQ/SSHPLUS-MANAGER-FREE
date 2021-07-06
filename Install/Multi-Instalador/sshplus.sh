@@ -86,11 +86,12 @@ while true $x != "ok"
 do
 clear
 echo -e "$barra"
-echo -e "\E[41;1;37mMULTI-INTALADOR SSHPLUS           \033[1;32m[\033[1;37m VERSAO: r014 \033[1;32m]\E[0m"
+echo -e "\E[41;1;37mMULTI-INTALADOR SSHPLUS           \033[1;32m[\033[1;37m VERSAO: r015 \033[1;32m]\E[0m"
 echo -e "$barra"
 echo -e "\033[1;31m[\033[1;36m01\033[1;31m] \033[1;33mSSHPLUS MANAGER FREE           \033[1;32m(FREE) \033[37m∆
 \033[1;31m[\033[1;36m02\033[1;31m] \033[1;33mSSHPLUS MANAGER OFICIAL-DEV    \033[1;32m(FREE) 
 \033[1;31m[\033[1;36m03\033[1;31m] \033[1;33mSSHPLUS MANAGER OFICIAL        \033[1;31m(KEYS) 
+\033[0m\e[34m--------------------------------------------------
 \033[1;31m[\033[1;36m04\033[1;31m] \033[1;33mPAINEL SSHPLUS WEB V.20        \033[1;32m(FREE) \033[37m∆
 \033[1;31m[\033[1;36m05\033[1;31m] \033[1;33mPAINEL VIP-VPS WEB V.23        \033[1;32m(FREE) \033[37m∆
 \033[1;31m[\033[1;36m06\033[1;31m] \033[1;33mPAINEL VIP-VPS WEB V.25        \033[1;32m(FREE) \033[37m∆
