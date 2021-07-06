@@ -1,42 +1,41 @@
 #!/bin/bash
 barra="\033[0m\e[34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-x="ok"
-
-##MENU
-_usor=$(printf '%-8s' "$(free -m | awk 'NR==2{printf "%.2f%%", $3*100/$2 }')")
-_usop=$(printf '%-1s' "$(top -bn1 | awk '/Cpu/ { cpu = "" 100 - $8 "%" }; END { print cpu }')")
 
 # ACCESO RAPIDO
 echo "/root/Panelweb.sh" > /bin/ipw && chmod +x /bin/ipw > /dev/null 2>&1
 
+# MENU
+_usor=$(printf '%-8s' "$(free -m | awk 'NR==2{printf "%.2f%%", $3*100/$2 }')")
+_usop=$(printf '%-1s' "$(top -bn1 | awk '/Cpu/ { cpu = "" 100 - $8 "%" }; END { print cpu }')")
+
 fun_bar () {
 comando[0]="$1"
 comando[1]="$2"
-(
+ (
 [[ -e $HOME/fim ]] && rm $HOME/fim
-${comando[0]} -y > /dev/null 2>&1
-${comando[1]} -y > /dev/null 2>&1
+${comando[0]} > /dev/null 2>&1
+${comando[1]} > /dev/null 2>&1
 touch $HOME/fim
-) > /dev/null 2>&1 &
-tput civis
+ ) > /dev/null 2>&1 &
+ tput civis
 echo -ne "  \033[1;33mAGUARDE \033[1;37m- \033[1;33m["
 while true; do
-for((i=0; i<18; i++)); do
-echo -ne "\033[1;31m#"
-sleep 0.1s
-done
-[[ -e $HOME/fim ]] && rm $HOME/fim && break
-echo -e "\033[1;33m]"
-sleep 1s
-tput cuu1
-tput dl1
-echo -ne "  \033[1;33mAGUARDE \033[1;37m- \033[1;33m["
+   for((i=0; i<18; i++)); do
+   echo -ne "\033[1;31m#"
+   sleep 0.1s
+   done
+   [[ -e $HOME/fim ]] && rm $HOME/fim && break
+   echo -e "\033[1;33m]"
+   sleep 1s
+   tput cuu1
+   tput dl1
+   echo -ne "  \033[1;33mAGUARDE \033[1;37m- \033[1;33m["
 done
 echo -e "\033[1;33m]\033[1;37m -\033[1;32m OK !\033[1;37m"
 tput cnorm
 }
 
-##PANIL REMOVE
+# PANIL REMOVE
 remove_panel () {
 clear
 echo -e "$barra"
@@ -55,8 +54,13 @@ echo -e "\033[1;36mPANEL ELIMINADO CON EXITO \033[1;32m[!OK]"
 echo -e "$barra"
 }
 
-##LIMPIA ROOT
-fun_limpiarepositorios () {
+# CLEAN FOLDER
+clean_folder () {
+echo ""
+fun_bar "apt-get update -y"
+fun_bar "apt-get upgrade -y"
+fun_bar "sleep 3s"
+# LIMPIA ROOT
 rm -rf $HOME/install
 rm -rf $HOME/install.1
 rm -rf $HOME/install.2
@@ -70,14 +74,6 @@ rm -rf $HOME/sshplus.sql
 rm -rf $HOME/bd-v15.sql
 rm -rf $HOME/ssh.sql
 rm -rf $HOME/plus.sql
-}
-
-##CLEAN FOLDER
-clean_folder () {
-echo ""
-fun_bar "apt-get update -y"
-fun_bar "apt-get upgrade -y"
-fun_bar "fun_limpiarepositorios"
 rm -rf $HOME/Panelweb.sh; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/Panelweb.sh > /dev/null 2>&1
 echo ""
 echo -e "\033[1;33m CLEAN FOLDER COM SUCESSO -\033[1;32m OK !\033[1;37m"
@@ -85,7 +81,7 @@ sleep 4s
 chmod +x Panelweb.sh; ./Panelweb.sh
 }
 
-##PAINEL A INSTALAR
+# PAINEL A INSTALAR
 
 panel_v10 () {
     wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v10/Painel.sh > /dev/null 2>&1; chmod +x Painel.sh; ./Painel.sh
@@ -124,23 +120,22 @@ panel_v25 () {
     wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v25/install > /dev/null 2>&1; chmod +x install; ./install
 }
 
-##UPDATE VIP-VPS v23 a v25
+# UPDATE VIP-VPS v23 a v25
 
 panel_update2325 () {
     wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v23_2/atu-v23-p-v25 > /dev/null 2>&1; chmod +x atu-v23-p-v25; ./atu-v23-p-v25
 }
 
-##OPCIONES DE SISTEMA
+# OPCIONES DE SISTEMA
 
 atualizar () {
-    rm -rf $HOME/Panelweb.sh; wget wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/Panelweb.sh; chmod +x Panelweb.sh; ./Panelweb.sh
+    rm -rf $HOME/Panelweb.sh; wget wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/Panelweb.sh > /dev/null 2>&1; chmod +x Panelweb.sh; ./Panelweb.sh
 }
 remove_multiscripts () {
     rm -rf $HOME/Panelweb.sh && rm -rf /bin/ipw
-    exit
-    clear
 }
 
+x="ok"
 while true $x != "ok"
 do
 clear
@@ -263,8 +258,6 @@ case "$x" in
    ;;
    *)
    echo -e "\n\033[1;31mOpcao invalida !\033[0m"
-   ./Panelweb.sh
 esac
 done
-}
 #fim
