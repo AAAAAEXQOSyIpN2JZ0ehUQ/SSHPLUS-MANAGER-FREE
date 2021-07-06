@@ -1,5 +1,5 @@
 #!/bin/bash
-linha="\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+barra="\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 
 fun_bar () {
 comando[0]="$1"
@@ -40,9 +40,9 @@ fun_attlist () {
 }
 
 clear
-echo -e "$LINE"
+echo -e "$barra"
 echo -e "      \033[1;33mINSTALADOR KEY SSHPLUS MANAGER !\033[0m"
-echo -e "$LINE"
+echo -e "$barra"
 echo ""
 read -n1 -r -p " Enter to Continue..."
 echo
@@ -99,9 +99,9 @@ sleep 3s
 echo -e "\033[1;33mFINALIZANDO CONFIGURACION...... \033[1;32mAGUARDE"
 service ssh restart >/dev/null 2>&1
 service apache2 restart >/dev/null 2>&1
-echo -e "$LINE"
+echo -e "$barra"
 echo -e "\033[1;37m Perfeito, Use o Comando \033[1;31mkeyssh \033[1;37m
  para Gerenciar as Suas Keys e
  Atualizar a Base do servidor"
-echo -e "$LINE"
+echo -e "$barra"
 rm $HOME/instgerador.sh && cat /dev/null > ~/.bash_history && history -c
