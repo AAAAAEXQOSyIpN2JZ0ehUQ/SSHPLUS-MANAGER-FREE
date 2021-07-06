@@ -46,7 +46,7 @@ echo -e "$barra"
 echo ""
 read -n1 -r -p " Enter to Continue..."
 echo
-echo -e "\033[1;33mATUALIZANDO REPOSITÓRIOS.... \033[1;32mAGUARDE"
+echo -e "\033[1;33mATUALIZANDO REPOSITÓRIOS..... \033[1;32mAGUARDE"
 apt-get update -y > /dev/null 2>&1
 apt-get upgrade -y > /dev/null 2>&1
 apt-get install curl -y > /dev/null 2>&1
@@ -83,7 +83,7 @@ wget -O /home/list https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHP
 wget -O /home/versao https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/versao > /dev/null 2>&1
 wget -O /bin/keyssh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/keyssh > /dev/null 2>&1
 wget -O /bin/otimizar https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/otimizar > /dev/null 2>&1
-echo -e "\033[1;36mPERMISOS ARQUIVOS............ \033[1;32mAGUARDE"
+echo -e "\033[1;33mPERMISOS ARQUIVOS............ \033[1;32mAGUARDE"
     chmod +x  /var/www/html/Plus > /dev/null 2>&1
     chmod +x  /home/list > /dev/null 2>&1
     chmod +x  /home/versao > /dev/null 2>&1
@@ -96,12 +96,12 @@ sed -i "s;SEU-IP-AKI;$IP;g" /var/www/html/Plus > /dev/null 2>&1
 fun_ip
 sed -i "s;SEU-IP-AKI;$IP;g" /home/list > /dev/null 2>&1
 sleep 3s
-echo -e "\033[1;33mFINALIZANDO CONFIGURACION...... \033[1;32mAGUARDE"
+echo -e "\033[1;33mFINALIZANDO CONFIGURACION.... \033[1;32mAGUARDE"
 service ssh restart >/dev/null 2>&1
 service apache2 restart >/dev/null 2>&1
 echo -e "$barra"
-echo -e "\033[1;37m Perfeito, Use o Comando \033[1;31mkeyssh \033[1;37m
- para Gerenciar as Suas Keys e
- Atualizar a Base do servidor"
+echo -e " \033[1;36m> \033[1;37mPerfeito, Use o Comando \033[1;31mkeyssh "
+echo -e "  \033[1;37mpara Gerenciar as Suas Keys e "
+echo -e " \033[1;37m> \033[1;37mAtualizar a Base do servidor "
 echo -e "$barra"
 rm $HOME/instgerador.sh && cat /dev/null > ~/.bash_history && history -c
