@@ -37,58 +37,53 @@ tput cnorm
 
 # MANAGER SCRIPTS
 sshplusfree () {
-    apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Plus; chmod 777 Plus; ./Plus
+apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Plus; chmod 777 Plus; ./Plus
 }
 sshplusDEV () {
-    apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Sistema/Plus; chmod 777 Plus; ./Plus
+apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Sistema/Plus; chmod 777 Plus; ./Plus
 }
 sshpluskey () {
-    apt-get update -y; apt-get upgrade -y; wget sshplus.xyz/script/Plus; chmod 777 Plus; ./Plus
+apt-get update -y; apt-get upgrade -y; wget sshplus.xyz/script/Plus; chmod 777 Plus; ./Plus
 }
 
 # PAINEL WEB SCRIPTS
 panel_v20 () {
-    apt-get install php-ssh2 -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v20/install > /dev/null 2>&1; chmod +x install; ./install
+apt-get install php-ssh2 -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v20/install > /dev/null 2>&1; chmod +x install; ./install
 }
 panel_v23 () {
-    apt-get install php-ssh2 -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v23/install > /dev/null 2>&1; chmod +x install; ./install
+apt-get install php-ssh2 -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v23/install > /dev/null 2>&1; chmod +x install; ./install
 }
 panel_v23_2 () {
-    wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v23_2/install > /dev/null 2>&1; chmod +x install; ./install
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v23_2/install > /dev/null 2>&1; chmod +x install; ./install
 }
 panel_v25 () {
-    apt-get install php-ssh2 -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v25/install > /dev/null 2>&1; chmod +x install; ./install
+apt-get install php-ssh2 -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v25/install > /dev/null 2>&1; chmod +x install; ./install
 }
 
 # UPDATE VIP-VPS v23 a v25
-
 panel_update2325 () {
-    apt-get install php-ssh2 -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v23_2/atu-v23-p-v25 > /dev/null 2>&1; chmod +x atu-v23-p-v25; ./atu-v23-p-v25
+apt-get install php-ssh2 -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v23_2/atu-v23-p-v25 > /dev/null 2>&1; chmod +x atu-v23-p-v25; ./atu-v23-p-v25
 }
 
 # GEYGEN SSHPLUS MANAGER
-
 keyssh () {
-    apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/instala_server; chmod 777 instala_server* && ./instala_server*
+apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/instala_server; chmod 777 instala_server* && ./instala_server*
 }
 
 # OPCIONES DE SISTEMA
-
 atualizar () {
 echo ""
 fun_bar "apt-get update -y"
 fun_bar "apt-get upgrade -y"
+fun_bar "service ssh restart"
 rm -rf $HOME/sshplus.sh*; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Multi-Instalador/sshplus.sh > /dev/null 2>&1
 echo ""
 echo -e "\033[1;33m UPDATE COM SUCESSO -\033[1;32m OK !\033[1;37m"
 sleep 4s
 chmod +x sshplus.sh; ./sshplus.sh
 }
-atualizar02 () {
-    rm -rf $HOME/sshplus.sh*; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Multi-Instalador/sshplus.sh > /dev/null 2>&1; chmod +x sshplus.sh; ./sshplus.sh
-}
 remove_multiscripts () {
-    rm -rf $HOME/sshplus.sh* && rm -rf /bin/mis
+rm -rf $HOME/sshplus.sh* && rm -rf /bin/mis
 }
 
 x="ok"
@@ -96,7 +91,7 @@ while true $x != "ok"
 do
 clear
 echo -e "$barra"
-echo -e "\E[41;1;37mMULTI-INTALADOR SSHPLUS           \033[1;32m[\033[1;37m VERSAO: r016 \033[1;32m]\E[0m"
+echo -e "\E[41;1;37mMULTI-INTALADOR SSHPLUS           \033[1;32m[\033[1;37m VERSAO: r017 \033[1;32m]\E[0m"
 echo -e "$barra"
 echo -e "\033[1;31m[\033[1;36m01\033[1;31m] \033[1;33mSSHPLUS MANAGER FREE           \033[1;32m(FREE) \033[37m∆
 \033[1;31m[\033[1;36m02\033[1;31m] \033[1;33mSSHPLUS MANAGER OFICIAL-DEV    \033[1;32m(FREE) 
@@ -117,64 +112,64 @@ echo -e "$barra"
 echo -ne "\033[1;32mOQUE DESEJA FAZER \033[1;33m?\033[1;31m?\033[1;37m : "; read x
 
 case "$x" in 
-   1 | 01)
-   clear
-   sshplusfree
-   exit;
-   ;;
-   2 | 02)
-   clear
-   sshplusDEV
-   exit;
-   ;;
-   3 | 03)
-   clear
-   sshpluskey
-   exit;
-   ;;
-   4 | 04)
-   clear
-   panel_v20
-   exit;
-   ;;
-   5 | 05)
-   clear
-   panel_v23_2
-   exit;
-   ;;     
-   6 | 06)
-   clear
-   panel_v25
-   exit;
-   ;;     
-   7 | 07)
-   clear
-   panel_update2325
-   exit;
-   ;;
-   8 | 08)
-   clear
-   keyssh
-   exit;
-   ;;
-   9 | 09)
-   clear
-   atualizar
-   exit;
-   ;;
-   10)
-   clear
-   remove_multiscripts
-   exit;
-   ;;
-   0 | 00)
-   echo -e "\033[1;31mSaindo...\033[0m"
-   sleep 2
-   clear
-   exit;
-   ;;
-   *)
-   echo -e "\n\033[1;31mOpcao invalida !\033[0m"
+1 | 01)
+clear
+sshplusfree
+exit;
+;;
+2 | 02)
+clear
+sshplusDEV
+exit;
+;;
+3 | 03)
+clear
+sshpluskey
+exit;
+;;
+4 | 04)
+clear
+panel_v20
+exit;
+;;
+5 | 05)
+clear
+panel_v23_2
+exit;
+;;     
+6 | 06)
+clear
+panel_v25
+exit;
+;;     
+7 | 07)
+clear
+panel_update2325
+exit;
+;;
+8 | 08)
+clear
+keyssh
+exit;
+;;
+9 | 09)
+clear
+atualizar
+exit;
+;;
+10)
+clear
+remove_multiscripts
+exit;
+;;
+0 | 00)
+echo -e "\033[1;31mSaindo...\033[0m"
+sleep 2
+clear
+exit;
+;;
+*)
+echo -e "\n\033[1;31mOpcao invalida !\033[0m"
 esac
 done
 #fim
