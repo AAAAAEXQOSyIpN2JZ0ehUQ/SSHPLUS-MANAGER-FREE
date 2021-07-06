@@ -10,8 +10,12 @@
 
 apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/instala_server; chmod 777 instala_server* && ./instala_server*
 
+## :book: Installation Server BETA
+
+apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/instgerador.sh; chmod 777 instgerador.sh* && ./instgerador.sh*
+
 ```
-ACCESO DIRECTO AL SCRIPTS EXECUTE EL COMANDO: keyssh
+ACCESO DIRECTO AL SCRIPTS EJECUTE EL COMANDO: keyssh
 ```
 -------------------------------------------------------------------------------
 
