@@ -14,7 +14,7 @@ ACCESO DIRECTO AL SCRIPTS EXECUTE EL COMANDO ( mis )
 ## :octocat: Contribute
 
 1. @crazy_vpn - Developer of SSHPlus Manager
-2. @Adeilsonfi - Developer of Painel VIP-VPS
+2. @Adeilsonfi - Contributor
 3. Team Illuminati - Contributor 
 
 ```
