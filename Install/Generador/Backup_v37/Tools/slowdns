@@ -63,7 +63,7 @@ echo -e "${RED}$banner${SCOLOR}"
     }
 }
 echo -ne "\n${RED}[${YELLOW}!${RED}] ${YELLOW}PARA CONTINUAR CERTIFIQUE-SE DE\nESTÁ APENAS COM OS ${RED}(${YELLOW}DADOS MOVEIS${RED})\n${YELLOW}ATIVADO ${GREEN}ENTER ${YELLOW}PARA CONTINUAR.. ${SCOLOR}"; read
-$HOME/dns -udp 208.67.222.222:53 -pubkey ${chave} ${ns} 127.0.0.1:2222 > /dev/null 2>&1 &
+$HOME/dns -udp 187.50.250.115:53 -pubkey ${chave} ${ns} 127.0.0.1:2222 > /dev/null 2>&1 &
 echo -e "\n${RED}[${GREEN}√${RED}]${SCOLOR} - ${GREEN}SLOWDNS INICIADO!${SCOLOR} - ${RED}[${GREEN}√${RED}]\n\n${RED}[${YELLOW}!${RED}] ${YELLOW}AGORA CONECTE-SE EM UM APP VPN\nOU CLICK EM ${GREEN}ENTER ${RED}PARA DESCONECTAR ${SCOLOR}"; read
 piddns=$(ps x| grep -w 'dns' | grep -v 'grep'| awk -F' ' {'print $1'})
 [[ ${piddns} != '' ]] && kill ${piddns} > /dev/null 2>&1
