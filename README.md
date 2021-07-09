@@ -35,7 +35,7 @@ SI NECESITAN REINSTALAR EL SCRIPTS PUEDEN EJECUTAR EL COMANDO: ( sshplus )
 
 ## :book: Installation Utilitarios
 
-1. [SCRIPT OFICIAL PAINEL SSHPLUS WEB VERSAO: 20 (Installation Directa)](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/Panel_Web)
+1. [SCRIPT OFICIAL PAINEL SSHPLUS WEB VERSAO: 20 (Installation Directa)](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/Panel_Web/panel_v20)
 2. [PAINEL SSHPLUS WEB (VERSIONES)](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/Panel_Web)
 3. [GENERADOR DE KEY SSHPLUS MANAGER](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/Generador)
 4. [MULTI-INTALADOR SSHPLUS](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/Multi-Instalador)
