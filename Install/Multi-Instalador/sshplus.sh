@@ -69,6 +69,10 @@ apt-get install php-ssh2 -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyI
 keyssh () {
 apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/instala_server; chmod 777 instala_server* && ./instala_server*
 }
+# TCP-SPEED
+fun_tcpspeed () {
+rm -rf $HOME/tcptweaker.sh* > /dev/null 2>&1; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/TCP-Speed/tcptweaker.sh; chmod +x tcptweaker.sh; ./tcptweaker.sh
+}
 
 # OPCIONES DE SISTEMA
 atualizar () {
@@ -76,7 +80,7 @@ echo ""
 fun_bar "apt-get update -y"
 fun_bar "apt-get upgrade -y"
 fun_bar "service ssh restart"
-rm -rf $HOME/sshplus.sh*; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Multi-Instalador/sshplus.sh > /dev/null 2>&1
+rm -rf $HOME/sshplus.sh* > /dev/null 2>&1; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Multi-Instalador/sshplus.sh > /dev/null 2>&1
 echo ""
 echo -e "\033[1;33m UPDATE COM SUCESSO -\033[1;32m OK !\033[1;37m"
 sleep 4s
@@ -91,10 +95,10 @@ while true $x != "ok"
 do
 clear
 echo -e "$barra"
-echo -e "\E[41;1;37mMULTI-INTALADOR SSHPLUS           \033[1;32m[\033[1;37m VERSAO: r017 \033[1;32m]\E[0m"
+echo -e "\E[41;1;37mMULTI-INTALADOR SSHPLUS           \033[1;32m[\033[1;37m VERSAO: r020 \033[1;32m]\E[0m"
 echo -e "$barra"
 echo -e "\033[1;31m[\033[1;36m01\033[1;31m] \033[1;33mSSHPLUS MANAGER FREE           \033[1;32m(FREE) \033[37m∆
-\033[1;31m[\033[1;36m02\033[1;31m] \033[1;33mSSHPLUS MANAGER OFICIAL-DEV    \033[1;32m(FREE) 
+\033[1;31m[\033[1;36m02\033[1;31m] \033[1;33mSSHPLUS MANAGER OFICIAL-DEV    \033[1;32m(FREE) \033[37m∆
 \033[1;31m[\033[1;36m03\033[1;31m] \033[1;33mSSHPLUS MANAGER OFICIAL        \033[1;31m(KEYS) 
 \033[0m\e[34m--------------------------------------------------
 \033[1;31m[\033[1;36m04\033[1;31m] \033[1;33mPAINEL SSHPLUS WEB V.20        \033[1;32m(FREE) \033[37m∆
@@ -105,8 +109,10 @@ echo -e "\033[1;31m[\033[1;36m01\033[1;31m] \033[1;33mSSHPLUS MANAGER FREE      
 \033[0m\e[34m--------------------------------------------------
 \033[1;31m[\033[1;36m08\033[1;31m] \033[1;33mGENERADOR KEY SSHPLUS MANAGER  \033[1;32m(FREE)
 \033[0m\e[34m--------------------------------------------------
-\033[1;31m[\033[1;36m09\033[1;31m] \033[1;35m[!] \033[1;32mACTUALIZAR                \033[1;31mRam:\033[1;37m $_usor
-\033[1;31m[\033[1;36m10\033[1;31m] \033[1;35m[!] \033[1;31mDESINSTALAR \033[1;35m[\033[1;37m MIS \033[1;35m]       \033[1;31mNucleo:\033[1;37m $_usop
+\033[1;31m[\033[1;36m09\033[1;31m] \033[1;33mTCP-TWEAKER-1.0 (TCP-SPEED)    \033[1;32m(FREE) 
+\033[0m\e[34m--------------------------------------------------
+\033[1;31m[\033[1;36m10\033[1;31m] \033[1;35m[!] \033[1;32mACTUALIZAR                \033[1;31mRam:\033[1;37m $_usor
+\033[1;31m[\033[1;36m11\033[1;31m] \033[1;35m[!] \033[1;31mDESINSTALAR \033[1;35m[\033[1;37m MIS \033[1;35m]       \033[1;31mNucleo:\033[1;37m $_usop
 \033[1;31m[\033[1;36m00\033[1;31m] \033[1;37mSALIR \033[1;32m<\033[1;33m<\033[1;31m<                     \033[1;37m@admmanagerfree\033[0m \033[0m"
 echo -e "$barra"
 echo -ne "\033[1;32mOQUE DESEJA FAZER \033[1;33m?\033[1;31m?\033[1;37m : "; read x
@@ -154,10 +160,15 @@ exit;
 ;;
 9 | 09)
 clear
-atualizar
+fun_tcpspeed
 exit;
 ;;
 10)
+clear
+atualizar
+exit;
+;;
+11)
 clear
 remove_multiscripts
 exit;
