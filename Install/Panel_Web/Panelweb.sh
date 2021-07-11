@@ -1,13 +1,6 @@
 #!/bin/bash
 barra="\033[0m\e[34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-
-# ACCESO RAPIDO
-echo "/root/Panelweb.sh" > /bin/ipw && chmod +x /bin/ipw > /dev/null 2>&1
-
-# MENU
-_usor=$(printf '%-8s' "$(free -m | awk 'NR==2{printf "%.2f%%", $3*100/$2 }')")
-_usop=$(printf '%-1s' "$(top -bn1 | awk '/Cpu/ { cpu = "" 100 - $8 "%" }; END { print cpu }')")
-
+[[ -e /bin/ipw ]] && echo "/root/Panelweb.sh" > /bin/ipw && chmod +x /bin/ipw #ACCESO RAPIDO
 fun_bar () {
 comando[0]="$1"
 comando[1]="$2"
@@ -34,8 +27,11 @@ done
 echo -e "\033[1;33m]\033[1;37m -\033[1;32m OK !\033[1;37m"
 tput cnorm
 }
-
-# CLEAN FOLDER
+IP=$(cat /etc/IP)
+x="ok"
+menu ()
+{
+#CLEAN FOLDER
 clean_folder () {
 echo ""
 fun_bar "apt-get update -y"
@@ -60,7 +56,7 @@ sleep 4s
 chmod +x Panelweb.sh; ./Panelweb.sh
 }
 
-# PANIL REMOVE
+#PANIL REMOVE
 remove_panel () {
 clear
 echo -e "$barra"
@@ -79,7 +75,7 @@ echo -e "\033[1;36mPANEL ELIMINADO CON EXITO \033[1;32m[!OK]"
 echo -e "$barra"
 }
 
-# PAINEL A INSTALAR
+#PAINEL A INSTALAR
 panel_v10 () {
 wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v10/Painel.sh > /dev/null 2>&1; chmod +x Painel.sh; ./Painel.sh
 }
@@ -102,27 +98,27 @@ panel_v15_2 () {
 wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v15_2/ocspanel > /dev/null 2>&1; chmod +x ocspanel; ./ocspanel
 }
 panel_v20 () {
-apt-get install php-ssh2 -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v20/install > /dev/null 2>&1; chmod 777 iinstall* && ./install*
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v20/install > /dev/null 2>&1; chmod 777 iinstall* && ./install*
 }
 panel_v20_mod () {
-apt-get install php-ssh2 -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v20_mod/install > /dev/null 2>&1; chmod +x install; ./install
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v20_mod/install > /dev/null 2>&1; chmod +x install; ./install
 }
 panel_v23 () {
-apt-get install php-ssh2 -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v23/install > /dev/null 2>&1; chmod +x install; ./install
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v23/install > /dev/null 2>&1; chmod +x install; ./install
 }
 panel_v23_2 () {
-apt-get install php-ssh2 -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v23_2/install > /dev/null 2>&1; chmod +x install; ./install
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v23_2/install > /dev/null 2>&1; chmod +x install; ./install
 }
 panel_v25 () {
-apt-get install php-ssh2 -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v25/install > /dev/null 2>&1; chmod +x install; ./install
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v25/install > /dev/null 2>&1; chmod +x install; ./install
 }
 
-# UPDATE VIP-VPS v23 a v25
+#UPDATE VIP-VPS v23 a v25
 panel_update2325 () {
-apt-get install php-ssh2 -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v23_2/atu-v23-p-v25 > /dev/null 2>&1; chmod +x atu-v23-p-v25; ./atu-v23-p-v25
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v23_2/atu-v23-p-v25 > /dev/null 2>&1; chmod +x atu-v23-p-v25; ./atu-v23-p-v25
 }
 
-# OPCIONES DE SISTEMA
+#OPCIONES DE SISTEMA
 atualizar () {
 echo ""
 fun_bar "apt-get update -y"
@@ -140,12 +136,13 @@ exit
 clear
 }
 
-x="ok"
 while true $x != "ok"
 do
+_usor=$(printf '%-8s' "$(free -m | awk 'NR==2{printf "%.2f%%", $3*100/$2 }')")
+_usop=$(printf '%-1s' "$(top -bn1 | awk '/Cpu/ { cpu = "" 100 - $8 "%" }; END { print cpu }')")
 clear
 echo -e "$barra"
-echo -e "\E[41;1;37mINSTALAR PAINEL WEB SSH/DROP/SSL \033[1;32m[\033[1;37m  VERSAO: r001 \033[1;32m]\E[0m"
+echo -e "\E[41;1;37mINSTALL PAINEL WEB SSH/DROP/SSL  \033[1;32m[\033[1;37m  VERSAO: r001 \033[1;32m]\E[0m"
 echo -e "$barra"
 echo -e "\033[1;31m[\033[1;36m01\033[1;31m] \033[1;37m• \033[1;33mPAINEL SSHPLUS WEB V10       \033[1;31m(ANT) 
 \033[1;31m[\033[1;36m02\033[1;31m] \033[1;37m• \033[1;33mPAINEL SSHPLUS WEB V10 2     \033[1;32m(DAN) 
@@ -267,4 +264,6 @@ exit;
 echo -e "\n\033[1;31mOpcao invalida !\033[0m"
 esac
 done
+}
+menu
 #fim

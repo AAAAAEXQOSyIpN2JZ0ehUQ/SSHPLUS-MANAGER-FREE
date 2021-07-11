@@ -1,13 +1,6 @@
 #!/bin/bash
 barra="\033[0m\e[34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-
-# ACCESO RAPIDO
-[[ ! -e /bin/mis ]] && echo "/root/sshplus.sh" > /bin/mis && chmod +x /bin/mis
-
-# MENU
-_usor=$(printf '%-8s' "$(free -m | awk 'NR==2{printf "%.2f%%", $3*100/$2 }')")
-_usop=$(printf '%-1s' "$(top -bn1 | awk '/Cpu/ { cpu = "" 100 - $8 "%" }; END { print cpu }')")
-
+[[ ! -e /bin/mis ]] && echo "/root/sshplus.sh" > /bin/mis && chmod +x /bin/mis #ACCESO RAPIDO
 fun_bar () {
 comando[0]="$1"
 comando[1]="$2"
@@ -34,8 +27,11 @@ done
 echo -e "\033[1;33m]\033[1;37m -\033[1;32m OK !\033[1;37m"
 tput cnorm
 }
-
-# MANAGER SCRIPTS
+IP=$(cat /etc/IP)
+x="ok"
+menu ()
+{
+#MANAGER SCRIPTS
 sshplusfree () {
 apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Plus; chmod 777 Plus; ./Plus
 }
@@ -46,35 +42,36 @@ sshpluskey () {
 apt-get update -y; apt-get upgrade -y; wget sshplus.xyz/script/Plus; chmod 777 Plus; ./Plus
 }
 
-# PAINEL WEB SCRIPTS
+#PAINEL WEB SCRIPTS
 panel_v20 () {
-apt-get install php-ssh2 -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v20/install > /dev/null 2>&1; chmod 777 iinstall* && ./install*
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v20/install > /dev/null 2>&1; chmod 777 iinstall* && ./install*
 }
 panel_v23 () {
-apt-get install php-ssh2 -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v23/install > /dev/null 2>&1; chmod +x install; ./install
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v23/install > /dev/null 2>&1; chmod +x install; ./install
 }
 panel_v23_2 () {
 wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v23_2/install > /dev/null 2>&1; chmod +x install; ./install
 }
 panel_v25 () {
-apt-get install php-ssh2 -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v25/install > /dev/null 2>&1; chmod +x install; ./install
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v25/install > /dev/null 2>&1; chmod +x install; ./install
 }
 
-# UPDATE VIP-VPS v23 a v25
+#UPDATE VIP-VPS v23 a v25
 panel_update2325 () {
-apt-get install php-ssh2 -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v23_2/atu-v23-p-v25 > /dev/null 2>&1; chmod +x atu-v23-p-v25; ./atu-v23-p-v25
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v23_2/atu-v23-p-v25 > /dev/null 2>&1; chmod +x atu-v23-p-v25; ./atu-v23-p-v25
 }
 
-# GEYGEN SSHPLUS MANAGER
+#GEYGEN SSHPLUS MANAGER
 keyssh () {
 apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/instala_server; chmod 777 instala_server* && ./instala_server*
 }
-# TCP-SPEED
+
+#TCP-SPEED
 fun_tcpspeed () {
-rm -rf $HOME/tcptweaker.sh* > /dev/null 2>&1; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/TCP-Speed/tcptweaker.sh; chmod +x tcptweaker.sh; ./tcptweaker.sh
+rm -rf $HOME/tcptweaker.sh* > /dev/null 2>&1; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/TCP-Speed/tcptweaker.sh > /dev/null 2>&1; chmod +x tcptweaker.sh; ./tcptweaker.sh
 }
 
-# OPCIONES DE SISTEMA
+#OPCIONES DE SISTEMA
 atualizar () {
 echo ""
 fun_bar "apt-get update -y"
@@ -90,9 +87,10 @@ remove_multiscripts () {
 rm -rf $HOME/sshplus.sh* && rm -rf /bin/mis
 }
 
-x="ok"
 while true $x != "ok"
 do
+_usor=$(printf '%-8s' "$(free -m | awk 'NR==2{printf "%.2f%%", $3*100/$2 }')")
+_usop=$(printf '%-1s' "$(top -bn1 | awk '/Cpu/ { cpu = "" 100 - $8 "%" }; END { print cpu }')")
 clear
 echo -e "$barra"
 echo -e "\E[41;1;37mMULTI-INTALADOR SSHPLUS           \033[1;32m[\033[1;37m VERSAO: r020 \033[1;32m]\E[0m"
@@ -183,4 +181,6 @@ exit;
 echo -e "\n\033[1;31mOpcao invalida !\033[0m"
 esac
 done
+}
+menu
 #fim
