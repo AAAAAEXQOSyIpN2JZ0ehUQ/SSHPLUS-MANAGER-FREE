@@ -1,5 +1,4 @@
 #!/bin/bash
-
 fun_bar () {
 comando[0]="$1"
 comando[1]="$2"
@@ -27,10 +26,10 @@ done
 echo -e "\033[1;33m]\033[1;37m -\033[1;32m OK !\033[1;37m"
 tput cnorm
 }
-
 IP=$(cat /etc/IP)
 x="ok"
-
+menu ()
+{
 velocity () {
 aguarde () {
 comando[0]="$1"
@@ -79,7 +78,6 @@ echo -e "\033[1;32mLINK: \033[1;36m$lnk\033[0m"
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 rm -rf $HOME/speed
 }
-
 #limiter
 function limit1 () {
    clear
@@ -130,7 +128,7 @@ function autoexec () {
       echo ""
       echo -e "\033[1;31mAUTO EXECUÇÃO DESATIVADO!\033[0m"
       sleep 1.5s
-      menu
+      menu2
    else
       clear
       echo -e "\033[1;32mATIVANDO AUTO EXECUÇÃO\033[0m"
@@ -143,7 +141,7 @@ function autoexec () {
       echo ""
       echo -e "\033[1;32mAUTO EXECUÇÃO ATIVADO!\033[0m"
       sleep 1.5s
-      menu
+      menu2
    fi
 
 }
@@ -363,5 +361,6 @@ case "$x" in
    sleep 2
 esac
 done
+}
 menu
 #fim

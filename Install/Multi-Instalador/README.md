@@ -7,7 +7,7 @@
 apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Multi-Instalador/sshplus.sh; chmod +x sshplus.sh; ./sshplus.sh
 
 ```
-ACCESO DIRECTO AL SCRIPTS EXECUTE EL COMANDO ( mis )
+ACCESO DIRECTO AL SCRIPTS EJECUTE EN CONSOLA EL COMANDO ( mis )
 ```
 -------------------------------------------------------------------------------
 
