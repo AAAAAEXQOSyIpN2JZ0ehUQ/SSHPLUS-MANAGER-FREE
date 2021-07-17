@@ -1,5 +1,4 @@
 #!/bin/bash
-
 fun_bar () {
 comando[0]="$1"
 comando[1]="$2"
@@ -27,10 +26,10 @@ done
 echo -e "\033[1;33m]\033[1;37m -\033[1;32m OK !\033[1;37m"
 tput cnorm
 }
-
 IP=$(cat /etc/IP)
 x="ok"
-
+usercodes ()
+{
 #limiter
 function limit1 () {
    clear
@@ -193,5 +192,6 @@ case "$x" in
    sleep 2
 esac
 done
-menu
+}
+usercodes
 #fim
