@@ -1,6 +1,6 @@
 ﻿# SSHPLUS MANAGER
 ```
-* UPDATE 12/07/2021 - UPDATE
+* UPDATE 17/07/2021 - UPDATE
 ```
 ![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/SSHPLUS_MANAGER.jpg)
 
