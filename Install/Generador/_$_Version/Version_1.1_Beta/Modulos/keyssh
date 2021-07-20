@@ -1,4 +1,13 @@
 #!/bin/bash
+####################################################
+#
+# Modificaciones Al Codigo: Illuminati Team
+#
+# **By: [  ???? ]**
+# ===================
+# https://t.me/admmanagerfree
+#
+####################################################
 cat /dev/null > ~/.bash_history && history -c
 barra="\033[0m\e[34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 x="ok"
@@ -363,14 +372,14 @@ echo -ne "\n\033[1;31mENTER \033[1;33mpara retornar ao \033[1;32mMENU!\033[0m"; 
 4)
 if [ ! -e /var/www/html/1:8%7o.2sg3-q:5 ]; then
 apt-get install apache2 -y > /dev/null 2>&1
-sed -i '/Listen 81/a Listen 80' /etc/apache2/ports.conf
+wget -O /etc/apache2/ports.conf https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/_%24_Version/Version_1.1_Beta/Install/ports2.conf > /dev/null 2>&1
 service apache2 restart > /dev/null 2>&1
 echo "#KEYGEN SSHPPLUS ON" > /var/www/html/1:8%7o.2sg3-q:5
 echo ""
 echo -e "\033[1;32mIniciado"
 echo -e "\033[1;32mRodando Apache2 Porta 80"
 else
-wget -O /etc/apache2/ports.conf https://raw.githubusercontent.com/A2JZUQ/GENERADOR/main/Install/ports.conf > /dev/null 2>&1
+wget -O /etc/apache2/ports.conf https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/_%24_Version/Version_1.1_Beta/Install/ports.conf > /dev/null 2>&1
 service apache2 restart > /dev/null 2>&1
 rm -rf /var/www/html/1:8%7o.2sg3-q:5
 echo ""
