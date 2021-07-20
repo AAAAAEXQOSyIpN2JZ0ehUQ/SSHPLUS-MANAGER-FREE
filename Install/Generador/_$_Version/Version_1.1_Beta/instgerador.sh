@@ -74,17 +74,17 @@ echo -e "\033[1;33mPREPARANDO SISTEMA........... \033[1;32mAGUARDE"
 echo -e "\033[1;33mDONWLOAD SERVER.............. \033[1;32mAGUARDE"
 cd
 cd /home/_script_$/crz
-wget https://github.com/A2JZUQ/GENERADOR/raw/main/Install/sshplus-v37.zip > /dev/null 2>&1
+wget https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/raw/master/Install/Generador/_%24_Version/Version_1.1_Beta/Install/sshplus-v37.zip > /dev/null 2>&1
 unzip sshplus-v37.zip > /dev/null 2>&1
 rm -rf sshplus-v37.zip
 cd
 echo -e "\033[1;33mINSTALANDO SISTEMA........... \033[1;32mAGUARDE"
-wget -O /home/list https://raw.githubusercontent.com/A2JZUQ/GENERADOR/main/Modulos/list > /dev/null 2>&1
-wget -O /home/index.html https://raw.githubusercontent.com/A2JZUQ/GENERADOR/main/Modulos/index.html > /dev/null 2>&1
-wget -O /bin/keyssh https://raw.githubusercontent.com/A2JZUQ/GENERADOR/main/Modulos/keyssh > /dev/null 2>&1
-wget -O /bin/otimizar https://raw.githubusercontent.com/A2JZUQ/GENERADOR/main/Modulos/otimizar > /dev/null 2>&1
-wget -O /var/www/html/Plus https://raw.githubusercontent.com/A2JZUQ/GENERADOR/main/Modulos/Plus > /dev/null 2>&1
-wget -O /var/www/html/script/versao https://raw.githubusercontent.com/A2JZUQ/GENERADOR/main/Modulos/versao > /dev/null 2>&1
+wget -O /home/list https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/_%24_Version/Version_1.1_Beta/Modulos/list > /dev/null 2>&1
+wget -O /home/index.html https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/_%24_Version/Version_1.1_Beta/Modulos/index.html > /dev/null 2>&1
+wget -O /bin/keyssh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/_%24_Version/Version_1.1_Beta/Modulos/keyssh > /dev/null 2>&1
+wget -O /bin/otimizar https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/_%24_Version/Version_1.1_Beta/Modulos/otimizar > /dev/null 2>&1
+wget -O /var/www/html/Plus https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/_%24_Version/Version_1.1_Beta/Modulos/Plus > /dev/null 2>&1
+wget -O /var/www/html/script/versao https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/_%24_Version/Version_1.1_Beta/Modulos/versao > /dev/null 2>&1
 echo -e "\033[1;33mPERMISOS ARQUIVOS............ \033[1;32mAGUARDE"
     chmod +x  /home/list > /dev/null 2>&1
     chmod +x  /home/index.html > /dev/null 2>&1
