@@ -11,7 +11,7 @@
 apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/_%24_Version/Version_1.1_Beta/instgerador.sh; chmod 777 instgerador.sh* && ./instgerador.sh*
 
 ```
-ACCESO DIRECTO AL SCRIPTS EJECUTE EL COMANDO: keyssh
+ACCESO DIRECTO AL SCRIPTS EJECUTE EN CONSOLA EL COMANDO: keyssh / key
 ```
 -------------------------------------------------------------------------------
 
