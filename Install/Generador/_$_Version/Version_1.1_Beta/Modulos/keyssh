@@ -1,11 +1,8 @@
 #!/bin/bash
 ####################################################
 #
-# Modificaciones Al Codigo: Illuminati Team
-#
-# **By: [  ???? ]**
-# ===================
-# https://t.me/admmanagerfree
+#  Modificaciones Al Codigo: Illuminati Team
+#  https://t.me/admmanagerfree
 #
 ####################################################
 cat /dev/null > ~/.bash_history && history -c
