@@ -67,10 +67,12 @@ echo -e "\033[1;33mPREPARANDO SISTEMA........... \033[1;32mAGUARDE"
     rm -rf /var/www/html/Plus > /dev/null 2>&1
     rm -rf /var/www/html/Index.php > /dev/null 2>&1
     rm -rf /var/www/html/script > /dev/null 2>&1
+    rm -rf /var/www/html/scripts > /dev/null 2>&1
     mkdir /home/keyssh > /dev/null 2>&1
     mkdir /home/_script_$ > /dev/null 2>&1
     mkdir /home/_script_$/crz > /dev/null 2>&1
     mkdir /var/www/html/script > /dev/null 2>&1
+    mkdir /var/www/html/scripts > /dev/null 2>&1
 echo -e "\033[1;33mDONWLOAD SERVER.............. \033[1;32mAGUARDE"
 cd
 cd /home/_script_$/crz
@@ -83,7 +85,7 @@ wget -O /home/list https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHP
 wget -O /home/index.html https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/_%24_Version/Version_1.1_Beta/Modulos/index.html > /dev/null 2>&1
 wget -O /bin/keyssh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/_%24_Version/Version_1.1_Beta/Modulos/keyssh > /dev/null 2>&1
 wget -O /bin/otimizar https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/_%24_Version/Version_1.1_Beta/Modulos/otimizar > /dev/null 2>&1
-wget -O /var/www/html/Plus https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/_%24_Version/Version_1.1_Beta/Modulos/Plus > /dev/null 2>&1
+wget -O /var/www/html/scripts/Plus https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/_%24_Version/Version_1.1_Beta/Modulos/Plus > /dev/null 2>&1
 wget -O /var/www/html/script/versao https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/_%24_Version/Version_1.1_Beta/Modulos/versao > /dev/null 2>&1
 echo -e "\033[1;33mPERMISOS ARQUIVOS............ \033[1;32mAGUARDE"
     chmod +x  /home/list > /dev/null 2>&1
@@ -95,6 +97,7 @@ echo -e "\033[1;33mPERMISOS ARQUIVOS............ \033[1;32mAGUARDE"
     cat /home/index.html >/home/_script_$/index.html
     cat /home/index.html >/home/_script_$/crz/index.html
     cat /home/index.html >/var/www/html/script/index.html
+    cat /home/index.html >/var/www/html/scripts/index.html
     chmod 777 /home/_script_$/crz/*
     echo "/bin/keyssh" > /bin/key && chmod +x /bin/key #ACCESO RAPIDO
 echo -e "\033[1;33mMONTANDO O SEU LINK-IP....... \033[1;32mAGUARDE"

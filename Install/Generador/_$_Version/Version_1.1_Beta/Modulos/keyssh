@@ -106,13 +106,13 @@ cp -a /home/_script_$/. /var/www/html/$pasta1
 chmod 777 /var/www/html/$pasta1/crz/*
 fi
 clear
-echo -e "\033[0;34m========================="
-echo -e "\033[1;33mSCRIPT SSHPLUS MANAGER !    \033[0m"
-echo -e "\033[0;34m========================="
+echo -e "\033[0;34m============================"
+echo -e "\033[1;33m⇱ SCRIPT SSHPLUS MANAGER ⇲    \033[0m"
+echo -e "\033[0;34m============================"
 echo ""
-echo -e "\033[1;37mwget $IP/Plus; chmod 777 Plus; ./Plus"
+echo -e "\033[1;37mwget $IP/scripts/Plus; chmod 777 Plus; ./Plus"
 echo ""
-echo -e "\033[1;32mKEY: \033[1;37m$pasta1$signus$pasta2\033[0m"
+echo -e "\033[1;32mKEY:\033[1;37m$pasta1$signus$pasta2\033[0m"
 echo ""
 echo -e "\033[0;34m========================="
 echo -e "\033[1;33mObrigado Pela Sua Contribuicao! 👍DEV: CRAZY ✌️😎 \033[0m"
@@ -169,13 +169,13 @@ cp -a /home/_script_$/. /var/www/html/$pasta1
 chmod 777 /var/www/html/$pasta1/crz/*
 fi
 clear
-echo -e "\033[0;34m========================="
-echo -e "\033[1;33mSCRIPT SSHPLUS MANAGER !    \033[0m"
-echo -e "\033[0;34m========================="
+echo -e "\033[0;34m============================"
+echo -e "\033[1;33m⇱ SCRIPT SSHPLUS MANAGER ⇲    \033[0m"
+echo -e "\033[0;34m============================"
 echo ""
-echo -e "\033[1;36mapt-get upgrade -y; wget $IP/Plus; chmod 777 Plus; ./Plus"
+echo -e "\033[1;37mwget $IP/scripts/Plus; chmod 777 Plus; ./Plus"
 echo ""
-echo -e "\033[1;32mKEY: \033[1;37m$pasta1$signus$pasta2\033[0m"
+echo -e "\033[1;32mKEY:\033[1;37m$pasta1$signus$pasta2\033[0m"
 echo ""
 echo -e "\033[0;34m========================="
 echo -e "\033[1;33mObrigado Pela Sua Contribuicao! 👍DEV: CRAZY ✌️😎 \033[0m"
@@ -254,13 +254,13 @@ cp -a /home/_script_$/. /var/www/html/$key1p
 chmod 777 /var/www/html/$key1p/crz/*
 fi
 clear
-echo -e "\033[0;34m========================="
-echo -e "\033[1;33mSCRIPT SSHPLUS MANAGER !    \033[0m"
-echo -e "\033[0;34m========================="
+echo -e "\033[0;34m============================"
+echo -e "\033[1;33m⇱ SCRIPT SSHPLUS MANAGER ⇲    \033[0m"
+echo -e "\033[0;34m============================"
 echo ""
-echo -e "\033[1;37mwget $IP/Plus; chmod 777 Plus; ./Plus"
+echo -e "\033[1;37mwget $IP/scripts/Plus; chmod 777 Plus; ./Plus"
 echo ""
-echo -e "\033[1;32mKEY: \033[1;37m$key1p$signus$key2p\033[0m"
+echo -e "\033[1;32mKEY:\033[1;37m$pasta1$signus$pasta2\033[0m"
 echo ""
 echo -e "\033[0;34m========================="
 echo -e "\033[1;33mObrigado Pela Sua Contribuicao! 👍DEV: CRAZY ✌️😎 \033[0m"
