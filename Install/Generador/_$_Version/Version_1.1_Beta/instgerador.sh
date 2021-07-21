@@ -94,10 +94,6 @@ echo -e "\033[1;33mPERMISOS ARQUIVOS............ \033[1;32mAGUARDE"
     chmod +x  /bin/otimizar > /dev/null 2>&1
     chmod +x  /var/www/html/Plus > /dev/null 2>&1
     chmod +x  /var/www/html/script/versao > /dev/null 2>&1
-    cat /home/index.html >/home/_script_$/index.html
-    cat /home/index.html >/home/_script_$/crz/index.html
-    cat /home/index.html >/var/www/html/script/index.html
-    cat /home/index.html >/var/www/html/scripts/index.html
     chmod 777 /home/_script_$/crz/*
     echo "/bin/keyssh" > /bin/key && chmod +x /bin/key #ACCESO RAPIDO
 echo -e "\033[1;33mMONTANDO O SEU LINK-IP....... \033[1;32mAGUARDE"
@@ -105,8 +101,14 @@ fun_ip
 sed -i "s;SEU-IP-AKI;$IP;g" /var/www/html/scripts/Plus > /dev/null 2>&1
 fun_ip
 sed -i "s;SEU-IP-AKI;$IP;g" /home/list > /dev/null 2>&1
+fun_ip
+sed -i "s;SEU-IP-AKI;$IP;g" /home/index.html > /dev/null 2>&1
 sleep 3s
 echo -e "\033[1;33mFINALIZANDO CONFIGURACION.... \033[1;32mAGUARDE"
+cat /home/index.html >/home/_script_$/index.html
+cat /home/index.html >/home/_script_$/crz/index.html
+cat /home/index.html >/var/www/html/script/index.html
+cat /home/index.html >/var/www/html/scripts/index.html
 service ssh restart >/dev/null 2>&1
 service apache2 restart >/dev/null 2>&1
 echo -e "$barra"
