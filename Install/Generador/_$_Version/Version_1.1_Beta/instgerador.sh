@@ -102,7 +102,7 @@ echo -e "\033[1;33mPERMISOS ARQUIVOS............ \033[1;32mAGUARDE"
     echo "/bin/keyssh" > /bin/key && chmod +x /bin/key #ACCESO RAPIDO
 echo -e "\033[1;33mMONTANDO O SEU LINK-IP....... \033[1;32mAGUARDE"
 fun_ip
-sed -i "s;SEU-IP-AKI;$IP;g" /var/www/html/Plus > /dev/null 2>&1
+sed -i "s;SEU-IP-AKI;$IP;g" /var/www/html/scripts/Plus > /dev/null 2>&1
 fun_ip
 sed -i "s;SEU-IP-AKI;$IP;g" /home/list > /dev/null 2>&1
 sleep 3s
