@@ -355,9 +355,9 @@ echo -e "\033[1;37m |4| \033[1;31m<----> \033[1;32m(RODANDO)\033[1;36m - PARAR K
 fi
 echo -e "\033[1;37m |5| \033[1;31m<----> \033[1;36mKEYS ONLINE\033[0m"
 echo -e "\033[1;37m |6| \033[1;31m<----> \033[1;36mREMOVER KEY\033[0m"
-echo -e "\033[1;37m |7| \033[1;31m<----> \033[1;36mLOG DE REGISTROS\033[0m"
-echo -e "\033[1;37m |8| \033[1;31m<----> \033[1;36mACTUALIZAR KEYGEN\033[0m"
-echo -e "\033[1;37m |9| \033[1;31m<----> \033[1;36mOTIMIZAR SERVIDOR    \033[1;31mRam:   \033[1;37m $_usor\033[0m"
+#echo -e "\033[1;37m |X| \033[1;31m<----> \033[1;36mLOG DE REGISTROS\033[0m"
+echo -e "\033[1;37m |7| \033[1;31m<----> \033[1;36mACTUALIZAR KEYGEN\033[0m"
+echo -e "\033[1;37m |8| \033[1;31m<----> \033[1;36mOTIMIZAR SERVIDOR    \033[1;31mRam:   \033[1;37m $_usor\033[0m"
 echo -e "\033[1;37m |0| \033[1;31m<----> \033[1;36mSAIR DO KEYGEN       \033[1;31mNucleo:\033[1;37m $_usop \033[0m"
 echo -e "$barra"
 echo -ne "\033[0;37m[0/7]: "; read x
@@ -406,15 +406,10 @@ echo -e "\n\033[1;31mENTER \033[1;33mpara retornar ao \033[1;32mMENU!\033[0m"
 ;;
 7)
 clear
-cat /home/sshplus-log 2>/dev/null || echo "ESTA SECCION SE ENCUENTRA EN CONSTRUCCION"
-echo -e "\n\033[1;31mENTER \033[1;33mpara retornar ao \033[1;32mMENU!\033[0m"; read
-;;
-8)
-clear
 rm $HOME/instgerador.sh* > /dev/null 2>&1; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/_%24_Version/Version_1.1_Beta/instgerador.sh; chmod 777 instgerador.sh* && ./instgerador.sh*
 exit
 ;;
-9)
+8)
 clear
 otimizar
 echo -e "\n\033[1;31mENTER \033[1;33mpara retornar ao \033[1;32mMENU!\033[0m"; read
