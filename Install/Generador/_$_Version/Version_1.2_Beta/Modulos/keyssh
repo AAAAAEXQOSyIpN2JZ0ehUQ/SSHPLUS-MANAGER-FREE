@@ -355,7 +355,7 @@ echo -e "\033[1;37mSTATUS: $sts"
 echo -e "$barra"
 mine_port
 echo -e "$barra"
-echo -e " \033[1;31m++| \033[1;32mKEYGEN SSHPLUS \033[1;31m|++       \033[1;33m[ VERSAO: 1.1 BETA ]\033[0m"
+echo -e " \033[1;31m++| \033[1;32mKEYGEN SSHPLUS \033[1;31m|++       \033[1;33m[ VERSAO: 1.2 BETA ]\033[0m"
 echo -e "$barra"
 echo -e "\033[1;37m |1| \033[1;31m<----> \033[1;36mGERAR KEY ALEATORIA \033[1;32m[CV] \033[0m"
 echo -e "\033[1;37m |2| \033[1;31m<----> \033[1;36mGERAR KEY ALEATORIA FIXA \033[1;32m[SV] \033[0m"
@@ -395,7 +395,7 @@ echo -e "\033[1;31mParado"
 echo -e "\033[1;32mDesabilitado Apache"
 else
 apt-get install apache2 -y > /dev/null 2>&1
-wget -O /etc/apache2/ports.conf https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/_%24_Version/Version_1.1_Beta/Install/ports.conf > /dev/null 2>&1
+wget -O /etc/apache2/ports.conf https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/_%24_Version/Version_1.2_Beta/Install/ports.conf > /dev/null 2>&1
 service apache2 start > /dev/null 2>&1
 service apache2 restart > /dev/null 2>&1
 echo ""
