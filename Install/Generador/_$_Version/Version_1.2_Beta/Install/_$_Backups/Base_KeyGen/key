@@ -1,0 +1,157 @@
+#!/bin/bash
+
+if [ "$1" = "" ]; then
+clear
+if [ -e /etc/admserver/key/datakey ]; then
+datenow=$(date +%s)
+for key in `cat /etc/admserver/key/keypremium`
+do
+expsec=$(date +%s --date="$(cat /etc/admserver/key/datakey | grep "$key" | awk '{print $2}')")
+if [ "$datenow" -gt "$expsec" ]; then
+echo -e "\033[1;31mKEY: $key expirada"
+cat /etc/admserver/key/keypremium | grep -v "$key" > /etc/admserver/key/a && mv -f /etc/admserver/key/a /etc/admserver/key/keypremium
+cat /etc/admserver/key/datakey | grep -v "$key" > /etc/admserver/key/b && mv -f /etc/admserver/key/b /etc/admserver/key/datakey
+rm -rf /etc/admserver/tmp
+echo -e "\033[1;31mKEY: $key REMOVIDA\033[0m"
+else
+####teste
+datas=$(($expsec - $datenow))
+DDD=$(($datas / 86400))
+####teste
+echo -e "\033[1;32mKEY: $key ok\033[0m $DDD Dias Restantes"
+rm -rf /etc/admserver/tmp
+fi
+done
+fi
+pid=$(ps x | grep keycreater | grep -v grep | grep bin | awk '{print $1}')
+echo -e "\033[1;31m++| OPCOES |++\033[1;36m"
+echo -e "|1|<---->|CRIAR KEY?|"
+echo -e "|2|<---->|REMOVER KEY PREMIUM|"
+if [ "$pid" = "" ]; then
+echo -e "|3|<---->|\033[1;31m(PARADO)\033[1;36m - INICIAR PROGRAMA|"
+else
+echo -e "|3|<---->|\033[1;32m(RODANDO)\033[1;36m - PARAR PROGRAMA|"
+fi
+echo -e "|4|<---->|\033[1;36m - MUDAR VERSAO DO ADM|"
+echo -e "\033[0m"
+read -p "[1/3]: " opt
+if [ ! -d /etc/admserver ]; then
+mkdir /etc/admserver
+fi
+if [ ! -d /etc/admserver/adm ]; then
+mkdir /etc/admserver/adm
+fi
+if [ ! -d /etc/admserver/key ]; then
+mkdir /etc/admserver/key
+fi
+if [ ! -d /etc/admserver/lista ]; then
+mkdir /etc/admserver/lista
+fi
+case $opt in
+1)
+echo -e "\033[1;32m"
+read -p "Free ou Premium, Se For Free, A Antiga sera Inutilizada!
+[F/P]: " op
+echo -e "\033[0m"
+if [ "$op" = "f" ]; then
+echo -e "\033[1;31mFREE\033[0m"
+echo -e "Digite a Key [ xxxxxxxx:xxxxxxxx ]"
+read -p "key: " key
+if [ "$key" = "" ]; then
+echo "key nao alterada"
+sleep 3s 
+/bin/key
+exit
+fi
+echo "$key" > /etc/admserver/key/keyfree
+else
+echo -e "\033[1;32mPREMIUM\033[0m"
+echo -e "Digite a Key [ xxxxxxxx:xxxxxxxx ]"
+read -p "key: " key
+if [ "$key" = "" ]; then
+echo "key nao alterada"
+sleep 3s 
+/bin/key
+exit
+fi
+echo -e "\033[1;32mQuantos Dias?\033[0m"
+read -p "key: " dat
+if [ "$dat" = "" ]; then
+dat="1"
+fi
+if [ ! -e /etc/admserver/key/datakey ]; then
+touch /etc/admserver/key/datakey
+fi
+if [ ! -e /etc/admserver/key/keypremium ]; then
+touch /etc/admserver/key/keypremium
+fi
+#mudarCasoVpsDerBug
+data=$(date "+%m/%d/%Y" -d " +$dat days")
+echo "$key $data" >> /etc/admserver/key/datakey
+echo "$key" >> /etc/admserver/key/keypremium
+fi
+echo "Criado"
+sleep 3s
+/bin/key
+exit
+;;
+2)
+line="1"
+if [ -e /etc/admserver/tmp ]; then
+rm -rf /etc/admserver/tmp
+touch /etc/admserver/tmp
+else
+touch /etc/admserver/tmp
+fi
+while true; do
+act=$(sed -n $line' p;' /etc/admserver/key/keypremium)
+if [ "$act" = "" ]; then
+break
+fi
+echo "[ $line ] - $act" >> /etc/admserver/tmp
+line=$(( $line + 1 ))
+done
+cat /etc/admserver/tmp
+echo -e "QUAL KEY VAI REMOVER!?"
+line=$(( $line - 1 ))
+read -p "[ 1 - $line ]: " rmv
+if [ "$line" = "1" ]; then
+rm -rf /etc/admserver/key/keypremium
+rm -rf /etc/admserver/key/datakey
+touch /etc/admserver/key/keypremium
+touch /etc/admserver/key/datakey
+/bin/key
+exit
+fi
+rmvkey=$(sed -n $rmv' p;' /etc/admserver/key/keypremium)
+echo "ELIMINANDO KEY: $rmvkey"
+cat /etc/admserver/key/keypremium | grep -v "$rmvkey" > /etc/admserver/key/a && mv -f /etc/admserver/key/a /etc/admserver/key/keypremium
+cat /etc/admserver/key/datakey | grep -v "$rmvkey" > /etc/admserver/key/b && mv -f /etc/admserver/key/b /etc/admserver/key/datakey
+rm -rf /etc/admserver/tmp
+/bin/key
+;;
+3)
+if [ "$pid" = "" ]; then
+screen -dmS screen /bin/keycreater start
+echo "iniciado"
+else
+keycreater stop
+killall keycreater
+for pids in `ps x | grep keycreater | grep -v grep | grep bin | awk '{print $1}'`; do
+kill $pids
+done
+fi
+/bin/key
+;;
+4)
+echo $((($RANDOM %200) * 8081)) > /etc/admserver/adm/versaoADM
+echo "VERSAO ALTERADA PARA"
+cat /etc/admserver/adm/versaoADM
+read -p ""
+/bin/key
+;;
+*)
+exit
+;;
+esac
+fi
