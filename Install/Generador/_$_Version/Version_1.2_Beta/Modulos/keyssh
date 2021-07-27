@@ -395,7 +395,7 @@ echo -e "\033[1;31mParado"
 echo -e "\033[1;32mDesabilitado Apache"
 else
 apt-get install apache2 -y > /dev/null 2>&1
-wget -O /etc/apache2/ports.conf https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/_%24_Version/Version_1.2_Beta/Install/ports.conf > /dev/null 2>&1
+sed -i "s;Listen 80;Listen 81;g" /etc/apache2/ports.conf
 service apache2 start > /dev/null 2>&1
 service apache2 restart > /dev/null 2>&1
 echo ""
