@@ -44,13 +44,13 @@ SI NECESITAN REINSTALAR EL SCRIPTS PUEDEN EJECUTAR EN CONSOLA EL COMANDO: ( sshp
 
 -------------------------------------------------------------------------------
 
-## :scroll: Registro de cambios
+## :scroll: Changelog
 
 **VERSION: 37**
 
 https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/versao
 
-## :octocat: Contribute
+## :octocat: Credits
 
 1. @crazy_vpn - Developer of SSHPlus Manager
 2. Team Illuminati - Contributor 
