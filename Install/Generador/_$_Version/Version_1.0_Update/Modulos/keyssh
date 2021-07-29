@@ -115,14 +115,14 @@ echo ""
 echo -e "\033[1;32mKEY: \033[1;37m$pasta1$signus$pasta2\033[0m"
 echo ""
 #echo -e "\033[0;34m============================"
-#echo -e "\033[1;33mTUTORIAL DE INSTALAÇÃO !    \033[0m"
+#echo -e "\033[1;33m? TUTORIAL DE INSTALAÇÃO !    \033[0m"
 echo -e "\033[0;34m============================"
 echo -e "\033[1;33mObrigado Pela Sua Contribuicao! 👍
 DEV: CRAZY ✌️😎 \033[0m"
 echo ""
 echo -e "\033[1;32mUsuario: \033[1;37m $client\033[0m"
 echo -e "\033[1;32mValidade: \033[1;37m$_temp\033[0m"
-echo -e "\033[1;32mVersao: \033[1;37m  $(cat /home/_script_$/crz/versao)\033[0m"
+echo -e "\033[1;32mVersao: \033[1;37m  $(cat /var/www/html/_script_$/versao)\033[0m"
 VERSION_ID=$(cat /etc/os-release | grep "VERSION_ID")
 if [[ "$VERSION_ID" = 'VERSION_ID="14.04"' ]]; then
 echo "#!/bin/bash
@@ -188,7 +188,7 @@ DEV: CRAZY ✌️😎 \033[0m"
 echo ""
 echo -e "\033[1;32mUsuario: \033[1;37m $client\033[0m"
 echo -e "\033[1;32mValidade: \033[1;37mPermanente\033[0m"
-echo -e "\033[1;32mVersao: \033[1;37m  $(cat /home/_script_$/crz/versao)\033[0m"
+echo -e "\033[1;32mVersao: \033[1;37m  $(cat /var/www/html/_script_$/versao)\033[0m"
 VERSION_ID=$(cat /etc/os-release | grep "VERSION_ID")
 if [[ "$VERSION_ID" = 'VERSION_ID="14.04"' ]]; then
 echo "#!/bin/bash
@@ -276,7 +276,7 @@ DEV: CRAZY ✌️😎 \033[0m"
 echo ""
 echo -e "\033[1;32mUsuario: \033[1;37m $client\033[0m"
 echo -e "\033[1;32mValidade: \033[1;37m$_temp\033[0m"
-echo -e "\033[1;32mVersao: \033[1;37m  $(cat /home/_script_$/crz/versao)\033[0m"
+echo -e "\033[1;32mVersao: \033[1;37m  $(cat /var/www/html/_script_$/versao)\033[0m"
 VERSION_ID=$(cat /etc/os-release | grep "VERSION_ID")
 if [[ "$VERSION_ID" = 'VERSION_ID="14.04"' ]]; then
 echo "#!/bin/bash
