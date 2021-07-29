@@ -181,7 +181,7 @@ echo ""
 echo -e "\033[1;32mKEY: \033[1;37m$pasta1$signus$pasta2\033[0m"
 echo ""
 #echo -e "\033[0;34m============================"
-#echo -e "\033[1;33mTUTORIAL DE INSTALAÇÃO !    \033[0m"
+#echo -e "\033[1;33m? TUTORIAL DE INSTALAÇÃO !    \033[0m"
 echo -e "\033[0;34m============================"
 echo -e "\033[1;33mObrigado Pela Sua Contribuicao! 👍
 DEV: CRAZY ✌️😎 \033[0m"
@@ -269,7 +269,7 @@ echo ""
 echo -e "\033[1;32mKEY: \033[1;37m$key1p$signus$key2p\033[0m"
 echo ""
 #echo -e "\033[0;34m============================"
-#echo -e "\033[1;33mTUTORIAL DE INSTALAÇÃO !    \033[0m"
+#echo -e "\033[1;33m? TUTORIAL DE INSTALAÇÃO !    \033[0m"
 echo -e "\033[0;34m============================"
 echo -e "\033[1;33mObrigado Pela Sua Contribuicao! 👍
 DEV: CRAZY ✌️😎 \033[0m"
@@ -416,7 +416,7 @@ echo -e "\n\033[1;31mENTER \033[1;33mpara retornar ao \033[1;32mMENU!\033[0m"
 ;;
 7)
 clear
-rm $HOME/instgerador.sh* > /dev/null 2>&1; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/_%24_Version/Version_1.1_Beta/instgerador.sh; chmod 777 instgerador.sh* && ./instgerador.sh*
+rm $HOME/instala_server* > /dev/null 2>&1; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/_%24_Version/Version_1.0_Update/instala_server; chmod 777 instala_server* && ./instala_server*
 exit
 ;;
 8)
