@@ -100,25 +100,27 @@ sleep 3s
 echo -e "\033[1;33mDONWLOAD SERVER.............. \033[1;32mAGUARDE"
 cd
 [[ ! -d /var/www/html/_script_$ ]] && mkdir /var/www/html/_script_$
-cd /var/www/html/_S_script
-wget https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/raw/master/Install/Generador/sshplus-v37.zip > /dev/null 2>&1
+cd /var/www/html/_script_$
+wget https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/raw/master/Install/Generador/_%24_Version/Version_1.0_Update/Install/sshplus-v37.zip > /dev/null 2>&1
 unzip sshplus-v37.zip > /dev/null 2>&1
-rm -rf sshplus-v37.zip
+rm -rf sshplus-v37.zip > /dev/null 2>&1
 cd
 sleep 3s
 echo -e "\033[1;33mFINALIZANDO CONFIGURACION.... \033[1;32mAGUARDE"
 cat /home/index.html >/var/www/html/script/index.html
 cat /home/index.html >/var/www/html/scripts/index.html
 cat /home/index.html >/var/www/html/_script_$/index.html
+chmod 777 /var/www/html/_script_$/*
+echo "/bin/keyssh" > /bin/key && chmod +x /bin/key #ACCESO RAPIDO
 service ssh restart >/dev/null 2>&1
 service apache2 restart >/dev/null 2>&1
 cat /dev/null > ~/.bash_history && history -c # HISTORY
 # FIM INSTALL
-echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e "\033[1;37m Perfeito, Use o Comando \033[1;31mkeyssh \033[1;37m
- para Gerenciar as Suas Keys e
- Atualizar a Base do servidor"
-echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "$barra"
+echo -e " \033[1;36m> \033[1;37mPerfeito, Use o Comando \033[1;31mkeyssh / key "
+echo -e " \033[1;36m> \033[1;37mPara Gerenciar as Suas Keys e "
+echo -e " \033[1;36m> \033[1;37mAtualizar a Base do Servidor "
+echo -e "$barra"
 rm -rf $HOME/instala_server > /dev/null 2>&1
 }
 instala_fun
