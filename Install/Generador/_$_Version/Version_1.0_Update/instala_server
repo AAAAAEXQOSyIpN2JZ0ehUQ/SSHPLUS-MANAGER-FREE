@@ -62,9 +62,9 @@ sed -i "s;Listen 80;Listen 81;g" /etc/apache2/ports.conf
 service apache2 restart > /dev/null 2>&1
 #cp /var/www/html/index.html /var/www/html/index_back.html > /dev/null 2>&1
 echo -e "\033[1;33mPREPARANDO SISTEMA........... \033[1;32mAGUARDE"
-    rm -rf /var/www/html/script/index.html
-    rm -rf /var/www/html/_S_script/index.html
     rm -rf /var/www/html/script
+    rm -rf /var/www/html/scripts
+    rm -rf /var/www/html/_script_$
     rm -rf /var/www/html/_S_script
     rm -rf /var/www/html/Plus
     rm -rf /home/list
