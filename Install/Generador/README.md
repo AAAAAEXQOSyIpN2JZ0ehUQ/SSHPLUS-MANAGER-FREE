@@ -8,7 +8,7 @@
 
 ## :book: Installation Server
 
-apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/_%24_Version/Version_1.0_Update/instala_server; chmod 777 instala_server* && ./instala_server*
+apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/instala_server; chmod 777 instala_server* && ./instala_server*
 
 ```
 ACCESO DIRECTO AL SCRIPTS EJECUTE EN CONSOLA EL COMANDO ( keyssh )

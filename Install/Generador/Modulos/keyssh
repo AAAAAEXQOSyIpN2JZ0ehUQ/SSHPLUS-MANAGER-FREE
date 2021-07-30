@@ -416,7 +416,7 @@ echo -e "\n\033[1;31mENTER \033[1;33mpara retornar ao \033[1;32mMENU!\033[0m"
 ;;
 7)
 clear
-rm $HOME/instala_server* > /dev/null 2>&1; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/_%24_Version/Version_1.0_Update/instala_server; chmod 777 instala_server* && ./instala_server*
+rm $HOME/instala_server* > /dev/null 2>&1; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/instala_server; chmod 777 instala_server* && ./instala_server*
 exit
 ;;
 8)
