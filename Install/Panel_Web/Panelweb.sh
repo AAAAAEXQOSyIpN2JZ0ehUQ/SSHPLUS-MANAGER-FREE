@@ -142,7 +142,7 @@ _usor=$(printf '%-8s' "$(free -m | awk 'NR==2{printf "%.2f%%", $3*100/$2 }')")
 _usop=$(printf '%-1s' "$(top -bn1 | awk '/Cpu/ { cpu = "" 100 - $8 "%" }; END { print cpu }')")
 clear
 echo -e "$barra"
-echo -e "\E[44;1;37mINSTALL PAINEL WEB               \033[1;32m[\033[1;37m  VERSAO: r001 \033[1;32m]\E[0m"
+echo -e "\E[41;1;37mINSTALL PAINEL WEB               \033[1;32m[\033[1;37m  VERSAO: r001 \033[1;32m]\E[0m"
 echo -e "$barra"
 echo -e "\033[1;31m[\033[1;36m01\033[1;31m] \033[1;37m• \033[1;33mPAINEL SSHPLUS WEB V10       \033[1;31m(ANT) " 
 echo -e "\033[1;31m[\033[1;36m02\033[1;31m] \033[1;37m• \033[1;33mPAINEL SSHPLUS WEB V10 2     \033[1;32m(DAN) " 
