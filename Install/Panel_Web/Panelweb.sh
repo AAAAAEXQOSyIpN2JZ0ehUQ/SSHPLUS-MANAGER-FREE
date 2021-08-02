@@ -102,9 +102,9 @@ chmod +x Panelweb.sh; ./Panelweb.sh
 #PANIL REMOVE
 remove_panel () {
 clear
-echo -e "$barra"
+echo ""
 echo -e "\033[1;36mDESINTALAR PANEL WEB"
-echo -e "$barra"
+echo ""
 echo -ne "\033[1;37mDesinstalar MySQL [N/S]: \033[1;37m"; read x
 [[ $x = @(n|N) ]] && exit
 ##sudo 
@@ -113,9 +113,11 @@ rm -rf /etc/mysql /var/lib/mysql
 apt-get autoremove
 apt-get autoclean
 service apache2 restart
-echo -e "$barra"
+echo ""
 echo -e "\033[1;36mPANEL ELIMINADO COM SUCESSO -\033[1;32m OK !\033[1;37m"
-echo -e "$barra"
+echo ""
+sleep 4s
+chmod +x Panelweb.sh; ./Panelweb.sh
 }
 
 #OPCIONES DE SISTEMA
