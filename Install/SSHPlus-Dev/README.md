@@ -22,20 +22,20 @@ SCRIPT SSHPLUS MANAGER es un script con un conjunto de características y herram
 
 ## :book: Installation
 
-apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Sistema/Plus; chmod 777 Plus; ./Plus
+apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/SSHPlus-Dev/Plus; chmod 777 Plus; ./Plus
 
 ```
-SI NECESITAN REINSTALAR EL SCRIPTS PUEDEN EJECUTAR EL COMANDO: ( sshplus )
+SI NECESITAN REINSTALAR EL SCRIPTS PUEDEN EJECUTAR EN CONSOLA EL COMANDO: ( sshplus )
 ```
 -------------------------------------------------------------------------------
 
-## :scroll: Registro de cambios
+## :scroll: Changelog
 
 **VERSION: v37**
 
-https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Sistema/Install/versao
+https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/SSHPlus-Dev/Install/versao
 
-## :octocat: Contribute
+## :octocat: Credits
 
 1. @crazy_vpn - Developer of SSHPlus Manager
 

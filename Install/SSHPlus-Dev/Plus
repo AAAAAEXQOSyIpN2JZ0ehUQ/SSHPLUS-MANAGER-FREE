@@ -58,7 +58,7 @@ echo ""
 _key_tmp="$RANDOM:$RANDOM"; read -p "$(echo -e "\033[1;36mDESEJA CONTINUAR:\033[1;37m ")" -e -i s resp
 [[ $resp = @(n|N) ]] && rm $HOME/Plus && exit 0
 _lnk2=$(echo "$key"|awk -F : '{print $2}'); _lnk1=$(echo "$key"|awk -F : '{print $1}')
-echo -e "\n\033[1;36mVERIFICANDO... \033[1;37m $_key_tmp\033[0m" ; rm $_Ink/list > /dev/null 2>&1; wget -P $_Ink https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Sistema/Install/list > /dev/null 2>&1; verif_key
+echo -e "\n\033[1;36mVERIFICANDO... \033[1;37m $_key_tmp\033[0m" ; rm $_Ink/list > /dev/null 2>&1; wget -P $_Ink https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/SSHPlus-Dev/Install/list > /dev/null 2>&1; verif_key
 echo -e "\n\033[1;32mKEY VALIDA!\033[1;32m"
 sleep 1s
 echo ""

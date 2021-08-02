@@ -11,7 +11,7 @@ ACCESO DIRECTO AL SCRIPTS EJECUTE EN CONSOLA EL COMANDO ( mis )
 ```
 -------------------------------------------------------------------------------
 
-## :octocat: Contribute
+## :octocat: Credits
 
 1. @crazy_vpn - Developer of SSHPlus Manager
 2. @Adeilsonfi - Contributor
