@@ -11,11 +11,11 @@
 apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/instala_server; chmod 777 instala_server* && ./instala_server*
 
 ```
-ACCESO DIRECTO AL SCRIPTS EJECUTE EN CONSOLA EL COMANDO ( keyssh )
+ACCESO DIRECTO AL SCRIPTS EJECUTE EN CONSOLA EL COMANDO: ( keyssh )
 ```
 -------------------------------------------------------------------------------
 
-## :octocat: Contribute
+## :octocat: Credits
 
 1. @crazy_vpn - Developer of SSHPlus Manager
 2. Team Illuminati - Contributor 

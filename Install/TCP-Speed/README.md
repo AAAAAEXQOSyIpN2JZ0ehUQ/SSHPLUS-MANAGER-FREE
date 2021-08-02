@@ -7,11 +7,11 @@
 apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/TCP-Speed/tcptweaker.sh; chmod +x tcptweaker.sh; ./tcptweaker.sh
 
 ```
-PARA EJECUTAR NUEVAMENTE TCP-SPPED EJECUTE EN CONSOLA EL COMANDO ( ./tcptweaker.sh )
+PARA EJECUTAR NUEVAMENTE TCP-SPPED EJECUTE EN CONSOLA EL COMANDO: ( ./tcptweaker.sh )
 ```
 -------------------------------------------------------------------------------
 
-## :octocat: Contribute
+## :octocat: Credits
 
 1. @Phreaker56 - Developer of TCP-Tweaker-1.0 (TCP-SPEED) (Website: https://phreaker56.obex.pw/)
 2. Team Illuminati - Contributor 
