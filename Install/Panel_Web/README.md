@@ -15,11 +15,11 @@
 apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/Panelweb.sh; chmod +x Panelweb.sh; ./Panelweb.sh
 
 ```
-ACCESO DIRECTO AL SCRIPTS EJECUTE EN CONSOLA EL COMANDO ( ipw )
+ACCESO DIRECTO AL SCRIPTS EJECUTE EN CONSOLA EL COMANDO: ( ipw )
 ```
 -------------------------------------------------------------------------------
 
-## :octocat: Contribute
+## :octocat: Credits
 
 1. @crazy_vpn - Developer of SSHPlus Manager
 2. @Adeilsonfi - Contributor
