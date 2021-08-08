@@ -1,6 +1,6 @@
 ﻿# SSHPLUS MANAGER
 ```
-* UPDATE 17/07/2021 - UPDATE
+* UPDATE 17/07/2021 - Proyecto Finalizado
 ```
 ![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/SSHPLUS_MANAGER.jpg)
 
@@ -53,7 +53,7 @@ https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/ma
 ## :octocat: Credits
 
 1. @crazy_vpn - Developer of SSHPlus Manager
-2. Team Illuminati - Contributor 
+2. illuminati Dev Team - Contributor 
 
 ```
 * SIN MINERIA! 
