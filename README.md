@@ -18,7 +18,7 @@ SCRIPT SSHPLUS MANAGER es un script con un conjunto de características y herram
 * Un sistema operativo basado en Linux (Ubuntu o Debian)
 * Ubuntu 14.04 Server x86_64 / Ubuntu 16.04 Server x86_64  / Ubuntu 18.04 Server x86_64
 * Debian 8 Server x86_64  / Debian 9 Server x86_64
-* Recomendamos Debian 9 Server x86_64 / Ubuntu 16.04 Server x86_64
+* Recomendamos Debian 9 Server x86_64 / Ubuntu 16.04 Server x86_64  / Ubuntu 18.04 Server x86_64
 * Se recomienda usar una distro nueva o formatiada
 * Para instalar el segundo menu adaptado ejecute en consola el comando [( menuV2 )](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/Update_menuV2.png)
 * Para instalar el tercer menu adaptado formato ADM ejecute en consola el comando [( menuV3 )](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/Update_menuV3.png)
