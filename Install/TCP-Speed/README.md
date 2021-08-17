@@ -13,8 +13,8 @@ PARA EJECUTAR NUEVAMENTE TCP-SPPED EJECUTE EN CONSOLA EL COMANDO: ( ./tcptweaker
 
 ## :octocat: Credits
 
-1. @Phreaker56 - Developer of TCP-Tweaker-1.0 (TCP-SPEED) (Website: https://phreaker56.obex.pw/)
-2. Team Illuminati - Contributor 
+1. [@Phreaker56 - Developer of TCP-Tweaker-1.0 (TCP-SPEED)](https://phreaker56.obex.pw/)
+2. illuminati Dev Team - Contributor 
 
 ```
 * SIN MINERIA! 

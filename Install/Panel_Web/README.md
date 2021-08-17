@@ -25,7 +25,7 @@ ACCESO DIRECTO AL SCRIPTS EJECUTE EN CONSOLA EL COMANDO: ( ipw )
 1. @crazy_vpn - Developer of SSHPlus Manager
 2. @Adeilsonfi - Contributor
 3. @backup-new - Contributor
-4. Team Illuminati - Contributor 
+4. illuminati Dev Team - Contributor 
 
 ```
 * SIN MINERIA! 

@@ -15,7 +15,7 @@ ACCESO DIRECTO AL SCRIPTS EJECUTE EN CONSOLA EL COMANDO: ( mis )
 
 1. @crazy_vpn - Developer of SSHPlus Manager
 2. @Adeilsonfi - Contributor
-3. Team Illuminati - Contributor 
+3. illuminati Dev Team - Contributor 
 
 ```
 * SIN MINERIA! 

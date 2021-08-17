@@ -18,7 +18,7 @@ ACCESO DIRECTO AL SCRIPTS EJECUTE EN CONSOLA EL COMANDO: keyssh / key
 ## :octocat: Contribute
 
 1. @crazy_vpn - Developer of SSHPlus Manager
-2. Team Illuminati - Contributor 
+2. illuminati Dev Team - Contributor 
 
 ```
 * SIN MINERIA! 
