@@ -1,6 +1,7 @@
 ﻿# SSHPLUS MANAGER
 ```
-* UPDATE 17/07/2021 - Proyecto Finalizado
+* UPDATE 17/07/2021 - Proyecto Descontinuado
+* SSHPLUS MANAGER (Final Version 37)
 ```
 ![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/SSHPLUS_MANAGER.jpg)
 
