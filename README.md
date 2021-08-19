@@ -41,7 +41,7 @@ SI NECESITAN REINSTALAR EL SCRIPTS PUEDEN EJECUTAR EN CONSOLA EL COMANDO: ( sshp
 3. [GENERADOR DE KEY SSHPLUS MANAGER](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/Generador)
 4. [MULTI-INTALADOR SSHPLUS](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/Multi-Instalador)
 5. [TCP-Tweaker-1.0 (TCP-SPEED)](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/TCP-Speed)
-6. [INSTALL ARQUIVOS ORIGINALES ENCRIPTADOS POR @crazy_vpn](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/Sistema)
+6. [INSTALL ARQUIVOS ORIGINALES ENCRIPTADOS POR @crazy_vpn](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/SSHPlus-Dev)
 
 -------------------------------------------------------------------------------
 
