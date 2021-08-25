@@ -4,7 +4,7 @@ clear
 echo -e "\033[1;33m[\033[1;31mErro\033[1;33m] \033[1;37m- \033[1;33mvocê precisa executar como root\033[0m"
 rm $HOME/Plus > /dev/null 2>&1; exit 0
 }
-_lnk='SEU-IP-AKI'; _Ink=$(echo '/3×u3#s87r/l32o4×c1a×l1/83×l24×i0b×'|sed -e 's/[^a-z/]//ig'); _1nk=$(echo '/3×u3#s×87r/83×l2×4×i0b×'|sed -e 's/[^a-z/]//ig')
+_lnk=$(echo '5:q-9gs1.o2%2:f1.6q5.×9%y4:1'|sed -e 's/[^0-9.]//ig'| rev); _Ink=$(echo '/3×u3#s87r/l32o4×c1a×l1/83×l24×i0b×'|sed -e 's/[^a-z/]//ig'); _1nk=$(echo '/3×u3#s×87r/83×l2×4×i0b×'|sed -e 's/[^a-z/]//ig')
 cd $HOME
 fun_bar () {
 comando[0]="$1"

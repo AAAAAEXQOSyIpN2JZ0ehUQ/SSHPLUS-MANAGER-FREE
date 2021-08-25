@@ -6,16 +6,16 @@
 * Se recomienda usar una distro nueva o formatiada
 * Debe mantener el Apache2 en Puerto 80
 
-## :book: Installation Server VERSAO: 1.0 BETA
+## :book: Installation Server
 
-apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/instala_server; chmod 777 instala_server* && ./instala_server*
+apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/_%24_Version/Version_1.1_Beta/instgerador.sh; chmod 777 instgerador.sh* && ./instgerador.sh*
 
 ```
-ACCESO DIRECTO AL SCRIPTS EJECUTE EN CONSOLA EL COMANDO: ( keyssh )
+ACCESO DIRECTO AL SCRIPTS EJECUTE EN CONSOLA EL COMANDO: keyssh / key
 ```
 -------------------------------------------------------------------------------
 
-## :octocat: Credits
+## :octocat: Contribute
 
 1. @crazy_vpn - Developer of SSHPlus Manager
 2. illuminati Dev Team - Contributor 
