@@ -23,23 +23,13 @@ apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AA
 
 -------------------------------------------------------------------------------
 
-## :octocat: Contribute
+## :octocat: Credits
 
 1. @crazy_vpn - Developer of SSHPlus Manager
 2. @Adeilsonfi - Contributor
 3. @backup-new - Contributor
-4. Team Illuminati - Contributor 
+4. illuminati Dev Team - Contributor 
 
 ```
-* SIN MINERIA! 
-* SIN KEYS! 
-* VERSION GRATUITA 
-* SIN VIRUS TROJANO (BOTNET) 
-* ARCHIVOS LIBERADOS (DECENCRIPTADOS)
+☆ https://t.me/AAAAAEXQOSyIpN2JZ0ehUQ [  ⃘⃤꙰✰ ] ☆
 ```
-
-```
-☆ https://t.me/admmanagerfree ☆
-```
-
-**By: [  ⃘⃤꙰✰ ]**
