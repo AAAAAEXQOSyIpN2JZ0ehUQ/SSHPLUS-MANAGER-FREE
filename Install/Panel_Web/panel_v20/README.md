@@ -1,4 +1,4 @@
-﻿## SCRIPT OFICIAL PAINEL SSHPLUS WEB VERSAO: 20 (Installation Directa)
+﻿## SCRIPT OFICIAL PAINEL REVENDA SSH VERSAO: 20 (Installation Directa)
 
 ![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/Panel_SSHPLUS_v20.jpg)
 
@@ -25,7 +25,7 @@ apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AA
 
 ## :octocat: Credits
 
-1. @crazy_vpn - Developer of Painel SSHPlus Web
+1. @crazy_vpn - Developer of Pinel Revenda SSH
 2. @Adeilsonfi - Contributor
 3. @backup-new - Contributor
 4. illuminati Dev Team - Contributor 

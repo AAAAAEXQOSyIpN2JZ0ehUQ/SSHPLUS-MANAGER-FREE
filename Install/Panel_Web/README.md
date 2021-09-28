@@ -1,4 +1,4 @@
-﻿# PAINEL SSHPLUS WEB (VERSIONES)
+﻿# PAINEL REVENDA SSH (VERSIONES)
 
 ![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/Panel_SSHPLUS_Web.jpg)
 
@@ -22,7 +22,7 @@ ACCESO DIRECTO AL SCRIPTS EJECUTE EN CONSOLA EL COMANDO: ( ipw )
 
 ## :octocat: Credits
 
-1. @crazy_vpn - Developer of SSHPlus Manager
+1. @crazy_vpn - Developer of Pinel Revenda SSH
 2. @Adeilsonfi - Contributor
 3. @backup-new - Contributor
 4. illuminati Dev Team - Contributor 
