@@ -15,7 +15,7 @@ PAINEL SSHPLUS es una herramienta completa de gestión y supervisión de usuario
 
 * Recomendamos Ubuntu 14.04 Server x86_64
 * Se recomienda usar una distro nueva o formatiada
-* Instalar: apt-get install php-ssh2 -y
+* En caso de error instalar: apt-get install php-ssh2 -y
 
 ## :book: Installation
 
@@ -25,7 +25,7 @@ apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AA
 
 ## :octocat: Credits
 
-1. @crazy_vpn - Developer of SSHPlus Manager
+1. @crazy_vpn - Developer of Painel SSHPlus Web
 2. @Adeilsonfi - Contributor
 3. @backup-new - Contributor
 4. illuminati Dev Team - Contributor 
