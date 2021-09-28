@@ -17,7 +17,7 @@ PAINEL SSHPLUS es una herramienta completa de gestión y supervisión de usuario
 * Se recomienda usar una distro nueva o formatiada
 * En caso de error instalar: apt-get install php-ssh2 -y
 
-## :book: Installation
+## :book: Installation  (Painel Revenda SSH)
 
 apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v20/install; chmod 777 install* && ./install*
 
