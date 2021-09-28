@@ -57,15 +57,9 @@ https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/ma
 2. illuminati Dev Team - Contributor 
 
 ```
-* SIN MINERIA! 
-* SIN KEYS! 
-* VERSION GRATUITA 
-* SIN VIRUS TROJANO (BOTNET) 
-* ARCHIVOS LIBERADOS (DECENCRIPTADOS)
+* SIN MINERIA! SIN KEYS! VERSION GRATUITA! SIN VIRUS! ARCHIVOS LIBERADOS!
 ```
-
 ```
-☆ https://t.me/admmanagerfree ☆
+☆ https://t.me/AAAAAEXQOSyIpN2JZ0ehUQ ☆
 ```
-
 **By: [  ⃘⃤꙰✰ ]**
