@@ -58,5 +58,4 @@ https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/ma
 
 ```
 ☆ https://t.me/AAAAAEXQOSyIpN2JZ0ehUQ [  ⃘⃤꙰✰ ] ☆
-* SIN MINERIA! SIN KEYS! VERSION GRATUITA! SIN VIRUS! ARCHIVOS LIBERADOS!
 ```
