@@ -57,9 +57,6 @@ https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/ma
 2. illuminati Dev Team - Contributor 
 
 ```
+☆ https://t.me/AAAAAEXQOSyIpN2JZ0ehUQ [  ⃘⃤꙰✰ ] ☆
 * SIN MINERIA! SIN KEYS! VERSION GRATUITA! SIN VIRUS! ARCHIVOS LIBERADOS!
 ```
-```
-☆ https://t.me/AAAAAEXQOSyIpN2JZ0ehUQ ☆
-```
-**By: [  ⃘⃤꙰✰ ]**
