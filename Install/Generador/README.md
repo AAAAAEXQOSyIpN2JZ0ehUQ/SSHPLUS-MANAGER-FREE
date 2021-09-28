@@ -4,14 +4,14 @@
 
 * Un sistema operativo basado en Linux (Ubuntu o Debian)
 * Se recomienda usar una distro nueva o formatiada
-* Debe mantener el Apache2 en Puerto 80
+* Debe mantener el Apache en Puerto 80
 
-## :book: Installation Server
+## :book: Installation Server (Version 1.1 Beta)
 
 apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/_%24_Version/Version_1.1_Beta/instgerador.sh; chmod 777 instgerador.sh* && ./instgerador.sh*
 
 ```
-ACCESO DIRECTO AL SCRIPTS EJECUTE EN CONSOLA EL COMANDO: keyssh / key
+Despues solo necesitara ejecutar la siguiente linea para usar nuevamente: keyssh / key
 ```
 -------------------------------------------------------------------------------
 
