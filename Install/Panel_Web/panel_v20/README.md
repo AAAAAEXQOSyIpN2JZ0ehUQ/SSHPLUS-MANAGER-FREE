@@ -17,7 +17,7 @@ PAINEL SSHPLUS es una herramienta completa de gestión y supervisión de usuario
 * Se recomienda usar una distro nueva o formatiada
 * En caso de error instalar: apt-get install php-ssh2 -y
 
-## :book: Installation  (Painel Revenda SSH)
+## :book: Installation
 
 apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v20/install; chmod 777 install* && ./install*
 
@@ -25,7 +25,7 @@ apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AA
 
 ## :octocat: Credits
 
-1. @crazy_vpn - Developer of Painel SSHPlus Web
+1. @crazy_vpn - Developer of Painel SSHPlus Web Update Script
 2. @Adeilsonfi - Contributor
 3. @backup-new - Contributor
 4. illuminati Dev Team - Contributor 
