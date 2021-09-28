@@ -25,7 +25,7 @@ apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AA
 
 ## :octocat: Credits
 
-1. @crazy_vpn - Developer of Painel SSHPlus Web Update Script
+1. @crazy_vpn - Developer of Painel SSHPlus Web
 2. @Adeilsonfi - Contributor
 3. @backup-new - Contributor
 4. illuminati Dev Team - Contributor 
