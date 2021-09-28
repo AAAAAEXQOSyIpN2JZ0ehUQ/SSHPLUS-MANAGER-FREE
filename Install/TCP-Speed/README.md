@@ -7,7 +7,7 @@
 apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/TCP-Speed/tcptweaker.sh; chmod +x tcptweaker.sh; ./tcptweaker.sh
 
 ```
-PARA EJECUTAR NUEVAMENTE TCP-SPPED EJECUTE EN CONSOLA EL COMANDO: ( ./tcptweaker.sh )
+PARA EJECUTAR NUEVAMENTE TCP-SPPED EJECUTE EN CONSOLA EL COMANDO ./tcptweaker.sh
 ```
 -------------------------------------------------------------------------------
 
@@ -17,15 +17,5 @@ PARA EJECUTAR NUEVAMENTE TCP-SPPED EJECUTE EN CONSOLA EL COMANDO: ( ./tcptweaker
 2. illuminati Dev Team - Contributor 
 
 ```
-* SIN MINERIA! 
-* SIN KEYS! 
-* VERSION GRATUITA 
-* SIN VIRUS TROJANO (BOTNET) 
-* ARCHIVOS LIBERADOS (DECENCRIPTADOS)
+☆ https://t.me/AAAAAEXQOSyIpN2JZ0ehUQ [  ⃘⃤꙰✰ ] ☆
 ```
-
-```
-☆ https://t.me/admmanagerfree ☆
-```
-
-**By: [  ⃘⃤꙰✰ ]**
