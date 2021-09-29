@@ -9,14 +9,14 @@
 * Ubuntu 14.04 Server x86_64 / Ubuntu 16.04 Server x86_64  / Ubuntu 18.04 Server x86_64
 * Recomendamos Ubuntu 14.04 Server x86_64
 * Se recomienda usar una distro nueva o formatiada
-* Instalar: apt-get install php-ssh2 -y
+* En caso de error instalar: apt-get install php-ssh2 -y
 
 ## :book: Installation
 
 apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/Panelweb.sh; chmod +x Panelweb.sh; ./Panelweb.sh
 
 ```
-ACCESO DIRECTO AL SCRIPTS EJECUTE EN CONSOLA EL COMANDO: ( ipw )
+Despues solo necesitara ejecutar la siguiente linea para usar nuevamente: ipw
 ```
 -------------------------------------------------------------------------------
 
