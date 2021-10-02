@@ -1,5 +1,7 @@
-﻿# MULTI-INTALADOR SSHPLUS
-
+﻿# MULTI-INTALADOR PLUS
+```
+* UPDATE 29/08/2021 - Multi-Instalador Plus
+```
 ![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/Multi_Instalador_sshplus.png)
 
 ## :book: Installation
@@ -7,9 +9,15 @@
 apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Multi-Instalador/sshplus.sh; chmod +x sshplus.sh; ./sshplus.sh
 
 ```
-ACCESO DIRECTO AL SCRIPTS EJECUTE EN CONSOLA EL COMANDO: ( mis )
+Despues solo necesitara ejecutar la siguiente linea para usar nuevamente: mip
 ```
 -------------------------------------------------------------------------------
+
+## :scroll: Changelog
+
+**VERSION: r021**
+
+https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Multi-Instalador/versao
 
 ## :octocat: Credits
 
