@@ -1,5 +1,7 @@
 ﻿## SCRIPT OFICIAL PAINEL REVENDA SSH VERSAO: 20 (Installation Directa)
-
+```
+* UPDATE 29/01/2021 - Painel Revenda SSH
+```
 ![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/Panel_SSHPLUS_v20.jpg)
 
 ```
@@ -22,11 +24,17 @@ apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AA
 
 -------------------------------------------------------------------------------
 
+## :scroll: Changelog
+
+**VERSION: 20**
+
+https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v20/versao
+
 ## :octocat: Credits
 
-1. @crazy_vpn - Developer of Pinel Revenda SSH
-2. @Adeilsonfi - Contributor
-3. @backup-new - Contributor
+1. @crazy_vpn - Developer of Painel Revenda SSH
+2. @backup-new - Contributor
+3. @Adeilsonfi - Contributor
 4. illuminati Dev Team - Contributor 
 
 ```
