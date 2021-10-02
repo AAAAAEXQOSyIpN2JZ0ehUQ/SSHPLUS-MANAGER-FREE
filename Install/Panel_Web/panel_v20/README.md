@@ -1,7 +1,5 @@
 ﻿## SCRIPT OFICIAL PAINEL REVENDA SSH VERSAO: 20 (Installation Directa)
-```
-* UPDATE 29/01/2021 - Painel Revenda SSH
-```
+
 ![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/Painel_Revenda_SSH.png)
 
 ```

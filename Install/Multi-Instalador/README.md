@@ -1,7 +1,5 @@
 ﻿# MULTI-INTALADOR PLUS
-```
-* UPDATE 29/08/2021 - Multi-Instalador Plus
-```
+
 ![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/Multi_Instalador_sshplus.png)
 
 ## :book: Installation
