@@ -98,10 +98,10 @@ _usor=$(printf '%-8s' "$(free -m | awk 'NR==2{printf "%.2f%%", $3*100/$2 }')")
 _usop=$(printf '%-1s' "$(top -bn1 | awk '/Cpu/ { cpu = "" 100 - $8 "%" }; END { print cpu }')")
 clear
 echo -e "$barra"
-echo -e "\E[41;1;37mMULTI-INTALADOR SSHPLUS              \033[1;32m[\033[1;37m VERSAO: r021 \033[1;32m]\E[0m"
+echo -e "\E[41;1;37mMULTI-INTALADOR PLUS              \033[1;32m[\033[1;37m VERSAO: r021 \033[1;32m]\E[0m"
 echo -e "$barra"
 echo -e "\033[1;31m[\033[1;36m01\033[1;31m] \033[1;33mSSHPLUS MANAGER FREE           \033[1;32m(FREE) \033[37m∆ "
-echo -e "\033[1;31m[\033[1;36m02\033[1;31m] \033[1;33mSSHPLUS MANAGER OFICIAL-DEV    \033[1;32m(FREE) \033[37m∆ "
+echo -e "\033[1;31m[\033[1;36m02\033[1;31m] \033[1;33mSSHPLUS MANAGER OFICIAL-DEV    \033[1;32m(FREE) "
 echo -e "\033[1;31m[\033[1;36m03\033[1;31m] \033[1;33mSSHPLUS MANAGER OFICIAL        \033[1;31m(KEYS) "
 echo -e "$barra"
 echo -e "\033[1;31m[\033[1;36m04\033[1;31m] \033[1;33mPAINEL SSHPLUS WEB V.20        \033[1;32m(FREE) \033[37m∆ "
