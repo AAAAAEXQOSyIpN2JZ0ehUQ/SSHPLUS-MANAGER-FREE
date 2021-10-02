@@ -7,7 +7,7 @@
 apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/TCP-Speed/tcptweaker.sh; chmod +x tcptweaker.sh; ./tcptweaker.sh
 
 ```
-PARA EJECUTAR NUEVAMENTE TCP-SPPED EJECUTE EN CONSOLA EL COMANDO ./tcptweaker.sh
+Despues solo necesitara ejecutar la siguiente linea para usar nuevamente: ./tcptweaker.sh
 ```
 -------------------------------------------------------------------------------
 
