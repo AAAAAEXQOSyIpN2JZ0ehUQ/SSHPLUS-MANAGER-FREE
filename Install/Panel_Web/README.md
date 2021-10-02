@@ -6,7 +6,9 @@
 
 ## :heavy_exclamation_mark: Requerimientos
 
-* Ubuntu 14.04 Server x86_64 / Ubuntu 16.04 Server x86_64  / Ubuntu 18.04 Server x86_64
+* Un sistema operativo basado en Linux (Ubuntu o Debian)
+* Ubuntu 14.04 Server x86_64 / Ubuntu 16.04 Server x86_64 / Ubuntu 18.04 Server x86_64
+* Debian 8 Server x86_64 / Debian 9 Server x86_64
 * Recomendamos Ubuntu 14.04 Server x86_64
 * Se recomienda usar una distro nueva o formatiada
 * En caso de error instalar: apt-get install php-ssh2 -y

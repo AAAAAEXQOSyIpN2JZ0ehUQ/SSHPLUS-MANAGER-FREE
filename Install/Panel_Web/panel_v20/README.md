@@ -16,7 +16,7 @@ PAINEL REVENDA SSH es una herramienta completa de gestión y supervisión de usu
 * Un sistema operativo basado en Linux (Ubuntu o Debian)
 * Ubuntu 14.04 Server x86_64 / Ubuntu 16.04 Server x86_64 / Ubuntu 18.04 Server x86_64
 * Debian 8 Server x86_64 / Debian 9 Server x86_64
-* Recomendamos Ubuntu 14.04 Server x86_64 / Ubuntu 16.04 Server x86_64 / Debian 9 Server x86_64 
+* Recomendamos Ubuntu 14.04 Server x86_64
 * Se recomienda usar una distro nueva o formatiada
 
 ## :book: Installation
