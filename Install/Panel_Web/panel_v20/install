@@ -1,7 +1,7 @@
 #!/bin/bash
 #DEV BY @CRAZY_VPN
 #INSTALADOR MOD BY @adeilsonfi
-#MODIIFICACION TEAM ILLUMINATI
+#MODIIFICACION ILLUMINATI DEV TEAM
 clear
 fun_bar () {
 comando[0]="$1"
@@ -71,6 +71,7 @@ echo -e "           \033[1;33m● \033[1;32mINSTALANDO O MCRYPT \033[1;33m●\03
 fun_mcrypt () {
     apt-get install cron curl unzip -y > /dev/null 2>&1
     apt-get install php5 libapache2-mod-php5 php5-mcrypt -y > /dev/null 2>&1
+    apt-get install php-ssh2 -y  > /dev/null 2>&1
     service apache2 restart > /dev/null 2>&1
 }
 fun_bar 'fun_mcrypt'
