@@ -109,13 +109,13 @@ echo -e "\033[1;31m[\033[1;36m05\033[1;31m] \033[1;33mPAINEL VIP-VPS WEB V.23   
 echo -e "\033[1;31m[\033[1;36m06\033[1;31m] \033[1;33mPAINEL VIP-VPS WEB V.25        \033[1;32m(FREE) \033[37m∆ "
 echo -e "$barra"
 echo -e "\033[1;31m[\033[1;36m07\033[1;31m] \033[1;33mUPDATE VIP-VPS V.23 PARA V25   \033[1;32m(FREE) "
-echo -e "\033[1;31m[\033[1;36m08\033[1;31m] \033[1;33mPAINEL SSHPLUS WEB (VERSIONES) \033[1;32m(FREE) "
+echo -e "\033[1;31m[\033[1;36m08\033[1;31m] \033[1;33mPAINEL REVENDA SSH (VERSIONES) \033[1;32m(FREE) "
 echo -e "\033[1;31m[\033[1;36m09\033[1;31m] \033[1;33mGENERADOR KEY SSHPLUS MANAGER  \033[1;32m(FREE) "
 echo -e "\033[1;31m[\033[1;36m10\033[1;31m] \033[1;33mTCP-TWEAKER-1.0 (TCP-SPEED)    \033[1;32m(FREE) " 
 echo -e "$barra"
 echo -e "\033[1;31m[\033[1;36m11\033[1;31m] \033[1;35m[!] \033[1;32mACTUALIZAR                \033[1;31mRam:\033[1;37m $_usor "
 echo -e "\033[1;31m[\033[1;36m12\033[1;31m] \033[1;35m[!] \033[1;31mDESINSTALAR \033[1;35m[\033[1;37m MIP \033[1;35m]       \033[1;31mNucleo:\033[1;37m $_usop "
-echo -e "\033[1;31m[\033[1;36m00\033[1;31m] \033[1;37mSALIR \033[1;32m<\033[1;33m<\033[1;31m<                     \033[1;37m@admmanagerfree\033[0m \033[0m"
+echo -e "\033[1;31m[\033[1;36m00\033[1;31m] \033[1;37mSALIR \033[1;32m<\033[1;33m<\033[1;31m<             \033[1;37m@AAAAAEXQOSyIpN2JZ0ehUQ\033[0m \033[0m"
 echo -e "$barra"
 echo -ne "\033[1;32mOQUE DESEJA FAZER \033[1;33m?\033[1;31m?\033[1;37m : "; read x
 
