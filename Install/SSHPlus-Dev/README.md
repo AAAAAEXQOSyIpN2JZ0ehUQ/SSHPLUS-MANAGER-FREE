@@ -1,8 +1,5 @@
 ﻿# SSHPLUS MANAGER
-```
-* INSTALL ARQUIVOS ORIGINALES ENCRIPTADOS POR @crazy_vpn
-* SCRIPT OFICIAL SSHPLUS MANAGER VERSAO: 37
-```
+
 ![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/SSHPLUS_MANAGER.jpg)
 
 ```
@@ -24,7 +21,10 @@ SCRIPT SSHPLUS MANAGER es un script con un conjunto de características y herram
 * Si necesita reinstalar el Scripts puede ejecutar en consola el comando: sshplus
 
 ## :book: Installation
-
+```
+* INSTALL ARQUIVOS ORIGINALES ENCRIPTADOS POR @crazy_vpn
+* SCRIPT OFICIAL SSHPLUS MANAGER VERSAO: 37
+```
 apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/SSHPlus-Dev/Plus; chmod 777 Plus; ./Plus
 
 -------------------------------------------------------------------------------
