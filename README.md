@@ -41,8 +41,8 @@ apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AA
 ## :book: Installation Utilitarios
 
 1. [MULTI-INSTALADOR PLUS](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/Multi-Instalador)
-2. [INSTALL ARQUIVOS ORIGINALES ENCRIPTADOS POR @crazy_vpn](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/SSHPlus-Dev) EN MANTENIMIENTO
-3. [PAINEL REVENDA SSH (VERSIONES)](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/Panel_Web) EN MANTENIMIENTO
+2. [INSTALL ARQUIVOS ORIGINALES ENCRIPTADOS POR @crazy_vpn](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/SSHPlus-Dev)
+3. [PAINEL REVENDA SSH (VERSIONES)](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/Panel_Web)
 
 -------------------------------------------------------------------------------
 
