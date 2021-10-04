@@ -75,8 +75,12 @@ atualizar () {
 echo ""
 fun_bar "apt-get update -y"
 fun_bar "apt-get upgrade -y"
-fun_bar "service ssh restart"
-rm -rf $HOME/sshplus.sh* > /dev/null 2>&1; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Multi-Instalador/sshplus.sh > /dev/null 2>&1
+fun_att () {
+    service ssh restart > /dev/null 2>&1
+    rm -rf $HOME/sshplus.sh* > /dev/null 2>&1
+    wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Multi-Instalador/sshplus.sh > /dev/null 2>&1
+}
+fun_bar 'fun_att'
 echo ""
 echo -e "\033[1;33m UPDATE COM SUCESSO -\033[1;32m OK !\033[1;37m"
 sleep 4s
