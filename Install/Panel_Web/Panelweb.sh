@@ -54,7 +54,7 @@ panel_v15_2 () {
 wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v15_2/ocspanel > /dev/null 2>&1; chmod +x ocspanel; ./ocspanel
 }
 panel_v20 () {
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v20/install > /dev/null 2>&1; chmod 777 iinstall* && ./install*
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v20/install > /dev/null 2>&1; chmod 777 install* && ./install*
 }
 panel_v20_mod () {
 wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v20_mod/install > /dev/null 2>&1; chmod +x install; ./install
@@ -68,12 +68,10 @@ wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FR
 panel_v25 () {
 wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v25/install > /dev/null 2>&1; chmod +x install; ./install
 }
-
 #UPDATE VIP-VPS v23 a v25
 panel_update2325 () {
 wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v23_2/atu-v23-p-v25 > /dev/null 2>&1; chmod +x atu-v23-p-v25; ./atu-v23-p-v25
 }
-
 #CLEAN FOLDER
 clean_folder () {
 echo ""
@@ -98,7 +96,6 @@ echo -e "\033[1;33m CLEAN FOLDER COM SUCESSO -\033[1;32m OK !\033[1;37m"
 sleep 4s
 chmod +x Panelweb.sh; ./Panelweb.sh
 }
-
 #PANIL REMOVE
 remove_panel () {
 clear
@@ -119,14 +116,17 @@ echo ""
 sleep 4s
 chmod +x Panelweb.sh; ./Panelweb.sh
 }
-
 #OPCIONES DE SISTEMA
 atualizar () {
 echo ""
 fun_bar "apt-get update -y"
 fun_bar "apt-get upgrade -y"
-fun_bar "service ssh restart"
-rm -rf $HOME/Panelweb.sh* > /dev/null 2>&1; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/Panelweb.sh > /dev/null 2>&1
+fun_att () {
+    service ssh restart > /dev/null 2>&1
+    rm -rf $HOME/Panelweb.sh* > /dev/null 2>&1
+    wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/Panelweb.sh > /dev/null 2>&1
+}
+fun_bar 'fun_att'
 echo ""
 echo -e "\033[1;33m UPDATE COM SUCESSO -\033[1;32m OK !\033[1;37m"
 sleep 4s
@@ -144,28 +144,28 @@ clear
 echo -e "$barra"
 echo -e "\E[41;1;37mINSTALL PAINEL WEB               \033[1;32m[\033[1;37m  VERSAO: r001 \033[1;32m]\E[0m"
 echo -e "$barra"
-echo -e "\033[1;31m[\033[1;36m01\033[1;31m] \033[1;37m• \033[1;33mPAINEL SSHPLUS WEB V10       \033[1;31m(ANT) " 
-echo -e "\033[1;31m[\033[1;36m02\033[1;31m] \033[1;37m• \033[1;33mPAINEL SSHPLUS WEB V10 2     \033[1;32m(DAN) " 
-echo -e "\033[1;31m[\033[1;36m03\033[1;31m] \033[1;37m• \033[1;33mPAINEL SSHPLUS WEB V11       \033[1;31m(ANT) " 
-echo -e "\033[1;31m[\033[1;36m04\033[1;31m] \033[1;37m• \033[1;33mPAINEL SSHPLUS WEB V11 2     \033[1;32m(NEW) " 
-echo -e "\033[1;31m[\033[1;36m05\033[1;31m] \033[1;37m• \033[1;33mPAINEL SSHPLUS WEB V12       \033[1;32m(NEW) " 
-echo -e "\033[1;31m[\033[1;36m06\033[1;31m] \033[1;37m• \033[1;33mPAINEL SSHPLUS WEB V15       \033[1;31m(ANT) " 
-echo -e "\033[1;31m[\033[1;36m07\033[1;31m] \033[1;37m• \033[1;33mPAINEL SSHPLUS WEB V15 2     \033[1;33m(OCS) "
-echo -e "\033[1;31m[\033[1;36m08\033[1;31m] \033[1;37m• \033[1;33mPAINEL SSHPLUS WEB V20       \033[1;32m(NEW) \033[1;37m∆ "
-echo -e "\033[1;31m[\033[1;36m09\033[1;31m] \033[1;37m• \033[1;33mPAINEL SSHPLUS WEB V20 MOD   \033[1;32m(NEW) " 
-echo -e "\033[1;31m[\033[1;36m10\033[1;31m] \033[1;37m• \033[1;33mPAINEL SSHPLUS WEB V23       \033[1;32m(NEW) " 
-echo -e "\033[1;31m[\033[1;36m11\033[1;31m] \033[1;37m• \033[1;33mPAINEL VIP-VPS WEB V.23      \033[1;35m(ADE) \033[1;37m∆ "
-echo -e "\033[1;31m[\033[1;36m12\033[1;31m] \033[1;37m• \033[1;33mPAINEL VIP-VPS WEB V.25      \033[1;35m(ADE) \033[1;37m∆ "
-echo -e "$barra"
-echo -e "\033[1;31m[\033[1;36m13\033[1;31m] \033[1;37m• \033[1;33mUPDATE VIP-VPS V.23 PARA V25 \033[1;35m(ADE) \033[1;37m∆ "
-echo -e "$barra"
-echo -e "\033[1;31m[\033[1;36m14\033[1;31m] \033[1;37m• \033[1;33mCLEAN FOLDER                 \033[1;33m(\033[1;37mINESTABLE\033[1;33m) \033[1;36m• "
-echo -e "\033[1;31m[\033[1;36m15\033[1;31m] \033[1;37m• \033[1;33mPANEL REMOVE                 \033[1;33m(\033[1;37mINESTABLE\033[1;33m) \033[1;36m• "
-echo -e "$barra"
+echo ""
+echo -e "\033[1;31m[\033[1;36m01\033[1;31m] \033[1;37m• \033[1;33mPAINEL REVENDA SSH V10       \033[1;31m(ANT) " 
+echo -e "\033[1;31m[\033[1;36m02\033[1;31m] \033[1;37m• \033[1;33mPAINEL REVENDA SSH V10 2     \033[1;31m(DAN) " 
+echo -e "\033[1;31m[\033[1;36m03\033[1;31m] \033[1;37m• \033[1;33mPAINEL REVENDA SSH V11       \033[1;31m(ANT) " 
+echo -e "\033[1;31m[\033[1;36m04\033[1;31m] \033[1;37m• \033[1;33mPAINEL REVENDA SSH V11 2     \033[1;32m(NEW) " 
+echo -e "\033[1;31m[\033[1;36m05\033[1;31m] \033[1;37m• \033[1;33mPAINEL REVENDA SSH V12       \033[1;32m(NEW) " 
+echo -e "\033[1;31m[\033[1;36m06\033[1;31m] \033[1;37m• \033[1;33mPAINEL REVENDA SSH V15       \033[1;31m(ANT) " 
+echo -e "\033[1;31m[\033[1;36m07\033[1;31m] \033[1;37m• \033[1;33mPAINEL REVENDA SSH V15 2     \033[1;31m(OCS) "
+echo -e "\033[1;31m[\033[1;36m08\033[1;31m] \033[1;37m• \033[1;33mPAINEL REVENDA SSH V20       \033[1;32m(NEW) \033[1;37m∆ "
+echo -e "\033[1;31m[\033[1;36m09\033[1;31m] \033[1;37m• \033[1;33mPAINEL REVENDA SSH V20 MOD   \033[1;32m(NEW) " 
+echo -e "\033[1;31m[\033[1;36m10\033[1;31m] \033[1;37m• \033[1;33mPAINEL REVENDA SSH V23       \033[1;32m(NEW) " 
+echo -e "\033[1;31m[\033[1;36m11\033[1;31m] \033[1;37m• \033[1;33mPAINEL VIP-VPS SSH V.23      \033[1;32m(ADE) "
+echo -e "\033[1;31m[\033[1;36m12\033[1;31m] \033[1;37m• \033[1;33mPAINEL VIP-VPS SSH V.25      \033[1;32m(ADE) "
+echo -e "\033[1;31m[\033[1;36m13\033[1;31m] \033[1;37m• \033[1;33mUPDATE VIP-VPS V.23 PARA V25 \033[1;32m(ADE) \033[1;37m√"
+echo -e "\033[1;31m[\033[1;36m14\033[1;31m] \033[1;37m• \033[1;33mCLEAN FOLDER                 \033[1;33m(\033[1;31mINESTABLE\033[1;33m) \033[1;37m• "
+echo -e "\033[1;31m[\033[1;36m15\033[1;31m] \033[1;37m• \033[1;33mPANEL REMOVE                 \033[1;33m(\033[1;31mINESTABLE\033[1;33m) \033[1;37m• "
 echo -e "\033[1;31m[\033[1;36m16\033[1;31m] \033[1;35m[!] \033[1;32mACTUALIZAR                \033[1;31mRam:\033[1;37m $_usor "
 echo -e "\033[1;31m[\033[1;36m17\033[1;31m] \033[1;35m[!] \033[1;31mDESINSTALAR \033[1;35m[\033[1;37m IPW \033[1;35m]       \033[1;31mNucleo:\033[1;37m $_usop "
-echo -e "\033[1;31m[\033[1;36m00\033[1;31m] \033[1;37mSALIR \033[1;32m<\033[1;33m<\033[1;31m<                     \033[1;37m@admmanagerfree\033[0m \033[0m"
+echo -e "\033[1;31m[\033[1;36m00\033[1;31m] \033[1;37mSALIR \033[1;32m<\033[1;33m<\033[1;31m< \033[0m"
+echo -e "                           \033[1;37m@AAAAAEXQOSyIpN2JZ0ehUQ\033[0m \033[0m"
 echo -e "$barra"
+echo ""
 echo -ne "\033[1;32mOQUE DESEJA FAZER \033[1;33m?\033[1;31m?\033[1;37m : "; read x
 
 case "$x" in 
