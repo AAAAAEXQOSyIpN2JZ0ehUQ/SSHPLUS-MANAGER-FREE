@@ -22,11 +22,17 @@ Despues solo necesitara ejecutar la siguiente linea para usar nuevamente: ipw
 ```
 -------------------------------------------------------------------------------
 
+## :scroll: Changelog
+
+**VERSION: r002**
+
+https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/versao
+
 ## :octocat: Credits
 
-1. @crazy_vpn - Developer of Pinel Revenda SSH
-2. @Adeilsonfi - Contributor
-3. @backup-new - Contributor
+1. @crazy_vpn - Developer of Painel Revenda SSH
+2. @backup-new - Contributor
+3. @Adeilsonfi - Contributor
 4. illuminati Dev Team - Contributor 
 
 ```
