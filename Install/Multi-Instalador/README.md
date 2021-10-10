@@ -1,4 +1,4 @@
-﻿# MULTI-INTALADOR PLUS
+﻿# MULTI-INSTALADOR PLUS
 
 ![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/Multi_Instalador_sshplus.png)
 
