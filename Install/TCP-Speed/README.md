@@ -27,7 +27,7 @@ https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/ma
 
 ##
 
-1. [@Phreaker56 - Developer of TCP-Tweaker-1.0 (TCP-SPEED)](https://phreaker56.obex.pw/)
+1. @Phreaker56- Developer of TCP-Tweaker-1.0 (TCP-SPEED)
 2. illuminati Dev Team - Contributor 
 
 ```
