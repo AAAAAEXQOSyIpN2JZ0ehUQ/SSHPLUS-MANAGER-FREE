@@ -8,7 +8,7 @@
 
 ## :book: Installation Server (Version 1.1 Beta)
 
-apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/_%24_Version/Version_1.1_Beta/instgerador.sh; chmod 777 instgerador.sh* && ./instgerador.sh*
+apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/instgerador.sh; chmod 777 instgerador.sh* && ./instgerador.sh*
 
 ```
 Despues solo necesitara ejecutar la siguiente linea para usar nuevamente: keyssh / key
