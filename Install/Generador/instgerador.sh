@@ -116,4 +116,4 @@ echo -e " \033[1;36m> \033[1;37mPerfeito, Use o Comando \033[1;31mkeyssh / key "
 echo -e " \033[1;36m> \033[1;37mPara Gerenciar as Suas Keys e "
 echo -e " \033[1;36m> \033[1;37mAtualizar a Base do Servidor "
 echo -e "$barra"
-rm $HOME/instgerador.sh && cat /dev/null > ~/.bash_history && history -c
+rm $HOME/instgerador.sh* && cat /dev/null > ~/.bash_history && history -c
