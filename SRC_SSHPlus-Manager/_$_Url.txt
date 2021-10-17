@@ -1,3 +1,6 @@
+________________________
+Localizador de recursos:
+
 http://sshplus.xyz/script/Plus
 
 http://sshplus.xyz/script/versao
@@ -13,3 +16,10 @@ https://raw.githubusercontent.com/CRAZY-VPN/SQUID3/master/squid3
 https://github.com/OpenVPN/easy-rsa/releases/download/3.0.1/EasyRSA-3.0.1.tgz
 
 https://www.dropbox.com/s/tgkxdwb03r7w59r/badvpn-udpgw
+
+__________________
+Localizador de IP:
+
+ipv4.icanhazip.com)
+
+http://whatismyip.akamai.com/
