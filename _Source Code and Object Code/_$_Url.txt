@@ -17,6 +17,10 @@ https://github.com/OpenVPN/easy-rsa/releases/download/3.0.1/EasyRSA-3.0.1.tgz
 
 https://www.dropbox.com/s/tgkxdwb03r7w59r/badvpn-udpgw
 
+sshplus.net/senharoot.sh
+
+sshplus.xyz/scripts/utilitarios/syncpainel/inst
+
 __________________
 Localizador de IP:
 

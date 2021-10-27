@@ -41,6 +41,10 @@ https://github.com/OpenVPN/easy-rsa/releases/download/3.0.1/EasyRSA-3.0.1.tgz
 
 https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/resolved.conf
 
+sshplus.xyz/scripts/utilitarios/syncpainel/inst
+
+sshplus.net/senharoot.sh
+
 __________________
 Localizador de IP:
 

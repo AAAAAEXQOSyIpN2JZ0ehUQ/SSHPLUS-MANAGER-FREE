@@ -1,0 +1,5 @@
+# SINCRONIZAR PAINEL WEB
+
+bash <(wget -qO- sshplus.xyz/scripts/utilitarios/syncpainel/inst)
+
+- APLICAR ESSE COMANDO NO SERVIDOR DAS CONEXÕES SSH!
