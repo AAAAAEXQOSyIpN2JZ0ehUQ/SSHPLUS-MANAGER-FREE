@@ -1,0 +1,20 @@
+#!/bin/bash
+
+## sshd back
+cp /etc/ssh/sshd_config /etc/ssh/sshd_back
+
+## Acceso Rapido
+echo "/bin/menu" > /bin/h && chmod +x /bin/h
+
+## Version
+rm versao*; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/versao
+
+## Reinstalar
+echo "apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Plus; chmod 777 Plus; ./Plus" > /bin/sshplus && chmod +x /bin/sshplus
+
+## Menu
+wget -O /bin/menuV1 https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/menuV1; chmod +x /bin/menuV1
+wget -O /bin/menuV2 https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/menuV2; chmod +x /bin/menuV2
+wget -O /bin/menuV3 https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/menuV3; chmod +x /bin/menuV3
+
+#fim
