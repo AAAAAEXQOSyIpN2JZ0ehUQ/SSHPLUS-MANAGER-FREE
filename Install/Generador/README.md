@@ -6,7 +6,7 @@
 * Se recomienda usar una distro nueva o formatiada
 * Importante debe mantener el Apache en Puerto 80
 
-## :book: Installation Server (Version 1.1 Beta)
+## :book: Installation Server (Version 1.2 Beta)
 
 apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/instgerador.sh; chmod 777 instgerador.sh* && ./instgerador.sh*
 
