@@ -4,7 +4,7 @@
 
 * Un sistema operativo basado en Linux (Ubuntu o Debian)
 * Se recomienda usar una distro nueva o formatiada
-* Debe mantener el Apache en Puerto 80
+* Importante debe mantener el Apache en Puerto 80
 
 ## :book: Installation Server (Version 1.1 Beta)
 
