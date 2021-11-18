@@ -1,23 +1,23 @@
 #!/bin/bash
 
 ## sshd back
-cp /etc/ssh/sshd_config /etc/ssh/sshd_back
+cp /etc/ssh/sshd_config /etc/ssh/sshd_back > /dev/null 2>&1
 
 ## Acceso Rapido
-echo "/bin/menu" > /bin/h && chmod +x /bin/h
+echo "/bin/menu" > /bin/h && chmod +x /bin/h > /dev/null 2>&1
 
 ## Version
-rm versao*; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/versao
+rm versao*; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/versao > /dev/null 2>&1
 
 ## Reinstalar
-echo "apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Plus; chmod 777 Plus; ./Plus" > /bin/sshplus && chmod +x /bin/sshplus
+echo "apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Plus; chmod 777 Plus; ./Plus" > /bin/sshplus && chmod +x /bin/sshplus > /dev/null 2>&1
 
 ## Menu
-wget -O /bin/menuV1 https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/menuV1; chmod +x /bin/menuV1
-wget -O /bin/menuV2 https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/menuV2; chmod +x /bin/menuV2
-wget -O /bin/menuV3 https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/menuV3; chmod +x /bin/menuV3
+wget -O /bin/menuV1 https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/menuV1; chmod +x /bin/menuV1 > /dev/null 2>&1
+wget -O /bin/menuV2 https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/menuV2; chmod +x /bin/menuV2 > /dev/null 2>&1
+wget -O /bin/menuV3 https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/menuV3; chmod +x /bin/menuV3 > /dev/null 2>&1
 
 ## Systemverify
-rm -rf $HOME/systemverify*
+rm -rf $HOME/systemverify* > /dev/null 2>&1
 
 #fim
