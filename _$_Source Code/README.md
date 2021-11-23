@@ -1,7 +1,7 @@
-﻿# SRC
+﻿# SOURCE CODE (SRC)
 
-**SSHPlus Manager**
-**Painel Revenda SSH**
+* SSHPlus Manager
+* Painel Revenda SSH
 
 -------------------------------------------------------------------------------
 
