@@ -132,7 +132,7 @@ cat /home/index.html >/var/www/html/scripts/index.html
 
 clear
 echo -e "$barra"
-echo -e "      \033[1;33mINSTALADOR KEY SSHPLUS MANAGER !\033[0m"
+echo -e "       \033[1;33mINSTALADOR KEY SSHPLUS MANAGER !\033[0m"
 echo -e "$barra"
 echo ""
 read -p "$(echo -e "\033[1;36mDESEJA CONTINUAR \033[1;31m? \033[1;33m[S/N]:\033[1;37m ")" -e -i s resp
