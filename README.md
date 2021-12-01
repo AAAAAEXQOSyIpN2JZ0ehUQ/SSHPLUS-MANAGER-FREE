@@ -38,7 +38,7 @@ apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AA
 
 ## :book: Installation Utilitarios
 
-1. [GENERADOR DE KEY SSHPLUS MANAGER](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/Generador) EN MANTENIMIENTO
+1. [GENERADOR DE KEY SSHPLUS MANAGER](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/Generador)
 2. [SCRIPT OFICIAL PAINEL REVENDA SSH VERSAO: 20 (Installation Directa)](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/Panel_Web/panel_v20)
 
 ## :book: Installation Utilitarios
