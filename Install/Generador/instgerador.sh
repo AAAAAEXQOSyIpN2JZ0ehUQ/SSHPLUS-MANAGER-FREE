@@ -8,15 +8,22 @@
 # https://t.me/AAAAAEXQOSyIpN2JZ0ehUQ
 #
 #====================================================
+clear
+clear
+[[ "$(whoami)" != "root" ]] && {
+echo -e "\033[1;33m[\033[1;31mErro\033[1;33m] \033[1;37m- \033[1;33mvocê precisa executar como root\033[0m"
+rm $HOME/instgerador.sh* > /dev/null 2>&1; exit 0
+}
 barra="\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 
+cd $HOME
 fun_bar () {
 comando[0]="$1"
 comando[1]="$2"
  (
 [[ -e $HOME/fim ]] && rm $HOME/fim
-${comando[0]} > /dev/null 2>&1
-${comando[1]} > /dev/null 2>&1
+${comando[0]} -y > /dev/null 2>&1
+${comando[1]} -y > /dev/null 2>&1
 touch $HOME/fim
  ) > /dev/null 2>&1 &
  tput civis
@@ -135,26 +142,29 @@ read -p "$(echo -e "\033[1;36mDESEJA CONTINUAR \033[1;31m? \033[1;33m[S/N]:\033[
 [[ $resp = @(n|N) ]] && rm $HOME/instgerador.sh* && exit 0
 echo
 echo -e "\033[1;33mATUALIZANDO REPOSITÓRIOS..... \033[1;32mAGUARDE"
-fun_attrepo
+fun_bar 'fun_attrepo'
 echo -e "\033[1;33mINSTALANDO RECURSOS.......... \033[1;32mAGUARDE"
-fun_instrec
+fun_bar 'fun_instrec'
 echo -e "\033[1;33mCONFIGURANDO APACHE.......... \033[1;32mAGUARDE"
-fun_apalist
+fun_bar 'fun_apalist'
 echo -e "\033[1;33mPREPARANDO SISTEMA........... \033[1;32mAGUARDE"
-fun_preparasis
+fun_bar 'fun_preparasis'
 echo -e "\033[1;33mDONWLOAD SERVER.............. \033[1;32mAGUARDE"
-fun_downser
+fun_bar 'fun_downser'
 echo -e "\033[1;33mINSTALANDO SISTEMA........... \033[1;32mAGUARDE"
-fun_instsis
+fun_bar 'fun_instsis'
 echo -e "\033[1;33mPERMISOS ARQUIVOS............ \033[1;32mAGUARDE"
-fun_permisoarq
+fun_bar 'fun_permisoarq'
 echo -e "\033[1;33mMONTANDO O SEU LINK-IP....... \033[1;32mAGUARDE"
-fun_montaip
+fun_bar 'fun_montaip'
 echo -e "\033[1;33mFINALIZANDO CONFIGURACION.... \033[1;32mAGUARDE"
-fun_finconf
+fun_bar 'fun_finconf'
 echo -e "$barra"
-echo -e " \033[1;36m> \033[1;37mPerfeito, Use o Comando \033[1;31mkeyssh / key "
-echo -e " \033[1;36m> \033[1;37mPara Gerenciar as Suas Keys e "
-echo -e " \033[1;36m> \033[1;37mAtualizar a Base do Servidor "
+## echo -e " \033[1;36m> \033[1;37mPerfeito, Use o Comando \033[1;31mkeyssh / key "
+## echo -e " \033[1;36m> \033[1;37mPara Gerenciar as Suas Keys e "
+## echo -e " \033[1;36m> \033[1;37mAtualizar a Base do Servidor "
+echo -e "\033[1;32mINSTALACAO CONCLUIDA \033[0m"
+echo -e "\033[1;31m\033[1;33mCOMANDO PRINCIPAL: \033[1;32mkeyssh o key \033[0m"
+echo -e "\033[1;33mMAIS INFORMACOES \033[1;31m(\033[1;36mTELEGRAM\033[1;31m): \033[1;37m@AAAAAEXQOSyIpN2JZ0ehUQ\033[0m"
 echo -e "$barra"
 rm $HOME/instgerador.sh* && cat /dev/null > ~/.bash_history && history -c
