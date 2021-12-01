@@ -1,10 +1,13 @@
 #!/bin/bash
-####################################################
+#====================================================
 #
 #  Modificaciones Al Codigo: illuminati Dev Team
-#  https://t.me/AAAAAEXQOSyIpN2JZ0ehUQ
 #
-####################################################
+# **By: [  ???? ]**
+# ===================
+# https://t.me/AAAAAEXQOSyIpN2JZ0ehUQ
+#
+#====================================================
 barra="\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 
 fun_bar () {
@@ -40,9 +43,87 @@ MIP2=$(wget -qO- ipv4.icanhazip.com)
 [[ "$MIP" != "$MIP2" ]] && IP="$MIP2" || IP="$MIP"
 }
 
-fun_attlist () {
+fun_attrepo () {
     apt-get update -y
     apt-get upgrade -y
+}
+
+fun_instrec () {
+    apt-get install curl -y
+    apt-get install zip -y
+    apt-get install unzip -y
+    apt-get install apache2 -y
+}
+
+fun_apalist () {
+    sed -i "s;Listen 80;Listen 81;g" /etc/apache2/ports.conf
+    service apache2 start
+    service apache2 restart
+    ## cp /var/www/html/index.html /var/www/html/index_back.html
+}
+
+fun_preparasis () {
+    rm -rf /home/list
+    rm -rf /home/index.html
+    rm -rf /home/_script_$
+    rm -rf /bin/keyssh
+    rm -rf /bin/key
+    rm -rf /bin/otimizar
+    rm -rf /var/www/html/Index.php
+    rm -rf /var/www/html/script
+    rm -rf /var/www/html/scripts
+    rm -rf /var/www/html/1:8%7o.2sg3-q:5
+    mkdir /home/keyssh > /dev/null 2>&1
+    mkdir /home/_script_$
+    mkdir /home/_script_$/crz
+    mkdir /var/www/html/script
+    mkdir /var/www/html/scripts
+}
+
+fun_downser () {
+cd
+cd /home/_script_$/crz
+wget https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/raw/master/Install/Generador/Install/sshplus-v37.zip
+unzip sshplus-v37.zip
+rm -rf sshplus-v37.zip
+cd
+}
+
+fun_instsis () {
+wget -O /home/list https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/Modulos/list
+wget -O /home/index.html https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/Modulos/index.html
+wget -O /bin/keyssh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/Modulos/keyssh
+wget -O /bin/otimizar https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/Modulos/otimizar
+wget -O /var/www/html/scripts/Plus https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/Modulos/Plus
+wget -O /var/www/html/script/versao https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/Modulos/versao
+}
+
+fun_permisoarq () {
+    chmod +x  /home/list
+    chmod +x  /home/index.html
+    chmod +x  /bin/keyssh
+    chmod +x  /bin/otimizar
+    chmod +x  /var/www/html/Plus
+    chmod +x  /var/www/html/script/versao
+    chmod 777 /home/_script_$/crz/*
+    echo "/bin/keyssh" > /bin/key && chmod +x /bin/key #ACCESO RAPIDO
+}
+
+fun_montaip () {
+fun_ip
+sed -i "s;SEU-IP-AKI;$IP;g" /var/www/html/scripts/Plus
+fun_ip
+sed -i "s;SEU-IP-AKI;$IP;g" /home/list
+fun_ip
+sed -i "s;SEU-IP-AKI;$IP;g" /home/index.html
+sleep 3s
+}
+
+fun_finconf () {
+cat /home/index.html >/home/_script_$/index.html
+cat /home/index.html >/home/_script_$/crz/index.html
+cat /home/index.html >/var/www/html/script/index.html
+cat /home/index.html >/var/www/html/scripts/index.html
 }
 
 clear
@@ -51,74 +132,26 @@ echo -e "      \033[1;33mINSTALADOR KEY SSHPLUS MANAGER !\033[0m"
 echo -e "$barra"
 echo ""
 read -p "$(echo -e "\033[1;36mDESEJA CONTINUAR \033[1;31m? \033[1;33m[S/N]:\033[1;37m ")" -e -i s resp
-[[ $resp = @(n|N) ]] && rm $HOME/instgerador.sh && exit 0
+[[ $resp = @(n|N) ]] && rm $HOME/instgerador.sh* && exit 0
 echo
 echo -e "\033[1;33mATUALIZANDO REPOSITÓRIOS..... \033[1;32mAGUARDE"
-apt-get update -y > /dev/null 2>&1
-apt-get upgrade -y > /dev/null 2>&1
+fun_attrepo
 echo -e "\033[1;33mINSTALANDO RECURSOS.......... \033[1;32mAGUARDE"
-apt-get install curl -y > /dev/null 2>&1
-apt-get install zip -y > /dev/null 2>&1
-apt-get install unzip -y > /dev/null 2>&1
-apt-get install apache2 -y > /dev/null 2>&1
+fun_instrec
 echo -e "\033[1;33mCONFIGURANDO APACHE.......... \033[1;32mAGUARDE"
-sed -i "s;Listen 80;Listen 81;g" /etc/apache2/ports.conf
-service apache2 restart > /dev/null 2>&1
-#cp /var/www/html/index.html /var/www/html/index_back.html > /dev/null 2>&1
+fun_apalist
 echo -e "\033[1;33mPREPARANDO SISTEMA........... \033[1;32mAGUARDE"
-    rm -rf /home/list > /dev/null 2>&1
-    rm -rf /home/index.html > /dev/null 2>&1
-    rm -rf /home/_script_$ > /dev/null 2>&1
-    rm -rf /bin/keyssh > /dev/null 2>&1
-    rm -rf /bin/otimizar > /dev/null 2>&1
-    rm -rf /var/www/html/Plus > /dev/null 2>&1
-    rm -rf /var/www/html/Index.php > /dev/null 2>&1
-    rm -rf /var/www/html/script > /dev/null 2>&1
-    rm -rf /var/www/html/scripts > /dev/null 2>&1
-    rm -rf /var/www/html/1:8%7o.2sg3-q:5 > /dev/null 2>&1
-    mkdir /home/keyssh > /dev/null 2>&1
-    mkdir /home/_script_$ > /dev/null 2>&1
-    mkdir /home/_script_$/crz > /dev/null 2>&1
-    mkdir /var/www/html/script > /dev/null 2>&1
-    mkdir /var/www/html/scripts > /dev/null 2>&1
+fun_preparasis
 echo -e "\033[1;33mDONWLOAD SERVER.............. \033[1;32mAGUARDE"
-cd
-cd /home/_script_$/crz
-wget https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/raw/master/Install/Generador/Install/sshplus-v37.zip > /dev/null 2>&1
-unzip sshplus-v37.zip > /dev/null 2>&1
-rm -rf sshplus-v37.zip
-cd
+fun_downser
 echo -e "\033[1;33mINSTALANDO SISTEMA........... \033[1;32mAGUARDE"
-wget -O /home/list https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/Modulos/list > /dev/null 2>&1
-wget -O /home/index.html https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/Modulos/index.html > /dev/null 2>&1
-wget -O /bin/keyssh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/Modulos/keyssh > /dev/null 2>&1
-wget -O /bin/otimizar https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/Modulos/otimizar > /dev/null 2>&1
-wget -O /var/www/html/scripts/Plus https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/Modulos/Plus > /dev/null 2>&1
-wget -O /var/www/html/script/versao https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/Modulos/versao > /dev/null 2>&1
+fun_instsis
 echo -e "\033[1;33mPERMISOS ARQUIVOS............ \033[1;32mAGUARDE"
-    chmod +x  /home/list > /dev/null 2>&1
-    chmod +x  /home/index.html > /dev/null 2>&1
-    chmod +x  /bin/keyssh > /dev/null 2>&1
-    chmod +x  /bin/otimizar > /dev/null 2>&1
-    chmod +x  /var/www/html/Plus > /dev/null 2>&1
-    chmod +x  /var/www/html/script/versao > /dev/null 2>&1
-    chmod 777 /home/_script_$/crz/*
-    echo "/bin/keyssh" > /bin/key && chmod +x /bin/key #ACCESO RAPIDO
+fun_permisoarq
 echo -e "\033[1;33mMONTANDO O SEU LINK-IP....... \033[1;32mAGUARDE"
-fun_ip
-sed -i "s;SEU-IP-AKI;$IP;g" /var/www/html/scripts/Plus > /dev/null 2>&1
-fun_ip
-sed -i "s;SEU-IP-AKI;$IP;g" /home/list > /dev/null 2>&1
-fun_ip
-sed -i "s;SEU-IP-AKI;$IP;g" /home/index.html > /dev/null 2>&1
-sleep 3s
+fun_montaip
 echo -e "\033[1;33mFINALIZANDO CONFIGURACION.... \033[1;32mAGUARDE"
-cat /home/index.html >/home/_script_$/index.html
-cat /home/index.html >/home/_script_$/crz/index.html
-cat /home/index.html >/var/www/html/script/index.html
-cat /home/index.html >/var/www/html/scripts/index.html
-service ssh restart >/dev/null 2>&1
-service apache2 restart >/dev/null 2>&1
+fun_finconf
 echo -e "$barra"
 echo -e " \033[1;36m> \033[1;37mPerfeito, Use o Comando \033[1;31mkeyssh / key "
 echo -e " \033[1;36m> \033[1;37mPara Gerenciar as Suas Keys e "
