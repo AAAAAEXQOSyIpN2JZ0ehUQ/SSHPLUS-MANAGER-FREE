@@ -50,7 +50,8 @@ echo -e "$barra"
 echo -e "      \033[1;33mINSTALADOR KEY SSHPLUS MANAGER !\033[0m"
 echo -e "$barra"
 echo ""
-read -n1 -r -p " Enter to Continue..."
+read -p "$(echo -e "\033[1;36mDESEJA CONTINUAR \033[1;31m? \033[1;33m[S/N]:\033[1;37m ")" -e -i s resp
+[[ $resp = @(n|N) ]] && rm $HOME/instgerador.sh && exit 0
 echo
 echo -e "\033[1;33mATUALIZANDO REPOSITÓRIOS..... \033[1;32mAGUARDE"
 apt-get update -y > /dev/null 2>&1
