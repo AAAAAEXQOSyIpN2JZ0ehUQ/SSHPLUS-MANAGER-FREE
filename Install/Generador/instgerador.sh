@@ -141,29 +141,28 @@ echo ""
 read -p "$(echo -e "\033[1;36mDESEJA CONTINUAR \033[1;31m? \033[1;33m[S/N]:\033[1;37m ")" -e -i s resp
 [[ $resp = @(n|N) ]] && rm $HOME/instgerador.sh* && exit 0
 echo
-echo -e "\033[1;33mATUALIZANDO REPOSITÓRIOS..... \033[1;32mAGUARDE"
+echo -e "\033[1;36mATUALIZANDO REPOSITÓRIOS..... \033[1;32mAGUARDE"
 fun_bar 'fun_attrepo'
-echo -e "\033[1;33mINSTALANDO RECURSOS.......... \033[1;32mAGUARDE"
+echo -e "\033[1;36mINSTALANDO RECURSOS.......... \033[1;32mAGUARDE"
 fun_bar 'fun_instrec'
-echo -e "\033[1;33mCONFIGURANDO APACHE.......... \033[1;32mAGUARDE"
+echo -e "\033[1;36mCONFIGURANDO APACHE.......... \033[1;32mAGUARDE"
 fun_bar 'fun_apalist'
-echo -e "\033[1;33mPREPARANDO SISTEMA........... \033[1;32mAGUARDE"
+echo -e "\033[1;36mPREPARANDO SISTEMA........... \033[1;32mAGUARDE"
 fun_bar 'fun_preparasis'
-echo -e "\033[1;33mDONWLOAD SERVER.............. \033[1;32mAGUARDE"
+echo -e "\033[1;36mDONWLOAD SERVER.............. \033[1;32mAGUARDE"
 fun_bar 'fun_downser'
-echo -e "\033[1;33mINSTALANDO SISTEMA........... \033[1;32mAGUARDE"
+echo -e "\033[1;36mINSTALANDO SISTEMA........... \033[1;32mAGUARDE"
 fun_bar 'fun_instsis'
-echo -e "\033[1;33mPERMISOS ARQUIVOS............ \033[1;32mAGUARDE"
+echo -e "\033[1;36mPERMISOS ARQUIVOS............ \033[1;32mAGUARDE"
 fun_bar 'fun_permisoarq'
-echo -e "\033[1;33mMONTANDO O SEU LINK-IP....... \033[1;32mAGUARDE"
+echo -e "\033[1;36mMONTANDO O SEU LINK-IP....... \033[1;32mAGUARDE"
 fun_bar 'fun_montaip'
-echo -e "\033[1;33mFINALIZANDO CONFIGURACION.... \033[1;32mAGUARDE"
+echo -e "\033[1;36mFINALIZANDO CONFIGURACION.... \033[1;32mAGUARDE"
 fun_bar 'fun_finconf'
 echo -e "$barra"
 ## echo -e " \033[1;36m> \033[1;37mPerfeito, Use o Comando \033[1;31mkeyssh / key "
 ## echo -e " \033[1;36m> \033[1;37mPara Gerenciar as Suas Keys e "
 ## echo -e " \033[1;36m> \033[1;37mAtualizar a Base do Servidor "
-echo -e "\033[1;32mINSTALACAO CONCLUIDA \033[0m"
 echo -e "\033[1;31m\033[1;33mCOMANDO PRINCIPAL: \033[1;32mkeyssh o key \033[0m"
 echo -e "\033[1;33mMAIS INFORMACOES \033[1;31m(\033[1;36mTELEGRAM\033[1;31m): \033[1;37m@AAAAAEXQOSyIpN2JZ0ehUQ\033[0m"
 echo -e "$barra"
