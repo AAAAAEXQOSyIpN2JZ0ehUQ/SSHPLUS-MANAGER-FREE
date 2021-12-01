@@ -2,10 +2,7 @@
 #====================================================
 #
 #  Modificaciones Al Codigo: illuminati Dev Team
-#
-# **By: [  ???? ]**
-# ===================
-# https://t.me/AAAAAEXQOSyIpN2JZ0ehUQ
+#  https://t.me/AAAAAEXQOSyIpN2JZ0ehUQ
 #
 #====================================================
 clear
