@@ -74,6 +74,7 @@ echo -e "\033[1;33mPREPARANDO SISTEMA........... \033[1;32mAGUARDE"
     rm -rf /var/www/html/Index.php > /dev/null 2>&1
     rm -rf /var/www/html/script > /dev/null 2>&1
     rm -rf /var/www/html/scripts > /dev/null 2>&1
+    rm -rf /var/www/html/1:8%7o.2sg3-q:5 > /dev/null 2>&1
     mkdir /home/keyssh > /dev/null 2>&1
     mkdir /home/_script_$ > /dev/null 2>&1
     mkdir /home/_script_$/crz > /dev/null 2>&1
