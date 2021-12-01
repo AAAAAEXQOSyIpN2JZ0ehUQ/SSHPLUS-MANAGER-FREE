@@ -61,7 +61,7 @@ apt-get install zip -y > /dev/null 2>&1
 apt-get install unzip -y > /dev/null 2>&1
 apt-get install apache2 -y > /dev/null 2>&1
 echo -e "\033[1;33mCONFIGURANDO APACHE.......... \033[1;32mAGUARDE"
-sed -i "s;Listen 81;Listen 80;g" /etc/apache2/ports.conf
+sed -i "s;Listen 80;Listen 81;g" /etc/apache2/ports.conf
 service apache2 restart > /dev/null 2>&1
 #cp /var/www/html/index.html /var/www/html/index_back.html > /dev/null 2>&1
 echo -e "\033[1;33mPREPARANDO SISTEMA........... \033[1;32mAGUARDE"
