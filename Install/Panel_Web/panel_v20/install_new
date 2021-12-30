@@ -159,7 +159,7 @@ sed -i "s;1010;$senha;g" /var/www/html/pages/system/pass.php > /dev/null 2>&1
 fi
 sleep 1
 cd
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v20/bancov20.sql > /dev/null 2>&1
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v20/Arquivos/bancov20.sql > /dev/null 2>&1
 sleep 1
 if [[ -e "$HOME/bancov20.sql" ]]; then
     mysql -h localhost -u root -p$senha --default_character_set utf8 sshplus < bancov20.sql
@@ -185,7 +185,7 @@ echo '*/2 * * * * root /bin/autobackup.sh' >> /etc/crontab
 /etc/init.d/cron reload > /dev/null 2>&1
 /etc/init.d/cron restart > /dev/null 2>&1
 cd /bin
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v20/html.sh > /dev/null 2>&1 && chmod 777 html.sh && sed -i -e 's/\r$//' html.sh && ./html.sh
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v20/Arquivos/html.sh > /dev/null 2>&1 && chmod 777 html.sh && sed -i -e 's/\r$//' html.sh && ./html.sh
 rm autobackup.sh > /dev/null 2>&1
 wget https://www.dropbox.com/s/w9vji4bbtyfp7n1/autobackup.sh > /dev/null 2>&1 && chmod 777 autobackup.sh && sed -i -e 's/\r$//' autobackup.sh && ./autobackup.sh
 # echo '0 */12 * * * root cd /var/www/html/pages/system/ && bash cron.backup.sh && cd /root' >> /etc/crontab

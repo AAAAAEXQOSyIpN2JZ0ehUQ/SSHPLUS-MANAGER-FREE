@@ -67,7 +67,7 @@ sed -i "s;1010;$senha;g" /var/www/html/pages/system/pass.php > /dev/null 2>&1
 fi
 sleep 1
 cd
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v20/banco.sql > /dev/null 2>&1
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v20/Arquivos/banco.sql > /dev/null 2>&1
 sleep 1
 if [[ -e "$HOME/banco.sql" ]]; then
     mysql -h localhost -u root -p$senha --default_character_set utf8 sshplus < banco.sql
@@ -89,7 +89,7 @@ echo '10 * * * * root /usr/bin/php /var/www/html/pages/system/cron.servidor.php'
 echo '*/30 * * * * root /usr/bin/php /var/www/html/pages/system/cron.limpeza.php' >> /etc/crontab
 echo '*/1 * * * * root /bin/html.sh' >> /etc/crontab
 cd /bin
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v20/html.sh > /dev/null 2>&1 && chmod 777 html.sh && sed -i -e 's/\r$//' html.sh && ./html.sh
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v20/Arquivos/html.sh > /dev/null 2>&1 && chmod 777 html.sh && sed -i -e 's/\r$//' html.sh && ./html.sh
 /etc/init.d/cron reload > /dev/null 2>&1
 /etc/init.d/cron restart > /dev/null 2>&1
 cd
