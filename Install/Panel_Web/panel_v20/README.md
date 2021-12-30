@@ -30,7 +30,7 @@ apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AA
 ```
 
 # INSTALACION BACKUP-PANEL-V20 
-# (Script de restauración de la base de datos del panel V20 )
+(Script de restauración de la base de datos del panel V20 )
 
 bash <(wget -qO- https://raw.githubusercontent.com/CRAZY-VPN/BACKUP-PAINEL-V20/master/restaurar.sh)
 
