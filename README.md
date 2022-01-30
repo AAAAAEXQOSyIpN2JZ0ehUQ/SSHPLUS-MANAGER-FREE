@@ -21,15 +21,15 @@ SCRIPT SSHPLUS MANAGER es un script con un conjunto de características y herram
 * Debian 8 Server x86_64 / Debian 9 Server x86_64
 * Recomendamos Debian 9 Server x86_64 / Ubuntu 18.04 Server x86_64
 * Se recomienda usar una distro nueva o formatiada
-* Si necesita reinstalar el Scripts puede ejecutar en consola el comando sshplus
-* Para instalar el segundo menu adaptado ejecute en consola el comando menuV2 [Ver Imagen](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/Update_menuV2.png)
-* Para instalar el tercer menu adaptado formato ADM ejecute en consola el comando menuV3 [Ver Imagen](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/Update_menuV3.png)
-* Para restablecer el menu original ejecute en consola el comando menuV1 [Ver Imagen](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/SSHPLUS_MANAGER.jpg)
 
 ## :book: Installation
 
 apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Plus; chmod 777 Plus; ./Plus
 
+* Si necesita reinstalar el Scripts puede ejecutar en consola el comando sshplus
+* Para instalar el segundo menu adaptado ejecute en consola el comando menuV2 [Ver Imagen](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/Update_menuV2.png)
+* Para instalar el tercer menu adaptado formato ADM ejecute en consola el comando menuV3 [Ver Imagen](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/Update_menuV3.png)
+* Para restablecer el menu original ejecute en consola el comando menuV1 [Ver Imagen](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/SSHPLUS_MANAGER.jpg)
 -------------------------------------------------------------------------------
 
 ## :book: Installation Utilitarios
