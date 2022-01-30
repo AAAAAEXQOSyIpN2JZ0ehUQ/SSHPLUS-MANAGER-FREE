@@ -26,10 +26,10 @@ SCRIPT SSHPLUS MANAGER es un script con un conjunto de características y herram
 
 apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Plus; chmod 777 Plus; ./Plus
 
-* Si necesita reinstalar el Scripts puede ejecutar en consola el comando sshplus
-* Para instalar el segundo menu adaptado ejecute en consola el comando menuV2 [Ver Imagen](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/Update_menuV2.png)
-* Para instalar el tercer menu adaptado formato ADM ejecute en consola el comando menuV3 [Ver Imagen](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/Update_menuV3.png)
-* Para restablecer el menu original ejecute en consola el comando menuV1 [Ver Imagen](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/SSHPLUS_MANAGER.jpg)
+1. Reinstalar el Scripts ejecutar en consola el comando sshplus
+2. Segundo menu adaptado ejecute en consola el comando menuV2 [Ver Imagen](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/Update_menuV2.png)
+3. Tercer menu adaptado formato ADM ejecute en consola el comando menuV3 [Ver Imagen](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/Update_menuV3.png)
+4. Restablecer el menu original ejecute en consola el comando menuV1 [Ver Imagen](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/SSHPLUS_MANAGER.jpg)
 -------------------------------------------------------------------------------
 
 ## :book: Installation Utilitarios
