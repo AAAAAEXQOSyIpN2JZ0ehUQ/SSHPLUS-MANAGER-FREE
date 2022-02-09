@@ -19,6 +19,8 @@ wget -O /bin/menuV2 https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSH
 chmod +x /bin/menuV2 > /dev/null 2>&1
 wget -O /bin/menuV3 https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Skin_Plus/menuV3/Install > /dev/null 2>&1
 chmod +x /bin/menuV3 > /dev/null 2>&1
+wget -O /bin/menuV4 https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Skin_Plus/menuV4/Install > /dev/null 2>&1
+chmod +x /bin/menuV4 > /dev/null 2>&1
 
 ## Systemverify
 rm -rf $HOME/systemverify* > /dev/null 2>&1
