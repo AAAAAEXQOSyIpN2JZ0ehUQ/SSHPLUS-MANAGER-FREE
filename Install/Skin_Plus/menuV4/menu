@@ -188,7 +188,7 @@ case "$x" in
    7 | 07)
    autoexec
    ;;
-   7 | 07)
+   8 | 08)
    conexao
    exit
    ;;
