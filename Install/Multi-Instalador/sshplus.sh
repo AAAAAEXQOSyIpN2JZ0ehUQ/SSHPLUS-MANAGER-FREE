@@ -35,18 +35,12 @@ menu ()
 sshplusfree () {
 apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Plus; chmod 777 Plus; ./Plus
 }
-sshplusDEV () {
-apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/SSHPlus-Dev/Plus; chmod 777 Plus; ./Plus
-}
 sshpluskey () {
-apt-get update -y; apt-get upgrade -y; wget sshplus.xyz/script/Plus; chmod 777 Plus; ./Plus
+bash <(wget -qO- sshplus.xyz/scripts/sshplus.sh)
 }
 #PAINEL WEB SCRIPTS
 panel_v20 () {
 wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v20/install > /dev/null 2>&1; chmod 777 install* && ./install*
-}
-panel_v23 () {
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v23/install > /dev/null 2>&1; chmod +x install; ./install
 }
 panel_v23_2 () {
 wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v23_2/install > /dev/null 2>&1; chmod +x install; ./install
@@ -68,7 +62,7 @@ apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AA
 }
 #TCP-SPEED
 fun_tcpspeed () {
-rm -rf $HOME/tcptweaker.sh* > /dev/null 2>&1; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/TCP-Speed/tcptweaker.sh > /dev/null 2>&1; chmod +x tcptweaker.sh; ./tcptweaker.sh
+rm -rf $HOME/tcptweaker.sh* > /dev/null 2>&1; bash <(wget -qO- https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/TCP-Speed/tcptweaker.sh)
 }
 #OPCIONES DE SISTEMA
 atualizar () {
@@ -78,6 +72,7 @@ fun_bar "apt-get upgrade -y"
 fun_att () {
     service ssh restart > /dev/null 2>&1
     rm -rf $HOME/sshplus.sh* > /dev/null 2>&1
+    rm -rf /bin/mip > /dev/null 2>&1
     wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Multi-Instalador/sshplus.sh > /dev/null 2>&1
 }
 fun_bar 'fun_att'

@@ -87,7 +87,7 @@ fun_preparasis () {
 fun_downser () {
 cd
 cd /home/_script_$/crz
-wget https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/raw/master/Install/Generador/Install/sshplus-v37.zip
+wget https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/raw/master/Install/Generador/Install/sshplus-v38.zip
 unzip sshplus-v37.zip
 rm -rf sshplus-v37.zip
 cd
