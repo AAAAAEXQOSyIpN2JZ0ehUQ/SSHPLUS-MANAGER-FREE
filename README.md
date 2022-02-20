@@ -43,12 +43,9 @@ SSHPLUS MANAGER (las dependencias faltantes se instalarán automáticamente)
 
 1. [GENERADOR DE KEY SSHPLUS MANAGER](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/Generador)
 2. [SCRIPT OFICIAL PAINEL REVENDA SSH VERSAO: 20 (Installation Directa)](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/Panel_Web/panel_v20)
-
-## :book: Installation Alternos
-
-1. [MULTI-INSTALADOR PLUS](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/Multi-Instalador)
-2. [PAINEL REVENDA SSH (VERSIONES)](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/Panel_Web)
-3. [TCP-Tweaker-1.0 (TCP-SPEED)](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/TCP-Speed)
+3. [MULTI-INSTALADOR PLUS](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/Multi-Instalador)
+4. [PAINEL REVENDA SSH (VERSIONES)](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/Panel_Web)
+5. [TCP-Tweaker-1.0 (TCP-SPEED)](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/TCP-Speed)
 
 -------------------------------------------------------------------------------
 
