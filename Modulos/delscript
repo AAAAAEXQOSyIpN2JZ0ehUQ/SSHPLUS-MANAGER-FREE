@@ -19,5 +19,5 @@ if [[ "$resp" = s || "$resp" = S ]];then
 else
     echo -e "\033[1;32mOk retornando ao menu\033[1;33m"
     sleep 3
-    menu
+    exit
 fi

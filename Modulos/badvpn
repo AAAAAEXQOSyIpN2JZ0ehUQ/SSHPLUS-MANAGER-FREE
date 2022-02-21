@@ -50,7 +50,7 @@ fun_udp1 () {
         echo -e "\033[1;32mINSTALANDO O BADVPN !\033[0m\n"
 	    inst_udp () {
 	        cd $HOME
-            wget https://www.dropbox.com/s/tgkxdwb03r7w59r/badvpn-udpgw -o /dev/null
+            wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/badvpn-udpgw -o /dev/null
             mv -f $HOME/badvpn-udpgw /bin/badvpn-udpgw
             chmod 777 /bin/badvpn-udpgw
 	   }
