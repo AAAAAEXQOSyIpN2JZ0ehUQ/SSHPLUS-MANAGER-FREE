@@ -15,31 +15,25 @@ https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/ma
 
 https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/addIP
 
-https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/menuV1
-
-https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/menuV2
-
-https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/menuV3
-
 https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/slowdns
 
 https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/dns-server
 
 https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/dns
 
-https://www.dropbox.com/s/tgkxdwb03r7w59r/badvpn-udpgw
-
-https://raw.githubusercontent.com/CRAZY-VPN/SQUID3/master/squid3
-
-https://raw.githubusercontent.com/shellscriptx/shellbot/master/ShellBot.sh
-
-https://github.com/stedolan/jq/releases/download/jq-1.5/jq-linux64
+https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/resolved.conf
 
 https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/EasyRSA-3.0.1.tgz
 
 https://github.com/OpenVPN/easy-rsa/releases/download/3.0.1/EasyRSA-3.0.1.tgz
 
-https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/resolved.conf
+https://raw.githubusercontent.com/shellscriptx/shellbot/master/ShellBot.sh
+
+https://github.com/stedolan/jq/releases/download/jq-1.5/jq-linux64
+
+https://www.dropbox.com/s/tgkxdwb03r7w59r/badvpn-udpgw
+
+https://raw.githubusercontent.com/CRAZY-VPN/SQUID3/master/squid3
 
 sshplus.xyz/scripts/utilitarios/syncpainel/inst
 

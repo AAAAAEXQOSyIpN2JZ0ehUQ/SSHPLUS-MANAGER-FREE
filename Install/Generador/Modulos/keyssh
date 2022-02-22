@@ -97,7 +97,7 @@ cp /home/list /var/www/$pasta1/$pasta2/list
 cp -a /home/_script_$/. /var/www/$pasta1
 chmod 777 /var/www/$pasta1/crz/*
 else
-[[ ! -e /var/www/html/index.php ]] && touch /var/www/html/index.php > /dev/null 2>&1
+[[ ! -e /var/www/html/index.html ]] && touch /var/www/html/index.html > /dev/null 2>&1
 mkdir /var/www/html/$pasta1
 mkdir /var/www/html/$pasta1/$pasta2
 touch /home/keyssh/$client
@@ -163,7 +163,7 @@ cp /home/list /var/www/$pasta1/$pasta2/list
 cp -a /home/_script_$/. /var/www/$pasta1
 chmod 777 /var/www/$pasta1/crz/*
 else
-[[ ! -e /var/www/html/index.php ]] && touch /var/www/html/index.php > /dev/null 2>&1
+[[ ! -e /var/www/html/index.html ]] && touch /var/www/html/index.html > /dev/null 2>&1
 mkdir /var/www/html/$pasta1
 mkdir /var/www/html/$pasta1/$pasta2
 touch /home/keyssh/$client
@@ -251,7 +251,7 @@ cp /home/list /var/www/$key1p/$key2p/list
 cp -a /home/_script_$/. /var/www/$key1p
 chmod 777 /var/www/$key1p/crz/*
 else
-[[ ! -e /var/www/html/index.php ]] && touch /var/www/html/index.php > /dev/null 2>&1
+[[ ! -e /var/www/html/index.html ]] && touch /var/www/html/index.html > /dev/null 2>&1
 [[ ! -d /var/www/html/$key1p ]] && mkdir /var/www/html/$key1p
 [[ ! -d /var/www/html/$key1p/$key2p ]] && mkdir /var/www/html/$key1p/$key2p
 touch /home/keyssh/$client
@@ -343,7 +343,7 @@ echo -e "\033[1;37mSTATUS: $sts"
 echo -e "$barra"
 mine_port
 echo -e "$barra"
-echo -e " \033[1;31m++| \033[1;32mKEYGEN SSHPLUS \033[1;31m|++       \033[1;33m[ VERSAO: 1.3 BETA ]\033[0m"
+echo -e " \033[1;31m++| \033[1;32mKEYGEN SSHPLUS \033[1;31m|++       \033[1;33m[ VERSAO: 2.0 BETA ]\033[0m"
 echo -e "$barra"
 echo -e "\033[1;37m |1| \033[1;31m<----> \033[1;36mGERAR KEY ALEATORIA \033[1;32m[CV] \033[0m"
 echo -e "\033[1;37m |2| \033[1;31m<----> \033[1;36mGERAR KEY ALEATORIA FIXA \033[1;32m[SV] \033[0m"

@@ -6,7 +6,6 @@
 #
 #====================================================
 clear
-clear
 [[ "$(whoami)" != "root" ]] && {
 echo -e "\033[1;33m[\033[1;31mErro\033[1;33m] \033[1;37m- \033[1;33mvocê precisa executar como root\033[0m"
 rm $HOME/instgerador.sh* > /dev/null 2>&1; exit 0
@@ -77,19 +76,20 @@ fun_preparasis () {
     rm -rf /var/www/html/script
     rm -rf /var/www/html/scripts
     rm -rf /var/www/html/1:8%7o.2sg3-q:5
-    mkdir /home/keyssh > /dev/null 2>&1
+    mkdir /home/keyssh
     mkdir /home/_script_$
     mkdir /home/_script_$/crz
     mkdir /var/www/html/script
     mkdir /var/www/html/scripts
+    echo "/bin/keyssh" > /bin/key 
 }
 
 fun_downser () {
 cd
 cd /home/_script_$/crz
 wget https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/raw/master/Install/Generador/Install/sshplus-v38.zip
-unzip sshplus-v37.zip
-rm -rf sshplus-v37.zip
+unzip sshplus-v38.zip
+rm -rf sshplus-v38.zip
 cd
 }
 
@@ -107,10 +107,10 @@ fun_permisoarq () {
     chmod +x  /home/index.html
     chmod +x  /bin/keyssh
     chmod +x  /bin/otimizar
+    chmod +x /bin/key
     chmod +x  /var/www/html/Plus
     chmod +x  /var/www/html/script/versao
     chmod 777 /home/_script_$/crz/*
-    echo "/bin/keyssh" > /bin/key && chmod +x /bin/key #ACCESO RAPIDO
 }
 
 fun_montaip () {

@@ -17,7 +17,7 @@ Despues solo necesitara ejecutar la siguiente linea para usar nuevamente: keyssh
 
 ## :scroll: Changelog
 
-**VERSION: 1.3**
+**VERSION: 2.0**
 
 content.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/versao
 
