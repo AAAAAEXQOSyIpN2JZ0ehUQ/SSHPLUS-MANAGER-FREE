@@ -33,7 +33,7 @@ SSHPLUS MANAGER (las dependencias faltantes se instalarán automáticamente)
 * Herramientas de escaneo y busqueda.
 * Optimiza y limpia el sistema y mas.
 
-## :heavy_exclamation_mark: Requerimientos
+## :heavy_exclamation_mark: Requirements
 * Un sistema operativo basado en Linux (Ubuntu o Debian)
 * Ubuntu 18.04 Server x86_64 / Ubuntu 20.04 Server x86_64
 * Debian 8 Server x86_64 / Debian 9 Server x86_64
@@ -41,16 +41,16 @@ SSHPLUS MANAGER (las dependencias faltantes se instalarán automáticamente)
 * Se recomienda usar una distro nueva o formateada
 * Idioma por defecto es el portugués
 
-## :book: Opcional
+## :book: Optional Utilities
 1. Reinstalar el Scripts ejecutar en consola el comando sshplus
 2. Skin menú adaptado ejecute en consola el comando menuV2 [Ver Imagen](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/Update_menuV2.png)
 3. Skin menú adaptado formato ADM ejecute en consola el comando menuV3 [Ver Imagen](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/Update_menuV3.png)
 4. Restablecer el menú original ejecute en consola el comando menuV1 [Ver Imagen](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/SSHPLUS_MANAGER.jpg)
 5. Descargar Código Fuente [Donwload](https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Source-Code-SSHPlus.zip)
 
-## :book: Installation Utilitarios
+## :book: Installation Utilities
 1. [GENERADOR DE KEY SSHPLUS MANAGER](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/Generador)
-2. [SCRIPT OFICIAL PAINEL REVENDA SSH VERSAO: 20 (Installation Directa)](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/Panel_Web/panel_v20)
+2. [SCRIPT OFICIAL PAINEL REVENDA SSH VERSAO: 20 (Instalación)](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/Panel_Web/panel_v20)
 3. [MULTI-INSTALADOR PLUS](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/Multi-Instalador)
 4. [PAINEL REVENDA SSH (VERSIONES)](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/Panel_Web)
 5. [TCP-Tweaker-1.0 (TCP-SPEED)](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/TCP-Speed)
