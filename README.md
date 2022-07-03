@@ -2,7 +2,7 @@
 * UPDATE 09/08/2021 - Proyecto Descontinuado
 * SSHPLUS MANAGER (Final versión 38)
 ```
-![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/SSHPLUS_MANAGER.jpg)
+![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/SSHPLUS_MANAGER.png)
 
 # SSHPLUS MANAGER
 Es un script con un conjunto de características y herramientas adecuadas para 
