@@ -12,7 +12,7 @@ chmod 777 instgerador.sh* && ./instgerador.sh*
 El generador trabaja con Apache2 en el Puerto 80
 
 ## :scroll: Changelog
-**VERSION: 1.3 BETA**
+**VERSION: 2.0 BETA**
 * Correcciones y mejoras
 
 
