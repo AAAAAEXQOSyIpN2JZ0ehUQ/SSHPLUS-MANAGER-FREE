@@ -15,14 +15,14 @@ chmod 777 install* && ./install*
 ```
 
 ## :book: SINCRONIZAR EL PANEL WEB
-APLIQUE ESTE COMANDO AL SERVIDOR DE CONEXIONES SSH
+Aplique este comando al servidor de conexiones ssh
 ```
 bash <(wget -qO- sshplus.xyz/scripts/utilitarios/syncpainel/inst)
 ```
 
 ## :book: Installation BACKUP-PANEL-V20
-SCRIPT DE RESTAURACIÓN DE LA BASE DE DATOS DEL PANEL V20
-LA CONTRASEÑA DE ADMINISTRADOR SERÁ LA MISMA CONTRASEÑA DEL PANEL ANTEERIOR
+Script de restauración de la base de datos del panel v20 
+la contraseña de administrador será la misma contraseña del panel anteerior
 ```
 bash <(wget -qO- https://raw.githubusercontent.com/CRAZY-VPN/BACKUP-PAINEL-V20/master/restaurar.sh)
 ```
