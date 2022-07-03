@@ -1,7 +1,6 @@
 ![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/Panel_SSHPLUS_Web.jpg)
 
 ## PAINEL REVENDA SSH (VERSIONES)
-r...
 
 ## :book: Installation
 ```
