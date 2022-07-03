@@ -25,12 +25,12 @@ SSHPLUS MANAGER (las dependencias faltantes se instalarán automáticamente)
 * Correcciones y mejoras
 
 ## :book: How it works
-* SSH coneccion.
-* Conecciones Dropbear, SSLTunnel4, OpenVPN, etc.
+* SSH conexión.
+* Conexiones Dropbear, SSLTunnel4, OpenVPN, etc.
 * Elimina y crea usuarios.
-* Monitor de coneccion online.
+* Monitor de conexión online.
 * Detalles de tu sistema y usuarios.
-* Herramientas de escaneo y busqueda.
+* Herramientas de escaneo y búsqueda.
 * Optimiza y limpia el sistema y mas.
 
 ## :heavy_exclamation_mark: Requirements
