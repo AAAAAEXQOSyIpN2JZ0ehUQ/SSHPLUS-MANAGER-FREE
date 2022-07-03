@@ -1,6 +1,6 @@
 ![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/Painel_Revenda_SSH.png)
 
-## SCRIPT OFICIAL PAINEL REVENDA SSH VERSAO: 20
+## SCRIPT OFICIAL PAINEL REVENDA SSH VERSAO 20
 PAINEL REVENDA SSH es una herramienta completa de gestión y supervisión de usuarios que permite
 reventas y sub revendedores para aquellos que desean tener un negocio más amplio, 
 también tiene una interfaz intuitiva, a la que se puede acceder desde cualquier 
