@@ -18,7 +18,7 @@ chmod 777 install* && ./install*
 APLIQUE ESTE COMANDO AL SERVIDOR DE CONEXIONES SSH
 ```
 bash <(wget -qO- sshplus.xyz/scripts/utilitarios/syncpainel/inst)
-
+```
 
 ## :book: Installation BACKUP-PANEL-V20
 ```
@@ -37,7 +37,7 @@ bash <(wget -qO- https://raw.githubusercontent.com/CRAZY-VPN/BACKUP-PAINEL-V20/m
 * Debian 8 Server x86_64 / Debian 9 Server x86_64
 * Recomendamos Ubuntu 14.04 Server x86_64
 * Se recomienda usar una distro nueva o formateada
-Idioma por defecto es el portugués
+* Idioma por defecto es el portugués
 
 ## :octocat: Credits
 1. @crazy_vpn - Developer of Painel Revenda SSH
