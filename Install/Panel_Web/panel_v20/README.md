@@ -1,62 +1,49 @@
-﻿## SCRIPT OFICIAL PAINEL REVENDA SSH VERSAO: 20 (Installation Directa)
-
 ![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/Painel_Revenda_SSH.png)
 
-```
+## SCRIPT OFICIAL PAINEL REVENDA SSH VERSAO: 20
 PAINEL REVENDA SSH es una herramienta completa de gestión y supervisión de usuarios que permite
-                 reventas y sub revendedores para aquellos que desean tener un negocio más amplio, 
-                 también tiene una interfaz intuitiva, a la que se puede acceder desde cualquier 
-                 navegador ...
+reventas y sub revendedores para aquellos que desean tener un negocio más amplio, 
+también tiene una interfaz intuitiva, a la que se puede acceder desde cualquier 
+navegador...
+
+## :book: Installation
+```
+apt-get update -y; 
+apt-get upgrade -y; 
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v20/install; 
+chmod 777 install* && ./install*
 ```
 
-**Manager Script**
+## :book: SINCRONIZAR EL PANEL WEB
+APLIQUE ESTE COMANDO AL SERVIDOR DE CONEXIONES SSH
+```
+bash <(wget -qO- sshplus.xyz/scripts/utilitarios/syncpainel/inst)
 
-## :heavy_exclamation_mark: Requerimientos
 
+## :book: Installation BACKUP-PANEL-V20
+```
+Script de restauración de la base de datos del panel V20
+LA CONTRASEÑA DE ADMINISTRADOR SERÁ LA MISMA CONTRASEÑA DEL PANEL ANTEERIOR
+bash <(wget -qO- https://raw.githubusercontent.com/CRAZY-VPN/BACKUP-PAINEL-V20/master/restaurar.sh)
+```
+
+## :scroll: Changelog
+**VERSION: 20**
+* Correcciones y mejoras
+
+## :heavy_exclamation_mark: Requirements
 * Un sistema operativo basado en Linux (Ubuntu o Debian)
 * Ubuntu 14.04 Server x86_64 / Ubuntu 16.04 Server x86_64 / Ubuntu 18.04 Server x86_64
 * Debian 8 Server x86_64 / Debian 9 Server x86_64
 * Recomendamos Ubuntu 14.04 Server x86_64
-* Se recomienda usar una distro nueva o formatiada
-
-## :book: Installation
-
-apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v20/install; chmod 777 install* && ./install*
-
-```
-Installation [ BETA ]
-
-apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v20/install_new; chmod 777 install_new* && ./install_new*
-```
-
-# INSTALACION BACKUP-PANEL-V20 
-(Script de restauración de la base de datos del panel V20 )
-
-bash <(wget -qO- https://raw.githubusercontent.com/CRAZY-VPN/BACKUP-PAINEL-V20/master/restaurar.sh)
-
-NOTA: ¡LA CONTRASEÑA DE ADMINISTRADOR SERÁ LA MISMA CONTRASEÑA DEL PANEL ANTEERIOR!
-
-# SINCRONIZAR EL PANEL WEB
-
-bash <(wget -qO- sshplus.xyz/scripts/utilitarios/syncpainel/inst)
-
-- ¡APLIQUE ESTE COMANDO AL SERVIDOR DE CONEXIONES SSH! 
-
--------------------------------------------------------------------------------
-
-## :scroll: Changelog
-
-**VERSION: 20**
-
-https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v20/versao
+* Se recomienda usar una distro nueva o formateada
+Idioma por defecto es el portugués
 
 ## :octocat: Credits
-
 1. @crazy_vpn - Developer of Painel Revenda SSH
 2. @backup-new - Contributor
 3. @Adeilsonfi - Contributor
 4. illuminati Dev Team - Contributor 
-
 ```
 ☆ https://t.me/AAAAAEXQOSyIpN2JZ0ehUQ [  ⃘⃤꙰✰ ] ☆
 ```
