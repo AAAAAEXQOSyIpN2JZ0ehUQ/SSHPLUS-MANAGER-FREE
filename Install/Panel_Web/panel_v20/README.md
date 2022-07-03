@@ -13,6 +13,7 @@ apt-get upgrade -y;
 wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v20/install; 
 chmod 777 install* && ./install*
 ```
+ En caso de error al finalizar instalar:  apt-get install php-ssh2 -y
 
 ## :book: SINCRONIZAR EL PANEL WEB
 Aplique este comando al servidor de conexiones ssh
