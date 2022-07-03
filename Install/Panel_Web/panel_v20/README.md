@@ -21,7 +21,7 @@ bash <(wget -qO- sshplus.xyz/scripts/utilitarios/syncpainel/inst)
 ```
 
 ## :book: Installation BACKUP-PANEL-V20
-Script de restauración de la base de datos del panel v20 
+Script de restauración de la base de datos del panel v20, 
 la contraseña de administrador será la misma contraseña del panel anteerior
 ```
 bash <(wget -qO- https://raw.githubusercontent.com/CRAZY-VPN/BACKUP-PAINEL-V20/master/restaurar.sh)
