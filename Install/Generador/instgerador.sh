@@ -68,13 +68,13 @@ fun_preparasis () {
     rm -rf /home/list
     rm -rf /home/index.html
     rm -rf /home/_script_$
+    rm -rf /home/PlusKeygen-Active
     rm -rf /bin/keyssh
     rm -rf /bin/key
     rm -rf /bin/otimizar
     rm -rf /var/www/html/Index.php
     rm -rf /var/www/html/script
     rm -rf /var/www/html/scripts
-    rm -rf /var/www/html/1:8%7o.2sg3-q:5
     mkdir /home/keyssh
     mkdir /home/_script_$
     mkdir /home/_script_$/crz
