@@ -62,7 +62,6 @@ fun_apalist () {
     sed -i "s;Listen 80;Listen 81;g" /etc/apache2/ports.conf
     service apache2 start
     service apache2 restart
-    ## cp /var/www/html/index.html /var/www/html/index_back.html
 }
 
 fun_preparasis () {
@@ -87,7 +86,7 @@ fun_preparasis () {
 fun_downser () {
 cd
 cd /home/_script_$/crz
-wget https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/raw/master/Install/Generador/Install/sshplus-v38.zip
+wget https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/raw/master/Install/Generador/Modulos/sshplus-v38.zip
 unzip sshplus-v38.zip
 rm -rf sshplus-v38.zip
 cd
@@ -159,9 +158,6 @@ fun_bar 'fun_montaip'
 echo -e "\033[1;36mFINALIZANDO CONFIGURACION.... \033[1;32mAGUARDE"
 fun_bar 'fun_finconf'
 echo -e "$barra"
-## echo -e " \033[1;36m> \033[1;37mPerfeito, Use o Comando \033[1;31mkeyssh / key "
-## echo -e " \033[1;36m> \033[1;37mPara Gerenciar as Suas Keys e "
-## echo -e " \033[1;36m> \033[1;37mAtualizar a Base do Servidor "
 echo -e "\033[1;31m\033[1;33mCOMANDO PRINCIPAL: \033[1;32mkeyssh o key \033[0m"
 echo -e "\033[1;33mMAIS INFORMACOES \033[1;31m(\033[1;36mTELEGRAM\033[1;31m): \033[0m"
 echo -e "                     \033[1;37m@AAAAAEXQOSyIpN2JZ0ehUQ\033[0m"
