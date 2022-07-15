@@ -405,6 +405,7 @@ case "$x" in
    pkill -f 80
    wget -O /etc/apache2/ports.conf https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/Install/ports.conf > /dev/null 2>&1
    service apache2 restart > /dev/null 2>&1
+   clear
    exit
    ;;
    9 | 09)
