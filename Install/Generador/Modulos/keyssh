@@ -417,10 +417,8 @@ exit
 clear
 ;;
 *)
-echo -ne "\n\033[1;31mOpcao invalida !\033[0m"; read
-ok
-;;
+echo -e "\n\033[1;31mOpcao invalida !\033[0m"
+sleep 2
 esac
 done
 #fim
-cat /dev/null > ~/.bash_history && history -c
