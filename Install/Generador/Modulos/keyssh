@@ -285,18 +285,6 @@ fi
 }
 
 mine_port () {
- $APC
-}
-
-mine_port () {
- $APC
-}
-
-mine_port () {
- $APC
-}
-
-mine_port () {
 local portasVAR=$(lsof -V -i tcp -P -n | grep -v "ESTABLISHED" |grep -v "COMMAND" | grep "LISTEN")
 local NOREPEAT
 local reQ
