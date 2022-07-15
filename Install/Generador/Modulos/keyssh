@@ -40,7 +40,7 @@ Port=$(echo {$port} | awk '{print $9}' | awk -F ":" '{print $2}')
 NOREPEAT+="$Port\n"
 case ${reQ} in
 apache|apache2)
-[[ -z $APC ]] && echo -e "$barra" && local APC="\033[1;32m PORTA \033[1;37m"
+[[ -z $APC ]] && echo -e "$barra" && local APC="\033[1;32m PORTA: \033[1;37m"
 APC+="$Port ";;
 esac
 done <<< "${portasVAR}"
