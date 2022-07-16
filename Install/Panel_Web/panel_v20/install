@@ -97,6 +97,7 @@ chmod 777 /var/www/html/admin/pages/servidor/ovpn
 chmod 777 /var/www/html/admin/pages/download
 chmod 777 /var/www/html/admin/pages/faturas/comprovantes
 service apache2 restart > /dev/null 2>&1
+apt-get install php-ssh2 -y > /dev/null 2>&1
 clear
 echo -e "\033[1;32m PAINEL-SSH INSTALADO COM SUCESSO!"
 echo ""
