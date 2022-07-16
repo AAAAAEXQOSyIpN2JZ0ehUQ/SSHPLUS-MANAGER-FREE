@@ -42,9 +42,9 @@ SSHPLUS MANAGER (las dependencias faltantes se instalarán automáticamente)
 * Idioma por defecto es el portugués
 
 ## :book: Optional Utilities
-1. Reinstalar el Scripts ejecutar en consola el comando sshplus
-2. Skin menú adaptado ejecute en consola el comando menuV2 [Ver Imagen](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/Update_menuV2.png)
-3. Skin menú adaptado formato ADM ejecute en consola el comando menuV3 [Ver Imagen](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/Update_menuV3.png)
+1. Reinstalar el Scripts ejecutar en consola el comando sshplus [Ver Imagen](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE)
+2. Skin menú adaptado ejecute en consola el comando menuV2 [Ver Imagen](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE)
+3. Skin menú adaptado formato ADM ejecute en consola el comando menuV3 [Ver Imagen](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE)
 4. Restablecer el menú original ejecute en consola el comando menuV1 [Ver Imagen](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/SSHPLUS_MANAGER.png)
 5. Descargar Código Fuente [Donwload](https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Source-Code-SSHPlus.zip)
 
