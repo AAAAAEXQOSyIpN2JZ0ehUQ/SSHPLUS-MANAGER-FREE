@@ -1,13 +1,13 @@
-```
+﻿```
 * UPDATE 09/08/2021 - Proyecto Descontinuado
-* SSHPLUS MANAGER (Final versión 38)
+* SSHPLUS MANAGER (Final Version 38)
 ```
 ![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/SSHPLUS_MANAGER.png)
 
 # SSHPLUS MANAGER
-Es un script con un conjunto de características y herramientas adecuadas para 
+Es un script con un conjunto de caracterÃ­sticas y herramientas adecuadas para 
 ofrecer extrema facilidad de manejo en servidores Linux con un enfoque en el uso de 
-VPN, tiene una interfaz agradable aportando información detallada sobre la máquina 
+VPN, tiene una interfaz agradable aportando informaciÃ³n detallada sobre la mÃ¡quina 
 y los usuarios...
 
 ## :book: Installation
@@ -17,7 +17,7 @@ apt-get upgrade -y;
 wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Plus; 
 chmod 777 Plus; ./Plus
 ```
-SSHPLUS MANAGER (las dependencias faltantes se instalarán automáticamente)
+SSHPLUS MANAGER (las dependencias faltantes se instalarÃ¡n automÃ¡ticamente)
 
 ## :scroll: Changelog
 **VERSION: 38**
@@ -25,13 +25,13 @@ SSHPLUS MANAGER (las dependencias faltantes se instalarán automáticamente)
 * Correcciones y mejoras
 
 ## :book: How it works
-* SSH conexión.
+* SSH conexiÃ³n.
 * Conexiones Dropbear, SSLTunnel4, OpenVPN, etc.
 * Elimina y crea usuarios.
-* Monitor de conexión online.
+* Monitor de conexiÃ³n online.
 * Detalles de tu sistema y usuarios.
-* Herramientas de escaneo y búsqueda.
-* Optimiza y limpia el sistema y más.
+* Herramientas de escaneo y bÃºsqueda.
+* Optimiza y limpia el sistema y mÃ¡s.
 
 ## :heavy_exclamation_mark: Requirements
 * Un sistema operativo basado en Linux (Ubuntu o Debian)
@@ -39,14 +39,14 @@ SSHPLUS MANAGER (las dependencias faltantes se instalarán automáticamente)
 * Debian 8 Server x86_64 / Debian 9 Server x86_64
 * Recomendamos Debian 9 Server x86_64 / Ubuntu 18.04 Server x86_64
 * Se recomienda usar una distro nueva o formateada
-* Idioma por defecto es el portugués
+* Idioma por defecto es el portuguÃ©s
 
 ## :book: Optional Utilities
 1. Reinstalar el Scripts ejecutar en consola el comando sshplus [Ver Imagen](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/Reinstall_SSHPlus-Manager.png)
-2. Skin menú adaptado formato ADM ejecute en consola el comando menuV3 [Ver Imagen](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/Update_menuV3.png)
-3. Skin menú adaptado ejecute en consola el comando menuV2 [Ver Imagen](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/Update_menuV2.png)
-4. Restablecer el menú original ejecute en consola el comando menuV1 [Ver Imagen](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/SSHPLUS_MANAGER.png)
-5. Descargar Código Fuente [Donwload](https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Source-Code-SSHPlus.zip)
+2. Skin menÃº adaptado formato ADM ejecute en consola el comando menuV3 [Ver Imagen](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/Update_menuV3.png)
+3. Skin menÃº adaptado ejecute en consola el comando menuV2 [Ver Imagen](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/Update_menuV2.png)
+4. Restablecer el menÃº original ejecute en consola el comando menuV1 [Ver Imagen](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/SSHPLUS_MANAGER.png)
+5. Descargar CÃ³digo Fuente [Donwload](https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Source-Code-SSHPlus.zip)
 
 ## :book: Installation Utilities
 1. [GENERADOR DE KEY SSHPLUS MANAGER](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/Generador)
