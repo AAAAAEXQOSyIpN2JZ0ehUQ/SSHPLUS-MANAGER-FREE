@@ -102,13 +102,13 @@ wget -O /var/www/html/script/versao https://raw.githubusercontent.com/AAAAAEXQOS
 }
 
 fun_permisoarq () {
-    chmod +x  /home/list
-    chmod +x  /home/index.html
-    chmod +x  /bin/keyssh
-    chmod +x  /bin/otimizar
+    chmod +x /home/list
+    chmod +x /home/index.html
+    chmod +x /bin/keyssh
+    chmod +x /bin/otimizar
     chmod +x /bin/key
-    chmod +x  /var/www/html/Plus
-    chmod +x  /var/www/html/script/versao
+    chmod +x /var/www/html/Plus
+    chmod +x /var/www/html/script/versao
     chmod 777 /home/_script_$/crz/*
 }
 
@@ -117,8 +117,6 @@ fun_ip
 sed -i "s;SEU-IP-AKI;$IP;g" /var/www/html/scripts/Plus
 fun_ip
 sed -i "s;SEU-IP-AKI;$IP;g" /home/list
-fun_ip
-sed -i "s;SEU-IP-AKI;$IP;g" /home/index.html
 sleep 3s
 }
 
