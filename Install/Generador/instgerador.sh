@@ -62,7 +62,7 @@ service apache2 restart
 }
 
 
-fun_preparasis () {
+fun_dirconfig () {
     rm -rf /home/list
     rm -rf /home/index.html
     rm -rf /home/_script_$
@@ -90,7 +90,7 @@ rm -rf sshplus-v38.zip
 cd
 }
 
-fun_instsis () {
+fun_instarq () {
 wget -O /home/list https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/Modulos/list
 wget -O /home/index.html https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/Modulos/index.html
 wget -O /bin/keyssh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/Modulos/keyssh
@@ -99,7 +99,7 @@ wget -O /var/www/html/scripts/Plus https://raw.githubusercontent.com/AAAAAEXQOSy
 wget -O /var/www/html/script/versao https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/Modulos/versao
 }
 
-fun_permisoarq () {
+fun_permarq () {
     chmod +x /home/list
     chmod +x /home/index.html
     chmod +x /bin/keyssh
@@ -118,40 +118,38 @@ sed -i "s;SEU-IP-AKI;$IP;g" /home/list
 sleep 3s
 }
 
-fun_finconf () {
+fun_index () {
 cat /home/index.html >/home/_script_$/index.html
 cat /home/index.html >/home/_script_$/crz/index.html
 cat /home/index.html >/var/www/html/script/index.html
 cat /home/index.html >/var/www/html/scripts/index.html
 }
 
-clear
-echo -e "$barra"
-echo -e "       \033[1;33mINSTALADOR KEY SSHPLUS MANAGER !\033[0m"
-echo -e "$barra"
+echo -e "\E[44;1;37m      INSTALADOR KEY SSHPLUS MANAGER \E[0m"
 echo ""
-read -p "$(echo -e "\033[1;36mDESEJA CONTINUAR \033[1;31m? \033[1;33m[S/N]:\033[1;37m ")" -e -i s resp
+read -p "$(echo -e "\033[1;36mDESEJA CONTINUAR \033[1;31m? \033[1;33m[Y/n]:\033[1;37m ")" -e -i y resp
 [[ $resp = @(n|N) ]] && rm $HOME/instgerador.sh* && exit 0
+tput cuu1 && tput dl1
 echo ""
-tput cuu1 && tput dl1
-tput cuu1 && tput dl1
-echo -e "\033[1;36m[!] ATUALIZANDO REPOSITÓRIOS..... \033[1;32mAGUARDE"
+echo -e "$barra"
+echo -e "\033[1;32m [!] Atualizando sistema \033[0m"
 fun_bar 'fun_pct'
-echo -e "\033[1;36m[!] INSTALANDO RECURSOS.......... \033[1;32mAGUARDE"
+echo -e "\033[1;32m [!] Atualizando pacotes \033[0m"
 fun_bar 'attlist'
-echo -e "\033[1;36m[!] PREPARANDO SISTEMA........... \033[1;32mAGUARDE"
-fun_bar 'fun_preparasis'
-echo -e "\033[1;36m[!] DONWLOAD SERVER.............. \033[1;32mAGUARDE"
+echo -e "\033[1;32m [!] Configurando Directorios \033[0m"
+fun_bar 'fun_dirconfig'
+echo -e "\033[1;32m [!] Donwload servidor \033[0m"
 fun_bar 'fun_downser'
-echo -e "\033[1;36m[!] INSTALANDO SISTEMA........... \033[1;32mAGUARDE"
-fun_bar 'fun_instsis'
-echo -e "\033[1;36m[!] PERMISOS ARQUIVOS............ \033[1;32mAGUARDE"
-fun_bar 'fun_permisoarq'
-echo -e "\033[1;36m[!] MONTANDO O SEU LINK-IP....... \033[1;32mAGUARDE"
+echo -e "\033[1;32m [!] Instalando arquivos \033[0m"
+fun_bar 'fun_instarq'
+echo -e "\033[1;32m [!] Permiso arquivos \033[0m"
+fun_bar 'fun_permarq'
+echo -e "\033[1;32m [!] Montando o seu Link-IP \033[0m"
 fun_bar 'fun_montaip'
-echo -e "\033[1;36m[!] FINALIZANDO CONFIGURACION.... \033[1;32mAGUARDE"
-fun_bar 'fun_finconf'
+echo -e "\033[1;36m [!] Finalizando configuracion \033[0m"
+fun_bar 'fun_index'
 echo ""
+echo -e "$barra"
 echo -e "\033[1;31m\033[1;33mCOMANDO PRINCIPAL: \033[1;32mkeyssh o key \033[0m"
 echo -e "\033[1;33mMAIS INFORMACOES \033[1;31m(\033[1;36mTELEGRAM\033[1;31m): \033[0m"
 echo -e "                     \033[1;37m@AAAAAEXQOSyIpN2JZ0ehUQ\033[0m"
