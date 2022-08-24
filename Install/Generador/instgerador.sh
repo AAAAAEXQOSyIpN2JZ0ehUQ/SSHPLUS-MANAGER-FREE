@@ -46,23 +46,21 @@ MIP2=$(wget -qO- ipv4.icanhazip.com)
 [[ "$MIP" != "$MIP2" ]] && IP="$MIP2" || IP="$MIP"
 }
 
-fun_attrepo () {
+fun_attlist () {
     apt-get update -y
     apt-get upgrade -y
 }
 
-fun_instrec () {
-    apt-get install curl -y
-    apt-get install zip -y
-    apt-get install unzip -y
-    apt-get install apache2 -y
+inst_pct () {
+_pacotes=("curl" "screen" "zip" "unzip" "apache2")
+for _prog in ${_pacotes[@]}; do
+    apt install $_prog -y
+done
+sed -i "s;Listen 80;Listen 81;g" /etc/apache2/ports.conf
+service apache2 start
+service apache2 restart
 }
 
-fun_apalist () {
-    sed -i "s;Listen 80;Listen 81;g" /etc/apache2/ports.conf
-    service apache2 start
-    service apache2 restart
-}
 
 fun_preparasis () {
     rm -rf /home/list
@@ -134,30 +132,28 @@ echo -e "$barra"
 echo ""
 read -p "$(echo -e "\033[1;36mDESEJA CONTINUAR \033[1;31m? \033[1;33m[S/N]:\033[1;37m ")" -e -i s resp
 [[ $resp = @(n|N) ]] && rm $HOME/instgerador.sh* && exit 0
-echo
+echo ""
 tput cuu1 && tput dl1
 tput cuu1 && tput dl1
-echo -e "\033[1;36mATUALIZANDO REPOSITÓRIOS..... \033[1;32mAGUARDE"
-fun_bar 'fun_attrepo'
-echo -e "\033[1;36mINSTALANDO RECURSOS.......... \033[1;32mAGUARDE"
-fun_bar 'fun_instrec'
-echo -e "\033[1;36mCONFIGURANDO APACHE.......... \033[1;32mAGUARDE"
-fun_bar 'fun_apalist'
-echo -e "\033[1;36mPREPARANDO SISTEMA........... \033[1;32mAGUARDE"
+echo -e "\033[1;36m[!] ATUALIZANDO REPOSITÓRIOS..... \033[1;32mAGUARDE"
+fun_bar 'fun_pct'
+echo -e "\033[1;36m[!] INSTALANDO RECURSOS.......... \033[1;32mAGUARDE"
+fun_bar 'attlist'
+echo -e "\033[1;36m[!] PREPARANDO SISTEMA........... \033[1;32mAGUARDE"
 fun_bar 'fun_preparasis'
-echo -e "\033[1;36mDONWLOAD SERVER.............. \033[1;32mAGUARDE"
+echo -e "\033[1;36m[!] DONWLOAD SERVER.............. \033[1;32mAGUARDE"
 fun_bar 'fun_downser'
-echo -e "\033[1;36mINSTALANDO SISTEMA........... \033[1;32mAGUARDE"
+echo -e "\033[1;36m[!] INSTALANDO SISTEMA........... \033[1;32mAGUARDE"
 fun_bar 'fun_instsis'
-echo -e "\033[1;36mPERMISOS ARQUIVOS............ \033[1;32mAGUARDE"
+echo -e "\033[1;36m[!] PERMISOS ARQUIVOS............ \033[1;32mAGUARDE"
 fun_bar 'fun_permisoarq'
-echo -e "\033[1;36mMONTANDO O SEU LINK-IP....... \033[1;32mAGUARDE"
+echo -e "\033[1;36m[!] MONTANDO O SEU LINK-IP....... \033[1;32mAGUARDE"
 fun_bar 'fun_montaip'
-echo -e "\033[1;36mFINALIZANDO CONFIGURACION.... \033[1;32mAGUARDE"
+echo -e "\033[1;36m[!] FINALIZANDO CONFIGURACION.... \033[1;32mAGUARDE"
 fun_bar 'fun_finconf'
-echo -e "$barra"
+echo ""
 echo -e "\033[1;31m\033[1;33mCOMANDO PRINCIPAL: \033[1;32mkeyssh o key \033[0m"
 echo -e "\033[1;33mMAIS INFORMACOES \033[1;31m(\033[1;36mTELEGRAM\033[1;31m): \033[0m"
 echo -e "                     \033[1;37m@AAAAAEXQOSyIpN2JZ0ehUQ\033[0m"
-echo -e "$barra"
+echo ""
 rm $HOME/instgerador.sh* && cat /dev/null > ~/.bash_history && history -c
