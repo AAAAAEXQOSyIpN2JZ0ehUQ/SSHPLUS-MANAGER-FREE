@@ -125,13 +125,13 @@ cat /home/index.html >/var/www/html/script/index.html
 cat /home/index.html >/var/www/html/scripts/index.html
 }
 
-echo -e "\E[44;1;37m      INSTALADOR KEY SSHPLUS MANAGER \E[0m"
+echo -e "\E[44;1;37m         INSTALADOR KEY SSHPLUS MANAGER     \E[0m"
 echo ""
 read -p "$(echo -e "\033[1;36mDESEJA CONTINUAR \033[1;31m? \033[1;33m[Y/n]:\033[1;37m ")" -e -i y resp
 [[ $resp = @(n|N) ]] && rm $HOME/instgerador.sh* && exit 0
 tput cuu1 && tput dl1
-echo ""
 echo -e "$barra"
+echo ""
 echo -e "\033[1;32m [!] Atualizando sistema \033[0m"
 fun_bar 'fun_pct'
 echo -e "\033[1;32m [!] Atualizando pacotes \033[0m"
@@ -146,7 +146,7 @@ echo -e "\033[1;32m [!] Permiso arquivos \033[0m"
 fun_bar 'fun_permarq'
 echo -e "\033[1;32m [!] Montando o seu Link-IP \033[0m"
 fun_bar 'fun_montaip'
-echo -e "\033[1;36m [!] Finalizando configuracion \033[0m"
+echo -e "\033[1;32m [!] Finalizando configuracion \033[0m"
 fun_bar 'fun_index'
 echo ""
 echo -e "$barra"
