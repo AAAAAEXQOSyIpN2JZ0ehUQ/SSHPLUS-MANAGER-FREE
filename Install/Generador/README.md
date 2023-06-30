@@ -3,13 +3,16 @@
 # GENERADOR DE KEY SSHPLUS MANAGER
 
 ## :book: Installation
+```bash
+apt-get update -y
 ```
-apt-get update -y;
-apt-get upgrade -y;
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/instgerador.sh;
-chmod 777 instgerador.sh* && ./instgerador.sh*
+```bash
+apt-get upgrade -y
 ```
-El generador trabaja con Apache2 en el Puerto 80
+```bash
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/instgerador.sh && chmod 777 instgerador.sh* && ./instgerador.sh*
+```
+DATA: El generador trabaja con Apache2 en el Puerto 80
 
 ## :scroll: Changelog
 **VERSION: 2.0 BETA**
