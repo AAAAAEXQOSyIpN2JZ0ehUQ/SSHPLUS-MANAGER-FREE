@@ -3,11 +3,14 @@
 ## PAINEL REVENDA SSH (VERSIONES)
 
 ## :book: Installation
+```bash
+apt-get update -y
 ```
-apt-get update -y; 
-apt-get upgrade -y; 
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/Panelweb.sh; 
-chmod +x Panelweb.sh; ./Panelweb.sh
+```bash
+apt-get upgrade -y
+```
+```bash
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/Panelweb.sh && chmod +x Panelweb.sh && ./Panelweb.sh
 ```
 Después solo necesitara ejecutar la siguiente línea para usar nuevamente: ipw
 
