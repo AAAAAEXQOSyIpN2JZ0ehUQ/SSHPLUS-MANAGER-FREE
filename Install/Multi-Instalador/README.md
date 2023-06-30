@@ -3,11 +3,14 @@
 # MULTI-INSTALADOR PLUS
 
 ## :book: Installation
+```bash
+apt-get update -y
 ```
-apt-get update -y; 
-apt-get upgrade -y; 
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Multi-Instalador/sshplus.sh; 
-chmod +x sshplus.sh; ./sshplus.sh
+```bash
+apt-get upgrade -y
+```
+```bash
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Multi-Instalador/sshplus.sh && chmod +x sshplus.sh && ./sshplus.sh
 ```
 Después solo necesitara ejecutar la siguiente línea para usar nuevamente:  mip
 
