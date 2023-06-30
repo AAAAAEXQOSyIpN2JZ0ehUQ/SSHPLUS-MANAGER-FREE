@@ -7,23 +7,26 @@ también tiene una interfaz intuitiva, a la que se puede acceder desde cualquier
 navegador...
 
 ## :book: Installation
+```bash
+apt-get update -y
 ```
-apt-get update -y; 
-apt-get upgrade -y; 
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v20/install; 
-chmod 777 install* && ./install*
+```bash
+apt-get upgrade -y
+```
+```bash
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v20/install && chmod 777 install* && ./install*
 ```
 
 ## :book: SINCRONIZAR EL PANEL WEB
 Aplique este comando al servidor de conexiones ssh
-```
+```bash
 bash <(wget -qO- sshplus.xyz/scripts/utilitarios/syncpainel/inst)
 ```
 
 ## :book: Installation BACKUP-PANEL-V20
 Script de restauración de la base de datos del panel v20, 
 la contraseña de administrador será la misma contraseña del panel anteerior
-```
+```bash
 bash <(wget -qO- https://raw.githubusercontent.com/CRAZY-VPN/BACKUP-PAINEL-V20/master/restaurar.sh)
 ```
 
