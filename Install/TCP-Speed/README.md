@@ -7,11 +7,14 @@ SSH. Si los cambios no mejoran la navegación y la estabilidad, basta con ejecut
 la secuencia de comandos ./tcptweaker.sh de nuevo para deshacerlas...
 
 ## :book: Installation
+```bash
+apt-get update -y
 ```
-apt-get update -y && 
-apt-get upgrade -y && 
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/TCP-Speed/tcptweaker.sh && 
-chmod +x tcptweaker.sh && ./tcptweaker.sh
+```bash 
+apt-get upgrade -y
+```
+```bash
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/TCP-Speed/tcptweaker.sh && chmod +x tcptweaker.sh && ./tcptweaker.sh
 ```
 Después solo necesitara ejecutar la siguiente línea para usar nuevamente:  ./tcptweaker.sh
 
