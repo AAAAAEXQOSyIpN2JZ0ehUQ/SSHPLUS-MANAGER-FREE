@@ -339,7 +339,7 @@ Port=$(echo {$port} | awk '{print $9}' | awk -F ":" '{print $2}')
 NOREPEAT+="$Port\n"
 case ${reQ} in
 apache|apache2)
-[[ -z $APC ]] && echo -e "\033[0m\e[34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" && local APC="\033[1;32mAPACHE: \033[1;37m"
+[[ -z $APC ]] && echo -e "\033[0m\e[34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" && local APC="\033[1;31mAPACHE: \033[1;37m"
 APC+="$Port ";;
 esac
 done <<< "${portasVAR}"
@@ -357,10 +357,10 @@ echo -e "\033[0m\e[34m━━━━━━━━━━━━━━━━━━━�
 echo -e " \033[1;31m++| \033[1;32mKEYGEN SSHPLUS \033[1;31m|++       \033[1;32m[ VERSAO: 2.0 BETA ]\033[0m"
 echo -e "\033[0m\e[34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 sts=$([ "$(ls -A /home/keyssh)" ] && echo -e "\033[1;32m Key Online!\033[1;37m" || echo -e "\033[1;31m Nenhuma Key Online!\033[0m")
-echo -e "\033[1;37mSTATUS: $sts"
+echo -e "\033[1;31mSTATUS: $sts"
 mine_port
 echo -e "\033[0m\e[34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e "\033[1;31mRam:\033[1;37m $_usor \033[1;31mNucleo:\033[1;37m $_usop \033[0m"
+echo -e "\033[1;31mRAM:\033[1;37m $_usor \033[1;31mNUCLEO:\033[1;37m $_usop \033[0m"
 echo -e "\033[0m\e[34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo ""
 echo -e "\033[1;37m |1| \033[1;31m<----> \033[1;36mGERAR KEY ALEATORIA \033[1;32m              [CV] \033[0m"
