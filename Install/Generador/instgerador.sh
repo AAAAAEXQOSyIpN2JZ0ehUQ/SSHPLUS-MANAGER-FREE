@@ -69,7 +69,6 @@ fun_dirconfig () {
     rm -rf /home/PlusKeygen-Active
     rm -rf /bin/keyssh
     rm -rf /bin/key
-    rm -rf /bin/otimizar
     rm -rf /var/www/html/Index.php
     rm -rf /var/www/html/script
     rm -rf /var/www/html/scripts
@@ -94,7 +93,6 @@ fun_instarq () {
 wget -O /home/list https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/Modulos/list
 wget -O /home/index.html https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/Modulos/index.html
 wget -O /bin/keyssh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/Modulos/keyssh
-wget -O /bin/otimizar https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/Modulos/otimizar
 wget -O /var/www/html/scripts/Plus https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/Modulos/Plus
 wget -O /var/www/html/script/versao https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/Modulos/versao
 }
@@ -103,7 +101,6 @@ fun_permarq () {
     chmod +x /home/list
     chmod +x /home/index.html
     chmod +x /bin/keyssh
-    chmod +x /bin/otimizar
     chmod +x /bin/key
     chmod +x /var/www/html/Plus
     chmod +x /var/www/html/script/versao
