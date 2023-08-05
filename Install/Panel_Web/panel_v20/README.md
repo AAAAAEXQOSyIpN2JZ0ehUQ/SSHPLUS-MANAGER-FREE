@@ -1,9 +1,9 @@
-![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/Painel_Revenda_SSH.png)
+﻿![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/Painel_Revenda_SSH.png)
 
 ## SCRIPT OFICIAL PAINEL REVENDA SSH VERSAO 20
-Es una herramienta completa de gestión y supervisión de usuarios que permite
-reventas y sub revendedores para aquellos que desean tener un negocio más amplio, 
-también tiene una interfaz intuitiva, a la que se puede acceder desde cualquier 
+Es una herramienta completa de gestiÃ³n y supervisiÃ³n de usuarios que permite
+reventas y sub revendedores para aquellos que desean tener un negocio mÃ¡s amplio, 
+tambiÃ©n tiene una interfaz intuitiva, a la que se puede acceder desde cualquier 
 navegador...
 
 ## :book: Installation
@@ -24,8 +24,8 @@ bash <(wget -qO- sshplus.xyz/scripts/utilitarios/syncpainel/inst)
 ```
 
 ## :book: Installation BACKUP-PANEL-V20
-Script de restauración de la base de datos del panel v20, 
-la contraseña de administrador será la misma contraseña del panel anteerior
+Script de restauraciÃ³n de la base de datos del panel v20, 
+la contraseÃ±a de administrador serÃ¡ la misma contraseÃ±a del panel anteerior
 ```bash
 bash <(wget -qO- https://raw.githubusercontent.com/CRAZY-VPN/BACKUP-PAINEL-V20/master/restaurar.sh)
 ```
@@ -39,7 +39,7 @@ bash <(wget -qO- https://raw.githubusercontent.com/CRAZY-VPN/BACKUP-PAINEL-V20/m
 * Ubuntu 14.04 Server x86_64 / Ubuntu 16.04 Server x86_64 / Ubuntu 18.04 Server x86_64
 * Debian 8 Server x86_64 / Debian 9 Server x86_64
 * Se recomienda usar una distro nueva o formateada
-* Idioma por defecto es el portugués
+* Idioma por defecto es el portuguÃ©s
 
 ## :octocat: Credits
 1. @crazy_vpn - Developer of Painel Revenda SSH

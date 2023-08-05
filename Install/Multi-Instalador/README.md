@@ -1,4 +1,4 @@
-![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/Multi_Instalador_sshplus.png)
+﻿![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/Multi_Instalador_sshplus.png)
 
 # MULTI-INSTALADOR PLUS
 
@@ -12,7 +12,7 @@ apt-get upgrade -y
 ```bash
 wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Multi-Instalador/sshplus.sh && chmod +x sshplus.sh && ./sshplus.sh
 ```
-Después solo necesitara ejecutar la siguiente línea para usar nuevamente:  mip
+DespuÃ©s solo necesitara ejecutar la siguiente lÃ­nea para usar nuevamente:  mip
 
 ## :scroll: Changelog
 **VERSION: r021**

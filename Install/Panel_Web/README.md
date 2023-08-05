@@ -1,4 +1,4 @@
-![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/Panel_SSHPLUS_Web.png)
+﻿![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/Panel_SSHPLUS_Web.png)
 
 ## PAINEL REVENDA SSH (VERSIONES)
 
@@ -12,7 +12,7 @@ apt-get upgrade -y
 ```bash
 wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/Panelweb.sh && chmod +x Panelweb.sh && ./Panelweb.sh
 ```
-Después solo necesitara ejecutar la siguiente línea para usar nuevamente: ipw
+DespuÃ©s solo necesitara ejecutar la siguiente lÃ­nea para usar nuevamente: ipw
 
 ## :scroll: Changelog
 **VERSION: r002**
@@ -23,7 +23,7 @@ Después solo necesitara ejecutar la siguiente línea para usar nuevamente: ipw
 * Ubuntu 14.04 Server x86_64 / Ubuntu 16.04 Server x86_64 / Ubuntu 18.04 Server x86_64
 * Debian 8 Server x86_64 / Debian 9 Server x86_64
 * Se recomienda usar una distro nueva o formateada
-* Idioma por defecto es el portugués
+* Idioma por defecto es el portuguÃ©s
 
 ## :octocat: Credits
 1. @crazy_vpn - Developer of Painel Revenda SSH
@@ -32,3 +32,4 @@ Después solo necesitara ejecutar la siguiente línea para usar nuevamente: ipw
 4. illuminati Dev Team - Contributor 
 ```
 ☆ https://t.me/AAAAAEXQOSyIpN2JZ0ehUQ [  ⃘⃤꙰✰ ] ☆
+```

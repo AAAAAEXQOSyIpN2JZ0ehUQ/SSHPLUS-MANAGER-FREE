@@ -59,8 +59,8 @@ DATA: Las dependencias faltantes se instalarán automáticamente
 5. [Tcp-Tweaker-1.0 (Tcp-Speed)](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/TCP-Speed)
 
 ## :octocat: Credits
-1. @crazy_vpn - Developer of SSHPlus Manager
-2. illuminati Dev Team - Contributor 
+1. [@crazy_vpn](https://t.me/crazy_vpn) - Developer of SSHPlus Manager
+2. [illuminati Dev Team](https://t.me/AAAAAEXQOSyIpN2JZ0ehUQ) - Contributor Update 
 ```
 ☆ https://t.me/AAAAAEXQOSyIpN2JZ0ehUQ [  ⃘⃤꙰✰ ] ☆
 ```

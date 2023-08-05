@@ -1,4 +1,4 @@
-![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/GENERADOR-SSHPLUS-MANAGER.png)
+﻿![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/GENERADOR-SSHPLUS-MANAGER.png)
 
 # GENERADOR DE KEY SSHPLUS MANAGER
 
@@ -22,11 +22,11 @@ DATA: El generador trabaja con Apache2 en el Puerto 80
 ## :heavy_exclamation_mark: Requirements
 * Un sistema operativo basado en Linux (Ubuntu o Debian)
 * Se recomienda usar una distro nueva o formateada
-* Idioma por defecto es el portugués
+* Idioma por defecto es el portuguÃ©s
 
 ## :octocat: Credits
-1. @crazy_vpn - Developer of SSHPlus Manager
-2. illuminati Dev Team - Contributor 
+1. [@crazy_vpn](https://t.me/crazy_vpn) - Developer of SSHPlus Manager
+2. [illuminati Dev Team](https://t.me/AAAAAEXQOSyIpN2JZ0ehUQ) - Contributor Update 
 ```
 ☆ https://t.me/AAAAAEXQOSyIpN2JZ0ehUQ [  ⃘⃤꙰✰ ] ☆
 ```
