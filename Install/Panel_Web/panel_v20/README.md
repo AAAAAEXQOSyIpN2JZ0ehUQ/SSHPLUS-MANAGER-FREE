@@ -42,10 +42,10 @@ bash <(wget -qO- https://raw.githubusercontent.com/CRAZY-VPN/BACKUP-PAINEL-V20/m
 * Idioma por defecto es el portuguÃ©s
 
 ## :octocat: Credits
-1. @crazy_vpn - Developer of Painel Revenda SSH
-2. @backup-new - Contributor
-3. @Adeilsonfi - Contributor
-4. illuminati Dev Team - Contributor 
+1. [@crazy_vpn](https://t.me/crazy_vpn) - Developer of Painel Revenda SSH
+2. [@backup-new](https://t.me/backup-new) - Contributor
+3. [@Adeilsonfi](https://t.me/Adeilsonfi) - Contributor
+4. [illuminati Dev Team](https://t.me/AAAAAEXQOSyIpN2JZ0ehUQ) - Contributor
 ```
 ☆ https://t.me/AAAAAEXQOSyIpN2JZ0ehUQ [  ⃘⃤꙰✰ ] ☆
 ```

@@ -26,7 +26,7 @@ DATA: El generador trabaja con Apache2 en el Puerto 80
 
 ## :octocat: Credits
 1. [@crazy_vpn](https://t.me/crazy_vpn) - Developer of SSHPlus Manager
-2. [illuminati Dev Team](https://t.me/AAAAAEXQOSyIpN2JZ0ehUQ) - Contributor Update 
+2. [illuminati Dev Team](https://t.me/AAAAAEXQOSyIpN2JZ0ehUQ) - Contributor
 ```
 ☆ https://t.me/AAAAAEXQOSyIpN2JZ0ehUQ [  ⃘⃤꙰✰ ] ☆
 ```

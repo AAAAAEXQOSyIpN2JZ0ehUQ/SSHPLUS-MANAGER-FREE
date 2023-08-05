@@ -19,7 +19,7 @@ DespuÃ©s solo necesitara ejecutar la siguiente lÃ­nea para usar nuevamente: 
 * Correcciones y mejoras
 
 ## :octocat: Credits
-1. illuminati Dev Team - Contributor 
+1. [illuminati Dev Team](https://t.me/AAAAAEXQOSyIpN2JZ0ehUQ) - Contributor
 ```
 ☆ https://t.me/AAAAAEXQOSyIpN2JZ0ehUQ [  ⃘⃤꙰✰ ] ☆
 ```
