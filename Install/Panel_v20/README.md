@@ -14,7 +14,7 @@ apt-get update -y
 apt-get upgrade -y
 ```
 ```bash
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_Web/panel_v20/install && chmod 777 install* && ./install*
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_v20/install && chmod +x install* && ./install*
 ```
 
 ## :book: SINCRONIZAR EL PANEL WEB
