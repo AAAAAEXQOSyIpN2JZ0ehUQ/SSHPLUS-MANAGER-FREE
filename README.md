@@ -53,7 +53,7 @@ DATA: Las dependencias faltantes se instalarán automáticamente
 
 ## :book: Installation Utilities
 1. [Generador de Key Sshplus Manager](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/Generador)
-2. [Script Oficial Painel Revenda Ssh Versao 20](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/Panel_Web/panel_v20)
+2. [Script Oficial Painel Revenda Ssh Versao 20](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/Panel_v20)
 3. [Multi-Instalador Plus](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/Multi-Instalador)
 4. [Painel Revenda SSH (Versiones)](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/Panel_Web)
 5. [Tcp-Tweaker-1.0 (Tcp-Speed)](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/TCP-Speed)
