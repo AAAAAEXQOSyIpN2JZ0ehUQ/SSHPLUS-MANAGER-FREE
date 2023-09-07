@@ -6,24 +6,17 @@ if [[ "$IP" = "" ]]; then
 fi
 
 clear
-clear
-echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e "\033[01;37m Capturador de IP                     \033[1;31m[\033[1;32m by 0ny-J \033[1;31m]"
-echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "\033[01;33m Capturador de IP "
 echo ""
-echo -ne "\033[1;33mConfirme seu IP \033[1;37m"; read -e -i $IP ipdovps
-echo "$ipdovps" > /etc/IP
-echo "$ipdovps" > /etc/MEUIPADM
-echo "$ipdovps" > /usr/bin/vendor_code
+echo -ne "\033[1;32mConfirme seu IP \033[1;37m"; read -e -i $IP ipdovps
+echo "$IP" > /etc/IP 
+echo "$IP" > /etc/MEUIPADM 
+echo "$IP" > /usr/bin/vendor_code
 echo ""
 echo -e "\033[1;32m IP Capturada \033[1;37m"
 echo ""
-echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e "\033[1;33m Ruta guardada \033[1;31m/etc/IP \033[1;37m"
-echo -e "\033[1;33m Ruta guardada \033[1;31m/etc/MEUIPADM \033[1;37m"
-echo -e "\033[1;33m Ruta guardada \033[1;31m/usr/bin/vendor_code \033[1;37m"
-echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "\033[1;32m Ruta guardada \033[1;31m/etc/IP \033[1;37m"
+echo -e "\033[1;32m Ruta guardada \033[1;31m/etc/MEUIPADM \033[1;37m"
+echo -e "\033[1;32m Ruta guardada \033[1;31m/usr/bin/vendor_code \033[1;37m"
 echo ""
-echo -ne "Deseja Prosseguir a Menu? [S/N]: "; read x
-[[ $x = @(n|N) ]] && exit
-menu
+exit
