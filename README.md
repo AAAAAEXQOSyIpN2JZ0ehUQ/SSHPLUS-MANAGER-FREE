@@ -23,7 +23,7 @@ wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FR
 DATA: Las dependencias faltantes se instalarán automáticamente, facilitando tu experiencia.
 
 ## :scroll: Changelog
-**VERSION: PROrV005**
+**VERSION: 38**
 * [Details](https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/versao)
 
 ## :book: How it works
