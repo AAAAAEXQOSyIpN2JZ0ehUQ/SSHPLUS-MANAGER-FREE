@@ -1,4 +1,8 @@
-﻿![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/TCP_Tweaker_TCP_SPEED.jpg)
+﻿```
+* UPDATE --/--/---- - Proyecto Descontinuado
+* TCP-Tweaker-1.0 (Final Versión 1.0)
+```
+![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/TCP_Tweaker_TCP_SPEED.jpg)
 
 # TCP-Tweaker-1.0 (TCP-SPEED)
 TCP TWEAKER 1.0 es una escritura experimental que cambia algunas configuraciones de red del sistema 
