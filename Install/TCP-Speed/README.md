@@ -24,7 +24,7 @@ DATA: Para usar nuevamente ejecute la secuencia: ./tcptweaker.sh
 
 ## :octocat: Credits
 1. [Phreaker56 Dev](https://t.me/Phreaker56) - Developer of TCP-Tweaker-1.0 (TCP-SPEED)
-2. [illuminati Dev Team](https://t.me/AAAAAEXQOSyIpN2JZ0ehUQ) - Update Version 
+2. [illuminati Dev Team](https://t.me/AAAAAEXQOSyIpN2JZ0ehUQ) - Contributor 
 ```
 ☆ https://t.me/AAAAAEXQOSyIpN2JZ0ehUQ [  ⃘⃤꙰✰ ] ☆
 ```
