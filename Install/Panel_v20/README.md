@@ -3,8 +3,6 @@
 * SCRIPT OFICIAL PAINEL REVENDA SSH VERSAO 20 (Final Versión 20)
 ```
 ![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/Panel_SSHPLUS_v20_Portada.jpg)
-![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/Painel_Revenda_SSH.png)
-![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/photo_2021-10-13_22-35-39.jpg)
 
 ## SCRIPT OFICIAL PAINEL REVENDA SSH VERSAO 20
 Es una herramienta completa de gestion y supervision de usuarios que permite
