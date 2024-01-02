@@ -35,7 +35,7 @@ bash <(wget -qO- https://raw.githubusercontent.com/CRAZY-VPN/BACKUP-PAINEL-V20/m
 
 ## :scroll: Changelog
 **VERSION: 20**
-* Correcciones y mejoras
+* [Details](https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Panel_v20/versao)
 
 ## :heavy_exclamation_mark: Requirements
 * Sistema operativo basado en Linux (Ubuntu o Debian)
