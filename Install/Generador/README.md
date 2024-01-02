@@ -20,7 +20,7 @@ DATA: El generador trabaja con Apache2 en el Puerto 80
 
 ## :scroll: Changelog
 **VERSION: 2.0 BETA**
-* [Details](https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/versao)
+* [Details](https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/versao)
 
 ## :heavy_exclamation_mark: Requirements
 * Sistema operativo basado en Linux (Ubuntu o Debian)
