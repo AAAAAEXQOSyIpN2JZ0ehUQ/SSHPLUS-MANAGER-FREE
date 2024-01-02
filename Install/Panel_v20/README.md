@@ -1,5 +1,5 @@
 ﻿```
-* UPDATE 09/08/2021 - Proyecto Descontinuado
+* UPDATE 29/08/2020 - Proyecto Descontinuado
 * SCRIPT OFICIAL PAINEL REVENDA SSH VERSAO 20 (Final Versión 20)
 ```
 ![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/Panel_SSHPLUS_v20_Portada.jpg)
