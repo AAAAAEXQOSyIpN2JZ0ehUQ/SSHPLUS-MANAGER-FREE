@@ -26,7 +26,7 @@ DATA: Las dependencias faltantes se instalarán automáticamente, facilitando tu
 
 ## :scroll: Changelog
 **VERSION: 38**
-* [Details](https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/versao)
+* [Details](https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/versao)
 
 ## :book: How it works
 * Conexiones SSH
