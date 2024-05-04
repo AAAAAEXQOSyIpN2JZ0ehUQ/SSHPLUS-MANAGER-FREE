@@ -1,24 +1,28 @@
 #!/bin/bash
 
 ## sshd back
-cp /etc/ssh/sshd_config /etc/ssh/sshd_back > /dev/null 2>&1
+cp /etc/ssh/sshd_config /etc/ssh/sshd_back_$RANDOM > /dev/null 2>&1
 
 ## Acceso Rapido
 echo "/bin/menu" > /bin/h && chmod +x /bin/h > /dev/null 2>&1
 
 ## Version
 rm -rf $HOME/versao* > /dev/null 2>&1 
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/versao > /dev/null 2>&1
+wget $HOME/versao https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/versao > /dev/null 2>&1
 
 ## Reinstalar
 echo "apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Plus; chmod +x Plus; ./Plus" > /bin/sshplus > /dev/null 2>&1
 chmod +x /bin/sshplus > /dev/null 2>&1
 
-## Menu
+## Menu ADM
 wget -O /bin/menuV3 https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Skin_Plus/menuV3/Install > /dev/null 2>&1
 chmod +x /bin/menuV3 > /dev/null 2>&1
+
+## Menu adaptado
 wget -O /bin/menuV2 https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Skin_Plus/menuV2/Install > /dev/null 2>&1
 chmod +x /bin/menuV2 > /dev/null 2>&1
+
+## Menu orginal
 wget -O /bin/menuV1 https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Skin_Plus/menuV1/Install > /dev/null 2>&1
 chmod +x /bin/menuV1 > /dev/null 2>&1
 

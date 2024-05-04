@@ -250,6 +250,25 @@ case "$x" in
    30)
    menu
    ;;
+   #----------------------
+   # Menu ADM Update
+   #----------------------
+   menuV3)
+   clear
+   menuV3
+   exit;
+   ;;
+   menuV2)
+   clear
+   menuV2
+   exit;
+   ;;
+   menuV1)
+   clear
+   menuV1
+   exit;
+   ;;
+   #----------------------
    0|00)
    echo -e "\033[1;31mSaindo...\033[0m"
    sleep 2
@@ -408,6 +427,25 @@ case "$x" in
    19)
    menu2
    ;;
+   #----------------------
+   # Menu ADM Update
+   #----------------------
+   menuV3)
+   clear
+   menuV3
+   exit;
+   ;;
+   menuV2)
+   clear
+   menuV2
+   exit;
+   ;;
+   menuV1)
+   clear
+   menuV1
+   exit;
+   ;;
+   #----------------------
    0 | 00)
    echo -e "\033[1;31mSaindo...\033[0m"
    sleep 2
