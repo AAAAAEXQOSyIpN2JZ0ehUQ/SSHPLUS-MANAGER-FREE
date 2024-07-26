@@ -40,13 +40,13 @@ SSHPLUS MANAGER ofrece las siguientes características:
 - Herramientas de Escaneo y Búsqueda: Accede a herramientas de análisis de seguridad.
 - Optimización del Sistema: Realiza tareas de optimización y limpieza del sistema.
 
-🌟 Características
+## :star2: Características 
 
 - Automatización: Simplifica la configuración y administración de servidores.
 - Eficiencia: Ahorra tiempo con una interfaz intuitiva y comandos simplificados.
 - Organización: Facilita la gestión estructurada del servidor y sus servicios.
 
-🛠️ Requisitos
+## :hammer_and_wrench: Requisitos 
 
 - Sistema Operativo: Linux (Ubuntu o Debian)
 - Versiones Recomendadas: Ubuntu 18.04 Server x86_64 / Ubuntu 20.04 Server x86_64 / Debian 9 Server x86_64
@@ -72,7 +72,7 @@ SSHPLUS MANAGER ofrece las siguientes características:
 
 - Código Fuente: [Descargar](https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Source-Code-SSHPlus.zip)
 
-📧 Contacto
-illuminati Dev Team: [Grupo Oficial en Telegram](https://t.me/AAAAAEXQOSyIpN2JZ0ehUQ) - Actualización de versión
+## :email: Contacto
+* :busts_in_silhouette: illuminati Dev Team: [Grupo Oficial en Telegram](https://t.me/AAAAAEXQOSyIpN2JZ0ehUQ) - Actualización de versión
 
 ☆ https://t.me/AAAAAEXQOSyIpN2JZ0ehUQ [ ⃘⃤꙰✰ ] ☆
