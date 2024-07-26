@@ -29,7 +29,7 @@ Ejecute el script simplemente escribiendo 'adm' en tu terminal y presionando Ent
 adm
 ```
 
-📝 Notas
+## :memo: Notas
 SSHPLUS MANAGER ofrece las siguientes características:
 
 - Conexiones SSH: Configura y administra conexiones SSH.
@@ -53,14 +53,14 @@ SSHPLUS MANAGER ofrece las siguientes características:
 - Distribución: Se sugiere utilizar una distribución reciente o recién formateada.
 - Idioma Predeterminado: Portugués
 
-## 📚 Utilidades Opcionales
+## :books: Utilidades Opcionales
 
 - Reinstalar el Script: Ejecutar en consola el comando `sshplus` [Ver Imagen](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/Reinstall_SSHPlus-Manager.png)
 - Skin Menú Adaptado Formato ADM: Ejecutar en consola el comando `menuV3` [Ver Imagen](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/Update_menuV3.png)
 - Skin Menú Adaptado: Ejecutar en consola el comando `menuV2` [Ver Imagen](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/Update_menuV2.png)
 - Restablecer el Menú Original: Ejecutar en consola el comando `menuV1` [Ver Imagen](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/SSHPLUS_MANAGER.png)
 
-🔧 Utilidades de Instalación
+## :wrench: Utilidades de Instalación
 
 - Generador de Key SSHPLUS Manager: [Ver Repositorio](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/Generador)
 - Script Oficial Panel Revenda SSH (Versión 20): [Ver Repositorio](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/Panel_v20)
@@ -68,7 +68,7 @@ SSHPLUS MANAGER ofrece las siguientes características:
 - Panel Revenda SSH (Versiones): [Ver Repositorio](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/Panel_Web)
 - Tcp-Tweaker-1.0 (Tcp-Speed): [Ver Repositorio](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/TCP-Speed)
 
-📥 Descarga del Código Fuente
+## :inbox_tray: Descarga del Código Fuente
 
 - Código Fuente: [Descargar](https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Source-Code-SSHPlus.zip)
 
