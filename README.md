@@ -23,13 +23,13 @@ chmod +x Plus*
 
 ## :rocket: Modo de Uso
 
-Ejecute el script simplemente escribiendo 'adm' en tu terminal y presionando Enter:
+Ejecute el script simplemente escribiendo `adm` en tu terminal y presionando Enter:
 
 ```bash
 adm
 ```
 
-## :memo: Notas
+## :bookmark_tabs: Notas
 SSHPLUS MANAGER ofrece las siguientes características:
 
 - Conexiones SSH: Configura y administra conexiones SSH.
