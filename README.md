@@ -29,10 +29,10 @@ apt-get update -y; apt-get full-upgrade -y; wget https://raw.githubusercontent.c
 
 ## :rocket: Modo de Uso
 
-Ejecute el script simplemente escribiendo `adm` en tu terminal y presionando Enter:
+Ejecute el script simplemente escribiendo `menu` en tu terminal y presionando Enter:
 
 ```bash
-adm
+menu
 ```
 
 ## :bookmark_tabs: Notas
