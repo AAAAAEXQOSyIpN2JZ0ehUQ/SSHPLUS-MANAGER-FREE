@@ -79,7 +79,7 @@ SSHPLUS MANAGER ofrece las siguientes características:
 - Código Fuente: [Descargar](https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Source-Code-SSHPlus.zip)
 
 ## :open_file_folder: Estructura del Repositorio
-```bash
+```
 ├── :file_folder: Imagenes
 ├── :file_folder: Install
 ├── :file_folder: Modulos
