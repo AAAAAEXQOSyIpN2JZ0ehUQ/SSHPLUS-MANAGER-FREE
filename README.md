@@ -80,14 +80,18 @@ SSHPLUS MANAGER ofrece las siguientes características:
 
 ## :open_file_folder: Estructura del Repositorio
 
-- ├── :file_folder: Imagenes
-- ├── :file_folder: Install
-- ├── :file_folder: Modulos
-- ├── :file_folder: _$_Version
-- ├── :page_facing_up: .gitattributes
-- ├── :package: Plus - Este es un instalador en Bash
-- ├── :book: README.md
-- └── :page_facing_up: versao
+
+| Icono            | Nombre         | Descripción                               |
+|------------------|----------------|-------------------------------------------|
+| :file_folder:    | Imagenes       | Carpeta para imágenes                     |
+| :file_folder:    | Install        | Carpeta para scripts de instalación       |
+| :file_folder:    | Modulos        | Carpeta para módulos adicionales          |
+| :file_folder:    | _$_Version     | Carpeta para archivos de versión          |
+| :page_facing_up: | .gitattributes | Archivo para configuración de Git         |
+| :package:        | Plus           | Instalador en Bash                        |
+| :book:           | README.md      | Archivo de documentación principal        |
+| :page_facing_up: | versao         | Archivo de versión del proyecto           |
+|------------------|----------------|-------------------------------------------|
 
 ## :email: Contacto
 * :busts_in_silhouette: illuminati Dev Team: [Grupo Oficial en Telegram](https://t.me/AAAAAEXQOSyIpN2JZ0ehUQ) - Actualización de versión
