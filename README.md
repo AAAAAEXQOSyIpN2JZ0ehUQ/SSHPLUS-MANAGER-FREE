@@ -19,7 +19,7 @@ wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FR
 chmod +x Plus*
 ./Plus
 ```
-:memo: Notas: Las dependencias faltantes se instalarán automáticamente durante el proceso.
+:memo: Las dependencias faltantes se instalarán automáticamente durante el proceso.
 
 ## :rocket: Modo de Uso
 
