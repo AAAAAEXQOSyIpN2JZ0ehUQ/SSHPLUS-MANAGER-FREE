@@ -91,7 +91,6 @@ SSHPLUS MANAGER ofrece las siguientes características:
 | :package:        | Plus           | Instalador en Bash                        |
 | :book:           | README.md      | Archivo de documentación principal        |
 | :page_facing_up: | versao         | Archivo de versión del proyecto           |
-|------------------|----------------|-------------------------------------------|
 
 ## :email: Contacto
 * :busts_in_silhouette: illuminati Dev Team: [Grupo Oficial en Telegram](https://t.me/AAAAAEXQOSyIpN2JZ0ehUQ) - Actualización de versión
