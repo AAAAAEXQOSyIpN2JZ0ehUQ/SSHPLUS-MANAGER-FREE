@@ -1,5 +1,6 @@
 ﻿*UPDATE 09/08/2021 - Proyecto Descontinuado*  
 *SSHPLUS MANAGER (Final Versión 38)*
+:octocat:
 
 ![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/SSHPLUS_MANAGER.png)
 
@@ -91,6 +92,7 @@ SSHPLUS MANAGER ofrece las siguientes características:
 | :book:           | README.md      | Archivo de documentación principal        |
 | :page_facing_up: | versao         | Archivo de versión del proyecto           |
 
+## :email: Contacto 
 * :busts_in_silhouette: **illuminati Dev Team**: [Grupo Oficial en Telegram](https://t.me/AAAAAEXQOSyIpN2JZ0ehUQ) - Actualización de versión
 * :busts_in_silhouette: **Jony Rivera**: [Telegram](https://t.me/Jony_Rivera) - Colaborador
 
