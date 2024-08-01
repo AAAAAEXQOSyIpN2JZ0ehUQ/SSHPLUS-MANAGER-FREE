@@ -3,7 +3,7 @@
 
 ![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/SSHPLUS_MANAGER.png)
 
-# SSHPLUS MANAGER
+# SSHPlus Manager
 
 ## :information_source: Descripción
 Es un script que ofrece un conjunto de características y herramientas diseñadas para 
@@ -29,7 +29,7 @@ apt-get update -y; apt-get full-upgrade -y; wget https://raw.githubusercontent.c
 
 ## :rocket: Modo de Uso
 
-Ejecute el script simplemente escribiendo `menu` en tu terminal y presionando Enter:
+Ejecute el script simplemente escribiendo `menu` en tu terminal y presionando Enter.
 
 ```bash
 menu
@@ -79,7 +79,6 @@ SSHPLUS MANAGER ofrece las siguientes características:
 - Código Fuente: [Descargar](https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Source-Code-SSHPlus.zip)
 
 ## :open_file_folder: Estructura del Repositorio
-
 
 | Icono            | Nombre         | Descripción                               |
 |------------------|----------------|-------------------------------------------|
