@@ -67,7 +67,7 @@ SSHPLUS MANAGER ofrece las siguientes características:
 - Skin Menú Adaptado: Ejecutar en consola el comando `menuV2` [Ver Imagen](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/Update_menuV2.png)
 - Restablecer el Menú Original: Ejecutar en consola el comando `menuV1` [Ver Imagen](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/SSHPLUS_MANAGER.png)
 
-## :wrench: Utilidades de Instalación
+## :file_folder: Proyectos útiles 
 
 - Generador de Key SSHPLUS Manager: [Ver Repositorio](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/Generador)
 - Script Oficial Panel Revenda SSH (Versión 20): [Ver Repositorio](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/Panel_v20)
