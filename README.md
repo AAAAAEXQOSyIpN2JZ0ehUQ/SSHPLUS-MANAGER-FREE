@@ -93,6 +93,7 @@ SSHPLUS MANAGER ofrece las siguientes características:
 | :page_facing_up: | versao         | Archivo de versión del proyecto           |
 
 ## :email: Contacto 
+* :busts_in_silhouette: **@crazy_vpn**: [Telegram](https://t.me/crazy_vpn) - Desarrollador SSHPlus Manager
 * :busts_in_silhouette: **illuminati Dev Team**: [Grupo Oficial en Telegram](https://t.me/AAAAAEXQOSyIpN2JZ0ehUQ) - Actualización de versión
 * :busts_in_silhouette: **Jony Rivera**: [Telegram](https://t.me/Jony_Rivera) - Colaborador
 
