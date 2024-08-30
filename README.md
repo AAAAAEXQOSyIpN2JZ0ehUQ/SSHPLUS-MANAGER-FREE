@@ -1,10 +1,9 @@
 ⚠️ Estado del Proyecto: Descontinuado ⚠️
 
-SSHPLUS MANAGER (Final Versión 38) :octocat:
-
-Fecha de Última Actualización: 09/08/2021
-
 Este proyecto ha sido descontinuado y ya no recibirá actualizaciones o soporte adicional. Aunque puedes seguir utilizando el código disponible, recomendamos explorar otras alternativas activas y actualizadas para manejar tus servidores o VPS.
+
+* SSHPLUS MANAGER (Final Versión 38) :octocat:
+* Fecha de Última Actualización: 09/08/2021
 
 💡 Nota: Si tienes alguna pregunta o necesitas ayuda, te sugerimos revisar los foros comunitarios o consultar otros repositorios en GitHub que ofrezcan herramientas similares.
 
