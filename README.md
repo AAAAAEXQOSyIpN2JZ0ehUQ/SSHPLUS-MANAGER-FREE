@@ -1,6 +1,6 @@
 ⚠️ Estado del Proyecto: Descontinuado ⚠️
 
-SSHPLUS MANAGER  (Final Versión 38) :octocat:
+SSHPLUS MANAGER (Final Versión 38) :octocat:
 
 Fecha de Última Actualización: 09/08/2021
 
