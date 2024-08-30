@@ -100,6 +100,6 @@ SSHPLUS MANAGER ofrece las siguientes características:
 ## :email: Contacto 
 * :busts_in_silhouette: **@crazy_vpn**: [Telegram](https://t.me/crazy_vpn) - Desarrollador SSHPlus Manager
 * :busts_in_silhouette: **illuminati Dev Team**: [Grupo Oficial en Telegram](https://t.me/AAAAAEXQOSyIpN2JZ0ehUQ) - Actualización de versión
-* :busts_in_silhouette: **Jony Rivera**: [Telegram](https://t.me/Jony_Rivera) - Colaborador
+* :busts_in_silhouette: **Jony Rivera**: [Grupo](https://t.me/Jony_Rivera) - Colaborador
 
 ☆ https://t.me/AAAAAEXQOSyIpN2JZ0ehUQ [  ⃘⃤꙰✰ ] ☆
