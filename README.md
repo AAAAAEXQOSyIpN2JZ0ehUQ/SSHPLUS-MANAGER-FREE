@@ -91,7 +91,6 @@ SSHPLUS MANAGER ofrece las siguientes características:
 | :file_folder:    | Imagenes       | Carpeta para imágenes                     |
 | :file_folder:    | Install        | Carpeta para scripts de instalación       |
 | :file_folder:    | Modulos        | Carpeta para módulos adicionales          |
-| :file_folder:    | _$_Version     | Carpeta para archivos de versión          |
 | :page_facing_up: | .gitattributes | Archivo para configuración de Git         |
 | :package:        | Plus           | Instalador en Bash                        |
 | :book:           | README.md      | Archivo de documentación principal        |
