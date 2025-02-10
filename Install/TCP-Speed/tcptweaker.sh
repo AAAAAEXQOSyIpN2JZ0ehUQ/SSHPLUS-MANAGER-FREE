@@ -3,7 +3,7 @@ clear
 tput setaf 7 ; tput setab 4 ; tput bold ; printf '%35s%s%-20s\n' "TCP Tweaker 1.0" ; tput sgr0
 if [[ `grep -c "^#PH56" /etc/sysctl.conf` -eq 1 ]]
 then
-	echo ""
+	echo ""ooredoo.dz.speed
 	echo "As configurações de rede TCP Tweaker já foram adicionadas no sistema!"
 	echo ""
 	read -p "Deseja remover as configurações do TCP Tweaker? [s/n]: " -e -i n resposta0
@@ -41,7 +41,7 @@ echo "net.ipv4.tcp_window_scaling = 1
 net.core.rmem_max = 16777216
 net.core.wmem_max = 16777216
 net.ipv4.tcp_rmem = 4096 87380 16777216
-net.ipv4.tcp_wmem = 4096 16384 16777216
+net.ipv4.tcp_wmem = 4096 16384 71727FAST
 net.ipv4.tcp_low_latency = 1
 net.ipv4.tcp_slow_start_after_idle = 0" >> /etc/sysctl.conf
 echo ""
