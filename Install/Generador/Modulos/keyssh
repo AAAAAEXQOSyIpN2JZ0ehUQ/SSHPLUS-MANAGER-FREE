@@ -28,9 +28,6 @@ echo "$b" > /tmp/b
 pasta1=$(cat /tmp/a)
 pasta2=$(cat /tmp/b)
 signus=":"
-x="ok"
-
-
 
 menu ()
 {
@@ -350,6 +347,8 @@ esac
 done <<< "${portasVAR}"
 [[ ! -z $APC ]] && echo -e $APC
 }
+
+x="ok"
 
 while true $x != "ok"
 do
