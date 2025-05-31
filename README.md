@@ -1,4 +1,5 @@
-﻿----
+﻿
+----
 ⚠️ Estado del Proyecto: Descontinuado ⚠️
 
 Este proyecto ha sido descontinuado y ya no recibirá actualizaciones o soporte adicional. Aunque puedes seguir utilizando el código disponible, recomendamos explorar otras alternativas activas y actualizadas para manejar tus servidores o VPS.
