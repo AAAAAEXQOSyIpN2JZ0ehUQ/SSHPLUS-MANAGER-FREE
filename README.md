@@ -20,10 +20,12 @@ sus usuarios.
 ## :computer: Instalación
 ```bash
 apt-get update -y
+```
+```bash
 apt-get full-upgrade -y
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Plus
-chmod +x Plus*
-./Plus
+```
+```bash
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Plus; chmod +x Plus*: ./Plus
 ```
 
 ## :computer: Instalación en una Línea
@@ -101,7 +103,7 @@ adminplus
 | :file_folder:    | Imagenes       | Carpeta para imágenes                     |
 | :file_folder:    | Install        | Carpeta para scripts de instalación       |
 | :file_folder:    | Modulos        | Carpeta para módulos adicionales          |
-| :file_folder:    | _$_Version     | Carpeta de versiones del proyecto         |
+| :file_folder:    | Versiones     | Carpeta de versiones del proyecto         |
 | :page_facing_up: | .gitattributes | Archivo para configuración de Git         |
 | :package:        | Plus           | Instalador en Bash                        |
 | :book:           | README.md      | Archivo de documentación principal        |
