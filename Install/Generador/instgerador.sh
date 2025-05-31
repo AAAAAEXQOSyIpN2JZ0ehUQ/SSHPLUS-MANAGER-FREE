@@ -12,8 +12,6 @@ echo -e "\033[1;33m[\033[1;31mErro\033[1;33m] \033[1;37m- \033[1;33mvocê precis
 rm $HOME/instgerador.sh* > /dev/null 2>&1; exit 0
 }
 
-barra="\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-
 cd $HOME
 fun_bar () {
 comando[0]="$1"
@@ -156,4 +154,4 @@ echo -e "\033[1;33mMAIS INFORMACOES \033[1;31m(\033[1;36mTELEGRAM\033[1;31m): \0
 echo -e "                     \033[1;37m@AAAAAEXQOSyIpN2JZ0ehUQ\033[0m"
 echo ""
 
-#rm $HOME/instgerador.sh* && cat /dev/null > ~/.bash_history && history -c
+rm $HOME/instgerador* #&& cat /dev/null > ~/.bash_history && history -c
