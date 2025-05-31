@@ -15,6 +15,9 @@ Si tienes alguna pregunta o necesitas ayuda, te sugerimos revisar los foros comu
 
 # SSHPlus Keygen :octocat:
 
+## :information_source: Descripción
+SSHPlus Keygen es un script diseñado para generar claves de instalación personalizadas para entornos que utilizan SSHPlus Manager. Este generador permite crear claves aleatorias, fijas o manuales, facilitando el control y distribución de accesos en sistemas basados en Linux. Su interfaz intuitiva brinda una experiencia simple y directa tanto para usuarios novatos como avanzados, garantizando una gestión eficiente y segura de los accesos.
+
 ## :computer: Instalación
 ```bash
 apt-get update -y
@@ -37,6 +40,17 @@ wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FR
 - Versiones recomendadas: Ubuntu 18.04 Server x86_64 / Ubuntu 20.04 Server x86_64, Debian 9 Server x86_64
 - Se sugiere utilizar una distribución reciente o recién formateada
 - El idioma predeterminado es el portugués/español
+
+## :open_file_folder: Estructura del Repositorio
+
+| Icono            | Nombre         | Descripción                               |
+|------------------|----------------|-------------------------------------------|
+| :file_folder:    | Imagenes       | Carpeta para imágenes                     |
+| :file_folder:    | Install        | Carpeta para scripts de instalación       |
+| :file_folder:    | Modulos        | Carpeta para módulos adicionales          |
+| :book:           | README.md      | Archivo de documentación principal        |
+| :package:        | instgerador.sh | Instalador en Bash                        |
+| :page_facing_up: | versao         | Archivo de versión del proyecto           |
 
 ## :email: Contacto 
 * :busts_in_silhouette: **@crazy_vpn**: [Telegram](https://t.me/crazy_vpn) - Desarrollador SSHPlus Manager
