@@ -16,10 +16,7 @@ Si tienes alguna pregunta o necesitas ayuda, te sugerimos revisar los foros comu
 # SSHPlus Manager :octocat:
 
 ## :information_source: Descripción
-Es un script que ofrece un conjunto de características y herramientas diseñadas para 
-proporcionar una extrema facilidad de uso en servidores Linux con un enfoque en el uso de 
-VPN. Viene con una interfaz amigable que proporciona información detallada sobre el servidor y 
-sus usuarios.
+SSHPlus Keygen es un script diseñado para generar claves de instalación personalizadas para entornos que utilizan SSHPlus Manager. Este generador permite crear claves aleatorias, fijas o manuales, facilitando el control y distribución de accesos en sistemas basados en Linux. Su interfaz intuitiva brinda una experiencia simple y directa tanto para usuarios novatos como avanzados, garantizando una gestión eficiente y segura de los accesos.
 
 ## :computer: Instalación
 ```bash

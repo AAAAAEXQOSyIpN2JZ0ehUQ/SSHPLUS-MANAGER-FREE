@@ -150,8 +150,7 @@ fun_bar 'fun_index'
 echo ""
 echo -e "\033[1;31m════════════════════════════════════════════════════\033[0m"
 echo -e "\033[1;31m\033[1;33mCOMANDO PRINCIPAL: \033[1;32mkeyssh o key \033[0m"
-echo -e "\033[1;33mMAIS INFORMACOES \033[1;31m(\033[1;36mTELEGRAM\033[1;31m): \033[0m"
-echo -e "                     \033[1;37m@AAAAAEXQOSyIpN2JZ0ehUQ\033[0m"
+echo -e "\033[1;33mMAIS INFORMACOES \033[1;31m(\033[1;36mTELEGRAM\033[1;31m): \033[1;37m@AAAAAEXQOSyIpN2JZ0ehUQ\033[0m"
 echo ""
 
-rm $HOME/instgerador* #&& cat /dev/null > ~/.bash_history && history -c
+#rm $HOME/instgerador* && cat /dev/null > ~/.bash_history && history -c
