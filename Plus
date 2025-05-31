@@ -45,7 +45,7 @@ function systemverify() {
   cp /etc/ssh/sshd_config /etc/ssh/sshd_back_$RANDOM &>/dev/null
   echo "/bin/menu" > /bin/h; chmod +x /bin/h &>/dev/null
   rm -rf "$HOME"/versao* &>/dev/null; wget -qO "$HOME/versao" https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/versao
-  echo 'apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Plus; chmod +x Plus; ./Plus' > /bin/sshplus
+  echo 'wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Plus; chmod +x Plus; ./Plus' > /bin/sshplus
   chmod +x /bin/sshplus &>/dev/null
   for version in V3 V2 V1; do
     wget -qO /bin/menu$version https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Skin_Plus/menu$version/Install
