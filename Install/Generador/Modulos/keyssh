@@ -1,5 +1,6 @@
 #!/bin/bash
-clear
+
+
 #====================================================
 #	CODIGO FUENTE:	        iLLuminati Dev Team
 #====================================================
@@ -8,9 +9,17 @@ clear
 #	CONTATO TELEGRAM:	@AAAAAEXQOSyIpN2JZ0ehUQ
 #	GRUPO TELEGRAM:	https://t.me/AAAAAEXQOSyIpN2JZ0ehUQ
 #====================================================
+
+fun_ip () {
+MIP=$(ip addr | grep 'inet' | grep -v inet6 | grep -vE '127\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | grep -o -E '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | head -1)
+MIP2=$(wget -qO- ipv4.icanhazip.com)
+[[ "$MIP" != "$MIP2" ]] && IP="$MIP2" || IP="$MIP"
+}
+
 if [ ! -e /home/keyssh ]; then
    mkdir /home/keyssh
 fi
+
 key_tmp="$RANDOM:$RANDOM"
 a="$RANDOM"
 b="$RANDOM"
@@ -21,11 +30,7 @@ pasta2=$(cat /tmp/b)
 signus=":"
 x="ok"
 
-fun_ip () {
-MIP=$(ip addr | grep 'inet' | grep -v inet6 | grep -vE '127\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | grep -o -E '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | head -1)
-MIP2=$(wget -qO- ipv4.icanhazip.com)
-[[ "$MIP" != "$MIP2" ]] && IP="$MIP2" || IP="$MIP"
-}
+
 
 menu ()
 {
@@ -348,73 +353,70 @@ done <<< "${portasVAR}"
 
 while true $x != "ok"
 do
+
 _ram=$(printf ' %-9s' "$(free -h | grep -i mem | awk {'print $2'})")
 _usor=$(printf '%-8s' "$(free -m | awk 'NR==2{printf "%.2f%%", $3*100/$2 }')")
 _usop=$(printf '%-1s' "$(top -bn1 | awk '/Cpu/ { cpu = "" 100 - $8 "%" }; END { print cpu }')")
 _core=$(printf '%-1s' "$(grep -c cpu[0-9] /proc/stat)")
-clear
-echo -e "\033[0m\e[34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e " \033[1;31m++| \033[1;32mKEYGEN SSHPLUS \033[1;31m|++       \033[1;32m[ VERSAO: 2.0 BETA ]\033[0m"
-echo -e "\033[0m\e[34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-sts=$([ "$(ls -A /home/keyssh)" ] && echo -e "\033[1;32m Key Online!\033[1;37m" || echo -e "\033[1;31m Nenhuma Key Online!\033[0m")
-echo -e "\033[1;31mSTATUS: $sts"
-mine_port
-echo -e "\033[0m\e[34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e "\033[1;31mRAM:\033[1;37m $_usor \033[1;31mNUCLEO:\033[1;37m $_usop \033[0m"
-echo -e "\033[0m\e[34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo ""
-echo -e "\033[1;37m |1| \033[1;31m<----> \033[1;36mGERAR KEY ALEATORIA \033[1;32m              [CV] \033[0m"
-echo -e "\033[1;37m |2| \033[1;31m<----> \033[1;36mGERAR KEY ALEATORIA FIXA \033[1;32m         [SV] \033[0m"
-echo -e "\033[1;37m |3| \033[1;31m<----> \033[1;36mGERAR KEY MANUAL\033[1;33m! \033[1;32m                [CV] \033[0m"
-if [ ! -e /home/PlusKeygen-Active ]; then
-   echo -e "\033[1;37m |4| \033[1;31m<----> \033[1;31m(PARADO)\033[1;36m - INICIAR KEYGEN\033[0m"
-else
-   echo -e "\033[1;37m |4| \033[1;31m<----> \033[1;32m(RODANDO)\033[1;36m - PARAR KEYGEN\033[0m"
-fi
-echo -e "\033[1;37m |5| \033[1;31m<----> \033[1;36mKEYS ONLINE\033[0m"
-echo -e "\033[1;37m |6| \033[1;31m<----> \033[1;36mREMOVER KEY\033[0m"
-# echo -e "\033[1;37m |X| \033[1;31m<----> \033[1;36mLOG DE REGISTROS\033[0m"
-echo -e "\033[1;37m |7| \033[1;31m<----> \033[1;33m[!] \033[1;32mACTUALIZAR \033[0m"
-echo -e "\033[1;37m |8| \033[1;31m<----> \033[1;33m[!] \033[1;31mDESINSTALAR KEYGEN\033[0m "
-echo -e "\033[1;37m |0| \033[1;31m<----> \033[1;36mSAIR DO KEYGEN\033[0m"
-echo ""
-echo -e "                           \033[1;37m@AAAAAEXQOSyIpN2JZ0ehUQ\033[0m"
-echo -e "\033[0m\e[34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo ""
-echo -ne "\033[1;32mOQUE DESEJA FAZER \033[1;33m?\033[1;31m?\033[1;37m : "; read x
 
-case "$x" in 
+clear
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "\E[41;1;37m                ⇱ KEYGEN SSHPLUS ⇲                \E[0m"
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "\033[1;37mVersión:\033[1;32m 2.0 BETA"
+sts=$([ "$(ls -A /home/keyssh)" ] && echo -e "\033[1;32mKey Online!\033[1;37m" || echo -e "\033[1;31mNinguna Key Online!\033[0m")
+echo -e "\033[1;37mEstado:\033[0m $sts"
+echo -e "\033[1;37mRAM:\033[1;32m $_usor \033[1;37m| Núcleo(s):\033[1;32m $_core \033[1;37m| CPU:\033[1;32m $_usop\033[0m"
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo ""
+
+echo -e "\033[1;31m[\033[1;36m01\033[1;31m] \033[1;37m• \033[1;33mGenerar Key Aleatoria                       \033[1;32m[CV]"
+echo -e "\033[1;31m[\033[1;36m02\033[1;31m] \033[1;37m• \033[1;33mGenerar Key Fija                           \033[1;32m[SV]"
+echo -e "\033[1;31m[\033[1;36m03\033[1;31m] \033[1;37m• \033[1;33mGenerar Key Manual                         \033[1;32m[CV]"
+
+if [ ! -e /home/PlusKeygen-Active ]; then
+   echo -e "\033[1;31m[\033[1;36m04\033[1;31m] \033[1;37m• \033[1;31m(PARADO)\033[1;33m Iniciar Keygen"
+else
+   echo -e "\033[1;31m[\033[1;36m04\033[1;31m] \033[1;37m• \033[1;32m(RODANDO)\033[1;33m Parar Keygen"
+fi
+
+echo -e "\033[1;31m[\033[1;36m05\033[1;31m] \033[1;37m• \033[1;33mVer Keys Online"
+echo -e "\033[1;31m[\033[1;36m06\033[1;31m] \033[1;37m• \033[1;33mRemover Key"
+echo -e "\033[1;31m[\033[1;36m07\033[1;31m] \033[1;37m• \033[1;33mActualizar Script"
+echo -e "\033[1;31m[\033[1;36m08\033[1;31m] \033[1;37m• \033[1;31mDesinstalar Keygen"
+echo -e "\033[1;31m[\033[1;36m00\033[1;31m] \033[1;37m• \033[1;33mSalir \033[1;32m<\033[1;33m<\033[1;31m<"
+echo ""
+echo -e "                      \033[1;37m@AAAAAEXQOSyIpN2JZ0ehUQ\033[0m"
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo ""
+echo -ne "\033[1;32m¿QUÉ DESEA HACER \033[1;33m?\033[1;31m?\033[1;37m : "; read x
+
+case "$x" in
    1 | 01)
    fun_gerkey
    echo -ne "\n\033[1;31mENTER \033[1;33mpara retornar ao \033[1;32mMENU!\033[0m"; read
-   menu
    ;;
    2 | 02)
    fun_gerkey_fixa
    echo -ne "\n\033[1;31mENTER \033[1;33mpara retornar ao \033[1;32mMENU!\033[0m"; read
-   menu
    ;;
    3 | 03)
    fun_gerkey_manual
    echo -ne "\n\033[1;31mENTER \033[1;33mpara retornar ao \033[1;32mMENU!\033[0m"; read
-   menu
    ;;
    4 | 04)
    pluskeygen_onoff
    echo -ne "\n\033[1;31mENTER \033[1;33mpara retornar ao \033[1;32mMENU!\033[0m"; read
-   menu
    ;;
    5 | 05)
    clear
    fun_keyson
    echo -ne "\n\033[1;31mENTER \033[1;33mpara retornar ao \033[1;32mMENU!\033[0m"; read
-   menu
    ;;
    6 | 06)
    clear
    fun_delkey
    echo -ne "\n\033[1;31mENTER \033[1;33mpara retornar ao \033[1;32mMENU!\033[0m"; read
-   menu
    ;;      
    7 | 07)
    clear
@@ -425,12 +427,6 @@ case "$x" in
    remover_plus
    clear
    exit;
-   ;;
-   9 | 09)
-   clear
-   otimizar
-   echo -ne "\n\033[1;31mENTER \033[1;33mpara retornar ao \033[1;32mMENU!\033[0m"; read
-   menu
    ;;
    0 | 00)
    echo -e "\033[1;31mSalindo...\033[0m"
