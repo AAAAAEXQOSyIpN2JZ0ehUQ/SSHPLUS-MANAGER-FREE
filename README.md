@@ -67,8 +67,11 @@ SSHPLUS MANAGER ofrece las siguientes características:
 
 ## :books: Utilidades Opcional (Menu de Administración)
 
+![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/adminplus.png)
+
+## :computer: Instalación
 ```bash
-wget -qO "/bin/dminplus" https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/refs/heads/master/Install/dminplus; chmod +x adminplus
+wget -qO "/bin/adminplus" https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/refs/heads/master/Install/adminplus; chmod +x adminplus
 ```
 
 ## :rocket: Modo de Uso
