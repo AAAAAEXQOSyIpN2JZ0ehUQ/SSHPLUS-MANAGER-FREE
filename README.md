@@ -65,12 +65,19 @@ SSHPLUS MANAGER ofrece las siguientes características:
 - Distribución: Se sugiere utilizar una distribución reciente o recién formateada.
 - Idioma Predeterminado: Portugués
 
-## :books: Utilidades Opcionales
+## :books: Utilidades Opcional (Menu de Administración)
 
-- Reinstalar el Script: Ejecutar en consola el comando `sshplus` [Ver Imagen](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/Reinstall_SSHPlus-Manager.png)
-- Skin Menú Adaptado Formato ADM: Ejecutar en consola el comando `menuV3` [Ver Imagen](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/Update_menuV3.png)
-- Skin Menú Adaptado: Ejecutar en consola el comando `menuV2` [Ver Imagen](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/Update_menuV2.png)
-- Restablecer el Menú Original: Ejecutar en consola el comando `menuV1` [Ver Imagen](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/SSHPLUS_MANAGER.png)
+```bash
+wget -qO "/bin/dminplus" https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/refs/heads/master/Install/dminplus; chmod +x adminplus
+```
+
+## :rocket: Modo de Uso
+
+Ejecute el script simplemente escribiendo `adminplus` en tu terminal y presionando Enter.
+
+```bash
+adminplus
+```
 
 ## :file_folder: Proyectos útiles 
 
@@ -91,6 +98,7 @@ SSHPLUS MANAGER ofrece las siguientes características:
 | :file_folder:    | Imagenes       | Carpeta para imágenes                     |
 | :file_folder:    | Install        | Carpeta para scripts de instalación       |
 | :file_folder:    | Modulos        | Carpeta para módulos adicionales          |
+| :file_folder:    | _$_Version     | Carpeta de versiones del proyecto         |
 | :page_facing_up: | .gitattributes | Archivo para configuración de Git         |
 | :package:        | Plus           | Instalador en Bash                        |
 | :book:           | README.md      | Archivo de documentación principal        |
