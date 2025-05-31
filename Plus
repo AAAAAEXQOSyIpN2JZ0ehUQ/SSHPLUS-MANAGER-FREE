@@ -41,6 +41,17 @@ krm=$(echo '5:q-3gs2.o7%8:1'|rev); chmod +x $_Ink/list > /dev/null 2>&1
   clear; exit 1
 }
 }
+function systemverify() {
+  cp /etc/ssh/sshd_config /etc/ssh/sshd_back_$RANDOM &>/dev/null
+  echo "/bin/menu" > /bin/h; chmod +x /bin/h &>/dev/null
+  rm -rf "$HOME"/versao* &>/dev/null; wget -qO "$HOME/versao" https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/versao
+  echo 'apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Plus; chmod +x Plus; ./Plus' > /bin/sshplus
+  chmod +x /bin/sshplus &>/dev/null
+  for version in V3 V2 V1; do
+    wget -qO /bin/menu$version https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Skin_Plus/menu$version/Install
+    chmod +x /bin/menu$version &>/dev/null
+  done
+}
 echo -e "\033[1;31m════════════════════════════════════════════════════\033[0m"
 tput setaf 7 ; tput setab 4 ; tput bold ; printf '%40s%s%-12s\n' "BEM VINDO AO SSHPLUS MANAGER" ; tput sgr0
 echo -e "\033[1;31m════════════════════════════════════════════════════\033[0m"
@@ -117,7 +128,7 @@ echo ""
 echo -e "      \033[1;33mCONCLUINDO FUNÇÕES E DEFINIÇÕES! \033[0m"
 echo ""
 fun_bar "$_Ink/list $_lnk $_Ink $_1nk $key"
-rm -rf $HOME/systemverify* > /dev/null 2>&1; bash <(wget -qO- https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/systemverify)
+systemverify
 clear
 echo ""
 cd $HOME
