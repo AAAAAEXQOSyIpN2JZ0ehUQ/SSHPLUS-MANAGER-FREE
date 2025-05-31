@@ -71,7 +71,7 @@ SSHPLUS MANAGER ofrece las siguientes características:
 
 ## :computer: Instalación
 ```bash
-wget -qO "/bin/adminplus" https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/refs/heads/master/Install/adminplus; chmod +x adminplus
+wget -qO "/bin/adminplus" https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/refs/heads/master/Install/adminplus; chmod +x /bin/adminplus
 ```
 
 ## :rocket: Modo de Uso
