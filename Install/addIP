@@ -1,22 +1,35 @@
 #!/bin/bash
 
-IP=$(ip addr | grep 'inet' | grep -v inet6 | grep -vE '127\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | grep -o -E '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | head -1)
-if [[ "$IP" = "" ]]; then
+# Colores
+yellow='\033[01;33m'
+green='\033[1;32m'
+red='\033[1;31m'
+white='\033[1;37m'
+reset='\033[0m'
+
+# Obtener IP local válida (excluye loopback)
+IP=$(ip -4 addr show | grep -oP '(?<=inet\s)\d+(\.\d+){3}' | grep -v '^127\.' | head -n 1)
+
+# Si no hay IP local válida, intenta obtener la IP pública
+if [[ -z "$IP" ]]; then
   IP=$(wget -qO- ipv4.icanhazip.com)
 fi
 
 clear
-echo -e "\033[01;33m Capturador de IP "
-echo ""
-echo -ne "\033[1;32mConfirme seu IP \033[1;37m"; read -e -i $IP ipdovps
-echo "$IP" > /etc/IP 
-echo "$IP" > /etc/MEUIPADM 
-echo "$IP" > /usr/bin/vendor_code
-echo ""
-echo -e "\033[1;32m IP Capturada \033[1;37m"
-echo ""
-echo -e "\033[1;32m Ruta guardada \033[1;31m/etc/IP \033[1;37m"
-echo -e "\033[1;32m Ruta guardada \033[1;31m/etc/MEUIPADM \033[1;37m"
-echo -e "\033[1;32m Ruta guardada \033[1;31m/usr/bin/vendor_code \033[1;37m"
-echo ""
-exit
+echo -e "${yellow}Capturador de IP${reset}\n"
+
+# Confirmar IP con el usuario
+read -e -i "$IP" -p "$(echo -e "${green}Confirma tu IP: ${white}")" ipdovps
+
+# Guardar la IP en rutas necesarias
+for path in /etc/IP /etc/MEUIPADM /usr/bin/vendor_code; do
+  echo "$ipdovps" > "$path"
+done
+
+# Mensajes de confirmación
+echo -e "\n${green}IP capturada:${white} $ipdovps"
+echo -e "${green}Ruta guardada:${reset} /etc/IP"
+echo -e "${green}Ruta guardada:${reset} /etc/MEUIPADM"
+echo -e "${green}Ruta guardada:${reset} /usr/bin/vendor_code\n"
+
+exit 0

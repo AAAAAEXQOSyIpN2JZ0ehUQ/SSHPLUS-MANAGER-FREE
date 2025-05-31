@@ -1,0 +1,108 @@
+#!/bin/bash
+
+# Paleta de colores
+reset="\033[0m"
+bold="\033[1m"
+italic="\033[3m"
+underline="\033[4m"
+blink="\033[5m"
+reverse="\033[7m"
+hidden="\033[8m"
+
+# Colores de texto
+black="\033[0;30m"
+red="\033[0;31m"
+green="\033[0;32m"
+yellow="\033[0;33m"
+blue="\033[0;34m"
+magenta="\033[0;35m"
+cyan="\033[0;36m"
+white="\033[0;37m"
+
+# Barra de separación
+barra="${blue}|--------------------------------------------|${reset}"
+bar="${yellow}----------------------------------------------${reset}"
+
+# Función de menú principal
+menu () {
+    while true; do
+        clear
+        echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+        echo -e "\E[41;1;37m           ⇱ Menu de Administración ⇲             \E[0m"
+        echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+        echo ""
+        echo -e "\033[1;31m[\033[1;36m01\033[1;31m] \033[1;37m• \033[1;33mCopiar configuración SSH (Backup) "
+        echo -e "\033[1;31m[\033[1;36m02\033[1;31m] \033[1;37m• \033[1;33mAcceso rápido a Menu (menu y h) "
+        echo -e "\033[1;31m[\033[1;36m03\033[1;31m] \033[1;37m• \033[1;33mReadme de versión"
+        echo -e "\033[1;31m[\033[1;36m04\033[1;31m] \033[1;37m• \033[1;33mReinstalar SSHPlus"
+        echo -e "\033[1;31m[\033[1;36m05\033[1;31m] \033[1;37m• \033[1;33mInstalar Menu ADM"
+        echo -e "\033[1;31m[\033[1;36m06\033[1;31m] \033[1;37m• \033[1;33mInstalar Menu Adaptado"
+        echo -e "\033[1;31m[\033[1;36m07\033[1;31m] \033[1;37m• \033[1;33mInstalar Menu Original"
+        echo -e "\033[1;31m[\033[1;36m00\033[1;31m] \033[1;37m• \033[1;33mSalir"
+        echo ""
+        echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+        echo ""
+        echo -ne "\033[1;32m¿QUÉ DESEA HACER \033[1;33m?\033[1;31m?\033[1;37m : "; read x
+
+        case "$x" in 
+            1)
+                echo -e "\n${yellow}Cargando configuración SSH...${reset}"
+                cp /etc/ssh/sshd_config "/etc/ssh/sshd_back_$(date +%s)" > /dev/null 2>&1
+                echo -e "${green}Configuración SSH copiada con éxito.${reset}"
+                echo -ne "\n\033[1;31mENTER \033[1;33mpara retornar ao \033[1;32mMENU!\033[0m"; read
+                ;;
+            2)
+                echo -e "\n${yellow}Configurando acceso rápido...${reset}"
+                echo "/bin/menu" > /bin/h && chmod +x /bin/h > /dev/null 2>&1
+                echo -e "${green}Acceso rápido configurado. (menu y h) ${reset}"
+                echo -ne "\n\033[1;31mENTER \033[1;33mpara retornar ao \033[1;32mMENU!\033[0m"; read
+                ;;
+            3)
+                echo -e "\n${yellow}Configurando la versión desde local...${reset}"
+                rm -rf "$HOME/versao"* > /dev/null 2>&1
+                wget -qO "$HOME/versao" https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/versao > /dev/null 2>&1
+                echo -e "${green}Versión configurada.${reset}"
+                echo -ne "\n\033[1;31mENTER \033[1;33mpara retornar al \033[1;32mMENU!\033[0m"; read
+                ;;
+            4)
+                echo -e "\n${yellow}Reinstalando SSH Plus...${reset}"
+                chmod +x /bin/sshplus > /dev/null 2>&1
+                sshplus
+                exit 1
+                ;;
+            5)
+                echo -e "\n${yellow}Instalando Menu ADM...${reset}"
+                    chmod +x /bin/menuV3 > /dev/null 2>&1
+                    sleep 2
+                    /bin/menuV3 > /dev/null 2>&1 &
+                    echo -ne "\n\033[1;31mENTER \033[1;33mpara retornar al \033[1;32mMENU!\033[0m"; read
+                ;;
+            6)
+                echo -e "\n${yellow}Instalando Menu Adaptado...${reset}"
+                    chmod +x /bin/menuV2 > /dev/null 2>&1
+                    sleep 2
+                    /bin/menuV2 > /dev/null 2>&1 &
+                    echo -ne "\n\033[1;31mENTER \033[1;33mpara retornar al \033[1;32mMENU!\033[0m"; read
+                ;;
+            7)
+                echo -e "\n${yellow}Instalando Menu Original...${reset}"
+                    chmod +x /bin/menuV1  > /dev/null 2>&1
+                    sleep 2
+                    /bin/menuV1 > /dev/null 2>&1 &
+                    echo -ne "\n\033[1;31mENTER \033[1;33mpara retornar al \033[1;32mMENU!\033[0m"; read
+                ;;
+            0)
+                echo -e "\033[1;31mSaliendo...\033[0m"
+                sleep 1
+                clear
+                exit 0
+                ;;
+            *)
+                echo -e "\n\033[1;31m¡Opción inválida!${reset}"
+                sleep 2
+                ;;
+        esac
+    done
+}
+
+menu
