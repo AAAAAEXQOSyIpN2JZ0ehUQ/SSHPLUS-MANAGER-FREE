@@ -9,6 +9,8 @@ Este proyecto ha sido descontinuado y ya no recibirá actualizaciones o soporte 
 
 Si tienes alguna pregunta o necesitas ayuda, te sugerimos revisar los foros comunitarios o consultar otros repositorios en GitHub que ofrezcan herramientas similares, siéntete libre de abrir un *pull request* o *issue*. 
 
+- :inbox_tray: Código Fuente: [Descargar](https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Source-Code-SSHPlus.zip)
+
 ----
 
 ![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/SSHPLUS_MANAGER.png)
@@ -24,12 +26,9 @@ sus usuarios.
 ## :computer: Instalación
 ```bash
 apt-get update -y
-```
-```bash
 apt-get full-upgrade -y
-```
-```bash
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Plus; chmod +x Plus*: ./Plus
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Plus; 
+chmod +x Plus*: ./Plus
 ```
 
 ## :computer: Instalación en una Línea
@@ -95,10 +94,6 @@ adminplus
 - Multi-Instalador Plus: [Ver Repositorio](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/Multi-Instalador)
 - Panel Revenda SSH (Versiones): [Ver Repositorio](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/Panel_Web)
 - Tcp-Tweaker-1.0 (Tcp-Speed): [Ver Repositorio](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/TCP-Speed)
-
-## :inbox_tray: Descarga del Código Fuente
-
-- Código Fuente: [Descargar](https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Source-Code-SSHPlus.zip)
 
 ## :open_file_folder: Estructura del Repositorio
 
