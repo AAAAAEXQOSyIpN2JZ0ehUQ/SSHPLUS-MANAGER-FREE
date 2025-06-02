@@ -33,7 +33,7 @@ menu () {
         echo ""
         echo -e "\033[1;31m[\033[1;36m01\033[1;31m] \033[1;37m• \033[1;33mCopiar configuración SSH (Backup) "
         echo -e "\033[1;31m[\033[1;36m02\033[1;31m] \033[1;37m• \033[1;33mAcceso rápido a Menu (menu y h) "
-        echo -e "\033[1;31m[\033[1;36m03\033[1;31m] \033[1;37m• \033[1;33mReadme de versión"
+        echo -e "\033[1;31m[\033[1;36m03\033[1;31m] \033[1;37m• \033[1;33mReadme de creditos"
         echo -e "\033[1;31m[\033[1;36m04\033[1;31m] \033[1;37m• \033[1;33mReinstalar SSHPlus"
         echo -e "\033[1;31m[\033[1;36m05\033[1;31m] \033[1;37m• \033[1;33mInstalar Menu ADM"
         echo -e "\033[1;31m[\033[1;36m06\033[1;31m] \033[1;37m• \033[1;33mInstalar Menu Adaptado"
@@ -58,7 +58,7 @@ menu () {
                 echo -ne "\n\033[1;31mENTER \033[1;33mpara retornar ao \033[1;32mMENU!\033[0m"; read
                 ;;
             3)
-                echo -e "\n${yellow}Configurando la versión desde local...${reset}"
+                echo -e "\n${yellow}Cargando archivo de creditos...${reset}"
                 rm -rf "$HOME/versao"* > /dev/null 2>&1
                 wget -qO "$HOME/versao" https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/credits > /dev/null 2>&1
                 echo -e "${green}Versión configurada.${reset}"
