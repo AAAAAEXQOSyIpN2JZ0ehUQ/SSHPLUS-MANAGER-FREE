@@ -4,7 +4,7 @@
 
 Este proyecto ha sido descontinuado y ya no recibirá actualizaciones o soporte adicional. Aunque puedes seguir utilizando el código disponible, recomendamos explorar otras alternativas activas y actualizadas para manejar tus servidores o VPS.
 
-* SSHPLUS MANAGER (Final Versión 38) :octocat:
+* SSHPlus Manager (Final Versión 38) :octocat:
 * Fecha de Última Actualización: 09/08/2021
 
 Si tienes alguna pregunta o necesitas ayuda, te sugerimos revisar los foros de la comunidad o explorar otros repositorios en GitHub con herramientas similares. También puedes abrir un *issue* o enviar un *pull request* si deseas colaborar directamente.
@@ -25,10 +25,10 @@ sus usuarios.
 
 ## :computer: Instalación
 ```bash
-apt-get update -y
-apt-get full-upgrade -y
+apt-get update -y; 
+apt-get full-upgrade -y; 
 wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Plus; 
-chmod +x Plus*: ./Plus
+chmod +x Plus* && ./Plus
 ```
 
 ## :computer: Instalación en una Línea
