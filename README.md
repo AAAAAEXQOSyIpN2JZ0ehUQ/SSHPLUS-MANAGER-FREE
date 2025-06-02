@@ -7,9 +7,9 @@ Este proyecto ha sido descontinuado y ya no recibirá actualizaciones o soporte 
 * SSHPLUS MANAGER (Final Versión 38) :octocat:
 * Fecha de Última Actualización: 09/08/2021
 
-Si tienes alguna pregunta o necesitas ayuda, te sugerimos revisar los foros comunitarios o consultar otros repositorios en GitHub que ofrezcan herramientas similares, siéntete libre de abrir un *pull request* o *issue*. 
+Si tienes alguna pregunta o necesitas ayuda, te sugerimos revisar los foros de la comunidad o explorar otros repositorios en GitHub con herramientas similares. También puedes abrir un *issue* o enviar un *pull request* si deseas colaborar directamente.
 
-- :inbox_tray: Código Fuente: [Descargar](https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Source-Code-SSHPlus.zip)
+* :inbox_tray: Código Fuente: [Descargar](https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Source-Code-SSHPlus.zip)
 
 ----
 
