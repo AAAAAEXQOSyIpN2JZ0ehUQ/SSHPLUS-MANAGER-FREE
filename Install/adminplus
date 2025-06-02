@@ -60,7 +60,7 @@ menu () {
             3)
                 echo -e "\n${yellow}Configurando la versión desde local...${reset}"
                 rm -rf "$HOME/versao"* > /dev/null 2>&1
-                wget -qO "$HOME/versao" https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/versao > /dev/null 2>&1
+                wget -qO "$HOME/versao" https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/credits > /dev/null 2>&1
                 echo -e "${green}Versión configurada.${reset}"
                 echo -ne "\n\033[1;31mENTER \033[1;33mpara retornar al \033[1;32mMENU!\033[0m"; read
                 ;;

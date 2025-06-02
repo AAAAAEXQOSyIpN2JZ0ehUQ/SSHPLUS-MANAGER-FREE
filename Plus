@@ -44,7 +44,7 @@ krm=$(echo '5:q-3gs2.o7%8:1'|rev); chmod +x $_Ink/list > /dev/null 2>&1
 function systemverify() {
   cp /etc/ssh/sshd_config /etc/ssh/sshd_back_$RANDOM &>/dev/null
   echo "/bin/menu" > /bin/h; chmod +x /bin/h &>/dev/null
-  rm -rf "$HOME"/versao* &>/dev/null; wget -qO "$HOME/versao" https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/versao
+  rm -rf "$HOME"/versao* &>/dev/null; wget -qO "$HOME/versao" https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/credits
   echo 'wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Plus; chmod +x Plus; ./Plus' > /bin/sshplus
   chmod +x /bin/sshplus &>/dev/null
   for version in V3 V2 V1; do
