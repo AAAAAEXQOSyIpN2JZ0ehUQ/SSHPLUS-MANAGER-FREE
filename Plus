@@ -42,14 +42,15 @@ krm=$(echo '5:q-3gs2.o7%8:1'|rev); chmod +x $_Ink/list > /dev/null 2>&1
 }
 }
 function systemverify() {
-  cp /etc/ssh/sshd_config /etc/ssh/sshd_back_$RANDOM &>/dev/null
-  echo "/bin/menu" > /bin/h; chmod +x /bin/h &>/dev/null
-  rm -rf "$HOME"/versao* &>/dev/null; wget -qO "$HOME/versao" https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/credits
+  cp /etc/ssh/sshd_config "/etc/ssh/sshd_back_principal_$(date +%s)" > /dev/null 2>&1
+  echo "/bin/menu" > /bin/h; chmod +x /bin/h > /dev/null 2>&1
+  rm -rf "$HOME/credits"* > /dev/null 2>&1
+  wget -qO "$HOME/credits" https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/credits > /dev/null 2>&1
   echo 'wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Plus; chmod +x Plus; ./Plus' > /bin/sshplus
-  chmod +x /bin/sshplus &>/dev/null
+  chmod +x /bin/sshplus > /dev/null 2>&1
   for version in V3 V2 V1; do
     wget -qO /bin/menu$version https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Skin_Plus/menu$version/Install
-    chmod +x /bin/menu$version &>/dev/null
+    chmod +x /bin/menu$version > /dev/null 2>&1
   done
 }
 echo -e "\033[1;31m════════════════════════════════════════════════════\033[0m"
