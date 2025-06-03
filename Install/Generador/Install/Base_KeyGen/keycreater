@@ -1,0 +1,106 @@
+#!/bin/bash
+
+if [ "$1" = "start" ]; then
+while true
+do
+diretorio="/var/www/html/adm"
+inst="/etc/admserver/inst"
+arquivos="/etc/admserver/adm/*"
+a=$((($RANDOM %10) * 121 ))
+b=$((($RANDOM %10) * 121 ))
+echo "$a" > /tmp/a
+echo "$b" > /tmp/b
+pasta1=$(cat /tmp/a)
+pasta2=$(cat /tmp/b)
+echo -e "\033[1;32m--------------------------RODANDO------------------------------"
+rm -rf $diretorio > /dev/null 2>&1
+mkdir $diretorio > /dev/null 2>&1
+touch $diretorio/index.html > /dev/null 2>&1
+mkdir $diretorio/adm > /dev/null 2>&1
+touch $diretorio/adm/index.html > /dev/null 2>&1
+mkdir $diretorio/adm/$pasta1 > /dev/null 2>&1
+mkdir $diretorio/adm/$pasta1/$pasta2 > /dev/null 2>&1
+cp $inst $diretorio/inst > /dev/null 2>&1
+cp $arquivos $diretorio/adm/$pasta1/$pasta2/ > /dev/null 2>&1
+
+if [ -e /etc/admserver/lista/lista2 ]; then
+rm -rf /etc/admserver/lista/lista2
+touch /etc/admserver/lista/lista2
+else
+touch /etc/admserver/lista/lista2
+fi
+if [ -e /etc/admserver/lista/lista1 ]; then
+rm -rf /etc/admserver/lista/lista1
+touch /etc/admserver/lista/lista1
+else
+touch /etc/admserver/lista/lista1
+fi
+
+for free in `cat /etc/admserver/lista/listafree`
+do
+echo "$pasta1/$pasta2/$free" >> /etc/admserver/lista/lista1
+done
+
+for premy in `cat /etc/admserver/lista/listapremium`
+do
+echo "$pasta1/$pasta2/$premy" >> /etc/admserver/lista/lista2
+done
+
+if [ -e /etc/admserver/key/keyfree ]; then
+for free in `cat /etc/admserver/key/keyfree`
+do
+ke1=$(echo $free | awk -F ":" '{print $1}')
+ke2=$(echo $free | awk -F ":" '{print $2}')
+if [[ ! -d "$diretorio/$ke1" ]]; then 
+mkdir $diretorio/$ke1
+fi
+if [[ ! -d "$diretorio/$ke1/$ke2" ]]; then 
+mkdir $diretorio/$ke1/$ke2
+fi
+cp /etc/admserver/lista/lista1 $diretorio/$ke1/$ke2/lista
+echo "$diretorio/$ke1/$ke2/FREE"
+done
+fi
+
+if [ -e /etc/admserver/key/keypremium ]; then
+for premium in `cat /etc/admserver/key/keypremium`
+do
+ke1=$(echo $premium | awk -F ":" '{print $1}')
+ke2=$(echo $premium | awk -F ":" '{print $2}')
+if [[ ! -d "$diretorio/$ke1" ]]; then 
+mkdir $diretorio/$ke1
+fi
+if [[ ! -d "$diretorio/$ke1/$ke2" ]]; then 
+mkdir $diretorio/$ke1/$ke2
+fi
+cp /etc/admserver/lista/lista2 $diretorio/$ke1/$ke2/lista
+echo "$diretorio/$ke1/$ke2/PREMMY"
+done
+fi
+
+rm -rf /tmp/a
+rm -rf /tmp/b
+echo -e "\033[1;31m INSTALAÇÃO ALOCADA EM... \033[1;36m
+$diretorio/adm/$pasta1/$pasta2 
+\033[1;32m"
+chmod -R 755 $diretorio
+echo "EM ESTADO DE ESPERA, AGUARDANDO TIMER"
+echo -e "--------------------------RODANDO------------------------------\033[1;31m"
+ for prog in $(seq 30); do
+echo -n "|"
+sleep 15s
+echo -n "|"
+sleep 15s
+ done
+echo -ne "[100%]"
+echo ""
+done
+fi
+
+if [ "$1" = "stop" ]; then
+for pids in `ps x | grep keycreater | grep -v grep | grep bin | awk '{print $1}'`
+do
+kill -9 $pids > /dev/null 2>&1
+done
+killall keycreater
+fi
