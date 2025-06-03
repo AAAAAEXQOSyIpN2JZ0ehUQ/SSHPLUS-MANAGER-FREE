@@ -76,7 +76,7 @@ SSHPLUS MANAGER ofrece las siguientes características:
 
 ## :computer: Instalación
 ```bash
-wget -qO "/bin/adminplus" https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/refs/heads/master/Install/adminplus; chmod +x /bin/adminplus
+wget -qO "/bin/adminplus" https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/refs/heads/master/Proyectos/Adminplus/adminplus; chmod +x /bin/adminplus
 ```
 
 ## :rocket: Modo de Uso
@@ -89,8 +89,8 @@ adminplus
 
 ## :file_folder: Proyectos útiles 
 
-- SSHPlus Keygen: [Ver Repositorio](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/Generador)
-- Script Oficial Panel Revenda SSH (Versión 20): [Ver Repositorio](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/Panel_v20)
+- SSHPlus Keygen: [Ver Repositorio](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Proyectos/SSHPlus_Keygen)
+- Painel Revenda SSH (Versión 20): [Ver Repositorio](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Proyectos/Panel_v20)
 - Tcp-Tweaker-1.0 (Tcp-Speed): [Ver Repositorio](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/TCP-Speed)
 
 ## :open_file_folder: Estructura del Repositorio
@@ -100,7 +100,7 @@ adminplus
 | :file_folder:    | Imagenes       | Carpeta para imágenes                     |
 | :file_folder:    | Install        | Carpeta para scripts de instalación       |
 | :file_folder:    | Modulos        | Carpeta para módulos adicionales          |
-| :file_folder:    | Versiones     | Carpeta de versiones del proyecto         |
+| :file_folder:    | Versiones      | Carpeta de versiones del proyecto         |
 | :page_facing_up: | .gitattributes | Archivo para configuración de Git         |
 | :package:        | Plus           | Instalador en Bash                        |
 | :book:           | README.md      | Archivo de documentación principal        |

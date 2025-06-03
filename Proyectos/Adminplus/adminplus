@@ -1,5 +1,14 @@
 #!/bin/bash
 
+#====================================================
+#  CODIGO FUENTE:         iLLuminati Dev Team
+#====================================================
+#  SCRIPT: Menu de Administración - Adminplus
+#  DATA ATUALIZACAO: 01-03-2022 
+#  CONTATO TELEGRAM: @AAAAAEXQOSyIpN2JZ0ehUQ
+#  GRUPO TELEGRAM:   https://t.me/AAAAAEXQOSyIpN2JZ0ehUQ
+#====================================================
+
 # Paleta de colores
 reset="\033[0m"
 bold="\033[1m"

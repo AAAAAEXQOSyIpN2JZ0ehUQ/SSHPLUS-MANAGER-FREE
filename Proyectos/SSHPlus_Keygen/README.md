@@ -22,7 +22,7 @@ SSHPlus Keygen es un script diseñado para generar claves de instalación person
 
 ## :computer: Instalación
 ```bash
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/instgerador.sh; chmod +x instgerador.sh* && ./instgerador.sh
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/refs/heads/master/Proyectos/SSHPlus_Keygen/instgerador.sh* && ./instgerador.sh
 ```
 
 :memo: El Keygen trabaja con Apache2 en el Puerto 80.
