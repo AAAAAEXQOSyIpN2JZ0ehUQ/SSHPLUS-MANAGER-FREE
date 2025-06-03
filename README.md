@@ -89,12 +89,12 @@ adminplus
 
 ## :file_folder: Proyectos útiles 
 
+**Principal**
 - SSHPlus Keygen: [Ver Repositorio](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Proyectos/SSHPlus_Keygen)
 - Painel Revenda SSH (Versión 20): [Ver Repositorio](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Proyectos/Panel_v20)
 - Apariencia para SSHPlus: [Ver Repositorio](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Proyectos/Skin_SSHPlus)
 
-
-## :file_folder: Proyectos útiles extras
+**Extras**
 
 - Painel Revenda SSH (Versiónes): [Ver Repositorio](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/Panel_Web)
 - Tcp-Tweaker-1.0 (Tcp-Speed): [Ver Repositorio](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/TCP-Speed)
