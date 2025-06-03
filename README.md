@@ -104,7 +104,7 @@ adminplus
 | :page_facing_up: | .gitattributes | Archivo para configuración de Git         |
 | :package:        | Plus           | Instalador en Bash                        |
 | :book:           | README.md      | Archivo de documentación principal        |
-| :page_facing_up: | versao         | Archivo de versión del proyecto           |
+| :page_facing_up: | credits        | Archivo de creditos del proyecto          |
 
 ## :email: Contacto 
 * :busts_in_silhouette: **@crazy_vpn**: [Telegram](https://t.me/crazy_vpn) - Desarrollador SSHPlus Manager

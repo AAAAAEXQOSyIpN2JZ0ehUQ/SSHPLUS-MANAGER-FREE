@@ -71,7 +71,7 @@ la contraseÃ±a de administrador serÃ¡ la misma contraseÃ±a del panel antee
 | :book:           | README.md      | Archivo de documentación principal        |
 | :package:        | install        | Instalador en Bash                        |
 | :package:        | install_new    | Instalador en Bash version tester         |
-| :page_facing_up: | versao         | Archivo de versión del proyecto           |
+| :page_facing_up: | credits        | Archivo de creditos del proyecto          |
 
 ## :email: Contacto 
 * :busts_in_silhouette: **@crazy_vpn**: [Telegram](https://t.me/crazy_vpn) - Desarrollador Painel Revenda SSH

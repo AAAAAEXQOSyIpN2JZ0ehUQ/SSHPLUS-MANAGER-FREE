@@ -43,7 +43,7 @@ wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FR
 | :file_folder:    | Modulos        | Carpeta para módulos adicionales          |
 | :book:           | README.md      | Archivo de documentación principal        |
 | :package:        | instgerador.sh | Instalador en Bash                        |
-| :page_facing_up: | versao         | Archivo de versión del proyecto           |
+| :page_facing_up: | credits        | Archivo de creditos del proyecto          |
 
 ## :email: Contacto 
 * :busts_in_silhouette: **@crazy_vpn**: [Telegram](https://t.me/crazy_vpn) - Desarrollador SSHPlus Manager
