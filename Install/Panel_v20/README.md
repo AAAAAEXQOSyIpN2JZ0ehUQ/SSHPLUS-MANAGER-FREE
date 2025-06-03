@@ -76,16 +76,9 @@ la contraseÃ±a de administrador serÃ¡ la misma contraseÃ±a del panel antee
 | :page_facing_up: | versao         | Archivo de versión del proyecto           |
 
 ## :email: Contacto 
-* :busts_in_silhouette: **@crazy_vpn**: [Telegram](https://t.me/crazy_vpn) - Desarrollador SSHPlus Manager
+* :busts_in_silhouette: **@crazy_vpn**: [Telegram](https://t.me/crazy_vpn) - Desarrollador Painel Revenda SSH
+* :busts_in_silhouette: **@backup-new**: [Github](https://github.com/backup-new) - Contribución
+* :busts_in_silhouette: **@Adeilsonfi**: [Telegram](https://t.me/Adeilsonfi) - Contribución
 * :busts_in_silhouette: **illuminati Dev Team**: [Grupo](https://t.me/AAAAAEXQOSyIpN2JZ0ehUQ) - Actualización de Repositorio
 
 ☆ https://t.me/AAAAAEXQOSyIpN2JZ0ehUQ ☆
-
-## :octocat: Credits
-1. [@crazy_vpn](https://t.me/crazy_vpn) - Developer of Painel Revenda SSH
-2. [@backup-new](https://t.me/backup-new) - Contributor
-3. [@Adeilsonfi](https://t.me/Adeilsonfi) - Contributor
-4. [illuminati Dev Team](https://t.me/AAAAAEXQOSyIpN2JZ0ehUQ) - Contributor
-```
-☆ https://t.me/AAAAAEXQOSyIpN2JZ0ehUQ [  ⃘⃤꙰✰ ] ☆
-```
