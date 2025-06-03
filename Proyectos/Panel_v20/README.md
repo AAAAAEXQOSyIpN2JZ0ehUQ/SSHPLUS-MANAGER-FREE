@@ -77,6 +77,6 @@ la contraseÃ±a de administrador serÃ¡ la misma contraseÃ±a del panel antee
 * :busts_in_silhouette: **@crazy_vpn**: [Telegram](https://t.me/crazy_vpn) - Desarrollador Painel Revenda SSH
 * :busts_in_silhouette: **@backup-new**: [Github](https://github.com/backup-new) - Contribución
 * :busts_in_silhouette: **@Adeilsonfi**: [Telegram](https://t.me/Adeilsonfi) - Contribución
-* :busts_in_silhouette: **illuminati Dev Team**: [Grupo](https://t.me/AAAAAEXQOSyIpN2JZ0ehUQ) - Actualización de Repositorio
+* :busts_in_silhouette: **illuminati Dev Team**: [Telegram](https://t.me/AAAAAEXQOSyIpN2JZ0ehUQ) - Actualización de Repositorio
 
 ☆ https://t.me/AAAAAEXQOSyIpN2JZ0ehUQ ☆
