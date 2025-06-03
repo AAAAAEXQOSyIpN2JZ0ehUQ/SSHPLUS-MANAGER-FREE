@@ -70,7 +70,7 @@ SSHPLUS MANAGER ofrece las siguientes características:
 - Distribución: Se sugiere utilizar una distribución reciente o recién formateada.
 - Idioma Predeterminado: Portugués
 
-## :books: Utilidades Opcional (Menu de Administración)
+## :books: Utilidad Opcional (Menu de Administración)
 
 ![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/adminplus.png)
 
