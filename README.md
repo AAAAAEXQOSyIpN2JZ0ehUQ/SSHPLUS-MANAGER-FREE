@@ -89,10 +89,8 @@ adminplus
 
 ## :file_folder: Proyectos útiles 
 
-- Generador de Key SSHPLUS Manager: [Ver Repositorio](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/Generador)
+- SSHPlus Keygen: [Ver Repositorio](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/Generador)
 - Script Oficial Panel Revenda SSH (Versión 20): [Ver Repositorio](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/Panel_v20)
-- Multi-Instalador Plus: [Ver Repositorio](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/Multi-Instalador)
-- Panel Revenda SSH (Versiones): [Ver Repositorio](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/Panel_Web)
 - Tcp-Tweaker-1.0 (Tcp-Speed): [Ver Repositorio](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/tree/master/Install/TCP-Speed)
 
 ## :open_file_folder: Estructura del Repositorio
