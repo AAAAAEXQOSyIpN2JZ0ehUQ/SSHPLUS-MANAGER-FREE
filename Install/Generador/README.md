@@ -20,15 +20,6 @@ SSHPlus Keygen es un script diseñado para generar claves de instalación person
 
 ## :computer: Instalación
 ```bash
-apt-get update -y
-```
-```bash
-apt-get upgrade -y
-```
-```bash
-rm -rf instgerador.sh
-```
-```bash
 wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Generador/instgerador.sh; chmod +x instgerador.sh* && ./instgerador.sh
 ```
 
