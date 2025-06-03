@@ -13,7 +13,7 @@ Si tienes alguna pregunta o necesitas ayuda, te sugerimos revisar los foros de l
 
 ----
 
-![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/GENERADOR-SSHPLUS-MANAGER.png)
+![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/SSHPlus_Keygen.png)
 
 # SSHPlus Keygen :octocat:
 
