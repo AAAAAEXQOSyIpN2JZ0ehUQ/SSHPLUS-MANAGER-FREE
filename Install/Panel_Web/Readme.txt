@@ -18,5 +18,5 @@ Está orientado a revendedores y administradores que desean elegir la versión q
 - Repositorio: Painel Revenda SSH (Versiónes)
 - Colaboradores y soporte:
   - https://t.me/crazy_vpn
-  - https://t.me/backup-new
+  - https://github.com/backup-new
   - https://t.me/Adeilsonfi
