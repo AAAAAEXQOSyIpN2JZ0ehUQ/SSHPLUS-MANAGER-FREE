@@ -13,7 +13,7 @@ Si tienes alguna pregunta o necesitas ayuda, te sugerimos revisar los foros de l
 
 ----
 
-![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/Panel_SSHPLUS_v20_Portada.jpg)
+![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/blob/master/Imagenes/photo_2021-10-13_22-35-39.jpg)
 
 # Painel Revenda SSH
 
