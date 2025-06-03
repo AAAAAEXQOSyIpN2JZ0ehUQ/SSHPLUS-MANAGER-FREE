@@ -9,4 +9,3 @@ la secuencia de comandos ./tcptweaker.sh de nuevo para deshacerlas.
 
 	SCRIPT: 		TCP-Tweaker-1.0 (TCP-SPEED)
 	CONTATO TELEGRAM: 	https://t.me/Phreaker56
-	GRUPO TELEGRAM:   	https://t.me/AAAAAEXQOSyIpN2JZ0ehUQ
