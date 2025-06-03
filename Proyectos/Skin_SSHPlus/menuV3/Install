@@ -1,0 +1,19 @@
+#!/bin/bash
+#Menu Adaptado Base ADM
+
+#Donwload
+wget -O /bin/usercodes https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Skin_Plus/menuV3/usercodes > /dev/null 2>&1
+wget -O /bin/gestorcodes https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Skin_Plus/menuV3/gestorcodes > /dev/null 2>&1
+wget -O /bin/ferramentascodes https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Skin_Plus/menuV3/ferramentascodes > /dev/null 2>&1
+wget -O /bin/menu https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/Skin_Plus/menuV3/menu > /dev/null 2>&1
+
+#Permisos
+chmod +x /bin/usercodes
+chmod +x /bin/ferramentascodes
+chmod +x /bin/gestorcodes
+chmod +x /bin/menu
+
+#Ejecucion
+/bin/menu
+
+#fim
