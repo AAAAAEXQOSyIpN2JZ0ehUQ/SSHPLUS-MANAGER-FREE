@@ -65,14 +65,12 @@ la contraseÃ±a de administrador serÃ¡ la misma contraseÃ±a del panel antee
 
 | Icono            | Nombre         | Descripción                               |
 |------------------|----------------|-------------------------------------------|
-| :file_folder:    | Imagenes       | Carpeta para imágenes                     |
-| :file_folder:    | Install        | Carpeta para scripts de instalación       |
 | :file_folder:    | Arquivos       | Carpeta para módulos adicionales          |
+| :file_folder:    | Imagenes       | Carpeta para imágenes                     |
 | :file_folder:    | Recopilacion   | Carpeta de versiones del proyecto         |
-| :page_facing_up: | .gitattributes | Archivo para configuración de Git         |
+| :book:           | README.md      | Archivo de documentación principal        |
 | :package:        | install        | Instalador en Bash                        |
 | :package:        | install_new    | Instalador en Bash version tester         |
-| :book:           | README.md      | Archivo de documentación principal        |
 | :page_facing_up: | versao         | Archivo de versión del proyecto           |
 
 ## :email: Contacto 
