@@ -108,7 +108,8 @@ adminplus
 | :file_folder:    | Imagenes       | Carpeta para imágenes                     |
 | :file_folder:    | Install        | Carpeta para scripts de instalación       |
 | :file_folder:    | Modulos        | Carpeta para módulos adicionales          |
-| :file_folder:    | Versiones      | Carpeta de versiones del proyecto         |
+| :file_folder:    | Proyectos      | Carpeta de versiones del proyecto         |
+| :file_folder:    | Versiones      | Carpeta para proyectos                    |
 | :page_facing_up: | .gitattributes | Archivo para configuración de Git         |
 | :package:        | Plus           | Instalador en Bash                        |
 | :book:           | README.md      | Archivo de documentación principal        |
@@ -116,6 +117,6 @@ adminplus
 
 ## :email: Contacto 
 * :busts_in_silhouette: **@crazy_vpn**: [Telegram](https://t.me/crazy_vpn) - Desarrollador SSHPlus Manager
-* :busts_in_silhouette: **illuminati Dev Team**: [Grupo](https://t.me/AAAAAEXQOSyIpN2JZ0ehUQ) - Actualización de Repositorio
+* :busts_in_silhouette: **illuminati Dev Team**: [Telegram](https://t.me/AAAAAEXQOSyIpN2JZ0ehUQ) - Actualización de Repositorio
 
 ☆ https://t.me/AAAAAEXQOSyIpN2JZ0ehUQ ☆
