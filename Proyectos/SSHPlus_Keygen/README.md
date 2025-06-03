@@ -40,8 +40,8 @@ wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FR
 |------------------|----------------|-------------------------------------------|
 | :file_folder:    | Imagenes       | Carpeta para imágenes                     |
 | :file_folder:    | Install        | Carpeta para scripts de instalación       |
-| :file_folder:    | Recopilacion   | Carpeta para scripts de instalación       |
 | :file_folder:    | Modulos        | Carpeta para módulos adicionales          |
+| :file_folder:    | Recopilacion   | Carpeta de recopilacion para proyecto     |
 | :book:           | README.md      | Archivo de documentación principal        |
 | :package:        | instgerador.sh | Instalador en Bash                        |
 | :page_facing_up: | credits        | Archivo de creditos del proyecto          |
