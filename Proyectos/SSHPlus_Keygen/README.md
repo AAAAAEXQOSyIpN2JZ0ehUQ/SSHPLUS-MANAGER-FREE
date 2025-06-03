@@ -47,6 +47,6 @@ wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FR
 
 ## :email: Contacto 
 * :busts_in_silhouette: **@crazy_vpn**: [Telegram](https://t.me/crazy_vpn) - Desarrollador SSHPlus Manager
-* :busts_in_silhouette: **illuminati Dev Team**: [Grupo](https://t.me/AAAAAEXQOSyIpN2JZ0ehUQ) - Actualización de Repositorio
+* :busts_in_silhouette: **illuminati Dev Team**: [Telegram](https://t.me/AAAAAEXQOSyIpN2JZ0ehUQ) - Actualización de Repositorio
 
 ☆ https://t.me/AAAAAEXQOSyIpN2JZ0ehUQ ☆
