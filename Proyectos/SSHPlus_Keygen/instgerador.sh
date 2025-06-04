@@ -68,7 +68,7 @@ fun_inst_pct() {
 }
 
 fun_dirconfig() {
-    rm -rf /home/list /home/index.html /home/_script_\$ /home/PlusKeygen-Active /bin/keyssh /bin/key
+    rm -rf /home/list /home/index.html /var/www/html/meuip.php /home/_script_\$ /etc/PlusKeygen-Active /bin/keyssh /bin/key
     rm -rf /var/www/html/{Index.php,script,scripts}
 
     mkdir -p "$CRZ_DIR"
@@ -87,6 +87,7 @@ fun_instarq() {
     wget -O /home/index.html "$GITHUB_RAW/index.html"
     wget -O /home/list "$GITHUB_RAW/list"
     wget -O /bin/keyssh "$GITHUB_RAW/keyssh"
+    wget -O /var/www/html/meuip.php "$GITHUB_RAW/meuip.php"
     wget -O /var/www/html/scripts/Plus "$GITHUB_RAW/Plus"
     wget -O /var/www/html/script/versao "$GITHUB_RAW/versao"
 }
@@ -94,6 +95,7 @@ fun_instarq() {
 fun_permarq() {
     chmod +x /home/{list,index.html}
     chmod +x /bin/{keyssh,key}
+    chmod +x /var/www/html/meuip.php
     chmod +x /var/www/html/scripts/Plus
     chmod +x /var/www/html/script/versao
     chmod -R 755 "$CRZ_DIR"
