@@ -47,7 +47,7 @@ menu
 ```
 
 ## :bookmark_tabs: Notas
-SSHPLUS MANAGER ofrece las siguientes características:
+SSHPlus Manager ofrece las siguientes características:
 
 - Conexiones SSH: Configura y administra conexiones SSH.
 - Conexiones VPN: Administra conexiones Dropbear, SSLTunnel4, OpenVPN, entre otras.
