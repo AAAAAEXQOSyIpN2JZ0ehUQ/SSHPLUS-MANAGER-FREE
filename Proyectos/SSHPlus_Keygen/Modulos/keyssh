@@ -261,7 +261,6 @@ apache_status () {
 
     rm -f /etc/PlusKeygen-Active
 
-    systemctl stop apache2
     echo -e "\033[1;32m[+] Apache2 detenido, Keygen en pausa\033[0m"
   fi
 }

@@ -1,0 +1,175 @@
+#!/bin/bash
+declare -A cor=( [0]="\033[1;37m" [1]="\033[1;34m" [2]="\033[1;32m" [3]="\033[1;36m" [4]="\033[1;31m" )
+
+
+port () {
+local portas
+local portas_var=$(lsof -V -i tcp -P -n | grep -v "ESTABLISHED" |grep -v "COMMAND" | grep "LISTEN")
+i=0
+while read port; do
+var1=$(echo $port | awk '{print $1}') && var2=$(echo $port | awk '{print $9}' | awk -F ":" '{print $2}')
+[[ "$(echo -e ${portas}|grep -w "$var1 $var2")" ]] || {
+    portas+="$var1 $var2 $portas"
+    echo "$var1 $var2"
+    let i++
+    }
+done <<< "$portas_var"
+}
+
+verify_port () {
+local SERVICE="$1"
+local PORTENTRY="$2"
+[[ ! $(echo -e $(port|grep -v ${SERVICE})|grep -w "$PORTENTRY") ]] && return 0 || return 1
+}
+
+apache2_restart () {
+    # Detectar si Apache ya está instalado
+    if ! dpkg -l | grep -qw apache2; then
+      echo -e "\n\033[1;33m[!] Apache2 no encontrado. Instalando...\033[0m"
+      apt-get update -y
+      apt-get install apache2 -y
+    else
+      echo -e "\n\033[1;33m[!] Apache2 ya está instalado. Continuando...\033[0m"
+    fi
+
+    # Asegurar puerto 80 en la configuración
+    if grep -q "Listen 81" /etc/apache2/ports.conf; then
+      sed -i "s;Listen 81;Listen 80;g" /etc/apache2/ports.conf
+    fi
+
+    # Reiniciar servicio apache2
+    systemctl restart apache2
+
+    echo -e "\033[1;32m[+] Apache2 activo en puerto 80\033[0m"
+}
+
+remover_apache2 () {
+# Solo detener Apache, no eliminar ni desinstalar
+    echo -e "\n\033[1;33m[!] Deteniendo Apache2...\033[0m"
+    systemctl stop apache2
+
+    apt-get purge apache2 -y
+    apt-get autoremove -y
+
+    echo -e "\033[1;32m[+] Apache2 detenido, Keygen en pausa\033[0m"
+}
+
+edit_apache () {
+  echo -e "\n\033[1;32mRedefinir porta do Apache2\033[0m"
+
+  CONF="/etc/apache2/ports.conf"
+  NEWCONF=$(cat "$CONF")
+
+  echo -ne "\033[1;36mDigite as novas portas (separadas por espaço): \033[0m"
+  read -r newports
+
+  for P in $newports; do
+    if lsof -iTCP:"$P" -sTCP:LISTEN >/dev/null; then
+      echo -e "\033[1;33mPorta $P \033[1;31mEM USO\033[0m"
+      return
+    else
+      echo -e "\033[1;33mPorta $P \033[1;32mDISPONÍVEL\033[0m"
+    fi
+  done
+
+  rm -f "$CONF"
+  END=""
+  while read -r line; do
+    if [[ "$line" =~ Listen ]]; then
+      [[ -z "$END" ]] && echo "Listen $newports" >> "$CONF" && END="1" || echo "$line" >> "$CONF"
+    else
+      echo "$line" >> "$CONF"
+    fi
+  done <<< "$NEWCONF"
+
+  service apache2 restart > /dev/null 2>&1
+  echo -e "\033[1;32mPORTAS REDEFINIDAS COM SUCESSO!\033[0m"
+}
+
+fun_iniciastop () {
+  echo ""
+  if [[ -e /etc/apache2/apache_stop ]]; then
+    echo -e "\033[1;32mIniciando Apache2...\033[0m"
+    service apache2 start > /dev/null 2>&1
+    rm -f /etc/apache2/apache_stop
+    echo -e "\033[1;33mApache2 Iniciado\033[0m"
+  else
+    echo ""
+    echo -e "\033[1;31mDeteniendo Apache2...\033[0m"
+    service apache2 stop > /dev/null 2>&1
+    echo "#STOP" > /etc/apache2/apache_stop
+    echo -e "\033[1;33mApache2 Detenido\033[0m"
+  fi
+}
+
+menu_apache2() {
+
+while true; do
+
+mine_port () {
+local portasVAR=$(lsof -V -i tcp -P -n | grep -v "ESTABLISHED" |grep -v "COMMAND" | grep "LISTEN")
+local NOREPEAT
+local reQ
+local Port
+while read port; do
+reQ=$(echo ${port}|awk '{print $1}')
+Port=$(echo {$port} | awk '{print $9}' | awk -F ":" '{print $2}')
+[[ $(echo -e $NOREPEAT|grep -w "$Port") ]] && continue
+NOREPEAT+="$Port\n"
+case ${reQ} in
+apache|apache2)
+[[ -z $APC ]] && echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" && local APC="\033[1;37mApache:\033[1;32m "
+APC+="$Port ";;
+esac
+done <<< "${portasVAR}"
+[[ ! -z $APC ]] && echo -e $APC
+}
+
+  clear
+  echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+  echo -e "\033[1;32m          GERENCIAR SERVIÇO APACHE2 \033[0m"
+  mine_port
+  echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+  echo ""
+  echo -e "\033[1;31m[\033[1;36m01\033[1;31m] \033[1;37m• \033[1;33mINSTALAR OU REINICIAR APACHE"
+  echo -e "\033[1;31m[\033[1;36m02\033[1;31m] \033[1;37m• \033[1;33mREMOVER APACHE"
+  echo -e "\033[1;31m[\033[1;36m03\033[1;31m] \033[1;37m• \033[1;33mREDEFINIR PORTA DO APACHE"
+  echo -e "\033[1;31m[\033[1;36m04\033[1;31m] \033[1;37m• \033[1;33mINICIAR OU PARAR SERVIÇO APACHE"
+  echo -e "\033[1;31m[\033[1;36m00\033[1;31m] \033[1;37m• \033[1;33mVoltar \033[1;32m<\033[1;33m<\033[1;31m<"
+  echo ""
+  echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+  echo ""
+  echo -ne "\033[1;32m¿QUÉ DESEA HACER \033[1;33m?\033[1;31m?\033[1;37m : "; read apache_opcao
+
+  case "$apache_opcao" in
+    1 | 01)
+      apache2_restart
+      echo -ne "\n\033[1;31mENTER \033[1;33mpara retornar ao \033[1;32mMENU!\033[0m"; read
+      ;;
+    2 | 02)
+      remover_apache2
+      echo -ne "\n\033[1;31mENTER \033[1;33mpara retornar ao \033[1;32mMENU!\033[0m"; read
+      ;;
+    3 | 03)
+      edit_apache
+      echo -ne "\n\033[1;31mENTER \033[1;33mpara retornar ao \033[1;32mMENU!\033[0m"; read
+      ;;
+    4 | 04)
+      fun_iniciastop
+      echo -ne "\n\033[1;31mENTER \033[1;33mpara retornar ao \033[1;32mMENU!\033[0m"; read
+      ;;
+    0 | 00)
+      echo -e "\033[1;31mVoltando...\033[0m"
+      sleep 1
+      clear
+      break
+      ;;
+    *)
+      echo -e "\n\033[1;31mOpção inválida!\033[0m"
+      sleep 1
+      ;;
+  esac
+done
+}
+
+menu_apache2
