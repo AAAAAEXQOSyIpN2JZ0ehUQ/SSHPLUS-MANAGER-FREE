@@ -228,7 +228,7 @@ EOF
   bash "/home/keyssh/$client" &
 }
 
-apacheon_rev () {
+apache_status () {
   if [ ! -e /etc/PlusKeygen-Active ]; then
     # Detectar si Apache ya está instalado
     if ! dpkg -l | grep -qw apache2; then
@@ -512,7 +512,7 @@ case "$x" in
    echo -ne "\n\033[1;31mENTER \033[1;33mpara retornar ao \033[1;32mMENU!\033[0m"; read
    ;;
    4 | 04)
-   apacheon_rev
+   apache_status
    echo -ne "\n\033[1;31mENTER \033[1;33mpara retornar ao \033[1;32mMENU!\033[0m"; read
    ;;
    5 | 05)
