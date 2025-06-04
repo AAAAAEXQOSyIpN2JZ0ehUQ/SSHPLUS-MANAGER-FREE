@@ -1,0 +1,126 @@
+<!--
+====================================================
+  CODIGO FUENTE:         iLLuminati Dev Team
+====================================================
+  SCRIPT:                SSHPlus Bash Obfuscador Web
+  DATA ATUALIZACAO:      01-03-2022 
+  CONTACTO TELEGRAM:     @AAAAAEXQOSyIpN2JZ0ehUQ
+  GRUPO TELEGRAM:        https://t.me/AAAAAEXQOSyIpN2JZ0ehUQ
+====================================================
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>SSHPlus Bash Obfuscador & Desofuscador</title>
+
+  <!-- Estilos -->
+  <link rel="shortcut icon" href="1f510.png">
+  
+  <style>
+    body { font-family: monospace; background: #1e1e1e; color: #c5c5c5; padding: 20px; }
+    textarea, select, button {
+      width: 100%; margin-top: 10px; padding: 10px;
+      background: #2d2d2d; color: #c5c5c5; border: 1px solid #444;
+      font-family: monospace;
+    }
+    button { cursor: pointer; background: #333; }
+    label { font-weight: bold; margin-top: 10px; display: block; }
+    h2 { color: #79d; }
+  </style>
+</head>
+<body>
+
+  <h2>🔐 SSHPlus - Ofuscador Bash</h2>
+
+  <label>Texto o ruta para ofuscar (ej: /usr/local/lib):</label>
+  <textarea id="inputText" rows="2" placeholder="/usr/local/lib o 5:q-3gs2.o7%8:1"></textarea>
+
+  <label>Método:</label>
+  <select id="method">
+    <option value="sed_alpha_dot_rev">sed a-z. + rev</option>
+    <option value="sed_alpha_slash">sed a-z/</option>
+    <option value="rev_only">solo rev</option>
+  </select>
+
+  <button onclick="ofuscar()">🎲 Ofuscar</button>
+
+  <label>Resultado Bash (variable):</label>
+  <textarea id="outputCode" rows="4" readonly></textarea>
+
+  <h2>🔓 SSHPlus - Desofuscador</h2>
+
+  <label>Comando Bash ofuscado:</label>
+  <textarea id="bashInput" rows="3" placeholder="_lnk=$(echo '...'|sed ...|rev)"></textarea>
+
+  <button onclick="desofuscar()">🔍 Desofuscar</button>
+
+  <label>Texto desofuscado:</label>
+  <textarea id="outputDecoded" rows="3" readonly></textarea>
+
+  <script>
+    function basuraAleatoria() {
+      const basura = '0123456789×#%&$';
+      return basura[Math.floor(Math.random() * basura.length)];
+    }
+
+    function ofuscar() {
+      const input = document.getElementById('inputText').value.trim();
+      const method = document.getElementById('method').value;
+      let variable = "_lnk";
+      let result = "";
+
+      switch (method) {
+        case "sed_alpha_dot_rev":
+          let str1 = input.split('').map(c => c + basuraAleatoria()).join('');
+          result = `${variable}=$(echo '${str1}'|sed -e 's/[^a-z.]//ig'|rev)`;
+          break;
+
+        case "sed_alpha_slash":
+          let str2 = input.split('').map(c => /[a-z/]/.test(c) ? c + basuraAleatoria() : c).join('');
+          variable = "_Ink";
+          result = `${variable}=$(echo '${str2}'|sed -e 's/[^a-z\\/]//ig')`;
+          break;
+
+        case "rev_only":
+          variable = "krm";
+          let reversed = input.split('').reverse().join('');
+          result = `${variable}=$(echo '${reversed}'|rev)`;
+          break;
+      }
+
+      document.getElementById('outputCode').value = result;
+    }
+
+    function desofuscar() {
+      const input = document.getElementById('bashInput').value.trim();
+      let match = input.match(/echo\s+'([^']+)'(?:\s*\|\s*sed\s+-e\s+'([^']+)')?(?:\s*\|\s*rev)?/i);
+
+      if (!match) {
+        document.getElementById('outputDecoded').value = "❌ Formato no reconocido.";
+        return;
+      }
+
+      let text = match[1];
+      let sedPattern = match[2] || "";
+      let result = text;
+
+      // Aplicar sed inverso (simulado: eliminar caracteres que no pasarían el filtro)
+      if (sedPattern.includes('[^a-z.]')) {
+        result = text.replace(/[^a-z.]/gi, '');
+      } else if (sedPattern.includes('[^a-z/]')) {
+        result = text.replace(/[^a-z/]/gi, '');
+      }
+
+      // Si hay rev al final, revertir
+      if (/rev\)?\s*;?$/.test(input)) {
+        result = result.split('').reverse().join('');
+      }
+
+      document.getElementById('outputDecoded').value = result;
+    }
+  </script>
+
+</body>
+</html>

@@ -3,10 +3,10 @@
 #====================================================
 #  CODIGO FUENTE:         iLLuminati Dev Team
 #====================================================
-#  SCRIPT: SSHPlus Keygen
-#  DATA ATUALIZACAO: 01-03-2022 
-#  CONTATO TELEGRAM: @AAAAAEXQOSyIpN2JZ0ehUQ
-#  GRUPO TELEGRAM:   https://t.me/AAAAAEXQOSyIpN2JZ0ehUQ
+#  SCRIPT: SSHPlus        Keygen
+#  DATA ATUALIZACAO:      01-03-2022 
+#  CONTATO TELEGRAM:      @AAAAAEXQOSyIpN2JZ0ehUQ
+#  GRUPO TELEGRAM:        https://t.me/AAAAAEXQOSyIpN2JZ0ehUQ
 #====================================================
 
 [[ "$(whoami)" != "root" ]] && {
