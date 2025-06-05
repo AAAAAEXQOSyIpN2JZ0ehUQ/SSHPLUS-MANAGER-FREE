@@ -1,27 +1,32 @@
 Enlaces de Scripts y Herramientas:
 
-https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Plus
-https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/list
-https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/versao
-https://sshplus.xyz/meuip.php
-https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/$_arq
-https://raw.githubusercontent.com/shellscriptx/shellbot/master/ShellBot.sh
-https://github.com/stedolan/jq/releases/download/jq-1.5/jq-linux64
-https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/stunnel.pem
-https://raw.githubusercontent.com/CRAZY-VPN/SQUID3/master/squid3
-https://github.com/OpenVPN/easy-rsa/releases/download/3.0.1/EasyRSA-3.0.1.tgz
-https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/EasyRSA-3.0.1.tgz
-https://www.dropbox.com/s/tgkxdwb03r7w59r/badvpn-udpgw
-sshplus.net/senharoot.sh
-https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/sshd_config
-https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/addIP
-https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/slowdns
-https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/dns-server
-https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/dns
-https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/resolved.conf
-https://sshplus.xyz/scripts/utilitarios/syncpainel/inst
-https://sshplus.xyz/scripts/utilitarios/syncpainel/modulos.zip
-https://raw.githubusercontent.com/CRAZY-VPN/BACKUP-PAINEL-V20/master/restaurar.sh
+1. https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Plus
+2. https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/list
+3. https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/versao
+4. https://sshplus.xyz/meuip.php
+5. https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Modulos/$_arq
+6. https://raw.githubusercontent.com/shellscriptx/shellbot/master/ShellBot.sh
+7. https://github.com/stedolan/jq/releases/download/jq-1.5/jq-linux64
+8. https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/stunnel.pem
+9. https://raw.githubusercontent.com/CRAZY-VPN/SQUID3/master/squid3
+10. https://github.com/OpenVPN/easy-rsa/releases/download/3.0.1/EasyRSA-3.0.1.tgz
+11. https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/EasyRSA-3.0.1.tgz
+12. https://www.dropbox.com/s/tgkxdwb03r7w59r/badvpn-udpgw
+13. https://sshplus.net/senharoot.sh
+14. https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/sshd_config
+15. https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/addIP
+16. https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/slowdns
+17. https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/dns-server
+18. https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/dns
+19. https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/resolved.conf
+20. https://sshplus.xyz/scripts/utilitarios/syncpainel/inst
+21. https://sshplus.xyz/scripts/utilitarios/syncpainel/modulos.zip
+22. https://raw.githubusercontent.com/CRAZY-VPN/BACKUP-PAINEL-V20/master/restaurar.sh
+
+Herramientas para Ofuscar y desofuscar:
+
+1. https://github.com/neurobin/shc
+2. https://github.com/yanncam/UnSHc
 
 Herramientas para Verificación de IP:
 

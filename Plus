@@ -42,7 +42,7 @@ krm=$(echo '5:q-3gs2.o7%8:1'|rev); chmod +x $_Ink/list > /dev/null 2>&1
 }
 }
 function systemverify() {
-  cp /etc/ssh/sshd_config "/etc/ssh/sshd_back_principal_$(date +%s)" > /dev/null 2>&1
+  cp /etc/ssh/sshd_config "/etc/ssh/sshd_back_principal_$(date +%d-%m-%Y_%H%M%S).conf" > /dev/null 2>&1
   echo "/bin/menu" > /bin/h; chmod +x /bin/h > /dev/null 2>&1
   rm -rf "$HOME/credits"* > /dev/null 2>&1
   wget -qO "$HOME/credits" https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/credits > /dev/null 2>&1

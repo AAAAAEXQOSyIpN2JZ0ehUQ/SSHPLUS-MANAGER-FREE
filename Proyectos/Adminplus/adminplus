@@ -56,7 +56,7 @@ menu () {
         case "$x" in 
             1)
                 echo -e "\n${yellow}Cargando configuración SSH...${reset}"
-                cp /etc/ssh/sshd_config "/etc/ssh/sshd_back_$(date +%s)" > /dev/null 2>&1
+                cp /etc/ssh/sshd_config "/etc/ssh/sshd_back_$(date +%d-%m-%Y_%H%M%S).conf" > /dev/null 2>&1
                 echo -e "${green}Configuración SSH copiada con éxito.${reset}"
                 echo -ne "\n\033[1;31mENTER \033[1;33mpara retornar ao \033[1;32mMENU!\033[0m"; read
                 ;;
