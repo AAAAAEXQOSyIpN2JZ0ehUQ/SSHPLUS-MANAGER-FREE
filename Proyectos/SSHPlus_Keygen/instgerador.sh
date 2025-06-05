@@ -14,7 +14,7 @@ echo -e "\033[1;33m[\033[1;31mErro\033[1;33m] \033[1;37m- \033[1;33mvocê precis
 rm $HOME/instgerador.sh* > /dev/null 2>&1; exit 0
 }
 
-SCRIPT_DIR="/home/_script_\$"
+SCRIPT_DIR="/etc/sshplus-server/_script_\$"
 CRZ_DIR="$SCRIPT_DIR/crz"
 GITHUB_RAW="https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Proyectos/SSHPlus_Keygen/Modulos"
 
@@ -68,7 +68,7 @@ fun_inst_pct() {
 }
 
 fun_dirconfig() {
-    rm -rf /home/list /home/index.html /var/www/html/meuip.php /home/_script_\$ /etc/PlusKeygen-Active /bin/keyssh /bin/key
+    rm -rf /etc/sshplus-server/list /etc/sshplus-server/index.html /var/www/html/meuip.php /etc/sshplus-server/_script_\$ /etc/PlusKeygen-Active /bin/keyssh /bin/key
     rm -rf /var/www/html/{Index.php,script,scripts}
 
     mkdir -p "$CRZ_DIR"
@@ -84,8 +84,8 @@ fun_downser() {
 }
 
 fun_instarq() {
-    wget -O /home/index.html "$GITHUB_RAW/index.html"
-    wget -O /home/list "$GITHUB_RAW/list"
+    wget -O /etc/sshplus-server/index.html "$GITHUB_RAW/index.html"
+    wget -O /etc/sshplus-server/list "$GITHUB_RAW/list"
     wget -O /bin/keyssh "$GITHUB_RAW/keyssh"
     wget -O /var/www/html/meuip.php "$GITHUB_RAW/meuip.php"
     wget -O /var/www/html/scripts/Plus "$GITHUB_RAW/Plus"
@@ -93,7 +93,7 @@ fun_instarq() {
 }
 
 fun_permarq() {
-    chmod +x /home/{list,index.html}
+    chmod +x /etc/sshplus-server/{list,index.html}
     chmod +x /bin/{keyssh,key}
     chmod +x /var/www/html/meuip.php
     chmod +x /var/www/html/scripts/Plus
@@ -104,15 +104,15 @@ fun_permarq() {
 fun_montaip() {
     fun_ip
     sed -i "s;SEU-IP-AKI;$IP;g" /var/www/html/scripts/Plus
-    sed -i "s;SEU-IP-AKI;$IP;g" /home/list
+    sed -i "s;SEU-IP-AKI;$IP;g" /etc/sshplus-server/list
     sleep 2
 }
 
 fun_index() {
-    cp /home/index.html "$SCRIPT_DIR/index.html"
-    cp /home/index.html "$CRZ_DIR/index.html"
-    cp /home/index.html /var/www/html/script/index.html
-    cp /home/index.html /var/www/html/scripts/index.html
+    cp /etc/sshplus-server/index.html "$SCRIPT_DIR/index.html"
+    cp /etc/sshplus-server/index.html "$CRZ_DIR/index.html"
+    cp /etc/sshplus-server/index.html /var/www/html/script/index.html
+    cp /etc/sshplus-server/index.html /var/www/html/scripts/index.html
 }
 
 clear
