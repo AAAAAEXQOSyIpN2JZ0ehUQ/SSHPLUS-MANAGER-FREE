@@ -20,6 +20,9 @@ RESET='\033[0m'
 # Crear el directorio /etc/sshplus-server/keyssh si no existe
 [[ ! -d /etc/sshplus-server/keyssh ]] && mkdir -p /etc/sshplus-server/keyssh
 
+# Crear el archivo /var/www/html/index.html si no existe
+[ ! -e "/var/www/html/index.html" ] && touch "/var/www/html/index.html"
+
 # Cuál es mi dirección IP
 fun_ip () {
 MIP=$(ip addr | grep 'inet' | grep -v inet6 | grep -vE '127\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | grep -o -E '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | head -1)
