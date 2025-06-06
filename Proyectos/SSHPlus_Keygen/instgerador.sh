@@ -3,7 +3,7 @@
 #====================================================
 #  CODIGO FUENTE:         iLLuminati Dev Team
 #====================================================
-#  SCRIPT: SSHPlus        Keygen
+#  SCRIPT: SSHPlus        SSHPlus Keygen
 #  DATA ATUALIZACAO:      01-03-2022 
 #  CONTATO TELEGRAM:      @AAAAAEXQOSyIpN2JZ0ehUQ
 #  GRUPO TELEGRAM:        https://t.me/AAAAAEXQOSyIpN2JZ0ehUQ
@@ -113,6 +113,7 @@ fun_index() {
     cp /etc/sshplus-server/index.html "$CRZ_DIR/index.html"
     cp /etc/sshplus-server/index.html /var/www/html/script/index.html
     cp /etc/sshplus-server/index.html /var/www/html/scripts/index.html
+    [ ! -e "/var/www/html/index.html" ] && touch "/var/www/html/index.html"
 }
 
 clear
