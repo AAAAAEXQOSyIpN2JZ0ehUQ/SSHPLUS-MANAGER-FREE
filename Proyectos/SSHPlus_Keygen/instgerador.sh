@@ -68,9 +68,8 @@ fun_inst_pct() {
 }
 
 fun_dirconfig() {
-    rm -rf /etc/sshplus-server/list /etc/sshplus-server/index.html /var/www/html/meuip.php /etc/sshplus-server/_script_\$ /etc/PlusKeygen-Active /bin/keyssh /bin/key
-    rm -rf /var/www/html/{Index.php,script,scripts}
-
+    rm -rf /etc/sshplus-server/list /etc/sshplus-server/index.html /etc/sshplus-server/_script_\$ /etc/sshplus-server/versao /bin/keyssh /bin/key /etc/PlusKeygen-Active
+    rm -rf /var/www/html/{meuip.php,versao,script,scripts}
     mkdir -p "$CRZ_DIR"
     mkdir -p /var/www/html/{script,scripts}
     echo "/bin/keyssh" > /bin/key
@@ -86,6 +85,7 @@ fun_downser() {
 fun_instarq() {
     wget -O /etc/sshplus-server/index.html "$GITHUB_RAW/index.html"
     wget -O /etc/sshplus-server/list "$GITHUB_RAW/list"
+    wget -O /etc/sshplus-server/versao "$GITHUB_RAW/versao"
     wget -O /bin/keyssh "$GITHUB_RAW/keyssh"
     wget -O /var/www/html/meuip.php "$GITHUB_RAW/meuip.php"
     wget -O /var/www/html/scripts/Plus "$GITHUB_RAW/Plus"
@@ -93,7 +93,7 @@ fun_instarq() {
 }
 
 fun_permarq() {
-    chmod +x /etc/sshplus-server/{list,index.html}
+    chmod +x /etc/sshplus-server/{versao,list,index.html}
     chmod +x /bin/{keyssh,key}
     chmod +x /var/www/html/meuip.php
     chmod +x /var/www/html/scripts/Plus
