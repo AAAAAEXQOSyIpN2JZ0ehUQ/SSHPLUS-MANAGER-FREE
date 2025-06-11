@@ -32,6 +32,7 @@ echo -e "$IP" >/etc/IP
 }
 
 IP=$(cat /etc/IP)
+MYINSTALL="https//:example.com"
 
 fun_gerkey() {
   echo -e "\n${CYAN}Informe o nome do Cliente:${WHITE} \c"
