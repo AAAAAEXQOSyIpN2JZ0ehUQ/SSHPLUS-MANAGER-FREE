@@ -31,9 +31,9 @@ wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FR
 chmod +x Plus* && ./Plus
 ```
 
-## :computer: Instalación en una Línea
+## :computer: Instalación en una Línea (Solo script)
 ```bash
-apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Plus; chmod +x Plus* && ./Plus
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Plus; chmod +x Plus* && ./Plus
 ```
 
 :memo: Las dependencias faltantes se instalarán automáticamente durante el proceso.
