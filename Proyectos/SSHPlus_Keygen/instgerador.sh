@@ -11,7 +11,7 @@
 
 [[ "$(whoami)" != "root" ]] && {
 echo -e "\033[1;33m[\033[1;31mErro\033[1;33m] \033[1;37m- \033[1;33mvocê precisa executar como root\033[0m"
-rm $HOME/instgerador.sh* > /dev/null 2>&1; exit 0
+rm -rf $HOME/instgerador.sh* > /dev/null 2>&1; exit 0
 }
 
 [ ! -d "/etc/sshplus-server" ] && mkdir -p /etc/sshplus-server
@@ -174,6 +174,4 @@ echo -e "\033[1;33mCONTATO: \033[1;31m(\033[1;36mTELEGRAM\033[1;31m): \033[1;37m
 echo -e "\033[1;31m════════════════════════════════════════════════════\033[0m"
 echo ""
 
-rm $HOME/instgerador* > /dev/null 2>&1
-
-#rm $HOME/instgerador* && cat /dev/null > ~/.bash_history && history -c
+rm -rf $HOME/instgerador.sh* > /dev/null 2>&1
