@@ -14,6 +14,8 @@ echo -e "\033[1;33m[\033[1;31mErro\033[1;33m] \033[1;37m- \033[1;33mvocê precis
 rm $HOME/instgerador.sh* > /dev/null 2>&1; exit 0
 }
 
+[ ! -d "/etc/sshplus-server" ] && mkdir -p /etc/sshplus-server
+
 SCRIPT_DIR="/etc/sshplus-server/_script_\$"
 CRZ_DIR="$SCRIPT_DIR/crz"
 GITHUB_RAW="https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Proyectos/SSHPlus_Keygen/Modulos"
@@ -171,5 +173,7 @@ echo -e "\033[1;33mCOMANDO PRINCIPAL: \033[1;32mkeyssh ou key\033[0m"
 echo -e "\033[1;33mCONTATO: \033[1;31m(\033[1;36mTELEGRAM\033[1;31m): \033[1;37m@AAAAAEXQOSyIpN2JZ0ehUQ\033[0m"
 echo -e "\033[1;31m════════════════════════════════════════════════════\033[0m"
 echo ""
+
+rm $HOME/instgerador* > /dev/null 2>&1
 
 #rm $HOME/instgerador* && cat /dev/null > ~/.bash_history && history -c
