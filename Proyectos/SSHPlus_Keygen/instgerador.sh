@@ -89,7 +89,7 @@ fun_instarq() {
     wget -O /bin/keyssh "$GITHUB_RAW/keyssh"
     wget -O /var/www/html/meuip.php "$GITHUB_RAW/meuip.php"
     wget -O /var/www/html/scripts/Plus "$GITHUB_RAW/Plus"
-    wget -O /var/www/html/script/versao "$GITHUB_RAW/versao"f
+    wget -O /var/www/html/script/versao "$GITHUB_RAW/versao"
 }
 
 fun_permarq() {
