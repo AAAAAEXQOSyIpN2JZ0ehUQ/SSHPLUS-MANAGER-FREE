@@ -174,4 +174,4 @@ echo -e "\033[1;33mCONTATO: \033[1;31m(\033[1;36mTELEGRAM\033[1;31m): \033[1;37m
 echo -e "\033[1;31m════════════════════════════════════════════════════\033[0m"
 echo ""
 
-rm -rf $HOME/instgerador.sh* > /dev/null 2>&1
+rm -rf instgerador.sh* > /dev/null 2>&1
