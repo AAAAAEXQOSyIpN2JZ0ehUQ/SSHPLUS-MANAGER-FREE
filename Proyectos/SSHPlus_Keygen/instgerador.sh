@@ -102,6 +102,12 @@ fun_permarq() {
 }
 
 fun_montaip() {
+    
+    # Nota: Las variables _lnk (script.sshplus.net) y _lvk (versao del scripts dentro del archivo list) deben ser modificadas 
+    
+    # _lnk=$(echo 't1:e#n.5s0ul&p4hs$s.0729t9p$&8i&&9r7827c032:3s'| sed -e 's/[^a-z.]//ig'| rev); 
+    # _lvk=$(wget -qO- sshplus.xyz/script/versao)
+
     fun_ip
     sed -i "s;SEU-IP-AKI;$IP;g" /var/www/html/scripts/Plus
     sed -i "s;SEU-IP-AKI;$IP;g" /etc/sshplus-server/list
@@ -113,7 +119,7 @@ fun_index() {
     cp /etc/sshplus-server/index.html "$CRZ_DIR/index.html"
     cp /etc/sshplus-server/index.html /var/www/html/script/index.html
     cp /etc/sshplus-server/index.html /var/www/html/scripts/index.html
-    [ ! -e "/var/www/html/index.html" ] && touch "/var/www/html/index.html"
+    [ ! -e "/var/www/html/index.html" ] && cp /etc/sshplus-server/index.html /var/www/html/index.html
 }
 
 clear

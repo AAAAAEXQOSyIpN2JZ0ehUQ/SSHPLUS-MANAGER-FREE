@@ -6,6 +6,7 @@
 #	CONTATO TELEGRAM:	http://t.me/crazy_vpn
 #	CANAL TELEGRAM:	http://t.me/sshplus
 #====================================================
+# _lvk=$(wget -qO- sshplus.xyz/script/versao)
 _lvk=$(wget -qO- SEU-IP-AKI/script/versao)
 IP=$(wget -qO- sshplus.xyz/meuip.php)
 IP2=$(wget -qO- http://whatismyip.akamai.com/)
