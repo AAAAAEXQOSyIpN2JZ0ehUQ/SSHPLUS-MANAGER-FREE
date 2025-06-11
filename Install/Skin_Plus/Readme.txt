@@ -7,6 +7,14 @@ y detalles del sistema para adaptarlos a una estética más moderna y organizada
 Está pensado para usuarios y revendedores que usan entornos basados en SSHPlus y quieren dar un toque distintivo 
 a su presentación sin alterar la lógica principal de sus scripts.
 
++------------------+------------+
+| Nombre del Menú  | Código     |
++------------------+------------+
+| Menu ADM         | menuV3     |
+| Menu Adaptado    | menuV2     |
+| Menu Original    | menuV1     |
++------------------+------------+
+
 ✔️ Características
 
 - Estilo visual renovado para menús, colores, banners y estructura.
