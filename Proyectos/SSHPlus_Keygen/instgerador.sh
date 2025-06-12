@@ -104,12 +104,51 @@ fun_permarq() {
 }
 
 fun_montaip() {
-    
-    # Nota: Las variables _lnk (script.sshplus.net) y _lvk (versao del scripts dentro del archivo list) deben ser modificadas 
-    
+  clear
+  echo -e "\033[0m\e[34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+  echo -e "         \033[1;32mCONFIGURAR IP OU DOMÍNIO         \033[0m"
+  echo -e "\033[0m\e[34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+  echo ""
+
+  # Detectar IP pública e IP local
+  ip_publica=$(wget -qO- ipv4.icanhazip.com)
+  ip_local=$(hostname -I | awk '{print $1}')
+
+  echo -e "\033[1;36mIP Pública Detectada: \033[1;33m$ip_publica\033[0m"
+  echo -e "\033[1;36mIP Local Detectada:   \033[1;33m$ip_local\033[0m"
+  echo ""
+
+  # Solicitar IP ou domínio
+  while true; do
+    echo -ne "\033[1;36mDigite o IP com porta (ex: 192.168.1.100:80) ou o domínio (ex: script.sshplus.net): \033[0m"
+    read ip_ou_dominio
+
+    if [[ -z "$ip_ou_dominio" ]]; then
+      echo -e "\033[1;31mEntrada vazia. Tente novamente.\033[0m"
+      continue
+    fi
+
+    # Validação básica
+    if [[ "$ip_ou_dominio" =~ ^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+:[0-9]+$ || "$ip_ou_dominio" =~ ^[a-zA-Z0-9.-]+$ ]]; then
+      break
+    else
+      echo -e "\033[1;31mFormato inválido. Tente novamente.\033[0m"
+    fi
+  done
+
+  # Substituir SEU-IP-AKI nos arquivos
+  sed -i "s;SEU-IP-AKI;$ip_ou_dominio;g" /var/www/html/scripts/Plus 2>/dev/null
+  sed -i "s;SEU-IP-AKI;$ip_ou_dominio;g" /etc/sshplus-server/list 2>/dev/null
+
+  echo -e "\n\033[1;32mConfiguração aplicada com sucesso!\033[0m"
+  echo ""
+  sleep 2
+}
+
+fun_montaip_OFF() {
+    # Nota: Las variables _lnk (script.sshplus.net) y _lvk (versao del scripts dentro del archivo list) deben ser modificadas    
     # _lnk=$(echo 't1:e#n.5s0ul&p4hs$s.0729t9p$&8i&&9r7827c032:3s'| sed -e 's/[^a-z.]//ig'| rev); 
     # _lvk=$(wget -qO- sshplus.xyz/script/versao)
-
     fun_ip
     sed -i "s;SEU-IP-AKI;$IP;g" /var/www/html/scripts/Plus
     sed -i "s;SEU-IP-AKI;$IP;g" /etc/sshplus-server/list
