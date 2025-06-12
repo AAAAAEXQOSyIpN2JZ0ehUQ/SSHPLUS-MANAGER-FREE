@@ -26,7 +26,7 @@ echo -e "$IP" >/etc/IP
 }
 
 IP=$(cat /etc/IP)
-MYINSTALL="https//:example.com"
+MYINSTALL="SEU-IP-AKI"
 
 # Crear el directorio /etc/sshplus-server/keyssh si no existe
 [[ ! -d /etc/sshplus-server/keyssh ]] && mkdir -p /etc/sshplus-server/keyssh
@@ -74,7 +74,7 @@ fun_gerkey() {
   echo -e "\033[0m\e[34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
   echo -e "${YELLOW}         ⇱ SSHPLUS KEYGEN MANAGER ⇲${RESET}"
   echo -e "\033[0m\e[34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-  echo -e "\n${WHITE}wget $IP/scripts/Plus; chmod 777 Plus; ./Plus"
+  echo -e "\n${WHITE}wget $MYINSTALL/scripts/Plus; chmod 777 Plus; ./Plus"
   echo -e "\n${GREEN}KEY: ${WHITE}${pasta1}${signus}${pasta2}${RESET}"
   echo -e "\n\033[0m\e[34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
   echo -e "${YELLOW}Obrigado pela sua contribuição! 👍\nDEV: CRAZY ✌️😎${RESET}\n"
@@ -130,7 +130,7 @@ fun_gerkey_fixa() {
   echo -e "\033[0m\e[34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
   echo -e "${YELLOW}         ⇱ SSHPLUS KEYGEN FIXA ⇲${RESET}"
   echo -e "\033[0m\e[34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-  echo -e "\n${WHITE}wget $IP/scripts/Plus; chmod 777 Plus; ./Plus"
+  echo -e "\n${WHITE}wget $MYINSTALL/scripts/Plus; chmod 777 Plus; ./Plus"
   echo -e "\n${GREEN}KEY: ${WHITE}${pasta1}${signus}${pasta2}${RESET}"
   echo -e "\n\033[0m\e[34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
   echo -e "${YELLOW}Obrigado pela sua contribuição! 👍\nDEV: CRAZY ✌️😎${RESET}\n"
@@ -208,7 +208,7 @@ fun_gerkey_manual() {
   echo -e "\033[0m\e[34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
   echo -e "${YELLOW}         ⇱ SSHPLUS KEYGEN MANUAL ⇲${RESET}"
   echo -e "\033[0m\e[34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-  echo -e "\n\033[1;37mwget $IP/scripts/Plus; chmod 777 Plus; ./Plus\033[0m"
+  echo -e "\n\033[1;37mwget $MYINSTALL/scripts/Plus; chmod 777 Plus; ./Plus\033[0m"
   echo -e "\n\033[1;32mKEY: \033[1;37m$key1p$signus$key2p\033[0m"
   echo -e "\n\033[0m\e[34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
   echo -e "\033[1;33mObrigado Pela Sua Contribuição! 👍\nDEV: CRAZY ✌️😎\033[0m\n"

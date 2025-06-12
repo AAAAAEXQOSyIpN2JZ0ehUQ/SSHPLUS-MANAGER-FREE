@@ -104,23 +104,23 @@ fun_permarq() {
 }
 
 fun_montaip() {
-  clear
-  echo -e "\033[0m\e[34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-  echo -e "         \033[1;32mCONFIGURAR IP OU DOMÍNIO         \033[0m"
-  echo -e "\033[0m\e[34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+  echo -e "\n\033[1;33mCONFIGURAR IP OU DOMÍNIO         \033[0m"
   echo ""
 
   # Detectar IP pública e IP local
-  ip_publica=$(wget -qO- ipv4.icanhazip.com)
+  ip_publica=$(wget -qO- http://ipv4.icanhazip.com)
   ip_local=$(hostname -I | awk '{print $1}')
 
-  echo -e "\033[1;36mIP Pública Detectada: \033[1;33m$ip_publica\033[0m"
-  echo -e "\033[1;36mIP Local Detectada:   \033[1;33m$ip_local\033[0m"
+  echo -e "\033[1;33mIP Pública Detectada: \033[1;37m$ip_publica\033[0m"
+  echo -e "\033[1;33mIP Local Detectada:   \033[1;37m$ip_local\033[0m"
   echo ""
 
   # Solicitar IP ou domínio
   while true; do
-    echo -ne "\033[1;36mDigite o IP com porta (ex: 192.168.1.100:80) ou o domínio (ex: script.sshplus.net): \033[0m"
+    echo -e "\033[1;33mDigite o IP com porta    \033[1;37m(ex: 192.168.1.100:80)\033[0m"
+    echo -e "\033[1;33mou o domínio             \033[1;37m(ex: script.sshplus.net)\033[0m"
+    echo ""
+    echo -ne "\033[1;32mIP ou domínio: \033[1;37m"
     read ip_ou_dominio
 
     if [[ -z "$ip_ou_dominio" ]]; then
@@ -137,6 +137,7 @@ fun_montaip() {
   done
 
   # Substituir SEU-IP-AKI nos arquivos
+  sed -i "s;SEU-IP-AKI;$ip_ou_dominio;g" /bin/keyssh 2>/dev/null
   sed -i "s;SEU-IP-AKI;$ip_ou_dominio;g" /var/www/html/scripts/Plus 2>/dev/null
   sed -i "s;SEU-IP-AKI;$ip_ou_dominio;g" /etc/sshplus-server/list 2>/dev/null
 
@@ -202,10 +203,10 @@ echo -e "\033[1;32m [6/8] Aplicando permissões\033[0m"
 fun_bar fun_permarq
 
 echo -e "\033[1;32m [7/8] Montando IP nos scripts\033[0m"
-fun_bar fun_montaip
+fun_montaip
 
 echo -e "\033[1;32m [8/8] Finalizando configuração\033[0m"
-fun_index
+fun_bar fun_index
 
 echo -e "\n\033[1;31m════════════════════════════════════════════════════\033[0m"
 echo -e "\033[1;33mCOMANDO PRINCIPAL: \033[1;32mkeyssh ou key\033[0m"
