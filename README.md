@@ -23,6 +23,11 @@ proporcionar una extrema facilidad de uso en servidores Linux con un enfoque en 
 VPN. Viene con una interfaz amigable que proporciona información detallada sobre el servidor y 
 sus usuarios.
 
+### 1. **SSHPlus Manager – Versión 38**  
+Autor original: [@crazy_vpn](https://t.me/crazy_vpn)  
+- 📢 Canal oficial: [https://t.me/sshplus](https://t.me/sshplus)  
+- 💬 Grupo de soporte: [https://t.me/sshplus_grupo](https://t.me/sshplus_grupo)
+
 ## :computer: Instalación
 ```bash
 apt-get update -y; 
